@@ -1,6 +1,6 @@
 # Monotropismus: Ein interessenbasierter Erklärungsansatz für Autismus
 
-## Executive Summary
+## Zusammenfassung
 
 Monotropismus ist eine kognitive Theorie des Autismus, die die autistische Erfahrung durch Unterschiede in Aufmerksamkeit und Interesse erklärt. Die Theorie wurde ab den frühen 1990er Jahren von den autistischen Forschenden Dinah Murray, Wenn Lawson und Mike Lesser entwickelt. Sie besagt, dass monotropische Gehirne dazu neigen, ihre Aufmerksamkeit zu jedem Zeitpunkt intensiv auf eine kleine Auswahl von Interessen zu fokussieren, wodurch weniger Verarbeitungskapazitäten für alles andere übrig bleiben. Dieser einzige Grundgedanke wurde genutzt, um das gesamte Spektrum autistischer Merkmale – von sensorischen Empfindlichkeiten und sozialen Unterschieden bis hin zu tiefem Fachwissen und exekutiven Dysfunktionen – in einem einheitlichen, nicht-pathologisierenden Rahmen zu erklären. Innerhalb der autistischen Gemeinschaft ist der Monotropismus wohl die dominante theoretische Brille für das Verständnis von Autismus und hält zunehmend Einzug in den akademischen und professionellen Diskurs. Dieser Überblick untersucht die Ursprünge der Theorie, ihre Kernbehauptungen, stützende Beweise, die Beziehung zu anderen Ansätzen sowie offene Fragen.
 
@@ -12,7 +12,7 @@ Unabhängig davon entwickelte Wenn Lawson (damals Wendy Lawson) in Australien �
 
 Zusammen mit dem Mathematiker Mike Lesser – der Fachwissen im Bereich der Theorie dynamischer Systeme einbrachte – veröffentlichten sie 2005 ihre bahnbrechende Arbeit in der Fachzeitschrift *Autism*: **„Attention, monotropism and the diagnostic criteria for autism“** (Aufmerksamkeit, Monotropismus und die diagnostischen Kriterien für Autismus).[^6] Dies ist bis heute der Grundtext der Theorie. Lawsons spätere Doktorarbeit *Single Attention and Associated Cognition in Autism* (SAACA) wurde 2011 als Buch unter dem Titel *The Passionate Mind* veröffentlicht.[^7] Dinah Murray selbst erhielt ihre Autismus-Diagnose im Jahr 2009, was bedeutet, dass alle drei Begründer autistisch waren.
 
-Die Theorie wurde seither unter anderem von Fergus Murray (Dinahs Sohn, einem autistischen Naturwissenschaftslehrer) bekannter gemacht und erweitert. Sein 2018 in *The Psychologist* veröffentlichter Artikel „Me and Monotropism: A Unified Theory of Autism“ wurde zum meistgelesenen Artikel der Zeitschrift im Jahr 2019.[^8] Ein weiterer wichtiger Akteur ist Patrick Dwyer, ein autistischer Promotionsprüfer am Olga Tennison Autism Research Centre (OTARC).[^9]
+Die Theorie wurde seither unter anderem von Fergus Murray (Dinahs Sohn, einem autistischen Naturwissenschaftslehrer) bekannter gemacht und erweitert. Sein 2018 in *The Psychologist* veröffentlichter Artikel „Me and Monotropism: A Unified Theory of Autism“ wurde zum meistgelesenen Artikel der Zeitschrift im Jahr 2019.[^8] Ein weiterer wichtiger Akteur ist Patrick Dwyer, ein autistischer Doktorand am Olga Tennison Autism Research Centre (OTARC).[^9]
 
 ## 2. Die Kern-Theorie: Ein Interessensystem
 
@@ -99,7 +99,7 @@ Dwyer und Kollegen am Olga Tennison Autism Research Centre fanden heraus:
 
 * Aufmerksamkeitsunterschiede bei jungen autistischen Kindern hängen sowohl mit hyper-reaktiven als auch mit hypo-reaktiven sensorischen Mustern zusammen.[^10]
 * Selbstberichtete Aufmerksamkeitsunterschiede bei Erwachsenen korrelieren mit auditiver Hyper-Reaktivität.[^10]
-* Ein ausgeprägterer Hyperfokus ist mit vermehrtem Grübeln, Depressionen und Ästungszuständen verbunden.[^9]
+* Ein ausgeprägterer Hyperfokus ist mit vermehrtem Grübeln, Depressionen und Angstzuständen verbunden.[^9]
 
 ### 5.4 Erfahrungsbasierte Validität
 

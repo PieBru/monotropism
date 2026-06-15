@@ -1,7 +1,3 @@
-Aquí tienes la traducción al español del documento Markdown, manteniendo la estructura, los enlaces, las referencias y el formato original:
-
----
-
 # Monotropismo: Una Explicación del Autismo Basado en el Interés
 
 ## Resumen Ejecutivo
@@ -77,7 +73,7 @@ El *stimming* (balancearse, aletear, tararear) proporciona una entrada sensorial
 | **Teoría de la Mente / Ceguera Mental** (Baron-Cohen, 1995) | El monotropismo sugiere que las dificultades surgen de recursos de procesamiento limitados, no de una incapacidad; cuestionada por la doble empatía. |
 | **Disfunción Ejecutiva** (Ozonoff et al.) | Describe los síntomas pero no es específica del autismo; el monotropismo ofrece el concepto más preciso de "inercia autista". |
 | **Funcionamiento Perceptivo Mejorado** (Mottron, 2006) | Coincide en las fortalezas; el monotropismo proporciona un mecanismo atencional unificador. |
-| **Teoría del Mundo Intenso** (Markram & Markram, 2007) | Paralela: ambas predicen un hiperprocesamiento; el mundo intenso parte de la microcircuitos neuronales, el monotropismo de la atención/interés. |
+| **Teoría del Mundo Intenso** (Markram & Markram, 2007) | Paralela: ambas predicen un hiperprocesamiento; el mundo intenso parte de los microcircuitos neuronales, el monotropismo de la atención/interés. |
 | **Teoría del Cerebro Masculino** (Baron-Cohen, 2002) | Ampliamente rechazada por mujeres autistas y personas no binarias; el monotropismo es neutral respecto al género. |
 | **Problema de la Doble Empatía** (Milton, 2012) | Complementaria: el monotropismo actúa a nivel individual, la doble empatía a nivel de la interacción. |
 
@@ -85,9 +81,9 @@ El *stimming* (balancearse, aletear, tararear) proporciona una entrada sensorial
 
 Históricamente, el monotropismo ha sido descuidado por la investigación principal sobre el autismo. Patrick Dwyer señaló en 2021 que en los dieciséis años posteriores al artículo de 2005, prácticamente ningún estudio experimental se había diseñado específicamente para probar la hipótesis del monotropismo.[^13] Esto está cambiando gradualmente, con la aparición regular de nuevos trabajos revisados por pares que hacen referencia al monotropismo.[^4] Sin embargo, varias líneas de evidencia convergentes lo respaldan actualmente:
 
-### 5.1 Atención Viciosa (Sticky Attention)
+### 5.1 Atención Pegajosa (Sticky Attention)
 
-Landry y Bryson (2004) encontraron que los niños autistas eran significativamente más lentos para desvincular la atención visual de un estímulo central cuando aparecía un nuevo estímulo en la periferia, un efecto de "atención viciosa" o persistente.[^14] Esto ha sido replicado en numerosos estudios y analizado en un metanálisis en *Neuroscience & Biobehavioral Reviews* (2015).[^15] Se ha observado un cambio de atención igualmente lento en bebés que luego fueron diagnosticados como autistas, lo que sugiere que emerge temprano en el desarrollo.[^16]
+Landry y Bryson (2004) encontraron que los niños autistas eran significativamente más lentos para desvincular la atención visual de un estímulo central cuando aparecía un nuevo estímulo en la periferia, un efecto de "atención pegajosa" o persistente.[^14] Esto ha sido replicado en numerosos estudios y analizado en un metanálisis en *Neuroscience & Biobehavioral Reviews* (2015).[^15] Se ha observado un cambio de atención igualmente lento en bebés que luego fueron diagnosticados como autistas, lo que sugiere que emerge temprano en el desarrollo.[^16]
 
 ### 5.2 El Cuestionario de Monotropismo
 
@@ -119,7 +115,7 @@ Patrick Dwyer señala que el monotropismo sigue siendo una teoría *descriptiva*
 
 Hasta mediados de 2025, el Cuestionario de Monotropismo es la única herramienta de medición dedicada y aún se encuentra en proceso de revisión por pares. No existen tareas conductuales o de neuroimagen que indexen específicamente el monotropismo.[^9]
 
-### 6.3 El Paradoja del Hiperfoco y la Distracción
+### 6.3 La Paradoja del Hiperfoco y la Distracción
 
 Un enigma persistente: las personas autistas suelen informar tanto de un hiperfoco intenso como de una alta distractibilidad. La propuesta de Dwyer de un "hiperfoco exógeno" —la idea de que la atención puede ser capturada tanto endógenamente (por intereses) como exógenamente (por estímulos destacados)— intenta reconciliar esto, pero la relación sigue sin resolverse teóricamente.[^13]
 

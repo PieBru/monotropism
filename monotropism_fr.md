@@ -42,7 +42,7 @@ Le monotropisme propose une explication unifiée au profil sensoriel si diversif
 * **L'hypo-réactivité** : lorsque l'attention est totalement absorbée ailleurs, les stimuli externes (y compris la douleur) peuvent ne pas être enregistrés du tout.
 * **La recherche sensorielle** : lorsqu'un stimulus sensoriel agréable se trouve à l'intérieur du tunnel attentionnel, il est recherché avec une intensité focalisée.
 
-Les recherches de Patrick Dwyer à l'OTARC ont mis en évidence que les différences attentionnelles chez les enfants autistes sont liées à la fois à l'hyper- et à l'hypo-réactivité aux stimuli sensoriels, ce qui corrobore ce modèle.[[^10]]
+Les recherches de Patrick Dwyer à l'OTARC ont mis en évidence que les différences attentionnelles chez les enfants autistes sont liées à la fois à l'hyper- et à l'hypo-réactivité aux stimuli sensoriels, ce qui corrobore ce modèle.[^10]
 
 ### 3.3 L'Inertie Autistique (Dysfonction Exécutive)
 
@@ -81,7 +81,7 @@ Le *stimming* (balancement, battements de mains, marmonnements) fournit un appor
 
 Le monotropisme a historiquement été délaissé par la recherche grand public sur l'autisme. Patrick Dwyer faisait remarquer en 2021 qu'au cours des seize années qui ont suivi la publication de l'article de 2005, pratiquement aucune étude expérimentale n'avait été spécifiquement conçue pour tester l'hypothèse du monotropisme.[^13] La situation évolue progressivement, et de nouveaux travaux évalués par des pairs faisant référence au monotropisme paraissent désormais régulièrement.[^4] Plusieurs faisceaux de preuves convergents viennent aujourd'hui l'appuyer :
 
-### 5.1 L'Attention Vicieuse / Collante (Sticky Attention)
+### 5.1 L'Attention Collante (Sticky Attention)
 
 Landry et Bryson (2004) ont constaté que les enfants autistes étaient nettement plus lents à détacher leur attention visuelle d'un stimulus central lorsqu'un nouveau stimulus apparaissait en périphérie — un effet d'« attention collante ».[^14] Ce résultat a été reproduit dans de nombreuses études et a fait l'objet d'une méta-analyse dans la revue *Neuroscience & Biobehavioral Reviews* (2015).[^15] Un glissement tout aussi laborieux de l'attention a pu être observé chez des nourrissons ayant reçu plus tard un diagnostic d'autisme, ce qui donne à penser que ce trait émerge tôt dans le développement.[^16]
 
@@ -97,7 +97,7 @@ Garau et al. (2023) ont mis au point le **Monotropism Questionnaire (MQ)**, un o
 
 Dwyer et ses collègues de l'Olga Tennison Autism Research Centre ont mis en évidence que :
 
-* Les différences d'attention chez les jeunes enfants autistes sont associées à des profils sensoriels à la fois hyper-réactifs et ipo-réactifs.[^10]
+* Les différences d'attention chez les jeunes enfants autistes sont associées à des profils sensoriels à la fois hyper-réactifs et hypo-réactifs.[^10]
 * Les profils attentionnels auto-rapportés chez les adultes sont corrélés à une hyper-réactivité auditive.[^10]
 * Un hyperfocus plus marqué se trouve associé à une augmentation des pensées de rumination, de la dépression et de l'anxiété.[^9]
 
@@ -107,7 +107,7 @@ Une forme de preuve fréquemment invoquée en faveur du monotropisme réside dan
 
 ## 6. Critiques et Questions Ouvertes
 
-### 6.1 Vagueness et Manque de Spécificité Mécanistique
+### 6.1 Imprécision et Manque de Spécificité Mécanistique
 
 Patrick Dwyer souligne que le monotropisme demeure une théorie *descriptive* plutôt qu'*explicative* : « Elle ne nous dit pas pourquoi ces expériences se produisent sur le plan neurobiologique. »[^9] Le concept n'a pas encore été clairement articulé avec les modèles des neurosciences cognitives.
 
