@@ -3,3 +3,6 @@
 
 # Internal provenance documents
 *.provenance.md
+
+# Transient PDF build intermediates
+build/tmp/
