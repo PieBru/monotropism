@@ -1,0 +1,2 @@
+# Serve this repository as a static site on GitHub Pages without Jekyll processing.
+# Keeps PDFs, .md, and index.html served as-is.

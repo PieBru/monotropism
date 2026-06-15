@@ -61,6 +61,12 @@ for lang in "" "_de" "_es" "_fr" "_ita"; do
             "outputs/autistic-monotropism-family-guide${lang}.pdf"
 done
 
+# Monotropic kids guidelines (ages 7-11): English + translations
+for lang in "" "_de" "_es" "_fr" "_ita"; do
+  md_to_pdf "outputs/monotropic-kids-guidelines${lang}.md" \
+            "outputs/monotropic-kids-guidelines${lang}.pdf"
+done
+
 rm -rf build/tmp
 echo
 echo "=== Done. PDFs in outputs/ and root: ==="

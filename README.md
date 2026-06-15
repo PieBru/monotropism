@@ -50,6 +50,22 @@ A cited, neuroaffirming guide for the **family and relatives** of an autistic pe
 
 ---
 
+### 4. Growing Up Monotropic — A Friendly Guide for Parents, Grandparents, Teachers & Coaches (Ages 7–11)
+
+A friendly, neuroaffirming guide for the **adults around an autistic monotropic child aged 7–11**: parents and carers, grandparents and extended family, primary-school teachers, and sports/PE & activity coaches. Plain language; covers home, school and the sports field.
+
+| Language | Read (Markdown) | Download (PDF) |
+|---|---|---|
+| English | [outputs/monotropic-kids-guidelines.md](outputs/monotropic-kids-guidelines.md) | [outputs/monotropic-kids-guidelines.pdf](outputs/monotropic-kids-guidelines.pdf) |
+| Deutsch | [outputs/monotropic-kids-guidelines_de.md](outputs/monotropic-kids-guidelines_de.md) | [outputs/monotropic-kids-guidelines_de.pdf](outputs/monotropic-kids-guidelines_de.pdf) |
+| Español | [outputs/monotropic-kids-guidelines_es.md](outputs/monotropic-kids-guidelines_es.md) | [outputs/monotropic-kids-guidelines_es.pdf](outputs/monotropic-kids-guidelines_es.pdf) |
+| Français | [outputs/monotropic-kids-guidelines_fr.md](outputs/monotropic-kids-guidelines_fr.md) | [outputs/monotropic-kids-guidelines_fr.pdf](outputs/monotropic-kids-guidelines_fr.pdf) |
+| Italiano | [outputs/monotropic-kids-guidelines_ita.md](outputs/monotropic-kids-guidelines_ita.md) | [outputs/monotropic-kids-guidelines_ita.pdf](outputs/monotropic-kids-guidelines_ita.pdf) |
+
+> Translations are AI-assisted. For other languages, please use a translator such as https://gemini.google.com/
+
+---
+
 ## 🧭 At a glance
 
 | Document | Audience | EN | DE | ES | FR | ITA |
@@ -57,6 +73,7 @@ A cited, neuroaffirming guide for the **family and relatives** of an autistic pe
 | Monotropism: An Interest-Based Account | General / academic | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Lifespan Practitioner & Health-Care Guide | Professionals & clinicians | ✅ | — | — | — | — |
 | Family & Relatives Guide | Family members & caregivers | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Kids Guidelines (7–11) | Parents, grandparents, teachers, coaches | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ---
 
