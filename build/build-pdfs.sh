@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build clean PDFs from Markdown via pandoc -> HTML -> Chromium print.
-set -euo pipefail
+# Layout: outputs/ holds all .md and .pdf; English source brief lives at repo root.
+set -uo pipefail
 cd /mnt/2TB/Piero/Work/monotropism
 
 STYLE="build/style.html"
@@ -8,14 +9,15 @@ mkdir -p build/tmp
 
 md_to_pdf () {
   local src="$1"        # source .md
-  local pdf="$2"        # output .pdf (path)
-  local name
+  local pdf="$2"        # output .pdf
+  local name html
   name="$(basename "$src" .md)"
-  local html="build/tmp/${name}.html"
+  html="build/tmp/${name}.html"
+
+  [ -f "$src" ] || { echo "   (skip — $src not found)"; return 0; }
 
   echo ">> $src  ->  $pdf"
 
-  # Strip emoji that Chromium/DejaVu can't always render cleanly; keep it simple.
   pandoc "$src" \
     -f gfm+autolink_bare_uris \
     -t html5 \
@@ -42,12 +44,12 @@ md_to_pdf () {
   fi
 }
 
-# Source-brief family: English original + translations
-md_to_pdf "monotropism.md"     "monotropism.pdf"
-md_to_pdf "monotropism_de.md"  "monotropism_de.pdf"
-md_to_pdf "monotropism_es.md"  "monotropism_es.pdf"
-md_to_pdf "monotropism_fr.md"  "monotropism_fr.pdf"
-md_to_pdf "monotropism_ita.md" "monotropism_ita.pdf"
+# Source-brief family (English original at root; translations in outputs/)
+md_to_pdf "monotropism.md"               "outputs/monotropism.pdf"
+md_to_pdf "outputs/monotropism_de.md"    "outputs/monotropism_de.pdf"
+md_to_pdf "outputs/monotropism_es.md"    "outputs/monotropism_es.pdf"
+md_to_pdf "outputs/monotropism_fr.md"    "outputs/monotropism_fr.pdf"
+md_to_pdf "outputs/monotropism_ita.md"   "outputs/monotropism_ita.pdf"
 
 # Lifespan practitioner guide (English)
 md_to_pdf "outputs/autistic-monotropism-lifespan-guide.md" \
@@ -55,11 +57,11 @@ md_to_pdf "outputs/autistic-monotropism-lifespan-guide.md" \
 
 # Family & relatives guide (English + translations)
 for lang in "" "_de" "_es" "_fr" "_ita"; do
-  src="outputs/autistic-monotropism-family-guide${lang}.md"
-  pdf="outputs/autistic-monotropism-family-guide${lang}.pdf"
-  [ -f "$src" ] && md_to_pdf "$src" "$pdf" || echo "   (skip — $src not found yet)"
+  md_to_pdf "outputs/autistic-monotropism-family-guide${lang}.md" \
+            "outputs/autistic-monotropism-family-guide${lang}.pdf"
 done
 
+rm -rf build/tmp
 echo
-echo "=== Done. Built PDFs: ==="
-ls -la monotropism*.pdf outputs/*.pdf 2>/dev/null
+echo "=== Done. PDFs in outputs/ and root: ==="
+ls -la outputs/*.pdf 2>/dev/null

@@ -4,8 +4,14 @@ Monotropism is a cognitive theory of autism that explains autistic experience th
 
 [Continue to the research paper (English)](https://github.com/PieBru/monotropism/blob/main/monotropism.md)
 
-**AI-Assisted translations:** [Italiano](https://github.com/PieBru/monotropism/blob/main/monotropism_ita.md), [Français](https://github.com/PieBru/monotropism/blob/main/monotropism_fr.md), [Español](https://github.com/PieBru/monotropism/blob/main/monotropism_es.md), [Deutsch](https://github.com/PieBru/monotropism/blob/main/monotropism_de.md)
+**AI-Assisted translations:** [Italiano](https://github.com/PieBru/monotropism/blob/main/outputs/monotropism_ita.md), [Français](https://github.com/PieBru/monotropism/blob/main/outputs/monotropism_fr.md), [Español](https://github.com/PieBru/monotropism/blob/main/outputs/monotropism_es.md), [Deutsch](https://github.com/PieBru/monotropism/blob/main/outputs/monotropism_de.md)
 
 For other languages, please use some translator like https://gemini.google.com/
+
+**Companion guides** (in [`outputs/`](outputs/)):
+- [Autistic Monotropism: A Lifespan Guide for Practitioners](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-lifespan-guide.md)
+- [Autistic Monotropism: A Family & Relatives Guide](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-family-guide.md) — [Italiano](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-family-guide_ita.md), [Français](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-family-guide_fr.md), [Español](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-family-guide_es.md), [Deutsch](https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-family-guide_de.md)
+
+Rendered **PDFs** for all of the above are alongside their source files in `outputs/`.
 
 <img width="1920" height="1379" alt="image" src="https://github.com/user-attachments/assets/523475a8-fc42-4d92-8ddc-bfc6462ef7a5" />
