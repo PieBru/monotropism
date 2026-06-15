@@ -151,24 +151,24 @@ Il monotropismo è una teoria dell'autismo sviluppata da persone autistiche, per
 
 ## Fonti
 
-[^1]: Wikipedia, "Monotropism". Estratto il 15-06-2025. https://en.wikipedia.org/wiki/Monotropism
-[^2]: Murray, F. & Lawson, W. (2022). "History of Monotropism". https://monotropism.org/history
-[^3]: Murray, D. (1992). "Attention Tunnelling and Autism". Durham Conference Proceedings. https://monotropism.org/dinah/attention-tunnelling-and-autism/
-[^4]: Murray, F. & Lawson, W. (2022). "History of Monotropism". https://monotropism.org/history
-[^5]: Lawson, W. (2021). "Language, interests and autism: A tribute to Dr. Dinah Murray". *Autism*, 25(8). https://journals.sagepub.com/doi/full/10.1177/13623613211034072
-[^6]: Murray, D., Lesser, M., & Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". *Autism*, 9(2), 139–156. https://doi.org/10.1177/1362361305051398
-[^7]: Lawson, W. (2011). *The Passionate Mind: How People with Autism Learn*. Jessica Kingsley Publishers.
-[^8]: Murray, F. (2018, aggiornato al 2025). "Me and Monotropism: A unified theory of autism". *The Psychologist*, BPS. https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism
-[^9]: Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm
-[^10]: Dwyer, P. et al. Attention and sensory responsiveness in autistic children, citato nel blog OTARC di Dwyer (2025). Vedere anche https://doi.org/10.1177/27546330241237883
-[^11]: Buckle, K. (preprint). "Autistic inertia: A qualitative study". https://doi.org/10.31234/osf.io/ahk6x
-[^12]: Lawson, W. & Dombroski, B. (2015, 2017). Articoli sulla permanenza dell'oggetto e l'autismo. *Journal of Intellectual Disability – Diagnosis and Treatment*. https://www.researchgate.net/publication/277564015
-[^13]: Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. https://www.autisticscholar.com/monotropism/
-[^14]: Landry, R. & Bryson, S. (2004). "Impaired disengagement of attention in young children with autism". *Journal of Child Psychology and Psychiatry*, 45(6), 1115–1122. https://doi.org/10.1111/j.1469-7610.2004.00304.x
-[^15]: Sacrey, L.-A. et al. (2015). "Attention disengagement in autism spectrum disorder: A meta-analysis". *Neuroscience & Biobehavioral Reviews*, 56, 111–121. https://doi.org/10.1016/j.neubiorev.2014.10.011
-[^16]: "Sticky gaze may be early autism sign". The Transmitter. https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/
-[^17]: Garau, V. et al. (2023). "Development and Validation of a Novel Self-Report Measure of Monotropism in Autistic and Non-Autistic People: The Monotropism Questionnaire". OSF Preprint. https://osf.io/ft73y/ — Questionario su https://dlcincluded.github.io/MQ/
-[^18]: Referenziato nel blog OTARC di Dwyer (2025). https://doi.org/10.1089/aut.2023.0032
-[^19]: Neubert (2025). *Autism and Being Monotropic: What Medical and Other Practitioners Need to Know*. Springer. https://link.springer.com/book/10.1007/978-981-96-2564-2
-[^20]: Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." *Frontiers in Psychiatry*, 16, 1664507. https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/
-[^21]: National Autistic Society. "What is monotropism? Understanding a neuroaffirming theory of autism." https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism
+1. Wikipedia, "Monotropism". Estratto il 15-06-2025. https://en.wikipedia.org/wiki/Monotropism
+2. Murray, F. & Lawson, W. (2022). "History of Monotropism". https://monotropism.org/history
+3. Murray, D. (1992). "Attention Tunnelling and Autism". Durham Conference Proceedings. https://monotropism.org/dinah/attention-tunnelling-and-autism/
+4. Murray, F. & Lawson, W. (2022). "History of Monotropism". https://monotropism.org/history
+5. Lawson, W. (2021). "Language, interests and autism: A tribute to Dr. Dinah Murray". *Autism*, 25(8). https://journals.sagepub.com/doi/full/10.1177/13623613211034072
+6. Murray, D., Lesser, M., & Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". *Autism*, 9(2), 139–156. https://doi.org/10.1177/1362361305051398
+7. Lawson, W. (2011). *The Passionate Mind: How People with Autism Learn*. Jessica Kingsley Publishers.
+8. Murray, F. (2018, aggiornato al 2025). "Me and Monotropism: A unified theory of autism". *The Psychologist*, BPS. https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism
+9. Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm
+10. Dwyer, P. et al. Attention and sensory responsiveness in autistic children, citato nel blog OTARC di Dwyer (2025). Vedere anche https://doi.org/10.1177/27546330241237883
+11. Buckle, K. (preprint). "Autistic inertia: A qualitative study". https://doi.org/10.31234/osf.io/ahk6x
+12. Lawson, W. & Dombroski, B. (2015, 2017). Articoli sulla permanenza dell'oggetto e l'autismo. *Journal of Intellectual Disability – Diagnosis and Treatment*. https://www.researchgate.net/publication/277564015
+13. Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. https://www.autisticscholar.com/monotropism/
+14. Landry, R. & Bryson, S. (2004). "Impaired disengagement of attention in young children with autism". *Journal of Child Psychology and Psychiatry*, 45(6), 1115–1122. https://doi.org/10.1111/j.1469-7610.2004.00304.x
+15. Sacrey, L.-A. et al. (2015). "Attention disengagement in autism spectrum disorder: A meta-analysis". *Neuroscience & Biobehavioral Reviews*, 56, 111–121. https://doi.org/10.1016/j.neubiorev.2014.10.011
+16. "Sticky gaze may be early autism sign". The Transmitter. https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/
+17. Garau, V. et al. (2023). "Development and Validation of a Novel Self-Report Measure of Monotropism in Autistic and Non-Autistic People: The Monotropism Questionnaire". OSF Preprint. https://osf.io/ft73y/ — Questionario su https://dlcincluded.github.io/MQ/
+18. Referenziato nel blog OTARC di Dwyer (2025). https://doi.org/10.1089/aut.2023.0032
+19. Neubert (2025). *Autism and Being Monotropic: What Medical and Other Practitioners Need to Know*. Springer. https://link.springer.com/book/10.1007/978-981-96-2564-2
+20. Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." *Frontiers in Psychiatry*, 16, 1664507. https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/
+21. National Autistic Society. "What is monotropism? Understanding a neuroaffirming theory of autism." https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism
