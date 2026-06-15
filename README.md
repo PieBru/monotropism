@@ -1,2 +1,5 @@
-# monotropism
-An Interest-Based Account of Autism
+# Monotropism: An Interest-Based Account of Autism
+
+Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by autistic researchers Dinah Murray, Wenn Lawson, and Mike Lesser from the early 1990s onward, the theory proposes that monotropic minds tend to focus attention intensely on a narrow set of interests at any given time, leaving fewer processing resources for everything else. This single idea has been used to account for the full range of autistic traits—from sensory sensitivities and social differences to focused expertise and executive dysfunction—in a unified, non-pathologising framework. Within the autistic community, monotropism is arguably the dominant theoretical lens for understanding autism, and it is increasingly entering academic and professional discourse. This brief surveys the theory's origins, core claims, supporting evidence, relationship to other frameworks, and open questions.
+
+[Continue to the paper](Monotropism.md)
