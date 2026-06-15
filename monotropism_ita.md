@@ -1,4 +1,4 @@
-# Monotropismo: Una Spiegazione dell'Autismo Basato sugli Interessi
+# Monotropismo: Una Spiegazione dell'autismo basato sugli interessi
 
 ## Sintesi
 
