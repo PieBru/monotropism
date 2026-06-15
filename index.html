@@ -432,11 +432,24 @@
         { code: "FR", name: "Français",  md: REPO + "outputs/autistic-monotropism-family-guide_fr.md", pdf: pdf("outputs/autistic-monotropism-family-guide_fr.pdf") },
         { code: "IT", name: "Italiano",  md: REPO + "outputs/autistic-monotropism-family-guide_ita.md",pdf: pdf("outputs/autistic-monotropism-family-guide_ita.pdf") },
       ]
+    },
+    {
+      category: "Children (Ages 7–11)",
+      audience: "Family · School · Sports",
+      title: "Growing Up Monotropic",
+      desc: "A friendly guide for the adults around an autistic monotropic child aged 7–11—parents and carers, grandparents and extended family, primary-school teachers, and sports & activity coaches. Plain language; covers home, school and the sports field.",
+      langs: [
+        { code: "EN", name: "English",   md: REPO + "outputs/monotropic-kids-guidelines.md",    pdf: pdf("outputs/monotropic-kids-guidelines.pdf") },
+        { code: "DE", name: "Deutsch",   md: REPO + "outputs/monotropic-kids-guidelines_de.md", pdf: pdf("outputs/monotropic-kids-guidelines_de.pdf") },
+        { code: "ES", name: "Español",   md: REPO + "outputs/monotropic-kids-guidelines_es.md", pdf: pdf("outputs/monotropic-kids-guidelines_es.pdf") },
+        { code: "FR", name: "Français",  md: REPO + "outputs/monotropic-kids-guidelines_fr.md", pdf: pdf("outputs/monotropic-kids-guidelines_fr.pdf") },
+        { code: "IT", name: "Italiano",  md: REPO + "outputs/monotropic-kids-guidelines_ita.md",pdf: pdf("outputs/monotropic-kids-guidelines_ita.pdf") },
+      ]
     }
   ];
 
   // Category display order (add new categories here when needed)
-  const CATEGORY_ORDER = ["Theory & Overview", "Practitioners & Clinicians", "Family & Caregivers"];
+  const CATEGORY_ORDER = ["Theory & Overview", "Practitioners & Clinicians", "Family & Caregivers", "Children (Ages 7–11)"];
 
   const esc = (s) => String(s).replace(/[&<>"']/g, c =>
     ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));

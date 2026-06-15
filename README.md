@@ -2,65 +2,29 @@
 
 Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by autistic researchers Dinah Murray, Wenn Lawson, and Mike Lesser from the early 1990s onward, the theory proposes that monotropic minds tend to focus attention intensely on a narrow set of interests at any given time, leaving fewer processing resources for everything else. This single idea has been used to account for the full range of autistic traits—from sensory sensitivities and social differences to focused expertise and executive dysfunction—in a unified, non-pathologising framework. Within the autistic community, monotropism is arguably the dominant theoretical lens for understanding autism, and it is increasingly entering academic and professional discourse.
 
-This repository contains **three companion documents**, each available in English and several translations, with rendered **PDFs** alongside every Markdown source.
+This repository contains **four companion documents**, each available in English and several translations, with rendered **PDFs** alongside every Markdown source. A live landing page is served at **https://piebru.github.io/monotropism/**.
 
 ---
 
 ## 📚 Document catalogue
 
+All Markdown and PDF links for every language are collected in the [🧭 At a glance](#-at-a-glance) table below.
+
 ### 1. Monotropism: An Interest-Based Account of Autism
 
-A survey of the theory's origins, core claims, supporting evidence, relationship to other frameworks, and open questions. The foundational brief that the two practical guides below build upon.
-
-| Language | Read (Markdown) | Download (PDF) |
-|---|---|---|
-| English | [monotropism.md](monotropism.md) | [outputs/monotropism.pdf](outputs/monotropism.pdf) |
-| Deutsch | [outputs/monotropism_de.md](outputs/monotropism_de.md) | [outputs/monotropism_de.pdf](outputs/monotropism_de.pdf) |
-| Español | [outputs/monotropism_es.md](outputs/monotropism_es.md) | [outputs/monotropism_es.pdf](outputs/monotropism_es.pdf) |
-| Français | [outputs/monotropism_fr.md](outputs/monotropism_fr.md) | [outputs/monotropism_fr.pdf](outputs/monotropism_fr.pdf) |
-| Italiano | [outputs/monotropism_ita.md](outputs/monotropism_ita.md) | [outputs/monotropism_ita.pdf](outputs/monotropism_ita.pdf) |
-
-> Translations are AI-assisted. For other languages, please use a translator such as https://gemini.google.com/
-
----
+A survey of the theory's origins, core claims, supporting evidence, relationship to other frameworks, and open questions. The foundational brief that the practical guides below build upon.
 
 ### 2. Supporting the Autistic Monotropic Person Across the Lifespan — A Practitioner & Health-Care Guide
 
 A cited, neuroaffirming guide for **practitioners and health-care professionals**: the characteristics of an autistic monotropic person and how to interact with, stimulate (engage), and support them from childhood to the elderly. Includes specific guidance for clinics and medical settings.
 
-| Language | Read (Markdown) | Download (PDF) |
-|---|---|---|
-| English | [outputs/autistic-monotropism-lifespan-guide.md](outputs/autistic-monotropism-lifespan-guide.md) | [outputs/autistic-monotropism-lifespan-guide.pdf](outputs/autistic-monotropism-lifespan-guide.pdf) |
-
----
-
 ### 3. Loving an Autistic Monotropic Person — A Lifespan Guide for Parents, Adult Children, and Other Relatives
 
 A cited, neuroaffirming guide for the **family and relatives** of an autistic person: parents of children, family/relatives of autistic adults, adult children of elderly autistic parents, and siblings, grandparents, and extended family. Written in plain, non-clinical language.
 
-| Language | Read (Markdown) | Download (PDF) |
-|---|---|---|
-| English | [outputs/autistic-monotropism-family-guide.md](outputs/autistic-monotropism-family-guide.md) | [outputs/autistic-monotropism-family-guide.pdf](outputs/autistic-monotropism-family-guide.pdf) |
-| Deutsch | [outputs/autistic-monotropism-family-guide_de.md](outputs/autistic-monotropism-family-guide_de.md) | [outputs/autistic-monotropism-family-guide_de.pdf](outputs/autistic-monotropism-family-guide_de.pdf) |
-| Español | [outputs/autistic-monotropism-family-guide_es.md](outputs/autistic-monotropism-family-guide_es.md) | [outputs/autistic-monotropism-family-guide_es.pdf](outputs/autistic-monotropism-family-guide_es.pdf) |
-| Français | [outputs/autistic-monotropism-family-guide_fr.md](outputs/autistic-monotropism-family-guide_fr.md) | [outputs/autistic-monotropism-family-guide_fr.pdf](outputs/autistic-monotropism-family-guide_fr.pdf) |
-| Italiano | [outputs/autistic-monotropism-family-guide_ita.md](outputs/autistic-monotropism-family-guide_ita.md) | [outputs/autistic-monotropism-family-guide_ita.pdf](outputs/autistic-monotropism-family-guide_ita.pdf) |
-
-> Translations are AI-assisted. For other languages, please use a translator such as https://gemini.google.com/
-
----
-
 ### 4. Growing Up Monotropic — A Friendly Guide for Parents, Grandparents, Teachers & Coaches (Ages 7–11)
 
 A friendly, neuroaffirming guide for the **adults around an autistic monotropic child aged 7–11**: parents and carers, grandparents and extended family, primary-school teachers, and sports/PE & activity coaches. Plain language; covers home, school and the sports field.
-
-| Language | Read (Markdown) | Download (PDF) |
-|---|---|---|
-| English | [outputs/monotropic-kids-guidelines.md](outputs/monotropic-kids-guidelines.md) | [outputs/monotropic-kids-guidelines.pdf](outputs/monotropic-kids-guidelines.pdf) |
-| Deutsch | [outputs/monotropic-kids-guidelines_de.md](outputs/monotropic-kids-guidelines_de.md) | [outputs/monotropic-kids-guidelines_de.pdf](outputs/monotropic-kids-guidelines_de.pdf) |
-| Español | [outputs/monotropic-kids-guidelines_es.md](outputs/monotropic-kids-guidelines_es.md) | [outputs/monotropic-kids-guidelines_es.pdf](outputs/monotropic-kids-guidelines_es.pdf) |
-| Français | [outputs/monotropic-kids-guidelines_fr.md](outputs/monotropic-kids-guidelines_fr.md) | [outputs/monotropic-kids-guidelines_fr.pdf](outputs/monotropic-kids-guidelines_fr.pdf) |
-| Italiano | [outputs/monotropic-kids-guidelines_ita.md](outputs/monotropic-kids-guidelines_ita.md) | [outputs/monotropic-kids-guidelines_ita.pdf](outputs/monotropic-kids-guidelines_ita.pdf) |
 
 > Translations are AI-assisted. For other languages, please use a translator such as https://gemini.google.com/
 
@@ -68,12 +32,14 @@ A friendly, neuroaffirming guide for the **adults around an autistic monotropic 
 
 ## 🧭 At a glance
 
-| Document | Audience | EN | DE | ES | FR | ITA |
-|---|---|:---:|:---:|:---:|:---:|:---:|
-| Monotropism: An Interest-Based Account | General / academic | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Lifespan Practitioner & Health-Care Guide | Professionals & clinicians | ✅ | — | — | — | — |
-| Family & Relatives Guide | Family members & caregivers | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Kids Guidelines (7–11) | Parents, grandparents, teachers, coaches | ✅ | ✅ | ✅ | ✅ | ✅ |
+Legend: 📝 = Markdown source &nbsp;·&nbsp; 📄 = PDF download
+
+| # | Document | Audience | EN | DE | ES | FR | ITA |
+|---|---|---|:---:|:---:|:---:|:---:|:---:|
+| 1 | Monotropism: An Interest-Based Account | General / academic | [📝](monotropism.md) [📄](outputs/monotropism.pdf) | [📝](outputs/monotropism_de.md) [📄](outputs/monotropism_de.pdf) | [📝](outputs/monotropism_es.md) [📄](outputs/monotropism_es.pdf) | [📝](outputs/monotropism_fr.md) [📄](outputs/monotropism_fr.pdf) | [📝](outputs/monotropism_ita.md) [📄](outputs/monotropism_ita.pdf) |
+| 2 | Lifespan Practitioner & Health-Care Guide | Professionals & clinicians | [📝](outputs/autistic-monotropism-lifespan-guide.md) [📄](outputs/autistic-monotropism-lifespan-guide.pdf) | — | — | — | — |
+| 3 | Family & Relatives Guide | Family members & caregivers | [📝](outputs/autistic-monotropism-family-guide.md) [📄](outputs/autistic-monotropism-family-guide.pdf) | [📝](outputs/autistic-monotropism-family-guide_de.md) [📄](outputs/autistic-monotropism-family-guide_de.pdf) | [📝](outputs/autistic-monotropism-family-guide_es.md) [📄](outputs/autistic-monotropism-family-guide_es.pdf) | [📝](outputs/autistic-monotropism-family-guide_fr.md) [📄](outputs/autistic-monotropism-family-guide_fr.pdf) | [📝](outputs/autistic-monotropism-family-guide_ita.md) [📄](outputs/autistic-monotropism-family-guide_ita.pdf) |
+| 4 | Growing Up Monotropic (Ages 7–11) | Parents, grandparents, teachers, coaches | [📝](outputs/monotropic-kids-guidelines.md) [📄](outputs/monotropic-kids-guidelines.pdf) | [📝](outputs/monotropic-kids-guidelines_de.md) [📄](outputs/monotropic-kids-guidelines_de.pdf) | [📝](outputs/monotropic-kids-guidelines_es.md) [📄](outputs/monotropic-kids-guidelines_es.pdf) | [📝](outputs/monotropic-kids-guidelines_fr.md) [📄](outputs/monotropic-kids-guidelines_fr.pdf) | [📝](outputs/monotropic-kids-guidelines_ita.md) [📄](outputs/monotropic-kids-guidelines_ita.pdf) |
 
 ---
 
