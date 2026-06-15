@@ -1,5 +1,5 @@
-# Hidden directories (drafts, plans, etc.)
-.*/
+# Hidden files and directories (drafts, plans, etc.)
+.*
 
 # Internal provenance documents
 *.provenance.md
