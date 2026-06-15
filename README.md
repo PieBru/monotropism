@@ -5,3 +5,5 @@ Monotropism is a cognitive theory of autism that explains autistic experience th
 [Continue to the research paper (English)](https://github.com/PieBru/monotropism/blob/main/monotropism.md)
 
 **AI-Assisted translations:** [Italiano](https://github.com/PieBru/monotropism/blob/main/monotropism_ita.md), [Français](https://github.com/PieBru/monotropism/blob/main/monotropism_fr.md), [Español](https://github.com/PieBru/monotropism/blob/main/monotropism_es.md), [Deutsch](https://github.com/PieBru/monotropism/blob/main/monotropism_de.md)
+
+For other languages, please use some translator like https://gemini.google.com/
