@@ -102,14 +102,14 @@ Four category slugs, displayed in this fixed order on the landing page
 | Stem                                   | Cat            | Languages            |
 |----------------------------------------|----------------|----------------------|
 | `monotropism`                          | `theory`       | en, it, fr, es, de   |
+| `monotropism-comorbidity-landscape`    | `theory`       | en                   |
 | `autistic-monotropism-lifespan-guide`  | `practitioner` | en                   |
 | `autistic-monotropism-family-guide`    | `family`       | en, it, fr, es, de   |
 | `monotropic-kids-guidelines`           | `kids`         | en, it, fr, es, de   |
 
-> **Known gap:** `outputs/monotropism-comorbidity-landscape.md` exists but is
-> **not yet published** (absent from README and `DOCS`, and has no PDF/HTML/
-> translations yet). Treat it as an in-progress draft until the owner decides to
-> publish it.
+> **Two English-only drafts** (`monotropism-comorbidity-landscape`,
+> `autistic-monotropism-lifespan-guide`) have no translations yet. Add languages
+> per §8B when translations are produced.
 
 ---
 

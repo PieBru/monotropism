@@ -44,6 +44,9 @@ md_to_html "outputs/monotropism_es.md"    "outputs/monotropism_es.html"
 md_to_html "outputs/monotropism_fr.md"    "outputs/monotropism_fr.html"
 md_to_html "outputs/monotropism_ita.md"   "outputs/monotropism_ita.html"
 
+# Comorbidity landscape research brief (theory companion, English)
+md_to_html "outputs/monotropism-comorbidity-landscape.md" "outputs/monotropism-comorbidity-landscape.html"
+
 # Lifespan practitioner guide (English)
 md_to_html "outputs/autistic-monotropism-lifespan-guide.md" \
            "outputs/autistic-monotropism-lifespan-guide.html"
