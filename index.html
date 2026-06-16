@@ -329,6 +329,7 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .btn-primary:hover { background: var(--accent-2); text-decoration: none; }
 .btn-ghost { background: transparent; color: var(--fg-soft); border-color: var(--border); }
 .btn-ghost:hover { color: var(--fg); border-color: var(--accent); text-decoration: none; }
+.btn-ghost.active { color: var(--accent); border-color: var(--accent); background: var(--accent-bg); }
 .btn .ar { font-size: 12px; opacity: .85; }
 
 /* ============================================================
@@ -350,6 +351,17 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .site-footer .github-line { margin-top: 10px; color: var(--fg-faint); }
 .site-footer .github-line a { font-weight: 500; }
 .site-footer .github-line .sep { opacity: .5; margin: 0 8px; }
+.site-footer .gdpr { font-size: 12px; color: var(--fg-faint); margin: 8px 0 0; }
+
+/* Scientific Sources page */
+.srcview { padding: clamp(36px, 6vh, 64px) 0 72px; }
+.src-head { max-width: 760px; margin: 0 0 24px; }
+.src-head h1 {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(26px, 4.6vw, 38px); letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.src-intro { color: var(--fg-soft); font-size: 15px; line-height: 1.65; margin: 0; }
 
 /* ---------- References (source archive on the home page) ---------- */
 .refs { padding: 0 0 40px; }
@@ -407,6 +419,8 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
+  .topbar-inner { flex-wrap: wrap; row-gap: 8px; }
+  .tb-right { flex-wrap: wrap; justify-content: flex-end; row-gap: 8px; }
   .doc { flex-direction: column; align-items: flex-start; gap: 16px; }
   .doc-actions { width: 100%; }
   .doc-actions .btn { flex: 1; justify-content: center; }
@@ -465,7 +479,7 @@ const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "
 /* ---- Localised UI strings ---- */
 const I18N = {
   en: {
-    name: "English", title: "Monotropism", motto: "Follow the Focus. Ease the Way.", draftsWord: "drafts",
+    name: "English", title: "Monotropism", motto: "Follow the Focus. Ease the Way.", draftsBtn: "Research drafts", guidesBtn: "Quick guides", sourcesBtn: "Scientific sources", gdpr: "No cookies, no access logs \u2014 privacy-friendly by design.", draftsWord: "drafts",
     tagline: "An Interest-Based Account of Autism",
     intro: "Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by Dinah Murray, Wenn Lawson and Mike Lesser, it offers a unified, non-pathologising lens on autistic life.",
     choose: "Choose a language", lead: "Select a language to browse the research drafts and guides.",
@@ -479,7 +493,7 @@ const I18N = {
     cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
   },
   it: {
-    name: "Italiano", title: "Monotropismo", motto: "Segui l'attenzione. Facilita il cammino.", draftsWord: "bozze",
+    name: "Italiano", title: "Monotropismo", motto: "Segui l'attenzione. Facilita il cammino.", summary: "Il monotropismo \u00E8 una teoria cognitiva dell'autismo che spiega l'esperienza autistica attraverso le differenze nell'attenzione e nell'interesse. Sviluppata a partire dai primi anni '90 dai ricercatori autistici Dinah Murray, Wenn Lawson e Mike Lesser, la teoria propone che le menti monotropiche tendano a focalizzare l'attenzione in modo intenso su un insieme ristretto di interessi in un determinato momento, lasciando meno risorse di elaborazione per tutto il resto. Questa singola idea \u00E8 stata utilizzata per spiegare l'intera gamma dei tratti autistici \u2014 dalle sensibilit\u00E0 sensoriali e differenze sociali all'esperienza focalizzata e alla disfunzione esecutiva \u2014 all'interno di un quadro unificato e non patologizzante. All'interno della comunit\u00E0 autistica, il monotropismo \u00E8 senza dubbio la lente teorica dominante per comprendere l'autismo, e sta entrando sempre pi\u00F9 nel discorso accademico e professionale.", draftsBtn: "Bozze di ricerca", guidesBtn: "Guide rapide", sourcesBtn: "Fonti scientifiche", gdpr: "Nessun cookie, nessun log di accesso \u2014 privacy per impostazione predefinita.", draftsWord: "bozze",
     tagline: "Una spiegazione dell\u2019autismo basata sugli interessi",
     intro: "Il monotropismo \u00E8 una teoria cognitiva dell\u2019autismo che spiega l\u2019esperienza autistica attraverso le differenze nell\u2019attenzione e negli interessi. Sviluppata da Dinah Murray, Wenn Lawson e Mike Lesser, offre una lente unificata e non patologizzante sull\u2019esperienza autistica.",
     choose: "Scegli una lingua", lead: "Seleziona una lingua per consultare le bozze di ricerca e le guide.",
@@ -492,7 +506,7 @@ const I18N = {
     cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e assistenti", kids: "Bambini (7\u201311 anni)" }
   },
   fr: {
-    name: "Fran\u00E7ais", title: "Monotropisme", motto: "Suivez l'attention. Facilitez le parcours.", draftsWord: "brouillons",
+    name: "Fran\u00E7ais", title: "Monotropisme", motto: "Suivez l'attention. Facilitez le parcours.", summary: "Le monotropisme est une th\u00E9orie cognitive de l'autisme qui explique l'exp\u00E9rience autistique par des diff\u00E9rences d'attention et d'int\u00E9r\u00EAt. D\u00E9velopp\u00E9e \u00E0 partir du d\u00E9but des ann\u00E9es 1990 par les chercheurs autistes Dinah Murray, Wenn Lawson et Mike Lesser, cette th\u00E9orie soutient que les esprits monotropiques ont tendance \u00E0 focaliser leur attention de mani\u00E8re intense sur un ensemble restreint d'int\u00E9r\u00EAts \u00E0 un moment donn\u00E9, laissant ainsi moins de ressources de traitement pour tout le reste. Cette seule id\u00E9e a permis de rendre compte de l'ensemble des traits autistiques \u2014 des sensibilit\u00E9s sensorielles et des diff\u00E9rences sociales \u00E0 l'expertise cibl\u00E9e et aux dysfonctions ex\u00E9cutives \u2014 au sein d'un cadre unifi\u00E9 et non pathologisant. Au sein de la communaut\u00E9 autiste, le monotropisme est sans doute la grille de lecture th\u00E9orique dominante pour comprendre l'autisme, et il s'int\u00E8gre de plus en plus dans les discours acad\u00E9miques et professionnels.", draftsBtn: "Brouillons de recherche", guidesBtn: "Guides rapides", sourcesBtn: "Sources scientifiques", gdpr: "Aucun cookie, aucun journal d'acc\u00E8s \u2014 respect de la vie priv\u00E9e par conception.", draftsWord: "brouillons",
     tagline: "Une approche de l\u2019autisme bas\u00E9e sur l\u2019int\u00E9r\u00EAt",
     intro: "Le monotropisme est une th\u00E9orie cognitive de l\u2019autisme qui explique l\u2019exp\u00E9rience autistique par des diff\u00E9rences d\u2019attention et d\u2019int\u00E9r\u00EAt. D\u00E9velopp\u00E9e par Dinah Murray, Wenn Lawson et Mike Lesser, elle offre une grille de lecture unifi\u00E9e et non pathologisante de la vie autistique.",
     choose: "Choisissez une langue", lead: "S\u00E9lectionnez une langue pour parcourir les brouillons de recherche et les guides.",
@@ -505,7 +519,7 @@ const I18N = {
     cat: { theory: "Th\u00E9orie et aper\u00E7u", practitioner: "Praticiens et cliniciens", family: "Famille et aidants", kids: "Enfants (7\u201311 ans)" }
   },
   es: {
-    name: "Espa\u00F1ol", title: "Monotropismo", motto: "Sigue la atenci\u00F3n. Suaviza el camino.", draftsWord: "borradores",
+    name: "Espa\u00F1ol", title: "Monotropismo", motto: "Sigue la atenci\u00F3n. Suaviza el camino.", summary: "El monotropismo es una teor\u00EDa cognitiva del autismo que explica la experiencia autista a trav\u00E9s de las diferencias en la atenci\u00F3n y el inter\u00E9s. Desarrollada por los investigadores autistas Dinah Murray, Wenn Lawson y Mike Lesser desde principios de la d\u00E9cada de 1990 en adelante, la teor\u00EDa propone que las mentes monotr\u00F3picas tienden a enfocar la atenci\u00F3n intensamente en un conjunto estrecho de intereses en cualquier momento dado, dejando menos recursos de procesamiento para todo lo dem\u00E1s. Esta \u00FAnica idea se ha utilizado para dar cuenta de toda la gama de rasgos autistas \u2014desde las sensibilidades sensoriales y las diferencias sociales hasta la experiencia especializada y la disfunci\u00F3n ejecutiva\u2014 en un marco unificado y no patologizante. Dentro de la comunidad autista, el monotropismo es posiblemente la lente te\u00F3rica dominante para comprender el autismo, y est\u00E1 ingresando cada vez m\u00E1s en el discurso acad\u00E9mico y profesional.", draftsBtn: "Borradores de investigaci\u00F3n", guidesBtn: "Gu\u00EDas r\u00E1pidas", sourcesBtn: "Fuentes cient\u00EDficas", gdpr: "Sin cookies, sin registros de acceso \u2014 privacidad por dise\u00F1o.", draftsWord: "borradores",
     tagline: "Una explicaci\u00F3n del autismo basada en el inter\u00E9s",
     intro: "El monotropismo es una teor\u00EDa cognitiva del autismo que explica la experiencia autista a trav\u00E9s de las diferencias en la atenci\u00F3n y el inter\u00E9s. Desarrollada por Dinah Murray, Wenn Lawson y Mike Lesser, ofrece una lente unificada y no patologizadora sobre la vida autista.",
     choose: "Elige un idioma", lead: "Selecciona un idioma para explorar los borradores de investigaci\u00F3n y las gu\u00EDas.",
@@ -518,7 +532,7 @@ const I18N = {
     cat: { theory: "Teor\u00EDa y panorama", practitioner: "Profesionales y cl\u00EDnicos", family: "Familia y cuidadores", kids: "Ni\u00F1os (7\u201311 a\u00F1os)" }
   },
   de: {
-    name: "Deutsch", title: "Monotropismus", motto: "Folge dem Fokus. Erleichtere den Weg.", draftsWord: "Entw\u00FCrfe",
+    name: "Deutsch", title: "Monotropismus", motto: "Folge dem Fokus. Erleichtere den Weg.", summary: "Monotropismus ist eine kognitive Theorie des Autismus, die die autistische Erfahrung durch Unterschiede in Aufmerksamkeit und Interesse erkl\u00E4rt. Die Theorie wurde ab den fr\u00FChen 1990er Jahren von den autistischen Forschenden Dinah Murray, Wenn Lawson und Mike Lesser entwickelt. Sie besagt, dass monotropische Gehirne dazu neigen, ihre Aufmerksamkeit zu jedem Zeitpunkt intensiv auf eine kleine Auswahl von Interessen zu fokussieren, wodurch weniger Verarbeitungskapazit\u00E4ten f\u00FCr alles andere \u00FCbrig bleiben. Dieser einzige Grundgedanke wurde genutzt, um das gesamte Spektrum autistischer Merkmale \u2013 von sensorischen Empfindlichkeiten und sozialen Unterschieden bis hin zu tiefem Fachwissen und exekutiven Dysfunktionen \u2013 in einem einheitlichen, nicht-pathologisierenden Rahmen zu erkl\u00E4ren. Innerhalb der autistischen Gemeinschaft ist der Monotropismus wohl die dominante theoretische Brille f\u00FCr das Verst\u00E4ndnis von Autismus und h\u00E4lt zunehmend Einzug in den akademischen und professionellen Diskurs.", draftsBtn: "Forschungsentw\u00FCrfe", guidesBtn: "Kurzanleitungen", sourcesBtn: "Wissenschaftliche Quellen", gdpr: "Keine Cookies, keine Zugriffsprotokolle \u2014 datenschutzfreundlich by design.", draftsWord: "Entw\u00FCrfe",
     tagline: "Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus",
     intro: "Der Monotropismus ist eine kognitive Theorie des Autismus, die autistisches Erleben \u00FCber Unterschiede in Aufmerksamkeit und Interesse erkl\u00E4rt. Entwickelt von Dinah Murray, Wenn Lawson und Mike Lesser, bietet er einen einheitlichen, nicht-pathologisierenden Blick auf das autistische Leben.",
     choose: "W\u00E4hlen Sie eine Sprache", lead: "W\u00E4hlen Sie eine Sprache, um die Forschungsentw\u00FCrfe und Leitf\u00E4den zu erkunden.",
@@ -533,7 +547,7 @@ const I18N = {
   pl: {
     name: "Polski",
     title: "Monotropizm",
-    motto: "Pod\u0105\u017Caj za uwag\u0105. U\u0142atwiaj drog\u0119.", draftsWord: "wersje robocze",
+    motto: "Pod\u0105\u017Caj za uwag\u0105. U\u0142atwiaj drog\u0119.", summary: "Monotropizm to poznawcza teoria autyzmu, kt\u00F3ra t\u0142umaczy do\u015Bwiadczenie autystyczne poprzez r\u00F3\u017Cnice w uwadze i zainteresowaniach. Rozwijana od wczesnych lat 90. przez autystycznych badaczy \u2014 Dinah Murray, Wenn Lawsona i Mike'a Lessera \u2014 teoria zak\u0142ada, \u017Ce umys\u0142y monotropiczne maj\u0105 tendencj\u0119 do intensywnego skupiania uwagi na w\u0105skim zbiorze zainteresowa\u0144 w danym momencie, pozostawiaj\u0105c mniej zasob\u00F3w przetwarzania na wszystko inne. Ta jedyna idea s\u0142u\u017Cy do wyja\u015Bnienia pe\u0142nego zakresu cech autystycznych \u2014 od wra\u017Cliwo\u015Bci sensorycznych i r\u00F3\u017Cnic spo\u0142ecznych po ukierunkowan\u0105 bieg\u0142o\u015B\u0107 i dysfunkcje wykonawcze \u2014 w zintegrowanej, niepatologizuj\u0105cej ramie. Wewn\u0105trz spo\u0142eczno\u015Bci autystycznej monotropizm jest prawdopodobnie dominuj\u0105c\u0105 soczewk\u0105 teoretyczn\u0105 do rozumienia autyzmu i coraz cz\u0119\u015Bciej wchodzi do dyskursu akademickiego oraz zawodowego.", draftsBtn: "Wersje robocze bada\u0144", guidesBtn: "Kr\u00F3tkie przewodniki", sourcesBtn: "\u0179r\u00F3d\u0142a naukowe", gdpr: "Bez plik\u00F3w cookies, bez log\u00F3w dost\u0119pu \u2014 prywatno\u015B\u0107 wbudowana w projekt.", draftsWord: "wersje robocze",
     tagline: "Oparta na zainteresowaniach koncepcja autyzmu",
     intro: "Monotropizm to poznawcza teoria autyzmu, kt\u00F3ra t\u0142umaczy do\u015Bwiadczenie autystyczne poprzez r\u00F3\u017Cnice w uwadze i zainteresowaniach. Opracowana przez Dinah Murray, Wenn Lawson i Mike'a Lessera, oferuje zintegrowan\u0105, niepatologizuj\u0105c\u0105 perspektyw\u0119 \u017Cycia autystycznego.",
     choose: "Wybierz j\u0119zyk", lead: "Wybierz j\u0119zyk, aby przegl\u0105da\u0107 wersje robocze bada\u0144 i przewodniki.",
@@ -548,7 +562,7 @@ const I18N = {
   nl: {
     name: "Nederlands",
     title: "Monotropisme",
-    motto: "Volg de focus. Verlicht de weg.", draftsWord: "concepten",
+    motto: "Volg de focus. Verlicht de weg.", summary: "Monotropisme is een cognitieve theorie van autisme die de autistische ervaring verklaart door verschillen in aandacht en interesse. Ontwikkeld door autistische onderzoekers Dinah Murray, Wenn Lawson en Mike Lesser vanaf het begin van de jaren negentig, stelt de theorie dat monotrope geesten de neiging hebben om de aandacht intensief te richten op een kleine verzameling interesses op elk moment, waardoor minder verwerkingscapaciteit overblijft voor al het andere. Dit enkele idee is gebruikt om de volledige reeks autistische eigenschappen te verklaren \u2014 van zintuiglijke gevoeligheden en sociale verschillingen tot gerichte expertise en executieve disfunctie \u2014 binnen een verenigend, niet-pathologiserend kader. Binnen de autistische gemeenschap is monotropisme wellicht de dominante theoretische lens om autisme te begrijpen, en het krijgt steeds meer voet aan de grond in academische en professionele kringen.", draftsBtn: "Onderzoeksconcepten", guidesBtn: "Snelle gidsen", sourcesBtn: "Wetenschappelijke bronnen", gdpr: "Geen cookies, geen toegangslogs \u2014 privacyvriendelijk by design.", draftsWord: "concepten",
     tagline: "Een op interesse gebaseerde verklaring van autisme",
     intro: "Monotropisme is een cognitieve theorie van autisme die autistische beleving verklaart via verschillen in aandacht en interesse. Ontwikkeld door Dinah Murray, Wenn Lawson en Mike Lesser biedt het een verenigende, niet-pathologiserende lens op het autistische leven.",
     choose: "Kies een taal", lead: "Selecteer een taal om de onderzoeksconcepten en gidsen te bekijken.",
@@ -563,7 +577,7 @@ const I18N = {
   ro: {
     name: "Rom\u00E2n\u0103",
     title: "Monotropism",
-    motto: "Urm\u0103re\u0219te aten\u021Bia. U\u0219ureaz\u0103 drumul.", draftsWord: "ciorne",
+    motto: "Urm\u0103re\u0219te aten\u021Bia. U\u0219ureaz\u0103 drumul.", summary: "Monotropismul este o teorie cognitiv\u0103 a autismului care explic\u0103 experien\u021Ba autist\u0103 prin diferen\u021Be de aten\u021Bie \u0219i interes. Dezvoltat\u0103 de cercet\u0103torii auti\u0219ti Dinah Murray, Wenn Lawson \u0219i Mike Lesser de la \u00EEnceputul anilor 1990, teoria propune c\u0103 min\u021Bile monotropice tind s\u0103 \u00EE\u0219i concentreze aten\u021Bia intens pe un set restr\u00E2ns de interese \u00EEn orice moment, l\u0103s\u00E2nd mai pu\u021Bine resurse de procesare pentru orice altceva. Aceast\u0103 singur\u0103 idee a fost folosit\u0103 pentru a da seama de \u00EEntreaga gam\u0103 de tr\u0103s\u0103turi autiste \u2014 de la sensibilit\u0103\u021Bile senzoriale \u0219i diferen\u021Bele sociale p\u00E2n\u0103 la expertiza concentrat\u0103 \u0219i disfunc\u021Bia executiv\u0103 \u2014 \u00EEntr-un cadru unificat \u0219i nepatologizant. \u00CEn interiorul comunit\u0103\u021Bii autiste, monotropismul este poate lentila teoretic\u0103 dominant\u0103 pentru \u00EEn\u021Belegerea autismului \u0219i intr\u0103 din ce \u00EEn ce mai mult \u00EEn discursul academic \u0219i profesional.", draftsBtn: "Ciorne de cercetare", guidesBtn: "Ghiduri rapide", sourcesBtn: "Surse \u0219tiin\u021Bifice", gdpr: "F\u0103r\u0103 cookie-uri, f\u0103r\u0103 jurnale de acces \u2014 confiden\u021Bialitate prin design.", draftsWord: "ciorne",
     tagline: "O teorie a autismului bazat\u0103 pe interese",
     intro: "Monotropismul este o teorie cognitiv\u0103 a autismului care explic\u0103 experien\u021Ba autist\u0103 prin diferen\u021Be de aten\u021Bie \u0219i interes. Dezvoltat\u0103 de Dinah Murray, Wenn Lawson \u0219i Mike Lesser, ofer\u0103 o lentil\u0103 unificatoare \u0219i nepatologizant\u0103 asupra vie\u021Bii autiste.",
     choose: "Alege o limb\u0103", lead: "Selecteaz\u0103 o limb\u0103 pentru a naviga ciornele de cercetare \u0219i ghidurile.",
@@ -578,7 +592,7 @@ const I18N = {
   pt: {
     name: "Portugu\u00EAs",
     title: "Monotropismo",
-    motto: "Siga o foco. Facilite o caminho.", draftsWord: "rascunhos",
+    motto: "Siga o foco. Facilite o caminho.", summary: "O monotropismo \u00E9 uma teoria cognitiva do autismo que explica a experi\u00EAncia autista atrav\u00E9s de diferen\u00E7as na aten\u00E7\u00E3o e no interesse. Desenvolvida pelos investigadores autistas Dinah Murray, Wenn Lawson e Mike Lesser desde o in\u00EDcio da d\u00E9cada de 1990, a teoria prop\u00F5e que as mentes monotr\u00F3picas tendem a focar a aten\u00E7\u00E3o intensamente num conjunto restrito de interesses em cada momento, deixando menos recursos de processamento para tudo o resto. Esta \u00FAnica ideia tem sido usada para dar conta de toda a gama de tra\u00E7os autistas \u2014 desde sensibilidades sensoriais e diferen\u00E7as sociais at\u00E9 especializa\u00E7\u00E3o focada e disfun\u00E7\u00E3o executiva \u2014 numa estrutura unificada e n\u00E3o patologizante. Dentro da comunidade autista, o monotropismo \u00E9 indiscutivelmente a lente te\u00F3rica dominante para compreender o autismo, e est\u00E1 cada vez mais presente no discurso acad\u00E9mico e profissional.", draftsBtn: "Rascunhos de investiga\u00E7\u00E3o", guidesBtn: "Guias r\u00E1pidos", sourcesBtn: "Fontes cient\u00EDficas", gdpr: "Sem cookies, sem registos de acesso \u2014 privacidade por conce\u00E7\u00E3o.", draftsWord: "rascunhos",
     tagline: "Uma explica\u00E7\u00E3o do autismo baseada no interesse",
     intro: "O monotropismo \u00E9 uma teoria cognitiva do autismo que explica a experi\u00EAncia autista atrav\u00E9s de diferen\u00E7as na aten\u00E7\u00E3o e no interesse. Desenvolvida por Dinah Murray, Wenn Lawson e Mike Lesser, oferece uma lente unificada e n\u00E3o patologizante sobre a vida autista.",
     choose: "Escolha um idioma", lead: "Selecione um idioma para navegar os rascunhos de investiga\u00E7\u00E3o e os guias.",
@@ -783,48 +797,49 @@ const CHECK = `<svg class="mi" viewBox="0 0 24 24" width="16" height="16" fill="
 /* ============================================================
    Routing
    ============================================================ */
+let currentLang = "en";
+
+function parseHash() {
+  const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  if (parts[0] === "sources") return { section: "sources", code: currentLang };
+  const code = parts[0] && I18N[parts[0]] ? parts[0] : "en";
+  const section = parts[1] === "drafts" ? "drafts" : "landing";
+  return { section, code };
+}
+
 function route() {
-  const hash = location.hash.replace(/^#\/?/, ""); // e.g. "en" or ""
-  const code = hash && I18N[hash] ? hash : "";
-  if (code) renderLang(code);
-  else renderHome();
+  const { section, code } = parseHash();
+  currentLang = code;
+  if (section === "sources") renderSources();
+  else if (section === "drafts") renderDrafts(code);
+  else renderLanding(code);
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 /* ============================================================
    Top bar
    ============================================================ */
-function renderTopbar(code) {
-  const i18n = code ? I18N[code] : I18N.en;
+function renderTopbar(section, code) {
+  const i18n = I18N[code];
   const isDark = document.documentElement.getAttribute("data-theme") !== "light";
   const themeIcon = isDark ? SUN : MOON;
 
-  const back = code
-    ? `<button class="iconbtn" data-route="/" aria-label="${esc(i18n.allLanguages)}" title="${esc(i18n.allLanguages)}">${CHEV_LEFT}</button>`
-    : "";
-
-  const langSelect = code ? "" : `
+  const langSelect = `
     <select class="langselect" data-action="select-lang" aria-label="${esc(i18n.choose)}">
-      ${LANGS.map(l => `<option value="${l.code}"${l.code === "en" ? " selected" : ""}>${l.flag}\u00A0${esc(I18N[l.code].name)}</option>`).join("")}
+      ${LANGS.map(l => `<option value="${l.code}"${l.code === code ? " selected" : ""}>${l.flag}\u00A0${esc(I18N[l.code].name)}</option>`).join("")}
     </select>`;
 
-  const langSwitch = code ? `
-    <div class="langswitch">
-      <button class="iconbtn" data-action="toggle-lang" aria-haspopup="true" aria-expanded="false" aria-label="${esc(i18n.languages)}">
-        ${GLOBE}<span class="code">${esc(code.toUpperCase())}</span>
-      </button>
-      <div class="langmenu" id="langmenu" hidden>
-        ${LANGS.map(l => `
-          <button class="langmenu-item ${l.code === code ? "active" : ""}" data-route="/${l.code}">
-            <span class="flag">${l.flag}</span>${esc(I18N[l.code].name)}${l.code === code ? CHECK : ""}
-          </button>`).join("")}
-      </div>
-    </div>` : "";
+  // Quick guides are English-only for now; switch to guidelines_<code>.html once localized
+  const guidesHref = "guidelines.html";
+  const nav = (label, href, route, active) =>
+    `<a class="btn btn-ghost${active ? " active" : ""}" ${route ? `data-route="${route}" ` : ""}href="${href}">${esc(label)} <span class="ar">↗</span></a>`;
+  const draftsBtn   = nav(i18n.draftsBtn,  "#/" + code + "/drafts", "/" + code + "/drafts", section === "drafts");
+  const guidesBtn   = nav(i18n.guidesBtn,  guidesHref, "", false);
+  const sourcesBtn  = nav(i18n.sourcesBtn, "#/sources", "/sources", section === "sources");
 
   document.getElementById("topbar").innerHTML = `
     <div class="tb-left">
-      ${back}
-      <a class="brand" href="#/" data-route="/" aria-label="${esc(i18n.title)} \u2014 ${esc(i18n.home)}">
+      <a class="brand" href="#/${code}" data-route="/${code}" aria-label="${esc(i18n.title)} \u2014 ${esc(i18n.home)}">
         ${MARK}<span class="brand-stack">
           <span class="brand-name">${esc(i18n.title)}</span>
           <span class="brand-motto">${esc(i18n.motto)}</span>
@@ -832,48 +847,47 @@ function renderTopbar(code) {
       </a>
     </div>
     <div class="tb-right">
-      <a class="btn btn-ghost" href="guidelines.html" title="Printable quick guides for every audience">Quick guides <span class="ar">↗</span></a>
-      ${langSelect}${langSwitch}
+      ${langSelect}
+      ${draftsBtn}${guidesBtn}${sourcesBtn}
       <button class="iconbtn theme" data-action="toggle-theme" aria-label="${esc(i18n.theme)}" title="${esc(i18n.theme)}">${themeIcon}</button>
     </div>`;
 }
 
 /* ============================================================
-   Home (language selection)
+   Landing view (same structure in every language)
    ============================================================ */
-function renderHome() {
-  document.documentElement.lang = "en";
-  document.title = "Monotropism \u2014 An Interest-Based Account of Autism";
+function renderLanding(code) {
+  const t = I18N[code];
+  document.documentElement.lang = code;
+  document.title = t.title + " \u2014 " + t.tagline;
 
-  renderTopbar(""); // top bar without back / lang switch
+  renderTopbar("landing", code);
 
   document.getElementById("app").innerHTML = `
     <section class="home view">
       <div class="wrap">
         <div class="home-hero">
           <span class="mark-big">${MARK}</span>
-          <h1>Monotropism</h1>
-          <p class="tagline">${esc(I18N.en.tagline)}</p>
-          <p class="lead summary">${esc(I18N.en.summary)}</p>
+          <h1>${esc(t.title)}</h1>
+          <p class="tagline">${esc(t.tagline)}</p>
+          <p class="lead summary">${esc(t.summary)}</p>
         </div>
       </div>
-    </section>
-    ${renderReferences()}`;
+    </section>`;
 
-  renderFooter("en");
+  renderFooter(code);
 }
 
 /* ============================================================
-   Language landing view
+   Research drafts view (per language)
    ============================================================ */
-function renderLang(code) {
+function renderDrafts(code) {
   const t = I18N[code];
   document.documentElement.lang = code;
-  document.title = t.title + " \u2014 " + t.tagline;
+  document.title = t.draftsHead + " \u2014 " + t.title;
 
-  renderTopbar(code);
+  renderTopbar("drafts", code);
 
-  // group available docs by category, in CAT_ORDER
   const available = DOCS.filter(d => d.langs.includes(code));
   const groups = CAT_ORDER
     .map(cat => ({ cat, docs: available.filter(d => d.cat === cat) }))
@@ -894,15 +908,12 @@ function renderLang(code) {
           <span class="mark-big">${MARK}</span>
           <h1>${esc(t.title)}</h1>
           <p class="tagline">${esc(t.tagline)}</p>
-          <p class="intro">${esc(t.intro)}</p>
         </div>
-
         <div class="section-head">
           <h2>${esc(t.draftsHead)}</h2>
           <span class="count">${esc(fmt(t.draftsCount, available.length))}</span>
         </div>
         <div class="divider"></div>
-
         ${groupsHtml}
       </div>
     </section>`;
@@ -927,9 +938,8 @@ function docCard(doc, code, t) {
     </article>`;
 }
 
-/* ---------- references (source archive, home page only) ---------- */
-function renderReferences() {
-  const localCount = SOURCES.filter(s => s.local).length;
+/* ---------- references list (shared Scientific Sources page) ---------- */
+function renderReferencesList() {
   const rows = SOURCES.map(s => {
     const local = s.local
       ? `<a class="ref-local" href="${esc(s.local)}" target="_blank" rel="noopener">${s.kind === "pdf" ? "PDF" : "HTML"}</a>`
@@ -941,19 +951,28 @@ function renderReferences() {
         <span class="ref-links">${local}<a class="ref-orig" href="${esc(s.url)}" target="_blank" rel="noopener">original <span class="ar" aria-hidden="true">\u2197</span></a>${extra}</span>
       </li>`;
   }).join("");
+  return `<ul class="ref-list">${rows}</ul>`;
+}
 
-  return `<section class="refs view" id="references">
+/* ============================================================
+   Scientific Sources view (one page, shared across all languages)
+   ============================================================ */
+function renderSources() {
+  const code = currentLang;
+  document.documentElement.lang = "en";
+  document.title = "Scientific Sources \u2014 Monotropism";
+  renderTopbar("sources", code);
+  document.getElementById("app").innerHTML = `
+    <section class="srcview view">
       <div class="wrap">
-        <details class="refs-details">
-          <summary>
-            <span class="refs-title">References</span>
-            <span class="refs-sub">${SOURCES.length} sources for the foundational brief \u2014 ${localCount} archived as local full-text copies</span>
-          </summary>
-          <p class="refs-intro">Static copies of the primary sources cited in <em>Monotropism: An Interest-Based Account of Autism</em>. A few peer-reviewed papers are not archived here (publisher bot protection or paywall) and link to the publisher page instead.</p>
-          <ul class="ref-list">${rows}</ul>
-        </details>
+        <div class="src-head">
+          <h1>Scientific Sources</h1>
+          <p class="src-intro">Static, locally archived copies of the primary sources cited in the foundational brief <em>Monotropism: An Interest-Based Account of Autism</em>. This list is in English and is shared across all languages; a few peer-reviewed papers link out to the publisher page (free-to-read or paywalled) instead of a local copy.</p>
+        </div>
+        ${renderReferencesList()}
       </div>
     </section>`;
+  renderFooter(code);
 }
 
 /* ---------- footer ---------- */
@@ -963,6 +982,7 @@ function renderFooter(code) {
     <div class="wrap">
       <p class="note">${esc(f.footer)}</p>
       <p class="ai">${esc(f.aiNote)}</p>
+      <p class="gdpr">${esc(f.gdpr)}</p>
       <p class="github-line"><a href="${REPO}" target="_blank" rel="noopener">${esc(f.github)}</a> <span class="sep" aria-hidden="true">·</span> \u00A9 ${new Date().getFullYear()} PieBru</p>
     </div>`;
 }
@@ -978,51 +998,34 @@ function setTheme(theme) {
   if (btn) btn.innerHTML = (theme === "dark") ? SUN : MOON;
 }
 
-function toggleLangMenu(open) {
-  const menu = document.getElementById("langmenu");
-  const btn = document.querySelector('[data-action="toggle-lang"]');
-  if (!menu || !btn) return;
-  const willOpen = (open === undefined) ? menu.hidden : open;
-  menu.hidden = !willOpen;
-  btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
-}
-
 document.addEventListener("click", (e) => {
-  // navigate via data-route
+  // navigate via data-route (brand + internal section buttons)
   const nav = e.target.closest("[data-route]");
   if (nav) {
     e.preventDefault();
-    toggleLangMenu(false);
     const r = nav.getAttribute("data-route");
     if (r === "/") location.hash = "#/";
     else location.hash = "#/" + r.replace(/^\//, "");
     return;
   }
-
   const action = e.target.closest("[data-action]");
   if (action) {
     const a = action.getAttribute("data-action");
     if (a === "toggle-theme") {
       const cur = document.documentElement.getAttribute("data-theme");
       setTheme(cur === "light" ? "dark" : "light");
-    } else if (a === "toggle-lang") {
-      toggleLangMenu();
-      e.stopPropagation();
     }
     return;
   }
-
-  // close lang menu on outside click
-  if (!e.target.closest(".langswitch")) toggleLangMenu(false);
 });
 
 document.addEventListener("change", (e) => {
   const sel = e.target.closest("[data-action=select-lang]");
-  if (sel && sel.value) location.hash = "#/" + sel.value;
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") toggleLangMenu(false);
+  if (!sel || !sel.value) return;
+  const { section } = parseHash();
+  // sources is shared -> choosing a language lands on that language's landing
+  if (section === "drafts") location.hash = "#/" + sel.value + "/drafts";
+  else location.hash = "#/" + sel.value;
 });
 
 window.addEventListener("hashchange", route);
