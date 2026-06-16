@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>在单焦注意中成长</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">在单焦注意中成长</h1>
+</header>
+<h1 id="在单焦注意中成长">在单焦注意中成长</h1>
+<h3 id="一本写给-711-岁自闭症儿童身边大人父母祖父母教师与教练的亲切指南">一本写给 7–11 岁自闭症儿童身边大人（父母、祖父母、教师与教练）的亲切指南</h3>
+<hr />
+<blockquote>
+<p><strong>这本指南写给谁。</strong> 这本指南写给围绕一位约 <strong>7 至 11 岁自闭症儿童</strong>的成年人，他/她的心智以<em>单焦注意</em>（monotropic）的方式运作——一种在任一时刻都深入、强烈地聚焦于少数事物的心智。其中包括<strong>父母与照护者</strong>、<strong>祖父母、伯叔姑姨及其他亲属</strong>、<strong>小学教师</strong>，以及负责孩子体育与活动的<strong>教练与指导者</strong>。它不是一本临床手册，而是一本用通俗语言写成的陪伴手册，帮助你理解孩子、与他建立连接，并让家庭、学校与运动场变得更轻松、更愉悦。</p>
+</blockquote>
+<blockquote>
+<p><strong>关于语言的说明。</strong> 大多数自闭症者偏好<strong>身份优先用语</strong>（"自闭症孩子"），因此本指南采用这一说法。有些家庭更倾向"患有自闭症的孩子"——请遵循孩子与家庭本人的偏好。本指南刻意避免使用<em>障碍、异常、缺陷、悲剧、负担</em>这类词语，除非是在解释家人可能在别处被告知的观念。自闭症是一种<strong>差异</strong>——它有真实的挑战，也有真实的优势。</p>
+</blockquote>
+<blockquote>
+<p><strong>请随身带走的那一个想法。</strong> <em>"如果你关心自闭症者的福祉，就需要试着理解自闭症。如果你想理解自闭症，就需要理解单焦注意。"</em> ——费格斯·默里，一位自闭症教师与作家。</p>
+</blockquote>
+<hr />
+<h2 id="第-0-部分--先带走的那一个想法">第 0 部分 —— 先带走的那一个想法</h2>
+<p>大多数人的注意同时分散在许多事物上——时钟、嘈杂声、眼前的人、晚饭吃什么。而<strong>单焦注意</strong>的心智则不同：它倾向于把注意拉进<strong>少数几条深刻、强烈的通道</strong>之中。自闭症研究者迪娜·默里、文·劳森与迈克·莱瑟将此称为**"注意隧道"**（Murray, Lesser &amp; Lawson, 2005）。</p>
+<p>把注意想象成有限的水量。<strong>多焦注意</strong>（较典型的）心智像一台<strong>洒水器</strong>——水被广泛地撒向整片花园。<strong>单焦注意</strong>的心智像<strong>一根窄口的水管</strong>——覆盖的面积更小，但落在那股水流里的一切都被<em>深浇</em>（F. Murray, 2018）。两者并无"优劣"之分，各自都有优势与代价。</p>
+<p>单单这一差异，几乎就能解释你生活中的孩子体验世界时的大多数情形。</p>
+<h3 id="你可能看到--往往真正在发生的事">你可能看到 ← 往往真正在发生的事</h3>
+<table>
+<thead>
+<tr>
+<th>你可能看到……</th>
+<th>往往真正在发生的事（单焦注意）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对某一话题有深刻、"痴迷般"的兴趣，有时持续数年</td>
+<td>一种带来喜悦、平静、技能与身份的<strong>热情</strong>——而不是需要限制或"戒断"的"痴迷"</td>
+</tr>
+<tr>
+<td>似乎听不见你；"无视"他人甚至自身需求</td>
+<td>完全沉浸时，心智确实<strong>不会登记</strong>隧道之外的事物——包括饥饿、口渴、如厕或正在说话的人</td>
+</tr>
+<tr>
+<td>对某些声音、光线、气味、触感反应强烈——或似乎毫无感觉</td>
+<td><strong>过度</strong>或<strong>不足</strong>响应：隧道<em>之内</em>的刺激被强烈感知；隧道<em>之外</em>的可能不被登记</td>
+</tr>
+<tr>
+<td>摇晃、拍手、哼鸣、重复词语或动作</td>
+<td><strong>自我刺激（stimming）</strong>——孩子自控的、可预测的输入，能安抚并调节神经系统</td>
+</tr>
+<tr>
+<td>启动、停止或切换活动很慢；在转换时崩溃</td>
+<td><strong>自闭症惰性</strong>——切换心智"轨道"需要真实的能量与时间</td>
+</tr>
+<tr>
+<td>围绕热情深入讲述；很字面地理解事物；需要更久才能回应</td>
+<td><strong>单通道、字面化</strong>的沟通，加上处理时间——而非粗鲁或"没在听"</td>
+</tr>
+<tr>
+<td>突然崩溃，或变得沉默、退缩</td>
+<td>过载——<strong>崩溃</strong>（meltdown）或<strong>关机</strong>（shutdown），而非淘气</td>
+</tr>
+</tbody>
+</table>
+<p>在本指南的各处，我们会把以上每一条都变成<strong>可执行的、友善的具体做法</strong>——在家里、在学校、在运动场上。</p>
+<hr />
+<h2 id="第-1-部分--写给父母与照护者">第 1 部分 —— 写给父母与照护者</h2>
+<p>你最了解你的孩子。这些想法是可供尝试的工具，而非要强加的规则。你能给单焦注意孩子最珍贵的礼物，是一个<em>顺应</em>他注意而非与之对抗的环境。</p>
+<h3 id="11-守护并善用特殊兴趣">1.1 守护并善用特殊兴趣</h3>
+<p>孩子强烈的兴趣<strong>不是需要管理的问题</strong>——而是他的引擎、他的慰藉、他进入世界的入口。正如自闭症作家文·劳森所说，当某件事与兴趣领域相关时，自闭症者会发现"要连接到理解之上容易得多"。</p>
+<ul>
+<li><strong>借它搭桥。</strong> 通过列车时刻表学数学；通过恐龙学阅读；编入他最爱角色的社交故事。</li>
+<li><strong>不要把它"戒断"。</strong> 限制一种健康的热情毫无益处，反而会移除一个关键的调节与喜悦来源。</li>
+<li><strong>偶尔加入他。</strong> 坐在他身旁、表现出真诚的好奇，是最强有力的连接方式之一。</li>
+</ul>
+<h3 id="12-让日子可预测并缓和转换">1.2 让日子可预测（并缓和转换）</h3>
+<p>自闭症惰性意味着<strong>切换轨道要消耗能量</strong>。每一次意外或突兀的变化，都是对有限预算的额外课税（F. Murray, 2019；Reframing Autism, 2023）。</p>
+<ul>
+<li><strong>可预测的常规</strong>用于早晨、放学后、进餐与就寝。常规能降低认知负荷——但只有当它们是<em>共同拥有</em>而非从外部强加时才最有效（F. Murray, 2022）。</li>
+<li><strong>在转换前给出预警：</strong> "十分钟后我们放下乐高，准备去游泳……还有两分钟……"。可视化计时器有帮助。</li>
+<li><strong>"要隧道，不要任务。"</strong> 自闭症顾问杰米·奈特描述如何围绕孩子的专注来规划：与其把他从隧道里拽出来，不如<strong>为下一条隧道打开一个让它穿过的空间</strong>（Knight, 2021）。</li>
+<li><strong>说明原因。</strong> 单焦注意的孩子常有强烈的*"可是为什么？"*直觉。给出真实的理由，远比"因为我说了算"更能让转换顺畅（F. Murray, 2019）。</li>
+</ul>
+<h3 id="13-尊重感官世界">1.3 尊重感官世界</h3>
+<p>感官差异直接源自单焦注意：隧道<em>之内</em>的刺激被强烈感知；隧道<em>之外</em>的可能不被登记（Murray, Lesser &amp; Lawson, 2005；Reframing Autism, 2023）。</p>
+<ul>
+<li><strong>在居家降低负荷：</strong> 调光开关、一个更安静的角落、给嘈杂场所用的耳机或隔音耳罩、舒适的衣物（剪掉刺痒的标签、允许无骨缝的袜子）。</li>
+<li><strong>响应不足同样真实：</strong> 沉浸时孩子可能注意不到自己饿了、冷了或需要上厕所。温和、具体的提醒（"有一会儿了——去一下洗手间？"）有帮助，因为那份需求确实已滑出觉察（Lawson 论内感受；Kelly Mahler, 2024）。</li>
+<li><strong>让他动起来、自我刺激。</strong> 自我刺激——拍手、摇晃、哼鸣、重复——是自我调节，不是"行为"。阻止它通常会让事情更糟，而非更好。</li>
+</ul>
+<h3 id="14-当油箱见底时降低要求">1.4 当油箱见底时降低要求</h3>
+<p>当单焦注意的心智被迫把注意分到太多通道上时，自闭症者会描述一种**"单焦分裂"<strong>——以崩溃、关机、退缩或拒绝（一种</strong>要求回避**）形式浮现的过载（Reframing Autism, 2023）。解决办法是<em>减少</em>要求与输入，而非升级它们。</p>
+<ul>
+<li><strong>留意早期预警信号：</strong> 来回踱步、重复提问、火气变短、突然安静。在它爆发前就行动。</li>
+<li><strong>在难熬的日子里放下非必要的要求。</strong> 一个在学校里整天撑住的孩子，常常<strong>一到家就垮下来</strong>——家是卸下面具的安全之处。那种垮塌是信任与耗竭的信号，而非你做错了什么。</li>
+</ul>
+<h3 id="15-如果出现崩溃或关机">1.5 如果出现崩溃或关机</h3>
+<p>**崩溃（meltdown）**是因感官或情绪被淹没而失去控制——身体的战/逃反应——<em>不是</em>闹脾气或一种选择。**关机（shutdown）**是僵住的版本：沉默、退缩，有时无法说话（Leicestershire Partnership NHS Trust, Autism Space）。</p>
+<p><strong>期间：</strong></p>
+<ul>
+<li><strong>不评判、不争辩。</strong> 难过或愤怒只会让情况更糟。</li>
+<li><strong>降低输入：</strong> 让房间安静下来、调暗灯光、把其他人引开、关掉音乐。</li>
+<li><strong>做一个平静、安全的存在</strong>——但不要堆叠问题、指令或要求。</li>
+<li><strong>给时间。</strong> 从过载中恢复并非即刻完成。</li>
+<li><strong>采取能让所有人都安全的、最少限制的方式。</strong></li>
+</ul>
+<p><strong>之后，</strong> 当孩子平静下来，你可以温和地与他一起约定下次的计划——什么有用、早期信号是什么、哪里有一个安全的安静空间。</p>
+<blockquote>
+<p><strong>在脑中重新框定它：</strong> 崩溃是孩子的神经系统在说*"太多了"*，而非他在调皮。仅仅是这一转变，就会改变你如何回应。</p>
+</blockquote>
+<h3 id="16-友谊手足与独立711-岁">1.6 友谊、手足与独立（7–11 岁）</h3>
+<p>童年中期是友谊变得更复杂的时候，<strong>伪装</strong>（隐藏自闭症特质以融入）可能开始占据主导——伪装令人精疲力竭，并与焦虑和耗竭相关（Reframing Autism, 2023）。</p>
+<ul>
+<li><strong>重质不重量。</strong> 一两个接纳的朋友胜过拥挤的社交日程。</li>
+<li><strong>守护休息时间。</strong> 社交和上学都要消耗能量。安排由兴趣主导的安静恢复时间。</li>
+<li><strong>支持手足。</strong> 单焦注意孩子的需求会占用大量家庭带宽。确保手足得到一对一的时间与诚实、适龄的解释——并让他们知道，拥有自己的情绪是没关系的。</li>
+<li><strong>围绕兴趣建立独立。</strong> 一个难以开始家务的孩子，若把家务框定在他的热情里，可能会立刻投入其中。</li>
+<li><strong>照顾好你自己。</strong> 你无法从空杯里倒出水来。接受实际帮助，与自闭症积极家庭建立联系，尽可能遵循<strong>自闭症主导</strong>的指引。你做的事比大多数人意识到的更艰难。</li>
+</ul>
+<hr />
+<h2 id="第-2-部分--写给祖父母与大家庭">第 2 部分 —— 写给祖父母与大家庭</h2>
+<p>祖父母、伯叔姑姨和表亲，可以是孩子生命中最有爱、最稳定的人。你的任务不是"修复"任何东西——而是<strong>理解、接纳，并支持父母</strong>（Autism Society of NC，Fetzer）。</p>
+<h3 id="21-跟随父母的带领">2.1 跟随父母的带领</h3>
+<ul>
+<li><strong>他们最了解这个孩子。</strong> 先倾听再建议；让他们主动求助，而不是插手用"你的"方式去做。</li>
+<li><strong>保持常规一致。</strong> 如果家庭使用某些策略、日程或沟通辅助工具，你也使用——一致性会降低孩子跨情境的焦虑。</li>
+<li><strong>尊重他们的决定</strong>，即使你会换一种做法。这是他们的孩子。</li>
+</ul>
+<h3 id="22-通过孩子的世界来连接">2.2 通过孩子的世界来连接</h3>
+<ul>
+<li><strong>在他所在之处与他相遇。</strong> 了解他热爱什么，并<em>和他一起玩</em>——那份兴趣是他通往连接的前门。</li>
+<li><strong>不要强求典型的眼神接触、拥抱或寒暄。</strong> 许多自闭症孩子觉得眼神接触令人难以承受，更偏好<em>并肩</em>（一起做某事）而非面对面的连接。</li>
+<li><strong>礼物：</strong> 投入到兴趣中去。与热情相关的一本书、一套工具或一次体验，通常比一件普通的"好看"礼物更打动人。</li>
+</ul>
+<h3 id="23-保持语言清晰而平和">2.3 保持语言清晰而平和</h3>
+<ul>
+<li><strong>清晰、简洁、字面的语言</strong>最有效。说出你的本意；避免一个小孩可能字面理解的挖苦讽刺。</li>
+<li><strong>给处理时间。</strong> 如果他没有立刻作答，他多半还在处理——等待，而不是提高音量重复。</li>
+<li><strong>不要把爆发性的时刻当作针对你。</strong> 如果孩子崩溃了，"把这看作一种症状，而非他真正的样子。"</li>
+</ul>
+<h3 id="24-做一个安全的港湾也是给父母的">2.4 做一个安全的港湾——也是给父母的</h3>
+<ul>
+<li><strong>提供具体的帮助：</strong> 一顿饭、照看手足一小时、一次采购。微小的实际帮助胜过善意但空泛的建议。</li>
+<li><strong>自我教育</strong>，使用家庭信任的资源，并分享你学到的。</li>
+<li><strong>照顾好自己，</strong> 并把你的爱均等地分给所有孙辈。</li>
+</ul>
+<blockquote>
+<p><strong>简短版：</strong> 爱这个孩子本来的样子，学会他的语言，让父母感到被支持而非被评判。这就够了。</p>
+</blockquote>
+<hr />
+<h2 id="第-3-部分--写给小学教师">第 3 部分 —— 写给小学教师</h2>
+<p>学校是一个高多通道、高转换、高社交的环境——这让单焦注意的学习者真真切切地感到困难。自闭症教师费格斯·默里给教师的指引可归结为<strong>六件需要理解的事</strong>（F. Murray, 2019）。下面是这些事，以及该<em>怎么做</em>。</p>
+<h3 id="31-应对多通道很困难">3.1 应对多通道很困难</h3>
+<ul>
+<li><strong>不要只依赖口头指令。</strong> 以<strong>清晰的书面或视觉形式</strong>提供，让学生可以回头查看，而不必从课堂噪音中过滤你的声音。</li>
+<li><strong>一次一件事。</strong> 一大堆口头指令会丢失一部分。</li>
+</ul>
+<h3 id="32-过滤棘手且易出错">3.2 过滤棘手且易出错</h3>
+<ul>
+<li><strong>降低噪音、视觉杂乱与社交要求。</strong> 清理墙面、使用软装、把学生安排在离最嘈杂/嗡嗡作响处较远的位置。</li>
+<li><strong>保护专注与心流。</strong> 伴随掌握有趣事物而来的深度专注，是<em>教育中最有力的工具之一</em>——把一天设计成让学生有时能进入这种状态。</li>
+<li><strong>备好过载时的方案：</strong> 一个孩子可以去减压、自我刺激而不必害羞的<strong>安静之处</strong>。</li>
+</ul>
+<h3 id="33-切换轨道会带来失稳">3.3 切换轨道会带来失稳</h3>
+<ul>
+<li><strong>可预测性降低认知负荷。</strong> 可视化课表、"现在/接下来"板、对变化的提前预警都有帮助。</li>
+<li><strong>转换是危险地带。</strong> 给出预警；避免突袭；缓和进入和退出小组活动、集会与食堂的过程。</li>
+<li><strong>无结构的时间是一天中最难的部分。</strong> 课间与午休，无处躲开人群，又被要求"找个伙伴"，往往比上课更累人。提供结构化、低要求的选项（一个安静的社团、一项午间活动、一个明确的安全空间）。</li>
+</ul>
+<h3 id="34-兴趣强烈善用它">3.4 兴趣强烈——善用它</h3>
+<ul>
+<li><strong>顺应学生的兴趣进行教学，会带来巨大的教育回报</strong>（Wood, 2019，cited in F. Murray, 2019）。尽可能把兴趣当作课程的载体。</li>
+<li><strong>不要只把兴趣当作可被扣留的奖励。</strong> 那会把孩子主要的调节来源变成筹码，并侵蚀信任。</li>
+</ul>
+<h3 id="35-可是为什么是真实的给出理由">3.5 "可是为什么？"是真实的——给出理由</h3>
+<p>单焦注意的学习者常常需要理解<em>为什么</em>，有时比同伴更细致。<strong>理由是关键的教学工具</strong>；摩擦往往来自期望孩子仅凭权威接受事物。把他的问题当作参与，而非挑衅。</p>
+<h3 id="36-事物会滑出觉察提供外部结构">3.6 事物会滑出觉察——提供外部结构</h3>
+<p>当注意在别处时，需求、截止时间和指令确实会从脑海中消失。<strong>可视化日程、清单、计划表与提醒</strong>充当外部记忆。帮助孩子建立它们——但要让它们是共同拥有，而非控制性的。</p>
+<h3 id="37-与学生交谈并相信他">3.7 与学生交谈——并相信他</h3>
+<blockquote>
+<p><em>"如果你想知道你教的人觉得什么困难、什么可能帮到他，你最好的选择大概就是去和他谈谈。当他告诉你某件事很难时，请尽量相信他。"</em> ——费格斯·默里（2019）</p>
+</blockquote>
+<p>自闭症画像"参差"——各领域之间差异巨大。永远不要因为孩子在别处有能力，就假设他应当觉得某件事容易。而且<strong>永远不要坚持眼神接触，也不要阻止他移动/自我刺激</strong>——这两者往往都是他们应对过载的方式（F. Murray, 2019）。</p>
+<h3 id="38-建立真正的家校伙伴关系">3.8 建立真正的家校伙伴关系</h3>
+<p>家庭掌握着关于触发因素、早期预警信号以及什么能调节孩子的关键信息。一本简单的双向沟通簿或应用——什么顺利、什么棘手、有什么变化——就能为所有人避免许多糟糕的日子。</p>
+<hr />
+<h2 id="第-4-部分--写给体育pe-与活动教练">第 4 部分 —— 写给体育、PE 与活动教练</h2>
+<p>运动很重要：它有益健康、情绪、自信与社交连接。但自闭症儿童与青少年平均而言<strong>比同伴身体活动更少</strong>——并非因为缺乏兴趣，而是因为许多运动场景嘈杂、不可预测、社交要求高，且充满突发的转换。一项 2025 年涵盖该主题全部研究的范围综述（Michaud &amp; Harvey, 2025）发现了一组明确的有帮助的因素。结合单焦注意的视角，以下是实践版。</p>
+<h3 id="41-研究表明什么有帮助michaud--harvey-2025">4.1 研究表明什么有帮助（Michaud &amp; Harvey, 2025）</h3>
+<p>综述的关键促进因素：</p>
+<ul>
+<li><strong>可预测的常规</strong>——同样的热身、同样的结构、没有意外。</li>
+<li><strong>安全、感官友好的空间</strong>——更安静、更少杂乱、有可退避的余地。</li>
+<li><strong>与教练的良好关系以及支持性同伴</strong>——对参与而言，社交的一面比技能的一面更重要。</li>
+<li><strong>契合孩子技能、让人感到熟悉、并以</strong>游戏<strong>形式呈现</strong>的活动。</li>
+<li><strong>家庭参与</strong>以及<strong>课后/社区的机会</strong>。</li>
+<li><strong>优势导向</strong>的方法——<em>"把身体活动不当作要克服的挑战，而当作建立自信、享受与社交连接的机会"</em>（Michaud, in McGill Newsroom, 2025）。</li>
+</ul>
+<h3 id="42-把单焦注意映射到教练工作">4.2 把单焦注意映射到教练工作</h3>
+<table>
+<thead>
+<tr>
+<th>单焦注意特征</th>
+<th>在运动中的含义</th>
+<th>教练动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>自闭症惰性</strong></td>
+<td>启动、停止和切换练习要消耗能量</td>
+<td>安排<strong>可预测的热身与放松</strong>作为转换坡道；切换活动前给出预警；允许慢慢启动</td>
+</tr>
+<tr>
+<td><strong>注意隧道</strong></td>
+<td>单焦活动比多焦活动更容易、更愉悦</td>
+<td>偏好<strong>一次一技能</strong>的练习；让孩子留在让他着迷的技能中；<strong>游戏形式</strong>的练习比抽象练习更有效</td>
+</tr>
+<tr>
+<td><strong>感官过度响应</strong></td>
+<td>哨声、蜂鸣器、回声阵阵的场馆、明亮灯光、刺痒的球衣可能令人难以承受</td>
+<td><strong>减少</strong>突发的响声（用手势/轻拍替代），选择更安静的空间，允许<strong>隔音耳罩</strong>、柔软球衣、墨镜；在哨声/喇叭前预警</td>
+</tr>
+<tr>
+<td><strong>感官响应不足 / 内感受</strong></td>
+<td>沉浸时可能注意不到口渴、过热、疼痛、疲劳</td>
+<td><strong>定时、具体</strong>的饮水与休息；确认一下（"现在喝水——对，就是你！"）；留意孩子未报告的过热</td>
+</tr>
+<tr>
+<td><strong>单通道沟通</strong></td>
+<td>在嘈杂场馆里站着听一大段口头简述是行不通的</td>
+<td><strong>视觉示范</strong>技能；一次只给<strong>一条简短指令</strong>；用图片或快速的白板草图加以支撑</td>
+</tr>
+<tr>
+<td><strong>字面思维与处理时间</strong></td>
+<td>讽刺、成语和快速交锋会失灵</td>
+<td>使用<strong>清晰、具体</strong>的语言；在重复前留出<strong>几秒钟</strong>让他回应；避免一个孩子可能字面理解的挖苦</td>
+</tr>
+<tr>
+<td><strong>自我刺激与移动</strong></td>
+<td>小动作、踱步、拍手是自我调节，不是不守规矩</td>
+<td>在练习之间<strong>允许移动</strong>；绝不惩罚或当众制止自我刺激；把"动一动"作为重启来提供</td>
+</tr>
+<tr>
+<td><strong>崩溃/关机</strong></td>
+<td>过载可能在课程中途浮现</td>
+<td>参见第 1.5 部分：<strong>降低输入</strong>、找到<strong>安静角落</strong>、保持冷静、不要在当下索要解释</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-实用教练清单">4.3 实用教练清单</h3>
+<ul>
+<li><strong>每次课同样的热身</strong>——可预测性降低进入成本。</li>
+<li><strong>先演示，再讲解。</strong> 视觉示范胜过一段演说。</li>
+<li><strong>一次一条指令，</strong> 用清晰的语言，留出处理的片刻。</li>
+<li><strong>在可行时提供选择与自主</strong>——哪个站点、哪个角色、哪个游戏。掌控感降低焦虑。</li>
+<li><strong>先把教练与孩子的关系建立起来。</strong> 一个信任你的孩子会比不信任你的孩子扛过更多不适。</li>
+<li><strong>为努力与特殊兴趣喝彩。</strong> 热爱数据的孩子可以记分表；热爱流程的孩子可以领热身。</li>
+<li><strong>想一想团体项目还是个人项目。</strong> 作为单焦注意视角的经验法则（并非硬性研究结论），个人项目（游泳、跑步、武术、攀岩、田径）往往很适合单焦注意的孩子——同时进行的社交通道更少、结构清晰、有深度专注的空间。团体项目如果社交负荷被管理好（清晰的角色、支持的队友、一个理解的教练），也可以很棒。</li>
+<li><strong>备好过载时的方案：</strong> 一个约定好的安静角落、一个孩子可用来退出的信号、手边的隔音耳罩。</li>
+</ul>
+<blockquote>
+<p><strong>重新框定成功：</strong> 这个年龄的目标，是一个<strong>下周还愿意再来的孩子。</strong> 技能跟随享受而来——而非反过来。</p>
+</blockquote>
+<hr />
+<h2 id="第-5-部分--横切语言以及一份总做不做">第 5 部分 —— 横切：语言，以及一份总"做/不做"</h2>
+<h3 id="51-有益的语言-vs-有害的语言">5.1 有益的语言 vs 有害的语言</h3>
+<table>
+<thead>
+<tr>
+<th>尽量避免</th>
+<th>不妨改用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"痴迷"、"执念"</td>
+<td><strong>热情、特殊兴趣、专注</strong></td>
+</tr>
+<tr>
+<td>"他不愿意……" / "她很难搞"</td>
+<td><strong>"他现在做不到" / "她过载了"</strong></td>
+</tr>
+<tr>
+<td>"别乱动 / 看着我的眼睛"</td>
+<td>允许孩子以自己舒适的方式移动与进行眼神接触</td>
+</tr>
+<tr>
+<td>"闹脾气"、"调皮"、"引人注意"</td>
+<td><strong>崩溃、关机、被淹没</strong></td>
+</tr>
+<tr>
+<td>"低功能/高功能"标签</td>
+<td>具体<strong>描述</strong>孩子的优势与支持需求（画像"参差"）</td>
+</tr>
+<tr>
+<td>病理化、缺陷导向的框定</td>
+<td><strong>肯定神经多样性、身份优先</strong>的框定</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-一份给所有人的总做不做">5.2 一份给所有人的总"做/不做"</h3>
+<p><strong>做</strong></p>
+<ul>
+<li>✅ <strong>了解孩子的兴趣</strong>，并把它当作桥梁来用</li>
+<li>✅ <strong>让日子可预测</strong>，并在变化前给出预警</li>
+<li>✅ <strong>降低感官负荷</strong>，允许移动、自我刺激与休息</li>
+<li>✅ <strong>清晰、字面、一次一件事地沟通</strong>，并给处理时间</li>
+<li>✅ 当孩子正在滑向过载时，<strong>减少要求与输入</strong></li>
+<li>✅ <strong>跟随父母的带领</strong>，让家庭/学校/运动场上的做法保持一致</li>
+<li>✅ <strong>与孩子交谈，并相信他</strong>关于什么是困难的</li>
+</ul>
+<p><strong>不做</strong></p>
+<ul>
+<li>❌ 不要把特殊兴趣当作需要限制的问题</li>
+<li>❌ 不要把眼神接触或静止当作尊重的前提</li>
+<li>❌ 不要在崩溃或关机时惩罚、羞辱或升级</li>
+<li>❌ 不要用滔滔不绝的口头指令、临时变更或无结构的社交时间让他过载</li>
+<li>❌ 不要假定一方面的能力意味着另一方面的能力（"参差的画像"）</li>
+<li>❌ 不要在孩子面前病理化或使用缺陷语言</li>
+</ul>
+<h3 id="53-把行为读作沟通">5.3 把行为读作沟通</h3>
+<p>对单焦注意的孩子而言，行为几乎总是<strong>关于调节的沟通</strong>——"这里太吵"、"我没法那么快切换轨道"、"我燃料耗尽了"。当你这样解读，正确的回应（降低负荷、给时间、提供安静空间）通常就显而易见了。</p>
+<h3 id="54-何时寻求更多支持">5.4 何时寻求更多支持</h3>
+<p>如果孩子经常处于被淹没状态、频繁崩溃或关机、严重伪装或退缩，那么值得与家庭谈谈更广泛的支持——学校的 SENCO/SEND 人员、自闭症积极的作业治疗师（尤其是感官与内感受支持），以及<strong>自闭症主导</strong>的组织，它们提供的指引往往最准确、最肯定。</p>
+<hr />
+<h2 id="第-6-部分--开放问题与诚实的局限">第 6 部分 —— 开放问题与诚实的局限</h2>
+<p>几点诚实的说明，好让你能信任本指南：</p>
+<ul>
+<li><strong>单焦注意是一种有力的描述性理论，但尚未成为完整机制性理论。</strong> 它解释了自闭症注意<em>如何</em>运作及其后果，但底层的神经生物学仍在研究之中（Dwyer，2021；2025）。它是自闭症社群内、也越来越多地在研究中最具共鸣的框架，但并非全貌。</li>
+<li><strong>并非每位自闭症儿童都可识别为单焦注意。</strong> 少数自闭症者说单焦注意不能很好地描述自己。把本指南当作一个起点，并<strong>为眼前这个具体的孩子量身调整一切</strong>（Murray &amp; Lawson，2022，History of Monotropism）。</li>
+<li><strong>本指南是一般性的，</strong> 源自单焦注意理论以及少量有声誉的实务与研究来源。它不能替代了解你孩子的专业人士给出的个体化建议。</li>
+<li><strong>运动证据是一项范围综述（Michaud &amp; Harvey, 2025）</strong>，它梳理了文献并列出促进因素；它在"什么通常有帮助"上很有力，在针对具体干预的对照结果上则较弱。</li>
+<li><strong>来源受限于能可靠访问到的资料。</strong> 本轮无法抓取某些实务网页；发生这种情况时，指引依据的是经过完整核实的来源（monotropism.org、Reframing Autism、NHS Autism Space、Michaud &amp; Harvey 综述，以及来源纲要），而非无法抓取的页面。没有捏造任何事实。</li>
+</ul>
+<hr />
+<h2 id="来源">来源</h2>
+<p><strong>理论 —— 单焦注意（来源纲要及其参考文献）</strong></p>
+<ul>
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></li>
+<li>Murray, F. (2018, updated 2025). <em>Me and Monotropism: a unified theory of autism.</em> The Psychologist, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Dwyer, P. (2025). <em>Monotropism: Between Obsessive Joy and Overwhelm.</em> OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Dwyer, P. (2021). <em>Revisiting monotropism.</em> Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Murray, F. &amp; Lawson, W. (2022). <em>History of Monotropism.</em> <a href="https://monotropism.org/history">https://monotropism.org/history</a></li>
+<li>Milton, D. (2012). On the epistemic and contextual landscape of the "double empathy problem." (Referenced in source brief.)</li>
+</ul>
+<p><strong>实际应用 —— monotropism.org</strong></p>
+<ul>
+<li>Murray, F. <em>Monotropism in Practice</em> (school, play, work, mental health). <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2019). <em>Monotropism at School / Top Autism Tips for Teachers</em> (originally in Tes). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a></li>
+<li>Murray, F. (2022). <em>Understanding how routines can help autistic people thrive.</em> <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Knight, J. (2021). <em>Staying Put, Monotropism &amp; Me — "tunnels not tasks."</em> <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Mahler, K. (2024). <em>Interoception and Monotropism.</em> <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Wood, R. (2019). <em>Autism, intense interests and support in school.</em> Educational Review. <a href="https://doi.org/10.1080/00131911.2019.1566213">https://doi.org/10.1080/00131911.2019.1566213</a></li>
+</ul>
+<p><strong>自闭症主导的解释与育儿/神经肯定的框架</strong></p>
+<ul>
+<li>Reframing Autism (2023). <em>Monotropism: Understanding Autistic Ways of Being Through the Lens of Attention.</em> <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society. <em>What is monotropism? Understanding a neuroaffirming theory of autism.</em> <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ul>
+<p><strong>崩溃与关机</strong></p>
+<ul>
+<li>Leicestershire Partnership NHS Trust — Autism Space. <em>Understanding autistic meltdowns and shutdowns.</em> <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ul>
+<p><strong>祖父母与大家庭</strong></p>
+<ul>
+<li>Fetzer, T. (Autism Society of North Carolina). <em>How to Help as a Grandparent.</em> <a href="https://www.autismsociety-nc.org/how-to-help-as-a-grandparent">https://www.autismsociety-nc.org/how-to-help-as-a-grandparent</a></li>
+</ul>
+<p><strong>体育、身体活动与 PE</strong></p>
+<ul>
+<li>Michaud, M. &amp; Harvey, W.J. (2025). <em>Facilitating Physical Activity Participation Among Autistic Children and Youth: A Scoping Review.</em> Journal of Autism and Developmental Disorders. <a href="https://doi.org/10.1007/s10803-025-07141-y">https://doi.org/10.1007/s10803-025-07141-y</a></li>
+<li>McGill University Newsroom (2025). <em>New study provides advice on how to boost participation in physical activity among autistic youth.</em> <a href="https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283">https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283</a></li>
+</ul>
+</body>
+</html>

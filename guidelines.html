@@ -24,6 +24,7 @@
 
 
 
+
 :root { --maxw: 1180px; --radius: 12px; }
 [data-theme="dark"]{
   --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
@@ -156,6 +157,8 @@ footer a{color:var(--fg-soft);}
 
 
 
+
+html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
 </style>
 </head>
 <body>
@@ -171,7 +174,7 @@ footer a{color:var(--fg-soft);}
 <footer id="footer"></footer>
 
 <script>
-const LANGS = [{"code": "en", "flag": "🇬🇧", "name": "English"}, {"code": "it", "flag": "🇮🇹", "name": "Italiano"}, {"code": "fr", "flag": "🇫🇷", "name": "Français"}, {"code": "es", "flag": "🇪🇸", "name": "Español"}, {"code": "de", "flag": "🇩🇪", "name": "Deutsch"}, {"code": "pl", "flag": "🇵🇱", "name": "Polski"}, {"code": "nl", "flag": "🇳🇱", "name": "Nederlands"}, {"code": "ro", "flag": "🇷🇴", "name": "Română"}, {"code": "pt", "flag": "🇵🇹", "name": "Português"}];
+const LANGS = [{"code": "en", "flag": "🇬🇧", "name": "English"}, {"code": "it", "flag": "🇮🇹", "name": "Italiano"}, {"code": "fr", "flag": "🇫🇷", "name": "Français"}, {"code": "es", "flag": "🇪🇸", "name": "Español"}, {"code": "de", "flag": "🇩🇪", "name": "Deutsch"}, {"code": "pl", "flag": "🇵🇱", "name": "Polski"}, {"code": "nl", "flag": "🇳🇱", "name": "Nederlands"}, {"code": "ro", "flag": "🇷🇴", "name": "Română"}, {"code": "pt", "flag": "🇵🇹", "name": "Português"}, {"code": "ar", "flag": "🇸🇶", "name": "العربية"}, {"code": "zh", "flag": "🇨🇳", "name": "简体中文"}];
 const ROW_IDS = ["preschool", "primary", "secondary", "university", "worker", "parent", "senior", "assisted"];
 const COL_IDS = ["parents", "teachers", "coaches", "doctor", "caregivers", "colleagues", "eldercare", "peers"];
 const READY = new Set(["preschool-doctor", "primary-doctor", "secondary-doctor", "university-doctor", "worker-doctor", "parent-doctor", "senior-doctor", "assisted-doctor", "primary-parents", "primary-teachers", "col-doctor", "row-primary"]);
@@ -1103,6 +1106,212 @@ const I18N = {
         "sub": "e amigos"
       }
     }
+  },
+  "ar": {
+    "brand": "أحادية التركيز",
+    "motto": "اتبع التركيز. وسهّل الطريق.",
+    "theme": "تبديل السمة",
+    "choose": "اختر لغة",
+    "draftsBtn": "مسودات البحث",
+    "guidesBtn": "أدلة سريعة",
+    "sourcesBtn": "المصادر العلمية",
+    "title": "أحادية التركيز — شبكة الأدلة السريعة",
+    "desc": "شبكة متنامية من أدلة سريعة قابلة للطباعة (صفحتان): كيفية دعم شخص توحدي (أحادي التركيز) — حسب مرحلة الحياة (صفوف) وحسب هويتك (أعمدة).",
+    "eyebrow": "أدلة سريعة · أوراق من صفحتين قابلة للطباعة",
+    "h1": "كيف تدعم شخصًا توحديًا",
+    "lead": "شبكة متنامية من أدلة قصيرة وعملية — مستمدة من مسودات البحث لهذا المشروع. اختر <strong>الصف</strong> حسب مرحلة حياة الشخص و<strong>العمود</strong> حسب هويتك. كل خانة ورقة أمام/خلف قابلة للطباعة؛ وتفتح بلاطات <strong>«الكل»</strong> مرجعًا تراكميًا لعمود أو صف كامل.",
+    "cornerTop": "المرحلة ▾ &nbsp; الشريك ▸",
+    "cornerRowSummary": "ملخص<br>الصف",
+    "cornerColSummary": "ملخص العمود",
+    "all": "كل الشركاء",
+    "allStages": "كل المراحل",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "مخطط",
+    "titlePlanned": "مخطط",
+    "webAndPdf": "web و PDF",
+    "summaryRow": "ملخص الصف بالكامل",
+    "summaryCol": "ملخص العمود بالكامل",
+    "note1h": "🟢 قيد العمل",
+    "note1p": "اكتمل <strong>عمود الطبيب / المختصين الصحيين</strong> و<strong>صف المرحلة الابتدائية</strong> أولًا، كشريحة رأسية وأفقية تمثيلية. هذه الصفحة المركزية متاءة بكل لغات المكتبة؛ أما الأوراق الفردية فما زالت بالإنجليزية حتى الآن وستُترجم بمجرد اكتمال القالب. تُتابع مصادر كل ورقة في المستودع؛ و<strong>جميع الأدلة بمساعدة الذكاء الاصطناعي</strong> ومستمدة من مسودات البحث القائمة للمشروع (ملخص أحادية التركيز، ودليل ممارسي العمر والرعاية الصحية، ودليل الأسرة، و<em>النمو أحادي التركيز</em>)، مع أرشيفات محلية للمصادر حيث يلزم.",
+    "note2h": "🧭 كيف تُنظم الشبكة",
+    "note2p": "ال<strong>صفوف</strong> = الشخص التوحدي (أحادي التركيز)، حسب مرحلة الحياة. و<strong>الأعمدة</strong> = القارئ — الشريك الذي يدعمه. ويُعالَج <strong>الجنس</strong> (ذكر/أنثى) كإشارة عابرة موجزة داخل كل ورقة (عن التمويه والعرض الأنثوي غير المشخّص) بدلاً من كونه محورًا منفصلاً.",
+    "note3h": "⚖️ حول هذه الأدلة",
+    "note3p": "يستخدم لغة الهوية أولاً («شخص توحدي»). <strong>معلوماتي — وليس نصيحة طبية أو أداة تشخيص.</strong> أحادية التركيز نظرية قوية لكنها ما زالت قيد التطوير؛ والأدلة على كبار السن والدعم العالي قليلة. لائم دائمًا الإرشاد للشخص الذي أمامك. اقرأ مسودات البحث الكاملة خلف أي ورقة عبر المكتبة الرئيسية.",
+    "foot": "أدلة أحادية التركيز السريعة · مستمدة من مسودات البحث للمشروع ·",
+    "footLink": "مصدر GitHub",
+    "footTail": "ترجمات وملخصات بمساعدة الذكاء الاصطناعي · ليست نصحية طبية",
+    "rows": {
+      "preschool": {
+        "label": "ما قبل المدرسة",
+        "ages": "2–5 سنوات"
+      },
+      "primary": {
+        "label": "المرحلة الابتدائية",
+        "ages": "6–11 سنة"
+      },
+      "secondary": {
+        "label": "المرحلة الثانوية",
+        "ages": "12–18 سنة"
+      },
+      "university": {
+        "label": "الجامعة",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "بالغ عامل",
+        "ages": "موظف"
+      },
+      "parent": {
+        "label": "أب/أم توحدي",
+        "ages": "بالغ"
+      },
+      "senior": {
+        "label": "كبار السن / الأجداد",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "بدعم / دعم عال",
+        "ages": "رعاية سكنية"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "الآباء",
+        "sub": "والأسرة"
+      },
+      "teachers": {
+        "label": "المعلمون",
+        "sub": "والمربون"
+      },
+      "coaches": {
+        "label": "المدرّبون",
+        "sub": "وقادة الأنشطة"
+      },
+      "doctor": {
+        "label": "الطبيب",
+        "sub": "والمختصون الصحيون"
+      },
+      "caregivers": {
+        "label": "العاملون الداعمون",
+        "sub": "ومقدمو الرعاية"
+      },
+      "colleagues": {
+        "label": "الزملاء",
+        "sub": "وأصحاب العمل"
+      },
+      "eldercare": {
+        "label": "رعاية المسنين",
+        "sub": "والتمريض"
+      },
+      "peers": {
+        "label": "الأقران",
+        "sub": "والأصدقاء"
+      }
+    }
+  },
+  "zh": {
+    "brand": "单焦注意",
+    "motto": "追随专注。畅通道路。",
+    "theme": "切换主题",
+    "choose": "选择语言",
+    "draftsBtn": "研究草稿",
+    "guidesBtn": "快速指南",
+    "sourcesBtn": "科学来源",
+    "title": "单焦注意 —— 快速指南网格",
+    "desc": "一个不断扩充的可打印双页快速指南网格：如何支持一位自闭症（单焦注意）人士——按人生阶段（行）与你的身份（列）排列。",
+    "eyebrow": "快速指南 · 可打印的双页单张",
+    "h1": "如何支持一位自闭症人士",
+    "lead": "一个不断扩充的简短实用指南网格——源自本项目的研究草稿。按人生阶段选择<strong>行</strong>，按你的身份选择<strong>列</strong>。每一格都是一张可正反双面打印的单张；<strong>“全部”</strong>图块会打开整列或整行的汇总参考。",
+    "cornerTop": "阶段 ▾ &nbsp; 角色 ▸",
+    "cornerRowSummary": "行<br>汇总",
+    "cornerColSummary": "列汇总",
+    "all": "全部角色",
+    "allStages": "全部阶段",
+    "web": "网页",
+    "pdf": "pdf",
+    "planned": "计划中",
+    "titlePlanned": "计划中",
+    "webAndPdf": "网页与 PDF",
+    "summaryRow": "整行汇总",
+    "summaryCol": "整列汇总",
+    "note1h": "🟢 正在推进中",
+    "note1p": "首先完成的是<strong>医生 / 卫生专业人员</strong>这一列与<strong>小学</strong>这一行，作为具有代表性的纵向与横向切片。这个中心页面提供本资料库全部语言的版本；各份指南单张目前仍为英文，待模板定稿后即会翻译。每一张指南的来源都在代码库中可追溯；<strong>所有指南均由人工智能辅助</strong>完成，并源自项目已有的研究草稿（单焦注意纲要、终生从业者与医疗保健指南、家庭指南，以及《在单焦注意中成长》），必要时使用本地来源存档。",
+    "note2h": "🧭 网格如何组织",
+    "note2p": "<strong>行</strong>＝自闭症（单焦注意）人士，按人生阶段排列。<strong>列</strong>＝读者——即支持他们的人。<strong>性别</strong>（男/女）不作为单独的轴，而是作为每张单张内一段简短的跨切提示（关于伪装与漏诊的女性表现）来处理。",
+    "note3h": "⚖️ 关于这些指南",
+    "note3p": "采用身份优先用语（“自闭症人士”）。<strong>仅供参考——不构成医疗建议或诊断工具。</strong>单焦注意是一个有力但仍在发展中的理论；针对老年与高支持需求的证据较为薄弱。请始终因人而异调整建议。可通过主资料库阅读任意单张背后的完整研究草稿。",
+    "foot": "单焦注意快速指南 · 源自本项目的研究草稿 ·",
+    "footLink": "GitHub 源码",
+    "footTail": "翻译与摘要由人工智能辅助完成 · 不构成医疗建议",
+    "rows": {
+      "preschool": {
+        "label": "学前",
+        "ages": "2–5 岁"
+      },
+      "primary": {
+        "label": "小学",
+        "ages": "6–11 岁"
+      },
+      "secondary": {
+        "label": "中学",
+        "ages": "12–18 岁"
+      },
+      "university": {
+        "label": "大学",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "成年职工",
+        "ages": "在职"
+      },
+      "parent": {
+        "label": "自闭症父母",
+        "ages": "成年"
+      },
+      "senior": {
+        "label": "长者 / 祖父母",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "需协助 / 高支持",
+        "ages": "机构照护"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "父母",
+        "sub": "及家人"
+      },
+      "teachers": {
+        "label": "教师",
+        "sub": "及教育者"
+      },
+      "coaches": {
+        "label": "教练",
+        "sub": "及活动带领者"
+      },
+      "doctor": {
+        "label": "医生",
+        "sub": "及医务人员"
+      },
+      "caregivers": {
+        "label": "支持工作者",
+        "sub": "及照护者"
+      },
+      "colleagues": {
+        "label": "同事",
+        "sub": "及雇主"
+      },
+      "eldercare": {
+        "label": "长者照护",
+        "sub": "及护理"
+      },
+      "peers": {
+        "label": "同龄人",
+        "sub": "及朋友"
+      }
+    }
   }
 };
 const DIR = "outputs/guidelines/";
@@ -1179,6 +1388,7 @@ function colTile(c,t){
 function render(code){
   var t = I18N[code];
   document.documentElement.lang = code;
+  document.documentElement.dir = (code === "ar") ? "rtl" : "ltr";
   document.title = t.title;
   document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
   renderTopbar(code);

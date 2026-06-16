@@ -21,11 +21,18 @@ md_to_html () {
   [ -n "$title" ] || title="$name"
 
   echo ">> $src  ->  $out"
+  # RTL + lang metadata for translated drafts (Arabic is right-to-left)
+  local langmeta=""
+  case "$name" in
+    *_ar) langmeta="--metadata lang=ar --metadata dir=rtl" ;;
+    *_zh) langmeta="--metadata lang=zh" ;;
+  esac
   pandoc "$src" \
     -f gfm+autolink_bare_uris \
     -t html5 \
     -s \
     --metadata title="$title" \
+    $langmeta \
     --wrap=preserve \
     -H "$STYLE" \
     -o "$out"
@@ -44,7 +51,7 @@ md_to_html () {
 
 # Source-brief family (English original at root; translations in outputs/)
 md_to_html "monotropism.md"               "outputs/monotropism.html"
-for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro" "_ar" "_zh"; do
   md_to_html "outputs/monotropism${lang}.md" "outputs/monotropism${lang}.html"
 done
 
@@ -56,13 +63,13 @@ md_to_html "outputs/autistic-monotropism-lifespan-guide.md" \
            "outputs/autistic-monotropism-lifespan-guide.html"
 
 # Family & relatives guide (English + translations)
-for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro" "_ar" "_zh"; do
   md_to_html "outputs/autistic-monotropism-family-guide${lang}.md" \
              "outputs/autistic-monotropism-family-guide${lang}.html"
 done
 
 # Monotropic kids guidelines (ages 7-11): English + translations
-for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro" "_ar" "_zh"; do
   md_to_html "outputs/monotropic-kids-guidelines${lang}.md" \
              "outputs/monotropic-kids-guidelines${lang}.html"
 done

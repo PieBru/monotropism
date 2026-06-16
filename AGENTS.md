@@ -53,7 +53,7 @@ monotropism/
 │
 └── outputs/                 # ★ All published drafts live here
     ├── <stem>.md            #   Markdown source (English)
-    ├── <stem>_ita.md        #   …and translations (it/fr/es/de/pl/nl/ro/pt)
+    ├── <stem>_ita.md        #   …and translations (it/fr/es/de/pl/nl/ro/pt/ar/zh)
     ├── <stem>.html          #   rendered standalone HTML
     ├── <stem>.pdf           #   rendered print-ready PDF
     ├── guidelines/          #   ★ printable quick-guide brochures: g-<row>-<col>.{md,html,pdf}
@@ -95,9 +95,17 @@ belongs to one **category** and one or more **languages**.
 | `nl` | Nederlands| `_nl`       | 🇳🇱   |
 | `ro` | Română    | `_ro`       | 🇷🇴   |
 | `pt` | Português | `_pt`       | 🇵🇹   |
+| `ar` | العربية   | `_ar`       | 🇸🇦   |
+| `zh` | 简体中文   | `_zh`       | 🇨🇳   |
 
 > **Italian uses `_ita`, not `_it`.** Match this exactly in filenames *and* in
 > the landing page's `LANG_SUFFIX` map. English uses **no suffix**.
+>
+> **Arabic (`ar`) is right-to-left (RTL).** The landing page sets
+> `document.documentElement.dir = "rtl"` for `ar`; rendered `.html`/`.pdf`
+> drafts must be built with `--metadata lang=ar --metadata dir=rtl` (handled
+> automatically by `build/build-html.sh` and `build/build-pdfs.sh` via the
+> `*_ar` filename check). `zh` (Simplified Chinese) is left-to-right.
 
 The English source of the foundational theory brief is the one exception to the
 "everything in `outputs/`" rule: it lives at the **repo root** as
@@ -221,7 +229,7 @@ Three structures drive everything (search for them in `index.html`):
 
 ```js
 const LANGS       = [ { code: "en", flag: "🇬🇧" }, /* it, fr, es, de, pl, nl, ro, pt */ ];
-const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "_pl", nl: "_nl", ro: "_ro", pt: "_pt" };
+const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "_pl", nl: "_nl", ro: "_ro", pt: "_pt", ar: "_ar", zh: "_zh" };
 const I18N        = { /* per-language UI strings: name, tagline, intro, headings,
                          read/pdf/open labels, category names (cat.theory…),
                          footer, aiNote, github link … */ };
@@ -229,7 +237,7 @@ const DOCS = [
   {
     cat: "theory",                       // one of: theory | practitioner | family | kids
     stem: "monotropism",                 // file basename; paths auto-built
-    langs: ["en","it","fr","es","de","pl","nl","ro","pt"],   // which languages this draft is published in
+    langs: ["en","it","fr","es","de","pl","nl","ro","pt","ar","zh"],   // which languages this draft is published in
     content: {
       en: { title, audience, desc },     // per-language display metadata
       it: { title, audience, desc },

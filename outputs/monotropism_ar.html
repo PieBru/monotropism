@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>أحادية التركيز: تفسير التوحد قائم على الاهتمامات</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">أحادية التركيز: تفسير التوحد قائم على الاهتمامات</h1>
+</header>
+<h1 id="أحادية-التركيز-تفسير-التوحد-قائم-على-الاهتمامات">أحادية التركيز: تفسير التوحد قائم على الاهتمامات</h1>
+<h2 id="الملخص-التنفيذي">الملخص التنفيذي</h2>
+<p>أحادية التركيز (Monotropism) نظرية معرفية للتوحد تفسّر التجربة التوحدية عبر الاختلافات في الانتباه والاهتمام. طوّرها باحثون توحيديون هم دينا موراي (Dinah Murray) ووين لوسان (Wenn Lawson) ومايك ليسر (Mike Lesser) منذ مطلع التسعينيات، وتقترح أن العقول أحادية التركيز تميل إلى تركيز الانتباه بقوة على مجموعة محدودة من الاهتمامات في أي لحظة، تاركةً موارد معالجة أقل لكل ما سواها. استُخدمت هذه الفكرة وحدها لتفسير الطيف الكامل للسمات التوحدية — من الحساسية الحسية والاختلافات الاجتماعية إلى الخبرة المتعمّقة والخلل التنفيذي — ضمن إطار موحَّد وغير مرضِّض. وضمن المجتمع التوحيدي، تُعدّ أحادية التركيز على الأرجح العدسة النظرية المهيمنة لفهم التوحد، وتدخل بصورة متزايدة في الخطاب الأكاديمي والمهني. يستعرض هذا الملخص نشأة النظرية، وأطروحاتها الأساسية، والأدلة الداعمة لها، وصلاتها بأطر نظرية أخرى، والمسائل المفتوحة.</p>
+<h2 id="1-النشأة-والتطوّر">1. النشأة والتطوّر</h2>
+<p>مصطلح «أحادية التركيز» — من اليونانية <em>mono</em> (واحد، مفرد) و<em>tropism</em> (حركة توجّهية) — صاغته جينيت بويرسكي (Jeanette Buirski)، صديقة دينا موراي، عام 1992.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> كانت موراي، عالمة نفس اللغة التي أتمّت الدكتوراه في يونيفرسيتي كوليدج لندن عام 1985، تستكشف العلاقة بين اللغة والاهتمامات منذ سنوات. وبعد قراءتها كتاب أوتا فريث (Uta Frith) <em>التوحّد: تفسير اللغز</em> نحو عام 1990، وجدت التفسيرات القائمة غير مُرضية وبدأت بتطوير بديل.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> كان أول عرض علني لأفكارها بعنوان «تأمّك الانتباه والتوحّد» في مؤتمر دورهام للتوحد عام 1992.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>بشكل مستقلّ، في أستراليا، كان وين لوسان (واسمه حينها وينداي لوسان) — وقد شُخِّص توحيديًّا عام 1994 — يطوّر إطارًا وثيق الصلة أسماه «الانتباه أحادي التركيز». كتب لوسان عن الانتباه أحادي التركيز لأول مرة في سيرته الذاتية <em>حياة وراء الزجاج</em> عام 1998 وفي أطروحة الشرف لديه عام 1999.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> وحين التقى موراي ولوسان في مؤتمر عام 1998، اكتشفا أنهما كانا يعملان على الأفكار نفسها على طرفَي العالم.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>معًا، وبمشاركة عالِم الرياضيات مايك ليسر — الذي أسهم بخبرته في نظرية الأنظمة الديناميكية — نشرا ورقتهما العلمية المرجعية في مجلة <em>Autism</em> عام 2005: <strong>«الانتباه، وأحادية التركيز، ومعايير تشخيص التوحد»</strong>.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> تظل هذه الورقة النص التأسيسي للنظرية. وأُعيد صياغة أطروحة الدكتوراه اللاحقة للوسان، <em>الانتباه الأحادي والإدراك المرتبط به في التوحد</em> (SAACA)، في كتاب <em>العقل المتحمّس</em> عام 2011.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> أما دينا موراي نفسها فقد شُخِّصت توحيديًّا عام 2009، ما يعني أن واضعي النظرية الثلاثة كانوا جميعًا توحيديين.</p>
+<p>منذ ذلك الحين شاعت النظرية وامتدّت على أيدي آخرين، منهم فرغوس موراي (Fergus Murray، ابن دينا، ومعلّم علوم توحيدي) الذي أصبح مقاله عام 2018 «أنا وأحادية التركيز: نظرية موحَّدة للتوحد» في مجلة <em>The Psychologist</em> المقال الأكثر قراءة في المجلة لعام 2019،<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> وباتريك دوير (Patrick Dwyer)، باحث دكتوراه توحيدي في مركز أولغا تِنيسون لأبحاث التوحد (OTARC).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<h2 id="2-النظرية-الأساسية-منظومة-اهتمامات">2. النظرية الأساسية: منظومة اهتمامات</h2>
+<p>تقوم أحادية التركيز على نموذج للعقل بوصفه <strong>منظومة اهتمامات</strong> — فنحن جميعًا تستهوينا أشياء كثيرة، وتساعدنا هذه الاهتمامات على توجيه انتباهنا. والأهم أن كمية الانتباه المتاحة في أي لحظة محدودة، وتتنافس العمليات الذهنية على هذا المورد النادر.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<p><strong>في العقل أحادي التركيز</strong>، يميل عدد أقل من الاهتمامات إلى الاستثارة في لحظة ما، لكن تلك النشطة منها تجذب حصة غير متناسبة من موارد المعالجة. يخلق ذلك «نفقًا للانتباه» — تركيزًا ضيّقًا كثيفًا على ما هو بارز في اللحظة الراهنة. وكل ما يقع خارج النفق ينال أدنى طاقة معالجة.</p>
+<p><strong>في العقل متعدد التركيز</strong> (النمط العصبي النمطي وفق هذا التصوير)، يكون عدد كبير من الاهتمامات نشطًا في آنٍ واحد، ويتوزّع الانتباه على نطاق أوسع، ويكون الانتقال بين القنوات انسيابيًّا نسبيًّا.</p>
+<p>تطرح النظرية ثلاث تنبؤات أساسية حول الإدراك أحادي التركيز:</p>
+<ol type="1">
+<li><strong>الشدّة داخل النفق</strong>: كل ما هو محلّ تركيز يُعاش بوضوح وعمق، وهو مهيَّأ لحالات التدفق (flow) والخبرة والإبداع الغامر.</li>
+<li><strong>ضعف المعالجة خارج النفق</strong>: قد لا تُلحَظ المنبّهات أو الإشارات الاجتماعية أو حتى الأحاسيس الداخلية (الجوع، الألم) الخارجة عن الاهتمام الجاري.</li>
+<li><strong>صعوبة تحويل الانتباه</strong>: الانتقالات بين حالات الانتباه بطيئة ومجهدة — وهو ما يُسمّى <strong>القصور الذاتي التوحيدي</strong> (مقاومة البدء أو التوقّف أو تغيير الاتجاه الذهني).<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></li>
+</ol>
+<h2 id="3-كيف-تفسّر-أحادية-التركيز-السمات-التوحدية">3. كيف تفسّر أحادية التركيز السمات التوحدية</h2>
+<h3 id="31-الاهتمامات-المركّزة-والخبرة">3.1 الاهتمامات المركّزة والخبرة</h3>
+<p>تصف معايير التشخيص «أنماط اهتمام مقيدة ومتكررة»، لكن منظور أحادية التركيز يعيد تأويلها بوصفها انخراطات كثيفة وعميقة تجلب الفرح والمعنى والخبرة. يكتب فرغوس موراي: «حين يتحدّث الناس عن "الاهتمامات المقيّدة" فإنهم يقصدون في الغالب أنهم لا يقدرون إخفاقنا في الاهتمام بأشياء تبدو مهمة لهم.»<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> الاهتمامات الخاصة ليست هامشية في التوحد بل مركزية في النمط المعرفي ذاته.</p>
+<h3 id="32-الاختلافات-الحسّية">3.2 الاختلافات الحسّية</h3>
+<p>تقدّم أحادية التركيز تفسيرًا موحَّدًا للملف الحسّي المتنوّع للتوحد:</p>
+<ul>
+<li><strong>فرط الاستجابة</strong>: حين يُأسَر الانتباه المحدود بمنبّه متطفّل (وميض ضوء مثلًا، أو ضجيج خلفي)، يُعاش بشدّة غير معتادة لأن موارد المعالجة كلها تتجه نحوه.</li>
+<li><strong>نقص الاستجابة</strong>: حين يكون الانتباه مستغرقًا كليًّا في مكان آخر، فقد لا تُسجَّل المنبّهات الخارجية (بما فيها الألم) على الإطلاق.</li>
+<li><strong>البحث الحسّي</strong>: حين يقع منبّه حسّي ممتع داخل نفق الانتباه، يُلاحَق بتركيز كثيف.</li>
+</ul>
+<p>أظهرت أبحاث باتريك دوير في OTARC أن اختلافات الانتباه لدى الأطفال التوحيديين ترتبط بكلٍّ من فرط ونقص الاستجابة للمنبّهات الحسّية، بما يتسق مع هذا النموذج.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<h3 id="33-القصور-الذاتي-التوحيدي-الخلل-التنفيذي">3.3 القصور الذاتي التوحيدي (الخلل التنفيذي)</h3>
+<p>بدلًا من تسمية الأمر «خللًا في الوظائف التنفيذية» (وهو وصف غير خاص بالتوحد)، تتوقّع أحادية التركيز <strong>القصور الذاتي</strong> — صعوبة بدء المسارات الذهنية أو إيقافها أو تغييرها. يشبّهه فرغوس موراي بالزخم: «وكأننا حمّلنا عربة حتى الحافّة بالأفكار والمشاعر، ثم طُلب منا فجأة أن نديرها حول منعطف حاد.»<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> وتربط دراسة كارن باكل (Karen Buckle) النوعية المسبقة عن القصور الذاتي التوحيدي هذه الظاهرة مباشرةً بالمعالجة أحادية التركيز.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p>
+<h3 id="34-الاختلافات-الاجتماعية">3.4 الاختلافات الاجتماعية</h3>
+<p>تنبثق كثير من الصعوبات الاجتماعية بشكل طبيعي من الانتباه أحادي التركيز:</p>
+<ul>
+<li><strong>معالجة متعددة القنوات</strong>: يتطلّب التفاعل الاجتماعي معالجةً متزامنة للكلام وتعابير الوجه والنبرة ولغة الجسد والسياق. وبالنسبة إلى عقل أحادي التركيز، فإن الموازنة بين هذه التيارات مكلِفة معرفيًّا.</li>
+<li><strong>التفكير الحرفي</strong>: تُفكِّك العقول متعددة التركيز الاستعارات واللغة غير المباشرة دون جهد؛ أما العقول أحادية التركيز فتميل إلى معالجة المعنى الحرفي أولًا وتحتاج إلى خطوة معالجة إضافية للاستدلال.<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></li>
+<li><strong>زمن المعالجة</strong>: يعني القصور الذاتي التوحيدي أن الردود في المحادثة أبطأ، ما قد يُفسَّر خطأً على أنه فقدان اهتمام أو عدم فهم.</li>
+<li><strong>عدم تطابُق البروز</strong>: تكمل <strong>مشكلة التعاطف المزدوج</strong> لداميان ميلتون (Damian Milton) — الفكرة القائلة إن انهيار التواصل ثنائي الاتجاه وليس عجزًا في الأشخاص التوحيديين — أحاديةَ التركيز: إذ تفسّر الأخيرة لماذا يقع عدم التطابق.</li>
+</ul>
+<h3 id="35-ثبات-الأشياء-والإحساس-الداخلي">3.5 ثبات الأشياء والإحساس الداخلي</h3>
+<p>كتب وين لوسان على نطاق واسع عن أثر أحادية التركيز في <strong>ثبات الأشياء</strong> — الوعي بأن الأشياء والأشخاص والحاجات تستمر في الوجود حين لا تكون محلَّ تركيز. فإذا استُهلك الانتباه بالكامل، فقد لا يدرك الشخص وجود شخصٍ غادر الغرفة، أو قد يفوته أن يلحظ الجوع أو العطش أو الحاجة إلى الحمّام (ضعف <strong>الإحساس الداخلي</strong>).<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> ويؤكّد دليل الممارسة في Autism.org.uk بالمثل كيف تشكّل أنفاق الانتباه أحادية التركيز ما يلحظه الأشخاص التوحيديون، وما يبدو ذا معنى لهم، وما يسبّب لهم الضغط.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
+<h3 id="36-التنبيه-الذاتي-stimming-والروتينات">3.6 التنبيه الذاتي (Stimming) والروتينات</h3>
+<p>يوفّر التنبيه الذاتي (التأرجح، رفرفة اليدين، الطنين) مدخلات حسّية مسيطرًا عليها وقابلة للتنبؤ تساعد على ترشيح المنبّهات المتنافسة أو الحفاظ على التوازن. أمّا الروتينات فتقلّل العبء الذهني عبر تقليل عدد القرارات التي تتنافس على الانتباه.<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></p>
+<h2 id="4-العلاقة-بنظريات-التوحد-الأخرى">4. العلاقة بنظريات التوحد الأخرى</h2>
+<table>
+<thead>
+<tr>
+<th>النظرية</th>
+<th>الفرق الأساسي عن أحادية التركيز</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الترابط المركزي الضعيف</strong> (Frith، 1989)</td>
+<td>يتقاطع معها لكنه يُمرضِض التركيز على التفاصيل؛ أحادية التركيز تُصوّره اختلافًا لا عجزًا</td>
+</tr>
+<tr>
+<td><strong>نظرية العقل / عمى العقل</strong> (Baron-Cohen، 1995)</td>
+<td>تقترح أحادية التركيز أن الصعوبات تنشأ من موارد معالجة محدودة لا من عجز؛ وتتحدّاها مشكلة التعاطف المزدوج</td>
+</tr>
+<tr>
+<td><strong>الخلل التنفيذي</strong> (Ozonoff وآخرون)</td>
+<td>يصف الأعراض دون أن يكون خاصًّا بالتوحد؛ وأحادية التركيز تقدّم مفهوم «القصور الذاتي التوحيدي» الأكثر دقّة</td>
+</tr>
+<tr>
+<td><strong>الأداء الإدراكي المعزَّز</strong> (Mottron، 2006)</td>
+<td>يتفق على نقاط القوة؛ وأحادية التركيز توفّر آلية انتباهية موحِّدة</td>
+</tr>
+<tr>
+<td><strong>نظرية العالم المكثَّف</strong> (Markram &amp; Markram، 2007)</td>
+<td>متوازية: كلتاهما تتوقّع فرط المعالجة؛ لكن العالم المكثَّف ينطلق من الدوائر العصبية الدقيقة، وأحادية التركيز من الانتباه/الاهتمام</td>
+</tr>
+<tr>
+<td><strong>نظرية الدماغ الذكوري</strong> (Baron-Cohen، 2002)</td>
+<td>مرفوضة على نطاق واسع من قِبل النساء/الأشخاص غير الثنائيين التوحيديين؛ وأحادية التركيز محايدة جنسانيًّا</td>
+</tr>
+<tr>
+<td><strong>مشكلة التعاطف المزدوج</strong> (Milton، 2012)</td>
+<td>مكمِّلة — أحادية التركيز على المستوى الفردي، ومشكلة التعاطف المزدوج على المستوى التفاعلي</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-الأدلة-التجريبية">5. الأدلة التجريبية</h2>
+<p>عُوملت أحادية التركيز تاريخيًّا بالإهمال في أبحاث التوحد السائدة. وقد لاحظ باتريك دوير عام 2021 أنه في السنوات الست عشرة التالية لورقة 2005، لم تُصمَّم تقريبًا أي دراسات تجريبية لاختبار فرضية أحادية التركيز تحديدًا.<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> غير أن هذا يتغيّر تدريجيًّا، مع ظهور أعمال جديدة محكَّمة تُشير إلى أحادية التركيز بانتظام.<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> ومع ذلك، فهناك عدة خطوط أدلة متقاربة تدعمها الآن:</p>
+<h3 id="51-الانتباه-اللزج">5.1 الانتباه اللزج</h3>
+<p>وجد كلٌّ من لاندري وبرايسون (Landry &amp; Bryson، 2004) أن الأطفال التوحيديين كانوا أبطأ بكثير في فكّ الانتباه البصري عن منبّه مركزي حين يظهر منبّه جديد في المحيط — أثرُ «الانتباه اللزج».<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> وقد تكرّر ذلك في دراسات عديدة وأُحلِّل وصفيًّا في <em>Neuroscience &amp; Biobehavioral Reviews</em> (2015).<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a> ورُصد تحويل انتباه مماثل وبطيء لدى رضّع شُخِّصوا لاحقًا توحيديين، ما يشير إلى ظهوره مبكرًا في التطوّر.<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p>
+<h3 id="52-استبيان-أحادية-التركيز">5.2 استبيان أحادية التركيز</h3>
+<p>طوّر غارو وزملاؤه (Garau et al.، 2023) <strong>استبيان أحادية التركيز (Monotropism Questionnaire, MQ)</strong>، وهو مقياس تقدير ذاتي من 47 بندًا لأسلوب الانتباه أحادي التركيز.<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> أظهرت النتائج الأولية (مسودة قبل التحكيم) أن:</p>
+<ul>
+<li>الأشخاص التوحيديين ومن لديهم AuDHD (التوحد + اضطراب فرط الحركة وتشتت الانتباه) يحرزون درجات أعلى بكثير من غير التوحيديين ومن دون اضطراب فرط الحركة.</li>
+<li>رُصدت أعلى الدرجات في مجموعة AuDHD.</li>
+<li>تتوزّع الدرجات باستمرار، بما يتسق مع أحادية التركيز بوصفها سمة بُعدية.</li>
+</ul>
+<h3 id="53-أبحاث-otarc">5.3 أبحاث OTARC</h3>
+<p>وجد دوير وزملاؤه في مركز أولغا تِنيسون لأبحاث التوحد أن:</p>
+<ul>
+<li>اختلافات الانتباه لدى الأطفال التوحيديين الصغار ترتبط بأنماط حسّية فرطية وناقصة الاستجابة معًا.<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></li>
+<li>اختلافات الانتباه المُبلَّغ عنها ذاتيًّا لدى البالغين ترتبط بفرط الاستجابة السمعية.<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></li>
+<li>يرتبط فرط التركيز الأكبر بزيادة التفكير الاجتراحي والاكتئاب والقلق.<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a></li>
+</ul>
+<h3 id="54-الصدق-التجريبي-المعاش">5.4 الصدق التجريبي المعاش</h3>
+<p>يُستشهد لأحادية التركيز كثيرًا بصدقها مع التجربة المعاشة التوحدية. فقد وجدت دراسة عام 2023 أن أحادية التركيز تُقيَّم بأنها متسقة إلى حدٍّ كبير مع التجارب الشخصية للأشخاص التوحيديين.<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a> ويُعزى ذلك غالبًا إلى أن النظرية طُوِّرت <em>على يد</em> أشخاص توحيديين — وهي سمة غير اعتيادية في أبحاث التوحد.</p>
+<h2 id="6-الانتقادات-والمسائل-المفتوحة">6. الانتقادات والمسائل المفتوحة</h2>
+<h3 id="61-الغموض-وغياب-التحديد-الآلي">6.1 الغموض وغياب التحديد الآلي</h3>
+<p>يلاحظ باتريك دوير أن أحادية التركيز لا تزال نظرية <em>وصفية</em> لا <em>تفسيرية</em>: «لا تخبرنا، عصبيًّا حيويًّا، لماذا تحدث هذه التجارب.»<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a> ولم تُربَط المفاهيم بعد بوضوح بأطر علم الأعصاب المعرفي.</p>
+<h3 id="62-قيود-القياس">6.2 قيود القياس</h3>
+<p>حتى منتصف 2025، يظل استبيان أحادية التركيز الأداة الوحيدة المخصَّصة للقياس، وهو ما زال قيد التحكيم. ولا توجد مهام سلوكية أو تصوير عصبي تُفهرِس أحادية التركيز تحديدًا.<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a></p>
+<h3 id="63-مفارقة-فرط-التركيز-والتشتت">6.3 مفارقة فرط التركيز والتشتت</h3>
+<p>لغز مستمر: كثيرًا ما يُبلِّغ الأشخاص التوحيديون عن فرط تركيز كثيف وتشتّت مرتفع معًا. ومقترح دوير «فرط التركيز الخارجي المنشأ» — أي أن الانتباه قد يُأسَر باطنيًّا (عن طريق الاهتمامات) وخارجيًّا (عن طريق المنبّهات البارزة) — يحاول التوفيق بين الأمرين، لكن العلاقة تبقى غير محلولة نظريًّا.<a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a></p>
+<h3 id="64-العلاقة-باضطراب-فرط-الحركة-والتدفق-وفرط-التركيز">6.4 العلاقة باضطراب فرط الحركة والتدفق وفرط التركيز</h3>
+<p>علاقة أحادية التركيز بفرط تركيز اضطراب فرط الحركة، وأدبيات حالة التدفق، ومفهوم «فرط التركيز» في الفصام غير واضحة. تتقاطع هذه البنى لكنها قد لا تكون متطابقة.<a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a></p>
+<h3 id="65-التغاير">6.5 التغاير</h3>
+<p>لا يتعرّف جميع الأشخاص التوحيديين بأنفسهم في أحادية التركيز. تشير صفحة التاريخ بوضوح إلى أن «أقلية تقول إنها لا تشعر بأن أحادية التركيز تصفهم إطلاقًا»، وما إذا كان بعض الأشخاص التوحيديين متعدِّدي التركيز، أو أن الأوصاف غير كافية، أو أن شيئًا آخر يجري، فماهو بحاجة إلى مزيد من البحث.<a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a></p>
+<h3 id="66-المنافسة-النظرية">6.6 المنافسة النظرية</h3>
+<p>لم تُجرَ أي مقارنات تجريبية مباشرة بين أحادية التركيز ونظريات أخرى (الترميز التنبؤي مثلًا، أو الحسابات البايزية للتوحد).</p>
+<h2 id="7-الوضع-الراهن-والأثر">7. الوضع الراهن والأثر</h2>
+<p>رغم محدودية البنية الأكاديمية، أصبحت أحادية التركيز الفهم الذاتي السائد بين البالغين التوحيديين. من أبرز التطورات:</p>
+<ul>
+<li><strong>2018</strong>: مقال فرغوس موراي في مجلة BPS <em>The Psychologist</em> أصبح القطعة الأكثر قراءة في المنشور لعام 2019.<a href="#fn36" class="footnote-ref" id="fnref36" role="doc-noteref"><sup>36</sup></a></li>
+<li><strong>2019</strong>: نظّم مركز PARC مؤتمرًا مصغرًا «الهامش التوحيدي» عن أحادية التركيز إلى جانب المؤتمر السنوي لـ Scottish Autism.<a href="#fn37" class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a></li>
+<li><strong>2023</strong>: أصدر غارو وزملاؤه استبيان أحادية التركيز.</li>
+<li><strong>2025</strong>: كتاب جديد من Springer، <em>التوحّد وأحادية التركيز</em> (Neubert)، يخاطب الجمهور الطبي/المهني.<a href="#fn38" class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a></li>
+<li><strong>مستمرًّا</strong>: يظهر عمل جديد محكَّم يُشير إلى أحادية التركيز بانتظام؛ ويُغطّى بشكل متزايد في مقررات الجامعات عن التوحد.<a href="#fn39" class="footnote-ref" id="fnref39" role="doc-noteref"><sup>39</sup></a><a href="#fn40" class="footnote-ref" id="fnref40" role="doc-noteref"><sup>40</sup></a></li>
+</ul>
+<p>يؤدّي موقع monotropism.org دور مورد مركزي، يستضيف أرشيف أعمال دينا موراي، وشروح النظرية، والتطبيقات العملية، ومستجدات الأبحاث.</p>
+<h2 id="8-الخاتمة">8. الخاتمة</h2>
+<p>أحادية التركيز نظرية للتوحد طوّرها أشخاص توحيديون، لفهم الأشخاص التوحيديين. تقترح أن جوهر الإدراك التوحيدي هو أسلوب انتباهي — ميل إلى التركيز العميق الضيّق مدفوعًا باهتمامات كثيفة — له آثار متتالية على الإدراك والتفاعل الاجتماعي والضبط التنفيذي والرفاه. تقدّم إطارًا موحِّدًا قائمًا على نقاط القوة، وغير مرضِّض، وعميق الاتساق مع التجربة المعاشة التوحدية. غير أنها تظل وصفًا بمحدودية الاختبار التجريبي المباشر، وقاعدة قياس ناشئة، وأسئلة غير محلولة حول التغاير والآليات العصبية. ويشير تنامي نفوذها — لا سيما ضمن المجتمع التوحيدي وبشكل متزايد في البحث — إلى أنها إطار لا يسع علم التوحد تجاهله.</p>
+<hr />
+<h2 id="المصادر">المصادر</h2>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Wikipedia, "Monotropism". Retrieved 2025-06-15. <a href="https://en.wikipedia.org/wiki/Monotropism">https://en.wikipedia.org/wiki/Monotropism</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Murray, D. (1992). "Attention Tunnelling and Autism". Durham Conference Proceedings. <a href="https://monotropism.org/dinah/attention-tunnelling-and-autism/">https://monotropism.org/dinah/attention-tunnelling-and-autism/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Lawson, W. (2021). "Language, interests and autism: A tribute to Dr. Dinah Murray". <em>Autism</em>, 25(8). <a href="https://journals.sagepub.com/doi/full/10.1177/13623613211034072">https://journals.sagepub.com/doi/full/10.1177/13623613211034072</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Murray, D., Lesser, M., &amp; Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Lawson, W. (2011). <em>The Passionate Mind: How People with Autism Learn</em>. Jessica Kingsley Publishers.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Murray, D., Lesser, M., &amp; Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, cited in Dwyer (2025) OTARC blog. See also <a href="https://doi.org/10.1177/27546330241237883">https://doi.org/10.1177/27546330241237883</a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Buckle, K. (preprint). "Autistic inertia: A qualitative study". <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a><a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>Lawson, W. &amp; Dombroski, B. (2015, 2017). Papers on object permanence and autism. <em>Journal of Intellectual Disability – Diagnosis and Treatment</em>. <a href="https://www.researchgate.net/publication/277564015">https://www.researchgate.net/publication/277564015</a><a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a><a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>National Autistic Society. "What is monotropism? Understanding a neuroaffirming theory of autism." <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a><a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a><a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>Landry, R. &amp; Bryson, S. (2004). "Impaired disengagement of attention in young children with autism". <em>Journal of Child Psychology and Psychiatry</em>, 45(6), 1115–1122. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a><a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>Sacrey, L.-A. et al. (2015). "Attention disengagement in autism spectrum disorder: A meta-analysis". <em>Neuroscience &amp; Biobehavioral Reviews</em>, 56, 111–121. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a><a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>"Sticky gaze may be early autism sign". The Transmitter. <a href="https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/">https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/</a><a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>Garau, V. et al. (2023). "Development and Validation of a Novel Self-Report Measure of Monotropism in Autistic and Non-Autistic People: The Monotropism Questionnaire". OSF Preprint. <a href="https://osf.io/ft73y/">https://osf.io/ft73y/</a> — Questionnaire at <a href="https://dlcincluded.github.io/MQ/">https://dlcincluded.github.io/MQ/</a><a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, cited in Dwyer (2025) OTARC blog. See also <a href="https://doi.org/10.1177/27546330241237883">https://doi.org/10.1177/27546330241237883</a><a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, cited in Dwyer (2025) OTARC blog. See also <a href="https://doi.org/10.1177/27546330241237883">https://doi.org/10.1177/27546330241237883</a><a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a><a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p>Referenced in Dwyer (2025) OTARC blog. <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a><a href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a><a href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn32"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a><a href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p>Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a><a href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a><a href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>Murray, F. (2018, updated 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a><a href="#fnref36" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>Neubert (2025). <em>Autism and Being Monotropic: What Medical and Other Practitioners Need to Know</em>. Springer. <a href="https://link.springer.com/book/10.1007/978-981-96-2564-2">https://link.springer.com/book/10.1007/978-981-96-2564-2</a><a href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn39"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history">https://monotropism.org/history</a><a href="#fnref39" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn40"><p>Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a><a href="#fnref40" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
