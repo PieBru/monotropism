@@ -338,20 +338,14 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .site-footer {
   border-top: 1px solid var(--border-soft);
   padding: 30px 0 46px;
-  font-size: 13.5px; color: var(--fg-faint);
+  font-size: 12.5px; color: var(--fg-faint);
   text-align: center; line-height: 1.7;
 }
-.site-footer .note { max-width: 600px; margin: 0 auto 10px; }
-.site-footer .ai {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12.5px; font-style: italic; color: var(--fg-faint);
-}
-.site-footer .ai::before { content: "✦"; color: var(--accent); opacity: .8; font-style: normal; }
+.site-footer .meta-line { max-width: 780px; margin: 0 auto 10px; }
 .site-footer a { color: var(--fg-soft); }
-.site-footer .github-line { margin-top: 10px; color: var(--fg-faint); }
+.site-footer .github-line { color: var(--fg-faint); }
 .site-footer .github-line a { font-weight: 500; }
-.site-footer .github-line .sep { opacity: .5; margin: 0 8px; }
-.site-footer .gdpr { font-size: 12px; color: var(--fg-faint); margin: 8px 0 0; }
+.site-footer .sep { opacity: .5; margin: 0 8px; }
 
 /* Scientific Sources page */
 .srcview { padding: clamp(36px, 6vh, 64px) 0 72px; }
@@ -979,9 +973,7 @@ function renderFooter(code) {
   const f = I18N[code] || I18N.en;
   document.getElementById("footer").innerHTML = `
     <div class="wrap">
-      <p class="note">${esc(f.footer)}</p>
-      <p class="ai">${esc(f.aiNote)}</p>
-      <p class="gdpr">${esc(f.gdpr)}</p>
+      <p class="meta-line">${esc(f.footer)} <span class="sep" aria-hidden="true">·</span> ${esc(f.aiNote)} <span class="sep" aria-hidden="true">·</span> ${esc(f.gdpr)}</p>
       <p class="github-line"><a href="${REPO}" target="_blank" rel="noopener">${esc(f.github)}</a> <span class="sep" aria-hidden="true">·</span> \u00A9 ${new Date().getFullYear()} PieBru</p>
     </div>`;
 }
