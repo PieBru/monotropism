@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Crescând în Mod Monotropic</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="crescând-în-mod-monotropic">Crescând în Mod Monotropic</h1>
+<h3 id="un-ghid-prietenos-pentru-părinți-bunici-profesori-și-antrenori-ai-copiilor-autiști-711-ani">Un Ghid Prietenos pentru Părinți, Bunici, Profesori și Antrenori ai Copiilor Autiști (7–11 ani)</h3>
+<hr />
+<blockquote>
+<p><strong>Pentru cine este acest ghid.</strong> Acest ghid este pentru adulții din jurul unui <strong>copil autist de aproximativ 7–11 ani</strong> a cărui minte funcționează într-un mod <em>monotropic</em> — o minte care se concentrează profund și intens pe un număr mic de lucruri deodată. Include <strong>părinți și îngrijitori</strong>, <strong>bunici, mătuși, unchi și alte rubedenii</strong>, <strong>profesori de școală primară</strong> și <strong>antrenorii și instructorii</strong> care conduc sportul și activitățile copilului. Nu este un manual clinic. Este un însoțitor în limbaj simplu care să te ajute să înțelegi copilul, să te conectezi cu el și să faci acasă, la școală și pe terenul de sport mai ușoare și mai pline de bucurie.</p>
+</blockquote>
+<blockquote>
+<p><strong>O notă despre limbaj.</strong> Majoritatea persoanelor autiste preferă <strong>limbajul identității-întâi</strong> („copil autist"), așa că asta folosește acest ghid. Unele familii preferă „copil cu autism" — urmează preferința copilului și a familiei. Acest ghid evită intenționat cuvinte precum <em>tulburare, anormal, deficitar, tragedie</em> sau <em>povară</em>, cu excepția cazului în care explică idei pe care familiile le-ar fi primit în altă parte. Autismul este o <strong>diferență</strong> — cu provocări reale și puncte forte reale.</p>
+</blockquote>
+<blockquote>
+<p><strong>Ideea de luat cu tine.</strong> <em>"Dacă îți pasă de bunăstarea persoanelor autiste, trebuie să încerci să înțelegi autismul. Dacă vrei să înțelegi autismul, trebuie să înțelegi monotropismul."</em> — Fergus Murray, profesor și scriitor autist.</p>
+</blockquote>
+<hr />
+<h2 id="partea-0--singura-idee-de-luat-mai-întâi">Partea 0 — Singura Idee de Luat Mai Întâi</h2>
+<p>Atenția majorității oamenilor este răspândită pe multe lucruri deodată — ceasul, conversația, persoana din fața lor, ce e la cină. O minte <strong>monotropică</strong> este diferită: tinde să atragă atenția în <strong>un număr mic de canale profunde și intense</strong> la un moment dat. Cercetătorii autiști Dinah Murray, Wenn Lawson și Mike Lesser au numit asta un <strong>„tunel al atenției"</strong> (Murray, Lesser &amp; Lawson, 2005).</p>
+<p>Gândește-te la atenție ca la o cantitate limitată de apă. O minte <strong>politropică</strong> (mai tipică) este ca un <strong>aspersor</strong> — apă răspândită larg pe grădină. O minte <strong>monotropică</strong> este ca un <strong>furtun cu o duză îngustă</strong> — mai puțin teren acoperit, dar tot ce e în acel curent este udat <em>profund</em> (F. Murray, 2018). Niciuna nu este „mai bună." Fiecare are puncte forte și costuri.</p>
+<p>Această singură diferență ajută la explicarea aproape a totului despre felul cum copilul din viața ta experimentează lumea.</p>
+<h3 id="ce-s-ar-putea-să-vezi--ce-se-întâmplă-adesea-de-fapt">Ce s-ar putea să vezi → ce se întâmplă adesea de fapt</h3>
+<table>
+<thead>
+<tr>
+<th>Poate vezi…</th>
+<th>Ce se întâmplă adesea (monotropism)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interes profund, „obsesiv" pentru un subiect, uneori ani de zile</td>
+<td>O <strong>pasiune</strong> care aduce bucurie, calm, îndemânare și identitate — nu o „obsesie" de limitat sau „de înțrcat"</td>
+</tr>
+<tr>
+<td>Pare să nu te audă; „ignoră" persoane sau propriile nevoi</td>
+<td>Când este complet absorbit, mintea genuin <strong>nu înregistrează</strong> lucrurile din afara tunelului — inclusiv foamea, setea, toaleta sau pe cineva care vorbește</td>
+</tr>
+<tr>
+<td>Reacții puternice la anumite sunete, lumini, mirosuri, texturi — sau pare să nu simtă nimic</td>
+<td><strong>Hiper-</strong> (prea multă) sau <strong>hipo-</strong> (prea puțină) responsivitate: un stimul <em>în interiorul</em> tunelului este simțit intens; unul <em>din exterior</em> s-ar putea să nu se înregistreze</td>
+</tr>
+<tr>
+<td>Legănat, fluturat din mâini, fredonat, repetare de cuvinte sau mișcări</td>
+<td><strong>Stimming</strong> — input autcontrolat și previzibil care calmează și reglează sistemul nervos</td>
+</tr>
+<tr>
+<td>Lent în a începe, opri sau schimba activități; crize la tranziții</td>
+<td><strong>Inerție autistă</strong> — schimbarea „liniilor" mentale costă energie și timp reale</td>
+</tr>
+<tr>
+<td>Vorbește cu mare profunzime despre o pasiune; ia lucrurile foarte literal; are nevoie de mai mult timp să răspundă</td>
+<td>Comunicare <strong>pe un singur canal, literală</strong>, plus timp de procesare — nu obrăznicie sau „nu ascultă"</td>
+</tr>
+<tr>
+<td>Criză de cedare bruscă sau liniște și retragere</td>
+<td>Suprasolicitare — o <strong>criză de cedare</strong> (luptă/suprasolicitare) sau <strong>închidere</strong> (îngheț/retragere), nu obraznicie</td>
+</tr>
+</tbody>
+</table>
+<p>Pe parcursul acestui ghid vom transforma fiecare dintre acestea în <strong>lucruri practice și prietenoase pe care le poți face</strong> — acasă, la școală și pe terenul de sport.</p>
+<hr />
+<h2 id="partea-1--pentru-părinți-și-îngrijitori">Partea 1 — Pentru Părinți și Îngrijitori</h2>
+<p>Tu îți cunoști cel mai bine copilul. Aceste idei sunt unelte de încercat, nu reguli de impus. Cel mai mare cadou pe care îl poți face unui copil monotropic este un mediu care funcționează <em>cu</em> atenția lui, nu împotriva ei.</p>
+<h3 id="11-protejează-și-folosește-interesul-special">1.1 Protejează și folosește interesul special</h3>
+<p>Interesul intens al unui copil <strong>nu este o problemă de gestionat</strong> — este motorul lui, mângâierea lui, modul lui de a intra în lume. Așa cum spune scriitorul autist Wenn Lawson, persoanele autiste consideră că este <em>"mult mai ușor să se conecteze la înțelegere"</em> când ceva este legat de zona lor de interes.</p>
+<ul>
+<li><strong>Construiește punți prin el.</strong> Matematică prin mersul trenurilor; citit prin dinozauri; povești sociale cu personajul lui preferat.</li>
+<li>**Nu-l „înțerca"." Nu e niciun beneficiu în a limita o pasiune sănătoasă, iar a face asta poate elimina o sursă-cheie de reglare și bucurie.</li>
+<li><strong>Alătură-i-te uneori.</strong> Să stai alături și să arăți curiozitate autentică este unul dintre cele mai puternice moduri de conectare.</li>
+</ul>
+<h3 id="12-fă-ziua-previzibilă-și-înmoaie-tranzițiile">1.2 Fă ziua previzibilă (și înmoaie tranzițiile)</h3>
+<p>Inerția autistă înseamnă că <strong>schimbarea liniilor costă energie</strong>. Fiecare surpriză sau schimbare bruscă este o taxă extra pe un buget limitat (F. Murray, 2019; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Rutine previzibile</strong> pentru dimineți, după școală, mese și ora de culcare. Rutinele reduc încărcătura cognitivă — dar funcționează cel mai bine când sunt <em>co-create</em>, nu impuse din afară (F. Murray, 2022).</li>
+<li><strong>Dă avertismente înainte de tranziții:</strong> „Peste zece minute oprim Lego și ne pregătim de înot… peste două minute…" Cronometrele vizuale ajută.</li>
+<li><strong>„Tunele, nu sarcini."</strong> Consultantul autist Jamie Knight descrie planificarea în jurul focusului unui copil: în loc să-l tragi dintr-un tunel, încearcă să <strong>deschizi un spațiu pentru următorul tunel să treacă</strong> (Knight, 2021).</li>
+<li><strong>Spune de ce.</strong> Copiii monotropici au adesea un instinct puternic de <em>„Dar de ce?"</em>. Oferirea de motive reale netezește tranzițiile mult mai mult decât „pentru că zic eu" (F. Murray, 2019).</li>
+</ul>
+<h3 id="13-respectă-lumea-senzorială">1.3 Respectă lumea senzorială</h3>
+<p>Diferențele senzoriale decurg direct din monotropism: un stimul <em>în interiorul</em> tunelului este simțit intens; unul <em>din exterior</em> s-ar putea să nu se înregistreze (Murray, Lesser &amp; Lawson, 2005; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Scade încărcătura acasă:</strong> reostate, un colț mai liniștit, căști sau apărătoare de urechi pentru locuri zgomotoase, haine confortabile (taie etichetele care zgârie, permite șosete fără cusătură).</li>
+<li><strong>Hiporesponsivitatea este și ea reală:</strong> copilul s-ar putea să nu observe că îi este foame, frig sau că trebuie la baie când este absorbit. Memento-uri blânde și specifice („A trecut un pic — pauză de baie?") ajută, pentru că nevoia a căzut genuin din conștiență (Lawson, despre interocepție; Kelly Mahler, 2024).</li>
+<li><strong>Lasă-l să se miște și să stimmeze.</strong> Stimmingul — fluturat, legănat, fredonat, repetare — este autoreglare, nu „comportament." Oprirea lui face de obicei lucrurile mai grele, nu mai ușoare (Reframing Autism, 2023).</li>
+</ul>
+<h3 id="14-scade-cerințele-când-rezervorul-e-gol">1.4 Scade cerințele când rezervorul e gol</h3>
+<p>Când o minte monotropică este împinsă să împartă atenția pe prea multe canale, persoanele autiste descriu o <strong>„scindare monotropică"</strong> — suprasolicitare care poate ieși la suprafață ca crize de cedare, închideri, retragere sau refuz (o formă de <strong>evitare a cerințelor</strong>) (Reframing Autism, 2023). Soluția este <em>să reduci</em> cerințele și inputul, nu să le escaladezi.</p>
+<ul>
+<li><strong>Observă semnele de avertizare timpurie:</strong> mers încoace-încolo, întrebări repetitive, fitil mai scurt, tăcere bruscă. Acționează înainte să dea în clocot.</li>
+<li><strong>Renunță la cerințele neesențiale în zile grele.</strong> Un copil care s-a ținut unit toată ziua la școală adesea <strong>cedează acasă</strong> — casa e locul sigur unde masca cade. Acea prăbușire este un semn de încredere și epuizare, nu că faci ceva greșit.</li>
+</ul>
+<h3 id="15-dacă-e-o-criză-de-cedare-sau-închidere">1.5 Dacă e o criză de cedare sau închidere</h3>
+<p>O <strong>criză de cedare</strong> este o pierdere a controlului din suprasolicitare senzorială sau emoțională — răspunsul de luptă/fugă al corpului — și <em>nu este</em> o criză de nervi și nici o alegere. O <strong>închidere</strong> este versiunea de îngheț: devine tăcut, se retrage, uneori nu poate vorbi (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<p><strong>În timpul ei:</strong></p>
+<ul>
+<li><strong>Nu judeca și nu discuta.</strong> Să te superi sau să te superi agravează.</li>
+<li><strong>Redu inputul:</strong> liniștește camera, diminează luminile, îndepărtează alte persoane, oprește muzica.</li>
+<li><strong>Fii o prezență calmă și sigură</strong> — dar nu înghesui întrebări, instrucțiuni sau cerințe.</li>
+<li><strong>Dă timp.</strong> Recuperarea după suprasolicitare nu este instantanee.</li>
+<li><strong>Folosește abordarea cea mai puțin restrictivă</strong> care îi ține pe toți în siguranță.</li>
+</ul>
+<p><strong>După,</strong> când copilul e calm, puteți stabili împreună, blând, un plan pentru data viitoare — ce a ajutat, care au fost semnele timpurii, unde e un spațiu liniștit sigur (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<blockquote>
+<p><strong>Reîncadrează asta în capul tău:</strong> o criză de cedare este sistemul nervos al copilului spunând <em>"prea mult,"</em> nu copilul fiind obraznic. Acea singură schimbare schimbă cum răspunzi.</p>
+</blockquote>
+<h3 id="16-prietenii-frațisurori-și-independență-711-ani">1.6 Prietenii, frați/surori și independență (7–11 ani)</h3>
+<p>Copilăria mijlocie este când prieteniile devin mai complexe, iar <strong>mascarea</strong> (ascunderea trasăturilor autiste ca să se integreze) poate începe să prindă rădăcini — mascarea este epuizantă și este legată de anxietate și burnout (Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Calitate înainte de cantitate de prieteni.</strong> Unul sau doi prieteni acceptanți bat un calendar social aglomerat. Persoanele autiste găsesc adesea comunicare mai ușoară și mai recompensantă cu alți colegi autiști sau neurodivergenți (Reframing Autism, 2023).</li>
+<li><strong>Protejează timpul liber.</strong> Socializarea și școala costă ambele energie. Construiește timp de recuperare liniștit și ghidat de interese.</li>
+<li><strong>Susține frații și surorile.</strong> Nevoile unui copil monotropic pot absorbi multă lățime de bandă familială. Asigură-te că frații au timp unu-la-unu și explicații sincere, potrivite vârstei — și că știu că e în regulă să aibă propriile lor sentimente.</li>
+<li><strong>Construiește independență în jurul intereselor.</strong> Un copil care se chinuie să înceapă treburile s-ar putea să se arunce direct la ele dacă sunt încadrate în jurul pasiunii lui (sistemul de fișiere cu fapte despre dinozauri; foaia de calcul cu statistici de fotbal).</li>
+</ul>
+<h3 id="17-ai-grijă-de-tine">1.7 Ai grijă de tine</h3>
+<p>Nu poți turna dintr-o cană goală. Acceptă ajutor practic, conectează-te cu alte familii pozitive față de autism și urmează îndrumare <strong>condusă de autiști</strong> unde poți — tinde să fie cea mai exactă (Reframing Autism, 2023). Faci o muncă mai grea decât își dau majoritatea oamenii seama.</p>
+<hr />
+<h2 id="partea-2--pentru-bunici-și-familie-extinsă">Partea 2 — Pentru Bunici și Familie Extinsă</h2>
+<p>Bunicii, mătușile, unchii și verii pot fi printre cele mai iubitoare și stabilizatoare persoane din viața unui copil. Treaba ta nu este să „repari" nimic — este să <strong>înțelegi, accepți și să susții părinții</strong> (Autism Society of NC, Fetzer).</p>
+<h3 id="21-urmează-conducerea-părinților">2.1 Urmează conducerea părinților</h3>
+<ul>
+<li><strong>Ei îl cunosc cel mai bine pe copil.</strong> Ascultă înainte să sfătuiești; lasă-i să ceară ajutor în loc să intervii ca să faci „pe-a ta".</li>
+<li><strong>Menține rutinele consecvente.</strong> Dacă familia folosește anumite strategii, programe sau ajutoare de comunicare, folosește-le și tu — consecvența reduce anxietatea copilului la tranziții (Autism Society of NC).</li>
+<li><strong>Respectă deciziile lor</strong> chiar când ai face-o diferit. Acesta este copilul lor.</li>
+</ul>
+<h3 id="22-conectează-te-prin-lumea-copilului">2.2 Conectează-te prin lumea copilului</h3>
+<ul>
+<li><strong>Întâlnește-i unde sunt.</strong> Învață ce iubesc și <em>joacă-te cu ei</em> — acel interes este uşa lor din faţă spre conectare (Autism Society of NC).</li>
+<li><strong>Nu forța contact vizual tipic, îmbrățișări sau conversație de complezență.</strong> Mulți copii autiști consideră contactul vizual copleșitor și preferă conectare <em>umăr la umăr</em> (să facă ceva împreună) decât față în față.</li>
+<li><strong>Cadouri:</strong> mergi pe interes. O carte, un kit sau o experiență legată de pasiunea lor aterizează de obicei mai bine decât un cadou generic „drăguț".</li>
+</ul>
+<h3 id="23-păstrează-ți-limbajul-clar-și-calm">2.3 Păstrează-ți limbajul clar și calm</h3>
+<ul>
+<li><strong>Limbaj clar, concis, literal</strong> funcționează cel mai bine (Autism Society of NC). Spune ce vrei să spui; evită sarcasmul de tachinare pe care un copil mic îl poate lua literal.</li>
+<li><strong>Oferă timp de procesare.</strong> Dacă nu răspund imediat, probabil încă procesează — așteaptă în loc să repeți mai tare.</li>
+<li><strong>Nu lua momentele explozive personal.</strong> Dacă copilul are o criză de cedare, „vezi asta ca pe un simptom, nu ca pe cine sunt ei cu adevărat" (Autism Society of NC).</li>
+</ul>
+<h3 id="24-fii-un-refugiu-sigur--și-pentru-părinți">2.4 Fii un refugiu sigur — și pentru părinți</h3>
+<ul>
+<li><strong>Oferă ajutor concret:</strong> o masă, să supraveghezi frații/surorile o oră, o cursă la magazin. Ajutorul practic mic valorează mai mult decât sfatul cu intenție bună.</li>
+<li><strong>Educa-te</strong> din resursele în care familia are încredere și împărtășește ce înveți — arată că ești de partea lor (Autism Society of NC).</li>
+<li><strong>Ai grijă de tine</strong> și împarte-ți dragostea pe toți nepoții deopotrivă.</li>
+</ul>
+<blockquote>
+<p><strong>Pe scurt:</strong> iubește copilul așa cum este, învață-i limbajul și fă-i pe părinți să se simtă susținuți, nu judecat. Asta e cea mai mare parte.</p>
+</blockquote>
+<hr />
+<h2 id="partea-3--pentru-profesori-de-școală-primară">Partea 3 — Pentru Profesori de Școală Primară</h2>
+<p>Școala este un mediu multi-canal, cu multe tranziții și foarte social — ceea ce o face genuin grea pentru elevii monotropici. Îndrumările profesorului autist Fergus Murray pentru profesori se rezumă la <strong>șase lucruri de înțeles</strong> (F. Murray, 2019). Iată-le, cu ce să <em>faci</em>.</p>
+<h3 id="31-să-faci-față-la-mai-multe-canale-este-greu">3.1 Să faci față la mai multe canale este greu</h3>
+<ul>
+<li><strong>Nu te baza doar pe instrucțiuni vorbite.</strong> Oferă-le <strong>în formă scrisă sau vizuală clară</strong> ca elevii să poată reveni, în loc să trebuiască să-ți filtreze vocea din zgomotul clasei (F. Murray, 2019).</li>
+<li><strong>Un lucru odată.</strong> Un zid de instrucțiuni verbale se va pierde parțial.</li>
+</ul>
+<h3 id="32-filtrarea-este-delicată-și-predispusă-la-erori">3.2 Filtrarea este delicată și predispusă la erori</h3>
+<ul>
+<li><strong>Redu zgomotul, dezordinea vizuală și cerințele sociale.</strong> Degramează pereții, folosește tapițerii moi, așază copilul departe de cele mai aglomerate/bâzâitoare locuri.</li>
+<li><strong>Protejează focusul și fluxul.</strong> Concentrarea profundă care vine cu stăpânirea a ceva interesant este <em>unul dintre cele mai puternice unelte din educație</em> — proiectează ziua ca elevii să poată intra în ea uneori (F. Murray, 2019).</li>
+<li><strong>Ai un plan pentru suprasolicitare:</strong> un <strong>loc liniștit</strong> unde copilul să poată merge să se decomprime și să stimmeze fără să se simtă stânjenit (F. Murray, 2019).</li>
+</ul>
+<h3 id="33-schimbarea-liniilor-este-destabilizantă">3.3 Schimbarea liniilor este destabilizantă</h3>
+<ul>
+<li><strong>Previzibilitatea reduce încărcătura cognitivă.</strong> Orare vizibile, tăblițe „acum / apoi" și avertizarea din timp a schimbărilor îi ajută pe toți.</li>
+<li><strong>Tranzițiile sunt zona de pericol.</strong> Dă avertismente; evită surprizele; înmoaie trecerea spre și dinspre muncă de grup, adunări și cantină.</li>
+<li><strong>Timpul nestructurat e cea mai grea parte a zilei.</strong> Pauzele și prânzurile, fără scăpare din forfotă și cu presiunea de „a găsi un partener," sunt adesea mai epuizante decât lecțiile (F. Murray, 2019). Oferă opțiuni structurate și cu cerințe mici (un club liniștit, o activitate de prânz, un spațiu sigur clar).</li>
+</ul>
+<h3 id="34-interesele-sunt-intense--folosește-le">3.4 Interesele sunt intense — folosește-le</h3>
+<ul>
+<li><strong>Să lucrăm <em>cu</em> interesele unui elev aduce mari recompense educaționale</strong> (Wood, 2019, citat în F. Murray, 2019). Folosește interesul ca vehicul al curriculumului unde poți.</li>
+<li><strong>Nu folosi interesul doar ca recompensă de reținut.</strong> Asta transformă sursa principală de reglare a copilului în pârghie și erodează încrederea.</li>
+</ul>
+<h3 id="35-dar-de-ce-este-real--oferă-motive">3.5 „Dar de ce?" este real — oferă motive</h3>
+<p>Elevii monotropici au adesea nevoie să înțeleagă <em>de ce</em>, uneori cu mai mult detaliu decât colegii. <strong>Motivele sunt o unealtă didactică cheie</strong>; fricțiunea vine adesea din a te aștepta ca un copil să accepte lucruri doar pe autoritate (F. Murray, 2019). Tratează întrebările lor ca pe participare, nu ca pe sfidare.</p>
+<h3 id="36-lucrurile-cad-din-conștiență--oferă-structură-externă">3.6 Lucrurile cad din conștiență — oferă structură externă</h3>
+<p>Când atenția e în altă parte, nevoile, termenele limită și instrucțiunile dispar genuin din minte. <strong>Orare vizuale, liste de verificare, planificatoare și memento-uri</strong> funcționează ca memorie externă (F. Murray, 2019). Ajută copilul să le construiască — dar păstrează-le co-create, nu de control.</p>
+<h3 id="37-vorbește-cu-elevul--și-crede-l">3.7 Vorbește cu elevul — și crede-l</h3>
+<blockquote>
+<p><em>"Dacă vrei să știi ce e greu pentru cineva pe care îl înveți, și ce l-ar putea ajuta, cea mai bună ta opțiune este probabil să vorbești cu el. Încearcă să-l crezi când îți spune că ceva e greu."</em> — Fergus Murray (2019)</p>
+</blockquote>
+<p>Profilele autiste sunt „țuguiate" — variație enormă între arii. Nu presupune niciodată că un copil ar trebui să găsească ceva ușor doar pentru că e capabil în altă parte. Și <strong>nu insista niciodată pe contact vizual și nu-l opri din a se mișca/stimmeze</strong> — ambele sunt adesea cum gestionează suprasolicitarea (F. Murray, 2019).</p>
+<h3 id="38-construiește-un-parteneriat-real-casă-școală">3.8 Construiește un parteneriat real casă-școală</h3>
+<p>Familiile dețin informație crucială despre declanșatori, semne timpurii de avertizare și ce îl reglează pe copil. Un simplu caiet sau o aplicație de comunicare bidirecțională — ce a mers bine, ce a fost greu, ce schimbări vin — previne multe zile proaste pentru toți.</p>
+<hr />
+<h2 id="partea-4--pentru-antrenori-de-sport-educație-fizică-și-activități">Partea 4 — Pentru Antrenori de Sport, Educație Fizică și Activități</h2>
+<p>Mișcarea contează: e bună pentru sănătate, dispoziție, încredere și conectare socială. Dar copiii și adolescenții autiști sunt, în medie, <strong>mai puțin activi fizic decât colegii</strong> — nu din lipsă de interes, ci pentru că multe medii sportive sunt zgomotoase, imprevizibile, cer din punct de vedere social și pline de tranziții bruște. O revizuire de tip scoping din 2025 a întregii cercetări pe acest subiect (Michaud &amp; Harvey, 2025) a găsit un set clar de lucruri care ajută. Combinat cu lentila monotropismului, iată versiunea practică.</p>
+<h3 id="41-ce-spune-cercetarea-că-ajută-michaud--harvey-2025">4.1 Ce spune cercetarea că ajută (Michaud &amp; Harvey, 2025)</h3>
+<p>Principalii facilitatori din revizuire:</p>
+<ul>
+<li><strong>Rutine previzibile</strong> — aceeași încălzire, aceeași structură, fără surprize.</li>
+<li><strong>Spații sigure și prietenoase cu simțurile</strong> — mai liniștite, mai puțină dezordine, loc de retragere.</li>
+<li><strong>Relații bune cu antrenorii și colegi suportivi</strong> — partea socială contează mai mult pentru participare decât partea de îndemânare.</li>
+<li><strong>Activități care se potrivesc cu îndemânările copilului și par familiare</strong>, și care iau forma unui <strong>joc</strong>.</li>
+<li><strong>Implicarea familiei</strong> și <strong>oportunități post-școală / în comunitate</strong>.</li>
+<li>O abordare <strong>bazată pe punctele forte</strong> — <em>"activitate fizică nu ca o provocare de depășit, ci ca o oportunitate de a construi încredere, bucurie și conectare socială"</em> (Michaud, în McGill Newsroom, 2025).</li>
+</ul>
+<h3 id="42-mapează-monotropismul-pe-antrenament">4.2 Mapează monotropismul pe antrenament</h3>
+<table>
+<thead>
+<tr>
+<th>Trăsătură a monotropismului</th>
+<th>Ce înseamnă în sport</th>
+<th>Mutare de antrenor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inerție autistă</strong></td>
+<td>Începutul, oprirea și schimbarea exercițiilor costă energie</td>
+<td>Construiește o <strong>încălzire previzibilă</strong> și <strong>răcire</strong> ca rampe de tranziție; dă avertismente înainte de a schimba activitățile; permite un start lent</td>
+</tr>
+<tr>
+<td><strong>Tunel de atenție</strong></td>
+<td>Activitățile cu focus unic sunt mai ușoare și mai pline de bucurie decât cele cu focus divizat</td>
+<td>Preferă exerciții <strong>o singură îndemânare-o dată</strong>; lasă un copil să rămână la o îndemânare în care e absorbit; practica în <strong>formă de joc</strong> funcționează mai bine decât exercițiile abstracte</td>
+</tr>
+<tr>
+<td><strong>Hiperresponsivitate senzorială</strong></td>
+<td>Fluierați, bâzâituri, săli cu ecou, lumini puternice, echipamente care produc mâncărime pot copleși</td>
+<td><strong>Redu</strong> sunete puternice bruște (folosește semnale din mână/aplauce silențioase), alege spații mai liniștite, permite <strong>apărătoare de urechi</strong>, echipament moale, ochelari de soare; avertizează înainte de un fluier/trombă</td>
+</tr>
+<tr>
+<td><strong>Hiporesponsivitate senzorială / interocepție</strong></td>
+<td>S-ar putea să nu observe setea, supraîncălzirea, durerea, oboseala când e absorbit</td>
+<td>Pauze de băut și odihnă <strong>programate, specifice</strong>; verificare („pauză de apă acum — da, tu!"); urmărește supraîncălzirea pe care copilul nu a semnalat-o</td>
+</tr>
+<tr>
+<td><strong>Comunicare pe un singur canal</strong></td>
+<td>O lungă instruire verbală într-o sală zgomotoasă nu va ateriza</td>
+<td><strong>Demonstrează</strong> îndemânarea vizual; dă <strong>o singură instrucțiune scurtă</strong> odată; susține-o cu o imagine sau o schiță rapidă pe tablă</td>
+</tr>
+<tr>
+<td><strong>Gândire literală și timp de procesare</strong></td>
+<td>Sarcasmul, idiomurile și schimburile rapide ratează</td>
+<td>Folosește limbaj <strong>clar, concret</strong>; permite <strong>câteva secunde</strong> pentru un răspuns înainte de a repeta; evită tachinarea pe care un copil o poate lua literal</td>
+</tr>
+<tr>
+<td><strong>Stimming și mișcare</strong></td>
+<td>Agitația, mersul, fluturatul sunt autoreglare, nu comportament greșit</td>
+<td><strong>Permite mișcare</strong> între exerciții; niciodată nu pedepsi sau nu opri public stimmingul; oferă o pauză de mișcare ca resetare</td>
+</tr>
+<tr>
+<td><strong>Crize de cedare/închideri</strong></td>
+<td>Suprasolicitarea poate ieși la suprafață la mijlocul sesiunii</td>
+<td>Vezi Partea 1.5: <strong>redu inputul</strong>, găsește un <strong>loc liniștit</strong>, rămâi calm, nu cere explicații în acel moment</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-listă-de-verificare-practică-de-antrenament">4.3 Listă de verificare practică de antrenament</h3>
+<ul>
+<li><strong>Aceeași încălzire la fiecare sesiune</strong> — previzibilitatea scade costul de intrare.</li>
+<li><strong>Arată, apoi spune.</strong> Demonstrația vizuală bate un discurs.</li>
+<li><strong>O instrucțiune odată,</strong> în limbaj clar, cu un moment de procesare.</li>
+<li><strong>Oferă alegere și autonomie</strong> unde poți — ce stație, ce rol, ce joc. Controlul scade anxietatea.</li>
+<li><strong>Construiește relația antrenor-copil mai întâi.</strong> Un copil care are încredere în tine va împinge prin mai mult disconfort decât unul care nu are.</li>
+<li><strong>Sărbătorește efortul și interesul special.</strong> Copilul care iubește statistici poate ține foaia de scor; cel care iubește o rutină poate conduce încălzirea.</li>
+<li><strong>Gândește-te la sporturi de echipă vs individuale.</strong> Ca regulă de bun-simț din lentila monotropismului (nu o constatare de cercetare fermă), sporturile individuale (înot, alergare, arte marțiale, cățărat, atletism) se potrivesc adesea bine copiilor monotropici — mai puține canale sociale simultane, structură clară, loc pentru focus profund. Sporturile de echipă pot funcționa frumos <em>dacă</em> încărcătura socială este gestionată (roluri clare, colegi suportivi, un antrenor care înțelege).</li>
+<li><strong>Ai un plan pentru suprasolicitare:</strong> un colț liniștit agreat, un semnal pe care copilul îl poate folosi să iasă, apărătoare de urechi la îndemână.</li>
+</ul>
+<blockquote>
+<p><strong>Reîncadrează succesul:</strong> scopul la această vârstă este un copil care <strong>vrea să revină săptămâna viitoare.</strong> Îndemânarea urmează bucuria — nu invers.</p>
+</blockquote>
+<hr />
+<h2 id="partea-5--transversal-limbaj-și-un-stăpân-fă--nu-face">Partea 5 — Transversal: Limbaj, și un Stăpân Fă / Nu Face</h2>
+<h3 id="51-limbaj-care-ajută-vs-limbaj-care-rănește">5.1 Limbaj care ajută vs limbaj care rănește</h3>
+<table>
+<thead>
+<tr>
+<th>Încearcă să eviți</th>
+<th>Încearcă în schimb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Obsesie," „fixație"</td>
+<td><strong>Pasiune, interes special, focus</strong></td>
+</tr>
+<tr>
+<td>„El nu vrea…" / „Ea e dificilă"</td>
+<td><strong>„El nu poate acum" / „Ea e suprasolicitată"</strong></td>
+</tr>
+<tr>
+<td>„Oprește-te din agitat / fă contact vizual"</td>
+<td>Permite mișcare și contact vizual la confortul copilului</td>
+</tr>
+<tr>
+<td>„Criză de nervi," „obraznic," „caută atenția"</td>
+<td><strong>Criză de cedare, închidere, suprasolicitare</strong></td>
+</tr>
+<tr>
+<td>Etichete „funcționare scăzută / funcționare înaltă"</td>
+<td>Descrie punctele forte și nevoile de sprijin <strong>specifice</strong> ale copilului (profilele autiste sunt „țuguiate")</td>
+</tr>
+<tr>
+<td>Cadre patologizant, bazat pe deficite</td>
+<td>Cadru <strong>afirmativ al neurodiversității, identitate-întâi</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-un-stăpân-fă--nu-face-pentru-toată-lumea">5.2 Un stăpân Fă / Nu Face pentru toată lumea</h3>
+<p><strong>Fă</strong></p>
+<ul>
+<li>✅ <strong>Învață interesele copilului</strong> și folosește-le ca punți</li>
+<li>✅ <strong>Fă ziua previzibilă</strong> și dă avertismente înainte de schimbări</li>
+<li>✅ <strong>Scade încărcătura senzorială</strong> și permite mișcare, stimming și pauze</li>
+<li>✅ <strong>Comunică clar, literal, un lucru odată,</strong> și permite timp de procesare</li>
+<li>✅ <strong>Redu cerințe și input</strong> când copilul merge spre suprasolicitare</li>
+<li>✅ <strong>Urmează conducerea părinților</strong> și menține abordări consecvente între casă/școală/sport</li>
+<li>✅ <strong>Vorbește cu copilul și crede-l</strong> despre ce e greu</li>
+</ul>
+<p><strong>Nu face</strong></p>
+<ul>
+<li>❌ Nu trata interesul special ca pe o problemă de limitat</li>
+<li>❌ Nu insista pe contact vizual sau nemișcare ca condiție a respectului</li>
+<li>❌ Nu pedepsi, nu fă de rușine și nu escalada în timpul unei crize de cedare sau închideri</li>
+<li>❌ Nu suprasolicita cu instrucțiuni verbale, schimbări de ultim moment sau timp social nestructurat</li>
+<li>❌ Nu presupune că abilitatea într-o zonă înseamnă abilitate în alta („profile țuguiate")</li>
+<li>❌ Nu patologiza și nu folosi limbaj bazat pe deficite în fața copilului</li>
+</ul>
+<h3 id="53-citește-comportamentul-ca-comunicare">5.3 Citește comportamentul ca comunicare</h3>
+<p>Pentru un copil monotropic, comportamentul este aproape întotdeauna <strong>comunicare despre reglare</strong> — „asta e prea tare," „nu pot schimba liniile atât de repede," „am rămas fără combustibil." Când citești așa, răspunsul corect (scade încărcătura, dă timp, oferă spațiul liniștit) devine de obicei evident.</p>
+<h3 id="54-când-să-cauți-mai-mult-sprijin">5.4 Când să cauți mai mult sprijin</h3>
+<p>Dacă copilul e frecvent în suprasolicitare, are des crize de cedare sau închideri, maschează puternic sau se retrage, merită să vorbești cu familia despre sprijin mai larg — personalul SENCO/SEND al școlii, un terapeut ocupațional pozitiv față de autism (mai ales pentru sprijin senzorial și de interocepție) și organizații <strong>conduse de autiști</strong> pentru îndrumare care tinde să fie cea mai exactă și afirmativă.</p>
+<hr />
+<h2 id="partea-6--întrebări-deschise-și-limitări-sincere">Partea 6 — Întrebări Deschise și Limitări Sincere</h2>
+<p>Câteva note sincere, ca să poți avea încredere în acest ghid:</p>
+<ul>
+<li><strong>Monotropismul este o teorie descriptivă puternică, încă nu pe deplin mecanicistă.</strong> Explică <em>cum</em> funcționează atenția autistă și ce decurge de acolo, dar neurobiologia de bază este încă cercetată (Dwyer, 2021; 2025). Este cadrul cel mai rezonant din interiorul comunității autiste și din ce în ce mai mult în cercetare, dar nu e toată imaginea.</li>
+<li><strong>Nu fiecare copil autist este identificabil monotropic.</strong> O minoritate de persoane autiste spun că monotropismul nu le descrie bine. Folosește acest ghid ca lentilă de pornire și <strong>adaptează totul la copilul individual din fața ta</strong> (Murray &amp; Lawson, 2022, History of Monotropism).</li>
+<li><strong>Acest ghid este general,</strong> trasat din teoria monotropismului și un set mic de surse reputate de practică și cercetare. Nu înlocuiește sfatul individualizat de la profesioniști care îți cunosc copilul.</li>
+<li><strong>Dovezile despre sport sunt o revizuire de tip scoping (Michaud &amp; Harvey, 2025)</strong> care a cartografiat literatura și a enumerat facilitatori; este puternică pe „ce tinde să ajute," mai puțin pe rezultate controlate ale intervențiilor specifice.</li>
+<li><strong>Sursele au fost limitate de ce s-a putut accesa în mod fiabil.</strong> Unele pagini web de practică nu au putut fi aduse pentru această rundă; unde s-a întâmplat asta, îndrumarea este fundamentată în surse complet verificate (monotropism.org, Reframing Autism, NHS Autism Space, revizuirea Michaud &amp; Harvey și piesa-sursă) în loc de pagini care nu pot fi aduse. Nu au fost inventate fapte.</li>
+</ul>
+<hr />
+<h2 id="surse">Surse</h2>
+<p><strong>Teorie — monotropism (piesa-sursă primară și referințele ei)</strong></p>
+<ul>
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></li>
+<li>Murray, F. (2018, actualizat 2025). <em>Me and Monotropism: a unified theory of autism.</em> The Psychologist, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Dwyer, P. (2025). <em>Monotropism: Between Obsessive Joy and Overwhelm.</em> OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Dwyer, P. (2021). <em>Revisiting monotropism.</em> Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Murray, F. &amp; Lawson, W. (2022). <em>History of Monotropism.</em> <a href="https://monotropism.org/history">https://monotropism.org/history</a></li>
+<li>Milton, D. (2012). On the epistemic and contextual landscape of the "double empathy problem." (Referențiat în piesa-sursă.)</li>
+</ul>
+<p><strong>Aplicații practice — monotropism.org</strong></p>
+<ul>
+<li>Murray, F. <em>Monotropism in Practice</em> (școală, joacă, muncă, sănătate mintală). <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2019). <em>Monotropism at School / Top Autism Tips for Teachers</em> (inițial în Tes). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a></li>
+<li>Murray, F. (2022). <em>Understanding how routines can help autistic people thrive.</em> <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Knight, J. (2021). <em>Staying Put, Monotropism &amp; Me — "tunnels not tasks."</em> <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Mahler, K. (2024). <em>Interoception and Monotropism.</em> <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Wood, R. (2019). <em>Autism, intense interests and support in school.</em> Educational Review. <a href="https://doi.org/10.1080/00131911.2019.1566213">https://doi.org/10.1080/00131911.2019.1566213</a></li>
+</ul>
+<p><strong>Explicare condusă de autiști și cadru parental/afirmativ</strong></p>
+<ul>
+<li>Reframing Autism (2023). <em>Monotropism: Understanding Autistic Ways of Being Through the Lens of Attention.</em> <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society. <em>What is monotropism? Understanding a neuroaffirming theory of autism.</em> <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ul>
+<p><strong>Crize de cedare și închideri</strong></p>
+<ul>
+<li>Leicestershire Partnership NHS Trust — Autism Space. <em>Understanding autistic meltdowns and shutdowns.</em> <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ul>
+<p><strong>Bunici și familie extinsă</strong></p>
+<ul>
+<li>Fetzer, T. (Autism Society of North Carolina). <em>How to Help as a Grandparent.</em> <a href="https://www.autismsociety-nc.org/how-to-help-as-a-grandparent">https://www.autismsociety-nc.org/how-to-help-as-a-grandparent</a></li>
+</ul>
+<p><strong>Sport, activitate fizică și educație fizică</strong></p>
+<ul>
+<li>Michaud, M. &amp; Harvey, W.J. (2025). <em>Facilitating Physical Activity Participation Among Autistic Children and Youth: A Scoping Review.</em> Journal of Autism and Developmental Disorders. <a href="https://doi.org/10.1007/s10803-025-07141-y">https://doi.org/10.1007/s10803-025-07141-y</a></li>
+<li>McGill University Newsroom (2025). <em>New study provides advice on how to boost participation in physical activity among autistic youth.</em> <a href="https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283">https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283</a></li>
+</ul>
+</body>
+</html>

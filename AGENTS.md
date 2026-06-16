@@ -50,7 +50,7 @@ monotropism/
 │
 └── outputs/                 # ★ All published drafts live here
     ├── <stem>.md            #   Markdown source (English)
-    ├── <stem>_ita.md        #   …and translations (it/fr/es/de)
+    ├── <stem>_ita.md        #   …and translations (it/fr/es/de/pl/nl/ro/pt)
     ├── <stem>.html          #   rendered standalone HTML
     ├── <stem>.pdf           #   rendered print-ready PDF
     ├── <stem>.provenance.md #   research-provenance sidecar (gitignored — never commit)
@@ -87,6 +87,10 @@ belongs to one **category** and one or more **languages**.
 | `fr` | Français  | `_fr`       | 🇫🇷   |
 | `es` | Español   | `_es`       | 🇪🇸   |
 | `de` | Deutsch   | `_de`       | 🇩🇪   |
+| `pl` | Polski    | `_pl`       | 🇵🇱   |
+| `nl` | Nederlands| `_nl`       | 🇳🇱   |
+| `ro` | Română    | `_ro`       | 🇷🇴   |
+| `pt` | Português | `_pt`       | 🇵🇹   |
 
 > **Italian uses `_ita`, not `_it`.** Match this exactly in filenames *and* in
 > the landing page's `LANG_SUFFIX` map. English uses **no suffix**.
@@ -109,13 +113,13 @@ Four category slugs, displayed in this fixed order on the landing page
 
 ### Currently published (must stay mirrored: README ↔ `index.html` DOCS)
 
-| Stem                                   | Cat            | Languages            |
-|----------------------------------------|----------------|----------------------|
-| `monotropism`                          | `theory`       | en, it, fr, es, de   |
-| `monotropism-comorbidity-landscape`    | `theory`       | en                   |
-| `autistic-monotropism-lifespan-guide`  | `practitioner` | en                   |
-| `autistic-monotropism-family-guide`    | `family`       | en, it, fr, es, de   |
-| `monotropic-kids-guidelines`           | `kids`         | en, it, fr, es, de   |
+| Stem                                   | Cat            | Languages                       |
+|----------------------------------------|----------------|--------------------------------|
+| `monotropism`                          | `theory`       | en, it, fr, es, de, pl, nl, ro, pt |
+| `monotropism-comorbidity-landscape`    | `theory`       | en                             |
+| `autistic-monotropism-lifespan-guide`  | `practitioner` | en                             |
+| `autistic-monotropism-family-guide`    | `family`       | en, it, fr, es, de, pl, nl, ro, pt |
+| `monotropic-kids-guidelines`           | `kids`         | en, it, fr, es, de, pl, nl, ro, pt |
 
 > **Two English-only drafts** (`monotropism-comorbidity-landscape`,
 > `autistic-monotropism-lifespan-guide`) have no translations yet. Add languages
@@ -172,6 +176,19 @@ listed in the provenance file. DOIs that 302-redirect count as reachable.
   footer state this; preserve it.
 - Tone: plain language for family/kids guides; more academic register is fine
   for the theory brief.
+- **Locked caregiver terminology** (no loanword "caregiver" in non-English
+  drafts — use the established native term, singular / plural):
+
+  | Lang | Caregiver term |
+  |------|----------------|
+  | `it` | assistente / assistenti |
+  | `pl` | opiekun / opiekunowie |
+  | `nl` | verzorger / verzorgers |
+  | `ro` | îngrijitor / îngrijitori |
+  | `pt` | cuidador / cuidadores |
+
+  Keep this consistent across the `.md`, rendered `.html`/`.pdf`, and the
+  landing page's per-language UI strings.
 
 ---
 
@@ -184,7 +201,7 @@ shown you edit the data arrays in the `<script>`, not the markup.
 ### Architecture
 
 - **Hash-routed "sites":** `#/` shows a **language picker** (home);
-  `#/en`, `#/it`, `#/fr`, `#/es`, `#/de` show a **fully-localised landing page**
+  `#/en`, `#/it`, `#/fr`, `#/es`, `#/de`, `#/pl`, `#/nl`, `#/ro`, `#/pt` show a **fully-localised landing page**
   for that language (title, tagline, intro, category headings, audience labels,
   descriptions, buttons and footer are all in the chosen language).
 - **Only drafts available in a language are shown** on that language's page
@@ -199,8 +216,8 @@ shown you edit the data arrays in the `<script>`, not the markup.
 Three structures drive everything (search for them in `index.html`):
 
 ```js
-const LANGS       = [ { code: "en", flag: "🇬🇧" }, /* it, fr, es, de */ ];
-const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de" };
+const LANGS       = [ { code: "en", flag: "🇬🇧" }, /* it, fr, es, de, pl, nl, ro, pt */ ];
+const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "_pl", nl: "_nl", ro: "_ro", pt: "_pt" };
 const I18N        = { /* per-language UI strings: name, tagline, intro, headings,
                          read/pdf/open labels, category names (cat.theory…),
                          footer, aiNote, github link … */ };
@@ -208,7 +225,7 @@ const DOCS = [
   {
     cat: "theory",                       // one of: theory | practitioner | family | kids
     stem: "monotropism",                 // file basename; paths auto-built
-    langs: ["en","it","fr","es","de"],   // which languages this draft is published in
+    langs: ["en","it","fr","es","de","pl","nl","ro","pt"],   // which languages this draft is published in
     content: {
       en: { title, audience, desc },     // per-language display metadata
       it: { title, audience, desc },

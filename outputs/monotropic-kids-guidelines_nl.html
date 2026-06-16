@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monotroop Opgroeien</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="monotroop-opgroeien">Monotroop Opgroeien</h1>
+<h3 id="een-vriendelijke-gids-voor-ouders-grootouders-leraren-en-trainers-van-autistische-kinderen-711-jaar">Een Vriendelijke Gids voor Ouders, Grootouders, Leraren en Trainers van Autistische Kinderen (7–11 jaar)</h3>
+<hr />
+<blockquote>
+<p><strong>Voor wie deze gids is.</strong> Deze gids is voor de volwassenen rond een <strong>autistisch kind van ongeveer 7 tot 11 jaar</strong> wiens geest op een <em>monotrope</em> manier werkt — een geest die zich diep en intens op een klein aantal dingen tegelijk richt. Dat omvat <strong>ouders en verzorgers</strong>, <strong>grootouders, ooms, tantes en andere familieleden</strong>, <strong>basisschoolleraren</strong> en de <strong>trainers en instructeurs</strong> die de sport en activiteiten van het kind begeleiden. Het is geen klinisch handboek. Het is een begeleider in gewone taal om je te helpen het kind te begrijpen, contact te maken, en thuis, op school en op het sportveld makkelijker en vrolijker te maken.</p>
+</blockquote>
+<blockquote>
+<p><strong>Een opmerking over taal.</strong> De meeste autistische mensen geven de voorkeur aan <strong>identiteit-eerst-taal</strong> ("autistisch kind"), dus dat is wat deze gids gebruikt. Sommige families prefereren "kind met autisme" — volg de voorkeur van het kind en de familie. Deze gids vermijdt opzettelijk woorden als <em>stoornis, abnormaal, deficiënt, tragedie</em> of <em>last</em>, behalve bij het uitleggen van ideeën die families elders mogelijk is gegeven. Autisme is een <strong>verschil</strong> — met echte uitdagingen, en echte sterke kanten.</p>
+</blockquote>
+<blockquote>
+<p><strong>De ene idee om mee te nemen.</strong> <em>"Als je om het welzijn van autistische mensen geeft, moet je proberen autisme te begrijpen. Als je autisme wilt begrijpen, moet je monotropisme begrijpen."</em> — Fergus Murray, autistisch docent en schrijver.</p>
+</blockquote>
+<hr />
+<h2 id="deel-0--het-ene-idee-dat-je-eerst-moet-meenemen">Deel 0 — Het Ene Idee dat Je Eerst Moet Meenemen</h2>
+<p>De aandacht van de meeste mensen is verdeeld over veel dingen tegelijk — de klok, het gepraat, de persoon voor hen, wat er voor het avondeten is. Een <strong>monotrope</strong> geest is anders: hij trekt aandacht naar <strong>een klein aantal diepe, intense kanalen</strong> per keer. De autistische onderzoekers Dinah Murray, Wenn Lawson en Mike Lesser noemden dit een <strong>"aandachtstunnel"</strong> (Murray, Lesser &amp; Lawson, 2005).</p>
+<p>Zie aandacht als een beperkte hoeveelheid water. Een <strong>polytrope</strong> (meer typische) geest is als een <strong>sproeiinstallatie</strong> — water wijd verspreid over de tuin. Een <strong>monotrope</strong> geest is als een <strong>slang met een smalle mond</strong> — minder grond bedekt, maar alles in die stroom wordt <em>diep</em> bewaterd (F. Murray, 2018). Geen van beide is "beter." Elk heeft sterke kanten en kosten.</p>
+<p>Dit ene verschil helpt bijna alles te verklaren over hoe het kind in jouw leven de wereld ervaart.</p>
+<h3 id="wat-je-misschien-ziet--wat-er-vaak-écht-gebeurt">Wat je misschien ziet → wat er vaak écht gebeurt</h3>
+<table>
+<thead>
+<tr>
+<th>Je ziet misschien…</th>
+<th>Wat er vaak gebeurt (monotropisme)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diepe, "obsessieve" interesse in één onderwerp, soms jarenlang</td>
+<td>Een <strong>passie</strong> die vreugde, rust, vaardigheid en identiteit brengt — geen "obsessie" om te beperken of "af te leren"</td>
+</tr>
+<tr>
+<td>Lijkt je niet te horen; "negeert" mensen of zijn eigen behoeften</td>
+<td>Wanneer volledig geabsorbeerd, registreert de geest oprecht <strong>niet</strong> wat buiten de tunnel valt — waaronder honger, dorst, het toilet of iemand die spreekt</td>
+</tr>
+<tr>
+<td>Hevige reacties op bepaalde geluiden, lichten, geuren, texturen — of lijkt niets te voelen</td>
+<td><strong>Hyper-</strong> (over-) of <strong>hypo-</strong> (onder-) responsiviteit: een prikkel <em>binnen</em> de tunnel wordt intens gevoeld; een <em>buiten</em> de tunnel registreert mogelijk niet</td>
+</tr>
+<tr>
+<td>Wiegen, met de handen wapperen, neuriën, woorden of bewegingen herhalen</td>
+<td><strong>Stimming</strong> — zelfgecontroleerde, voorspelbare input die kalmeert en het zenuwstelsel reguleert</td>
+</tr>
+<tr>
+<td>Traag met beginnen, stoppen of wisselen van activiteiten; meltdowns bij overgangen</td>
+<td><strong>Autistische inertie</strong> — van mentale "sporen" wisselen kost echte energie en tijd</td>
+</tr>
+<tr>
+<td>Spreekt heel diepgaand over een passie; neemt dingen heel letterlijk; heeft langer nodig om te antwoorden</td>
+<td><strong>Eenkanaals-, letterlijke</strong> communicatie, plus verwerkingstijd — geen onbeleefdheid of "niet luisteren"</td>
+</tr>
+<tr>
+<td>Plotselinge meltdown of stil en teruggetrokken worden</td>
+<td>Overbelasting — een <strong>meltdown</strong> (vechten/overweldiging) of <strong>shutdown</strong> (bevriezen/terugtrekking), geen stout gedrag</td>
+</tr>
+</tbody>
+</table>
+<p>Door deze gids zetten we elk hiervan om in <strong>praktische, vriendelijke dingen die je kunt doen</strong> — thuis, op school en op het sportveld.</p>
+<hr />
+<h2 id="deel-1--voor-ouders-en-verzorgers">Deel 1 — Voor Ouders en Verzorgers</h2>
+<p>Jij kent je kind het beste. Deze ideeën zijn gereedschap om uit te proberen, geen regels om op te leggen. Het grootste geschenk dat je een monotroop kind kunt geven, is een omgeving die <em>met</em> zijn aandacht werkt in plaats van ertegen.</p>
+<h3 id="11-bescherm-en-gebruik-de-speciale-interesse">1.1 Bescherm en gebruik de speciale interesse</h3>
+<p>De intense interesse van een kind is <strong>geen probleem om te beheren</strong> — het is zijn motor, zijn troost, zijn manier om de wereld binnen te komen. Zoals autistisch schrijver Wenn Lawson het stelt, vinden autistische mensen het <em>"veel makkelijker om verbinding met begrip te leggen"</em> wanneer iets gerelateerd is aan hun interessegebied.</p>
+<ul>
+<li><strong>Bouw bruggen erdoorheen.</strong> rekenen via treindienstregelingen; lezen via dinosaurussen; sociale verhalen met zijn favoriete personage.</li>
+<li><strong>"Wen" het niet af.</strong> Er is geen voordeel aan een gezonde passie te beperken, en dat doen kan een sleutelbron van regulatie en vreugde wegnemen.</li>
+<li><strong>Sluit je soms aan.</strong> Ernaast zitten en oprechte nieuwsgierigheid tonen is een van de sterkste manieren om contact te maken.</li>
+</ul>
+<h3 id="12-maak-de-dag-voorspelbaar-en-verzacht-overgangen">1.2 Maak de dag voorspelbaar (en verzacht overgangen)</h3>
+<p>Autistische inertie betekent dat <strong>van spoor wisselen energie kost</strong>. Elke verrassing of abrupte verandering is een extra belasting op een beperkt budget (F. Murray, 2019; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Voorspelbare routines</strong> voor ochtenden, na school, maaltijden en bedtijd. Routines verminderen de cognitieve belasting — maar werken het best wanneer ze <em>mede-eigenaar</em> zijn, niet van buitenaf opgelegd (F. Murray, 2022).</li>
+<li><strong>Geef waarschuwingen vóór overgangen:</strong> "Over tien minuten stoppen we met Lego en maken ons klaar voor zwemmen… over twee minuten…" Visuele timers helpen.</li>
+<li><strong>"Tunnels, geen taken."</strong> Autistisch consultant Jamie Knight beschrijft plannen rond de focus van een kind: in plaats van hem uit een tunnel te trekken, probeer <strong>ruimte te openen voor de volgende tunnel om doorheen te gaan</strong> (Knight, 2021).</li>
+<li><strong>Zeg waarom.</strong> Monotrope kinderen hebben vaak een sterk <em>"Maar waarom?"</em>-instinct. Echte redenen geven verzacht overgangen veel meer dan "omdat ik het zeg" (F. Murray, 2019).</li>
+</ul>
+<h3 id="13-respecteer-de-zintuiglijke-wereld">1.3 Respecteer de zintuiglijke wereld</h3>
+<p>Zintuiglijke verschillen vloeien direct voort uit monotropisme: een prikkel <em>binnen</em> de tunnel wordt intens gevoeld; een <em>buiten</em> de tunnel registreert mogelijk niet (Murray, Lesser &amp; Lawson, 2005; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Verlaag de belasting thuis:</strong> dimmers, een stiller hoekje, gehoorbeschermers voor lawaaiige plekken, comfortabele kleding (knielukrige labels eraf, naadloze sokken toestaan).</li>
+<li><strong>Hypo-responsiviteit is ook echt:</strong> het kind merkt mogelijk niet dat het honger heeft, het koud heeft of naar het toilet moet wanneer het geabsorbeerd is. Zachte, specifieke herinneringen ("Het is al even — toiletstop?") helpen, omdat de behoefte echt uit het bewustzijn is verdwenen (Lawson, over interoceptie; Kelly Mahler, 2024).</li>
+<li><strong>Laat hem bewegen en stimmen.</strong> Stimming — wapperen, wiegen, neuriën, herhalen — is zelfregulatie, geen "gedrag." Het stoppen maakt het meestal moeilijker, niet makkelijker (Reframing Autism, 2023).</li>
+</ul>
+<h3 id="14-verlaag-eisen-wanneer-de-tank-leeg-is">1.4 Verlaag eisen wanneer de tank leeg is</h3>
+<p>Wanneer een monotrope geest wordt geduwd om aandacht over te veel kanalen te verdelen, beschrijven autistische mensen een <strong>"monotrope splitsing"</strong> — overbelasting die kan opduiken als meltdowns, shutdowns, terugtrekking of weigering (een vorm van <strong>demand avoidance</strong>) (Reframing Autism, 2023). De oplossing is eisen en input <em>verlagen</em>, niet opvoeren.</p>
+<ul>
+<li><strong>Let op vroege waarschuwingssignalen:</strong> ijsberen, herhaaldelijk dezelfde vragen stellen, korter lontje, plotselinge stilte. Handel voordat het overkookt.</li>
+<li><strong>Laat niet-essentiële eisen vallen op moeilijke dagen.</strong> Een kind dat het op school de hele dag bij elkaar heeft gehouden, <strong>valt thuis vaak</strong> thuis — thuis is de veilige plek waar het masker afgaat. Die ineenstorting is een teken van vertrouwen en uitputting, niet dat jij iets verkeerd doet.</li>
+</ul>
+<h3 id="15-als-er-een-meltdown-of-shutdown-is">1.5 Als er een meltdown of shutdown is</h3>
+<p>Een <strong>meltdown</strong> is een verlies van controle door zintuiglijke of emotionele overweldiging — de vecht/vlucht-reactie van het lichaam — en is <em>geen</em> driftbui of een keuze. Een <strong>shutdown</strong> is de bevriezingsversie: stil worden, zich terugtrekken, soms niet kunnen spreken (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<p><strong>Ertduring:</strong></p>
+<ul>
+<li><strong>Oordeel of discussieer niet.</strong> Van streek of boos worden maakt het erger.</li>
+<li><strong>Verminder input:</strong> stil de kamer, dim de lichten, haal andere mensen weg, zet de muziek uit.</li>
+<li><strong>Wees een kalme, veilige aanwezigheid</strong> — maar stapel geen vragen, instructies of eisen op.</li>
+<li><strong>Geef tijd.</strong> Herstel van overbelasting is niet onmiddellijk.</li>
+<li><strong>Gebruik de minst beperkende benadering</strong> die iedereen veilig houdt.</li>
+</ul>
+<p><strong>Erna,</strong> wanneer het kind kalm is, kun je samen zachtjes een plan afspreken voor de volgende keer — wat hielp, wat de vroege signalen waren, waar een veilige rustplek is (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<blockquote>
+<p><strong>Herkader het in je eigen hoofd:</strong> een meltdown is het zenuwstelsel van het kind dat <em>"te veel"</em> zegt, niet het kind dat stout is. Die ene verschuiving verandert hoe je reageert.</p>
+</blockquote>
+<h3 id="16-vriendschappen-broers-en-zussen-en-zelfstandigheid-711-jaar">1.6 Vriendschappen, broers en zussen en zelfstandigheid (7–11 jaar)</h3>
+<p>De middenkindertijd is wanneer vriendschappen complexer worden, en <strong>masking</strong> (autistische trekken verbergen om erbij te horen) grip kan beginnen te krijgen — masken is uitputtend en is gekoppeld aan angst en burn-out (Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Kwaliteit boven kwantiteit van vrienden.</strong> Eén of twee accepterende vrienden verslaan een drukke sociale agenda. Autistische mensen vinden vaak makkelijkere, lonender communicatie met andere autistische of neurodivergente leeftijdsgenoten (Reframing Autism, 2023).</li>
+<li><strong>Bescherm rusttijd.</strong> Socializen en school kosten allebei energie. Bouw rustige, op interesse geleide hersteltijd in.</li>
+<li><strong>Steun broers en zussen.</strong> De behoeften van een monotroop kind kunnen veel gezinsbandbreedte absorberen. Zorg dat broers en zussen een-op-een-tijd krijgen en eerlijke, leeftijdsadequate uitleg — en dat ze weten dat het oké is om hun eigen gevoelens te hebben.</li>
+<li><strong>Bouw zelfstandigheid rond interesses.</strong> Een kind dat moeite heeft met taken beginnen, kan er direct in duiken als ze rond zijn passie worden gekaderd (het dinosaurussen-feitenarchief; het voetbalstatistiekenspreadsheet).</li>
+</ul>
+<h3 id="17-zorg-voor-jezelf">1.7 Zorg voor jezelf</h3>
+<p>Je kunt niet uit een lege beker schenken. Accepteer praktische hulp, verbind met andere autisme-positieve families en volg <strong>autistisch-geleide</strong> richtlijnen waar je kunt — die zijn meestal het meest accuraat (Reframing Autism, 2023). Je doet moeilijker werk dan de meeste mensen beseffen.</p>
+<hr />
+<h2 id="deel-2--voor-grootouders-en-uitgebreide-familie">Deel 2 — Voor Grootouders en Uitgebreide Familie</h2>
+<p>Grootouders, ooms, tantes en neven en nichten kunnen tot de meest liefdevolle en stabiliserende mensen in het leven van een kind behoren. Jouw taak is niet om iets "te repareren" — het is om te <strong>begrijpen, accepteren en de ouders te steunen</strong> (Autism Society of NC, Fetzer).</p>
+<h3 id="21-volg-de-leiding-van-de-ouders">2.1 Volg de leiding van de ouders</h3>
+<ul>
+<li><strong>Zij kennen het kind het best.</strong> Luister voordat je advies geeft; laat hen om hulp vragen in plaats van in te grijpen om het "op jouw manier" te doen.</li>
+<li><strong>Houd routines consistent.</strong> Als de familie bepaalde strategieën, schema's of communicatiehulpmiddelen gebruikt, gebruik die dan ook — consistentie vermindert de angst van het kind bij overgangen (Autism Society of NC).</li>
+<li><strong>Respecteer hun beslissingen</strong> zelfs als je het anders zou doen. Dit is hun kind.</li>
+</ul>
+<h3 id="22-verbind-via-de-wereld-van-het-kind">2.2 Verbind via de wereld van het kind</h3>
+<ul>
+<li><strong>Ontmoet hen waar ze zijn.</strong> Leer wat ze liefhebben en <em>speel het met hen</em> — die interesse is hun voordeur tot verbinding (Autism Society of NC).</li>
+<li><strong>Forceer geen typisch oogcontact, knuffels of smalltalk.</strong> Veel autistische kinderen vinden oogcontact overweldigend en prefereren verbinding <em>zij-aan-zij</em> (samen iets doen) in plaats van face-to-face.</li>
+<li><strong>Cadeaus:</strong> ga mee in de interesse. Een boek, kit of ervaring verbonden met hun passie landt meestal beter dan een generiek "leuk" cadeau.</li>
+</ul>
+<h3 id="23-houd-je-taal-helder-en-kalm">2.3 Houd je taal helder en kalm</h3>
+<ul>
+<li><strong>Heldere, beknopte, letterlijke taal</strong> werkt het best (Autism Society of NC). Zeg wat je bedoelt; vermijd sarcastische plagerij die een jong kind letterlijk kan nemen.</li>
+<li><strong>Geef verwerkingstijd.</strong> Als ze niet meteen antwoorden, verwerken ze waarschijnlijk nog — wacht in plaats van harder te herhalen.</li>
+<li><strong>Neem explosieve momenten niet persoonlijk.</strong> Als het kind een meltdown krijgt, "zie dit als een symptoom, niet als wie ze werkelijk zijn" (Autism Society of NC).</li>
+</ul>
+<h3 id="24-wees-een-veilige-haven--voor-de-ouders-ook">2.4 Wees een veilige haven — voor de ouders ook</h3>
+<ul>
+<li><strong>Bied concrete hulp:</strong> een maaltijd, op de broers en zussen passen voor een uur, een boodschappenrun. Kleine praktische hulp is meer waard dan goedbedoeld advies.</li>
+<li><strong>Schooi jezelf bij</strong> uit de bronnen die de familie vertrouwt, en deel wat je leert — het laat zien dat je meeDOET (Autism Society of NC).</li>
+<li><strong>Zorg voor jezelf,</strong> en verdeel je liefde gelijk over al je kleinkinderen.</li>
+</ul>
+<blockquote>
+<p><strong>De korte versie:</strong> houd van het kind zoals het is, leer zijn taal en laat de ouders zich gesteund voelen in plaats van beoordeeld. Dat is het meeste ervan.</p>
+</blockquote>
+<hr />
+<h2 id="deel-3--voor-basisschoolleraren">Deel 3 — Voor Basisschoolleraren</h2>
+<p>School is een multi-kanaal-, veel-overgangs-, veel-sociale omgeving — wat het oprecht moeilijk maakt voor monotrope leerlingen. De richtlijnen van autistisch docent Fergus Murray voor leraren komen neer op <strong>zes dingen om te begrijpen</strong> (F. Murray, 2019). Hier zijn ze, met wat je moet <em>doen</em>.</p>
+<h3 id="31-omgaan-met-meerdere-kanalen-is-moeilijk">3.1 Omgaan met meerdere kanalen is moeilijk</h3>
+<ul>
+<li><strong>Verleen niet alleen op gesproken instructies.</strong> Bied ze <strong>in heldere geschreven of visuele vorm</strong> aan, zodat leerlingen kunnen terugkijken, in plaats van je stem te moeten filteren uit klaslawaai (F. Murray, 2019).</li>
+<li><strong>Eén ding tegelijk.</strong> Een muur aan mondelinge instructies gaat deels verloren.</li>
+</ul>
+<h3 id="32-filteren-is-lastig-en-foutgevoelig">3.2 Filteren is lastig en foutgevoelig</h3>
+<ul>
+<li><strong>Verminder lawaai, visuele rommel en sociale eisen.</strong> Ruim muren op, gebruik zachte stoffering, zit het kind weg van de drukste/zoemende plekken.</li>
+<li><strong>Bescherm focus en flow.</strong> De diepe focus die komt met het beheersen van iets interessants is <em>een van de krachtigste gereedschappen in het onderwijs</em> — ontwerp de dag zodat leerlingen er soms in kunnen komen (F. Murray, 2019).</li>
+<li><strong>Heb een plan voor overbelasting:</strong> een <strong>rustige plek</strong> waar het kind heen kan om te decomprimeren en te stimmen zonder zich opgelaten te voelen (F. Murray, 2019).</li>
+</ul>
+<h3 id="33-van-spoor-wisselen-is-destabiliserend">3.3 Van spoor wisselen is destabiliserend</h3>
+<ul>
+<li><strong>Voorspelbaarheid verlaagt de cognitieve belasting.</strong> Zichtbare roosters, "nu / straks"-borden en vooraf waarschuwen voor veranderingen helpen iedereen.</li>
+<li><strong>Overgangen zijn de gevarenzone.</strong> Geef waarschuwingen; vermijd verrassingen; verzacht de overgang naar en vanuit groepswerk, assemblee en de kantine.</li>
+<li><strong>Ongestructureerde tijd is het moeilijkste deel van de dag.</strong> Pauzes en lunchtimes, zonder ontsnapping aan de menigte en druk om "een partner te vinden," zijn vaak uitputtender dan lessen (F. Murray, 2019). Bied gestructureerde, laagdrempelige opties (een stille club, een lunchactiviteit, een duidelijke veilige plek).</li>
+</ul>
+<h3 id="34-interesses-zijn-intens--gebruik-ze">3.4 Interesses zijn intens — gebruik ze</h3>
+<ul>
+<li><strong>Werken <em>met</em> de interesses van een leerling brengt enorme educatieve beloningen</strong> (Wood, 2019, geciteerd in F. Murray, 2019). Gebruik de interesse waar mogelijk als het vehikel voor het curriculum.</li>
+<li><strong>Gebruik de interesse niet alleen als beloning om in te houden.</strong> Dat verandert de belangrijkste bron van regulatie van het kind in hefboom en ondermijnt vertrouwen.</li>
+</ul>
+<h3 id="35-het-maar-waarom-is-echt--geef-redenen">3.5 Het "Maar waarom?" is echt — geef redenen</h3>
+<p>Monotrope leerlingen moeten vaak <em>waarom</em> begrijpen, soms in meer detail dan leeftijdsgenoten. <strong>Redenen zijn een sleutelonderwijsmiddel</strong>; wrijving komt vaak voort uit te verwachten dat een kind dingen op gezag alleen aanneemt (F. Murray, 2019). Behandel hun vragen als betrokkenheid, niet als bravoure.</p>
+<h3 id="36-dingen-vallen-uit-het-bewustzijn--bied-externe-structuur">3.6 Dingen vallen uit het bewustzijn — bied externe structuur</h3>
+<p>Wanneer de aandacht elders is, verdwijnen behoeften, deadlines en instructies echt uit het hoofd. <strong>Visuele roosters, checklists, planners en herinneringen</strong> werken als een extern geheugen (F. Murray, 2019). Help het kind deze te bouwen — maar houd ze mede-eigenaar, niet controlerend.</p>
+<h3 id="37-praat-met-de-leerling--en-geloof-hem">3.7 Praat met de leerling — en geloof hem</h3>
+<blockquote>
+<p><em>"Als je wilt weten wat moeilijk is voor iemand die je onderwijst, en wat hem zou kunnen helpen, dan is je beste kans waarschijnlijk om met hem te praten. Probeer hem te geloven wanneer hij zegt dat iets moeilijk is."</em> — Fergus Murray (2019)</p>
+</blockquote>
+<p>Autistische profielen zijn "puntig" — enorme variatie tussen gebieden. Ga er nooit van uit dat een kind iets makkelijk zou moeten vinden alleen omdat het elders capabel is. En <strong>dring nooit aan op oogcontact en stop hem niet met bewegen/stemmen</strong> — beiden zijn vaak hoe ze overbelasting beheren (F. Murray, 2019).</p>
+<h3 id="38-bouw-een-echte-thuis-schoolpartnerschap">3.8 Bouw een echte thuis-schoolpartnerschap</h3>
+<p>Families houden cruciale informatie vast over triggers, vroege waarschuwingssignalen en wat het kind reguleert. Een eenvoudig tweerichtingscommunicatieboek of app — wat goed ging, wat lastig was, aankomende veranderingen — voorkomt veel slechte dagen voor iedereen.</p>
+<hr />
+<h2 id="deel-4--voor-sport--gym--en-activiteitstrainers">Deel 4 — Voor Sport-, Gym- en Activiteitstrainers</h2>
+<p>Beweging telt: het is goed voor gezondheid, humeur, zelfvertrouwen en sociale verbinding. Maar autistische kinderen en tieners zijn, gemiddeld, <strong>minder fysiek actief dan leeftijdsgenoten</strong> — niet door gebrek aan interesse, maar omdat veel sportomgevingen luid, onvoorspelbaar, sociaal veeleisend en vol plotselinge overgangen zijn. Een scoping review uit 2025 van al het onderzoek hierover (Michaud &amp; Harvey, 2025) vond een duidelijke reeks dingen die helpen. Gecombineerd met de monotropisme-lens, hier is de praktische versie.</p>
+<h3 id="41-wat-het-onderzoek-zegt-dat-helpt-michaud--harvey-2025">4.1 Wat het onderzoek zegt dat helpt (Michaud &amp; Harvey, 2025)</h3>
+<p>De belangrijkste facilitatoren van de review:</p>
+<ul>
+<li><strong>Voorspelbare routines</strong> — dezelfde warming-up, dezelfde structuur, geen verrassingen.</li>
+<li><strong>Veilige, zintuigvriendelijke ruimtes</strong> — stiller, minder rommel, ruimte om je terug te trekken.</li>
+<li><strong>Goede relaties met trainers en ondersteunende leeftijdsgenoten</strong> — de sociale kant telt meer voor deelname dan de vaardigheidskant.</li>
+<li><strong>Activiteiten die bij de vaardigheden van het kind passen en vertrouwd voelen</strong>, en die de vorm van een <strong>spel</strong> aannemen.</li>
+<li><strong>Gezinsbetrokkenheid</strong> en <strong>naschoolse / gemeenschapskansen</strong>.</li>
+<li>Een <strong>op sterke kanten gebaseerde</strong> benadering — <em>"fysieke activiteit niet als een uitdaging om te overwinnen, maar als een kans om zelfvertrouwen, genot en sociale verbinding op te bouwen"</em> (Michaud, in McGill Newsroom, 2025).</li>
+</ul>
+<h3 id="42-kaart-monotropisme-op-coaching">4.2 Kaart monotropisme op coaching</h3>
+<table>
+<thead>
+<tr>
+<th>Monotropisme-kenmerk</th>
+<th>Wat het in sport betekent</th>
+<th>Coaching-zet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autistische inertie</strong></td>
+<td>Beginnen, stoppen en wisselen van oefeningen kost energie</td>
+<td>Bouw een <strong>voorspelbare warming-up</strong> en <strong>cooling-down</strong> in als overgangsrampen; geef waarschuwingen vóór het wisselen van activiteiten; sta een trage start toe</td>
+</tr>
+<tr>
+<td><strong>Aandachtstunnel</strong></td>
+<td>Enkelvoudig-focus activiteiten zijn makkelijker en vrolijker dan gesplitste-focus</td>
+<td>Prefereer <strong>één-vaardigheid-per-keer</strong>-oefeningen; laat een kind bij een vaardigheid blijven waarin het geabsorbeerd is; <strong>spelvorm</strong>-oefening werkt beter dan abstracte drills</td>
+</tr>
+<tr>
+<td><strong>Zintuiglijke hyper-responsiviteit</strong></td>
+<td>Fluiten, zoemers, galmenende zalen, fel licht, jeukende kits kunnen overweldigen</td>
+<td><strong>Verminder</strong> plotselinge harde geluiden (gebruik handsignalen/stille klappen), kies stillere ruimtes, sta <strong>gehoorbeschermers</strong>, zachte kit, zonnebrillen toe; waarschuw vóór een fluit/hoorn</td>
+</tr>
+<tr>
+<td><strong>Zintuiglijke hypo-responsiviteit / interoceptie</strong></td>
+<td>Merkt mogelijk dorst, oververhitting, pijn, vermoeidheid niet op wanneer geabsorbeerd</td>
+<td><strong>Geplande, specifieke</strong> drink- en rustpauzes; check-in ("waterpauze nu — ja, jij!"); let op oververhitting die het kind niet heeft gemeld</td>
+</tr>
+<tr>
+<td><strong>Eenkanaalscommunicatie</strong></td>
+<td>Een lange mondelinge briefing in een lawaaiige zaal landt niet</td>
+<td><strong>Demonstreer</strong> de vaardigheid visueel; geef <strong>één korte instructie</strong> per keer; versterk met een plaatje of een snelle schets op het whiteboard</td>
+</tr>
+<tr>
+<td><strong>Letterlijk denken en verwerkingstijd</strong></td>
+<td>Sarcastie, idioom en snelle uitwisselingen missen</td>
+<td>Gebruik <strong>heldere, concrete</strong> taal; sta <strong>enkele seconden</strong> toe voor een antwoord voordat je herhaalt; vermijd plagerij die een kind letterlijk kan nemen</td>
+</tr>
+<tr>
+<td><strong>Stimming en beweging</strong></td>
+<td>Fidgeten, ijsberen, wapperen zijn zelfregulatie, geen wangedrag</td>
+<td><strong>Sta beweging toe</strong> tussen oefeningen; straf of stop nooit publiekelijk stimming; bied een bewegingspauze als reset</td>
+</tr>
+<tr>
+<td><strong>Meltdowns/shutdowns</strong></td>
+<td>Overbelasting kan midden in een sessie opduiken</td>
+<td>Zie Deel 1.5: <strong>verminder input</strong>, vind een <strong>stille plek</strong>, blijf kalm, eis geen verklaringen op dat moment</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-praktische-coaching-checklist">4.3 Praktische coaching-checklist</h3>
+<ul>
+<li><strong>Dezelfde warming-up elke sessie</strong> — voorspelbaarheid verlaagt de instapkosten.</li>
+<li><strong>Toon, dan vertel.</strong> Visuele demonstratie verslaat een speech.</li>
+<li><strong>Eén instructie per keer,</strong> in heldere taal, met een moment om te verwerken.</li>
+<li><strong>Bied keuze en autonomie</strong> waar je kunt — welk station, welke rol, welk spel. Controle verlaagt angst.</li>
+<li><strong>Bouw de trainer-kind-relatie eerst op.</strong> Een kind dat je vertrouwt duwt door meer ongemak heen dan een kind dat dat niet doet.</li>
+<li><strong>Vier inspanning en de speciale interesse.</strong> Het kind dat van statistieken houdt kan het scoreblad bijhouden; het kind dat van routine houdt kan de warming-up leiden.</li>
+<li><strong>Denk aan team- vs individuele sporten.</strong> Als vuistregel vanuit de monotropisme-lens (geen hard onderzoeksbevinding) sluiten individuele sporten (zwemmen, hardlopen, vechtsporten, klimmen, atletiek) vaak goed aan bij monotrope kinderen — minder gelijktijdige sociale kanalen, heldere structuur, ruimte voor diepe focus. Teamsporten kunnen prachtig werken <em>als</em> de sociale belasting wordt beheerd (heldere rollen, ondersteunende teamgenoten, een trainer die het snapt).</li>
+<li><strong>Heb een plan voor overbelasting:</strong> een afgesproken stille hoek, een signaal dat het kind kan gebruiken om even weg te stappen, gehoorbeschermers bij de hand.</li>
+</ul>
+<blockquote>
+<p><strong>Herkader succes:</strong> het doel op deze leeftijd is een kind dat <strong>volgende week terug wil komen.</strong> Vaardigheid volgt op plezier — niet andersom.</p>
+</blockquote>
+<hr />
+<h2 id="deel-5--dwarsdoorsnede-taal-en-een-meester-doe--doe-niet">Deel 5 — Dwarsdoorsnede: Taal, en een Meester Doe / Doe Niet</h2>
+<h3 id="51-taal-die-helpt-vs-taal-die-kwetst">5.1 Taal die helpt vs taal die kwetst</h3>
+<table>
+<thead>
+<tr>
+<th>Probeer te vermijden</th>
+<th>Probeer in plaats daarvan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Obsessie," "fixatie"</td>
+<td><strong>Passie, speciale interesse, focus</strong></td>
+</tr>
+<tr>
+<td>"Hij wil niet…" / "Ze is moeilijk"</td>
+<td><strong>"Hij kan nu niet" / "Ze is overbelast"</strong></td>
+</tr>
+<tr>
+<td>"Stop met friemelen / maak oogcontact"</td>
+<td>Sta beweging en oogcontact op het comfort van het kind toe</td>
+</tr>
+<tr>
+<td>"Driftbui," "stout," "aandacht trekken"</td>
+<td><strong>Meltdown, shutdown, overweldiging</strong></td>
+</tr>
+<tr>
+<td>"Laagfunctionerend / hoogfunctionerend"-labels</td>
+<td>Beschrijf de <strong>specifieke</strong> sterke kanten en ondersteuningsbehoeften van het kind (autistische profielen zijn "puntig")</td>
+</tr>
+<tr>
+<td>Pathologiserend, op tekort gebaseerd kader</td>
+<td><strong>Neurodiversiteit-bevestigend, identiteit-eerst</strong>-kader</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-een-meester-doe--doe-niet-voor-iedereen">5.2 Een meester Doe / Doe Niet voor iedereen</h3>
+<p><strong>Doe</strong></p>
+<ul>
+<li>✅ <strong>Leer de interesses van het kind</strong> en gebruik ze als bruggen</li>
+<li>✅ <strong>Maak de dag voorspelbaar</strong> en geef waarschuwingen vóór veranderingen</li>
+<li>✅ <strong>Verlaag de zintuiglijke belasting</strong> en sta beweging, stimming en pauzes toe</li>
+<li>✅ <strong>Communiceer helder, letterlijk, één ding tegelijk,</strong> en sta verwerkingstijd toe</li>
+<li>✅ <strong>Verlaag eisen en input</strong> wanneer het kind richting overbelasting gaat</li>
+<li>✅ <strong>Volg de leiding van de ouders</strong> en houd benaderingen consistent over thuis/school/sport</li>
+<li>✅ <strong>Praat met het kind en geloof het</strong> over wat moeilijk is</li>
+</ul>
+<p><strong>Doe niet</strong></p>
+<ul>
+<li>❌ Behandel de speciale interesse niet als een probleem om te beperken</li>
+<li>❌ Dring niet aan op oogcontact of stilzitten als voorwaarde voor respect</li>
+<li>❌ Straf, schaam of escaleer niet tijdens een meltdown of shutdown</li>
+<li>❌ Overbelast niet met mondelinge instructies, last-minute veranderingen of ongestructureerde sociale tijd</li>
+<li>❌ Ga er niet van uit dat bekwaamheid op het één bekwaamheid op het ander betekent ("puntige profielen")</li>
+<li>❌ Pathologiseer of gebruik geen tekort-taal in het bijzijn van het kind</li>
+</ul>
+<h3 id="53-lees-gedrag-als-communicatie">5.3 Lees gedrag als communicatie</h3>
+<p>Voor een monotroop kind is gedrag bijna altijd <strong>communicatie over regulatie</strong> — "dit is te luid," "ik kan niet zo snel van spoor wisselen," "ik heb geen brandstof meer." Wanneer je het zo leest, wordt het juiste antwoord (verlaag de belasting, geef tijd, bied de rustige plek) meestal duidelijk.</p>
+<h3 id="54-wanneer-meer-ondersteuning-zoeken">5.4 Wanneer meer ondersteuning zoeken</h3>
+<p>Als het kind vaak overbelast is, regelmatig meltdown of shutdown heeft, zwaar maskeert of zich terugtrekt, is het de moeite waard om met de familie te praten over bredere ondersteuning — school SENCO/SEND-personeel, een autisme-positief ergotherapeut (vooral voor zintuiglijke en interoceptie-ondersteuning), en <strong>autistisch-geleide</strong> organisaties voor richting die meestal het meest accuraat en bevestigend is.</p>
+<hr />
+<h2 id="deel-6--open-vragen-en-eerlijke-beperkingen">Deel 6 — Open Vragen en Eerlijke Beperkingen</h2>
+<p>Enkele eerlijke notities, zodat je deze gids kunt vertrouwen:</p>
+<ul>
+<li><strong>Monotropisme is een krachtige beschrijvende theorie, nog niet een volledig mechanistische.</strong> Het verklaart <em>hoe</em> autistische aandacht werkt en wat daaruit volgt, maar de onderliggende neurobiologie wordt nog onderzocht (Dwyer, 2021; 2025). Het is het meest resonante kader binnen de autistische gemeenschap en in toenemende mate in onderzoek, maar het is niet het hele plaatje.</li>
+<li><strong>Niet elk autistisch kind is identificeerbaar monotroop.</strong> Een minderheid van autistische mensen zegt dat monotropisme hen niet goed beschrijft. Gebruik deze gids als startlens en <strong>pas alles aan op het individuele kind vóór je</strong> (Murray &amp; Lawson, 2022, History of Monotropism).</li>
+<li><strong>Deze gids is algemeen,</strong> ontleend aan monotropismetheorie en een kleine set reputabele praktijk- en onderzoeksbronnen. Het is geen vervanging voor individueel advies van professionals die je kind kennen.</li>
+<li><strong>De sport-evidentie is een scoping review (Michaud &amp; Harvey, 2025)</strong> die de literatuur in kaart bracht en facilitatoren opsomde; het is sterk in "wat vaak helpt," minder in gecontroleerde uitkomsten van specifieke interventies.</li>
+<li><strong>Bronnen waren beperkt door wat betrouwbaar toegankelijk was.</strong> Sommige praktijk-webpagina's konden voor deze ronde niet worden opgehaald; waar dat gebeurde, is de richtlijn gefundeerd in volledig geverifieerde bronnen (monotropism.org, Reframing Autism, NHS Autism Space, de review van Michaud &amp; Harvey, en het bronstuk) in plaats van niet-ophaalbare pagina's. Er werden geen feiten verzonnen.</li>
+</ul>
+<hr />
+<h2 id="bronnen">Bronnen</h2>
+<p><strong>Theorie — monotropisme (primair bronstuk en zijn referenties)</strong></p>
+<ul>
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></li>
+<li>Murray, F. (2018, bijgewerkt 2025). <em>Me and Monotropism: a unified theory of autism.</em> The Psychologist, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Dwyer, P. (2025). <em>Monotropism: Between Obsessive Joy and Overwhelm.</em> OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Dwyer, P. (2021). <em>Revisiting monotropism.</em> Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Murray, F. &amp; Lawson, W. (2022). <em>History of Monotropism.</em> <a href="https://monotropism.org/history">https://monotropism.org/history</a></li>
+<li>Milton, D. (2012). On the epistemic and contextual landscape of the "double empathy problem." (Gerefereerd in bronstuk.)</li>
+</ul>
+<p><strong>Praktische toepassingen — monotropism.org</strong></p>
+<ul>
+<li>Murray, F. <em>Monotropism in Practice</em> (school, spel, werk, mentale gezondheid). <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2019). <em>Monotropism at School / Top Autism Tips for Teachers</em> (oorspronkelijk in Tes). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a></li>
+<li>Murray, F. (2022). <em>Understanding how routines can help autistic people thrive.</em> <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Knight, J. (2021). <em>Staying Put, Monotropism &amp; Me — "tunnels not tasks."</em> <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Mahler, K. (2024). <em>Interoception and Monotropism.</em> <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Wood, R. (2019). <em>Autism, intense interests and support in school.</em> Educational Review. <a href="https://doi.org/10.1080/00131911.2019.1566213">https://doi.org/10.1080/00131911.2019.1566213</a></li>
+</ul>
+<p><strong>Autistisch-geleide uitleg en ouderlijke/neurodiversiteit-bevestigend kader</strong></p>
+<ul>
+<li>Reframing Autism (2023). <em>Monotropism: Understanding Autistic Ways of Being Through the Lens of Attention.</em> <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society. <em>What is monotropism? Understanding a neuroaffirming theory of autism.</em> <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ul>
+<p><strong>Meltdowns en shutdowns</strong></p>
+<ul>
+<li>Leicestershire Partnership NHS Trust — Autism Space. <em>Understanding autistic meltdowns and shutdowns.</em> <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ul>
+<p><strong>Grootouders en uitgebreide familie</strong></p>
+<ul>
+<li>Fetzer, T. (Autism Society of North Carolina). <em>How to Help as a Grandparent.</em> <a href="https://www.autismsociety-nc.org/how-to-help-as-a-grandparent">https://www.autismsociety-nc.org/how-to-help-as-a-grandparent</a></li>
+</ul>
+<p><strong>Sport, lichaamsbeweging en gym</strong></p>
+<ul>
+<li>Michaud, M. &amp; Harvey, W.J. (2025). <em>Facilitating Physical Activity Participation Among Autistic Children and Youth: A Scoping Review.</em> Journal of Autism and Developmental Disorders. <a href="https://doi.org/10.1007/s10803-025-07141-y">https://doi.org/10.1007/s10803-025-07141-y</a></li>
+<li>McGill University Newsroom (2025). <em>New study provides advice on how to boost participation in physical activity among autistic youth.</em> <a href="https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283">https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283</a></li>
+</ul>
+</body>
+</html>

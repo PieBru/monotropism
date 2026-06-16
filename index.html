@@ -447,10 +447,14 @@ const LANGS = [
   { code: "fr", flag: "🇫🇷" },
   { code: "es", flag: "🇪🇸" },
   { code: "de", flag: "🇩🇪" },
+  { code: "pl", flag: "🇵🇱" },
+  { code: "nl", flag: "🇳🇱" },
+  { code: "ro", flag: "🇷🇴" },
+  { code: "pt", flag: "🇵🇹" },
 ];
 
 /* file suffix per language (English = none) */
-const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de" };
+const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "_pl", nl: "_nl", ro: "_ro", pt: "_pt" };
 
 /* ---- Localised UI strings ---- */
 const I18N = {
@@ -478,7 +482,7 @@ const I18N = {
     aiNote: "Le traduzioni sono assistite da IA e possono contenere imprecisioni.",
     footer: "Si usa il linguaggio identity-first (\u201Cpersona autistica\u201D). Queste risorse sono informative, non consigli medici né uno strumento diagnostico.",
     github: "Vedi il sorgente su GitHub",
-    cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e caregiver", kids: "Bambini (7\u201311 anni)" }
+    cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e assistenti", kids: "Bambini (7\u201311 anni)" }
   },
   fr: {
     name: "Fran\u00E7ais", title: "Monotropisme", draftsWord: "brouillons",
@@ -518,7 +522,67 @@ const I18N = {
     footer: "Durchweg wird \u201EIdentity-first\u201C-Sprache (\u201Eautistischer Mensch\u201C) verwendet. Diese Materialien sind informativ \u2013 keine medizinische Beratung und kein Diagnosewerkzeug.",
     github: "Quelltext auf GitHub ansehen",
     cat: { theory: "Theorie & \u00DCberblick", practitioner: "Praktiker & Kliniker", family: "Familie & Angeh\u00F6rige", kids: "Kinder (7\u201311 Jahre)" }
-  }
+  },
+  pl: {
+    name: "Polski",
+    title: "Monotropizm",
+    draftsWord: "wersje robocze",
+    tagline: "Oparta na zainteresowaniach koncepcja autyzmu",
+    intro: "Monotropizm to poznawcza teoria autyzmu, kt\u00F3ra t\u0142umaczy do\u015Bwiadczenie autystyczne poprzez r\u00F3\u017Cnice w uwadze i zainteresowaniach. Opracowana przez Dinah Murray, Wenn Lawson i Mike'a Lessera, oferuje zintegrowan\u0105, niepatologizuj\u0105c\u0105 perspektyw\u0119 \u017Cycia autystycznego.",
+    choose: "Wybierz j\u0119zyk", lead: "Wybierz j\u0119zyk, aby przegl\u0105da\u0107 wersje robocze bada\u0144 i przewodniki.",
+    draftsHead: "Wersje robocze bada\u0144", draftsCount: "{n} dost\u0119pnych",
+    read: "Czytaj", pdf: "PDF", open: "otw\u00F3rz",
+    allLanguages: "Wszystkie j\u0119zyki", languages: "J\u0119zyki", theme: "Prze\u0142\u0105cz motyw", home: "Strona g\u0142\u00F3wna",
+    aiNote: "T\u0142umaczenia s\u0105 wspierane przez AI i mog\u0105 zawiera\u0107 nie\u015Bcis\u0142o\u015Bci.",
+    footer: "W ca\u0142ym serwisie stosuje si\u0119 j\u0119zyk identyfikuj\u0105cy najpierw (\u201Eosoba autystyczna\u201D). Materia\u0142y te maj\u0105 charakter informacyjny \u2014 nie s\u0105 porad\u0105 medyczn\u0105 ani narz\u0119dziem diagnostycznym.",
+    github: "Zobacz \u017Ar\u00F3d\u0142o na GitHub",
+    cat: { theory: "Teoria i przegl\u0105d", practitioner: "Praktycy i klinicy\u015Bci", family: "Rodzina i opiekunowie", kids: "Dzieci (7\u201311 lat)" }
+  },
+  nl: {
+    name: "Nederlands",
+    title: "Monotropisme",
+    draftsWord: "concepten",
+    tagline: "Een op interesse gebaseerde verklaring van autisme",
+    intro: "Monotropisme is een cognitieve theorie van autisme die autistische beleving verklaart via verschillen in aandacht en interesse. Ontwikkeld door Dinah Murray, Wenn Lawson en Mike Lesser biedt het een verenigende, niet-pathologiserende lens op het autistische leven.",
+    choose: "Kies een taal", lead: "Selecteer een taal om de onderzoeksconcepten en gidsen te bekijken.",
+    draftsHead: "Onderzoeksconcepten", draftsCount: "{n} beschikbaar",
+    read: "Lees", pdf: "PDF", open: "openen",
+    allLanguages: "Alle talen", languages: "Talen", theme: "Thema wisselen", home: "Home",
+    aiNote: "Vertalingen worden AI-ondersteund en kunnen onnauwkeurigheden bevatten.",
+    footer: "Doorlopend wordt identiteit-eerst-taal (\u201Eautistisch persoon\u201D) gebruikt. Deze materialen zijn informatief \u2014 geen medisch advies of diagnostisch hulpmiddel.",
+    github: "Broncode op GitHub bekijken",
+    cat: { theory: "Theorie & Overzicht", practitioner: "Professionals & Clinici", family: "Familie en verzorgers", kids: "Kinderen (7\u201311 jaar)" }
+  },
+  ro: {
+    name: "Rom\u00E2n\u0103",
+    title: "Monotropism",
+    draftsWord: "ciorne",
+    tagline: "O teorie a autismului bazat\u0103 pe interese",
+    intro: "Monotropismul este o teorie cognitiv\u0103 a autismului care explic\u0103 experien\u021Ba autist\u0103 prin diferen\u021Be de aten\u021Bie \u0219i interes. Dezvoltat\u0103 de Dinah Murray, Wenn Lawson \u0219i Mike Lesser, ofer\u0103 o lentil\u0103 unificatoare \u0219i nepatologizant\u0103 asupra vie\u021Bii autiste.",
+    choose: "Alege o limb\u0103", lead: "Selecteaz\u0103 o limb\u0103 pentru a naviga ciornele de cercetare \u0219i ghidurile.",
+    draftsHead: "Ciorne de cercetare", draftsCount: "{n} disponibile",
+    read: "Cite\u0219te", pdf: "PDF", open: "deschide",
+    allLanguages: "Toate limbile", languages: "Limbi", theme: "Comut\u0103 tema", home: "Acas\u0103",
+    aiNote: "Traducerile sunt asistate de AI \u0219i pot con\u021Bine inexactit\u0103\u021Bi.",
+    footer: "\u00CEn tot cuprinsul se folose\u0219te limbajul identit\u0103\u021Bii-\u00EEnt\u00E2i (\u201Epersoan\u0103 autist\u0103\u201D). Aceste materiale sunt informative \u2014 nu sfat medical \u0219i nici instrument de diagnostic.",
+    github: "Vezi sursa pe GitHub",
+    cat: { theory: "Teorie \u0219i prezentare general\u0103", practitioner: "Practicieni \u0219i clinicieni", family: "Familie \u0219i \u00EEngrijitori", kids: "Copii (7\u201311 ani)" }
+  },
+  pt: {
+    name: "Portugu\u00EAs",
+    title: "Monotropismo",
+    draftsWord: "rascunhos",
+    tagline: "Uma explica\u00E7\u00E3o do autismo baseada no interesse",
+    intro: "O monotropismo \u00E9 uma teoria cognitiva do autismo que explica a experi\u00EAncia autista atrav\u00E9s de diferen\u00E7as na aten\u00E7\u00E3o e no interesse. Desenvolvida por Dinah Murray, Wenn Lawson e Mike Lesser, oferece uma lente unificada e n\u00E3o patologizante sobre a vida autista.",
+    choose: "Escolha um idioma", lead: "Selecione um idioma para navegar os rascunhos de investiga\u00E7\u00E3o e os guias.",
+    draftsHead: "Rascunhos de investiga\u00E7\u00E3o", draftsCount: "{n} dispon\u00EDveis",
+    read: "Ler", pdf: "PDF", open: "abrir",
+    allLanguages: "Todos os idiomas", languages: "Idiomas", theme: "Alternar tema", home: "In\u00EDcio",
+    aiNote: "As tradu\u00E7\u00F5es s\u00E3o assistidas por IA e podem conter imprecis\u00F5es.",
+    footer: "Utiliza-se linguagem de identidade-primeiro (\u201Epessoa aut\u00EDstica\u201D) em todo o texto. Estes recursos s\u00E3o informativos \u2014 n\u00E3o aconselhamento m\u00E9dico nem ferramenta de diagn\u00F3stico.",
+    github: "Ver c\u00F3digo-fonte no GitHub",
+    cat: { theory: "Teoria e vis\u00E3o geral", practitioner: "Profissionais e cl\u00EDnicos", family: "Fam\u00EDlia e cuidadores", kids: "Crian\u00E7as (7\u201311 anos)" }
+  },
 };
 
 /* ---- Documents (the growing catalogue) ---- */
@@ -526,7 +590,7 @@ const DOCS = [
   {
     cat: "theory",
     stem: "monotropism",
-    langs: ["en", "it", "fr", "es", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt"],
     content: {
       en: { title: "Monotropism: An Interest-Based Account of Autism", audience: "General \u00B7 Academic",
             desc: "Origins, core claims, supporting evidence, links to other frameworks, and open questions. The foundational brief the practical guides build upon." },
@@ -537,7 +601,15 @@ const DOCS = [
       es: { title: "Monotropismo: Una explicaci\u00F3n del autismo basada en el inter\u00E9s", audience: "P\u00FAblico general \u00B7 Acad\u00E9mico",
             desc: "Or\u00EDgenes, tesis centrales, evidencia de apoyo, relaci\u00F3n con otros marcos y cuestiones abiertas. El texto fundacional en el que se basan las gu\u00EDas pr\u00E1cticas." },
       de: { title: "Monotropismus: Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus", audience: "Allgemein \u00B7 Akademisch",
-            desc: "Urspr\u00FCnge, Kernthesen, Belege, Bezug zu anderen Ans\u00E4tzen und offene Fragen. Der Grundlagentext, auf dem die praktischen Leitf\u00E4den aufbauen." }
+            desc: "Urspr\u00FCnge, Kernthesen, Belege, Bezug zu anderen Ans\u00E4tzen und offene Fragen. Der Grundlagentext, auf dem die praktischen Leitf\u00E4den aufbauen." },
+      pl: { title: "Monotropizm: Uj\u0119cie autyzmu oparte na zainteresowaniach", audience: "Og\u00F3lnie \u00B7 Akademicko",
+            desc: "Pochodzenie, g\u0142\u00F3wne tezy, dowody wspieraj\u0105ce, zwi\u0105zki z innymi modelami i kwestie otwarte. Dokument fundamentalny, na kt\u00F3rym opieraj\u0105 si\u0119 praktyczne przewodniki." },
+      nl: { title: "Monotropisme: Een op interesse gebaseerde verklaring van autisme", audience: "Algemeen \u00B7 Academisch",
+            desc: "Oorsprong, kernstellingen, ondersteunend bewijs, verbanden met andere kaders en open vragen. Het fundamentele stuk waar de praktische gidsen op voortbouwen." },
+      ro: { title: "Monotropismul: O Abordare a Autismului Bazat\u0103 pe Interes", audience: "Public general \u00B7 Academic",
+            desc: "Originile, tezele centrale, dovezile de sprijin, leg\u0103turile cu alte cadre \u0219i \u00EEntreb\u0103rile deschise. Textul fundamental pe care se bazeaz\u0103 ghidurile practice." },
+      pt: { title: "Monotropismo: Uma Explica\u00E7\u00E3o do Autismo Baseada no Interesse", audience: "Geral \u00B7 Acad\u00EAmico",
+            desc: "Origens, teses centrais, evid\u00EAncias de apoio, rela\u00E7\u00F5es com outros quadros e quest\u00F5es em aberto. O documento fundamental sobre o qual os guias pr\u00E1ticos se baseiam." },
     }
   },
   {
@@ -561,7 +633,7 @@ const DOCS = [
   {
     cat: "family",
     stem: "autistic-monotropism-family-guide",
-    langs: ["en", "it", "fr", "es", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt"],
     content: {
       en: { title: "Loving an Autistic Monotropic Person", audience: "Parents \u00B7 Relatives \u00B7 Caregivers",
             desc: "A plain-language guide for parents, adult children, siblings and other relatives \u2014 understanding, relating to and supporting a monotropic loved one across the lifespan, and caring for the family\u2019s own wellbeing." },
@@ -572,13 +644,21 @@ const DOCS = [
       es: { title: "Amar a una persona autista monotr\u00F3pica", audience: "Padres \u00B7 Familiares \u00B7 Cuidadores",
             desc: "Una gu\u00EDa en lenguaje sencillo para padres, hijos adultos, hermanos y otros familiares: comprender, relacionarse y apoyar a un ser querido monotr\u00F3pico a lo largo de la vida, y cuidar del bienestar de la familia." },
       de: { title: "Einen autistischen, monotropen Menschen lieben", audience: "Eltern \u00B7 Angeh\u00F6rige \u00B7 Bezugspersonen",
-            desc: "Ein Leitfaden in verst\u00E4ndlicher Sprache f\u00FCr Eltern, erwachsene Kinder, Geschwister und weitere Angeh\u00F6rige: einen geliebten monotropen Menschen verstehen, begleiten und unterst\u00FCtzen \u2013 und die eigene Familie im Blick behalten." }
+            desc: "Ein Leitfaden in verst\u00E4ndlicher Sprache f\u00FCr Eltern, erwachsene Kinder, Geschwister und weitere Angeh\u00F6rige: einen geliebten monotropen Menschen verstehen, begleiten und unterst\u00FCtzen \u2013 und die eigene Familie im Blick behalten." },
+      pl: { title: "Kochanie Autystycznej Osoby Monotropicznej", audience: "Rodzice \u00B7 Krewni \u00B7 Opiekunowie",
+            desc: "Przewodnik w prostym j\u0119zyku dla rodzic\u00F3w, doros\u0142ych dzieci, rodze\u0144stwa i innych krewnych \u2014 zrozumienie, budowanie relacji i wsparcie monotropicznej bliskiej osoby przez ca\u0142e \u017Cycie oraz dbanie o dobrostan rodziny." },
+      nl: { title: "Een Autistisch, Monotroop Mens Liefhebben", audience: "Ouders \u00B7 Familie \u00B7 Verzorgers",
+            desc: "Een gids in gewone taal voor ouders, volwassen kinderen, broers en zussen en andere familie \u2014 een monotrope geliefde begrijpen, relateren en ondersteunen door de hele levensloop, en zorgen voor het welzijn van het gezin." },
+      ro: { title: "A Iubi o Persoan\u0103 Autist\u0103 Monotropic\u0103", audience: "P\u0103rin\u021Bi \u00B7 Rubedenii \u00B7 \u00CEngrijitori",
+            desc: "Un ghid \u00EEn limbaj simplu pentru p\u0103rin\u021Bi, copii adul\u021Bi, fra\u021Bi/surori \u0219i alte rubedenii \u2014 s\u0103 \u00EEn\u021Belegi, s\u0103 te raportezi \u0219i s\u0103 sus\u021Bii un om drag monotropic pe tot parcursul vie\u021Bii \u0219i s\u0103 ai grij\u0103 de bun\u0103starea familiei." },
+      pt: { title: "Amar uma Pessoa Autista Monotr\u00F3pica", audience: "Pais \u00B7 Familiares \u00B7 Cuidadores",
+            desc: "Um guia em linguagem simples para pais, filhos adultos, irm\u00E3os e outros familiares \u2014 compreender, relacionar-se e apoiar um ente querido monotr\u00F3pico ao longo da vida e cuidar do bem-estar da fam\u00EDlia." },
     }
   },
   {
     cat: "kids",
     stem: "monotropic-kids-guidelines",
-    langs: ["en", "it", "fr", "es", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt"],
     content: {
       en: { title: "Growing Up Monotropic", audience: "Parents \u00B7 Teachers \u00B7 Coaches",
             desc: "A friendly guide for the adults around an autistic monotropic child aged 7\u201311 \u2014 parents and carers, grandparents, primary-school teachers, and sports & activity coaches. Covers home, school and the sports field." },
@@ -589,7 +669,15 @@ const DOCS = [
       es: { title: "Crecer de forma monotr\u00F3pica", audience: "Padres \u00B7 Profesores \u00B7 Entrenadores",
             desc: "Una gu\u00EDa cercana para los adultos en torno a un ni\u00F1o autista monotr\u00F3pico de 7 a 11 a\u00F1os: padres y cuidadores, abuelos, maestros de primaria y entrenadores deportivos. Abarca el hogar, la escuela y el deporte." },
       de: { title: "Monotrop aufwachsen", audience: "Eltern \u00B7 Lehrer \u00B7 \u00DCbungsleiter",
-            desc: "Ein freundlicher Leitfaden f\u00FCr die Erwachsenen um ein autistisches, monotropes Kind von 7\u201311 Jahren: Eltern und Betreuer, Gro\u00DFeltern, Grundschullehrer und Sport\u00FCbungsleiter. Behandelt Zuhause, Schule und Sportplatz." }
+            desc: "Ein freundlicher Leitfaden f\u00FCr die Erwachsenen um ein autistisches, monotropes Kind von 7\u201311 Jahren: Eltern und Betreuer, Gro\u00DFeltern, Grundschullehrer und Sport\u00FCbungsleiter. Behandelt Zuhause, Schule und Sportplatz." },
+      pl: { title: "Dorastanie Monotropicznie", audience: "Rodzice \u00B7 Nauczyciele \u00B7 Trenerzy",
+            desc: "Przyjazny przewodnik dla doros\u0142ych wok\u00F3\u0142 autystycznego monotropicznego dziecka w wieku 7\u201311 lat \u2014 rodzic\u00F3w i opiekun\u00F3w, dziadk\u00F3w, nauczycieli szko\u0142y podstawowej i trener\u00F3w sportowych. Obejmuje dom, szko\u0142\u0119 i boisko sportowe." },
+      nl: { title: "Monotroop Opgroeien", audience: "Ouders \u00B7 Leraren \u00B7 Trainers",
+            desc: "Een vriendelijke gids voor de volwassenen rond een autistisch, monotroop kind van 7\u201311 jaar \u2014 ouders en verzorgers, grootouders, basisschoolleraren en sport- en activiteitstrainers. Behandelt thuis, school en het sportveld." },
+      ro: { title: "Cresc\u00E2nd \u00EEn Mod Monotropic", audience: "P\u0103rin\u021Bi \u00B7 Profesori \u00B7 Antrenori",
+            desc: "Un ghid prietenos pentru adul\u021Bii din jurul unui copil autist monotropic de 7\u201311 ani \u2014 p\u0103rin\u021Bi \u0219i \u00EEngrijitori, bunici, profesori de \u0219coal\u0103 primar\u0103 \u0219i antrenori de sport \u0219i activit\u0103\u021Bi. Acoper\u0103 casa, \u0219coala \u0219i terenul de sport." },
+      pt: { title: "Crescer de Forma Monotr\u00F3pica", audience: "Pais \u00B7 Professores \u00B7 Treinadores",
+            desc: "Um guia amig\u00E1vel para os adultos em torno de uma crian\u00E7a autista monotr\u00F3pica de 7\u201311 anos \u2014 pais e cuidadores, av\u00F3s, professores do ensino b\u00E1sico e treinadores desportivos. Abrange a casa, a escola e o campo de desporto." },
     }
   }
 ];

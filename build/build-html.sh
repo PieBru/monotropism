@@ -44,10 +44,9 @@ md_to_html () {
 
 # Source-brief family (English original at root; translations in outputs/)
 md_to_html "monotropism.md"               "outputs/monotropism.html"
-md_to_html "outputs/monotropism_de.md"    "outputs/monotropism_de.html"
-md_to_html "outputs/monotropism_es.md"    "outputs/monotropism_es.html"
-md_to_html "outputs/monotropism_fr.md"    "outputs/monotropism_fr.html"
-md_to_html "outputs/monotropism_ita.md"   "outputs/monotropism_ita.html"
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
+  md_to_html "outputs/monotropism${lang}.md" "outputs/monotropism${lang}.html"
+done
 
 # Comorbidity landscape research brief (theory companion, English)
 md_to_html "outputs/monotropism-comorbidity-landscape.md" "outputs/monotropism-comorbidity-landscape.html"
@@ -57,13 +56,13 @@ md_to_html "outputs/autistic-monotropism-lifespan-guide.md" \
            "outputs/autistic-monotropism-lifespan-guide.html"
 
 # Family & relatives guide (English + translations)
-for lang in "" "_de" "_es" "_fr" "_ita"; do
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
   md_to_html "outputs/autistic-monotropism-family-guide${lang}.md" \
              "outputs/autistic-monotropism-family-guide${lang}.html"
 done
 
 # Monotropic kids guidelines (ages 7-11): English + translations
-for lang in "" "_de" "_es" "_fr" "_ita"; do
+for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro"; do
   md_to_html "outputs/monotropic-kids-guidelines${lang}.md" \
              "outputs/monotropic-kids-guidelines${lang}.html"
 done

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>A Iubi o Persoană Autistă Monotropică</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="a-iubi-o-persoană-autistă-monotropică">A Iubi o Persoană Autistă Monotropică</h1>
+<h3 id="un-ghid-pe-parcursul-vieții-pentru-părinți-copii-adulți-și-alți-rubedenii">Un Ghid pe Parcursul Vieții pentru Părinți, Copii Adulți și Alți Rubedenii</h3>
+<hr />
+<blockquote>
+<p><strong>Pentru cine este acest ghid.</strong> Acest ghid este pentru <strong>familia și rubedeniile</strong> unei persoane autiste a cărei minte funcționează într-un mod <em>monotropic</em> — adică o minte care se concentrează profund și intens pe un număr mic de lucruri deodată. Este scris pentru <strong>părinții</strong> copiilor autiști, <strong>familia și rubedeniile</strong> adulților autiști, <strong>copiii adulți</strong> al căror părinte în vârstă este autist (sau pare să fie) și <strong>frații, surorile, bunicii, mătușile, unchii și partenerii</strong> care doresc o relație iubitoare pe viață. <strong>Nu</strong> este un manual clinic — este un însoțitor în limbaj simplu care să te ajute să înțelegi, să te conectezi și să îți susții rubedenia autistă și să ai grijă de tine.</p>
+</blockquote>
+<blockquote>
+<p><strong>O notă despre limbaj.</strong> Majoritatea persoanelor autiste preferă <strong>limbajul identității-întâi</strong> („persoană autistă"), iar acest ghid urmează această preferință. Unii indivizi și familii preferă „persoană cu autism" — urmează preferința rubedeniei tale. Acest ghid evită intenționat cuvinte precum <em>tulburare, deficitar, anormal, tragedie</em> sau <em>povară</em>, cu excepția cazului în care explică idei pe care familia le-ar fi primit în altă parte. Autismul este o <strong>diferență</strong> — cu provocări reale și puncte forte reale.</p>
+</blockquote>
+<blockquote>
+<p><strong>Cea mai importantă idee.</strong> <em>"Dacă îți pasă de bunăstarea persoanelor autiste, trebuie să încerci să înțelegi autismul. Dacă vrei să înțelegi autismul, trebuie să înțelegi monotropismul."</em> — Fergus Murray, profesor și scriitor autist (2023).</p>
+</blockquote>
+<hr />
+<h2 id="partea-1--înțelegerea-unei-minți-monotropice">Partea 1 — Înțelegerea unei Minți Monotropice</h2>
+<p>Atenția majorității oamenilor este răspândită pe multe lucruri deodată — conversația din fundal, ceasul, persoana din fața lor, ce e la cină. O minte <strong>monotropică</strong> este diferită: tinde să atragă atenția în <strong>un număr mic de canale profunde și intense</strong> la un moment dat. Cercetătorii autiști Dinah Murray, Wenn Lawson și Mike Lesser au numit asta un <strong>„tunel al atenției"</strong> (Murray, Lesser &amp; Lawson, 2005).</p>
+<p>Gândește-te la atenție ca la o cantitate limitată de apă. O minte politropică (mai tipică) este ca un <strong>aspersor</strong> — apă răspândită larg pe grădină. O minte monotropică este ca un <strong>furtun</strong> cu o duză îngustă — mai puțin teren acoperit, dar tot ce e în acel curent este udat profund (F. Murray, 2018; 2023). Niciuna nu este „mai bună." Fiecare are puncte forte și costuri.</p>
+<p>Această singură diferență ajută la explicarea <em>aproape a totului</em> despre cum rubendia ta autistă experimentează lumea:</p>
+<h3 id="ce-înseamnă-asta-în-viața-de-zi-cu-zi">Ce înseamnă asta în viața de zi cu zi</h3>
+<table>
+<thead>
+<tr>
+<th>Poate vezi…</th>
+<th>Ce se întâmplă de fapt (monotropism)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interes profund, „obsesiv" pentru un subiect, uneori ani de zile</td>
+<td>O <strong>pasiune</strong> care aduce bucurie, stabilitate, îndemânare și identitate — <em>nu</em> o „obsesie" de limitat</td>
+</tr>
+<tr>
+<td>Pare să nu te audă sau „ignoră" persoane/nevoi</td>
+<td>Când este complet absorbit, mintea genuin <strong>nu înregistrează</strong> lucrurile din afara tunelului — inclusiv foamea, durerea, soneria sau cineva care iese din cameră</td>
+</tr>
+<tr>
+<td>Reacții puternice la anumite sunete, lumini, mirosuri, texturi; sau pare să nu simtă nimic</td>
+<td><strong>Hiper-</strong> (prea multă) sau <strong>hipo-</strong> (prea puțină) responsivitate: un stimul <em>în interiorul</em> tunelului este simțit intens; unul <em>din exterior</em> s-ar putea să nu se înregistreze</td>
+</tr>
+<tr>
+<td>Legănat, fluturat din mâini, fredonat, repetare</td>
+<td><strong>Stimming</strong> — input autcontrolat și previzibil care calmează și reglează sistemul nervos</td>
+</tr>
+<tr>
+<td>Dificultate mare în a începe, opri sau schimba sarcini</td>
+<td><strong>Inerție autistă</strong> — durează timp și energie să încarci un „cărucior plin" de atenție și timp să îl viri într-un colț</td>
+</tr>
+<tr>
+<td>Crize de cedare sau retragere/închidere bruscă</td>
+<td><strong>Involuntară</strong> suprasolicitare a sistemului nervos, nu obraznicie, manipulare sau „comportament prost"</td>
+</tr>
+<tr>
+<td>Ia lucrurile foarte literal; ratează aluzii sau sarcasm</td>
+<td>Comunicarea care folosește multe canale deodată (cuvinte + ton + față + limbaj corporal) este epuizantă; cuvintele trec cel mai clar</td>
+</tr>
+<tr>
+<td>Are nevoie de rutine; deranjat de surprize</td>
+<td>Rutinele reduc numărul deciziilor care concură pentru atenția limitată</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cele-două-idei-care-schimbă-totul">Cele două idei care schimbă totul</h3>
+<ol type="1">
+<li><p><strong>Interesele sunt bunăstare, nu probleme.</strong> Interesele speciale îi dau rubendiei tale bucurie, calm, identitate, expertiză și un mod de a se recupera după copleșire. Protejarea accesului la ele este unul dintre cele mai iubitoare și susținute de dovezi lucruri pe care o familie le poate face (F. Murray, 2023; Mantzalas et al., 2022). <em>"Tratează interesele ca ceva cu care să lucrezi"</em> (F. Murray, 2018).</p></li>
+<li><p><strong>Neînțelegerea merge în ambele sensuri.</strong> <strong>Problema dublei empatii</strong> a lui Damian Milton (2012) spune că atunci când persoanele autiste și neautiste se citesc greșit reciproc, prăpastia este <strong>mutuală</strong> — nu un „deficit" unilateral al persoanei autiste. Rubendia ta autistă găsește modul tău de a comunica la fel de derutant pe cât îl găsești uneori tu pe al ei. Întâlnirea la mijloc este munca <em>amândurora</em>.</p></li>
+</ol>
+<h3 id="trei-lucruri-la-care-familiile-greșesc-și-cum-să-le-facă-bine">Trei lucruri la care familiile greșesc (și cum să le facă bine)</h3>
+<ul>
+<li><strong>Nu o trage fuori din tunel.</strong> S fi smuls din concentrarea profundă „se simte îngrozitor" — imaginează-ți că ești smuls dintr-o carte captivantă la fiecare câteva minute, toată ziua, fără să ai vreun cuvânt de spus (F. Murray, 2023). <em>În schimb:</em> oferă <strong>avertismente și timp de tranziție</strong> înainte de schimbări; protejează timpul neîntrerupt în interesele lui.</li>
+<li><strong>Nu antrena autismul să dispară.</strong> Programele care suprimă stimmingul, forțează contactul vizual sau îl învață pe om să „treacă" drept neautist (<strong>mascare</strong>) sunt acum cunoscute ca dăunătoare — legate de anxietate, depresie, epuizare și <strong>burnout autist</strong> (Raymaker et al., 2020; Pearson &amp; Rose, 2021). <em>În schimb:</em> acceptă și acomodează diferența.</li>
+<li><strong>Nu presupune.</strong> Întreabă-ți rubendia de ce are nevoie. <em>"Nimic despre noi fără noi"</em> — persoanele autiste trebuie să facă parte din deciziile despre propriile lor vieți (ASAN). Rubendia ta este expertul propriei ei experiențe.</li>
+</ul>
+<hr />
+<h2 id="partea-2--călăria-acceptării">Partea 2 — Călăria Acceptării</h2>
+<p>Multe familii trec printr-un proces atunci când o rubendie autistă este identificată — fie că persoana este un copil mic, un adolescent sau un părinte diagnosticat la 60 de ani. Să știi că acest lucru e normal ajută.</p>
+<p><strong>Un diagnostic (sau o realizare) poate aduce un încâlcit de sentimente:</strong> ușurare („în sfârșit are sens"), doliu („de ce nu am știut? ce ar fi putut fi diferit?"), iubire, frică, furie pentru tratamentul prost din trecut și epuizare (Prosper Health; deconstructingstigma; alumacare). Pentru <strong>părinții copiilor</strong>, stresul și burnout-ul sunt genuin mai ridicate decât la alți părinți — asta e real și merită sprijin, nu vinovăție (Yesilkaya &amp; Magallón-Neri, 2024; Frontiers, 2025; childmind.org). Pentru <strong>rubedeniile adulților diagnosticați târziu</strong>, o experiență comună și dureroasă este că <strong>familia nu le crede</strong> („dar tu faci contact vizual!"), ceea ce poate fi profund rănitor (PMC11074347).</p>
+<p><strong>Două drumuri la răscruce — alege calea afirmativă.</strong></p>
+<ul>
+<li><strong>Calea medicală/a vindecării</strong> încadrează autismul ca pe o tragedie sau boală de reparat, persoana autistă ca pe cineva stricat și familia ca pe niște victime. Istoric, asta ne-a dat mitul demontat al „mamei-frigider" și narațiunea martiriului de „părinte de autist". Tinde să împingă familiile spre terapii de normalizare (suprimarea stimmingului, forțarea contactului vizual, obiective de „nedistinguibil de colegi") pe care comunitatea autistă le raportează ca dăunătoare (Therapist Neurodiversity Collective; The Autistic Advocate; Pearson &amp; Rose, 2021).</li>
+<li><strong>Calea afirmativă a neurodiversității</strong> încadrează autismul ca pe o diferență naturală, se concentrează pe acceptare, acomodare, puncte forte și bunăstare și insistă ca persoanele autiste să fie centrale în deciziile despre viețile lor (ASAN; Estée Klar; Reframing Autism). Același efort cheltuit pe „repararea" persoanei autiste este redirectat spre <em>schimbarea mediului</em> ca să poată înflori.</li>
+</ul>
+<p>Poți ține ambele adevăruri deodată: <strong>stresul și doliul familiei sunt reale, ȘI persoana autistă nu este o tragedie.</strong> Doliul care este <em>pentru așteptările pierdute ale familiei</em> trebuie ținut separat de felul cum vorbești despre și cu rubendia ta. Procesează-ți doliul cu sprijin (partener, terapeut, grupuri de suport) — nu prin intermediul copilului sau rubendiei tale.</p>
+<p><strong>Unde găsesc familiile putere:</strong> sprijinul între egali de la alte familii afirmative ale neurodiversității; resurse <strong>conduse de autiști</strong> (ca să auzi de la oameni ca rubendia ta, nu doar despre ei); practici de acceptare și autocompasiune (abordările ACT și autocompasiunii au dovezi pentru reducerea stresului parental; Life Skills Advocate; Neff; Torbet, 2019); și respiro când ai nevoie.</p>
+<hr />
+<h2 id="partea-3--când-rubendia-ta-autistă-este-un-copil">Partea 3 — Când Rubendia Ta Autistă Este un Copil</h2>
+<p><em>(Pentru părinți, bunici și alții apropiați ai unui copil autist.)</em></p>
+<h3 id="31-acasă-construirea-unei-vieți-de-familie-prietenoase-cu-monotropismul">3.1 Acasă: construirea unei vieți de familie prietenoase cu monotropismul</h3>
+<ul>
+<li><strong>Protejează tunelele.</strong> Asigură-te că cel mic are timp regulat și neîntrerupt în interesele și stările lui de flux. Asta nu este „a-l răsfăța" — așa se odihnește, învață și rămâne bine. „Dacă un elev se simte copleșit și știi că are un interes monotropic în Lego, creează un spațiu liniștit și permite timp extins" (BERA, 2021).</li>
+<li><strong>Folosește interesele ca punte.</strong> Oricie vrei să împărtășești — citit, matematică, abilități sociale, o ieșire în familie — adu-o <em>prin</em> interes. Copiii autiști „consider mult mai ușor să se conecteze la înțelegere când subiectul poate fi legat de aria interesului nostru" (Lawson). Un copil pasionat de trenuri poate număra trenuri, citi cărți despre trenuri, vizita o cale ferată, scrie povestiri cu trenuri.</li>
+<li><strong>Scade cerințele, scade activarea.</strong> Mulți copii autiști sunt excepțional de sensibili la <em>cerințe</em> (câteodată numită <strong>evitare a cerințelor</strong>, sau „PDA" — o etichetă pe care unii din comunitate o consideră dehumanizantă; experiența e reală oricum). <strong>Creșterea copilului cu activare scăzută și respect pentru autonomie</strong> funcționează mai bine decât luptele de putere: oferă alegeri, folosește limbaj indirect/declaratv, depersonalizează cererile, colaborează (ghidul NAS privind evitarea cerințelor; ghidul PDA Reframing Autism; Child Mind Institute).</li>
+<li><strong>Învață limbaj declarativ.</strong> În loc de imperative și întrebări directe („Pune-ți pantofii! De ce culoare e asta?"), încearcă <strong>observații și reflecții</strong> („Îți văd pantofii lângă ușă"; „Hmm, autobuzul vine în zece minute"). Asta ia presiunea de pe un sistem nervos care se irită la cerințe și invită copilul să se implice fără să se simtă încolțit (Linda Murphy, via Tilt Parenting, 2023).</li>
+<li><strong>Co-reglează, nu aștepta doar autoreglarea.</strong> Copiii își construiesc capacitatea de a se calma <em>prin</em> mai întâi un adult calm. Fii o <strong>prezență caldă, cu activare scăzută</strong>; empatizează; redu inputul senzorial și înlătură declanșatorii când îi vezi că se intensifică; oferă un mediu predictibil și structurat (Autism Awareness Centre; Autism Little Learners; Autism Ontario).</li>
+<li><strong>Construiește rutine <em>cu</em> copilul tău, nu <em>peste</em> el.</strong> Rutinele create împreună reduc încărcătura decizională și se simt sigure; rutinele impuse adesea dau greș (F. Murray, 2022).</li>
+<li><strong>Fă din casă un loc prietenos cu simțurile.</strong> Redu zgomotul inutil, dezordinea, lumina fluorescentă și mirosurile puternice; creează un spațiu de retragere liniștit și cu lumină slabă; permite căști, ochelari de soare și unelte senzoriale (NAS, 2025; F. Murray, 2023).</li>
+<li><strong>Gestionează tranzițiile cu blândețe.</strong> Programe vizuale, numărăți inverse, avertismente <em>înainte</em> de o schimbare, obiecte-„punte" și timp în plus fac diferența între o schimbare lină și o criză (Autism Little Learners).</li>
+<li><strong>Când au loc crize de cedare sau închideri:</strong> sunt <strong>involuntare</strong> — copilul tău nu este obraznic și nu poate „pur și simplu să se oprească." Rămâi calm, scade cerințele și stimularea, asigură siguranța și <strong>permite timp de recuperare</strong> (uneori o zi sau mai mult). O <strong>închidere</strong> (retragere, liniște/nemișcare) este oglinda internă a unei crize de cedare și necesită calm și răbdare, nu presiune de a „reveni" (Autism Society, 2025; ghidul de închideri Reframing Autism; Leicestershire NHS).</li>
+</ul>
+<h3 id="32-nu-te-alarma-de-regresie">3.2 Nu te alarma de „regresie"</h3>
+<p>Uneori un copil autist pare să <strong>piardă abilități</strong> pe care le avea. Tot mai mult se înțelege asta ca <strong>copleșire, burnout sau o schimbare a resurselor atenționale</strong> — nu pierderea permanentă a capacității cum poate părea. Răspunsul este <strong>să reduci cerințele și să restaurezi accesul la odihnă și interese</strong>, nu să împingi mai tare sau să adaugi mai multă terapie (Edgar, 2024; Raymaker et al., 2020).</p>
+<h3 id="33-să-fii-avocat-la-școală">3.3 Să fii avocat la școală</h3>
+<p>Tu ești cel mai important avocat al copilului tău și ai drepturi. În Marea Britanie, un <strong>EHCP</strong> (Education, Health and Care Plan) poate asigura legal sprijin; în SUA, <strong>IEP</strong> (Individualized Education Program) în baza IDEA le dă părinților dreptul de a <strong>participa semnificativ</strong> la decizii (Therapist Neurodiversity Collective; ImpactParents). Parteneriatele solide casă-școală îi ajută măsurabil pe elevii autiști (PMC8863588; PMC8883377).</p>
+<p><strong>Opioară-te obiectivelor ableiste.</strong> Obiective precum „va face contact vizual", „va sta nemișcat" sau „va fi nedistins de colegi" nu sunt în interesul de bunăstare al copilului tău și reflectă gândire învechită. Promovează în schimb obiective construite pe <strong>autodeterminare, acomodare, comunicare și învățare autentică</strong> (Therapist Neurodiversity Collective). Împărtășește ce știi despre monotropism: cere școlii să <strong>protejeze tunelele de atenție ale copilului tău, să folosească interesele lui, să dea timp de tranziție și să ofere un spațiu liniștit</strong>.</p>
+<blockquote>
+<p><em>"Copiii se descurcă bine când pot"</em> (Ross Greene) — dacă cel mic are dificultăți, presupune o <strong>lipsă de abilitate sau de acomodare</strong>, nu sfidare.</p>
+</blockquote>
+<h3 id="34-sprijinirea-fraților-și-surorilor">3.4 Sprijinirea fraților și surorilor</h3>
+<p>Frații și surorile copiilor autiști au <strong>experiențe mixte</strong> — adesea empatie profundă și mândrie, dar și stres, îngrijorare, tratament diferențiat și sentimentul că trebuie să-și minimizeze propriile nevoi. Ce ajută (revizuire sistematică: PMC8264626; ASATonline; GVSU START):</p>
+<ul>
+<li><strong>Explicare sinceră, potrivită vârstei</strong> a autismului, actualizată pe măsură ce cresc.</li>
+<li><strong>Timp protejat unu-la-unu</strong> cu fiecare părinte și o viață și identitate proprii.</li>
+<li><strong>Permisiunea pentru toate sentimentele lor</strong> — inclusiv frustrare și resentimente — fără vinovăție.</li>
+<li><strong>Propria informație și sprijin</strong> (grupuri pentru frați/surori, cărți scrise de/cu persoane autiste).</li>
+<li><strong>Includerea lor în advocacy</strong> la un nivel potrivit vârstei, fără a-i împovăra cu griji de adulți.</li>
+<li><strong>Ține minte perspectiva de lungă durată:</strong> relația între frați este adesea <strong>cea mai lungă relație</strong> din viața unui om. Planificarea viitoare (mai ales pe măsură ce părinții îmbătrânesc) ar trebui să îi implice pe frați devreme și cu respect.</li>
+</ul>
+<hr />
+<h2 id="partea-4--când-rubendia-ta-autistă-este-un-adult">Partea 4 — Când Rubendia Ta Autistă Este un Adult</h2>
+<p><em>(Pentru părinții copiilor adulți, parteneri/soți și frați/surori.)</em></p>
+<p>Adulții autiști sunt adulți. Schimbarea centrală pentru rubedenii este de la <strong>a proteja/a decide-pentru</strong> la <strong>a sprijini autonomia și a urma conducerea lor</strong>.</p>
+<h3 id="41-dacă-au-fost-diagnosticați-la-vârsta-adultă">4.1 Dacă au fost diagnosticați la vârsta adultă</h3>
+<p>Mulți adulți autiști — mai ales femeile, persoanele de culoare și cei fără dizabilitate intelectuală — sunt identificați doar mai târziu în viață („generația pierdută," Lai &amp; Baron-Cohen). Un diagnostic târziu aduce de obicei <strong>ușurare și doliu deodată</strong>: ușurare că luptele pe viață în sfârșit au sens, doliu pentru anii de a fi fost neînțeles sau rău-tratat (Prosper Health; deconstructingstigma; alumacare).</p>
+<p><strong>Cel mai bun lucru pe care îl poate face familia: să le creadă.</strong> Este tragic de comun ca rubedeniile să respingă un diagnostic târziu („dar ești atât de normal!", „toată lumea e puțin autistă"). Această respingere poate fi mai dureroasă decât anii de necunoaștere. În schimb: ascultă, citește ce împărtășesc, întreabă ce ar ajuta și lasă-i să conducă (PMC11074347; NAS emotional-support-after-diagnosis).</p>
+<h3 id="42-sprijin-fără-infantilizare">4.2 Sprijin fără infantilizare</h3>
+<ul>
+<li><strong>Urmează conducerea lor</strong> despre ce ajutor vor. Oferă; nu impune.</li>
+<li><strong>Preferă luarea deciziilor cu sprijin</strong> în loc de tutorism/controleoriunde e posibil — ajută-i să adune informații și să cântărească opțiunile, apoi respectă alegerea lor.</li>
+<li><strong>Comunică clar și literal</strong>; permite timp de procesare; folosește scris/text unde ajută (reduce numărul canalelor de jonglat).</li>
+<li><strong>Nu-i presa să mascheze.</strong> Dacă își lasă masca jos în preajma ta — stimming, evitarea contactului vizual, vorbind în felul lor natural — asta este un <strong>dar de încredere</strong>, nu obrăznicie. Reacționând cu disconfort îi înveți că ești în siguranță doar când joacă un rol.</li>
+<li><strong>Ia în serios interesele lor speciale.</strong> Pot fi sursa carierei, prieteniilor, bucuriei și recuperării lor. Arată interes autentic; pune întrebări; sărbătorește-le.</li>
+<li><strong>Ajută cu chestiile practice grele</strong> dacă îți cere: navigarea serviciilor, indemnizații, locuință, asistență medicală, angajare — aceste sisteme sunt adesea construite pentru persoane neurotipice și epuizante de abordat singur.</li>
+</ul>
+<h3 id="43-când-se-chinuie-burnout-sănătate-mintală-relații">4.3 Când se chinuie (burnout, sănătate mintală, relații)</h3>
+<p><strong>Burnout-ul autist</strong> este real, serios și distinct de „doar obosit" sau depresie: <strong>epuizare cronică, pierderea abilităților pe care le aveau și toleranță redusă la input senzorial/social</strong>, după perioade lungi de a depăși capacitatea (adesea în timp ce mascau). Poate dura luni de zile și este legat de gânduri suicidare (Raymaker et al., 2020). Dacă rubendia ta este în burnout, direcția susținută de dovezi este <strong>reducerea cerințelor și așteptărilor, oferirea de acceptare și sprijin social și lăsarea lor să facă lucrurile „în fel autist" / să lase masca jos</strong> — nu „să împingă prin." Interesele speciale și odihna fac parte din recuperare, nu sunt problema (Raymaker et al., 2020; Mantzalas et al., 2022).</p>
+<p>Anxietatea, depresia, ADHD, problemele de somn și digestive care coapar sunt comune și merită îngrijire reală (informată despre autism). Fii o prezență stabilă, care nu judecă și ajută-i să găsească clinicieni care iau în serios experiența autistă.</p>
+<hr />
+<h2 id="partea-5--când-rubendia-ta-autistă-îmbătrânește">Partea 5 — Când Rubendia Ta Autistă Îmbătrânește</h2>
+<p><em>(Pentru copii adulți, soți și rubedenii ale unei persoane autiste în vârstă — inclusiv un părinte care s-ar putea să nu fi fost niciodată diagnosticat.)</em></p>
+<blockquote>
+<p><strong>O notă sinceră despre dovezi.</strong> Există <em>foarte puține</em> cercetări despre persoanele autiste la vârste înaintate — reprezintă doar aproximativ <strong>0,4% din literatura despre autism</strong> (deși crește rapid) și aproape nimic nu se cunoaște specific despre <strong>copiii adulți care au grijă de un părinte autist în vârstă</strong> (Klein et al., 2024). Ceea ce urmează combină cele mai bune dovezi disponibile cu principii generale de îngrijire bună a vârstnicilor, aplicate printr-o lentilă a monotropismului. Tratează asta ca îndrumare înțeleaptă, nu ca un protocol dovedit — și continuă să-ți asculți rubendia.</p>
+</blockquote>
+<h3 id="51-multe-persoane-autiste-mai-în-vârstă-nu-au-fost-niciodată-identificate">5.1 Multe persoane autiste mai în vârstă nu au fost niciodată identificate</h3>
+<p>Părintele sau rubendia ta în vârstă s-ar putea să nu fi fost niciodată diagnosticat. O viață întreagă de „a fi puțin excentric," de rutine și interese puternice, de a găsi viața socială epuizantă, de a fi numit „timid" sau „rece" sau „hipersensibil" — poate, în retrospectivă, fi autism. Unii adulți în vârstă caută și primesc un diagnostic târziu în viață și îl consideră <strong>enorm validant</strong>; alții nu sunt interesați de o etichetă. Oricum, <strong>înțelegerea lor ca monotropici explică foarte mult</strong> și indică un sprijin mai bun (Klein et al., 2024; Step Ahead ABA).</p>
+<h3 id="52-cu-ce-se-confruntă-adulții-autiști-mai-în-vârstă">5.2 Cu ce se confruntă adulții autiști mai în vârstă</h3>
+<p>Rezultatele la adulții autiști mai în vârstă sunt, în medie, <strong>slabe</strong>: rate mai mari de afecțiuni medicale (tulburări de dispoziție, probleme de somn, afecțiuni intestinale și cardiace), activitate fizică mai redusă, risc mai mare de declin cognitiv, mai multe dificultăți de sănătate mintală, calitate mai scăzută a vieții și izolare socială mai mare decât la omologii neautiști. Într-un studiu australian amplu, doar <strong>3,3% au îndeplinit criteriile pentru „îmbătrânire reușită."</strong> Aceste tipare se mențin peste nivelurile de capacitate (Klein et al., 2024). Rubendia ta navighează o lume care nu a fost niciodată construită pentru ea — înțelegerea ta contează enorm.</p>
+<h3 id="53-îmbătrânirea-în-stilul-monotropismului">5.3 Îmbătrânirea în stilul monotropismului</h3>
+<ul>
+<li><strong>Protejează rutinele, interesele și obiectele pe viață.</strong> Acestea sunt ancore ale identității și calmului și devin <em>mai</em> prețioase pe măsură ce alte capacități se schimbă. Un plan de îngrijire care le elimină „pentru siguranță" poate provoca daune reale.</li>
+<li><strong>Păstrează mediul prietenos cu simțurile.</strong> Îmbătrânirea aduce adesea schimbări de auz și vedere care se adaugă diferențelor senzoriale pe viață. Spații liniștite, rutine predictibile, lucruri și oameni familiari contează mai mult ca niciodată.</li>
+<li><strong>Sprijină conexiunea și sensul.</strong> Izolarea socială este o problemă majoră în acest grup. Ajută-ți rubendia să rămână conectată cu comunitatea autistă, cu interesele speciale și cu oamenii care o „înțeleg" — și ia în calcul activitate blândă, bazată pe interese, adaptată la capacitățile fizice în schimbare (Klein et al., 2024).</li>
+<li><strong>Ține-o în centrul deciziilor.</strong> Luarea deciziilor cu sprijin, comunicare clară și literală și respect pentru autonomie — mai ales pe măsură ce nevoile de îngrijire cresc.</li>
+</ul>
+<h3 id="54-cea-mai-grea-întrebare-demență-sau-diferență-autistă">5.4 Cea mai grea întrebare: demență sau diferență autistă?</h3>
+<p>Asta este genuin dificilă și <strong>puțin cercetată</strong>. Unele studii sugerează că adulții autiști pot prezenta <strong>declin accelerat al memoriei și schimbări în hipocamp</strong>, iar într-o mostră aproximativ <strong>30% din adulții autiști de vârstă mijlocie și înaintată au auto-raportat un declin cognitiv</strong> (Klein et al., 2023, via ARI). Dar distingerea <strong>tiparelor autiste pe viață</strong> (inerție, concentrare monotropică, procesare mai lentă, implicare socială redusă) de <strong>demența genuină</strong> este clinic grea și ușor de greșit (Advanced Therapy Clinic; NTG; Step Ahead ABA).</p>
+<ul>
+<li><strong>Nu presupune.</strong> O retragere, un răspuns mai lent sau o schimbare în rutină <em>nu este</em> automat demență la o persoană autistă — poate fi burnout, copleșire, depresie, schimbare senzorială sau pur și simplu cum a fost mereu.</li>
+<li><strong>Obține o evaluare atentă, informată despre autism.</strong> Testele standard de demență pot citi greșit trăsăturile autiste. Caută clinicieni și resurse cu expertiză în autism (<strong>National Task Group</strong> menține resurse despre autism și demență).</li>
+<li><strong>Păstrează demnitatea pe tot parcursul.</strong> Indiferent de diagnostic, rubendia ta rămâne aceeași persoană. Acomodează, nu patologiza; protejează autonomia și sinele chiar dacă nevoile de îngrijire cresc.</li>
+</ul>
+<h3 id="55-inversarea-rolului-de-îngrijitor--și-planificarea-din-timp">5.5 Inversarea rolului de îngrijitor — și planificarea din timp</h3>
+<p>Dacă ești <strong>copilul adult</strong> al unui părinte autist — sau un soț/partener — s-ar putea să te confrunți cu o <strong>inversare a rolurilor</strong>: persoana care odinioară a avut grijă de tine (sau și-a ținut propria viață unită) are acum nevoie de sprijin. Subiectele de planificare cu care se confruntă familiile în această situație includ <strong>locuința, transportul, aranjamentele juridice și financiare, indemnizațiile, rețelele sociale și dorințele de la sfârșitul vieții</strong> (mentalhealthandaging.com). Începe aceste conversații <strong>devreme, cu blândețe și cu rubendia ta conducând</strong> — cu mult înainte de o criză.</p>
+<p>Dacă rubendia ta autistă a fost susținută anterior de <em>propriii</em> ei părinți acum îmbătrâniți (bunicii tăi), „tsunamiul de argint" al adulților autiști care îmbătrânesc și al îngrijitorilor care îmbătrânesc face planificarea timpurie și mai importantă.</p>
+<h3 id="56-cămine-și-spitale">5.6 Cămine și spitale</h3>
+<p>Aceste medii sunt adesea ostile senzorial și dereglează rutina — printre cele mai grele medii pentru o persoană monotropică. Pledează pentru: un spațiu liniștit, rutine predictibile, păstrarea obiectelor și intereselor semnificative, <strong>personal care înțelege autismul</strong> și <strong>comunicare clară, literală, cu răbdare</strong>. Întreabă despre acomodări ca despre un drept, nu ca despre o favoare (vezi ghidul însoțitor pentru profesioniști pentru detalii specifice îngrijirii medicale).</p>
+<h3 id="57-sfârșitul-vieții">5.7 Sfârșitul vieții</h3>
+<p>Abordează conversațiile despre sfârșitul vieții cu același respect pe care l-ai arătat pe tot parcursul: informații clare, literale; timp amplu de procesare; luarea deciziilor cu sprijin; păstrarea rutinei și a oamenilor/lucrurilor care contează; și respect pentru felul în care rubendia ta comunică și traversează doliul — care poate arăta diferit de ce te aștepți și nu este mai puțin real.</p>
+<hr />
+<h2 id="partea-6--bunici-mătuși-unchi-veri-familia-extinsă">Partea 6 — Bunici, Mătuși, Unchi, Veri (Familia Extinsă)</h2>
+<p>Familia extinsă este o <strong>sursă sub-recunoscută de reziliență</strong> pentru persoanele autiste și pentru părinții lor — dar poate fi și o sursă de stres când atitudinile se ciocnesc (Frontiers, 2026; PMC12162707; stageslearning; Marcus Foundation).</p>
+<p><strong>Ce ajută:</strong></p>
+<ul>
+<li><strong>Învață despre autism din voci autiste</strong>, nu doar din surse bazate pe frică. Puțin timp petrecut cu scrieri/videouri conduse de autiști transformă felul în care îți vezi rubendia.</li>
+<li><strong>Ascultă părinții (dacă e un copil).</strong> Ei își cunosc copilul; ai încredere în cererile lor de acomodare (fără îmbrățișări-surpriză, volum mai mic, nu comenta mâncarea, urmează rutina) chiar dacă par ciudate.</li>
+<li><strong>Educa-te</strong> — părinții raportează că depun efort uriaș explicând autismul rubedeniilor; să le ieși în întâmpinare este un dar real (PMC12162707).</li>
+<li><strong>Construiește propria ta relație</strong> cu rubendia ta autistă, în condițiile ei. Intră în lumea ei prin interesele ei. Nu lua personal lipsa contactului vizual sau de „căldură" tipică — conexiunea poate arăta diferit (alinierea lucrurilor împreună, împărtășirea unei pasiuni, joc paralel, scris).</li>
+<li><strong>Fii atent la limbaj</strong> în preajma familiei și a persoanei. Evită „vindecare," „tragedie," „suferă de," „cel puțin nu e…". Sărbătorește persoana din fața ta.</li>
+<li><strong>Oferă ajutor concret</strong>: respiro, o masă, să mergi la o programare, să înveți strategiile de reglare ale copilului. Ofertele specifice bat „anunță-mă dacă ai nevoie de ceva."</li>
+<li><strong>E în regulă să te simți nesigur.</strong> Bunicii mai ales se pot simți inadecvați când interacțiunea la care se așteptau nu are loc. Asta e normal; ceea ce contează e să te prezinți cu curiozitate și respect.</li>
+</ul>
+<hr />
+<h2 id="partea-7--să-aveți-grijă-de-voi-bunăstarea-familiei-și-a-îngrijitorului">Partea 7 — Să Aveți Grijă de Voi (Bunăstarea Familiei și a Îngrijitorului)</h2>
+<p>Nu poți turna dintr-o cană goală, iar stresul familial în autism este <strong>real și măsurabil</strong> — nu un semn că îți iubești rubendia mai puțin.</p>
+<ul>
+<li><strong>Burnout-ul părinților/îngrijitorilor este comun.</strong> Părinții copiilor autiști arată mai mult stres, anxietate și depresie decât părinții copiilor neurotipici; stresul cronic are consecințe fizice și de sănătate mintală reale (Yesilkaya &amp; Magallón-Neri, 2024; Frontiers, 2025; Schieve, 2007, via ARI; childmind.org). Să-l numești este primul pas.</li>
+<li><strong>Ce ajută cu adevărat (cu dovezi):</strong> abordările bazate pe acceptare și autocompasiune reduc stresul parental (RCT-pilot ACT; Neff; Torbet, 2019; Life Skills Advocate); intervențiile bazate pe mindfulness ajută; <strong>satisfacția cu serviciile și un sprijin bun</strong> protejează bunăstarea îngrijitorului (Fong, 2023); sprijinul între egali de la alte familii afirmative reduce izolarea.</li>
+<li><strong>Găsește-ți oamenii.</strong> Grupurile de părinți afirmative ale neurodiversității (în persoană sau online) îți schimbă viața; evită grupurile centrate pe doliu/vindecare, care tind să adâncească disperarea. Include spații <strong>conduse de autiști</strong> în lectura și ascultarea ta.</li>
+<li><strong>Ia-ți respiro real.</strong> Ai voie să te odihnești, să ai propria ta viață, să ceri și să accepți ajutor. Bunăstarea ta face parte din sistemul de sprijin al rubendiei tale, nu e separată de el.</li>
+<li><strong>Procesează doliul în afara relației.</strong> E normal să deplângi viața pe care ți-o imaginai. Fă acea muncă cu un terapeut, partener sau grup de suport — nu pe sau prin rubendia ta autistă.</li>
+<li><strong>Protejează și bunăstarea fraților și surorilor</strong> (vezi §3.4).</li>
+<li><strong>Pentru copiii-adulți îngrijitori ai rubedeniilor autiste în vârstă:</strong> riscurile de burnout ale îngrijirii vârstnicilor se aplică și ție, <em>plus</em> penuria de servicii informate despre autism. Construiește o echipă de sprijin devreme; nu poți și nu ar trebui să faci asta singur.</li>
+</ul>
+<hr />
+<h2 id="partea-8--un-rapid-fă--nu-face-pentru-toate-rubedeniile">Partea 8 — Un Rapid „Fă / Nu Face" pentru Toate Rubedeniile</h2>
+<p><strong>Fă</strong></p>
+<ul>
+<li>Intră în lumea ei; împărtășește și onorează-i interesele</li>
+<li>Comunică clar, literal și cu răbdare</li>
+<li>Oferă avertismente și timp pentru tranziții</li>
+<li>Protejează-i rutinele, stimmingul și liniștea</li>
+<li>Co-reglează (rămâi calm, scade cerințele) în timpul copleșirii</li>
+<li>Pledează pentru acomodări (școală, muncă, asistență medicală)</li>
+<li>Ascultă voci autiste; centrează propriile alegeri ale rubendiei tale</li>
+<li>Ai grijă de propria ta bunăstare, cu sprijin</li>
+</ul>
+<p><strong>Nu face</strong></p>
+<ul>
+<li>Nu forța contact vizual, nu suprima stimmingul și nu o împinge să „se comporte normal"</li>
+<li>Nu o trage brusc din concentrare și nu întrerupe fluxul constant</li>
+<li>Nu trata crizele de cedare/închiderile ca pe obraznicie sau manipulare</li>
+<li>Nu folosi limbajul „vindecare," „tragedie" sau „povară," în fața ei sau despre ea</li>
+<li>Nu lua decizii <em>despre</em> ea <em>fără</em> ea</li>
+<li>Nu presupune că retragerea, lentoarea sau schimbarea la o rubendie mai în vârstă e automat demență</li>
+<li>Nu duce totul singur</li>
+</ul>
+<hr />
+<h2 id="partea-9--întrebări-deschise-și-limitări-sincere">Partea 9 — Întrebări Deschise și Limitări Sincere</h2>
+<ol type="1">
+<li><strong>Vârsta înaintată este o lacună de cercetare.</strong> Cea mai mare parte a îndrumării pentru rubedenii autiste în vârstă este extrapolată; autism + demență, autism + menopauză și îngrijirea de către copilul adult sunt în mare parte nesticiate (Klein et al., 2024). Fii sincer despre incertitudine cu familia și clinicienii tăi.</li>
+<li><strong>Abordările parentale afirmative specifice sunt în apariție, nu dovedite.</strong> Metodele cu cerințe scăzute, cu limbaj declarativ și informate de PDA au sprijin puternic condus de autiști și dovezi de practică în creștere, dar studii ample limitate. Tratează-le ca practică înțeleaptă, centrată pe persoană — și păstrează ce funcționează pentru <em>rubendia ta</em>.</li>
+<li><strong>Cercetarea familială este înclinată</strong> spre familii albe, occidentale, vorbitoare de engleză, cu doi părinți și nevoi de sprijin mai mici. Experiențele variază în funcție de cultură, rasă, gen, venit și nevoi de sprijin; caută voci care să-ți reflecte familia.</li>
+<li><strong>Nu fiecare persoană autistă este monotropică</strong> și nu fiecare persoană autistă vrea aceleași lucruri. Rubendia ta este mai întâi un individ; las-o să corecteze acest ghid.</li>
+<li><strong>Coapariția este regula.</strong> ADHD (AuDHD), anxietatea, depresia, diferențele de învățare și afecțiunile de sănătate fizică coapar frecvent și conturează tabloul.</li>
+</ol>
+<hr />
+<h2 id="surse">Surse</h2>
+<h3 id="teoria-centrală">Teoria centrală</h3>
+<ol type="1">
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a> — via <a href="https://monotropism.org/murray-lesser-lawson">https://monotropism.org/murray-lesser-lawson</a></li>
+<li>Murray, F. (2018, actualizat 2025). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Murray, F. (2023). Monotropism and Wellbeing (keynote, SARG 2023). <a href="https://monotropism.org/wellbeing">https://monotropism.org/wellbeing</a></li>
+<li>Murray, F. (2022). Understanding how routines can help autistic people thrive. <em>Thinking Person's Guide to Autism</em>. <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Lawson, W. (2011). <em>The Passionate Mind</em>. Jessica Kingsley. — și Lawson, W. (2025). <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a></li>
+<li>Milton, D. (2012). The double empathy problem. Rezumat: Reframing Autism, <a href="https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics">https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics</a></li>
+<li>Garau, V. et al. (2023). The Monotropism Questionnaire. OSF preprint. <a href="https://osf.io/ft73y/">https://osf.io/ft73y/</a></li>
+<li>Reframing Autism (2025). Monotropism: understanding autistic ways of being through the lens of attention. <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society (Edgar, H. &amp; Adkin, T., 2025). What is monotropism? <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ol>
+<h3 id="burnout-mascare-crize-de-cedareînchideri">Burnout, mascare, crize de cedare/închideri</h3>
+<ol start="10" type="1">
+<li>Raymaker, D. M. et al. (2020). Defining autistic burnout. <em>Autism in Adulthood</em>, 2(2), 132–143. <a href="https://pubmed.ncbi.nlm.nih.gov/32851204">https://pubmed.ncbi.nlm.nih.gov/32851204</a></li>
+<li>Mantzalas, J. et al. (2022). A conceptual model of risk and protective factors for autistic burnout. <em>Autism Research</em>. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722</a></li>
+<li>Pearson, A. &amp; Rose, K. (2021). A conceptual analysis of autistic masking. <em>Autism in Adulthood</em>. <a href="https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043">https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043</a></li>
+<li>Autism Society (2025). Autistic meltdowns and shutdowns (factsheet). <a href="https://autismsociety.org/">https://autismsociety.org/</a></li>
+<li>Reframing Autism. All about autistic shutdowns: a guide for allies. <a href="https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies">https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies</a></li>
+<li>Leicestershire Partnership NHS Trust — Autism Space. Understanding autistic meltdowns and shutdowns. <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ol>
+<h3 id="copii-parentalitate-casă-și-școală">Copii, parentalitate, casă și școală</h3>
+<ol start="16" type="1">
+<li>Autism Awareness Centre. Co-regulation: the bridge to self-regulation. <a href="https://autismawarenesscentre.com/co-regulation-the-bridge-to-self-regulation">https://autismawarenesscentre.com/co-regulation-the-bridge-to-self-regulation</a></li>
+<li>Autism Little Learners. Co-regulation and autism; transitions and autism. <a href="https://autismlittlelearners.com">https://autismlittlelearners.com</a></li>
+<li>Autism Ontario (2024). Supporting regulation using a neurodiversity affirmative approach (slides; link PDF original eliminat/404 — vezi și ref 16–17 despre co-reglare). <a href="https://www.autismontario.com">https://www.autismontario.com</a></li>
+<li>Tilt Parenting (2023). Linda Murphy talks about declarative language. <a href="https://tiltparenting.com/2023/03/28/declarative-language">https://tiltparenting.com/2023/03/28/declarative-language</a></li>
+<li>Autistic Realms (Edgar, H.). Neurodivergent co-regulation. <a href="https://autisticrealms.com/neurodivergent-co-regulation">https://autisticrealms.com/neurodivergent-co-regulation</a></li>
+<li>Edgar, H. (2024). Autistic young people: skills regression, burnout or a shift in monotropic attentional resources? <a href="https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/">https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/</a></li>
+<li>National Autistic Society. Demand avoidance. <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a></li>
+<li>Reframing Autism. Pathological Demand Avoidance (PDA) and autism: a guide for allies. <a href="https://reframingautism.org.au/pathological-demand-avoidance-pda-and-autism-guide-for-allies">https://reframingautism.org.au/pathological-demand-avoidance-pda-and-autism-guide-for-allies</a></li>
+<li>Child Mind Institute. Pathological demand avoidance (PDA) in kids. <a href="https://childmind.org/article/pathological-demand-avoidance-in-kids">https://childmind.org/article/pathological-demand-avoidance-in-kids</a></li>
+<li>BERA (2021). Autism: the benefits of monotropism and flow states in the classroom. <a href="https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom">https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom</a></li>
+<li>Therapist Neurodiversity Collective (Roberts, J., 2023). IEPs, ableist goals, and parents' rights. <a href="https://therapistndc.org/ieps-ableist-goals-and-parents-rights">https://therapistndc.org/ieps-ableist-goals-and-parents-rights</a></li>
+<li>ImpactParents. How to make IEPs neuro-affirming and student-led. <a href="https://impactparents.com/how-to-make-ieps-neuro-affirming-and-student-led">https://impactparents.com/how-to-make-ieps-neuro-affirming-and-student-led</a></li>
+<li>University of Oregon (PMC8863588). Dimensions of family–school partnerships for autistic children. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8863588">https://pmc.ncbi.nlm.nih.gov/articles/PMC8863588</a></li>
+<li>PMC8883377. "I know how to advocate": parents' experiences advocating for children diagnosed with ASD. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8883377">https://pmc.ncbi.nlm.nih.gov/articles/PMC8883377</a></li>
+</ol>
+<h3 id="frațisurori-și-familie-extinsă">Frați/surori și familie extinsă</h3>
+<ol start="30" type="1">
+<li>PMC8264626. A systematic review of the experience of being a sibling of a child with an autism spectrum disorder. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264626">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264626</a></li>
+<li>PMC12162707. The role of extended family members in the lives of autistic individuals and their parents: a systematic review and meta-synthesis. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12162707">https://pmc.ncbi.nlm.nih.gov/articles/PMC12162707</a></li>
+<li>Frontiers in Education (2026). Supporting resilience for autistic children and their families: appreciating the roles of grandparents. <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1771073/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1771073/full</a></li>
+<li>Stages Learning. How grandparents can support their autistic grandchild. <a href="https://stageslearning.com/connect/articles/how-grandparents-can-support-their-autistic-grandchild">https://stageslearning.com/connect/articles/how-grandparents-can-support-their-autistic-grandchild</a></li>
+<li>Marcus Foundation. Being a grandparent to a child with autism. <a href="https://www.marcus.org/autism-resources/autism-tips-and-resources/being-a-grandparent-to-a-child-with-autism">https://www.marcus.org/autism-resources/autism-tips-and-resources/being-a-grandparent-to-a-child-with-autism</a></li>
+<li>ASAT. How to manage the impact of a child with autism on siblings. <a href="https://asatonline.org/research-treatment/clinical-corner/impact-on-siblings">https://asatonline.org/research-treatment/clinical-corner/impact-on-siblings</a></li>
+<li>Grand Valley State University START Project. Resources for siblings. <a href="https://www.gvsu.edu/autismcenter/resources-for-siblings-356.htm">https://www.gvsu.edu/autismcenter/resources-for-siblings-356.htm</a></li>
+</ol>
+<h3 id="adulți-diagnostic-târziu-dezvăluire">Adulți, diagnostic târziu, dezvăluire</h3>
+<ol start="37" type="1">
+<li>PMC11074347. "When I need help, I ask my friends": Spanish autistic women disclosing late diagnosis to family and friends. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11074347">https://pmc.ncbi.nlm.nih.gov/articles/PMC11074347</a></li>
+<li>PMC9889483. Exploring the experiences of parents whose child has received a diagnosis of ASD in adulthood. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9889483">https://pmc.ncbi.nlm.nih.gov/articles/PMC9889483</a></li>
+<li>National Autistic Society. Emotional support for family members after a diagnosis. <a href="https://www.autism.org.uk/advice-and-guidance/diagnosis/after-diagnosis/emotional-support-for-family-members-after-a-diagn">https://www.autism.org.uk/advice-and-guidance/diagnosis/after-diagnosis/emotional-support-for-family-members-after-a-diagn</a></li>
+<li>Prosper Health. Why many adults receive a late autism diagnosis and what to do next. <a href="https://www.prosperhealth.io/blog/why-many-adults-receive-a-late-autism-diagnosis-and-what-to-do-next">https://www.prosperhealth.io/blog/why-many-adults-receive-a-late-autism-diagnosis-and-what-to-do-next</a></li>
+<li>Deconstructing Stigma. Supporting adults with late-diagnosed autism. <a href="https://deconstructingstigma.org/library/friedman-autism-adults">https://deconstructingstigma.org/library/friedman-autism-adults</a></li>
+</ol>
+<h3 id="îmbătrânire-demență-îngrijirea-vârstnicilor">Îmbătrânire, demență, îngrijirea vârstnicilor</h3>
+<ol start="42" type="1">
+<li>Klein, C. B. et al. (2024). Aging well and autism: a narrative review and recommendations for future research. <em>Healthcare</em>, 12(12), 1207. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987">https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987</a></li>
+<li>Autism Research Institute. Editorial: autism and dementia and Alzheimer's disease. <a href="https://autism.org/editorial-autism-and-dementia-and-alzheimers-disease">https://autism.org/editorial-autism-and-dementia-and-alzheimers-disease</a></li>
+<li>The National Task Group (NTG). Autism and dementia resource library. <a href="https://www.the-ntg.org/autism-and-dementia">https://www.the-ntg.org/autism-and-dementia</a></li>
+<li>Mental Health and Aging. Caring for adults with autism and other disabilities (7 planning topics). <a href="https://www.mentalhealthandaging.com/caring-for-adults-with-autism-and-other-disabilities">https://www.mentalhealthandaging.com/caring-for-adults-with-autism-and-other-disabilities</a></li>
+<li>Lai, M.-C. &amp; Baron-Cohen, S. (2015). Identifying the lost generation of adults with autism spectrum conditions. <em>Lancet Psychiatry</em>. (Referențiat în Klein et al., 2024.)</li>
+<li>Klein, C. B. et al. (2023). Self-reported cognitive decline in middle-aged and older autistic adults. (Referențiat în editorialul ARI, ref 43.)</li>
+</ol>
+<h3 id="bunăstarea-îngrijitorului-și-cadrul-afirmativ-al-neurodiversității">Bunăstarea îngrijitorului și cadrul afirmativ al neurodiversității</h3>
+<ol start="48" type="1">
+<li>Frontiers in Psychology (2025). Latent profile analysis of parental burnout among parents of children with and without ASD. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1581321/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1581321/full</a></li>
+<li>Autism Research Institute. Research on parental stress &amp; autism (Schieve, 2007; et al.). <a href="https://autism.org/parental-stress">https://autism.org/parental-stress</a></li>
+<li>Child Mind Institute. Self-care tips for parents to prevent burnout. <a href="https://childmind.org/article/fighting-caregiver-burnout-special-needs-kids">https://childmind.org/article/fighting-caregiver-burnout-special-needs-kids</a></li>
+<li>Life Skills Advocate. Effective strategies for managing autism parent burnout. <a href="https://lifeskillsadvocate.com/blog/autism-parent-burnout">https://lifeskillsadvocate.com/blog/autism-parent-burnout</a></li>
+<li>PMC12967497. The emotional and psychological impact on families raising children with special needs: a primary care perspective. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12967497">https://pmc.ncbi.nlm.nih.gov/articles/PMC12967497</a></li>
+<li>Autistic Self Advocacy Network (ASAN). What we believe — "Nothing about us without us." <a href="https://autisticadvocacy.org/about-asan/what-we-believe">https://autisticadvocacy.org/about-asan/what-we-believe</a></li>
+<li>The Autistic Advocate (Kieran Rose). The danger of misunderstanding neuro-affirming practice. <a href="https://theautisticadvocate.com/the-danger-of-misunderstanding-neuro-affirming-practice">https://theautisticadvocate.com/the-danger-of-misunderstanding-neuro-affirming-practice</a></li>
+<li>Therapist Neurodiversity Collective. Neurodiversity-affirming therapy. <a href="https://therapistndc.org/neurodiversity-affirming-therapy">https://therapistndc.org/neurodiversity-affirming-therapy</a></li>
+<li>Estée Klar. Nothing about us without us: a declaration of relationality. <a href="https://www.esteerelation.com/life-art-collaboration-an-introduction">https://www.esteerelation.com/life-art-collaboration-an-introduction</a></li>
+</ol>
+<h3 id="ghid-însoțitor">Ghid însoțitor</h3>
+<ol start="57" type="1">
+<li>PieBru (2025). Supporting the autistic monotropic person across the lifespan — a practitioner &amp; health-care professional guide (ghid însoțitor). <a href="https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-lifespan-guide.md">https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-lifespan-guide.md</a></li>
+</ol>
+</body>
+</html>

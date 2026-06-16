@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dorastanie Monotropicznie</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="dorastanie-monotropicznie">Dorastanie Monotropicznie</h1>
+<h3 id="przyjazny-przewodnik-dla-rodziców-dziadków-nauczycieli-i-trenerów-dzieci-autystycznych-711-lat">Przyjazny przewodnik dla rodziców, dziadków, nauczycieli i trenerów dzieci autystycznych (7–11 lat)</h3>
+<hr />
+<blockquote>
+<p><strong>Dla kogo jest ten przewodnik.</strong> Ten przewodnik jest dla dorosłych wokół <strong>autystycznego dziecka w wieku około 7–11 lat</strong>, którego umysł działa w sposób <em>monotropiczny</em> — umysł, który głęboko i intensywnie skupia się na niewielkiej liczbie rzeczy naraz. Obejmuje <strong>rodziców i opiekunów</strong>, <strong>dziadków, cioć, wujów i innych członków rodziny</strong>, <strong>nauczycieli szkoły podstawowej</strong> oraz <strong>trenerów i instruktorów</strong> prowadzących sport i zajęcia dziecka. To nie jest podręcznik kliniczny. To towarzysz w prostym języku, który pomoże ci zrozumieć dziecko, nawiązać z nim więź i sprawić, że dom, szkoła i boisko sportowe będą łatwiejsze i radosniejsze.</p>
+</blockquote>
+<blockquote>
+<p><strong>Uwaga o języku.</strong> Większość osób autystycznych preferuje <strong>język identyfikujący najpierw</strong> („autystyczne dziecko"), więc tego używa ten przewodnik. Niektóre rodziny wolą „dziecko z autyzmem" — stosuj się do preferencji dziecka i rodziny. Ten przewodnik celowo unika słów takich jak <em>zaburzenie, nienormalny, deficyt, tragedia</em> czy <em>brzemię</em>, z wyjątkiem sytuacji, gdy tłumaczy idee, które rodziny mogły usłyszeć gdzie indziej. Autyzm to <strong>różnica</strong> — z prawdziwymi wyzwaniami i prawdziwymi mocnymi stronami.</p>
+</blockquote>
+<blockquote>
+<p><strong>Idea, którą warto zabrać ze sobą.</strong> <em>"Jeśli zależy ci na dobrostanie osób autystycznych, musisz spróbować zrozumieć autyzm. Jeśli chcesz zrozumieć autyzm, musisz zrozumieć monotropizm."</em> — Fergus Murray, autystyczny nauczyciel i pisarz.</p>
+</blockquote>
+<hr />
+<h2 id="część-0--jedyna-idea-którą-warto-wziąć-najpierw">Część 0 — Jedyna idea, którą warto wziąć najpierw</h2>
+<p>Uwaga większości ludzi rozprasza się na wiele rzeczy naraz — zegar, szum, osoba przed nimi, co będzie na kolację. Umysł <strong>monotropiczny</strong> jest inny: ma tendencję do ściągania uwagi w <strong>niewielką liczbę głębokich, intensywnych kanałów</strong> w danym momencie. Autystyczni badacze Dinah Murray, Wenn Lawson i Mike Lesser nazwali to <strong>„tunelem uwagi"</strong> (Murray, Lesser &amp; Lawson, 2005).</p>
+<p>Wyobraź sobie uwagę jako ograniczoną ilość wody. Umysł <strong>politropiczny</strong> (bardziej typowy) jest jak <strong>zraszacz</strong> — woda rozłożona szeroko po ogrodzie. Umysł <strong>monotropiczny</strong> jest jak <strong>wąż z wąską dyszą</strong> — mniejszy obszar pokrycia, ale wszystko w tym strumieniu jest podlewane <em>głęboko</em> (F. Murray, 2018). Żaden nie jest „lepszy". Każdy ma mocne strony i koszty.</p>
+<p>Ta jedna różnica pomaga wyjaśnić prawie wszystko o tym, jak dziecko w twoim życiu doświadcza świata.</p>
+<h3 id="co-możesz-widzieć--co-często-naprawdę-się-dzieje">Co możesz widzieć → co często naprawdę się dzieje</h3>
+<table>
+<thead>
+<tr>
+<th>Możesz widzieć…</th>
+<th>Co często się dzieje (monotropizm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Głębokie, „obsesyjne" zainteresowanie jednym tematem, czasem przez lata</td>
+<td><strong>Pasja</strong>, która przynosi radość, spokój, umiejętności i tożsamość — nie „obsesja" do ograniczania ani „odzwyczajania"</td>
+</tr>
+<tr>
+<td>Wydaje się nie słyszeć; „ignoruje" ludzi lub własne potrzeby</td>
+<td>Gdy jest w pełni pochłonięte, umysł autentycznie <strong>nie rejestruje</strong> rzeczy poza tunelem — w tym głodu, pragnienia, toalety czy kogoś mówiącego</td>
+</tr>
+<tr>
+<td>Silne reakcje na pewne dźwięki, światła, zapachy, faktury — lub wydaje się nic nie czuć</td>
+<td><strong>Hiper-</strong> (nadmierna) lub <strong>hipo-</strong> (niedostateczna) responsywność: bodziec <em>wewnątrz</em> tunelu jest odczuwany intensywnie; ten <em>na zewnątrz</em> może się nie zarejestrować</td>
+</tr>
+<tr>
+<td>Kołysanie się, trzepotanie rękami, nucenie, powtarzanie słów lub ruchów</td>
+<td><strong>Stimming</strong> — autokontrolowane, przewidywalne bodźce, które uspokajają i regulują układ nerwowy</td>
+</tr>
+<tr>
+<td>Powoli rozpoczyna, zatrzymuje lub zmienia zajęcia; załamania przy przejściach</td>
+<td><strong>Autystyczna bezwładność</strong> — zmiana „torów" myślowych kosztuje realną energię i czas</td>
+</tr>
+<tr>
+<td>Mówi z wielką głębią o pasji; bierze rzeczy bardzo dosłownie; potrzebuje więcej czasu na odpowiedź</td>
+<td><strong>Jednokanałowa, dosłowna</strong> komunikacja, plus czas przetwarzania — nie rudeza ani „nie słuchanie"</td>
+</tr>
+<tr>
+<td>Nagły załamanie lub cisza i wycofanie</td>
+<td>Przeciążenie — <strong>załamanie</strong> (walka/przeciążenie) lub <strong>zamknięcie się</strong> (zamrożenie/wycofanie), nie złe zachowanie</td>
+</tr>
+</tbody>
+</table>
+<p>W tym przewodniku zamienimy każde z nich na <strong>praktyczne, przyjazne rzeczy, które możesz zrobić</strong> — w domu, w szkole i na boisku.</p>
+<hr />
+<h2 id="część-1--dla-rodziców-i-opiekunów">Część 1 — Dla rodziców i opiekunów</h2>
+<p>To ty znasz najlepiej swoje dziecko. Te idee to narzędzia do wypróbowania, nie zasady do narzucania. Największy dar, jaki możesz dać monotropicznemu dziecku, to środowisko, które działa <em>z</em> jego uwagą, a nie przeciwko niej.</p>
+<h3 id="11-chroń-i-wykorzystuj-specjalne-zainteresowanie">1.1 Chroń i wykorzystuj specjalne zainteresowanie</h3>
+<p>Intensywne zainteresowanie dziecka <strong>nie jest problemem do zarządzania</strong> — to jego silnik, jego pocieszenie, jego droga do świata. Jak ujmuje to autystyczny pisarz Wenn Lawson, osoby autystyczne uważają, że to <em>"znacznie łatwiej połączyć się ze zrozumieniem"</em>, gdy coś jest powiązane z ich obszarem zainteresowania.</p>
+<ul>
+<li><strong>Buduj pomosty przez nie.</strong> Matematyka przez rozkłady jazdy pociągów; czytanie przez dinozaury; historie społeczne z ulubioną postacią.</li>
+<li><strong>Nie „odzwyczajaj" tego.</strong> Nie ma korzyści z ograniczania zdrowej pasji, a robienie tego może usunąć kluczowe źródło regulacji i radości.</li>
+<li><strong>Dołącz czasem.</strong> Siedzenie obok i okazywanie autentycznej ciekawości to jeden z najsilniejszych sposobów na więź.</li>
+</ul>
+<h3 id="12-uczyń-dzień-przewidywalnym-i-złagódź-przejścia">1.2 Uczyń dzień przewidywalnym (i złagódź przejścia)</h3>
+<p>Autystyczna bezwładność oznacza, że <strong>zmiana torów kosztuje energię</strong>. Każda niespodzianka czy nagła zmiana to dodatkowy podatek w ograniczonym budżecie (F. Murray, 2019; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Przewidywalne rutyny</strong> dla poranków, czasu po szkole, posiłków i snu. Rutyny zmniejszają obciążenie poznawcze — ale działają najlepiej, gdy są * współtworzone*, nie narzucane z zewnątrz (F. Murray, 2022).</li>
+<li><strong>Dawaj ostrzeżenia przed przejściami:</strong> „Za dziesięć minut kończymy klocki Lego i przygotowujemy się do basenu… za dwie minuty…" Pomagają wizualne minutniki.</li>
+<li><strong>„Tunele, nie zadania."</strong> Autystyczny konsultant Jamie Knight opisuje planowanie wokół skupienia dziecka: zamiast wyciągać je z tunelu, spróbuj <strong>otworzyć przestrzeń na przejście następnego tunelu</strong> (Knight, 2021).</li>
+<li><strong>Powiedz dlaczego.</strong> Monotropiczne dzieci mają często silny instynkt <em>"Ale dlaczego?"</em>. Podawanie prawdziwych powodów wygładza przejścia znacznie lepiej niż „bo tak powiedziałem" (F. Murray, 2019).</li>
+</ul>
+<h3 id="13-uszanuj-świat-sensoryczny">1.3 Uszanuj świat sensoryczny</h3>
+<p>Różnice sensoryczne wynikają bezpośrednio z monotropizmu: bodziec <em>wewnątrz</em> tunelu jest odczuwany intensywnie; ten <em>na zewnątrz</em> może się nie zarejestrować (Murray, Lesser &amp; Lawson, 2005; Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Zmniejsz obciążenie w domu:</strong> ściemniacze, cichszy kąt, słuchawki lub nauszniki do głośnych miejsc, wygodne ubrania (odetnij drapiące metki, pozwól na bezszwowe skarpety).</li>
+<li><strong>Hiporesponsywność też jest realna:</strong> dziecko może nie zauważyć, że jest głodne, zimno lub potrzebuje toalety, gdy jest pochłonięte. Łagodne, konkretne przypomnienia („Dawno nie było — przerwa na toaletę?") pomagają, bo potrzeba autentycznie wypadła ze świadomości (Lawson, o interocepcji; Kelly Mahler, 2024).</li>
+<li><strong>Pozwól mu się ruszać i stimmować.</strong> Stimming — trzepotanie, kołysanie, nucenie, powtarzanie — to samoregulacja, nie „zachowanie". Powstrzymywanie go zazwyczaj pogarsza sprawę, a nie poprawia (Reframing Autism, 2023).</li>
+</ul>
+<h3 id="14-zmniejsz-wymagania-gdy-bak-jest-pusty">1.4 Zmniejsz wymagania, gdy bak jest pusty</h3>
+<p>Gdy umysł monotropiczny jest popychany do dzielenia uwagi na zbyt wiele kanałów, osoby autystyczne opisują <strong>„rozszczepienie monotropiczne"</strong> — przeciążenie, które może ujawniać się jako załamania, zamknięcia, wycofanie lub odmowa (forma <strong>unikania wymagań</strong>) (Reframing Autism, 2023). Rozwiązaniem jest <em>zmniejszenie</em> wymagań i bodźców, nie ich eskalacja.</p>
+<ul>
+<li><strong>Zauważ wczesne sygnały ostrzegawcze:</strong> chodzenie w tę i z powrotem, powtarzające się pytania, krótszy lont, nagła cisza. Działaj, zanim wybuchnie.</li>
+<li><strong>Odłóż niewymagane wymagania w trudne dni.</strong> Dziecko, które trzymało się kupy w szkole przez cały dzień, często <strong>załamuje się w domu</strong> — dom to bezpieczne miejsce, gdzie maska spada. To załamanie to znak zaufania i wyczerpania, nie tego, że robisz coś źle.</li>
+</ul>
+<h3 id="15-gdy-dochodzi-do-załamania-lub-zamknięcia">1.5 Gdy dochodzi do załamania lub zamknięcia</h3>
+<p><strong>Załamanie</strong> to utrata kontroli wskutek przeciążenia sensorycznego lub emocjonalnego — reakcja walki/ucieczki organizmu — i <em>nie jest</em> to napad złości ani wybór. <strong>Zamknięcie</strong> to wersja zamarznięcia: cisza, wycofanie, czasem niemożność mówienia (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<p><strong>W jego trakcie:</strong></p>
+<ul>
+<li><strong>Nie oceniaj ani nie dyskutuj.</strong> Denerwowanie się lub złość pogarszają sprawę.</li>
+<li><strong>Zmniejsz bodźce:</strong> wycisz pokój, przyciemnij światła, odsuń innych ludzi, wyłącz muzykę.</li>
+<li><strong>Bądź spokojną, bezpieczną obecnością</strong> — ale nie narzucaj pytań, instrukcji ani wymagań.</li>
+<li><strong>Daj czas.</strong> Powrót od przeciążenia nie jest natychmiastowy.</li>
+<li><strong>Stosuj najmniej restryktywne podejście</strong>, które utrzyma wszystkich w bezpieczeństwie.</li>
+</ul>
+<p><strong>Po nim,</strong> gdy dziecko jest spokojne, możecie wspólnie łagodnie ustalić plan na następny raz — co pomogło, jakie były wczesne sygnały, gdzie jest bezpieczne ciche miejsce (Leicestershire Partnership NHS Trust, Autism Space).</p>
+<blockquote>
+<p><strong>Zmień to w swojej głowie:</strong> załamanie to układ nerwowy dziecka mówiący <em>"dość,"</em> nie dziecko, które jest niegrzeczne. Ta jedna zmiana zmienia to, jak reagujesz.</p>
+</blockquote>
+<h3 id="16-przyjaźnie-rodzeństwo-i-samodzielność-711-lat">1.6 Przyjaźnie, rodzeństwo i samodzielność (7–11 lat)</h3>
+<p>Środkowe dzieciństwo to czas, gdy przyjaźnie stają się bardziej złożone, a <strong>maskowanie</strong> (ukrywanie cech autystycznych, by pasować) może zacząć mieć znaczenie — maskowanie jest wyczerpujące i wiąże się z lękiem i wypaleniem (Reframing Autism, 2023).</p>
+<ul>
+<li><strong>Jakość nad ilością przyjaciół.</strong> Jeden czy dwóch akceptujących przyjaciół biją napięty kalendarz towarzyski. Osoby autystyczne często uważają komunikację za łatwiejszą i bardziej satysfakcjonującą z innymi rówieśnikami autystycznymi lub neuroróżnorodnymi (Reframing Autism, 2023).</li>
+<li><strong>Chroń czas wolny.</strong> Socjalizowanie i szkoła kosztują energię. Wbuduj cichy, oparty na zainteresowaniach czas regeneracji.</li>
+<li><strong>Wspieraj rodzeństwo.</strong> Potrzeby monotropicznego dziecka mogą pochłonąć dużo przepustowości rodziny. Zadbaj, by rodzeństwo miało czas jeden-na-jeden i szczere, dostosowane do wieku wyjaśnienia — i by wiedziało, że wolno mu mieć własne uczucia.</li>
+<li><strong>Buduj samodzielność wokół zainteresowań.</strong> Dziecko, które ma trudności z rozpoczęciem obowiązków, może rzucić się do nich od razu, jeśli zostaną opakowane wokół jego pasji (system plików z faktami o dinozaurach; arkusz kalkulacyjny ze statystykami piłkarskimi).</li>
+</ul>
+<h3 id="17-dbaj-o-siebie">1.7 Dbaj o siebie</h3>
+<p>Nie możesz nalewać z pustego kubka. Przyjmij praktyczną pomoc, łącz się z innymi rodzinami pozytywnie nastawionymi do autyzmu i podążaj za wskazówkami <strong>prowadzonymi przez autystyczne osoby</strong>, gdzie możesz — zwykle są najdokładniejsze (Reframing Autism, 2023). Wykonujesz trudniejszą pracę, niż większość ludzi zdaje sobie sprawę.</p>
+<hr />
+<h2 id="część-2--dla-dziadków-i-rodziny-rozszerzonej">Część 2 — Dla dziadków i rodziny rozszerzonej</h2>
+<p>Dziadkowie, ciotki, wujkowie i kuzyni mogą być wśród najbardziej kochających i stabilizujących osób w życiu dziecka. Twoim zadaniem nie jest niczego „naprawiać" — to <strong>rozumieć, akceptować i wspierać rodziców</strong> (Autism Society of NC, Fetzer).</p>
+<h3 id="21-podążaj-za-przewodnictwem-rodziców">2.1 Podążaj za przewodnictwem rodziców</h3>
+<ul>
+<li><strong>Oni znają dziecko najlepiej.</strong> Słuchaj, zanim doradzać; pozwól im prosić o pomoc, zamiast wkraczać, by zrobić „po swojemu".</li>
+<li><strong>Utrzymuj spójność rutyn.</strong> Jeśli rodzina stosuje pewne strategie, harmonogramy lub pomoce komunikacyjne, używaj ich też — spójność zmniejsza lęk dziecka w przejściach (Autism Society of NC).</li>
+<li><strong>Uszanuj ich decyzje</strong>, nawet gdy zrobiłbyś inaczej. To ich dziecko.</li>
+</ul>
+<h3 id="22-łącz-się-przez-świat-dziecka">2.2 Łącz się przez świat dziecka</h3>
+<ul>
+<li><strong>Spotkaj się tam, gdzie ono jest.</strong> Poznaj, co kocha, i <em>baw się tym razem</em> — to zainteresowanie to jego fronton do więzi (Autism Society of NC).</li>
+<li><strong>Nie wymuszaj typowego kontaktu wzrokowego, przytulania czy pogawędki.</strong> Wiele autystycznych dzieci uważa kontakt wzrokowy za przytłaczający i woli więź <em>ramiennie obok</em> (robienie czegoś razem) niż twarzą w twarz.</li>
+<li><strong>Prezenty:</strong> idź za zainteresowaniem. Książka, zestaw lub przeżycie powiązane z pasją zwykle trafiają lepiej niż ogólnie „fajny" prezent.</li>
+</ul>
+<h3 id="23-utrzymuj-jasny-i-spokojny-język">2.3 Utrzymuj jasny i spokojny język</h3>
+<ul>
+<li><strong>Jasny, zwięzły, dosłowny język</strong> działa najlepiej (Autism Society of NC). Mów, co masz na myśli; unikaj drwiącego sarkazmu, który małe dziecko może wziąć dosłownie.</li>
+<li><strong>Dawaj czas na przetworzenie.</strong> Jeśli nie odpowiadają od razu, prawdopodobnie jeszcze przetwarzają — poczekaj, zamiast powtarzać głośniej.</li>
+<li><strong>Nie bierz momentów wybuchowych do siebie.</strong> Jeśli dziecko ma załamanie, „patrz na to jak na objaw, nie jak na to, kim ono naprawdę jest" (Autism Society of NC).</li>
+</ul>
+<h3 id="24-bądź-bezpieczną-przystanią--dla-rodziców-też">2.4 Bądź bezpieczną przystanią — dla rodziców też</h3>
+<ul>
+<li><strong>Zaproponuj konkretną pomoc:</strong> posiłek, pilnowanie rodzeństwa przez godzinę, wyjazd do sklepu. Niewielka praktyczna pomoc jest warta więcej niż dobrze pomyślana rada.</li>
+<li><strong>Edukuj się</strong> z zasobów, którym rodzina ufa, i dziel się tym, czego się uczysz — to pokazuje, że jesteś z nimi (Autism Society of NC).</li>
+<li><strong>Dbaj o siebie</strong> i rozdzielaj swoją miłość po wszystkich wnukach po równo.</li>
+</ul>
+<blockquote>
+<p><strong>W skrócie:</strong> kochaj dziecko takie, jakie jest, ucz się jego języka i spraw, by rodzice czuli się wspierani, a nie oceniani. To większość.</p>
+</blockquote>
+<hr />
+<h2 id="część-3--dla-nauczycieli-szkoły-podstawowej">Część 3 — Dla nauczycieli szkoły podstawowej</h2>
+<p>Szkoła to środowisko wielokanałowe, z wieloma przejściami i bardzo społeczne — co czyni ją genuinely trudną dla monotropicznych uczniów. Wytyczne autystycznego nauczyciela Fergusa Murraya dla nauczycieli sprowadzają się do <strong>sześciu rzeczy do zrozumienia</strong> (F. Murray, 2019). Oto one, wraz z tym, co <em>robić</em>.</p>
+<h3 id="31-radzenie-sobie-z-wieloma-kanałami-jest-trudne">3.1 Radzenie sobie z wieloma kanałami jest trudne</h3>
+<ul>
+<li><strong>Nie polegaj tylko na instrukcjach mówionych.</strong> Podawaj je <strong>w jasnej formie pisemnej lub wizualnej</strong>, by uczniowie mogli do nich wracać, zamiast musieli filtrować twój głos z hałasem klasy (F. Murray, 2019).</li>
+<li><strong>Jedna rzecz naraz.</strong> Ściana instrukcji werbalnych zostanie częściowo utracona.</li>
+</ul>
+<h3 id="32-filtrowanie-jest-kłopotliwe-i-podatne-na-błędy">3.2 Filtrowanie jest kłopotliwe i podatne na błędy</h3>
+<ul>
+<li><strong>Zmniejsz hałas, bałagan wizualny i wymagania społeczne.</strong> Oczyść ściany, użyj miękkich tkanin, posadź dziecko z dala od najbardziej ruchliwych/buczących miejsc.</li>
+<li><strong>Chroń skupienie i flow.</strong> Głęboka koncentracja towarzysząca opanowaniu czegoś interesującego to <em>jedno z najpotężniejszych narzędzi w edukacji</em> — zaprojektuj dzień, by uczniowie mogli czasem wejść w ten stan (F. Murray, 2019).</li>
+<li><strong>Miej plan na przeciążenie:</strong> <strong>ciche miejsce</strong>, do którego dziecko może pójść, by zdekompresować się i stimmować bez zakłopotania (F. Murray, 2019).</li>
+</ul>
+<h3 id="33-zmiana-torów-jest-destabilizująca">3.3 Zmiana torów jest destabilizująca</h3>
+<ul>
+<li><strong>Przewidywalność zmniejsza obciążenie poznawcze.</strong> Widoczne harmonogramy, tablice „teraz / następnie" i wczesne ostrzeganie o zmianach wszystkim pomagają.</li>
+<li><strong>Przejścia to strefa zagrożenia.</strong> Dawaj ostrzeżenia; unikaj niespodzianek; łagodź przejście do i z pracy grupowej, apeli oraz stołówki.</li>
+<li><strong>Czas nieustrukturyzowany to najtrudniejsza część dnia.</strong> Przerwy i obiady, bez ucieczki od tłumu i z presją „znajdź partnera", są często bardziej wyczerpujące niż lekcje (F. Murray, 2019). Zaproponuj ustrukturyzowane opcje o niskich wymaganiach (cichy klub, zajęcia na obiedzie, jasne bezpieczne miejsce).</li>
+</ul>
+<h3 id="34-zainteresowania-są-intensywne--wykorzystuj-je">3.4 Zainteresowania są intensywne — wykorzystuj je</h3>
+<ul>
+<li><strong>Praca <em>z</em> zainteresowaniami ucznia przynosi ogromne korzyści edukacyjne</strong> (Wood, 2019, cytowane w F. Murray, 2019). Używaj zainteresowania jako nośnika programu, gdzie możesz.</li>
+<li><strong>Nie używaj zainteresowania tylko jako nagrody do wstrzymania.</strong> To zamienia główne źródło regulacji dziecka w dźwignię i niszczy zaufanie.</li>
+</ul>
+<h3 id="35-ale-dlaczego-jest-realne--podawaj-powody">3.5 „Ale dlaczego?" jest realne — podawaj powody</h3>
+<p>Monotropiczni uczniowie często muszą zrozumieć <em>dlaczego</em>, czasem bardziej szczegółowo niż rówieśnicy. <strong>Powody to kluczowe narzędzie nauczania</strong>; tarcie często pochodzi z oczekiwania, że dziecko przyjmie rzeczy tylko na autorytet (F. Murray, 2019). Traktuj ich pytania jako zaangażowanie, nie bunt.</p>
+<h3 id="36-rzeczy-wypadają-ze-świadomości--zapewnij-strukturę-zewnętrzną">3.6 Rzeczy wypadają ze świadomości — zapewnij strukturę zewnętrzną</h3>
+<p>Gdy uwaga jest gdzie indziej, potrzeby, terminy i instrukcje autentycznie znikają z głowy. <strong>Harmonogramy wizualne, listy kontrolne, planery i przypomnienia</strong> działają jako pamięć zewnętrzna (F. Murray, 2019). Pomóż dziecku je zbudować — ale utrzymuj je współdzielone, nie kontrolujące.</p>
+<h3 id="37-rozmawiaj-z-uczniem--i-wierz-mu">3.7 Rozmawiaj z uczniem — i wierz mu</h3>
+<blockquote>
+<p><em>"Jeśli chcesz wiedzieć, co jest trudne dla kogoś, kogo uczysz, i co mogłoby pomóc, twoją najlepszą opcją jest prawdopodobnie z nim porozmawiać. Spróbuj mu uwierzyć, gdy mówi ci, że coś jest trudne."</em> — Fergus Murray (2019)</p>
+</blockquote>
+<p>Profile autystyczne są „pikowane" — ogromne zróżnicowanie między obszarami. Nigdy nie zakładaj, że dziecko powinno uznać coś za łatwe tylko dlatego, że jest zdolne gdzie indziej. I <strong>nigdy nie nalegaj na kontakt wzrokowy ani nie powstrzymuj go przed ruchem/stimmingiem</strong> — oba to często sposób, w jaki radzi sobie z przeciążeniem (F. Murray, 2019).</p>
+<h3 id="38-zbuduj-prawdziwe-partnerstwo-domszkoła">3.8 Zbuduj prawdziwe partnerstwo dom–szkoła</h3>
+<p>Rodziny mają kluczowe informacje o wyzwalaczach, wczesnych sygnałach ostrzegawczych i o tym, co reguluje dziecko. Prosty dwukierunkowy zeszyt lub aplikacja komunikacyjna — co poszło dobrze, co było trudne, nadchodzące zmiany — zapobiega wielu złym dniom dla wszystkich.</p>
+<hr />
+<h2 id="część-4--dla-trenerów-sportu-wf-u-i-zajęć">Część 4 — Dla trenerów sportu, WF-u i zajęć</h2>
+<p>Ruch ma znaczenie: jest dobry dla zdrowia, nastroju, pewności siebie i więzi społecznej. Ale dzieci i młodzież autystyczna są średnio <strong>mniej aktywne fizycznie niż rówieśnicy</strong> — nie z braku zainteresowania, ale dlatego, że wiele środowisk sportowych jest głośnych, nieprzewidywalnych, wymagających społecznie i pełnych nagłych przejść. Przegląd z 2025 roku całej literatury na ten temat (Michaud &amp; Harvey, 2025) znalazł wyraźny zestaw rzeczy, które pomagają. W połączeniu z lentą monotropizmu oto wersja praktyczna.</p>
+<h3 id="41-co-mówi-badanie-że-pomaga-michaud--harvey-2025">4.1 Co mówi badanie, że pomaga (Michaud &amp; Harvey, 2025)</h3>
+<p>Główni ułatwiacze z przeglądu:</p>
+<ul>
+<li><strong>Przewidywalne rutyny</strong> — ta sama rozgrzewka, ta sama struktura, bez niespodzianek.</li>
+<li><strong>Bezpieczne, przyjazne zmysłom przestrzenie</strong> — cichsze, mniej bałaganu, miejsce na wycofanie.</li>
+<li><strong>Dobre relacje z trenerami i wspierającymi rówieśnikami</strong> — strona społeczna ma większe znaczenie dla uczestnictwa niż strona umiejętności.</li>
+<li><strong>Zajęcia, które pasują do umiejętności dziecka i wydają się znajome</strong>, i które przybierają formę <strong>gry</strong>.</li>
+<li><strong>Zaangażowanie rodziny</strong> i <strong>możliwości po szkole / w społeczności</strong>.</li>
+<li>Podejście <strong>oparte na mocnych stronach</strong> — <em>"aktywność fizyczna nie jako wyzwanie do pokonania, ale jako okazja do budowania pewności siebie, radości i więzi społecznej"</em> (Michaud, w McGill Newsroom, 2025).</li>
+</ul>
+<h3 id="42-zmapuj-monotropizm-na-trening">4.2 Zmapuj monotropizm na trening</h3>
+<table>
+<thead>
+<tr>
+<th>Cecha monotropizmu</th>
+<th>Co oznacza w sporcie</th>
+<th>Posunięcie trenera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autystyczna bezwładność</strong></td>
+<td>Rozpoczynanie, zatrzymywanie i zmiana ćwiczeń kosztuje energię</td>
+<td>Wbuduj <strong>przewidywalną rozgrzewkę</strong> i <strong>schłodzenie</strong> jako rampy przejścia; dawaj ostrzeżenia przed zmianą zajęć; pozwól na powolny start</td>
+</tr>
+<tr>
+<td><strong>Tunel uwagi</strong></td>
+<td>Zajęcia o jednym skupieniu są łatwiejsze i radosniejsze niż o podzielonym</td>
+<td>Preferuj ćwiczenia <strong>jedna umiejętność naraz</strong>; pozwól dziecku zostać przy umiejętności, która je pochłania; praktyka w <strong>formie gry</strong> działa lepiej niż abstrakcyjne ćwiczenia</td>
+</tr>
+<tr>
+<td><strong>Hiperresponsywność sensoryczna</strong></td>
+<td>Gwizdki, brzęczyki, echoing sale, ostre światła, gryzące stroje mogą przytłaczać</td>
+<td><strong>Zmniejsz</strong> nagłe głośne dźwięki (używaj sygnałów ręcznych/cichych braw), wybieraj cichsze miejsca, pozwól na <strong>nauszniki</strong>, miękkie stroje, okulary przeciwsłoneczne; ostrzegaj przed gwizdkiem/trąbką</td>
+</tr>
+<tr>
+<td><strong>Hiporesponsywność sensoryczna / interocepcja</strong></td>
+<td>Może nie zauważyć pragnienia, przegrzania, bólu, zmęczenia, gdy jest pochłonięte</td>
+<td><strong>Zaplanowane, konkretne</strong> przerwy na picie i odpoczynek; sprawdzanie się („przerwa na wodę teraz — tak, ty!"); pilnuj przegrzania, którego dziecko nie sygnalizowało</td>
+</tr>
+<tr>
+<td><strong>Komunikacja jednokanałowa</strong></td>
+<td>Długa instrukcja werbalna na głośnej sali nie trafi</td>
+<td><strong>Zademonstruj</strong> umiejętność wizualnie; dawaj <strong>jedną krótką instrukcję</strong> naraz; wzmacniaj obrazkiem lub szybkim szkicem na tablicy</td>
+</tr>
+<tr>
+<td><strong>Dosłowne myślenie i czas przetwarzania</strong>**</td>
+<td>Sarkazm, idiomy i szybkie wymiany nie trafiają</td>
+<td>Używaj <strong>jasnego, konkretnego</strong> języka; pozwól <strong>kilka sekund</strong> na odpowiedź, zanim powtórzysz; unikaj drwin, które dziecko może wziąć dosłownie</td>
+</tr>
+<tr>
+<td><strong>Stimming i ruch</strong></td>
+<td>Niepokój ruchowy, chodzenie, trzepotanie to samoregulacja, nie złe zachowanie</td>
+<td><strong>Pozwalaj na ruch</strong> między ćwiczeniami; nigdy nie karz ani nie publicznie powstrzymuj stimmingu; oferuj przerwę ruchową jako reset</td>
+</tr>
+<tr>
+<td><strong>Załamania/zamknięcia</strong></td>
+<td>Przeciążenie może pojawić się w trakcie sesji</td>
+<td>Patrz Część 1.5: <strong>zmniejsz bodźce</strong>, znajdź <strong>ciche miejsce</strong>, zachowaj spokój, nie żądaj wyjaśnień w danej chwili</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-praktyczna-lista-kontrolna-treningu">4.3 Praktyczna lista kontrolna treningu</h3>
+<ul>
+<li><strong>Ta sama rozgrzewka na każdej sesji</strong> — przewidywalność obniża koszt wejścia.</li>
+<li><strong>Pokaż, potem powiedz.</strong> Wizualna demonstracja bije przemowę.</li>
+<li><strong>Jedna instrukcja naraz,</strong> jasnym językiem, z momentem na przetworzenie.</li>
+<li><strong>Oferuj wybór i autonomię</strong>, gdzie możesz — która stacja, która rola, która gra. Kontrola obniża lęk.</li>
+<li><strong>Buduj relację trener–dziecko najpierw.</strong> Dziecko, które ci ufa, zniesie więcej dyskomfortu niż to, które nie ufa.</li>
+<li><strong>Celebruj wysiłek i specjalne zainteresowanie.</strong> Dziecko, które kocha statystyki, może prowadzić kartę wyników; to, które kocha rutynę, może poprowadzić rozgrzewkę.</li>
+<li><strong>Pomyśl o sporcie zespołowym vs indywidualnym.</strong> Zgodnie z regułą kciuka lentą monotropizmu (nie twardym wynikiem badawczym), sporty indywidualne (pływanie, bieganie, sztuki walki, wspinaczka, lekkoatletyka) często dobrze pasują do monotropicznych dzieci — mniej jednoczesnych kanałów społecznych, jasna struktura, miejsce na głębokie skupienie. Sporty zespołowe mogą działać pięknie, <em>jeśli</em> obciążenie społeczne jest zarządzane (jasne role, wspierający koledzy, trener, który rozumie).</li>
+<li><strong>Miej plan na przeciążenie:</strong> uzgodniony cichy róg, sygnał, którego dziecko może użyć, by wyjść, nauszniki pod ręką.</li>
+</ul>
+<blockquote>
+<p><strong>Przekształć sukces:</strong> celem w tym wieku jest dziecko, które <strong>chce wrócić w przyszłym tygodniu.</strong> Umiejętności idą za radością — a nie odwrotnie.</p>
+</blockquote>
+<hr />
+<h2 id="część-5--przekrojowe-język-i-mistrzowskie-rób--nie-rób">Część 5 — Przekrojowe: Język, i mistrzowskie Rób / Nie rób</h2>
+<h3 id="51-język-który-pomaga-vs-język-który-rani">5.1 Język, który pomaga vs język, który rani</h3>
+<table>
+<thead>
+<tr>
+<th>Staraj się unikać</th>
+<th>Zamiast tego</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Obsesja," „fiksacja"</td>
+<td><strong>Pasja, specjalne zainteresowanie, skupienie</strong></td>
+</tr>
+<tr>
+<td>„On nie chce…" / „Ona jest trudna"</td>
+<td><strong>„On nie może teraz" / „Ona jest przeciążona"</strong></td>
+</tr>
+<tr>
+<td>„Przestań się ruszać / patrz mi w oczy"</td>
+<td>Pozwalaj na ruch i kontakt wzrokowy na poziomie komfortu dziecka</td>
+</tr>
+<tr>
+<td>„Napad złości," „niegrzeczny," „szukanie uwagi"</td>
+<td><strong>Załamanie, zamknięcie, przeciążenie</strong></td>
+</tr>
+<tr>
+<td>Etykiety „niskofunkcjonujący / wysokofunkcjonujący"</td>
+<td>Opisz <strong>konkretne</strong> mocne strony i potrzeby wsparcia dziecka (profile autystyczne są „pikowane")</td>
+</tr>
+<tr>
+<td>Patologizujące, deficytowe ujęcie</td>
+<td>Ujęcie <strong>afirmujące neuroróżnorodność, identyfikujące najpierw</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-mistrzowskie-rób--nie-rób-dla-każdego">5.2 Mistrzowskie Rób / Nie rób dla każdego</h3>
+<p><strong>Rób</strong></p>
+<ul>
+<li>✅ <strong>Poznaj zainteresowania dziecka</strong> i używaj ich jako pomostów</li>
+<li>✅ <strong>Uczyń dzień przewidywalnym</strong> i dawaj ostrzeżenia przed zmianami</li>
+<li>✅ <strong>Zmniejsz obciążenie sensoryczne</strong> i pozwalaj na ruch, stimming i przerwy</li>
+<li>✅ <strong>Komunikuj się jasno, dosłownie, jedna rzecz naraz,</strong> i pozwalaj czas na przetwarzanie</li>
+<li>✅ <strong>Zmniejsz wymagania i bodźce</strong>, gdy dziecko zmierza ku przeciążeniu</li>
+<li>✅ <strong>Podążaj za przewodnictwem rodziców</strong> i utrzymuj spójność podejść dom/szkoła/sport</li>
+<li>✅ <strong>Rozmawiaj z dzieckiem i wierz mu</strong> o tym, co jest trudne</li>
+</ul>
+<p><strong>Nie rób</strong></p>
+<ul>
+<li>❌ Nie traktuj specjalnego zainteresowania jako problemu do ograniczania</li>
+<li>❌ Nie nalegaj na kontakt wzrokowy lub bezruch jako warunek szacunku</li>
+<li>❌ Nie karz, nie zawstydzaj ani nie eskaluj podczas załamania lub zamknięcia</li>
+<li>❌ Nie przeciążaj instrukcjami werbalnymi, zmianami ostatniej chwili ani nieustrukturyzowanym czasem społecznym</li>
+<li>❌ Nie zakładaj, że zdolność w jednej dziedzinie oznacza zdolność w innej („pikowane profile")</li>
+<li>❌ Nie patologizuj ani nie używaj języka deficytowego przy dziecku</li>
+</ul>
+<h3 id="53-czytaj-zachowanie-jako-komunikację">5.3 Czytaj zachowanie jako komunikację</h3>
+<p>Dla monotropicznego dziecka zachowanie to niemal zawsze <strong>komunikacja o regulacji</strong> — „to jest za głośne," „nie mogę zmienić torów tak szybko," „skończyło mi się paliwo." Gdy czytasz to w ten sposób, właściwa odpowiedź (zmniejsz obciążenie, daj czas, zaoferuj ciche miejsce) zwykle staje się oczywista.</p>
+<h3 id="54-kiedy-szukać-większego-wsparcia">5.4 Kiedy szukać większego wsparcia</h3>
+<p>Jeśli dziecko jest często w przeciążeniu, regularnie ma załamania lub zamknięcia, mocno maskuje lub się wycofuje, warto porozmawiać z rodziną o szerszym wsparciu — zespołem SENCO/SEND szkoły, pozytywnie nastawionym do autyzmu terapeutą zajęciowym (zwłaszcza wsparcie sensoryczne i interocepcji) oraz organizacjami <strong>prowadzonymi przez autystyczne osoby</strong>, które zwykle dają najdokładniejsze i afirmujące wskazówki.</p>
+<hr />
+<h2 id="część-6--pytania-otwarte-i-uczciwe-ograniczenia">Część 6 — Pytania otwarte i uczciwe ograniczenia</h2>
+<p>Kilka szczerych uwag, byś mógł ufać temu przewodnikowi:</p>
+<ul>
+<li><strong>Monotropizm jest potężną teorią opisową, jeszcze nie w pełni mechanistyczną.</strong> Wyjaśnia, <em>jak</em> działa uwaga autystyczna i co z niej wynika, ale neurobiologia pod spodem jest nadal badana (Dwyer, 2021; 2025). To najbardziej rezonująca struktura w społeczności autystycznej i coraz częściej w badaniach, ale nie jest całym obrazem.</li>
+<li><strong>Nie każde autystyczne dziecko jest w ten sam sposób monotropiczne.</strong> Mniejszość osób autystycznych mówi, że monotropizm ich nie opisuje dobrze. Używaj tego przewodnika jako początkowej lenty i <strong>dopasuj wszystko do konkretnego dziecka przed tobą</strong> (Murray &amp; Lawson, 2022, History of Monotropism).</li>
+<li><strong>Ten przewodnik jest ogólny,</strong> czerpany z teorii monotropizmu i niewielkiego zbioru renomowanych źródeł praktycznych i badawczych. Nie zastępuje zindywidualizowanej porady od profesjonalistów, którzy znają twoje dziecko.</li>
+<li><strong>Dowody sportowe to przegląd o zakresie (Michaud &amp; Harvey, 2025)</strong>, który zmapował literaturę i wypisał ułatwiaczy; jest silny w tym, „co zwykle pomaga," słabszy w kontrolowanych wynikach konkretnych interwencji.</li>
+<li><strong>Źródła były ograniczone tym, co udało się wiarygodnie uzyskać.</strong> Niektórych stron praktyki nie udało się pobrać w tej rundzie; gdy tak się stało, wytyczne opierają się na w pełni zweryfikowanych źródłach (monotropism.org, Reframing Autism, NHS Autism Space, przegląd Michaud &amp; Harvey oraz tekst-źródło), a nie na stronach nie do pobrania. Żaden fakt nie został wymyślony.</li>
+</ul>
+<hr />
+<h2 id="źródła">Źródła</h2>
+<p><strong>Teoria — monotropizm (podstawowy tekst-źródło i jego odniesienia)</strong></p>
+<ul>
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></li>
+<li>Murray, F. (2018, zaktualizowany 2025). <em>Me and Monotropism: a unified theory of autism.</em> The Psychologist, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Dwyer, P. (2025). <em>Monotropism: Between Obsessive Joy and Overwhelm.</em> OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Dwyer, P. (2021). <em>Revisiting monotropism.</em> Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Murray, F. &amp; Lawson, W. (2022). <em>History of Monotropism.</em> <a href="https://monotropism.org/history">https://monotropism.org/history</a></li>
+<li>Milton, D. (2012). On the epistemic and contextual landscape of the "double empathy problem." (Referowane w tekście-źródle.)</li>
+</ul>
+<p><strong>Zastosowania praktyczne — monotropism.org</strong></p>
+<ul>
+<li>Murray, F. <em>Monotropism in Practice</em> (szkoła, zabawa, praca, zdrowie psychiczne). <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2019). <em>Monotropism at School / Top Autism Tips for Teachers</em> (pierwotnie w Tes). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a></li>
+<li>Murray, F. (2022). <em>Understanding how routines can help autistic people thrive.</em> <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Knight, J. (2021). <em>Staying Put, Monotropism &amp; Me — "tunnels not tasks."</em> <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Mahler, K. (2024). <em>Interoception and Monotropism.</em> <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Wood, R. (2019). <em>Autism, intense interests and support in school.</em> Educational Review. <a href="https://doi.org/10.1080/00131911.2019.1566213">https://doi.org/10.1080/00131911.2019.1566213</a></li>
+</ul>
+<p><strong>Wyjaśnienie prowadzone przez autystyczne osoby i rama parentalna/afirmująca</strong></p>
+<ul>
+<li>Reframing Autism (2023). <em>Monotropism: Understanding Autistic Ways of Being Through the Lens of Attention.</em> <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society. <em>What is monotropism? Understanding a neuroaffirming theory of autism.</em> <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ul>
+<p><strong>Załamania i zamknięcia</strong></p>
+<ul>
+<li>Leicestershire Partnership NHS Trust — Autism Space. <em>Understanding autistic meltdowns and shutdowns.</em> <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ul>
+<p><strong>Dziadkowie i rodzina rozszerzona</strong></p>
+<ul>
+<li>Fetzer, T. (Autism Society of North Carolina). <em>How to Help as a Grandparent.</em> <a href="https://www.autismsociety-nc.org/how-to-help-as-a-grandparent">https://www.autismsociety-nc.org/how-to-help-as-a-grandparent</a></li>
+</ul>
+<p><strong>Sport, aktywność fizyczna i wychowanie fizyczne</strong></p>
+<ul>
+<li>Michaud, M. &amp; Harvey, W.J. (2025). <em>Facilitating Physical Activity Participation Among Autistic Children and Youth: A Scoping Review.</em> Journal of Autism and Developmental Disorders. <a href="https://doi.org/10.1007/s10803-025-07141-y">https://doi.org/10.1007/s10803-025-07141-y</a></li>
+<li>McGill University Newsroom (2025). <em>New study provides advice on how to boost participation in physical activity among autistic youth.</em> <a href="https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283">https://www.mcgill.ca/newsroom/channels/news/new-study-provides-advice-how-boost-participation-physical-activity-among-autistic-youth-371283</a></li>
+</ul>
+</body>
+</html>
