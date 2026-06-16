@@ -19,6 +19,8 @@
 </script>
 
 <style>
+
+
 :root { --maxw: 1180px; --radius: 12px; }
 [data-theme="dark"]{
   --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
@@ -152,201 +154,1101 @@ table.matrix{border-collapse:separate;border-spacing:5px;width:100%;min-width:88
 
 footer{border-top:1px solid var(--border-soft);padding:26px 0 50px;color:var(--fg-faint);font-size:13.5px;}
 footer a{color:var(--fg-soft);}
+
+
 </style>
 </head>
 <body>
 
-<header class="topbar"><div class="topbar-inner">
-  <a class="brand" href="index.html" aria-label="Monotropism — library home">
-    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1" opacity="0.22"/>
-      <circle cx="16" cy="16" r="9.2" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-      <circle cx="16" cy="16" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
-      <circle cx="16" cy="16" r="2" fill="currentColor"/>
-    </svg><span class="brand-stack">
-      <span class="brand-name">Monotropism</span>
-      <span class="brand-motto">Follow the Focus. Ease the Way.</span>
-    </span>
-  </a>
-  <div class="tb-right">
-    <select class="langselect" id="langSel" aria-label="Choose language">
-      <option value="en" selected>🇬🇧&nbsp;English</option>
-      <option value="it">🇮🇹&nbsp;Italiano</option>
-      <option value="fr">🇫🇷&nbsp;Français</option>
-      <option value="es">🇪🇸&nbsp;Español</option>
-      <option value="de">🇩🇪&nbsp;Deutsch</option>
-      <option value="pl">🇵🇱&nbsp;Polski</option>
-      <option value="nl">🇳🇱&nbsp;Nederlands</option>
-      <option value="ro">🇷🇴&nbsp;Română</option>
-      <option value="pt">🇵🇹&nbsp;Português</option>
-    </select>
-    <a class="btn btn-ghost active" href="guidelines.html">Quick guides <span class="ar">↗</span></a>
-    <a class="btn btn-ghost" href="index.html#/en/drafts">Research drafts <span class="ar">↗</span></a>
-    <a class="btn btn-ghost" href="index.html#/sources">Scientific sources <span class="ar">↗</span></a>
-    <button class="iconbtn theme" id="themeBtn" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">◐</button>
-  </div>
-</div></header>
+<header class="topbar" id="topbar"></header>
 
 <main class="wrap">
-
-  <section class="hero">
-    <p class="eyebrow">Quick Guides · printable two-page sheets</p>
-    <h1>How to support an autistic person</h1>
-    <p class="lead">A growing grid of short, practical guides — derived from this project's research drafts. Pick the <strong>row</strong> for the person's life stage and the <strong>column</strong> for who you are. Each cell is a printable front-and-back sheet; the <strong>“All”</strong> tiles open a cumulative reference for a whole column or row.</p>
-  </section>
-
-  <div class="legend">
-    <span><i class="swatch sw-ready"></i> Ready (PDF + web)</span>
-    <span><i class="swatch sw-planned"></i> Planned</span>
-    <span><i class="swatch sw-na"></i> Not applicable</span>
-    <span><i class="swatch sw-ready" style="background:var(--accent-bg);border-color:var(--accent)"></i> Row / column summary</span>
-  </div>
-
-  <div class="grid-card">
-    <table class="matrix" id="grid"></table>
-  </div>
-
-  <section class="notes">
-    <div class="note">
-      <h3>🟢 English seed — fine-tuning in progress</h3>
-      <p>The <strong>doctor / health-professional column</strong> and the <strong>primary-school row</strong> are complete first, as a representative vertical and horizontal slice. Once the template and content are fine-tuned, the remaining cells will be filled, and the whole grid will be translated into the library's other languages. Source for every sheet is tracked in the repository; <strong>all guides are AI-assisted</strong> and derived from the project's existing research drafts (the Monotropism brief, the Lifespan Practitioner &amp; Health-Care guide, the Family guide, and <em>Growing Up Monotropic</em>), with local source archives used where needed.</p>
-    </div>
-    <div class="note">
-      <h3>🧭 How the grid is organised</h3>
-      <p><strong>Rows</strong> = the autistic (monotropic) person, by life stage. <strong>Columns</strong> = the reader — the counterpart supporting them. <strong>Gender</strong> (male / female) is handled as a short, cross-cutting callout inside each sheet (on camouflaging and the under-identified female presentation) rather than as a separate axis.</p>
-    </div>
-    <div class="note">
-      <h3>⚖️ About these guides</h3>
-      <p>Uses identity-first language (“autistic person”). <strong>Informational — not medical advice or a diagnostic tool.</strong> Monotropism is a powerful but still-developing theory; old-age and high-support evidence is thin. Always fit guidance to the individual in front of you. Read the full research drafts behind any sheet via the main library.</p>
-    </div>
-  </section>
+  <section class="hero" id="hero"></section>
+  <div class="legend" id="legend"></div>
+  <div class="grid-card"><table class="matrix" id="grid"></table></div>
+  <section class="notes" id="notes"></section>
 </main>
 
-<footer><div class="wrap">
-  Monotropism Quick Guides · derived from the project's research drafts ·
-  <a href="https://github.com/PieBru/monotropism">GitHub source</a> ·
-  AI-assisted translations and summaries · not medical advice
-</div></footer>
+<footer id="footer"></footer>
 
 <script>
-/* ============================================================
-   GRID DATA — edit here to add / change guides.
-   Each cell path is derived:  outputs/guidelines/g-<row>-<col>
-   Row summary:  g-row-<row>     Column summary:  g-col-<col>
-   ============================================================ */
-const ROWS = [
-  { id:"preschool",  label:"Pre-school",            ages:"ages 2–5" },
-  { id:"primary",    label:"Primary school",        ages:"ages 6–11" },
-  { id:"secondary",  label:"Secondary school",      ages:"ages 12–18" },
-  { id:"university", label:"University / college",  ages:"~18–25" },
-  { id:"worker",     label:"Adult worker",          ages:"employed" },
-  { id:"parent",     label:"Autistic parent",       ages:"adult" },
-  { id:"senior",     label:"Older adult / grandparent", ages:"60+" },
-  { id:"assisted",   label:"Assisted / high-support",   ages:"residential care" },
-];
-const COLS = [
-  { id:"parents",    label:"Parents",        sub:"& family" },
-  { id:"teachers",   label:"Teachers",       sub:"& educators" },
-  { id:"coaches",    label:"Coaches",        sub:"& activity leaders" },
-  { id:"doctor",     label:"Doctor",         sub:"& health pros" },
-  { id:"caregivers", label:"Support workers",sub:"& caregivers" },
-  { id:"colleagues", label:"Colleagues",     sub:"& employers" },
-  { id:"eldercare",  label:"Eldercare",      sub:"& nursing" },
-  { id:"peers",      label:"Peers",          sub:"& friends" },
-];
-
-// ready guides (filenames without g- prefix / extension)
-const READY = new Set([
-  // cells
-  "preschool-doctor","primary-doctor","secondary-doctor","university-doctor",
-  "worker-doctor","parent-doctor","senior-doctor","assisted-doctor",
-  "primary-parents","primary-teachers",
-  // summaries
-  "col-doctor","row-primary",
-]);
-// cells that are not meaningful for this combination
-const NA = new Set([
-  "preschool-colleagues","preschool-eldercare",
-  "primary-colleagues","primary-eldercare",
-  "secondary-colleagues","secondary-eldercare",
-  "assisted-teachers","assisted-coaches","assisted-colleagues","assisted-peers",
-]);
-
-const isReady = (s) => READY.has(s);
+const LANGS = [{"code": "en", "flag": "🇬🇧", "name": "English"}, {"code": "it", "flag": "🇮🇹", "name": "Italiano"}, {"code": "fr", "flag": "🇫🇷", "name": "Français"}, {"code": "es", "flag": "🇪🇸", "name": "Español"}, {"code": "de", "flag": "🇩🇪", "name": "Deutsch"}, {"code": "pl", "flag": "🇵🇱", "name": "Polski"}, {"code": "nl", "flag": "🇳🇱", "name": "Nederlands"}, {"code": "ro", "flag": "🇷🇴", "name": "Română"}, {"code": "pt", "flag": "🇵🇹", "name": "Português"}];
+const ROW_IDS = ["preschool", "primary", "secondary", "university", "worker", "parent", "senior", "assisted"];
+const COL_IDS = ["parents", "teachers", "coaches", "doctor", "caregivers", "colleagues", "eldercare", "peers"];
+const READY = new Set(["preschool-doctor", "primary-doctor", "secondary-doctor", "university-doctor", "worker-doctor", "parent-doctor", "senior-doctor", "assisted-doctor", "primary-parents", "primary-teachers", "col-doctor", "row-primary"]);
+const NA = new Set(["preschool-colleagues", "preschool-eldercare", "primary-colleagues", "primary-eldercare", "secondary-colleagues", "secondary-eldercare", "assisted-teachers", "assisted-coaches", "assisted-colleagues", "assisted-peers"]);
+const I18N = {
+  "en": {
+    "brand": "Monotropism",
+    "motto": "Follow the Focus. Ease the Way.",
+    "theme": "Toggle theme",
+    "choose": "Choose a language",
+    "draftsBtn": "Research drafts",
+    "guidesBtn": "Quick guides",
+    "sourcesBtn": "Scientific sources",
+    "title": "Monotropism — Quick Guides Grid",
+    "desc": "A growing grid of printable, two-page quick guides: how to support an autistic (monotropic) person — by life stage (rows) and by who you are (columns).",
+    "eyebrow": "Quick Guides · printable two-page sheets",
+    "h1": "How to support an autistic person",
+    "lead": "A growing grid of short, practical guides — derived from this project's research drafts. Pick the <strong>row</strong> for the person's life stage and the <strong>column</strong> for who you are. Each cell is a printable front-and-back sheet; the <strong>“All”</strong> tiles open a cumulative reference for a whole column or row.",
+    "lgReady": "Ready (PDF + web)",
+    "lgPlanned": "Planned",
+    "lgNa": "Not applicable",
+    "lgSummary": "Row / column summary",
+    "cornerTop": "stage ▾ &nbsp; counterpart ▸",
+    "cornerRowSummary": "row<br>summary",
+    "cornerColSummary": "column summary",
+    "all": "All",
+    "allStages": "All stages",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "planned",
+    "titlePlanned": "Planned",
+    "webAndPdf": "web & PDF",
+    "summaryRow": "Whole-row summary",
+    "summaryCol": "Whole-column summary",
+    "note1h": "🟢 Work in progress",
+    "note1p": "The <strong>doctor / health-professional column</strong> and the <strong>primary-school row</strong> are complete first, as a representative vertical and horizontal slice. This hub page is available in all the library's languages; the individual guide sheets are still in English for now and will be translated once the template is finalised. Source for every sheet is tracked in the repository; <strong>all guides are AI-assisted</strong> and derived from the project's existing research drafts (the Monotropism brief, the Lifespan Practitioner &amp; Health-Care guide, the Family guide, and <em>Growing Up Monotropic</em>), with local source archives used where needed.",
+    "note2h": "🧭 How the grid is organised",
+    "note2p": "<strong>Rows</strong> = the autistic (monotropic) person, by life stage. <strong>Columns</strong> = the reader — the counterpart supporting them. <strong>Gender</strong> (male / female) is handled as a short, cross-cutting callout inside each sheet (on camouflaging and the under-identified female presentation) rather than as a separate axis.",
+    "note3h": "⚖️ About these guides",
+    "note3p": "Uses identity-first language (“autistic person”). <strong>Informational — not medical advice or a diagnostic tool.</strong> Monotropism is a powerful but still-developing theory; old-age and high-support evidence is thin. Always fit guidance to the individual in front of you. Read the full research drafts behind any sheet via the main library.",
+    "foot": "Monotropism Quick Guides · derived from the project's research drafts ·",
+    "footLink": "GitHub source",
+    "footTail": "AI-assisted translations and summaries · not medical advice",
+    "rows": {
+      "preschool": {
+        "label": "Pre-school",
+        "ages": "ages 2–5"
+      },
+      "primary": {
+        "label": "Primary school",
+        "ages": "ages 6–11"
+      },
+      "secondary": {
+        "label": "Secondary school",
+        "ages": "ages 12–18"
+      },
+      "university": {
+        "label": "University / college",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Adult worker",
+        "ages": "employed"
+      },
+      "parent": {
+        "label": "Autistic parent",
+        "ages": "adult"
+      },
+      "senior": {
+        "label": "Older adult / grandparent",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Assisted / high-support",
+        "ages": "residential care"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Parents",
+        "sub": "& family"
+      },
+      "teachers": {
+        "label": "Teachers",
+        "sub": "& educators"
+      },
+      "coaches": {
+        "label": "Coaches",
+        "sub": "& activity leaders"
+      },
+      "doctor": {
+        "label": "Doctor",
+        "sub": "& health pros"
+      },
+      "caregivers": {
+        "label": "Support workers",
+        "sub": "& caregivers"
+      },
+      "colleagues": {
+        "label": "Colleagues",
+        "sub": "& employers"
+      },
+      "eldercare": {
+        "label": "Eldercare",
+        "sub": "& nursing"
+      },
+      "peers": {
+        "label": "Peers",
+        "sub": "& friends"
+      }
+    }
+  },
+  "it": {
+    "brand": "Monotropismo",
+    "motto": "Segui l'attenzione. Facilita il cammino.",
+    "theme": "Cambia tema",
+    "choose": "Scegli una lingua",
+    "draftsBtn": "Bozze di ricerca",
+    "guidesBtn": "Guide rapide",
+    "sourcesBtn": "Fonti scientifiche",
+    "title": "Monotropismo — Griglia delle guide rapide",
+    "desc": "Una griglia in crescita di guide rapide di due pagine da stampare: come sostenere una persona autistica (monotropica) — per fase di vita (righe) e per chi sei (colonne).",
+    "eyebrow": "Guide rapide · schede di due pagine da stampare",
+    "h1": "Come sostenere una persona autistica",
+    "lead": "Una griglia in crescita di guide brevi e pratiche — derivate dalle bozze di ricerca del progetto. Scegli la <strong>riga</strong> per la fase di vita della persona e la <strong>colonna</strong> per chi sei. Ogni cella è una scheda fronte/retro stampabile; le tessere <strong>“Tutti”</strong> aprono un riferimento cumulativo per un'intera colonna o riga.",
+    "lgReady": "Pronto (PDF + web)",
+    "lgPlanned": "In programma",
+    "lgNa": "Non applicabile",
+    "lgSummary": "Sintesi di riga/colonna",
+    "cornerTop": "età ▾ &nbsp; interlocutore ▸",
+    "cornerRowSummary": "sintesi<br>riga",
+    "cornerColSummary": "sintesi colonna",
+    "all": "Tutti",
+    "allStages": "Tutte le età",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "in programma",
+    "titlePlanned": "In programma",
+    "webAndPdf": "web e PDF",
+    "summaryRow": "Sintesi dell'intera riga",
+    "summaryCol": "Sintesi dell'intera colonna",
+    "note1h": "🟢 Lavori in corso",
+    "note1p": "La <strong>colonna medico / professionisti sanitari</strong> e la <strong>riga della scuola primaria</strong> sono complete per prime, come verticale e orizzontale rappresentativi. Questa pagina hub è disponibile in tutte le lingue della biblioteca; le singole schede-guida sono ancora in inglese per ora e saranno tradotte una volta perfezionato il modello. La fonte di ogni scheda è tracciata nel repository; <strong>tutte le guide sono assistite da IA</strong> e derivate dalle bozze di ricerca esistenti del progetto (la sintesi sul Monotropismo, la guida Lifespan per professionisti e sanitari, la guida per la famiglia e <em>Growing Up Monotropic</em>), con archivi locali delle fonti usati dove serve.",
+    "note2h": "🧭 Come è organizzata la griglia",
+    "note2p": "Le <strong>righe</strong> = la persona autistica (monotropica), per fase di vita. Le <strong>colonne</strong> = chi legge — l'interlocutore che la sostiene. Il <strong>genere</strong> (maschile/femminile) è gestito come un breve richiamo trasversale dentro ogni scheda (sul camuffamento e sulla presentazione femminile sotto-diagnosticata) invece che come asse separato.",
+    "note3h": "⚖️ Informazioni su queste guide",
+    "note3p": "Usa il linguaggio identity-first (“persona autistica”). <strong>Informativo — non è consiglio medico né uno strumento diagnostico.</strong> Il monotropismo è una teoria potente ma ancora in sviluppo; le evidenze per l'età avanzata e l'alto supporto sono scarse. Adatta sempre le indicazioni alla persona che hai davanti. Leggi le bozze di ricerca complete dietro ogni scheda tramite la biblioteca principale.",
+    "foot": "Guide rapide Monotropismo · derivate dalle bozze di ricerca del progetto ·",
+    "footLink": "Sorgente su GitHub",
+    "footTail": "Traduzioni e sintesi assistite da IA · non è consiglio medico",
+    "rows": {
+      "preschool": {
+        "label": "Scuola dell'infanzia",
+        "ages": "2–5 anni"
+      },
+      "primary": {
+        "label": "Scuola primaria",
+        "ages": "6–11 anni"
+      },
+      "secondary": {
+        "label": "Scuola secondaria",
+        "ages": "12–18 anni"
+      },
+      "university": {
+        "label": "Università",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Lavoratore adulto",
+        "ages": "occupato"
+      },
+      "parent": {
+        "label": "Genitore autistico",
+        "ages": "adulto"
+      },
+      "senior": {
+        "label": "Anziano / nonno",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Assistito / alto supporto",
+        "ages": "residenza assistita"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Genitori",
+        "sub": "e famiglia"
+      },
+      "teachers": {
+        "label": "Insegnanti",
+        "sub": "ed educatori"
+      },
+      "coaches": {
+        "label": "Allenatori",
+        "sub": "e responsabili di attività"
+      },
+      "doctor": {
+        "label": "Medico",
+        "sub": "e sanitari"
+      },
+      "caregivers": {
+        "label": "Operatori di supporto",
+        "sub": "e assistenti"
+      },
+      "colleagues": {
+        "label": "Colleghi",
+        "sub": "e datori di lavoro"
+      },
+      "eldercare": {
+        "label": "Cure per anziani",
+        "sub": "e infermieri"
+      },
+      "peers": {
+        "label": "Pari",
+        "sub": "e amici"
+      }
+    }
+  },
+  "fr": {
+    "brand": "Monotropisme",
+    "motto": "Suivez l'attention. Facilitez le parcours.",
+    "theme": "Changer le thème",
+    "choose": "Choisissez une langue",
+    "draftsBtn": "Brouillons de recherche",
+    "guidesBtn": "Guides rapides",
+    "sourcesBtn": "Sources scientifiques",
+    "title": "Monotropisme — Grille des guides rapides",
+    "desc": "Une grille grandissante de guides rapides imprimables de deux pages : comment soutenir une personne autiste (monotropique) — par étape de vie (lignes) et selon qui vous êtes (colonnes).",
+    "eyebrow": "Guides rapides · fiches de deux pages à imprimer",
+    "h1": "Comment soutenir une personne autiste",
+    "lead": "Une grille grandissante de guides courts et pratiques — dérivés des brouillons de recherche du projet. Choisissez la <strong>ligne</strong> pour l'étape de vie de la personne et la <strong>colonne</strong> selon qui vous êtes. Chaque case est une fiche recto/verso imprimable ; les cases <strong>« Tous »</strong> ouvrent une référence cumulée pour toute une colonne ou ligne.",
+    "lgReady": "Prêt (PDF + web)",
+    "lgPlanned": "À venir",
+    "lgNa": "Sans objet",
+    "lgSummary": "Synthèse ligne / colonne",
+    "cornerTop": "âge ▾ &nbsp; interlocuteur ▸",
+    "cornerRowSummary": "synthèse<br>ligne",
+    "cornerColSummary": "synthèse colonne",
+    "all": "Tous",
+    "allStages": "Tous les âges",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "à venir",
+    "titlePlanned": "À venir",
+    "webAndPdf": "web et PDF",
+    "summaryRow": "Synthèse de toute la ligne",
+    "summaryCol": "Synthèse de toute la colonne",
+    "note1h": "🟢 En cours d'affinement",
+    "note1p": "La <strong>colonne médecin / professionnels de santé</strong> et la <strong>ligne école primaire</strong> sont complétées en premier, comme tranches verticale et horizontale représentatives. Cette page centrale est disponible dans toutes les langues de la bibliothèque ; les fiches individuelles restent en anglais pour l'instant et seront traduites une fois le modèle finalisé. La source de chaque fiche est suivie dans le dépôt ; <strong>tous les guides sont assistés par IA</strong> et dérivés des brouillons de recherche existants du projet (la synthèse sur le Monotropisme, le guide Lifespan pour praticiens et soignants, le guide Famille et <em>Growing Up Monotropic</em>), avec des archives locales des sources utilisées au besoin.",
+    "note2h": "🧭 Comment la grille est organisée",
+    "note2p": "Les <strong>lignes</strong> = la personne autiste (monotropique), par étape de vie. Les <strong>colonnes</strong> = le lecteur — la personne qui l'accompagne. Le <strong>genre</strong> (masculin/féminin) est traité comme une courte note transversale dans chaque fiche (sur le camouflage et la présentation féminine sous-diagnostiquée) plutôt que comme un axe distinct.",
+    "note3h": "⚖️ À propos de ces guides",
+    "note3p": "Utilise le langage identitaire (« personne autiste »). <strong>Informatif — ce n'est pas un avis médical ni un outil de diagnostic.</strong> Le monotropisme est une théorie puissante mais encore en développement ; les données pour le grand âge et le soutien important sont minces. Adaptez toujours les conseils à la personne devant vous. Lisez les brouillons de recherche complets derrière chaque fiche via la bibliothèque principale.",
+    "foot": "Guides rapides Monotropisme · dérivés des brouillons de recherche du projet ·",
+    "footLink": "Source GitHub",
+    "footTail": "Traductions et synthèses assistées par IA · ce n'est pas un avis médical",
+    "rows": {
+      "preschool": {
+        "label": "Préscolaire",
+        "ages": "2–5 ans"
+      },
+      "primary": {
+        "label": "École primaire",
+        "ages": "6–11 ans"
+      },
+      "secondary": {
+        "label": "Collège / lycée",
+        "ages": "12–18 ans"
+      },
+      "university": {
+        "label": "Université / sup.",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Adulte actif",
+        "ages": "en emploi"
+      },
+      "parent": {
+        "label": "Parent autistique",
+        "ages": "adulte"
+      },
+      "senior": {
+        "label": "Personne âgée / grand-parent",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Soutien important",
+        "ages": "en structure"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Parents",
+        "sub": "et famille"
+      },
+      "teachers": {
+        "label": "Enseignants",
+        "sub": "et éducateurs"
+      },
+      "coaches": {
+        "label": "Entraîneurs",
+        "sub": "et animateurs"
+      },
+      "doctor": {
+        "label": "Médecin",
+        "sub": "et soignants"
+      },
+      "caregivers": {
+        "label": "Accompagnants",
+        "sub": "et aidants"
+      },
+      "colleagues": {
+        "label": "Collègues",
+        "sub": "et employeurs"
+      },
+      "eldercare": {
+        "label": "Accompagnement âgés",
+        "sub": "et soignants"
+      },
+      "peers": {
+        "label": "Pairs",
+        "sub": "et amis"
+      }
+    }
+  },
+  "es": {
+    "brand": "Monotropismo",
+    "motto": "Sigue la atención. Suaviza el camino.",
+    "theme": "Cambiar tema",
+    "choose": "Elige un idioma",
+    "draftsBtn": "Borradores de investigación",
+    "guidesBtn": "Guías rápidas",
+    "sourcesBtn": "Fuentes científicas",
+    "title": "Monotropismo — Cuadrícula de guías rápidas",
+    "desc": "Una cuadrícula en crecimiento de guías rápidas imprimibles de dos páginas: cómo apoyar a una persona autista (monotrópica) — por etapa vital (filas) y según quién eres (columnas).",
+    "eyebrow": "Guías rápidas · hojas de dos páginas para imprimir",
+    "h1": "Cómo apoyar a una persona autista",
+    "lead": "Una cuadrícula en crecimiento de guías breves y prácticas — derivadas de los borradores de investigación del proyecto. Elige la <strong>fila</strong> según la etapa vital de la persona y la <strong>columna</strong> según quién eres. Cada casilla es una hoja imprimible anverso/reverso; las casillas <strong>«Todos»</strong> abren una referencia acumulada para toda una columna o fila.",
+    "lgReady": "Listo (PDF + web)",
+    "lgPlanned": "Previsto",
+    "lgNa": "No aplica",
+    "lgSummary": "Resumen de fila / columna",
+    "cornerTop": "edad ▾ &nbsp; interlocutor ▸",
+    "cornerRowSummary": "resumen<br>de fila",
+    "cornerColSummary": "resumen de columna",
+    "all": "Todos",
+    "allStages": "Todas las edades",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "previsto",
+    "titlePlanned": "Previsto",
+    "webAndPdf": "web y PDF",
+    "summaryRow": "Resumen de toda la fila",
+    "summaryCol": "Resumen de toda la columna",
+    "note1h": "🟢 Trabajo en curso",
+    "note1p": "La <strong>columna médico / profesionales sanitarios</strong> y la <strong>fila de educación primaria</strong> se completan primero, como verticales y horizontales representativos. Esta página central está disponible en todos los idiomas de la biblioteca; las hojas individuales siguen en inglés por ahora y se traducirán una vez afinado el modelo. La fuente de cada hoja se rastrea en el repositorio; <strong>todas las guías son asistidas por IA</strong> y derivadas de los borradores de investigación existentes del proyecto (el resumen sobre el Monotropismo, la guía Lifespan para profesionales y sanitarios, la guía para la familia y <em>Growing Up Monotropic</em>), con archivos locales de las fuentes donde hace falta.",
+    "note2h": "🧭 Cómo se organiza la cuadrícula",
+    "note2p": "Las <strong>filas</strong> = la persona autista (monotrópica), por etapa vital. Las <strong>columnas</strong> = quien lee — la persona que la apoya. El <strong>género</strong> (masculino/femenino) se trata como una nota breve transversal dentro de cada hoja (sobre el camuflaje y la presentación femenina infradiagnosticada) en lugar de un eje aparte.",
+    "note3h": "⚖️ Sobre estas guías",
+    "note3p": "Usa lenguaje de identidad primero («persona autista»). <strong>Informativo — no es consejo médico ni una herramienta de diagnóstico.</strong> El monotropismo es una teoría potente pero aún en desarrollo; la evidencia para la vejez y el alto apoyo es escasa. Adapta siempre las indicaciones a la persona que tienes delante. Lee los borradores de investigación completos detrás de cada hoja en la biblioteca principal.",
+    "foot": "Guías rápidas Monotropismo · derivadas de los borradores de investigación del proyecto ·",
+    "footLink": "Código en GitHub",
+    "footTail": "Traducciones y resúmenes asistidos por IA · no es consejo médico",
+    "rows": {
+      "preschool": {
+        "label": "Preescolar",
+        "ages": "2–5 años"
+      },
+      "primary": {
+        "label": "Primaria",
+        "ages": "6–11 años"
+      },
+      "secondary": {
+        "label": "Secundaria",
+        "ages": "12–18 años"
+      },
+      "university": {
+        "label": "Universidad",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Adulto trabajador",
+        "ages": "activo"
+      },
+      "parent": {
+        "label": "Padre/madre autista",
+        "ages": "adulto"
+      },
+      "senior": {
+        "label": "Persona mayor / abuelo",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Asistido / gran apoyo",
+        "ages": "residencia"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Padres",
+        "sub": "y familia"
+      },
+      "teachers": {
+        "label": "Profesores",
+        "sub": "y educadores"
+      },
+      "coaches": {
+        "label": "Entrenadores",
+        "sub": "y monitores"
+      },
+      "doctor": {
+        "label": "Médico",
+        "sub": "y sanitarios"
+      },
+      "caregivers": {
+        "label": "Cuidadores",
+        "sub": "y asistentes"
+      },
+      "colleagues": {
+        "label": "Compañeros",
+        "sub": "y empleadores"
+      },
+      "eldercare": {
+        "label": "Cuidados de mayores",
+        "sub": "y enfermería"
+      },
+      "peers": {
+        "label": "Iguales",
+        "sub": "y amigos"
+      }
+    }
+  },
+  "de": {
+    "brand": "Monotropismus",
+    "motto": "Folge dem Fokus. Erleichtere den Weg.",
+    "theme": "Design wechseln",
+    "choose": "Wählen Sie eine Sprache",
+    "draftsBtn": "Forschungsentwürfe",
+    "guidesBtn": "Kurzanleitungen",
+    "sourcesBtn": "Wissenschaftliche Quellen",
+    "title": "Monotropismus — Raster der Kurzanleitungen",
+    "desc": "Ein wachsendes Raster druckbarer, zweiseitiger Kurzanleitungen: Wie man eine autistische (monotrope) Person unterstützt — nach Lebensphase (Zeilen) und danach, wer du bist (Spalten).",
+    "eyebrow": "Kurzanleitungen · zweiseitige Druckbögen",
+    "h1": "Wie man eine autistische Person unterstützt",
+    "lead": "Ein wachsendes Raster kurzer, praktischer Anleitungen — abgeleitet aus den Forschungsentwürfen des Projekts. Wähle die <strong>Zeile</strong> für die Lebensphase der Person und die <strong>Spalte</strong> dafür, wer du bist. Jede Zelle ist ein zweiseitiges Druckblatt; die <strong>„Alle“</strong>-Kacheln öffnen eine Sammelreferenz für eine ganze Spalte oder Zeile.",
+    "lgReady": "Fertig (PDF + Web)",
+    "lgPlanned": "Geplant",
+    "lgNa": "Nicht zutreffend",
+    "lgSummary": "Zeilen- / Spaltenübersicht",
+    "cornerTop": "Alter ▾ &nbsp; Gegenüber ▸",
+    "cornerRowSummary": "Zeilen-<br>übersicht",
+    "cornerColSummary": "Spaltenübersicht",
+    "all": "Alle",
+    "allStages": "Alle Alter",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "geplant",
+    "titlePlanned": "Geplant",
+    "webAndPdf": "Web & PDF",
+    "summaryRow": "Ganzzzeilige Übersicht",
+    "summaryCol": "Ganzspaltige Übersicht",
+    "note1h": "🟢 In Arbeit",
+    "note1p": "Die <strong>Spalte Arzt / Gesundheitsberufe</strong> und die <strong>Zeile Grundschule</strong> werden zuerst vervollständigt, als repräsentativer vertikaler und horizontaler Ausschnitt. Diese Hub-Seite ist in allen Sprachen der Bibliothek verfügbar; die einzelnen Leitblätter sind vorerst noch auf Englisch und werden übersetzt, sobald die Vorlage steht. Die Quelle jedes Blatts ist im Repository nachvollziehbar; <strong>alle Anleitungen sind KI-gestützt</strong> und abgeleitet aus den bestehenden Forschungsentwürfen des Projekts (der Monotropismus-Kurzfassung, dem Lifespan-Leitfaden für Fach- und Gesundheitsberufe, dem Familien-Leitfaden und <em>Growing Up Monotropic</em>), mit lokalen Quellarchiven wo nötig.",
+    "note2h": "🧭 Wie das Raster aufgebaut ist",
+    "note2p": "<strong>Zeilen</strong> = die autistische (monotrope) Person, nach Lebensphase. <strong>Spalten</strong> = die lesende Person — das Gegenüber, das sie unterstützt. <strong>Geschlecht</strong> (männlich/weiblich) wird als kurzer, alle Blätter übergreifender Hinweis behandelt (zu Camouflaging und der untererkannten weiblichen Präsentation) statt als eigene Achse.",
+    "note3h": "⚖️ Zu diesen Anleitungen",
+    "note3p": "Verwendet identitätsbezogene Sprache („autistische Person“). <strong>Informativ — kein medizinischer Rat und kein Diagnoseinstrument.</strong> Monotropismus ist eine wirkungsvolle, aber noch in Entwicklung befindliche Theorie; die Evidenz für hohes Alter und hohen Unterstützungsbedarf ist dünn. Passe die Hinweise immer an die Person vor dir an. Lies die vollständigen Forschungsentwürfe hinter jedem Blatt über die Hauptbibliothek.",
+    "foot": "Monotropismus-Kurzanleitungen · abgeleitet aus den Forschungsentwürfen des Projekts ·",
+    "footLink": "GitHub-Quelle",
+    "footTail": "KI-gestützte Übersetzungen und Zusammenfassungen · kein medizinischer Rat",
+    "rows": {
+      "preschool": {
+        "label": "Vorschule",
+        "ages": "2–5 J."
+      },
+      "primary": {
+        "label": "Grundschule",
+        "ages": "6–11 J."
+      },
+      "secondary": {
+        "label": "Weiterführende Schule",
+        "ages": "12–18 J."
+      },
+      "university": {
+        "label": "Uni / Hochschule",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Erwerbstätiger",
+        "ages": "beschäftigt"
+      },
+      "parent": {
+        "label": "Autistischer Elternteil",
+        "ages": "erwachsen"
+      },
+      "senior": {
+        "label": "Senior / Großeltern",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Assistenzbedürftig",
+        "ages": "Wohnbetreuung"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Eltern",
+        "sub": "u. Familie"
+      },
+      "teachers": {
+        "label": "Lehrkräfte",
+        "sub": "u. Pädagogen"
+      },
+      "coaches": {
+        "label": "Trainer",
+        "sub": "u. Übungsleiter"
+      },
+      "doctor": {
+        "label": "Arzt",
+        "sub": "u. Gesundheitsberufe"
+      },
+      "caregivers": {
+        "label": "Betreuer",
+        "sub": "u. Pflegekräfte"
+      },
+      "colleagues": {
+        "label": "Kollegen",
+        "sub": "u. Arbeitgeber"
+      },
+      "eldercare": {
+        "label": "Altenhilfe",
+        "sub": "u. Pflege"
+      },
+      "peers": {
+        "label": "Gleichgesinnte",
+        "sub": "u. Freunde"
+      }
+    }
+  },
+  "pl": {
+    "brand": "Monotropizm",
+    "motto": "Podążaj za uwagą. Ułatwiaj drogę.",
+    "theme": "Przełącz motyw",
+    "choose": "Wybierz język",
+    "draftsBtn": "Wersje robocze badań",
+    "guidesBtn": "Krótkie przewodniki",
+    "sourcesBtn": "Źródła naukowe",
+    "title": "Monotropizm — Siatka krótkich przewodników",
+    "desc": "Powiększająca się siatka krótkich przewodników do druku na dwóch stronach: jak wspierać osobę autystyczną (monotropową) — według etapu życia (wiersze) i tego, kim jesteś (kolumny).",
+    "eyebrow": "Krótkie przewodniki · dwustronicowe kartki do druku",
+    "h1": "Jak wspierać osobę autystyczną",
+    "lead": "Powiększająca się siatka krótkich, praktycznych przewodników — opartych na wersjach roboczych badań projektu. Wybierz <strong>wiersz</strong> odpowiadający etapowi życia osoby i <strong>kolumnę</strong> określającą, kim jesteś. Każda komórka to dwustronna kartka do druku; pola <strong>„Wszystkie“</strong> otwierają zbiorcze odniesienie dla całej kolumny lub wiersza.",
+    "lgReady": "Gotowe (PDF + web)",
+    "lgPlanned": "Planowane",
+    "lgNa": "Nie dotyczy",
+    "lgSummary": "Podsumowanie wiersza / kolumny",
+    "cornerTop": "wiek ▾ &nbsp; odbiorca ▸",
+    "cornerRowSummary": "podsumowanie<br>wiersza",
+    "cornerColSummary": "podsumowanie kolumny",
+    "all": "Wszystkie",
+    "allStages": "Wszystkie etapy",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "planowane",
+    "titlePlanned": "Planowane",
+    "webAndPdf": "web i PDF",
+    "summaryRow": "Podsumowanie całego wiersza",
+    "summaryCol": "Podsumowanie całej kolumny",
+    "note1h": "🟢 W trakcie prac",
+    "note1p": "<strong>Kolumna lekarz / pracownicy służby zdrowia</strong> oraz <strong>wiersz szkoła podstawowa</strong> są ukończone jako pierwsze, jako reprezentatywne przekroje pionowy i poziomy. Ta strona-hub jest dostępna we wszystkich językach biblioteki; poszczególne arkusze pozostają na razie po angielsku i zostaną przetłumaczone, gdy szablon będzie gotowy. Źródło każdego arkusza jest śledzone w repozytorium; <strong>wszystkie przewodniki powstają z pomocą AI</strong> i opierają się na istniejących wersjach roboczych badań projektu (streszczeniu Monotropizmu, przewodniku Lifespan dla praktyków i służby zdrowia, przewodniku dla rodziny oraz <em>Growing Up Monotropic</em>), z lokalnymi archiwami źródeł tam, gdzie to potrzebne.",
+    "note2h": "🧭 Jak zorganizowana jest siatka",
+    "note2p": "<strong>Wiersze</strong> = osoba autystyczna (monotropowa), według etapu życia. <strong>Kolumny</strong> = czytelnik — osoba ją wspierająca. <strong>Płeć</strong> (mężczyzna/kobieta) jest uwzględniona jako krótka, przekrojowa uwaga w każdym arkuszu (o kamuflażu i rzadziej rozpoznawanej prezentacji u kobiet) zamiast jako osobna oś.",
+    "note3h": "⚖️ O tych przewodnikach",
+    "note3p": "Stosuje język identity-first („osoba autystyczna“). <strong>Materiał informacyjny — nie jest poradą medyczną ani narzędziem diagnostycznym.</strong> Monotropizm to potężna, lecz wciąż rozwijająca się teoria; dowody dla późnego wieku i wysokiego wsparcia są skąpe. Zawsze dostosuj wskazówki do konkretnej osoby. Pełne wersje robocze badań za każdym arkuszem przeczytasz w głównej bibliotece.",
+    "foot": "Krótkie przewodniki Monotropizm · oparte na wersjach roboczych badań projektu ·",
+    "footLink": "Źródło na GitHubie",
+    "footTail": "Tłumaczenia i streszczenia wspierane przez AI · to nie jest porada medyczna",
+    "rows": {
+      "preschool": {
+        "label": "Przedszkole",
+        "ages": "2–5 lat"
+      },
+      "primary": {
+        "label": "Szkoła podstawowa",
+        "ages": "6–11 lat"
+      },
+      "secondary": {
+        "label": "Szkoła średnia",
+        "ages": "12–18 lat"
+      },
+      "university": {
+        "label": "Studia",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Dorosły pracujący",
+        "ages": "zatrudniony"
+      },
+      "parent": {
+        "label": "Autystyczny rodzic",
+        "ages": "dorosły"
+      },
+      "senior": {
+        "label": "Osoba starsza / dziadkowie",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Wspierany / wysokie wsparcie",
+        "ages": "opieka całodobowa"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Rodzice",
+        "sub": "i rodzina"
+      },
+      "teachers": {
+        "label": "Nauczyciele",
+        "sub": "i edukatorzy"
+      },
+      "coaches": {
+        "label": "Trenerzy",
+        "sub": "i animatorzy"
+      },
+      "doctor": {
+        "label": "Lekarz",
+        "sub": "i służba zdrowia"
+      },
+      "caregivers": {
+        "label": "Pracownicy wsparcia",
+        "sub": "i opiekunowie"
+      },
+      "colleagues": {
+        "label": "Współpracownicy",
+        "sub": "i pracodawcy"
+      },
+      "eldercare": {
+        "label": "Opieka nad seniorami",
+        "sub": "i pielęgniarstwo"
+      },
+      "peers": {
+        "label": "Rówieśnicy",
+        "sub": "i przyjaciele"
+      }
+    }
+  },
+  "nl": {
+    "brand": "Monotropisme",
+    "motto": "Volg de focus. Verlicht de weg.",
+    "theme": "Thema wisselen",
+    "choose": "Kies een taal",
+    "draftsBtn": "Onderzoeksconcepten",
+    "guidesBtn": "Snelle gidsen",
+    "sourcesBtn": "Wetenschappelijke bronnen",
+    "title": "Monotropisme — Raster van snelle gidsen",
+    "desc": "Een groeiend raster van printbare, tweepagina snelle gidsen: een autistische (monotrope) persoon ondersteunen — naar levensfase (rijen) en wie jij bent (kolommen).",
+    "eyebrow": "Snelle gidsen · printbare velles van twee pagina's",
+    "h1": "Een autistisch persoon ondersteunen",
+    "lead": "Een groeiend raster van korte, praktische gidsen — afgeleid uit de onderzoeksconcepten van het project. Kies de <strong>rij</strong> voor de levensfase van de persoon en de <strong>kolom</strong> voor wie jij bent. Elke cel is een printbaar voor-/achterblad; de <strong>„Alles“</strong>-tegels openen een cumulatieve verwijzing voor een hele kolom of rij.",
+    "lgReady": "Klaar (PDF + web)",
+    "lgPlanned": "Gepland",
+    "lgNa": "Niet van toepassing",
+    "lgSummary": "Rij- / kolomsamenvatting",
+    "cornerTop": "leeftijd ▾ &nbsp; gesprekspartner ▸",
+    "cornerRowSummary": "rij-<br>samenvatting",
+    "cornerColSummary": "kolomsamenvatting",
+    "all": "Alles",
+    "allStages": "Alle leeftijden",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "gepland",
+    "titlePlanned": "Gepland",
+    "webAndPdf": "web en PDF",
+    "summaryRow": "Samenvatting van de hele rij",
+    "summaryCol": "Samenvatting van de hele kolom",
+    "note1h": "🟢 Werk in uitvoering",
+    "note1p": "De <strong>kolom arts / zorgverleners</strong> en de <strong>rij basisschool</strong> worden eerst voltooid, als representatieve verticale en horizontale snede. Deze hub-pagina is beschikbaar in alle talen van de bibliotheek; de afzonderlijke gidsen staan voorlopig nog in het Engels en worden vertaald zodra het sjabloon klaar is. De bron van elk vel is traceerbaar in de repository; <strong>alle gidsen zijn AI-ondersteund</strong> en afgeleid uit de bestaande onderzoeksconcepten van het project (de Monotropisme-samenvatting, de Lifespan-gids voor professionals en zorgverleners, de gezins-gids en <em>Growing Up Monotropic</em>), met lokale bronarchieven waar nodig.",
+    "note2h": "🧭 Hoe het raster is opgebouwd",
+    "note2p": "<strong>Rijen</strong> = de autistische (monotrope) persoon, naar levensfase. <strong>Kolommen</strong> = de lezer — degene die ondersteunt. <strong>Geslacht</strong> (man/vrouw) wordt behandeld als een korte, alles overstijgende opmerking in elk vel (over camoufleren en de onderherkende vrouwelijke presentatie) in plaats van een aparte as.",
+    "note3h": "⚖️ Over deze gidsen",
+    "note3p": "Gebruikt identiteitseerst-taal („autistische persoon“). <strong>Informatief — geen medisch advies of diagnostisch hulpmiddel.</strong> Monotropisme is een krachtige maar nog volop in ontwikkeling zijnde theorie; bewijs voor hoge leeftijd en veel ondersteuning is schaars. Pas de richtlijnen altijd aan op de persoon voor je. Lees de volledige onderzoeksconcepten achter elk vel via de hoofd-bibliotheek.",
+    "foot": "Monotropisme-snelle gidsen · afgeleid uit de onderzoeksconcepten van het project ·",
+    "footLink": "GitHub-bron",
+    "footTail": "AI-ondersteunde vertalingen en samenvattingen · geen medisch advies",
+    "rows": {
+      "preschool": {
+        "label": "Peuters / kleuters",
+        "ages": "2–5 j."
+      },
+      "primary": {
+        "label": "Basisschool",
+        "ages": "6–11 j."
+      },
+      "secondary": {
+        "label": "Voortgezet onderwijs",
+        "ages": "12–18 j."
+      },
+      "university": {
+        "label": "Universiteit / HBO",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Werkende volwassene",
+        "ages": "werkzaam"
+      },
+      "parent": {
+        "label": "Autistische ouder",
+        "ages": "volwassene"
+      },
+      "senior": {
+        "label": "Oudere / grootouders",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Begeleid wonen",
+        "ages": "veel ondersteuning"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Ouders",
+        "sub": "en familie"
+      },
+      "teachers": {
+        "label": "Leraren",
+        "sub": "en opvoeders"
+      },
+      "coaches": {
+        "label": "Trainers",
+        "sub": "en begeleiders"
+      },
+      "doctor": {
+        "label": "Arts",
+        "sub": "en zorgverleners"
+      },
+      "caregivers": {
+        "label": "Ondersteuners",
+        "sub": "en verzorgers"
+      },
+      "colleagues": {
+        "label": "Collega's",
+        "sub": "en werkgevers"
+      },
+      "eldercare": {
+        "label": "Ouderenzorg",
+        "sub": "en verpleging"
+      },
+      "peers": {
+        "label": "Leeftijdsgenoten",
+        "sub": "en vrienden"
+      }
+    }
+  },
+  "ro": {
+    "brand": "Monotropism",
+    "motto": "Urmărește atenția. Ușurează drumul.",
+    "theme": "Comută tema",
+    "choose": "Alege o limbă",
+    "draftsBtn": "Ciorne de cercetare",
+    "guidesBtn": "Ghiduri rapide",
+    "sourcesBtn": "Surse științifice",
+    "title": "Monotropism — Grila ghidurilor rapide",
+    "desc": "O grilă în creștere de ghiduri rapide tipăribile pe două pagini: cum să sprijini o persoană autistă (monotropică) — pe etape de viață (rânduri) și după cine ești (coloane).",
+    "eyebrow": "Ghiduri rapide · foi de două pagini pentru tipărire",
+    "h1": "Cum să sprijini o persoană autistă",
+    "lead": "O grilă în creștere de ghiduri scurte și practice — derivate din ciornele de cercetare ale proiectului. Alege <strong>rândul</strong> pentru etapa de viață a persoanei și <strong>coloana</strong> pentru cine ești tu. Fiecare celulă este o foaie față/verso tipăribilă; casetele <strong>„Toate“</strong> deschid o referință cumulativă pentru o întreagă coloană sau rând.",
+    "lgReady": "Gata (PDF + web)",
+    "lgPlanned": "Planificat",
+    "lgNa": "Nu se aplică",
+    "lgSummary": "Sinteză rând / coloană",
+    "cornerTop": "vârstă ▾ &nbsp; interlocutor ▸",
+    "cornerRowSummary": "sinteză<br>rând",
+    "cornerColSummary": "sinteză coloană",
+    "all": "Toate",
+    "allStages": "Toate vârstele",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "planificat",
+    "titlePlanned": "Planificat",
+    "webAndPdf": "web și PDF",
+    "summaryRow": "Sinteza pe tot rândul",
+    "summaryCol": "Sinteza pe toată coloana",
+    "note1h": "🟢 Lucrări în desfășurare",
+    "note1p": "<strong>Coloana medic / cadre sanitare</strong> și <strong>rândul școală primară</strong> sunt completate primele, ca secțiuni verticală și orizontală reprezentative. Această pagină-hub este disponibilă în toate limbile bibliotecii; ghidurile individuale sunt încă în engleză deocamdată și vor fi traduse după ce șablonul este finalizat. Sursa fiecărei foi este urmărită în depozit; <strong>toate ghidurile sunt asistate de AI</strong> și derivate din ciornele de cercetare existente ale proiectului (sinteza despre Monotropism, ghidul Lifespan pentru practicieni și cadre sanitare, ghidul pentru familie și <em>Growing Up Monotropic</em>), cu arhive locale ale surselor acolo unde e nevoie.",
+    "note2h": "🧭 Cum este organizată grila",
+    "note2p": "<strong>Rândurile</strong> = persoana autistă (monotropică), pe etape de viață. <strong>Coloanele</strong> = cititorul — persoana care o sprijină. <strong>Genul</strong> (masculin/feminin) este tratat ca o scurtă notă transversală în fiecare foaie (despre camuflare și prezentarea feminină subdiagnosticată) și nu ca o axă separată.",
+    "note3h": "⚖️ Despre aceste ghiduri",
+    "note3p": "Folosește limbaj de tip identitate-întâi („persoană autistă“). <strong>Informațional — nu este sfat medical și nici instrument de diagnostic.</strong> Monotropismul este o teorie puternică, dar încă în dezvoltare; dovezi pentru vârsta înaintată și suport ridicat sunt puține. Adaptează mereu îndrumările la persoana din fața ta. Citește ciornele de cercetare complete din spatele fiecărei foi prin biblioteca principală.",
+    "foot": "Ghiduri rapide Monotropism · derivate din ciornele de cercetare ale proiectului ·",
+    "footLink": "Sursă GitHub",
+    "footTail": "Traduceri și sinteze asistate de AI · nu este sfat medical",
+    "rows": {
+      "preschool": {
+        "label": "Prescolar",
+        "ages": "2–5 ani"
+      },
+      "primary": {
+        "label": "Școală primară",
+        "ages": "6–11 ani"
+      },
+      "secondary": {
+        "label": "Gimnaziu / liceu",
+        "ages": "12–18 ani"
+      },
+      "university": {
+        "label": "Universitate",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Adult angajat",
+        "ages": "cu job"
+      },
+      "parent": {
+        "label": "Părinte autist",
+        "ages": "adult"
+      },
+      "senior": {
+        "label": "Vârstnic / bunici",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Asistat / suport ridicat",
+        "ages": "rezidențial"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Părinți",
+        "sub": "și familie"
+      },
+      "teachers": {
+        "label": "Profesori",
+        "sub": "și educatori"
+      },
+      "coaches": {
+        "label": "Antrenori",
+        "sub": "și animatori"
+      },
+      "doctor": {
+        "label": "Medic",
+        "sub": "și cadre sanitare"
+      },
+      "caregivers": {
+        "label": "Asistenți",
+        "sub": "și îngrijitori"
+      },
+      "colleagues": {
+        "label": "Colegi",
+        "sub": "și angajatori"
+      },
+      "eldercare": {
+        "label": "Îngrijire vârstnici",
+        "sub": "și asistență medicală"
+      },
+      "peers": {
+        "label": "Persoane de aceeași vârstă",
+        "sub": "și prieteni"
+      }
+    }
+  },
+  "pt": {
+    "brand": "Monotropismo",
+    "motto": "Siga o foco. Facilite o caminho.",
+    "theme": "Alternar tema",
+    "choose": "Escolha um idioma",
+    "draftsBtn": "Rascunhos de investigação",
+    "guidesBtn": "Guias rápidos",
+    "sourcesBtn": "Fontes científicas",
+    "title": "Monotropismo — Grelha de guias rápidos",
+    "desc": "Uma grelha em crescimento de guias rápidos de duas páginas para imprimir: como apoiar uma pessoa autista (monotrópica) — por fase de vida (linhas) e por quem és (colunas).",
+    "eyebrow": "Guias rápidos · folhas de duas páginas para imprimir",
+    "h1": "Como apoiar uma pessoa autista",
+    "lead": "Uma grelha em crescimento de guias curtos e práticos — derivados dos rascunhos de investigação do projeto. Escolhe a <strong>linha</strong> para a fase de vida da pessoa e a <strong>coluna</strong> para quem és. Cada célula é uma folha frente/verso para imprimir; as células <strong>«Todos»</strong> abrem uma referência cumulativa para uma coluna ou linha inteira.",
+    "lgReady": "Pronto (PDF + web)",
+    "lgPlanned": "Previsto",
+    "lgNa": "Não se aplica",
+    "lgSummary": "Resumo de linha / coluna",
+    "cornerTop": "idade ▾ &nbsp; interlocutor ▸",
+    "cornerRowSummary": "resumo<br>da linha",
+    "cornerColSummary": "resumo da coluna",
+    "all": "Todos",
+    "allStages": "Todas as idades",
+    "web": "web",
+    "pdf": "pdf",
+    "planned": "previsto",
+    "titlePlanned": "Previsto",
+    "webAndPdf": "web e PDF",
+    "summaryRow": "Resumo de toda a linha",
+    "summaryCol": "Resumo de toda a coluna",
+    "note1h": "🟢 Trabalho em curso",
+    "note1p": "A <strong>coluna médico / profissionais de saúde</strong> e a <strong>linha do ensino básico</strong> estão concluídas primeiro, como setores vertical e horizontal representativos. Esta página central está disponível em todos os idiomas da biblioteca; as folhas individuais ainda estão em inglês por agora e serão traduzidas assim que o modelo estiver finalizado. A fonte de cada folha é rastreada no repositório; <strong>todos os guias são assistidos por IA</strong> e derivados dos rascunhos de investigação existentes do projeto (o resumo sobre o Monotropismo, o guia Lifespan para profissionais e cuidados de saúde, o guia para a família e <em>Growing Up Monotropic</em>), com arquivos locais das fontes onde necessário.",
+    "note2h": "🧭 Como a grelha está organizada",
+    "note2p": "As <strong>linhas</strong> = a pessoa autista (monotrópica), por fase de vida. As <strong>colunas</strong> = quem lê — a pessoa que a apoia. O <strong>género</strong> (masculino/feminino) é tratado como uma breve nota transversal dentro de cada folha (sobre o camuflar e a apresentação feminina subdiagnosticada) em vez de um eixo separado.",
+    "note3h": "⚖️ Sobre estes guias",
+    "note3p": "Usa linguagem identidade-primeiro («pessoa autista»). <strong>Informativo — não é aconselhamento médico nem uma ferramenta de diagnóstico.</strong> O monotropismo é uma teoria poderosa mas ainda em desenvolvimento; as evidências para a idade avançada e o alto apoio são escassas. Adapta sempre as orientações à pessoa que tens à frente. Lê os rascunhos de investigação completos por trás de cada folha através da biblioteca principal.",
+    "foot": "Guias rápidos Monotropismo · derivados dos rascunhos de investigação do projeto ·",
+    "footLink": "Código no GitHub",
+    "footTail": "Traduções e resumos assistidos por IA · não é aconselhamento médico",
+    "rows": {
+      "preschool": {
+        "label": "Pré-escolar",
+        "ages": "2–5 anos"
+      },
+      "primary": {
+        "label": "1.º ciclo",
+        "ages": "6–11 anos"
+      },
+      "secondary": {
+        "label": "Secundário",
+        "ages": "12–18 anos"
+      },
+      "university": {
+        "label": "Universidade",
+        "ages": "~18–25"
+      },
+      "worker": {
+        "label": "Adulto trabalhador",
+        "ages": "empregado"
+      },
+      "parent": {
+        "label": "Pai/mãe autista",
+        "ages": "adulto"
+      },
+      "senior": {
+        "label": "Idoso / avós",
+        "ages": "60+"
+      },
+      "assisted": {
+        "label": "Apoiado / alto apoio",
+        "ages": "lares"
+      }
+    },
+    "cols": {
+      "parents": {
+        "label": "Pais",
+        "sub": "e família"
+      },
+      "teachers": {
+        "label": "Professores",
+        "sub": "e educadores"
+      },
+      "coaches": {
+        "label": "Treinadores",
+        "sub": "e monitores"
+      },
+      "doctor": {
+        "label": "Médico",
+        "sub": "e profissionais de saúde"
+      },
+      "caregivers": {
+        "label": "Cuidadores",
+        "sub": "e assistentes"
+      },
+      "colleagues": {
+        "label": "Colegas",
+        "sub": "e empregadores"
+      },
+      "eldercare": {
+        "label": "Apoio a idosos",
+        "sub": "e enfermagem"
+      },
+      "peers": {
+        "label": "Pares",
+        "sub": "e amigos"
+      }
+    }
+  }
+};
 const DIR = "outputs/guidelines/";
+const REPO = "https://github.com/PieBru/monotropism";
+const MARK = "<svg class=\"mark\" viewBox=\"0 0 32 32\" aria-hidden=\"true\">\n      <circle cx=\"16\" cy=\"16\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.22\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"9.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.4\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"4.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"2\" fill=\"currentColor\"/>\n    </svg>";
+const SUN = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8\"/></svg>";
+const MOON = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z\"/></svg>";
 
-/* ---------- render ---------- */
-function cellTile(row, col){
-  const key = row.id + "-" + col.id;
-  if (NA.has(key)) return `<td><div class="cell na"><span class="mk">—</span></div></td>`;
-  if (isReady(key))
-    return `<td><div class="cell ready" title="${row.label} × ${col.label} — web & PDF">
-        <span class="mk">✓</span>
-        <span class="glinks">
-          <a href="${DIR}g-${key}.html" target="_blank" rel="noopener">web</a>
-          <a href="${DIR}g-${key}.pdf" target="_blank" rel="noopener">pdf</a>
-        </span>
-      </div></td>`;
-  return `<td><div class="cell planned" title="Planned"><span class="mk">·</span><span class="lbl">planned</span></div></td>`;
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+let currentLang = "en";
+function parseHash(){
+  var parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  return (parts[0] && I18N[parts[0]]) ? parts[0] : "en";
 }
-function rowTile(row){
-  const key = "row-" + row.id;
-  if (!isReady(key)) return `<td><div class="cum-tile cum-row planned" title="Planned">All</div></td>`;
-  return `<td><div class="cum-tile cum-row" title="Whole-row summary — web & PDF">
-      <span class="cum-label">All</span>
-      <span class="glinks">
-        <a href="${DIR}g-${key}.html" target="_blank" rel="noopener">web</a>
-        <a href="${DIR}g-${key}.pdf" target="_blank" rel="noopener">pdf</a>
-      </span>
-    </div></td>`;
-}
-function colTile(col){
-  const key = "col-" + col.id;
-  if (!isReady(key)) return `<div class="cum-tile cum-col planned" title="Planned">All stages</div>`;
-  return `<div class="cum-tile cum-col" title="Whole-column summary — web & PDF">
-      <span class="cum-label">All stages</span>
-      <span class="glinks">
-        <a href="${DIR}g-${key}.html" target="_blank" rel="noopener">web</a>
-        <a href="${DIR}g-${key}.pdf" target="_blank" rel="noopener">pdf</a>
-      </span>
-    </div>`;
+function route(){
+  currentLang = parseHash();
+  render(currentLang);
+  window.scrollTo(0,0);
 }
 
-let html = `<thead><tr>
-  <th class="corner">stage ▾ &nbsp; counterpart ▸</th>`;
-COLS.forEach(c => html += `<th class="col-head">${c.label}<span class="sub">${c.sub}</span></th>`);
-html += `<th class="corner">row<br>summary</th></tr>
-  <tr><td class="corner">column summary</td>`;
-COLS.forEach(c => html += `<td>${colTile(c)}</td>`);
-html += `<td class="corner"></td></tr></thead><tbody>`;
+function renderTopbar(code){
+  var t = I18N[code];
+  var isDark = document.documentElement.getAttribute("data-theme") !== "light";
+  var langSelect = '<select class="langselect" data-action="select-lang" aria-label="' + esc(t.choose) + '">' +
+    LANGS.map(function(l){ return '<option value="' + l.code + '"' + (l.code===code?" selected":"") + '>' + l.flag + '\u00A0' + esc(I18N[l.code].brand) + '</option>'; }).join("") + '</select>';
+  function nav(label, href, active){ return '<a class="btn btn-ghost' + (active?" active":"") + '" href="' + href + '">' + esc(label) + ' <span class="ar">\u2197</span></a>'; }
+  document.getElementById("topbar").innerHTML =
+    '<div class="topbar-inner">' +
+      '<a class="brand" href="index.html#/' + code + '" aria-label="' + esc(t.brand) + '">' + MARK +
+        '<span class="brand-stack"><span class="brand-name">' + esc(t.brand) + '</span><span class="brand-motto">' + esc(t.motto) + '</span></span></a>' +
+      '<div class="tb-right">' + langSelect +
+        nav(t.guidesBtn, "guidelines.html#/" + code, true) +
+        nav(t.draftsBtn, "index.html#/" + code + "/drafts", false) +
+        nav(t.sourcesBtn, "index.html#/sources", false) +
+        '<button class="iconbtn theme" data-action="toggle-theme" aria-label="' + esc(t.theme) + '" title="' + esc(t.theme) + '">' + (isDark?SUN:MOON) + '</button>' +
+      '</div>' +
+    '</div>';
+}
 
-ROWS.forEach(r => {
-  html += `<tr><td class="row-head">${r.label}<span class="ages">${r.ages}</span></td>`;
-  COLS.forEach(c => html += cellTile(r,c));
-  html += rowTile(r) + `</tr>`;
+function renderGrid(t){
+  var html = '<thead><tr><th class="corner">' + t.cornerTop + '</th>';
+  COL_IDS.forEach(function(c){ var col=t.cols[c]; html += '<th class="col-head">' + esc(col.label) + '<span class="sub">' + esc(col.sub) + '</span></th>'; });
+  html += '<th class="corner">' + t.cornerRowSummary + '</th></tr><tr><td class="corner">' + t.cornerColSummary + '</td>';
+  COL_IDS.forEach(function(c){ html += '<td>' + colTile(c,t) + '</td>'; });
+  html += '<td class="corner"></td></tr></thead><tbody>';
+  ROW_IDS.forEach(function(r){
+    var row=t.rows[r];
+    html += '<tr><td class="row-head">' + esc(row.label) + '<span class="ages">' + esc(row.ages) + '</span></td>';
+    COL_IDS.forEach(function(c){ html += cellTile(r,c,t); });
+    html += rowTile(r,t) + '</tr>';
+  });
+  html += '</tbody>';
+  document.getElementById("grid").innerHTML = html;
+}
+function cellTile(r,c,t){
+  var key=r+"-"+c;
+  if(NA.has(key)) return '<td><div class="cell na"><span class="mk">\u2014</span></div></td>';
+  if(READY.has(key)){ var row=t.rows[r], col=t.cols[c];
+    return '<td><div class="cell ready" title="' + esc(row.label) + ' \u00D7 ' + esc(col.label) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="mk">\u2713</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>'; }
+  return '<td><div class="cell planned" title="' + esc(t.titlePlanned) + '"><span class="mk">\u00B7</span><span class="lbl">' + esc(t.planned) + '</span></div></td>';
+}
+function rowTile(r,t){
+  var key="row-"+r;
+  if(!READY.has(key)) return '<td><div class="cum-tile cum-row planned" title="' + esc(t.titlePlanned) + '">' + esc(t.all) + '</div></td>';
+  return '<td><div class="cum-tile cum-row" title="' + esc(t.summaryRow) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.all) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>';
+}
+function colTile(c,t){
+  var key="col-"+c;
+  if(!READY.has(key)) return '<div class="cum-tile cum-col planned" title="' + esc(t.titlePlanned) + '">' + esc(t.allStages) + '</div>';
+  return '<div class="cum-tile cum-col" title="' + esc(t.summaryCol) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.allStages) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div>';
+}
+
+function render(code){
+  var t = I18N[code];
+  document.documentElement.lang = code;
+  document.title = t.title;
+  document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
+  renderTopbar(code);
+  document.getElementById("hero").innerHTML = '<p class="eyebrow">' + t.eyebrow + '</p><h1>' + esc(t.h1) + '</h1><p class="lead">' + t.lead + '</p>';
+  document.getElementById("legend").innerHTML =
+    '<span><i class="swatch sw-ready"></i> ' + t.lgReady + '</span>' +
+    '<span><i class="swatch sw-planned"></i> ' + t.lgPlanned + '</span>' +
+    '<span><i class="swatch sw-na"></i> ' + t.lgNa + '</span>' +
+    '<span><i class="swatch sw-ready" style="background:var(--accent-bg);border-color:var(--accent)"></i> ' + t.lgSummary + '</span>';
+  renderGrid(t);
+  document.getElementById("notes").innerHTML =
+    '<div class="note"><h3>' + t.note1h + '</h3><p>' + t.note1p + '</p></div>' +
+    '<div class="note"><h3>' + t.note2h + '</h3><p>' + t.note2p + '</p></div>' +
+    '<div class="note"><h3>' + t.note3h + '</h3><p>' + t.note3p + '</p></div>';
+  document.getElementById("footer").innerHTML = t.foot + ' <a href="' + REPO + '" target="_blank" rel="noopener">' + esc(t.footLink) + '</a> \u00B7 ' + t.footTail;
+}
+
+document.addEventListener("click", function(e){
+  var a = e.target.closest('[data-action="toggle-theme"]');
+  if(a){
+    var cur = document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("mono-theme", cur); }catch(_){}
+    renderTopbar(currentLang);
+  }
 });
-html += `</tbody>`;
-document.getElementById("grid").innerHTML = html;
-
-/* ---------- theme + language switch ---------- */
-const SUN  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>';
-const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
-
-const themeBtn = document.getElementById("themeBtn");
-function setThemeIcon(){ themeBtn.innerHTML = document.documentElement.getAttribute("data-theme")==="dark" ? SUN : MOON; }
-setThemeIcon();
-themeBtn.addEventListener("click", () => {
-  const cur = document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
-  document.documentElement.setAttribute("data-theme", cur);
-  try{ localStorage.setItem("mono-theme", cur); }catch(e){}
-  setThemeIcon();
+document.addEventListener("change", function(e){
+  var sel = e.target.closest('[data-action="select-lang"]');
+  if(sel && sel.value){ location.hash = "#/" + sel.value; }
 });
+window.addEventListener("hashchange", route);
+route();
 
-// Quick guides are English-only for now, so choosing a language lands on that language's library home
-document.getElementById("langSel").addEventListener("change", function (e) {
-  var v = e.target.value;
-  if (v) location.href = "index.html#/" + v;
-});
 </script>
 </body>
 </html>

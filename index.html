@@ -823,7 +823,7 @@ function renderTopbar(section, code) {
     </select>`;
 
   // Quick guides are English-only for now; switch to guidelines_<code>.html once localized
-  const guidesHref = "guidelines.html";
+  const guidesHref = "guidelines.html#/" + code;
   const nav = (label, href, route, active) =>
     `<a class="btn btn-ghost${active ? " active" : ""}" ${route ? `data-route="${route}" ` : ""}href="${href}">${esc(label)} <span class="ar">↗</span></a>`;
   const draftsBtn   = nav(i18n.draftsBtn,  "#/" + code + "/drafts", "/" + code + "/drafts", section === "drafts");
