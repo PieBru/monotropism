@@ -135,6 +135,14 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 }
 .brand:hover { text-decoration: none; color: var(--fg); }
 .brand .mark { font-size: 22px; }
+.brand-stack { display: flex; flex-direction: column; line-height: 1.12; }
+.brand-motto {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 500;
+  color: var(--fg-faint);
+  letter-spacing: 0.01em;
+  margin-top: 1px;
+}
 
 .iconbtn {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
@@ -406,6 +414,7 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
   .doc-actions { width: 100%; }
   .doc-actions .btn { flex: 1; justify-content: center; }
   .brand .brand-name { display: none; }
+  .brand .brand-motto { display: none; }
   .langswitch .iconbtn .code { display: none; }
 }
 
@@ -459,7 +468,7 @@ const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de", pl: "
 /* ---- Localised UI strings ---- */
 const I18N = {
   en: {
-    name: "English", title: "Monotropism", draftsWord: "drafts",
+    name: "English", title: "Monotropism", motto: "Follow the Focus. Ease the Way.", draftsWord: "drafts",
     tagline: "An Interest-Based Account of Autism",
     intro: "Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by Dinah Murray, Wenn Lawson and Mike Lesser, it offers a unified, non-pathologising lens on autistic life.",
     choose: "Choose a language", lead: "Select a language to browse the research drafts and guides.",
@@ -472,7 +481,7 @@ const I18N = {
     cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
   },
   it: {
-    name: "Italiano", title: "Monotropismo", draftsWord: "bozze",
+    name: "Italiano", title: "Monotropismo", motto: "Segui l'attenzione. Facilita il cammino.", draftsWord: "bozze",
     tagline: "Una spiegazione dell\u2019autismo basata sugli interessi",
     intro: "Il monotropismo \u00E8 una teoria cognitiva dell\u2019autismo che spiega l\u2019esperienza autistica attraverso le differenze nell\u2019attenzione e negli interessi. Sviluppata da Dinah Murray, Wenn Lawson e Mike Lesser, offre una lente unificata e non patologizzante sull\u2019esperienza autistica.",
     choose: "Scegli una lingua", lead: "Seleziona una lingua per consultare le bozze di ricerca e le guide.",
@@ -485,7 +494,7 @@ const I18N = {
     cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e assistenti", kids: "Bambini (7\u201311 anni)" }
   },
   fr: {
-    name: "Fran\u00E7ais", title: "Monotropisme", draftsWord: "brouillons",
+    name: "Fran\u00E7ais", title: "Monotropisme", motto: "Suivez l'attention. Facilitez le parcours.", draftsWord: "brouillons",
     tagline: "Une approche de l\u2019autisme bas\u00E9e sur l\u2019int\u00E9r\u00EAt",
     intro: "Le monotropisme est une th\u00E9orie cognitive de l\u2019autisme qui explique l\u2019exp\u00E9rience autistique par des diff\u00E9rences d\u2019attention et d\u2019int\u00E9r\u00EAt. D\u00E9velopp\u00E9e par Dinah Murray, Wenn Lawson et Mike Lesser, elle offre une grille de lecture unifi\u00E9e et non pathologisante de la vie autistique.",
     choose: "Choisissez une langue", lead: "S\u00E9lectionnez une langue pour parcourir les brouillons de recherche et les guides.",
@@ -498,7 +507,7 @@ const I18N = {
     cat: { theory: "Th\u00E9orie et aper\u00E7u", practitioner: "Praticiens et cliniciens", family: "Famille et aidants", kids: "Enfants (7\u201311 ans)" }
   },
   es: {
-    name: "Espa\u00F1ol", title: "Monotropismo", draftsWord: "borradores",
+    name: "Espa\u00F1ol", title: "Monotropismo", motto: "Sigue la atenci\u00F3n. Suaviza el camino.", draftsWord: "borradores",
     tagline: "Una explicaci\u00F3n del autismo basada en el inter\u00E9s",
     intro: "El monotropismo es una teor\u00EDa cognitiva del autismo que explica la experiencia autista a trav\u00E9s de las diferencias en la atenci\u00F3n y el inter\u00E9s. Desarrollada por Dinah Murray, Wenn Lawson y Mike Lesser, ofrece una lente unificada y no patologizadora sobre la vida autista.",
     choose: "Elige un idioma", lead: "Selecciona un idioma para explorar los borradores de investigaci\u00F3n y las gu\u00EDas.",
@@ -511,7 +520,7 @@ const I18N = {
     cat: { theory: "Teor\u00EDa y panorama", practitioner: "Profesionales y cl\u00EDnicos", family: "Familia y cuidadores", kids: "Ni\u00F1os (7\u201311 a\u00F1os)" }
   },
   de: {
-    name: "Deutsch", title: "Monotropismus", draftsWord: "Entw\u00FCrfe",
+    name: "Deutsch", title: "Monotropismus", motto: "Folge dem Fokus. Erleichtere den Weg.", draftsWord: "Entw\u00FCrfe",
     tagline: "Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus",
     intro: "Der Monotropismus ist eine kognitive Theorie des Autismus, die autistisches Erleben \u00FCber Unterschiede in Aufmerksamkeit und Interesse erkl\u00E4rt. Entwickelt von Dinah Murray, Wenn Lawson und Mike Lesser, bietet er einen einheitlichen, nicht-pathologisierenden Blick auf das autistische Leben.",
     choose: "W\u00E4hlen Sie eine Sprache", lead: "W\u00E4hlen Sie eine Sprache, um die Forschungsentw\u00FCrfe und Leitf\u00E4den zu erkunden.",
@@ -526,7 +535,7 @@ const I18N = {
   pl: {
     name: "Polski",
     title: "Monotropizm",
-    draftsWord: "wersje robocze",
+    motto: "Pod\u0105\u017Caj za uwag\u0105. U\u0142atwiaj drog\u0119.", draftsWord: "wersje robocze",
     tagline: "Oparta na zainteresowaniach koncepcja autyzmu",
     intro: "Monotropizm to poznawcza teoria autyzmu, kt\u00F3ra t\u0142umaczy do\u015Bwiadczenie autystyczne poprzez r\u00F3\u017Cnice w uwadze i zainteresowaniach. Opracowana przez Dinah Murray, Wenn Lawson i Mike'a Lessera, oferuje zintegrowan\u0105, niepatologizuj\u0105c\u0105 perspektyw\u0119 \u017Cycia autystycznego.",
     choose: "Wybierz j\u0119zyk", lead: "Wybierz j\u0119zyk, aby przegl\u0105da\u0107 wersje robocze bada\u0144 i przewodniki.",
@@ -541,7 +550,7 @@ const I18N = {
   nl: {
     name: "Nederlands",
     title: "Monotropisme",
-    draftsWord: "concepten",
+    motto: "Volg de focus. Verlicht de weg.", draftsWord: "concepten",
     tagline: "Een op interesse gebaseerde verklaring van autisme",
     intro: "Monotropisme is een cognitieve theorie van autisme die autistische beleving verklaart via verschillen in aandacht en interesse. Ontwikkeld door Dinah Murray, Wenn Lawson en Mike Lesser biedt het een verenigende, niet-pathologiserende lens op het autistische leven.",
     choose: "Kies een taal", lead: "Selecteer een taal om de onderzoeksconcepten en gidsen te bekijken.",
@@ -556,7 +565,7 @@ const I18N = {
   ro: {
     name: "Rom\u00E2n\u0103",
     title: "Monotropism",
-    draftsWord: "ciorne",
+    motto: "Urm\u0103re\u0219te aten\u021Bia. U\u0219ureaz\u0103 drumul.", draftsWord: "ciorne",
     tagline: "O teorie a autismului bazat\u0103 pe interese",
     intro: "Monotropismul este o teorie cognitiv\u0103 a autismului care explic\u0103 experien\u021Ba autist\u0103 prin diferen\u021Be de aten\u021Bie \u0219i interes. Dezvoltat\u0103 de Dinah Murray, Wenn Lawson \u0219i Mike Lesser, ofer\u0103 o lentil\u0103 unificatoare \u0219i nepatologizant\u0103 asupra vie\u021Bii autiste.",
     choose: "Alege o limb\u0103", lead: "Selecteaz\u0103 o limb\u0103 pentru a naviga ciornele de cercetare \u0219i ghidurile.",
@@ -571,7 +580,7 @@ const I18N = {
   pt: {
     name: "Portugu\u00EAs",
     title: "Monotropismo",
-    draftsWord: "rascunhos",
+    motto: "Siga o foco. Facilite o caminho.", draftsWord: "rascunhos",
     tagline: "Uma explica\u00E7\u00E3o do autismo baseada no interesse",
     intro: "O monotropismo \u00E9 uma teoria cognitiva do autismo que explica a experi\u00EAncia autista atrav\u00E9s de diferen\u00E7as na aten\u00E7\u00E3o e no interesse. Desenvolvida por Dinah Murray, Wenn Lawson e Mike Lesser, oferece uma lente unificada e n\u00E3o patologizante sobre a vida autista.",
     choose: "Escolha um idioma", lead: "Selecione um idioma para navegar os rascunhos de investiga\u00E7\u00E3o e os guias.",
@@ -813,7 +822,10 @@ function renderTopbar(code) {
     <div class="tb-left">
       ${back}
       <a class="brand" href="#/" data-route="/" aria-label="${esc(i18n.title)} \u2014 ${esc(i18n.home)}">
-        ${MARK}<span class="brand-name">${esc(i18n.title)}</span>
+        ${MARK}<span class="brand-stack">
+          <span class="brand-name">${esc(i18n.title)}</span>
+          <span class="brand-motto">${esc(i18n.motto)}</span>
+        </span>
       </a>
     </div>
     <div class="tb-right">
