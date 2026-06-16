@@ -55,11 +55,20 @@ monotropism/
     ├── <stem>.provenance.md #   research-provenance sidecar (gitignored — never commit)
     ├── .plans/              #   per-document research plans (gitignored)
     └── .drafts/             #   research workflow artifacts (gitignored)
+
+└── sources/                 # ★ Local full-text copies of the sources cited in monotropism.md
+    ├── NN-slug.html         #   served HTML page or rendered article (archived as-is)
+    └── NN-slug.pdf          #   OA PDF (OSF / figshare / institutional repo / journal)
 ```
 
 > **`README.md` is the source of truth for the *published* catalogue.** The
 > `DOCS` array in `index.html` must stay in sync with it. A draft is "published"
 > only once it is listed in both the README table and the landing page.
+
+> **`sources/` is a static archive** of the primary sources cited by the
+> foundational brief (`monotropism.md`). It is referenced by the `SOURCES` array
+> in `index.html`, which renders a "References" section on the landing page (see
+> §6). Committed (not gitignored).
 
 ---
 
@@ -224,6 +233,37 @@ data agree, the links are correct.
 - **Sync three things when publishing:** the Markdown in `outputs/`, the README
   "at a glance" table, and the `DOCS` array (+ `I18N` if a new language).
 - Keep `data-theme="dark"` as the default in `<html>` and in the no-flash script.
+
+### Source archive (`SOURCES` + `sources/`)
+
+The home view also renders a collapsible **"References"** section listing the
+primary sources cited by the foundational brief (`monotropism.md`). It is driven
+by a `SOURCES` array (next to `DOCS`) plus committed static copies in
+`sources/`:
+
+```js
+const SOURCES = [
+  { n:"1", cite:"…", local:"sources/01-….html", kind:"html", url:"https://…", access:"open" },
+  { n:"6", cite:"…", url:"https://doi.org/…", access:"oapublisher" }, // no local copy
+  // …
+];
+```
+
+- `n` matches the brief's footnote number (the source skips `[4]` and `[7]`).
+- `local` / `kind` (`"html"`|`"pdf"`) point at a committed copy in `sources/`
+  when one exists; the item then shows an **HTML/PDF** button.
+- `access` marks the tier:
+  - `"open"` — local full-text copy archived.
+  - `"oapublisher"` — free to read on the publisher site but not downloadable
+    here (e.g. SAGE bot-walls). Renders a "free to read (publisher)" badge and a
+    DOI link only.
+  - `"closed"` — paywalled; renders an "abstract / paywalled" badge + DOI link.
+
+When adding a source: download a legitimate OA/repository copy into `sources/`
+(prefer PMC / OSF / figshare / institutional repos / open web), give it an
+`NN-slug.ext` name, and add a `SOURCES` entry. **Never** bypass paywalls or
+publisher bot protection to obtain a copy; if only the publisher page is
+reachable, set `access` accordingly and omit `local`.
 
 ---
 

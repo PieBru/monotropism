@@ -346,6 +346,56 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 .site-footer .ai::before { content: "✦"; color: var(--accent); opacity: .8; font-style: normal; }
 .site-footer a { color: var(--fg-soft); }
 
+/* ---------- References (source archive on the home page) ---------- */
+.refs { padding: 0 0 40px; }
+.refs-details {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 4px 22px;
+}
+.refs-details > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+  padding: 16px 0; flex-wrap: wrap;
+}
+.refs-details > summary::-webkit-details-marker { display: none; }
+.refs-title {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(18px, 2.6vw, 22px); letter-spacing: -0.01em;
+}
+.refs-title::before { content: "\25B8\00a0"; color: var(--accent); transition: transform .18s ease; display: inline-block; }
+.refs-details[open] .refs-title::before { content: "\25BE\00a0"; }
+.refs-sub { font-size: 13px; color: var(--fg-faint); }
+.refs-intro { color: var(--fg-soft); font-size: 14.5px; margin: 4px 0 16px; max-width: 680px; }
+.ref-list { list-style: none; margin: 0; padding: 0; }
+.ref {
+  display: grid;
+  grid-template-columns: 34px 1fr auto; align-items: baseline; gap: 12px;
+  padding: 11px 0; border-top: 1px solid var(--border-soft);
+}
+.ref-n { font-family: var(--font-sans); font-size: 12.5px; font-weight: 600; color: var(--accent); }
+.ref-cite { font-size: 14.5px; line-height: 1.55; color: var(--fg); }
+.ref-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; }
+.ref-local {
+  font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+  padding: 3px 9px; border-radius: 6px;
+  background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-ring);
+  white-space: nowrap;
+}
+.ref-local:hover { background: var(--accent); color: var(--accent-fg); text-decoration: none; }
+.ref-orig { font-size: 12.5px; color: var(--fg-faint); white-space: nowrap; }
+.ref-orig:hover { color: var(--accent); text-decoration: none; }
+.ref-badge {
+  font-family: var(--font-sans); font-size: 11.5px;
+  padding: 3px 9px; border-radius: 6px;
+  border: 1px dashed var(--border); color: var(--fg-faint); white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .ref { grid-template-columns: 28px 1fr; }
+  .ref-links { grid-column: 2; justify-content: flex-start; margin-top: 2px; }
+}
+
 /* view fade */
 .view { animation: fade .4s ease both; }
 @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -547,6 +597,69 @@ const DOCS = [
 const CAT_ORDER = ["theory", "practitioner", "family", "kids"];
 const REPO = "https://github.com/PieBru/monotropism";
 
+/* ---- Source archive for the foundational brief (monotropism.md) ----
+   Primary sources cited in "Monotropism: An Interest-Based Account of Autism".
+   access: "open"        = a local full-text copy exists in sources/
+           "oapublisher" = free to read on the publisher site (bot-walled here)
+           "closed"      = paywalled; only the abstract/landing page is reachable
+   Numbering matches the brief's footnotes ([4] and [7] are absent from the source).
+   ------------------------------------------------------------ */
+const SOURCES = [
+  { n:"1",  cite:"Wikipedia, \u201CMonotropism\u201D.",
+    local:"sources/01-monotropism-wikipedia.html", kind:"html",
+    url:"https://en.wikipedia.org/wiki/Monotropism", access:"open" },
+  { n:"2",  cite:"Murray, F. & Lawson, W. (2022). \u201CHistory of Monotropism\u201D.",
+    local:"sources/02-monotropism-history.html", kind:"html",
+    url:"https://monotropism.org/history", access:"open" },
+  { n:"3",  cite:"Murray, D. (1992). \u201CAttention Tunnelling and Autism\u201D. Durham Conference Proceedings.",
+    local:"sources/03-attention-tunnelling-and-autism.html", kind:"html",
+    url:"https://monotropism.org/dinah/attention-tunnelling-and-autism/", access:"open" },
+  { n:"5",  cite:"Lawson, W. (2021). \u201CLanguage, interests and autism: A tribute to Dr. Dinah Murray\u201D. Autism, 25(8).",
+    url:"https://doi.org/10.1177/13623613211034072", access:"oapublisher" },
+  { n:"6",  cite:"Murray, D., Lesser, M., & Lawson, W. (2005). \u201CAttention, monotropism and the diagnostic criteria for autism\u201D. Autism, 9(2), 139\u2013156.",
+    url:"https://doi.org/10.1177/1362361305051398", access:"oapublisher" },
+  { n:"8",  cite:"Murray, F. (2018, updated 2025). \u201CMe and Monotropism: A unified theory of autism\u201D. The Psychologist, BPS.",
+    local:"sources/08-me-and-monotropism-bps.html", kind:"html",
+    url:"https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism", access:"open" },
+  { n:"9",  cite:"Dwyer, P. (2025). \u201CMonotropism: Between Obsessive Joy and Overwhelm\u201D. OTARC Blog, La Trobe University.",
+    local:"sources/09-monotropism-otarc.html", kind:"html",
+    url:"https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm", access:"open" },
+  { n:"10", cite:"Dwyer, P. et al. A trans-diagnostic investigation of attention, hyper-focus and monotropism in autism.",
+    local:"sources/10-attention-hyperfocus-monotropism-figshare.pdf", kind:"pdf",
+    url:"https://doi.org/10.1177/27546330241237883", access:"open" },
+  { n:"11", cite:"Buckle, K. (preprint). \u201CAutistic inertia: A qualitative study\u201D.",
+    local:"sources/11-autistic-inertia-osf.pdf", kind:"pdf",
+    url:"https://doi.org/10.31234/osf.io/ahk6x", access:"open" },
+  { n:"12", cite:"Lawson, W. & Dombroski, B. (2017). \u201CProblems with Object Permanence\u2026\u201D. J. Intellectual Disability \u2013 Diagnosis and Treatment.",
+    local:"sources/12-object-permanence-lawson-dombroski.pdf", kind:"pdf",
+    url:"https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562", access:"open" },
+  { n:"13", cite:"Dwyer, P. (2021). \u201CRevisiting monotropism\u201D. Autistic Scholar.",
+    local:"sources/13-revisiting-monotropism-autisticscholar.html", kind:"html",
+    url:"https://www.autisticscholar.com/monotropism/", access:"open" },
+  { n:"14", cite:"Landry, R. & Bryson, S. (2004). \u201CImpaired disengagement of attention in young children with autism\u201D. JCPP, 45(6), 1115\u20131122.",
+    url:"https://doi.org/10.1111/j.1469-7610.2004.00304.x", access:"closed" },
+  { n:"15", cite:"Sacrey, L.-A. et al. (2015). \u201CAttention disengagement in autism spectrum disorder: A meta-analysis\u201D. Neurosci. Biobehav. Rev., 56, 111\u2013121.",
+    url:"https://doi.org/10.1016/j.neubiorev.2014.10.011", access:"closed" },
+  { n:"16", cite:"\u201CSticky gaze may be early autism sign\u201D. The Transmitter.",
+    local:"sources/16-sticky-gaze-transmitter.html", kind:"html",
+    url:"https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/", access:"open" },
+  { n:"17", cite:"Garau, V. et al. (2023). \u201CDevelopment and Validation of\u2026 the Monotropism Questionnaire\u201D. OSF Preprint.",
+    local:"sources/17-monotropism-questionnaire-osf.pdf", kind:"pdf",
+    url:"https://osf.io/ft73y/", access:"open", extra:"https://dlcincluded.github.io/MQ/" },
+  { n:"18", cite:"Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., & Pellicano, E. (2024). \u201CIn a State of Flow\u201D. Autism in Adulthood, 6.",
+    local:"sources/18-flow-experiential-validity-pmc.html", kind:"html",
+    url:"https://doi.org/10.1089/aut.2023.0032", access:"open" },
+  { n:"19", cite:"Neubert (2025). Autism and Being Monotropic: What Medical and Other Practitioners Need to Know. Springer.",
+    local:"sources/19-autism-being-monotropic-springer.html", kind:"html",
+    url:"https://link.springer.com/book/10.1007/978-981-96-2564-2", access:"open" },
+  { n:"20", cite:"Lawson, W. (2025). \u201CResearch by autistic researchers: an \u2018insider\u2019s view\u2019 into autism\u2026\u201D. Frontiers in Psychiatry, 16, 1664507.",
+    local:"sources/20-research-by-autistic-researchers-pmc.html", kind:"html",
+    url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/", access:"open" },
+  { n:"21", cite:"National Autistic Society. \u201CWhat is monotropism?\u201D",
+    local:"sources/21-what-is-monotropism-nas.html", kind:"html",
+    url:"https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism", access:"open" }
+];
+
 /* ---------- helpers ---------- */
 const esc = (s) => String(s).replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -652,7 +765,8 @@ function renderHome() {
         </div>
         <div class="lang-grid">${cards}</div>
       </div>
-    </section>`;
+    </section>
+    ${renderReferences()}`;
 
   renderFooter("en");
 }
@@ -719,6 +833,35 @@ function docCard(doc, code, t) {
         <a class="btn btn-ghost" href="${esc(pdf)}" target="_blank" rel="noopener" download>${esc(t.pdf)} <span class="ar" aria-hidden="true">\u2193</span></a>
       </div>
     </article>`;
+}
+
+/* ---------- references (source archive, home page only) ---------- */
+function renderReferences() {
+  const localCount = SOURCES.filter(s => s.local).length;
+  const rows = SOURCES.map(s => {
+    const local = s.local
+      ? `<a class="ref-local" href="${esc(s.local)}" target="_blank" rel="noopener">${s.kind === "pdf" ? "PDF" : "HTML"}</a>`
+      : `<span class="ref-badge ${s.access}">${s.access === "oapublisher" ? "free to read (publisher)" : "abstract / paywalled"}</span>`;
+    const extra = s.extra ? ` <a class="ref-orig" href="${esc(s.extra)}" target="_blank" rel="noopener">questionnaire <span class="ar" aria-hidden="true">\u2197</span></a>` : "";
+    return `<li class="ref">
+        <span class="ref-n">[${esc(s.n)}]</span>
+        <span class="ref-cite">${esc(s.cite)}</span>
+        <span class="ref-links">${local}<a class="ref-orig" href="${esc(s.url)}" target="_blank" rel="noopener">original <span class="ar" aria-hidden="true">\u2197</span></a>${extra}</span>
+      </li>`;
+  }).join("");
+
+  return `<section class="refs view" id="references">
+      <div class="wrap">
+        <details class="refs-details">
+          <summary>
+            <span class="refs-title">References</span>
+            <span class="refs-sub">${SOURCES.length} sources for the foundational brief \u2014 ${localCount} archived as local full-text copies</span>
+          </summary>
+          <p class="refs-intro">Static copies of the primary sources cited in <em>Monotropism: An Interest-Based Account of Autism</em>. A few peer-reviewed papers are not archived here (publisher bot protection or paywall) and link to the publisher page instead.</p>
+          <ul class="ref-list">${rows}</ul>
+        </details>
+      </div>
+    </section>`;
 }
 
 /* ---------- footer ---------- */

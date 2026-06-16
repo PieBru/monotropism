@@ -51,6 +51,7 @@ Legend: 📝 = Markdown source &nbsp;·&nbsp; 📄 = PDF download
 ## ℹ️ Notes
 
 - All rendered **PDFs** sit alongside their Markdown sources in [`outputs/`](outputs/) (and at the repo root for the English source brief).
+- The primary sources cited by the foundational brief are archived as static full-text copies (HTML/PDF) in [`sources/`](sources/) and linked from a **References** section on the landing page. A few peer-reviewed papers are only reachable via their publisher (free-to-read or paywalled) and link out accordingly.
 - Each research output includes a `.provenance.md` sidecar recording sources, verification status, and limitations; these are not version-controlled.
 - The documents use **identity-first language** ("autistic person"), reflecting the preference of the majority of the autistic community and the source theory's framing. Follow an individual's own preference where it differs.
 - These are informational resources, not medical advice or a diagnostic tool.
