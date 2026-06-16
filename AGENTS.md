@@ -45,6 +45,7 @@ monotropism/
 │   ├── style.html           # Shared <style> injected into every rendered HTML/PDF via pandoc -H
 │   ├── build-html.sh        # md → standalone HTML (for landing-page "Read" links)
 │   ├── build-pdfs.sh        # md → HTML → Chromium print → PDF
+│   ├── strip-dup-title.py   # post-step: drop pandoc's visible title block when it dupes the H1
 │   └── tmp/                 # transient build intermediates (gitignored)
 │
 └── outputs/                 # ★ All published drafts live here
@@ -283,13 +284,26 @@ bash build/build-pdfs.sh
 
 Pipeline detail:
 - **HTML:** `pandoc <stem>.md -f gfm+autolink_bare_uris -t html5 -s -H build/style.html -o <stem>.html`
-  (the document's first `# H1` is used as the `<title>`).
+  (the document's first `# H1` is used as the `<title>`). After pandoc,
+  `build/strip-dup-title.py` removes pandoc's visible page-title block
+  (`<header id="title-block-header">`) **when it duplicates the document's own
+  first H1** (same or similar), so the title isn't shown twice. `<head><title>`
+  for the browser tab is always kept. The strip is conditional — it only fires
+  on a match, so a genuinely distinct title block is preserved.
 - **PDF:** the same `pandoc` HTML step produces a temp file in `build/tmp/`,
   then `chromium --headless=new --no-pdf-header-footer --print-to-pdf=…` prints
-  it to A4. `build/tmp/` is gitignored.
+  it to A4. `build/tmp/` is gitignored. (The PDF title block currently uses the
+  file stem, not the document H1 — see "Known follow-ups" below.)
 
 > Always run **both** builders after changing Markdown or `build/style.html`,
 > so `.html` and `.pdf` stay in sync with the sources.
+
+**Known follow-ups (not yet done):**
+- `build-pdfs.sh` sets `--metadata title="$name"` (the file stem, e.g.
+  `monotropism_ita`), so a PDF's visible title block shows the filename rather
+  than the document title, and is not de-duplicated. Aligning it with the HTML
+  pipeline (title = first H1 + `strip-dup-title.py`) would make both outputs
+  consistent — do this if you touch the PDF build.
 
 ### `build/style.html`
 

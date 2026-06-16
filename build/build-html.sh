@@ -6,6 +6,7 @@ set -uo pipefail
 cd /mnt/2TB/Piero/Work/monotropism
 
 STYLE="build/style.html"
+STRIP="build/strip-dup-title.py"
 mkdir -p outputs
 
 md_to_html () {
@@ -28,6 +29,10 @@ md_to_html () {
     --wrap=preserve \
     -H "$STYLE" \
     -o "$out"
+
+  # Drop pandoc's visible page-title block when it duplicates the document's
+  # own first H1 (keeps <head><title> for the browser tab).
+  python3 "$STRIP" "$out" >/dev/null
 
   if [ -s "$out" ]; then
     echo "   OK ($(du -h "$out" | cut -f1))"
