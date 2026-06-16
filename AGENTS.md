@@ -38,13 +38,16 @@ monotropism/
 ├── .gitignore                # Ignores .* dirs, *.provenance.md, build/tmp/
 │
 ├── index.html               # ★ The landing page — single-file HTML+CSS+JS, data-driven (see §6)
+├── guidelines.html         # ★ Quick Guides grid hub — self-contained, data-driven (see §7 "Guidelines")
 │
 ├── monotropism.md           # English source of the foundational brief (only EN brief lives at root)
 │
 ├── build/
 │   ├── style.html           # Shared <style> injected into every rendered HTML/PDF via pandoc -H
+│   ├── guide-style.html     # Printer-friendly CDC-style <style> for the quick-guide brochures
 │   ├── build-html.sh        # md → standalone HTML (for landing-page "Read" links)
 │   ├── build-pdfs.sh        # md → HTML → Chromium print → PDF
+│   ├── build-guides.sh      # md → HTML → PDF for the quick-guide brochures (uses guide-style.html)
 │   ├── strip-dup-title.py   # post-step: drop pandoc's visible title block when it dupes the H1
 │   └── tmp/                 # transient build intermediates (gitignored)
 │
@@ -53,6 +56,7 @@ monotropism/
     ├── <stem>_ita.md        #   …and translations (it/fr/es/de/pl/nl/ro/pt)
     ├── <stem>.html          #   rendered standalone HTML
     ├── <stem>.pdf           #   rendered print-ready PDF
+    ├── guidelines/          #   ★ printable quick-guide brochures: g-<row>-<col>.{md,html,pdf}
     ├── <stem>.provenance.md #   research-provenance sidecar (gitignored — never commit)
     ├── .plans/              #   per-document research plans (gitignored)
     └── .drafts/             #   research workflow artifacts (gitignored)
@@ -328,6 +332,39 @@ The shared stylesheet for rendered drafts (print + screen). It targets A4,
 defines serif body / sans headings, blockquote, table, code, and `@page` footer
 pagination. If you restyle drafts, edit this one file — do **not** inject styles
 into individual Markdown files.
+
+### Guidelines (Quick Guides) — a second content track
+
+Separate from the long-form drafts, the repo has a grid of **printable,
+two-page CDC-style quick guides** (`guidelines.html` hub).
+
+- **Hub page:** `guidelines.html` (self-contained, dark-by-default, data-driven).
+  Linked as *“Quick guides”* in `index.html`’s top bar.
+- **Sources & renders:** `outputs/guidelines/g-<row>-<col>.{md,html,pdf}` (cells),
+  `g-row-<row>.*` (row summaries), `g-col-<col>.*` (column summaries).
+- **Grid taxonomy** (locked for the English seed):
+  - **Rows** (the autistic person, by life stage): `preschool` · `primary` ·
+    `secondary` · `university` · `worker` · `parent` · `senior` · `assisted`.
+  - **Columns** (the reader/counterpart): `parents` · `teachers` · `coaches` ·
+    `doctor` · `caregivers` · `colleagues` · `eldercare` · `peers`.
+  - **Gender** (male/female) is a **cross-cutting callout** inside each sheet
+    (`## If the person is a girl / a woman {.gender}`), *not* a separate axis.
+  - Some cells are **N/A** (e.g. a primary child has no *colleagues*); these are
+    listed in the hub’s `NA` set and rendered dimmed, never authored.
+- **Build:** `bash build/build-guides.sh` (or `build/build-guides.sh <stem> …`).
+  Uses `build/guide-style.html` (printer-friendly, light, CDC-style) and renders
+  with **`-f markdown`** (not `gfm`) so header **classes** are honoured:
+  `{.lead}` (one-idea box), `{.do}` / `{.dont}` (green/red sections),
+  `{.support}` (amber callout), `{.gender}` (violet note), `{.foot}` (footer).
+  Same pandoc→chromium PDF pipeline as the main docs. Cell guides must fit
+  **2 pages** (A4 front/back); row/column summaries are *extended* (3–4 pp).
+- **Adding guides:** (1) author the `.md` in `outputs/guidelines/` using the
+  established structure and deriving content from the research drafts (monotropism
+  brief, lifespan practitioner guide, family guide, kids guidelines) +
+  `sources/`; (2) `bash build/build-guides.sh <stem>`; (3) add the stem to the
+  `READY` set in `guidelines.html`; (4) verify the cell still prints to 2 pages.
+- **Localization:** build the **English grid first**, fine-tune the template,
+  then produce localized grids per language (English grid is the source of truth).
 
 ---
 

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Your Autistic Primary-School Child</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     CDC-style, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 12mm 11mm 12mm;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="your-autistic-primary-school-child">Your Autistic Primary-School Child</h1>
+<blockquote>
+<p><strong>For parents &amp; family carers</strong> — understanding and supporting an autistic <strong>primary-school child</strong> (roughly ages 6–11).</p>
+</blockquote>
+<h2 class="lead" id="the-one-idea">The one idea</h2>
+<p>Autism, through <strong>monotropism</strong>, means your child’s attention locks into a few deep, intense “tunnels.” That tunnel is their engine — for joy, calm, skill and identity. The biggest gift you can give is an environment that works <em>with</em> their attention, not against it: predictable routines, protected interests, lower sensory load, and time to recover from the effort of holding it together at school.</p>
+<h2 id="what-you-may-see-and-whats-really-going-on">What you may see — and what’s really going on</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>You may see…</th>
+<th>What’s often happening</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intense focus on one topic, sometimes for years</td>
+<td>A <strong>passion</strong> that brings joy, calm and learning — not an “obsession” to limit</td>
+</tr>
+<tr>
+<td>“Fine at school,” meltdown or shutdown the moment they’re home</td>
+<td>Home is the <strong>safe place</strong> where the day’s mask finally drops — a sign of trust and exhaustion</td>
+</tr>
+<tr>
+<td>Won’t hear you; “ignores” hunger, thirst, the toilet</td>
+<td>When absorbed, things outside the tunnel <strong>genuinely don’t register</strong></td>
+</tr>
+<tr>
+<td>Slow to start, stop or switch; meltdowns at transitions</td>
+<td><strong>Autistic inertia</strong> — changing track costs real energy</td>
+</tr>
+<tr>
+<td>Strong reactions to sounds, lights, clothes, food</td>
+<td>Sensory differences: a stimulus <em>in</em> the tunnel is felt intensely; one <em>out</em> may not register</td>
+</tr>
+</tbody>
+</table>
+<h2 class="do" id="try-this">Try this</h2>
+<ul>
+<li><strong>Protect and use the interest.</strong> Build maths, reading and connection <em>through</em> it; never “wean” a healthy passion. Join it sometimes — sitting alongside with genuine curiosity is powerful.</li>
+<li><strong>Make the day predictable</strong> — steady routines for mornings, after school, meals and bedtime — and give warnings before every transition (“10 minutes… 2 minutes…”).</li>
+<li><strong>Lower the sensory load</strong> at home: a quiet corner, dimmable light, headphones for noisy places, comfortable/seamless clothes.</li>
+<li><strong>Reduce demands on hard days.</strong> If they held it together at school, expect a crash afterwards — build in calm, interest-led recovery time.</li>
+<li><strong>Have a meltdown/shutdown plan</strong>: stay calm, lower the load (quiet, dim, fewer people), don’t reason or judge in the moment, give time, keep everyone safe.</li>
+</ul>
+<h2 class="dont" id="avoid-this">Avoid this</h2>
+<ul>
+<li>Treating the interest as a problem to manage, or the meltdown as naughtiness.</li>
+<li>Forcing eye contact, stillness or extra demands when they’re already depleted.</li>
+<li>Piling on after-school activities and social plans — rest is a need, not laziness.</li>
+</ul>
+<h2 class="support" id="when-to-get-more-support">When to get more support</h2>
+<blockquote>
+<p>A sudden drop in skills usually signals <strong>overwhelm/burnout</strong>, not lost ability — respond by reducing demands and restoring rest and interests. Advocate at school (SENCO/SEND, a quiet space, interest-led learning). Watch for <strong>anxiety and bullying</strong>. Seek autism-led family support and a positively-framed understanding of autism for siblings.</p>
+</blockquote>
+<h2 class="gender" id="if-your-child-is-a-girl">If your child is a girl</h2>
+<blockquote>
+<p>Girls camouflage heavily and are often missed — the quiet, “anxious perfectionist” may be an exhausted autistic child. Trust your instincts and push for assessment if school sees only a compliant surface.</p>
+</blockquote>
+<h2 class="foot" id="about-this-guide">About this guide</h2>
+<p><em>AI-assisted, derived from this project’s research drafts — <strong>Growing Up Monotropic</strong> (Part 1), the <strong>Family guide</strong> (Part 3) and the <strong>Monotropism</strong> brief. Uses identity-first language. <strong>Informational — not medical advice or a diagnostic tool.</strong> You know your child best; fit this to them.</em></p>
+<p><strong>Key sources.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2018/2023; 2022, routines); Dwyer (2025); Raymaker et al. (2020); Reframing Autism (2023); Leicestershire Partnership NHS Trust (Autism Space, meltdowns/shutdowns). Full citations are in the source drafts.</p>
+</body>
+</html>

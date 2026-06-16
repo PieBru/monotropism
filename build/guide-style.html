@@ -1,0 +1,169 @@
+<style>
+/* ============================================================
+   Monotropism — Quick-Guide brochure style
+   CDC-style, printer-friendly, sized to 2 pages (A4 front/back).
+   Used by build-guides.sh. Input is pandoc 'markdown' so header
+   classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+   are honoured. Light theme by design (printable).
+   ============================================================ */
+@page {
+  size: A4;
+  margin: 11mm 12mm 11mm 12mm;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 9.6pt; }
+body {
+  font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+  color: #1c1c1c;
+  line-height: 1.4;
+  margin: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---- Title band ---- */
+h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+h1 {
+  background: #0b5563;
+  color: #ffffff;
+  margin: 0;
+  padding: 9px 14px 8px;
+  font-size: 1.5rem;
+  line-height: 1.14;
+  font-weight: 700;
+  border-radius: 8px 8px 0 0;
+  page-break-after: avoid;
+}
+/* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+h1 + blockquote {
+  margin: 0;
+  padding: 7px 14px;
+  background: #e6f1f2;
+  color: #0b5563;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.95rem;
+  page-break-after: avoid;
+}
+h1 + blockquote p { margin: 0; }
+
+/* ---- Section headers ---- */
+h2 {
+  font-size: 1.0rem;
+  margin: 11px 0 4px;
+  color: #0b5563;
+  font-weight: 700;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #d3e5e7;
+  page-break-after: avoid;
+}
+
+/* ---- "The one idea" tinted box ---- */
+h2.lead + p {
+  background: #eaf4f4;
+  border-left: 4px solid #0b5563;
+  border-radius: 4px;
+  padding: 7px 10px;
+  margin-top: 3px;
+  page-break-inside: avoid;
+}
+
+/* ---- DO section (green) ---- */
+h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+h2.do + ul li::marker { color: #1b7a3d; }
+
+/* ---- DON'T section (red) ---- */
+h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+h2.dont + ul li::marker { color: #b3261e; }
+
+/* ---- "When to get more support" callout (amber) ---- */
+h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+h2.support + blockquote {
+  background: #fff4e5;
+  border: none;
+  border-left: 4px solid #e08600;
+  border-radius: 4px;
+  color: #5a3a00;
+  font-style: normal;
+  padding: 7px 10px;
+  page-break-inside: avoid;
+}
+h2.support + blockquote p { margin: 3px 0; }
+
+/* ---- Gender / presentation note (violet) ---- */
+h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+h2.gender + blockquote {
+  background: #f3eefb;
+  border: none;
+  border-left: 4px solid #7b52c2;
+  border-radius: 4px;
+  color: #3a2660;
+  font-style: normal;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  page-break-inside: avoid;
+}
+h2.gender + blockquote p { margin: 2px 0; }
+
+/* ---- Footer / about ---- */
+h2.foot {
+  color: #6b6b6b;
+  border: none;
+  font-size: 0.82rem;
+  margin-top: 12px;
+  padding-top: 5px;
+  border-top: 1px solid #d8d8d8;
+}
+h2.foot ~ p,
+h2.foot ~ ul,
+h2.foot ~ ul li,
+h2.foot ~ em,
+h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+h2.foot ~ ul li { margin: 1px 0; }
+h2.foot ~ p { margin: 3px 0; }
+
+/* ---- Generic content ---- */
+p { margin: 4px 0; orphans: 3; widows: 3; }
+ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+li { margin: 2px 0; }
+strong { color: #111; }
+em { color: #333; }
+blockquote { margin: 5px 0; }
+a { color: #0b5563; text-decoration: none; word-break: break-word; }
+hr { display: none; }
+
+/* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+h3 {
+  font-size: 0.95rem;
+  margin: 9px 0 2px;
+  color: #0b5563;
+  font-weight: 700;
+  page-break-after: avoid;
+}
+h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+/* ---- "What you may see" table ---- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 5px 0 8px;
+  font-size: 0.88rem;
+  page-break-inside: auto;
+}
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+th {
+  background: #0b5563;
+  color: #fff;
+  text-align: left;
+  padding: 4px 7px;
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+tbody tr:nth-child(even) { background: #f4f9fa; }
+</style>

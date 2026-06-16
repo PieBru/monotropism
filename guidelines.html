@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monotropism — Quick Guides Grid</title>
+<meta name="description" content="A growing grid of printable, two-page CDC-style quick guides: how to support an autistic (monotropic) person — by life stage (rows) and by who you are (columns).">
+<meta name="author" content="PieBru">
+
+<!-- Prevent theme flash -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("mono-theme");
+    if (t !== "light" && t !== "dark") t = "dark";
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+
+<style>
+:root { --maxw: 1180px; --radius: 12px; }
+[data-theme="dark"]{
+  --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
+  --fg:#e9ebf0; --fg-soft:#aeb4c0; --fg-faint:#767d8c;
+  --border:#232833; --border-soft:#1b1f27;
+  --accent:#8aa6ff; --accent-2:#6d86e6; --accent-bg:rgba(138,166,255,.12);
+  --teal:#4cc4c4; --teal-bg:rgba(76,196,196,.12);
+  --green:#7fd29b; --amber:#e6b566; --red:#e58a8a; --violet:#b9a0ef;
+  --shadow:0 10px 40px rgba(0,0,0,.45);
+}
+[data-theme="light"]{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#ffffff; --surface-hi:#f2f4f8;
+  --fg:#1a1d24; --fg-soft:#4c5363; --fg-faint:#838b9a;
+  --border:#e4e8ee; --border-soft:#eef1f5;
+  --accent:#2f5fae; --accent-2:#264f93; --accent-bg:rgba(47,95,174,.09);
+  --teal:#0b7d7d; --teal-bg:rgba(11,125,125,.09);
+  --green:#1b7a3d; --amber:#9a6b00; --red:#b3261e; --violet:#6b4ba0;
+  --shadow:0 12px 40px rgba(20,30,55,.10);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; color:var(--fg); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.6;
+  background:
+    radial-gradient(1100px 560px at 50% -8%, var(--accent-bg), transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg));
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);
+  background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--border-soft);}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 22px;}
+.brand{display:inline-flex;align-items:center;gap:9px;color:var(--fg);font-weight:600;font-size:18px;letter-spacing:-.01em;}
+.brand:hover{text-decoration:none;color:var(--fg);}
+.brand .dot{width:.7em;height:.7em;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--teal),var(--accent));display:inline-block;}
+.tb-right{display:flex;align-items:center;gap:10px;}
+.btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 13px;font-size:14px;font-weight:500;
+  color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
+.btn:hover{color:var(--fg);border-color:var(--accent);}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0;font-size:16px;
+  color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
+.iconbtn:hover{color:var(--fg);border-color:var(--accent);}
+
+/* hero */
+.hero{padding:46px 0 14px;text-align:center;}
+.eyebrow{color:var(--teal);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;}
+.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 14px;letter-spacing:-.02em;}
+.hero p.lead{color:var(--fg-soft);max-width:720px;margin:0 auto;font-size:17px;}
+
+/* status bar */
+.status{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 6px;}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 16px;text-align:center;min-width:96px;}
+.stat .n{font-size:22px;font-weight:700;color:var(--accent);}
+.stat .l{font-size:12px;color:var(--fg-faint);text-transform:uppercase;letter-spacing:.04em;}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:18px 0 30px;font-size:13.5px;color:var(--fg-soft);}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.swatch{width:14px;height:14px;border-radius:4px;border:1px solid var(--border);display:inline-block;}
+.sw-ready{background:var(--teal-bg);border-color:var(--teal);}
+.sw-planned{background:transparent;border-style:dashed;border-color:var(--fg-faint);}
+.sw-na{background:var(--surface-2);}
+
+/* grid */
+.grid-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:6px;margin:0 0 28px;overflow:auto;}
+table.matrix{border-collapse:separate;border-spacing:5px;width:100%;min-width:880px;}
+.matrix th,.matrix td{vertical-align:middle;text-align:center;}
+.col-head{font-size:12px;font-weight:600;color:var(--fg-soft);padding:8px 4px 4px;line-height:1.2;}
+.col-head .sub{display:block;font-size:10.5px;color:var(--fg-faint);font-weight:500;margin-top:2px;}
+.row-head{text-align:left;padding:6px 12px 6px 6px;font-weight:600;font-size:13.5px;white-space:nowrap;}
+.row-head .ages{display:block;font-size:11px;color:var(--fg-faint);font-weight:500;margin-top:1px;}
+.corner{font-size:11px;color:var(--fg-faint);padding:4px;}
+
+/* cumulative tiles */
+.cum-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:42px;border-radius:8px;font-size:11.5px;font-weight:600;padding:6px 4px;}
+.cum-col{background:var(--teal-bg);border:1px solid var(--teal);color:var(--teal);}
+.cum-col a{color:inherit;}
+.cum-col.planned{background:transparent;border-style:dashed;border-color:var(--fg-faint);color:var(--fg-faint);}
+.cum-row{background:var(--accent-bg);border:1px solid var(--accent);color:var(--accent);}
+.cum-row a{color:inherit;}
+.cum-row.planned{background:transparent;border-style:dashed;border-color:var(--fg-faint);color:var(--fg-faint);}
+
+/* cells */
+.cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  min-height:54px;border-radius:8px;font-size:11.5px;font-weight:600;padding:6px 4px;position:relative;}
+.cell .mk{font-size:15px;line-height:1;}
+.cell .lbl{font-size:10px;font-weight:500;color:var(--fg-faint);letter-spacing:.02em;}
+.cell.ready{background:var(--teal-bg);border:1px solid var(--teal);color:var(--fg);}
+.cell.ready:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg);}
+.cell.ready .mk{color:var(--teal);}
+.cell.planned{background:transparent;border:1px dashed var(--fg-faint);color:var(--fg-faint);}
+.cell.na{background:var(--surface-2);color:var(--fg-faint);opacity:.45;}
+a.cell{text-decoration:none;}
+a.cell:hover{text-decoration:none;}
+
+/* notes */
+.notes{margin:8px 0 50px;}
+.note{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--teal);
+  border-radius:8px;padding:14px 18px;margin:0 0 12px;font-size:14.5px;color:var(--fg-soft);}
+.note strong{color:var(--fg);}
+.note h3{margin:0 0 6px;font-size:15px;color:var(--fg);}
+.note p{margin:5px 0;}
+
+footer{border-top:1px solid var(--border-soft);padding:26px 0 50px;color:var(--fg-faint);font-size:13.5px;}
+footer a{color:var(--fg-soft);}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="dot"></span> Monotropism</a>
+  <div class="tb-right">
+    <a class="btn" href="index.html">← Back to library</a>
+    <button class="iconbtn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Quick Guides · printable two-page sheets</p>
+    <h1>How to support an autistic person</h1>
+    <p class="lead">A growing grid of short, CDC-style guides — derived from this project's research drafts. Pick the <strong>row</strong> for the person's life stage and the <strong>column</strong> for who you are. Each cell is a printable front-and-back sheet; the <strong>“All”</strong> tiles open a cumulative reference for a whole column or row.</p>
+  </section>
+
+  <div class="status" id="status"></div>
+  <div class="legend">
+    <span><i class="swatch sw-ready"></i> Ready (PDF + web)</span>
+    <span><i class="swatch sw-planned"></i> Planned</span>
+    <span><i class="swatch sw-na"></i> Not applicable</span>
+    <span><i class="swatch sw-ready" style="background:var(--accent-bg);border-color:var(--accent)"></i> Row summary</span>
+    <span><i class="swatch sw-ready" style="background:var(--teal-bg);border-color:var(--teal)"></i> Column summary</span>
+  </div>
+
+  <div class="grid-card">
+    <table class="matrix" id="grid"></table>
+  </div>
+
+  <section class="notes">
+    <div class="note">
+      <h3>🟢 English seed — fine-tuning in progress</h3>
+      <p>The <strong>doctor / health-professional column</strong> and the <strong>primary-school row</strong> are complete first, as a representative vertical and horizontal slice. Once the template and content are fine-tuned, the remaining cells will be filled, and the whole grid will be translated into the library's other languages. Source for every sheet is tracked in the repository; <strong>all guides are AI-assisted</strong> and derived from the project's existing research drafts (the Monotropism brief, the Lifespan Practitioner &amp; Health-Care guide, the Family guide, and <em>Growing Up Monotropic</em>), with local source archives used where needed.</p>
+    </div>
+    <div class="note">
+      <h3>🧭 How the grid is organised</h3>
+      <p><strong>Rows</strong> = the autistic (monotropic) person, by life stage. <strong>Columns</strong> = the reader — the counterpart supporting them. <strong>Gender</strong> (male / female) is handled as a short, cross-cutting callout inside each sheet (on camouflaging and the under-identified female presentation) rather than as a separate axis, so the grid stays an 8&nbsp;×&nbsp;8 — flag this if you'd prefer a separate axis.</p>
+    </div>
+    <div class="note">
+      <h3>⚖️ About these guides</h3>
+      <p>Uses identity-first language (“autistic person”). <strong>Informational — not medical advice or a diagnostic tool.</strong> Monotropism is a powerful but still-developing theory; old-age and high-support evidence is thin. Always fit guidance to the individual in front of you. Read the full research drafts behind any sheet via the main library.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  Monotropism Quick Guides · derived from the project's research drafts ·
+  <a href="https://github.com/PieBru/monotropism">GitHub source</a> ·
+  AI-assisted translations and summaries · not medical advice
+</div></footer>
+
+<script>
+/* ============================================================
+   GRID DATA — edit here to add / change guides.
+   Each cell path is derived:  outputs/guidelines/g-<row>-<col>
+   Row summary:  g-row-<row>     Column summary:  g-col-<col>
+   ============================================================ */
+const ROWS = [
+  { id:"preschool",  label:"Pre-school",            ages:"ages 2–5" },
+  { id:"primary",    label:"Primary school",        ages:"ages 6–11" },
+  { id:"secondary",  label:"Secondary school",      ages:"ages 12–18" },
+  { id:"university", label:"University / college",  ages:"~18–25" },
+  { id:"worker",     label:"Adult worker",          ages:"employed" },
+  { id:"parent",     label:"Autistic parent",       ages:"adult" },
+  { id:"senior",     label:"Older adult / grandparent", ages:"60+" },
+  { id:"assisted",   label:"Assisted / high-support",   ages:"residential care" },
+];
+const COLS = [
+  { id:"parents",    label:"Parents",        sub:"& family" },
+  { id:"teachers",   label:"Teachers",       sub:"& educators" },
+  { id:"coaches",    label:"Coaches",        sub:"& activity leaders" },
+  { id:"doctor",     label:"Doctor",         sub:"& health pros" },
+  { id:"caregivers", label:"Support workers",sub:"& caregivers" },
+  { id:"colleagues", label:"Colleagues",     sub:"& employers" },
+  { id:"eldercare",  label:"Eldercare",      sub:"& nursing" },
+  { id:"peers",      label:"Peers",          sub:"& friends" },
+];
+
+// ready guides (filenames without g- prefix / extension)
+const READY = new Set([
+  // cells
+  "preschool-doctor","primary-doctor","secondary-doctor","university-doctor",
+  "worker-doctor","parent-doctor","senior-doctor","assisted-doctor",
+  "primary-parents","primary-teachers",
+  // summaries
+  "col-doctor","row-primary",
+]);
+// cells that are not meaningful for this combination
+const NA = new Set([
+  "preschool-colleagues","preschool-eldercare",
+  "primary-colleagues","primary-eldercare",
+  "secondary-colleagues","secondary-eldercare",
+  "assisted-teachers","assisted-coaches","assisted-colleagues","assisted-peers",
+]);
+
+const isReady = (s) => READY.has(s);
+const DIR = "outputs/guidelines/";
+
+/* ---------- render ---------- */
+function cellTile(row, col){
+  const key = row.id + "-" + col.id;
+  if (NA.has(key)) return `<td><div class="cell na"><span class="mk">—</span></div></td>`;
+  if (isReady(key))
+    return `<td><a class="cell ready" href="${DIR}g-${key}.pdf" target="_blank" rel="noopener"
+            title="${row.label} × ${col.label} — open PDF"><span class="mk">✓</span><span class="lbl">PDF</span></a></td>`;
+  return `<td><div class="cell planned" title="Planned"><span class="mk">·</span><span class="lbl">planned</span></div></td>`;
+}
+function rowTile(row){
+  const key = "row-" + row.id;
+  return isReady(key)
+    ? `<td><a class="cum-tile cum-row" href="${DIR}g-${key}.pdf" target="_blank" rel="noopener" title="Whole-row summary">All ↗</a></td>`
+    : `<td><div class="cum-tile cum-row planned" title="Planned">All</div></td>`;
+}
+function colTile(col){
+  const key = "col-" + col.id;
+  return isReady(key)
+    ? `<a class="cum-tile cum-col" href="${DIR}g-${key}.pdf" target="_blank" rel="noopener" title="Whole-column summary">All stages ↗</a>`
+    : `<div class="cum-tile cum-col planned" title="Planned">All stages</div>`;
+}
+
+let html = `<thead><tr>
+  <th class="corner">stage ▾ &nbsp; counterpart ▸</th>`;
+COLS.forEach(c => html += `<th class="col-head">${c.label}<span class="sub">${c.sub}</span></th>`);
+html += `<th class="corner">row<br>summary</th></tr>
+  <tr><td class="corner">column summary</td>`;
+COLS.forEach(c => html += `<td>${colTile(c)}</td>`);
+html += `<td class="corner"></td></tr></thead><tbody>`;
+
+ROWS.forEach(r => {
+  html += `<tr><td class="row-head">${r.label}<span class="ages">${r.ages}</span></td>`;
+  COLS.forEach(c => html += cellTile(r,c));
+  html += rowTile(r) + `</tr>`;
+});
+html += `</tbody>`;
+document.getElementById("grid").innerHTML = html;
+
+/* ---------- status ---------- */
+let readyCells=0, plannedCells=0, naCells=0;
+ROWS.forEach(r=>COLS.forEach(c=>{
+  const k=r.id+"-"+c.id;
+  if(NA.has(k))naCells++; else if(isReady(k))readyCells++; else plannedCells++;
+}));
+const totalCells = ROWS.length*COLS.length - naCells;
+document.getElementById("status").innerHTML = `
+  <div class="stat"><div class="n">${readyCells}/${totalCells}</div><div class="l">cells ready</div></div>
+  <div class="stat"><div class="n">${plannedCells}</div><div class="l">cells planned</div></div>
+  <div class="stat"><div class="n">${naCells}</div><div class="l">not applicable</div></div>
+  <div class="stat"><div class="n">${ROWS.filter(r=>isReady("row-"+r.id)).length}/${ROWS.length}</div><div class="l">row summaries</div></div>
+  <div class="stat"><div class="n">${COLS.filter(c=>isReady("col-"+c.id)).length}/${COLS.length}</div><div class="l">col summaries</div></div>`;
+
+/* ---------- theme ---------- */
+const tb = document.getElementById("themeBtn");
+tb.addEventListener("click", () => {
+  const cur = document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
+  document.documentElement.setAttribute("data-theme", cur);
+  try{ localStorage.setItem("mono-theme", cur); }catch(e){}
+});
+</script>
+</body>
+</html>

@@ -34,6 +34,16 @@ A cited research brief extending the foundational theory (#1). Maps monotropism'
 
 ---
 
+## 📋 Quick Guides — printable two-page sheets
+
+A growing grid of short, **CDC-style quick guides** derived from the documents above. Pick the **row** (the autistic person's life stage) and the **column** (who you are — parent, teacher, coach, doctor, support worker, colleague, eldercare, peer). Each cell is a printable front-and-back sheet; the **“All”** tiles open a cumulative reference for a whole row or column.
+
+The interactive grid lives at **[`guidelines.html`](guidelines.html)** (also linked as *“Quick guides”* in the site top bar). Source Markdown and rendered PDFs sit in [`outputs/guidelines/`](outputs/guidelines/), named `g-<row>-<col>.md` (cells), `g-row-<row>.md` (row summaries) and `g-col-<col>.md` (column summaries).
+
+**Status — English seed (fine-tuning in progress):** the *doctor / health-professional* column and the *primary-school* row are complete first (10 cells + 2 cumulative sheets). Remaining cells are planned; the whole grid will be translated into the library's other languages once the English template is finalised. Gender (male/female) is handled as a cross-cutting callout inside each sheet rather than a separate axis.
+
+---
+
 ## 🧭 At a glance
 
 Legend: 📝 = Markdown source &nbsp;·&nbsp; 📄 = PDF download
