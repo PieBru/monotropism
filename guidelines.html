@@ -25,6 +25,10 @@
 
 
 
+
+
+
+
 :root { --maxw: 1180px; --radius: 12px; }
 [data-theme="dark"]{
   --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
@@ -60,32 +64,31 @@ a:hover{text-decoration:underline;}
 
 /* topbar */
 .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(12px);
-  background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--border-soft);}
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--border-soft);}
 .topbar-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 22px;}
-.brand{display:inline-flex;align-items:center;gap:9px;color:var(--fg);font-weight:600;font-size:18px;letter-spacing:-.01em;}
+.brand{display:inline-flex;align-items:center;gap:9px;color:var(--fg);font-family:var(--font-serif);font-weight:600;font-size:18px;letter-spacing:-.01em;}
 .brand:hover{text-decoration:none;color:var(--fg);}
 .mark{display:inline-block;width:1em;height:1em;color:var(--accent);flex:none;}
 .brand .mark{font-size:22px;}
 .brand-stack{display:flex;flex-direction:column;line-height:1.12;}
 .brand-name{font-weight:600;font-size:18px;letter-spacing:-.01em;}
-.brand-motto{font-size:11px;font-weight:500;color:var(--fg-faint);letter-spacing:.01em;margin-top:1px;}
+.brand-motto{font-family:var(--font-sans);font-size:11px;font-weight:500;color:var(--fg-faint);letter-spacing:.01em;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:10px;}
-.btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 13px;font-size:14px;font-weight:500;
-  color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-sans);font-size:14px;font-weight:600;padding:9px 15px;border-radius:10px;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:background .16s ease,color .16s ease,border-color .16s ease,transform .08s ease;}
+.btn:active{transform:translateY(1px);}
 .btn:hover{color:var(--fg);border-color:var(--accent);}
 .btn-ghost{background:transparent;color:var(--fg-soft);border-color:var(--border);}
 .btn-ghost:hover{color:var(--fg);border-color:var(--accent);text-decoration:none;}
 .btn-ghost.active{color:var(--accent);border-color:var(--accent);background:var(--accent-bg);}
 .btn .ar{font-size:12px;opacity:.85;}
-.langselect{font-size:14px;font-weight:600;color:var(--fg);background:var(--surface);border:1px solid var(--border);
+.langselect{font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--fg);background:var(--surface);border:1px solid var(--border);
   border-radius:10px;height:38px;padding:0 30px 0 12px;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;
   background-image:linear-gradient(45deg,transparent 50%,var(--fg-soft) 50%),linear-gradient(135deg,var(--fg-soft) 50%,transparent 50%);
   background-position:calc(100% - 14px) 17px,calc(100% - 9px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;
   transition:border-color .16s ease,color .16s ease;}
 .langselect:hover{border-color:var(--accent);color:var(--fg);}
 .langselect:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring);}
-.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0;font-size:16px;
-  color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:38px;height:38px;padding:0;font-family:var(--font-sans);font-size:14px;font-weight:500;color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease,transform .08s ease;}
 .iconbtn:hover{color:var(--fg);border-color:var(--accent);}
 .iconbtn svg{width:17px;height:17px;}
 @media (max-width:640px){
@@ -159,6 +162,17 @@ footer a{color:var(--fg-soft);}
 
 
 html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
+
+html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
+
+html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
+.tb-left{display:flex;align-items:center;gap:10px;}
+
+html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
+.tb-left{display:flex;align-items:center;gap:10px;}
+
+html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,9px 17px;}
+.tb-left{display:flex;align-items:center;gap:10px;}
 </style>
 </head>
 <body>
@@ -1341,8 +1355,10 @@ function renderTopbar(code){
   function nav(label, href, active){ return '<a class="btn btn-ghost' + (active?" active":"") + '" href="' + href + '">' + esc(label) + ' <span class="ar">\u2197</span></a>'; }
   document.getElementById("topbar").innerHTML =
     '<div class="topbar-inner">' +
-      '<a class="brand" href="index.html#/' + code + '" aria-label="' + esc(t.brand) + '">' + MARK +
-        '<span class="brand-stack"><span class="brand-name">' + esc(t.brand) + '</span><span class="brand-motto">' + esc(t.motto) + '</span></span></a>' +
+      '<div class="tb-left">' +
+        '<a class="brand" href="index.html#/' + code + '" aria-label="' + esc(t.brand) + '">' + MARK +
+          '<span class="brand-stack"><span class="brand-name">' + esc(t.brand) + '</span><span class="brand-motto">' + esc(t.motto) + '</span></span></a>' +
+      '</div>' +
       '<div class="tb-right">' + langSelect +
         nav(t.guidesBtn, "guidelines.html#/" + code, true) +
         nav(t.draftsBtn, "index.html#/" + code + "/drafts", false) +
