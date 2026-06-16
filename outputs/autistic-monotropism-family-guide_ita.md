@@ -167,7 +167,7 @@ Gli esiti negli adulti autistici anziani sono, in media, **scarsi**: tassi più 
 
 Se siete il **figlio/a adulto/a** di un genitore autistico — o il/la suo/a partner/coniuge — potreste affrontare un'**inversione dei ruoli**: la persona che un tempo si prendeva cura di voi (o reggeva la propria vita) ha ora bisogno di supporto. I temi di pianificazione con cui le famiglie in questa situazione lottano includono **casa, trasporto, accordi legali e finanziari, benefici, reti sociali e desideri di fine vita** (mentalhealthandaging.com). Iniziate queste conversazioni **presto, con dolcezza e con il vostro familiare che guida** — ben prima di una crisi.
 
-Se il vostro familiare autistico era in precedenza sostenuto dai *suoi* genitori ora anziani (i vostri nonni), lo „tsunami d'argento" di adulti autistici che invecchiano e di caregiver che invecchiano rende la pianificazione anticipata ancora più importante.
+Se il vostro familiare autistico era in precedenza sostenuto dai *suoi* genitori ora anziani (i vostri nonni), lo „tsunami d'argento" di adulti autistici che invecchiano e di assistenti che invecchiano rende la pianificazione anticipata ancora più importante.
 
 ### 5.6 Case di cura e ospedali
 
@@ -195,17 +195,17 @@ La famiglia allargata è una **risorsa di resilienza sottovalutata** per le pers
 
 ---
 
-## Parte 7 — Prendersi cura di voi stessi (benessere familiare e del caregiver)
+## Parte 7 — Prendersi cura di voi stessi (benessere familiare e dell'assistente)
 
 Non si può versare da una tazza vuota, e lo stress familiare nell'autismo è **reale e misurabile** — non un segno di amare meno il vostro familiare.
 
-- **Il burnout dei genitori/caregiver è comune.** I genitori di bambini autistici mostrano più stress, ansia e depressione dei genitori di bambini neurotipici; lo stress cronico ha reali conseguenze fisiche e mentali (Yesilkaya & Magallón-Neri, 2024; Frontiers, 2025; Schieve, 2007, via ARI; childmind.org). Nominarlo è il primo passo.
-- **Cosa aiuta davvero (con evidenza):** gli approcci basati su accettazione e auto-compassione riducono lo stress genitoriale (RCT pilota di ACT; Neff; Torbet, 2019; Life Skills Advocate); gli interventi basati sulla mindfulness aiutano; **la soddisfazione dei servizi e un buon supporto** attutiscono il benessere del caregiver (Fong, 2023); il supporto tra pari di altre famiglie affermative riduce l'isolamento.
+- **Il burnout dei genitori/assistenti è comune.** I genitori di bambini autistici mostrano più stress, ansia e depressione dei genitori di bambini neurotipici; lo stress cronico ha reali conseguenze fisiche e mentali (Yesilkaya & Magallón-Neri, 2024; Frontiers, 2025; Schieve, 2007, via ARI; childmind.org). Nominarlo è il primo passo.
+- **Cosa aiuta davvero (con evidenza):** gli approcci basati su accettazione e auto-compassione riducono lo stress genitoriale (RCT pilota di ACT; Neff; Torbet, 2019; Life Skills Advocate); gli interventi basati sulla mindfulness aiutano; **la soddisfazione dei servizi e un buon supporto** attutiscono il benessere dell'assistente (Fong, 2023); il supporto tra pari di altre famiglie affermative riduce l'isolamento.
 - **Trovate la vostra gente.** I gruppi di genitori affermativi della neurodiversità (di persona o online) cambiano la vita; evitate i gruppi centrati sul lutto/cura, che tendono ad approfondire la disperazione. Includete spazi **guidati da autistic** nella vostra lettura e ascolto.
 - **Prendetevi una vera pausa.** Avete diritto di riposarvi, di avere la vostra vita, di chiedere e accettare aiuto. Il vostro benessere fa parte del sistema di supporto del vostro familiare, non qualcosa di separato.
 - **Elaborate il lutto fuori dalla relazione.** È normale elaborare il lutto per la vita che avevate immaginato. Fate questo lavoro con terapia, partner o gruppo tra pari — non su o attraverso il vostro familiare autistico.
 - **Proteggete anche il benessere dei fratelli/sorelle** (vedi §3.4).
-- **Per i figli adulti caregiver di familiari autistici anziani:** i rischi di burnout della cura degli anziani si applicano anche a voi, *in aggiunta* alla scarsezza di servizi informati sull'autismo. Costruite un team di supporto presto; non potete e non dovreste farlo da soli.
+- **Per i figli adulti assistenti di familiari autistici anziani:** i rischi di burnout della cura degli anziani si applicano anche a voi, *in aggiunta* alla scarsezza di servizi informati sull'autismo. Costruite un team di supporto presto; non potete e non dovreste farlo da soli.
 
 ---
 
@@ -303,7 +303,7 @@ Non si può versare da una tazza vuota, e lo stress familiare nell'autismo è **
 46. Lai, M.-C. & Baron-Cohen, S. (2015). Identifying the lost generation of adults with autism spectrum conditions. *Lancet Psychiatry*. (Citato in Klein et al., 2024.)
 47. Klein, C. B. et al. (2023). Self-reported cognitive decline in middle-aged and older autistic adults. (Citato nell'editoriale ARI, rif 43.)
 
-### Benessere del caregiver e cornice affermativa
+### Benessere dell'assistente e cornice affermativa
 48. Frontiers in Psychology (2025). Latent profile analysis of parental burnout among parents of children with and without ASD. https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1581321/full
 49. Autism Research Institute. Research on parental stress & autism. https://autism.org/parental-stress
 50. Child Mind Institute. Self-care tips for parents to prevent burnout. https://childmind.org/article/fighting-caregiver-burnout-special-needs-kids

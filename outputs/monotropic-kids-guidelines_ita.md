@@ -4,7 +4,7 @@
 
 ---
 
-> **A chi è rivolta.** Questa guida è per gli adulti che circondano un **bambino autistico di circa 7–11 anni** la cui mente funziona in modo *monotropico* — una mente che si concentra in modo profondo e intenso su poche cose alla volta. Comprende **genitori e caregiver**, **nonni, zii, zie e altri familiari**, **insegnanti di scuola primaria** e gli **allenatori e istruttori** che seguono lo sport e le attività del bambino. Non è un manuale clinico. È una compagna in linguaggio semplice che vi aiuta a capire il bambino, a connettervi con lui e a rendere casa, scuola e campo sportivo più facili e più gioiosi.
+> **A chi è rivolta.** Questa guida è per gli adulti che circondano un **bambino autistico di circa 7–11 anni** la cui mente funziona in modo *monotropico* — una mente che si concentra in modo profondo e intenso su poche cose alla volta. Comprende **genitori e assistenti**, **nonni, zii, zie e altri familiari**, **insegnanti di scuola primaria** e gli **allenatori e istruttori** che seguono lo sport e le attività del bambino. Non è un manuale clinico. È una compagna in linguaggio semplice che vi aiuta a capire il bambino, a connettervi con lui e a rendere casa, scuola e campo sportivo più facili e più gioiosi.
 
 > **Una nota sul linguaggio.** La maggior parte delle persone autistiche preferisce il **linguaggio con l'identità per prima** („bambino autistico"), quindi questa guida lo usa. Alcune famiglie preferiscono „bambino con autismo" — seguite la preferenza del bambino e della famiglia. Questa guida evita deliberatamente parole come *disturbo, anormale, carente, tragedia* o *fardello*, tranne quando spiega idee che la famiglia può aver ricevuto altrove. L'autismo è una **differenza** — con sfide reali e punti di forza reali.
 
@@ -36,7 +36,7 @@ In tutta la guida trasformeremo ciascuno di questi punti in **cose pratiche e am
 
 ---
 
-## Parte 1 — Per genitori e caregiver
+## Parte 1 — Per genitori e assistenti
 
 Conoscete vostro figlio meglio di chiunque altro. Queste idee sono strumenti da provare, non regole da imporre. Il dono più grande che potete fare a un bambino monotropico è un ambiente che funzioni *con* la sua attenzione anziché contro di essa.
 
