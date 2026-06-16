@@ -1,516 +1,784 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Monotropism — An Interest-Based Account of Autism</title>
-  <meta name="description" content="Documentation library for Monotropism, a cognitive theory of autism developed by Dinah Murray, Wenn Lawson, and Mike Lesser. Guides for practitioners, health-care professionals, families, and relatives.">
-  <meta name="author" content="PieBru">
-  <style>
-    /* ============================================================
-       Monotropism documentation — academic landing page
-       No external dependencies. System serif/sans stacks only.
-       To add a document, edit the DOCUMENTS array in the <script>
-       at the bottom of this file.
-       ============================================================ */
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monotropism — An Interest-Based Account of Autism</title>
+<meta name="description" content="Monotropism: a cognitive theory of autism developed by Dinah Murray, Wenn Lawson, and Mike Lesser. A growing library of research drafts and neuroaffirming guides, available in several languages.">
+<meta name="author" content="PieBru">
 
-    :root {
-      --paper:        #fbfaf6;
-      --paper-2:      #f4f1e8;
-      --ink:          #1f1d1a;
-      --ink-soft:     #4a463f;
-      --ink-faint:    #756f63;
-      --rule:         #d8d2c2;
-      --rule-soft:    #e7e2d4;
-      --accent:       #2c5282;   /* deep slate blue */
-      --accent-soft:  #eaf0f7;
-      --oxblood:      #7c2d2d;
-      --maxw:         880px;
-      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, Cambria, "Times New Roman", serif;
-      --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
+<!-- Prevent theme flash: read stored/saved theme before paint -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("mono-theme");
+    if (t !== "light" && t !== "dark") t = "dark"; /* default dark */
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
 
-    * { box-sizing: border-box; }
+<style>
+/* ============================================================
+   Monotropism — landing page
+   Single file. Modern, minimalistic. Dark by default.
+   To add a research draft, append an object to DOCS below.
+   ============================================================ */
 
-    html { scroll-behavior: smooth; }
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino,
+    "Hoefler Text", Georgia, Cambria, "Times New Roman", serif;
 
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 18px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+  --maxw: 1080px;
+  --radius: 14px;
+  --radius-sm: 9px;
+}
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; text-underline-offset: 2px; }
+/* ---- Dark theme (default) ---- */
+[data-theme="dark"] {
+  --bg:        #0d0f13;
+  --bg-grad-a: #0d0f13;
+  --bg-grad-b: #0f1218;
+  --surface:   #14171e;
+  --surface-2: #181c25;
+  --surface-hi:#1d222c;
+  --fg:        #e9ebf0;
+  --fg-soft:   #aeb4c0;
+  --fg-faint:  #767d8c;
+  --border:    #232833;
+  --border-soft:#1b1f27;
+  --accent:    #8aa6ff;
+  --accent-fg: #0d0f13;
+  --accent-2:  #6d86e6;
+  --accent-bg: rgba(138,166,255,0.12);
+  --accent-ring: rgba(138,166,255,0.35);
+  --glow:      rgba(138,166,255,0.16);
+  --shadow:    0 10px 40px rgba(0,0,0,0.45);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.35);
+  --selection: rgba(138,166,255,0.28);
+}
 
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+/* ---- Light theme ---- */
+[data-theme="light"] {
+  --bg:        #f6f7f9;
+  --bg-grad-a: #f7f8fa;
+  --bg-grad-b: #eef0f4;
+  --surface:   #ffffff;
+  --surface-2: #ffffff;
+  --surface-hi:#f2f4f8;
+  --fg:        #1a1d24;
+  --fg-soft:   #4c5363;
+  --fg-faint:  #838b9a;
+  --border:    #e4e8ee;
+  --border-soft:#eef1f5;
+  --accent:    #2f5fae;
+  --accent-fg: #ffffff;
+  --accent-2:  #264f93;
+  --accent-bg: rgba(47,95,174,0.09);
+  --accent-ring: rgba(47,95,174,0.30);
+  --glow:      rgba(47,95,174,0.12);
+  --shadow:    0 12px 40px rgba(20,30,55,0.10);
+  --shadow-sm: 0 1px 6px rgba(20,30,55,0.06);
+  --selection: rgba(47,95,174,0.18);
+}
 
-    /* ---------- Masthead ---------- */
-    .masthead {
-      border-bottom: 1px solid var(--rule);
-      background:
-        linear-gradient(var(--paper), var(--paper));
-    }
-    .masthead-inner {
-      max-width: 1040px; margin: 0 auto; padding: 26px 24px 0;
-      text-align: center;
-    }
-    .eyebrow {
-      font-family: var(--sans);
-      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-faint); margin: 0 0 10px;
-    }
-    .wordmark {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(34px, 6vw, 52px);
-      letter-spacing: -0.01em;
-      margin: 0; line-height: 1.05;
-    }
-    .wordmark a { color: var(--ink); }
-    .tagline {
-      font-style: italic;
-      color: var(--ink-soft);
-      margin: 8px 0 0;
-      font-size: clamp(15px, 2.2vw, 19px);
-    }
-    .double-rule {
-      max-width: 1040px; margin: 18px auto 0; padding: 0 24px;
-    }
-    .double-rule::before {
-      content: ""; display: block;
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      height: 4px;
-    }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    /* ---------- Nav ---------- */
-    nav.primary {
-      font-family: var(--sans);
-      font-size: 13px; letter-spacing: 0.04em;
-      text-align: center;
-      padding: 10px 24px 14px;
-      max-width: 1040px; margin: 0 auto;
-    }
-    nav.primary a {
-      color: var(--ink-soft);
-      margin: 0 12px;
-      text-transform: uppercase;
-    }
-    nav.primary a:hover { color: var(--accent); text-decoration: none; }
-    nav.primary .sep { color: var(--rule); }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 560px at 50% -8%, var(--glow), transparent 60%),
+    linear-gradient(180deg, var(--bg-grad-a), var(--bg-grad-b));
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .4s ease, color .4s ease;
+}
+::selection { background: var(--selection); }
 
-    /* ---------- Section headings ---------- */
-    section { padding: 56px 0; }
-    section + section { border-top: 1px solid var(--rule-soft); }
-    .section-label {
-      font-family: var(--sans);
-      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-faint);
-      text-align: center; margin: 0 0 8px;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(24px, 4vw, 32px);
-      text-align: center;
-      margin: 0 0 28px;
-      letter-spacing: -0.01em;
-    }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ---------- Abstract ---------- */
-    .abstract { text-align: left; }
-    .abstract .lede {
-      font-size: clamp(18px, 2.3vw, 21px);
-      line-height: 1.72;
-      color: var(--ink);
-      margin: 0 0 24px;
-    }
-    .abstract .lede::first-letter {
-      font-family: var(--serif);
-      float: left;
-      font-size: 4.1em;
-      line-height: 0.82;
-      font-weight: 600;
-      padding: 6px 12px 0 0;
-      color: var(--accent);
-    }
-    .abstract .citation {
-      font-family: var(--sans);
-      font-size: 12px; color: var(--ink-faint);
-      border-top: 1px solid var(--rule-soft);
-      padding-top: 14px; margin-top: 4px;
-    }
-    .cta {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 14px;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 9px 18px;
-      border-radius: 2px;
-      margin-top: 22px;
-      transition: background .15s ease, color .15s ease;
-    }
-    .cta:hover { background: var(--accent); color: #fff; text-decoration: none; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
 
-    /* ---------- Key concepts ---------- */
-    .concepts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px 32px;
-      margin-top: 36px;
-    }
-    .concept dt {
-      font-family: var(--sans);
-      font-variant: small-caps;
-      letter-spacing: 0.06em;
-      font-weight: 600;
-      color: var(--accent);
-      font-size: 14px;
-      margin-bottom: 2px;
-    }
-    .concept dd {
-      margin: 0 0 8px;
-      font-size: 15.5px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
+/* ---------- Brand mark (attention tunnel) ---------- */
+.mark { display: inline-block; width: 1em; height: 1em; color: var(--accent); flex: none; }
 
-    /* ---------- Documents library ---------- */
-    .lib-toolbar {
-      display: flex; justify-content: center; margin-bottom: 28px;
-    }
-    .lib-toolbar input {
-      width: 100%; max-width: 420px;
-      font-family: var(--sans);
-      font-size: 14px;
-      padding: 10px 14px;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      background: #fff;
-      color: var(--ink);
-    }
-    .lib-toolbar input:focus {
-      outline: none; border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-soft);
-    }
+/* ============================================================
+   Top bar
+   ============================================================ */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  border-bottom: 1px solid var(--border-soft);
+}
+.topbar-inner {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 11px 22px;
+}
+.tb-left, .tb-right { display: flex; align-items: center; gap: 10px; }
 
-    .cat-group { margin-bottom: 40px; }
-    .cat-label {
-      font-family: var(--sans);
-      font-variant: small-caps;
-      letter-spacing: 0.08em;
-      font-size: 13px; font-weight: 600;
-      color: var(--oxblood);
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 6px; margin-bottom: 18px;
-    }
+.brand {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--fg); font-family: var(--font-serif);
+  font-weight: 600; font-size: 18px; letter-spacing: -0.01em;
+}
+.brand:hover { text-decoration: none; color: var(--fg); }
+.brand .mark { font-size: 22px; }
 
-    .doc-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-    @media (min-width: 920px) {
-      .doc-grid { grid-template-columns: 1fr 1fr; }
-    }
+.iconbtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 38px; min-width: 38px; padding: 0 11px;
+  font-family: var(--font-sans); font-size: 14px; font-weight: 500;
+  color: var(--fg-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease, transform .08s ease;
+}
+.iconbtn:hover { color: var(--fg); border-color: var(--accent); background: var(--surface-hi); }
+.iconbtn:active { transform: translateY(1px); }
+.iconbtn svg { width: 17px; height: 17px; }
+.iconbtn.theme { padding: 0; width: 38px; }
 
-    .doc-card {
-      background: #fff;
-      border: 1px solid var(--rule-soft);
-      border-top: 3px solid var(--accent);
-      padding: 22px 22px 18px;
-      border-radius: 2px;
-      display: flex; flex-direction: column;
-      transition: box-shadow .18s ease, transform .18s ease;
-    }
-    .doc-card:hover {
-      box-shadow: 0 6px 22px rgba(31,29,26,.08);
-      transform: translateY(-2px);
-    }
-    .doc-audience {
-      font-family: var(--sans);
-      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 6px;
-    }
-    .doc-title {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 1.3;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .doc-desc {
-      font-size: 15px; line-height: 1.6;
-      color: var(--ink-soft);
-      margin: 0 0 16px;
-      flex: 1;
-    }
-    .lang-list { border-top: 1px solid var(--rule-soft); padding-top: 12px; }
-    .lang-row {
-      display: flex; align-items: center; gap: 10px;
-      padding: 6px 0;
-      font-family: var(--sans);
-      font-size: 13.5px;
-    }
-    .lang-row + .lang-row { border-top: 1px dotted var(--rule-soft); }
-    .lang-name {
-      flex: 0 0 92px;
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .lang-actions { margin-left: auto; display: flex; gap: 14px; }
-    .lang-actions a {
-      color: var(--accent);
-      display: inline-flex; align-items: center; gap: 4px;
-    }
-    .lang-actions a.pdf { color: var(--ink-soft); }
-    .lang-actions a:hover { text-decoration: underline; }
-    .arrow { font-size: 11px; opacity: .8; }
+/* Language switch dropdown */
+.langswitch { position: relative; }
+.langswitch .iconbtn .code { font-weight: 600; color: var(--fg); }
+.langmenu {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  min-width: 190px; padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  z-index: 60;
+}
+.langmenu[hidden] { display: none; }
+.langmenu-item {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 9px 10px; border: 0; background: transparent;
+  font-family: var(--font-sans); font-size: 14.5px; color: var(--fg-soft);
+  border-radius: 7px; cursor: pointer; text-align: left;
+  transition: background .14s ease, color .14s ease;
+}
+.langmenu-item:hover { background: var(--surface-hi); color: var(--fg); }
+.langmenu-item .flag { font-size: 17px; }
+.langmenu-item.active { color: var(--accent); font-weight: 600; }
+.langmenu-item .mi { margin-left: auto; opacity: 0; color: var(--accent); }
+.langmenu-item.active .mi { opacity: 1; }
 
-    .empty {
-      text-align: center; color: var(--ink-faint);
-      font-style: italic; padding: 24px 0;
-    }
+/* ============================================================
+   Home (language selection)
+   ============================================================ */
+.home { padding: clamp(48px, 9vh, 96px) 0 64px; text-align: center; }
+.home-hero { display: flex; flex-direction: column; align-items: center; }
+.home .mark-big {
+  font-size: 60px; color: var(--accent);
+  filter: drop-shadow(0 0 28px var(--glow));
+  margin-bottom: 6px;
+}
+.home h1 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(40px, 8vw, 68px);
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin: 6px 0 4px;
+}
+.home .tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--fg-soft);
+  font-size: clamp(17px, 2.4vw, 22px);
+  margin: 0 0 8px;
+}
+.home .eyebrow {
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--fg-faint); margin: 18px 0 6px;
+}
+.home .lead {
+  max-width: 560px; margin: 0 auto;
+  color: var(--fg-soft); font-size: 15.5px; line-height: 1.7;
+}
 
-    /* ---------- Footer ---------- */
-    footer {
-      border-top: 1px solid var(--rule);
-      background: var(--paper-2);
-      font-family: var(--sans);
-      font-size: 13px; color: var(--ink-faint);
-      padding: 28px 0;
-      text-align: center;
-      line-height: 1.7;
-    }
-    footer a { color: var(--ink-soft); }
-    footer .disc {
-      max-width: 620px; margin: 10px auto 0;
-      font-size: 12px; font-style: italic;
-    }
+.lang-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  max-width: 820px; margin: 34px auto 0;
+}
+.lang-card {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  text-align: left;
+  padding: 20px 20px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+.lang-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  background: var(--surface-hi);
+}
+.lang-card .flag { font-size: 30px; line-height: 1; margin-bottom: 6px; }
+.lang-card .ln { font-weight: 600; font-size: 18px; }
+.lang-card .lc { font-size: 13px; color: var(--fg-faint); }
+.lang-card .go {
+  position: absolute; top: 18px; right: 18px;
+  color: var(--accent); opacity: 0; font-size: 18px;
+  transition: opacity .16s ease, transform .16s ease;
+}
+.lang-card:hover .go { opacity: 1; transform: translateX(2px); }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .doc-card { transition: none; }
-    }
-  </style>
+/* ============================================================
+   Language landing view
+   ============================================================ */
+.langview { padding: clamp(36px, 6vh, 64px) 0 72px; }
+.lang-hero { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+.lang-hero .mark-big {
+  font-size: 44px; color: var(--accent);
+  filter: drop-shadow(0 0 22px var(--glow));
+}
+.lang-hero h1 {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(32px, 6vw, 50px);
+  letter-spacing: -0.02em; line-height: 1.05;
+  margin: 8px 0 4px;
+}
+.lang-hero .tagline {
+  font-family: var(--font-serif); font-style: italic;
+  color: var(--fg-soft); font-size: clamp(16px, 2.2vw, 20px);
+  margin: 2px 0 18px;
+}
+.lang-hero .intro { color: var(--fg-soft); font-size: 16px; margin: 0 auto; max-width: 640px; }
+
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.section-head h2 {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(22px, 3.4vw, 28px); letter-spacing: -0.01em; margin: 0;
+}
+.section-head .count {
+  font-size: 13px; color: var(--fg-faint);
+  background: var(--surface); border: 1px solid var(--border-soft);
+  padding: 4px 10px; border-radius: 999px;
+}
+.divider { height: 1px; background: var(--border); margin: 10px 0 22px; }
+
+.cat { margin-bottom: 40px; }
+.cat-title {
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 14px;
+}
+.cat-list { display: flex; flex-direction: column; gap: 14px; }
+
+/* Document card */
+.doc {
+  display: flex; gap: 20px; align-items: center;
+  padding: 22px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  transition: border-color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.doc:hover { border-color: var(--border); box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.doc-main { flex: 1 1 auto; min-width: 0; }
+.doc .audience {
+  display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-faint); margin-bottom: 6px;
+}
+.doc-title {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(18px, 2.4vw, 21px); line-height: 1.3;
+  margin: 0 0 6px; color: var(--fg);
+}
+.doc-desc { margin: 0; color: var(--fg-soft); font-size: 15px; line-height: 1.6; }
+.doc-actions { flex: 0 0 auto; display: flex; gap: 9px; align-items: center; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-sans); font-size: 14px; font-weight: 600;
+  padding: 9px 15px; border-radius: 10px; border: 1px solid transparent;
+  cursor: pointer; white-space: nowrap;
+  transition: background .16s ease, color .16s ease, border-color .16s ease, transform .08s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--accent); color: var(--accent-fg); }
+.btn-primary:hover { background: var(--accent-2); text-decoration: none; }
+.btn-ghost { background: transparent; color: var(--fg-soft); border-color: var(--border); }
+.btn-ghost:hover { color: var(--fg); border-color: var(--accent); text-decoration: none; }
+.btn .ar { font-size: 12px; opacity: .85; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 30px 0 46px;
+  font-size: 13.5px; color: var(--fg-faint);
+  text-align: center; line-height: 1.7;
+}
+.site-footer .note { max-width: 600px; margin: 0 auto 10px; }
+.site-footer .ai {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12.5px; font-style: italic; color: var(--fg-faint);
+}
+.site-footer .ai::before { content: "✦"; color: var(--accent); opacity: .8; font-style: normal; }
+.site-footer a { color: var(--fg-soft); }
+
+/* view fade */
+.view { animation: fade .4s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .doc { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .doc-actions { width: 100%; }
+  .doc-actions .btn { flex: 1; justify-content: center; }
+  .brand .brand-name { display: none; }
+  .langswitch .iconbtn .code { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, .view { animation: none !important; transition: none !important; }
+}
+</style>
 </head>
 <body>
 
-  <header class="masthead">
-    <div class="masthead-inner">
-      <p class="eyebrow">A Documentation Library</p>
-      <h1 class="wordmark"><a href="#top">Monotropism</a></h1>
-      <p class="tagline">An Interest-Based Account of Autism</p>
-    </div>
-    <div class="double-rule" aria-hidden="true"></div>
-    <nav class="primary" aria-label="Primary">
-      <a href="#summary">Summary</a>
-      <span class="sep">·</span>
-      <a href="#documents">Documents</a>
-      <span class="sep">·</span>
-      <a href="https://github.com/PieBru/monotropism">GitHub</a>
-    </nav>
+  <!-- ===== Top bar (populated per-view by JS) ===== -->
+  <header class="topbar">
+    <div class="topbar-inner" id="topbar"></div>
   </header>
 
-  <main id="top">
+  <!-- ===== Main view (populated by JS) ===== -->
+  <main id="app"></main>
 
-    <!-- ============ EXECUTIVE SUMMARY ============ -->
-    <section id="summary" class="abstract">
-      <div class="wrap">
-        <p class="section-label">Executive Summary</p>
-        <h2 class="section-title">What is Monotropism?</h2>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="footer"></footer>
 
-        <p class="lede">Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by autistic researchers Dinah Murray, Wenn Lawson, and Mike Lesser from the early 1990s onward, the theory proposes that monotropic minds tend to focus attention intensely on a narrow set of interests at any given time, leaving fewer processing resources for everything else. This single idea has been used to account for the full range of autistic traits—from sensory sensitivities and social differences to focused expertise and executive dysfunction—in a unified, non-pathologising framework. Within the autistic community, monotropism is arguably the dominant theoretical lens for understanding autism, and it is increasingly entering academic and professional discourse. This brief surveys the theory's origins, core claims, supporting evidence, relationship to other frameworks, and open questions.</p>
+<script>
+/* ============================================================
+   Monotropism landing page — data + router
+   ------------------------------------------------------------
+   DOCS: append an object to add a research draft.
+     - cat:    "theory" | "practitioner" | "family" | "kids"
+     - stem:   file stem (paths auto-built as outputs/<stem>[_xx].{html,pdf})
+     - langs:  languages this draft is published in
+     - content: per-language { title, audience, desc }
+   To add a NEW language, add it to LANGS + LANG_SUFFIX + I18N.
+   ============================================================ */
 
-        <p class="citation">Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156.</p>
+/* ---- Languages (order = display order) ---- */
+const LANGS = [
+  { code: "en", flag: "🇬🇧" },
+  { code: "it", flag: "🇮🇹" },
+  { code: "fr", flag: "🇫🇷" },
+  { code: "es", flag: "🇪🇸" },
+  { code: "de", flag: "🇩🇪" },
+];
 
-        <a class="cta" href="https://github.com/PieBru/monotropism/blob/main/monotropism.md">Read the full brief &nbsp;→</a>
+/* file suffix per language (English = none) */
+const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de" };
 
-        <dl class="concepts" aria-label="Key concepts">
-          <div class="concept">
-            <dt>Attention tunnels</dt>
-            <dd>Few interests are aroused at once, but each holds a deep, intense share of attention—everything outside the tunnel is processed minimally.</dd>
-          </div>
-          <div class="concept">
-            <dt>Monotropic vs. polytropic</dt>
-            <dd>A difference in how attention is allocated, not a deficit. Both styles have distinct strengths and costs.</dd>
-          </div>
-          <div class="concept">
-            <dt>Autistic inertia</dt>
-            <dd>Difficulty starting, stopping, or switching tracks of attention—the cognitive cost of a fully-loaded mind.</dd>
-          </div>
-          <div class="concept">
-            <dt>Double empathy problem</dt>
-            <dd>Communication breakdown between autistic and non-autistic people is bidirectional, not a one-way deficit (Milton, 2012).</dd>
-          </div>
-          <div class="concept">
-            <dt>Flow &amp; special interests</dt>
-            <dd>Deep focus is a wellspring of expertise, creativity, and wellbeing when it is protected rather than interrupted.</dd>
-          </div>
-        </dl>
+/* ---- Localised UI strings ---- */
+const I18N = {
+  en: {
+    name: "English", draftsWord: "drafts",
+    tagline: "An Interest-Based Account of Autism",
+    intro: "Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by Dinah Murray, Wenn Lawson and Mike Lesser, it offers a unified, non-pathologising lens on autistic life.",
+    choose: "Choose a language", lead: "Select a language to browse the research drafts and guides.",
+    draftsHead: "Research drafts", draftsCount: "{n} available",
+    read: "Read", pdf: "PDF", open: "open",
+    allLanguages: "All languages", languages: "Languages", theme: "Toggle theme", home: "Home",
+    aiNote: "Translations are AI-assisted and may contain inaccuracies.",
+    footer: "Identity-first language (\u201Cautistic person\u201D) is used throughout. These resources are informational \u2014 not medical advice or a diagnostic tool.",
+    github: "View source on GitHub",
+    cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
+  },
+  it: {
+    name: "Italiano", draftsWord: "bozze",
+    tagline: "Una spiegazione dell\u2019autismo basata sugli interessi",
+    intro: "Il monotropismo \u00E8 una teoria cognitiva dell\u2019autismo che spiega l\u2019esperienza autistica attraverso le differenze nell\u2019attenzione e negli interessi. Sviluppata da Dinah Murray, Wenn Lawson e Mike Lesser, offre una lente unificata e non patologizzante sull\u2019esperienza autistica.",
+    choose: "Scegli una lingua", lead: "Seleziona una lingua per consultare le bozze di ricerca e le guide.",
+    draftsHead: "Bozze di ricerca", draftsCount: "{n} disponibili",
+    read: "Leggi", pdf: "PDF", open: "apri",
+    allLanguages: "Tutte le lingue", languages: "Lingue", theme: "Cambia tema", home: "Home",
+    aiNote: "Le traduzioni sono assistite da IA e possono contenere imprecisioni.",
+    footer: "Si usa il linguaggio identity-first (\u201Cpersona autistica\u201D). Queste risorse sono informative, non consigli medici né uno strumento diagnostico.",
+    github: "Vedi il sorgente su GitHub",
+    cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e caregiver", kids: "Bambini (7\u201311 anni)" }
+  },
+  fr: {
+    name: "Fran\u00E7ais", draftsWord: "brouillons",
+    tagline: "Une approche de l\u2019autisme bas\u00E9e sur l\u2019int\u00E9r\u00EAt",
+    intro: "Le monotropisme est une th\u00E9orie cognitive de l\u2019autisme qui explique l\u2019exp\u00E9rience autistique par des diff\u00E9rences d\u2019attention et d\u2019int\u00E9r\u00EAt. D\u00E9velopp\u00E9e par Dinah Murray, Wenn Lawson et Mike Lesser, elle offre une grille de lecture unifi\u00E9e et non pathologisante de la vie autistique.",
+    choose: "Choisissez une langue", lead: "S\u00E9lectionnez une langue pour parcourir les brouillons de recherche et les guides.",
+    draftsHead: "Brouillons de recherche", draftsCount: "{n} disponibles",
+    read: "Lire", pdf: "PDF", open: "ouvrir",
+    allLanguages: "Toutes les langues", languages: "Langues", theme: "Changer le th\u00E8me", home: "Accueil",
+    aiNote: "Les traductions sont assist\u00E9es par IA et peuvent contenir des impr\u00E9cisions.",
+    footer: "Le langage \u00AB\u00A0identit\u00E9 d\u2019abord\u00A0\u00BB (\u00AB\u00A0personne autistique\u00A0\u00BB) est utilis\u00E9 partout. Ces ressources sont informatives \u2014 ni un avis m\u00E9dical ni un outil de diagnostic.",
+    github: "Voir la source sur GitHub",
+    cat: { theory: "Th\u00E9orie et aper\u00E7u", practitioner: "Praticiens et cliniciens", family: "Famille et aidants", kids: "Enfants (7\u201311 ans)" }
+  },
+  es: {
+    name: "Espa\u00F1ol", draftsWord: "borradores",
+    tagline: "Una explicaci\u00F3n del autismo basada en el inter\u00E9s",
+    intro: "El monotropismo es una teor\u00EDa cognitiva del autismo que explica la experiencia autista a trav\u00E9s de las diferencias en la atenci\u00F3n y el inter\u00E9s. Desarrollada por Dinah Murray, Wenn Lawson y Mike Lesser, ofrece una lente unificada y no patologizadora sobre la vida autista.",
+    choose: "Elige un idioma", lead: "Selecciona un idioma para explorar los borradores de investigaci\u00F3n y las gu\u00EDas.",
+    draftsHead: "Borradores de investigaci\u00F3n", draftsCount: "{n} disponibles",
+    read: "Leer", pdf: "PDF", open: "abrir",
+    allLanguages: "Todos los idiomas", languages: "Idiomas", theme: "Cambiar tema", home: "Inicio",
+    aiNote: "Las traducciones est\u00E1n asistidas por IA y pueden contener imprecisiones.",
+    footer: "Se usa el lenguaje de \u00ABidentidad primero\u00BB (\u00ABpersona autista\u00BB). Estos recursos son informativos, no consejo m\u00E9dico ni una herramienta de diagn\u00F3stico.",
+    github: "Ver el c\u00F3digo en GitHub",
+    cat: { theory: "Teor\u00EDa y panorama", practitioner: "Profesionales y cl\u00EDnicos", family: "Familia y cuidadores", kids: "Ni\u00F1os (7\u201311 a\u00F1os)" }
+  },
+  de: {
+    name: "Deutsch", draftsWord: "Entw\u00FCrfe",
+    tagline: "Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus",
+    intro: "Der Monotropismus ist eine kognitive Theorie des Autismus, die autistisches Erleben \u00FCber Unterschiede in Aufmerksamkeit und Interesse erkl\u00E4rt. Entwickelt von Dinah Murray, Wenn Lawson und Mike Lesser, bietet er einen einheitlichen, nicht-pathologisierenden Blick auf das autistische Leben.",
+    choose: "W\u00E4hlen Sie eine Sprache", lead: "W\u00E4hlen Sie eine Sprache, um die Forschungsentw\u00FCrfe und Leitf\u00E4den zu erkunden.",
+    draftsHead: "Forschungsentw\u00FCrfe", draftsCount: "{n} verf\u00FCgbar",
+    read: "Lesen", pdf: "PDF", open: "\u00F6ffnen",
+    allLanguages: "Alle Sprachen", languages: "Sprachen", theme: "Design wechseln", home: "Start",
+    aiNote: "\u00DCbersetzungen werden maschinell unterst\u00FCtzt und k\u00F6nnen Ungenauigkeiten enthalten.",
+    footer: "Durchweg wird \u201EIdentity-first\u201C-Sprache (\u201Eautistischer Mensch\u201C) verwendet. Diese Materialien sind informativ \u2013 keine medizinische Beratung und kein Diagnosewerkzeug.",
+    github: "Quelltext auf GitHub ansehen",
+    cat: { theory: "Theorie & \u00DCberblick", practitioner: "Praktiker & Kliniker", family: "Familie & Angeh\u00F6rige", kids: "Kinder (7\u201311 Jahre)" }
+  }
+};
+
+/* ---- Documents (the growing catalogue) ---- */
+const DOCS = [
+  {
+    cat: "theory",
+    stem: "monotropism",
+    langs: ["en", "it", "fr", "es", "de"],
+    content: {
+      en: { title: "Monotropism: An Interest-Based Account of Autism", audience: "General \u00B7 Academic",
+            desc: "Origins, core claims, supporting evidence, links to other frameworks, and open questions. The foundational brief the practical guides build upon." },
+      it: { title: "Monotropismo: Una spiegazione dell\u2019autismo basato sugli interessi", audience: "Pubblico generale \u00B7 Accademico",
+            desc: "Origini, affermazioni centrali, evidenze di supporto, rapporto con altri quadri teorici e questioni aperte. Il documento fondativo su cui si basano le guide pratiche." },
+      fr: { title: "Le Monotropisme\u00A0: Une approche de l\u2019autisme bas\u00E9e sur l\u2019int\u00E9r\u00EAt", audience: "Grand public \u00B7 Universitaire",
+            desc: "Origines, th\u00E8ses centrales, preuves \u00E0 l\u2019appui, liens avec d\u2019autres cadres et questions ouvertes. Le texte fondateur sur lequel s\u2019appuient les guides pratiques." },
+      es: { title: "Monotropismo: Una explicaci\u00F3n del autismo basada en el inter\u00E9s", audience: "P\u00FAblico general \u00B7 Acad\u00E9mico",
+            desc: "Or\u00EDgenes, tesis centrales, evidencia de apoyo, relaci\u00F3n con otros marcos y cuestiones abiertas. El texto fundacional en el que se basan las gu\u00EDas pr\u00E1cticas." },
+      de: { title: "Monotropismus: Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus", audience: "Allgemein \u00B7 Akademisch",
+            desc: "Urspr\u00FCnge, Kernthesen, Belege, Bezug zu anderen Ans\u00E4tzen und offene Fragen. Der Grundlagentext, auf dem die praktischen Leitf\u00E4den aufbauen." }
+    }
+  },
+  {
+    cat: "practitioner",
+    stem: "autistic-monotropism-lifespan-guide",
+    langs: ["en"],
+    content: {
+      en: { title: "Supporting the Autistic Monotropic Person Across the Lifespan", audience: "Practitioners \u00B7 Health-care professionals",
+            desc: "A neuroaffirming guide for practitioners and clinicians: how to interact with, engage and support autistic people from childhood to old age, including clinical and medical settings." }
+    }
+  },
+  {
+    cat: "family",
+    stem: "autistic-monotropism-family-guide",
+    langs: ["en", "it", "fr", "es", "de"],
+    content: {
+      en: { title: "Loving an Autistic Monotropic Person", audience: "Parents \u00B7 Relatives \u00B7 Caregivers",
+            desc: "A plain-language guide for parents, adult children, siblings and other relatives \u2014 understanding, relating to and supporting a monotropic loved one across the lifespan, and caring for the family\u2019s own wellbeing." },
+      it: { title: "Amare una persona autistica monotropica", audience: "Genitori \u00B7 Familiari \u00B7 Caregiver",
+            desc: "Una guida in linguaggio semplice per genitori, figli adulti, fratelli e altri familiari: comprendere, relazionarsi e supportare una persona monotropica cara in ogni fase della vita, e prendersi cura del benessere della famiglia." },
+      fr: { title: "Aimer une personne autistique monotropique", audience: "Parents \u00B7 Proches \u00B7 Aidants",
+            desc: "Un guide en langage clair pour parents, enfants adultes, fratrie et autres proches\u00A0: comprendre, accompagner et soutenir un proche monotropique tout au long de la vie, et veiller au bien-\u00EAtre de la famille." },
+      es: { title: "Amar a una persona autista monotr\u00F3pica", audience: "Padres \u00B7 Familiares \u00B7 Cuidadores",
+            desc: "Una gu\u00EDa en lenguaje sencillo para padres, hijos adultos, hermanos y otros familiares: comprender, relacionarse y apoyar a un ser querido monotr\u00F3pico a lo largo de la vida, y cuidar del bienestar de la familia." },
+      de: { title: "Einen autistischen, monotropen Menschen lieben", audience: "Eltern \u00B7 Angeh\u00F6rige \u00B7 Bezugspersonen",
+            desc: "Ein Leitfaden in verst\u00E4ndlicher Sprache f\u00FCr Eltern, erwachsene Kinder, Geschwister und weitere Angeh\u00F6rige: einen geliebten monotropen Menschen verstehen, begleiten und unterst\u00FCtzen \u2013 und die eigene Familie im Blick behalten." }
+    }
+  },
+  {
+    cat: "kids",
+    stem: "monotropic-kids-guidelines",
+    langs: ["en", "it", "fr", "es", "de"],
+    content: {
+      en: { title: "Growing Up Monotropic", audience: "Parents \u00B7 Teachers \u00B7 Coaches",
+            desc: "A friendly guide for the adults around an autistic monotropic child aged 7\u201311 \u2014 parents and carers, grandparents, primary-school teachers, and sports & activity coaches. Covers home, school and the sports field." },
+      it: { title: "Crescere in modo monotropico", audience: "Genitori \u00B7 Insegnanti \u00B7 Allenatori",
+            desc: "Una guida amichevole per gli adulti attorno a un bambino autistico monotropico di 7\u201311 anni: genitori e caregiver, nonni, insegnanti di scuola primaria e allenatori sportivi. Copre casa, scuola e attivit\u00E0 sportive." },
+      fr: { title: "Grandir de fa\u00E7on monotropique", audience: "Parents \u00B7 Enseignants \u00B7 Entra\u00EEneurs",
+            desc: "Un guide amical pour les adultes entourant un enfant autistique monotropique de 7 \u00E0 11 ans\u00A0: parents et aidants, grands-parents, enseignants du primaire et entra\u00EEneurs sportifs. Couvre la maison, l\u2019\u00E9cole et le terrain de sport." },
+      es: { title: "Crecer de forma monotr\u00F3pica", audience: "Padres \u00B7 Profesores \u00B7 Entrenadores",
+            desc: "Una gu\u00EDa cercana para los adultos en torno a un ni\u00F1o autista monotr\u00F3pico de 7 a 11 a\u00F1os: padres y cuidadores, abuelos, maestros de primaria y entrenadores deportivos. Abarca el hogar, la escuela y el deporte." },
+      de: { title: "Monotrop aufwachsen", audience: "Eltern \u00B7 Lehrer \u00B7 \u00DCbungsleiter",
+            desc: "Ein freundlicher Leitfaden f\u00FCr die Erwachsenen um ein autistisches, monotropes Kind von 7\u201311 Jahren: Eltern und Betreuer, Gro\u00DFeltern, Grundschullehrer und Sport\u00FCbungsleiter. Behandelt Zuhause, Schule und Sportplatz." }
+    }
+  }
+];
+
+const CAT_ORDER = ["theory", "practitioner", "family", "kids"];
+const REPO = "https://github.com/PieBru/monotropism";
+
+/* ---------- helpers ---------- */
+const esc = (s) => String(s).replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const langName = (c) => I18N[c] ? I18N[c].name : c;
+const langFlag = (c) => (LANGS.find(l => l.code === c) || {}).flag || "";
+const artifacts = (stem, code) => {
+  const suf = LANG_SUFFIX[code] || "";
+  return { html: "outputs/" + stem + suf + ".html", pdf: "outputs/" + stem + suf + ".pdf" };
+};
+const countFor = (code) => DOCS.filter(d => d.langs.includes(code)).length;
+const fmt = (str, n) => str.replace("{n}", n);
+
+/* ---------- shared SVG ---------- */
+const MARK = `<svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+  <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1" opacity="0.22"/>
+  <circle cx="16" cy="16" r="9.2" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+  <circle cx="16" cy="16" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="16" cy="16" r="2" fill="currentColor"/>
+</svg>`;
+const SUN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>`;
+const MOON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>`;
+const CHEV_LEFT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>`;
+const GLOBE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.3"/><path d="M3 12h18M12 2.7c2.6 2.4 4 5.9 4 9.3s-1.4 6.9-4 9.3c-2.6-2.4-4-5.9-4-9.3s1.4-6.9 4-9.3z"/></svg>`;
+const CHECK = `<svg class="mi" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`;
+
+/* ============================================================
+   Routing
+   ============================================================ */
+function route() {
+  const hash = location.hash.replace(/^#\/?/, ""); // e.g. "en" or ""
+  const code = hash && I18N[hash] ? hash : "";
+  if (code) renderLang(code);
+  else renderHome();
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+/* ============================================================
+   Top bar
+   ============================================================ */
+function renderTopbar(code) {
+  const i18n = code ? I18N[code] : I18N.en;
+  const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+  const themeIcon = isDark ? SUN : MOON;
+
+  const back = code
+    ? `<button class="iconbtn" data-route="/" aria-label="${esc(i18n.allLanguages)}" title="${esc(i18n.allLanguages)}">${CHEV_LEFT}</button>`
+    : "";
+
+  const langSwitch = code ? `
+    <div class="langswitch">
+      <button class="iconbtn" data-action="toggle-lang" aria-haspopup="true" aria-expanded="false" aria-label="${esc(i18n.languages)}">
+        ${GLOBE}<span class="code">${esc(code.toUpperCase())}</span>
+      </button>
+      <div class="langmenu" id="langmenu" hidden>
+        ${LANGS.map(l => `
+          <button class="langmenu-item ${l.code === code ? "active" : ""}" data-route="/${l.code}">
+            <span class="flag">${l.flag}</span>${esc(I18N[l.code].name)}${l.code === code ? CHECK : ""}
+          </button>`).join("")}
       </div>
-    </section>
+    </div>` : "";
 
-    <!-- ============ DOCUMENTS LIBRARY ============ -->
-    <section id="documents">
+  document.getElementById("topbar").innerHTML = `
+    <div class="tb-left">
+      ${back}
+      <a class="brand" href="#/" data-route="/" aria-label="Monotropism \u2014 ${esc(i18n.home)}">
+        ${MARK}<span class="brand-name">Monotropism</span>
+      </a>
+    </div>
+    <div class="tb-right">
+      ${langSwitch}
+      <button class="iconbtn theme" data-action="toggle-theme" aria-label="${esc(i18n.theme)}" title="${esc(i18n.theme)}">${themeIcon}</button>
+    </div>`;
+}
+
+/* ============================================================
+   Home (language selection)
+   ============================================================ */
+function renderHome() {
+  document.documentElement.lang = "en";
+  document.title = "Monotropism \u2014 An Interest-Based Account of Autism";
+
+  renderTopbar(""); // top bar without back / lang switch
+
+  const cards = LANGS.map(l => {
+    const n = countFor(l.code);
+    return `<button class="lang-card" data-route="/${l.code}">
+        <span class="flag" aria-hidden="true">${l.flag}</span>
+        <span class="ln">${esc(I18N[l.code].name)}</span>
+        <span class="lc">${n} ${esc(I18N[l.code].draftsWord)}</span>
+        <span class="go" aria-hidden="true">\u2192</span>
+      </button>`;
+  }).join("");
+
+  document.getElementById("app").innerHTML = `
+    <section class="home view">
       <div class="wrap">
-        <p class="section-label">Library</p>
-        <h2 class="section-title">Documents &amp; Guides</h2>
+        <div class="home-hero">
+          <span class="mark-big">${MARK}</span>
+          <h1>Monotropism</h1>
+          <p class="tagline">${esc(I18N.en.tagline)}</p>
+          <p class="eyebrow">${esc(I18N.en.choose)}</p>
+          <p class="lead">${esc(I18N.en.lead)}</p>
+        </div>
+        <div class="lang-grid">${cards}</div>
+      </div>
+    </section>`;
 
-        <div class="lib-toolbar">
-          <input id="filter" type="search" placeholder="Filter by title, topic, or language…" aria-label="Filter documents">
+  renderFooter("en");
+}
+
+/* ============================================================
+   Language landing view
+   ============================================================ */
+function renderLang(code) {
+  const t = I18N[code];
+  document.documentElement.lang = code;
+  document.title = "Monotropism \u2014 " + t.tagline;
+
+  renderTopbar(code);
+
+  // group available docs by category, in CAT_ORDER
+  const available = DOCS.filter(d => d.langs.includes(code));
+  const groups = CAT_ORDER
+    .map(cat => ({ cat, docs: available.filter(d => d.cat === cat) }))
+    .filter(g => g.docs.length);
+
+  const groupsHtml = groups.map(g => `
+      <div class="cat">
+        <h3 class="cat-title">${esc(t.cat[g.cat] || g.cat)}</h3>
+        <div class="cat-list">
+          ${g.docs.map(d => docCard(d, code, t)).join("")}
+        </div>
+      </div>`).join("");
+
+  document.getElementById("app").innerHTML = `
+    <section class="langview view">
+      <div class="wrap">
+        <div class="lang-hero">
+          <span class="mark-big">${MARK}</span>
+          <h1>Monotropism</h1>
+          <p class="tagline">${esc(t.tagline)}</p>
+          <p class="intro">${esc(t.intro)}</p>
         </div>
 
-        <div id="library" aria-live="polite"><!-- rendered by script --></div>
+        <div class="section-head">
+          <h2>${esc(t.draftsHead)}</h2>
+          <span class="count">${esc(fmt(t.draftsCount, available.length))}</span>
+        </div>
+        <div class="divider"></div>
+
+        ${groupsHtml}
       </div>
-    </section>
+    </section>`;
 
-  </main>
+  renderFooter(code);
+}
 
-  <footer>
+function docCard(doc, code, t) {
+  const c = doc.content[code];
+  const { html, pdf } = artifacts(doc.stem, code);
+  return `
+    <article class="doc">
+      <div class="doc-main">
+        <span class="audience">${esc(c.audience)}</span>
+        <h3 class="doc-title">${esc(c.title)}</h3>
+        <p class="doc-desc">${esc(c.desc)}</p>
+      </div>
+      <div class="doc-actions">
+        <a class="btn btn-primary" href="${esc(html)}" target="_blank" rel="noopener">${esc(t.read)} <span class="ar" aria-hidden="true">\u2192</span></a>
+        <a class="btn btn-ghost" href="${esc(pdf)}" target="_blank" rel="noopener" download>${esc(t.pdf)} <span class="ar" aria-hidden="true">\u2193</span></a>
+      </div>
+    </article>`;
+}
+
+/* ---------- footer ---------- */
+function renderFooter(code) {
+  const f = I18N[code] || I18N.en;
+  document.getElementById("footer").innerHTML = `
     <div class="wrap">
-      Monotropism documentation &middot; maintained by <a href="https://github.com/PieBru">PieBru</a> &middot; <a href="https://github.com/PieBru/monotropism">view source on GitHub</a>
-      <br><span id="year"></span>
-      <p class="disc">
-        Identity-first language (“autistic person”) is used throughout, reflecting the preference of the majority of the autistic community. These are informational resources, not medical advice or a diagnostic tool. Translations are AI-assisted.
-      </p>
-    </div>
-  </footer>
+      <p class="note">${esc(f.footer)}</p>
+      <p class="ai">${esc(f.aiNote)}</p>
+      <p><a href="${REPO}" target="_blank" rel="noopener">${esc(f.github)}</a></p>
+      <p>\u00A9 ${new Date().getFullYear()} PieBru</p>
+    </div>`;
+}
 
-  <script>
-  /* ============================================================
-     Documents library — data-driven so the library can grow.
-     To add a document: append an object to DOCUMENTS below.
-       - md  : absolute GitHub "blob" URL (always renders nicely)
-       - pdf : relative path to the PDF (works on Pages & Cloudflare)
-     ============================================================ */
+/* ============================================================
+   Theme + interaction (event delegation)
+   ============================================================ */
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  try { localStorage.setItem("mono-theme", theme); } catch (e) {}
+  // refresh the theme icon in the current top bar
+  const btn = document.querySelector('.iconbtn.theme');
+  if (btn) btn.innerHTML = (theme === "dark") ? SUN : MOON;
+}
 
-  const REPO = "https://github.com/PieBru/monotropism/blob/main/";
-  const pdf = (p) => p; // relative path, e.g. "outputs/monotropism.pdf"
+function toggleLangMenu(open) {
+  const menu = document.getElementById("langmenu");
+  const btn = document.querySelector('[data-action="toggle-lang"]');
+  if (!menu || !btn) return;
+  const willOpen = (open === undefined) ? menu.hidden : open;
+  menu.hidden = !willOpen;
+  btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
 
-  const DOCUMENTS = [
-    {
-      category: "Theory & Overview",
-      audience: "General · Academic",
-      title: "Monotropism: An Interest-Based Account of Autism",
-      desc: "A survey of the theory's origins, core claims, supporting evidence, relationship to other frameworks, and open questions. The foundational brief that the practical guides build upon.",
-      langs: [
-        { code: "EN", name: "English",   md: REPO + "monotropism.md",                              pdf: pdf("outputs/monotropism.pdf") },
-        { code: "DE", name: "Deutsch",   md: REPO + "outputs/monotropism_de.md",                   pdf: pdf("outputs/monotropism_de.pdf") },
-        { code: "ES", name: "Español",   md: REPO + "outputs/monotropism_es.md",                   pdf: pdf("outputs/monotropism_es.pdf") },
-        { code: "FR", name: "Français",  md: REPO + "outputs/monotropism_fr.md",                   pdf: pdf("outputs/monotropism_fr.pdf") },
-        { code: "IT", name: "Italiano",  md: REPO + "outputs/monotropism_ita.md",                  pdf: pdf("outputs/monotropism_ita.pdf") },
-      ]
-    },
-    {
-      category: "Practitioners & Clinicians",
-      audience: "Practitioners · Health-care professionals",
-      title: "Supporting the Autistic Monotropic Person Across the Lifespan",
-      desc: "Characteristics of the autistic monotropic mind, and how practitioners and health-care professionals can interact with, stimulate, and support autistic people from childhood to old age—including specific guidance for clinics and medical settings.",
-      langs: [
-        { code: "EN", name: "English",   md: REPO + "outputs/autistic-monotropism-lifespan-guide.md", pdf: pdf("outputs/autistic-monotropism-lifespan-guide.pdf") },
-      ]
-    },
-    {
-      category: "Family & Caregivers",
-      audience: "Parents · Adult children · Relatives",
-      title: "Loving an Autistic Monotropic Person",
-      desc: "A plain-language guide for parents, adult children, and other relatives of an autistic person—understanding, relating to, and supporting a monotropic loved one across the lifespan, and looking after the family's own wellbeing.",
-      langs: [
-        { code: "EN", name: "English",   md: REPO + "outputs/autistic-monotropism-family-guide.md",    pdf: pdf("outputs/autistic-monotropism-family-guide.pdf") },
-        { code: "DE", name: "Deutsch",   md: REPO + "outputs/autistic-monotropism-family-guide_de.md", pdf: pdf("outputs/autistic-monotropism-family-guide_de.pdf") },
-        { code: "ES", name: "Español",   md: REPO + "outputs/autistic-monotropism-family-guide_es.md", pdf: pdf("outputs/autistic-monotropism-family-guide_es.pdf") },
-        { code: "FR", name: "Français",  md: REPO + "outputs/autistic-monotropism-family-guide_fr.md", pdf: pdf("outputs/autistic-monotropism-family-guide_fr.pdf") },
-        { code: "IT", name: "Italiano",  md: REPO + "outputs/autistic-monotropism-family-guide_ita.md",pdf: pdf("outputs/autistic-monotropism-family-guide_ita.pdf") },
-      ]
-    },
-    {
-      category: "Children (Ages 7–11)",
-      audience: "Family · School · Sports",
-      title: "Growing Up Monotropic",
-      desc: "A friendly guide for the adults around an autistic monotropic child aged 7–11—parents and carers, grandparents and extended family, primary-school teachers, and sports & activity coaches. Plain language; covers home, school and the sports field.",
-      langs: [
-        { code: "EN", name: "English",   md: REPO + "outputs/monotropic-kids-guidelines.md",    pdf: pdf("outputs/monotropic-kids-guidelines.pdf") },
-        { code: "DE", name: "Deutsch",   md: REPO + "outputs/monotropic-kids-guidelines_de.md", pdf: pdf("outputs/monotropic-kids-guidelines_de.pdf") },
-        { code: "ES", name: "Español",   md: REPO + "outputs/monotropic-kids-guidelines_es.md", pdf: pdf("outputs/monotropic-kids-guidelines_es.pdf") },
-        { code: "FR", name: "Français",  md: REPO + "outputs/monotropic-kids-guidelines_fr.md", pdf: pdf("outputs/monotropic-kids-guidelines_fr.pdf") },
-        { code: "IT", name: "Italiano",  md: REPO + "outputs/monotropic-kids-guidelines_ita.md",pdf: pdf("outputs/monotropic-kids-guidelines_ita.pdf") },
-      ]
+document.addEventListener("click", (e) => {
+  // navigate via data-route
+  const nav = e.target.closest("[data-route]");
+  if (nav) {
+    e.preventDefault();
+    toggleLangMenu(false);
+    const r = nav.getAttribute("data-route");
+    if (r === "/") location.hash = "#/";
+    else location.hash = "#/" + r.replace(/^\//, "");
+    return;
+  }
+
+  const action = e.target.closest("[data-action]");
+  if (action) {
+    const a = action.getAttribute("data-action");
+    if (a === "toggle-theme") {
+      const cur = document.documentElement.getAttribute("data-theme");
+      setTheme(cur === "light" ? "dark" : "light");
+    } else if (a === "toggle-lang") {
+      toggleLangMenu();
+      e.stopPropagation();
     }
-  ];
-
-  // Category display order (add new categories here when needed)
-  const CATEGORY_ORDER = ["Theory & Overview", "Practitioners & Clinicians", "Family & Caregivers", "Children (Ages 7–11)"];
-
-  const esc = (s) => String(s).replace(/[&<>"']/g, c =>
-    ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
-
-  function langRow(l) {
-    return `
-      <div class="lang-row">
-        <span class="lang-name">${esc(l.name)}</span>
-        <span class="lang-actions">
-          <a href="${esc(l.md)}" target="_blank" rel="noopener">Read <span class="arrow">↗</span></a>
-          <a class="pdf" href="${esc(l.pdf)}">PDF <span class="arrow">↓</span></a>
-        </span>
-      </div>`;
+    return;
   }
 
-  function docCard(d) {
-    return `
-      <article class="doc-card">
-        <p class="doc-audience">${esc(d.audience)}</p>
-        <h3 class="doc-title">${esc(d.title)}</h3>
-        <p class="doc-desc">${esc(d.desc)}</p>
-        <div class="lang-list">${d.langs.map(langRow).join("")}</div>
-      </article>`;
-  }
+  // close lang menu on outside click
+  if (!e.target.closest(".langswitch")) toggleLangMenu(false);
+});
 
-  function render(query) {
-    const q = (query || "").trim().toLowerCase();
-    const root = document.getElementById("library");
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") toggleLangMenu(false);
+});
 
-    let html = "";
-    let anyShown = false;
-
-    for (const cat of CATEGORY_ORDER) {
-      const docs = DOCUMENTS.filter(d => d.category === cat && matches(d, q));
-      if (!docs.length) continue;
-      anyShown = true;
-      html += `
-        <div class="cat-group">
-          <p class="cat-label">${esc(cat)}</p>
-          <div class="doc-grid">${docs.map(docCard).join("")}</div>
-        </div>`;
-    }
-
-    if (!anyShown) {
-      html = `<p class="empty">No documents match “${esc(query)}”.</p>`;
-    }
-
-    root.innerHTML = html;
-  }
-
-  function matches(d, q) {
-    if (!q) return true;
-    const hay = [d.title, d.desc, d.category, d.audience,
-                 ...d.langs.map(l => l.name + " " + l.code)].join(" ").toLowerCase();
-    return hay.includes(q);
-  }
-
-  document.getElementById("filter").addEventListener("input", (e) => render(e.target.value));
-  document.getElementById("year").textContent = "© " + new Date().getFullYear();
-
-  render("");
-  </script>
+window.addEventListener("hashchange", route);
+window.addEventListener("DOMContentLoaded", route);
+</script>
 </body>
 </html>

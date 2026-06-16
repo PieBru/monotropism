@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Amar a una persona autista monotrópica</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Amar a una persona autista monotrópica</h1>
+</header>
+<h1 id="amar-a-una-persona-autista-monotrópica">Amar a una persona autista monotrópica</h1>
+<h3 id="una-guía-vital-para-padres-hijos-adultos-y-otros-familiares">Una guía vital para padres, hijos adultos y otros familiares</h3>
+<hr />
+<blockquote>
+<p><strong>Para quién es esta guía.</strong> Esta guía es para la <strong>familia y los familiares</strong> de una persona autista cuya mente funciona de manera <em>monotrópica</em> — es decir, una mente que se concentra profunda e intensamente en pocas cosas a la vez. Está escrita para <strong>padres</strong> de niños autistas, <strong>familia y familiares</strong> de adultos autistas, <strong>hijos adultos</strong> cuyo padre o madre mayor es autista (o parece serlo), y para <strong>hermanos, abuelos, tíos, tías y parejas</strong> que desean una relación amorosa para toda la vida. <strong>No</strong> es un manual clínico: es una compañera en lenguaje llano que le ayuda a entender, conectar y apoyar a su familiar autista, y también a cuidar de usted mismo/a.</p>
+</blockquote>
+<blockquote>
+<p><strong>Una nota sobre el lenguaje.</strong> La mayoría de las personas autistas prefieren el <strong>lenguaje de identidad primero</strong> („persona autista"), y esta guía sigue esa preferencia. Algunas personas y familias prefieren „persona con autismo" — siga la preferencia de su familiar. Esta guía evita deliberadamente palabras como <em>trastorno, deficiente, anormal, tragedia</em> o <em>carga</em>, excepto cuando explica ideas que la familia pudo haber recibido en otro lugar. El autismo es una <strong>diferencia</strong> — con retos reales y fortalezas reales.</p>
+</blockquote>
+<blockquote>
+<p><strong>La idea más importante.</strong> <em>"Si te importa el bienestar de las personas autistas, necesitas intentar comprender el autismo. Si quieres comprender el autismo, necesitas comprender el monotropismo."</em> — Fergus Murray, profesor y escritor autista (2023).</p>
+</blockquote>
+<hr />
+<h2 id="parte-1--comprender-una-mente-monotrópica">Parte 1 — Comprender una mente monotrópica</h2>
+<p>La atención de la mayoría de la gente se reparte entre muchas cosas a la vez: el murmullo de fondo, el reloj, la persona que tiene delante, qué habrá para cenar. Una mente <strong>monotrópica</strong> es distinta: tiende a atraer la atención hacia <strong>pocos canales profundos e intensos</strong> en cada momento. Los investigadores autistas Dinah Murray, Wenn Lawson y Mike Lesser llamaron a esto un <strong>„túnel de atención"</strong> (Murray, Lesser &amp; Lawson, 2005).</p>
+<p>Imagine la atención como una cantidad limitada de agua. Una mente politrópica (más típica) es como un <strong>aspersor</strong>: agua repartida ampliamente por el jardín. Una mente monotrópica es como una <strong>manguera</strong> con boquilla estrecha: menos superficie, pero todo lo que está en ese chorro se riega profundamente (F. Murray, 2018; 2023). Ninguna es „mejor". Cada una tiene fortalezas y costes.</p>
+<p>Esta única diferencia ayuda a explicar <em>casi todo</em> sobre cómo su familiar autista experimenta el mundo:</p>
+<h3 id="qué-significa-esto-en-el-día-a-día">Qué significa esto en el día a día</h3>
+<table>
+<thead>
+<tr>
+<th>Quizá vea…</th>
+<th>Lo que realmente ocurre (monotropismo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interés profundo, „obsesivo", en un tema, a veces durante años</td>
+<td>Una <strong>pasión</strong> que aporta alegría, estabilidad, habilidad e identidad — <em>no</em> una „obsesión" que haya que limitar</td>
+</tr>
+<tr>
+<td>Parece no oírle, o „ignora" a personas/necesidades</td>
+<td>Cuando está totalmente absorto, la mente <strong>no registra</strong> lo que está fuera del túnel — incluidos hambre, dolor, el timbre o que alguien salga de la habitación</td>
+</tr>
+<tr>
+<td>Reacciones fuertes a ciertos sonidos, luces, olores, texturas; o parece no sentir nada</td>
+<td><strong>Hiper-</strong> (sobre) o <strong>hipo-</strong> (bajo) responsividad: un estímulo <em>dentro</em> del túnel se siente con intensidad; uno <em>fuera</em> puede no registrarse</td>
+</tr>
+<tr>
+<td>Balanceo, aleteo de manos, tarareo, repeticiones</td>
+<td><strong>Stimming</strong> — entrada sensorial controlada y predecible que calma y regula el sistema nervioso</td>
+</tr>
+<tr>
+<td>Gran dificultad para empezar, terminar o cambiar de tarea</td>
+<td><strong>Inercia autista</strong> — cuesta tiempo y energía cargar un „carro lleno" de atención, y tiempo girarlo en una esquina</td>
+</tr>
+<tr>
+<td>Meltdowns o retirada repentina/„shutdown"</td>
+<td><strong>Involuntaria</strong> sobrecarga del sistema nervioso — no es mala educación, ni manipulación, ni „mal comportamiento"</td>
+</tr>
+<tr>
+<td>Toma las cosas muy literalmente; no capta indirectas o sarcasmo</td>
+<td>La comunicación que usa muchos canales a la vez (palabras + tono + cara + lenguaje corporal) agota; las palabras llegan más claro</td>
+</tr>
+<tr>
+<td>Necesita rutinas; las sorpresas le descolocan</td>
+<td>Las rutinas reducen el número de decisiones que compiten por la atención limitada</td>
+</tr>
+</tbody>
+</table>
+<h3 id="las-dos-ideas-que-lo-cambian-todo">Las dos ideas que lo cambian todo</h3>
+<ol type="1">
+<li><p><strong>Los intereses son bienestar, no problemas.</strong> Los intereses especiales dan a su familiar alegría, calma, identidad, experiencia y una forma de recuperarse del agobio. Proteger el acceso a ellos es una de las cosas más amables y con mayor respaldo que una familia puede hacer (F. Murray, 2023; Mantzalas et al., 2022). <em>"Trata los intereses como algo con lo que trabajar"</em> (F. Murray, 2018).</p></li>
+<li><p><strong>El malentendido va en ambos sentidos.</strong> El <strong>problema de la doble empatía</strong> de Damian Milton (2012) dice que cuando personas autistas y no autistas se malinterpretan, la brecha es <strong>mutua</strong> — no un „déficit" unidireccional de la persona autista. Su familiar autista encuentra su forma de comunicarse igual de enigmática que usted a veces la suya. Encontrarse a medio camino es tarea de <em>ambos</em>.</p></li>
+</ol>
+<h3 id="tres-errores-comunes-de-las-familias-y-cómo-acertar">Tres errores comunes de las familias (y cómo acertar)</h3>
+<ul>
+<li><strong>No le saque del túnel.</strong> Que le arranquen de la concentración profunda „se siente horrible" — imagine que le arrancan de un libro absorbente cada pocos minutos, todo el día, sin voz (F. Murray, 2023). <em>En su lugar:</em> dé <strong>avisos y tiempo de transición</strong> antes de los cambios; proteja tiempo ininterrumpido para sus intereses.</li>
+<li><strong>No entrene para eliminar el autismo.</strong> Los programas que suprimen el stimming, fuerzan contacto visual o enseñan a la persona a „pasar" por no autista (<strong>enmascaramiento/masking</strong>) hoy se sabe que son dañinos — vinculados a ansiedad, depresión, agotamiento y <strong>burnout autista</strong> (Raymaker et al., 2020; Pearson &amp; Rose, 2021). <em>En su lugar:</em> acepte y acomode la diferencia.</li>
+<li><strong>No dé nada por sentado.</strong> Pregunte a su familiar qué necesita. <em>"Nada sobre nosotros sin nosotros"</em> — las personas autistas deben formar parte de las decisiones sobre su propia vida (ASAN). Su familiar es la persona experta en su propia experiencia.</li>
+</ul>
+<hr />
+<h2 id="parte-2--el-camino-de-la-aceptación">Parte 2 — El camino de la aceptación</h2>
+<p>Muchas familias atraviesan un proceso cuando se identifica a un familiar autista — sea la persona un bebé, un adolescente o un padre diagnosticado a los 60. Saber que es normal ayuda.</p>
+<p><strong>Un diagnóstico (o constatación) puede traer un ovillo de sentimientos:</strong> alivio („por fin tiene sentido"), duelo („¿por qué no lo supe? ¿qué habría sido distinto?"), amor, miedo, rabia por malos tratos pasados y agotamiento (Prosper Health; deconstructingstigma; alumacare). Para <strong>padres de niños</strong>, el estrés y el burnout son genuinamente mayores que en otros padres — es real y merece apoyo, no culpa (Yesilkaya &amp; Magallón-Neri, 2024; Frontiers, 2025; childmind.org). Para <strong>familiares de adultos diagnosticados tarde</strong>, una experiencia común y dolorosa es que <strong>la familia no les cree</strong> („¡pero si miras a los ojos!"), lo cual puede herir profundamente (PMC11074347).</p>
+<p><strong>Dos caminos — elija el afirmativo.</strong></p>
+<ul>
+<li>El <strong>camino médico/de cura</strong> enmarca el autismo como una tragedia o enfermedad que arreglar, a la persona autista como rota y a la familia como víctima. Históricamente dio el mito desacreditado de la „madre nevera" y la narrativa de mártir del „ Autism Parent". Suele empujar a las familias hacia terapias de normalización (suprimir stimming, forzar contacto visual, el objetivo „indistinguible de los compañeros") que la comunidad autista describe como dañinas (Therapist Neurodiversity Collective; The Autistic Advocate; Pearson &amp; Rose, 2021).</li>
+<li>El <strong>camino afirmativo de la neurodiversidad</strong> enmarca el autismo como una diferencia natural, se centra en la aceptación, el acomodo, las fortalezas y el bienestar, e insiste en que las personas autistas sean centrales en las decisiones sobre su vida (ASAN; Estée Klar; Reframing Autism). El mismo esfuerzo que antes iba a „arreglar" a la persona autista se redirige a <em>cambiar el entorno</em> para que pueda florecer.</li>
+</ul>
+<p>Puede sostener ambas verdades a la vez: <strong>el estrés y el duelo de la familia son reales, Y la persona autista no es una tragedia.</strong> El duelo <em>por las expectativas perdidas de la familia</em> debe separarse de cómo habla sobre y con su familiar. Procese su duelo con apoyo (pareja, terapia, grupos de pares) — no a través de su hijo/a o familiar.</p>
+<p><strong>Donde las familias encuentran fuerza:</strong> apoyo de pares de otras familias afirmativas de la neurodiversidad; recursos <strong>liderados por autistas</strong> (para oír de gente como su familiar, no solo sobre ellos); prácticas de aceptación y autocompasión (los enfoques de ACT y autocompasión tienen evidencia para reducir el estrés de los padres; Life Skills Advocate; Neff; Torbet, 2019); y respiro cuando lo necesita.</p>
+<hr />
+<h2 id="parte-3--cuando-su-familiar-autista-es-un-niño-o-niña">Parte 3 — Cuando su familiar autista es un niño o niña</h2>
+<p><em>(Para padres, abuelos y otros cercanos a un niño autista.)</em></p>
+<h3 id="31-en-casa-construir-una-vida-familiar-amable-con-el-monotropismo">3.1 En casa: construir una vida familiar amable con el monotropismo</h3>
+<ul>
+<li><strong>Proteja los túneles.</strong> Asegúrese de que su hijo/a tenga tiempo regular e ininterrumpido para sus intereses y estados de flow. No es „consentirle" — así descansa, aprende y se mantiene bien. „Si un alumno está abrumado y usted sabe que tiene un interés monotrópico en Lego, cree un espacio tranquilo y permita tiempo amplio" (BERA, 2021).</li>
+<li><strong>Use los intereses como puente.</strong> Lo que quiera compartir — lectura, matemáticas, habilidades sociales, una salida familiar — tráigalo <em>a través</em> del interés. Los niños autistas „nos resulta mucho más fácil conectar con la comprensión cuando el tema se puede relacionar con nuestras áreas de interés" (Lawson). Un niño obsesionado con los trenes puede contar trenes, leer libros de trenes, visitar una estación, escribir historias de trenes.</li>
+<li><strong>Baje las exigencias, baje la activación.</strong> Muchos niños autistas son exquisitamente sensibles a las <em>exigencias</em> (a veces llamado <strong>evitación de demanda</strong>, o „PDA" — una etiqueta que algunos en la comunidad encuentran deshumanizante; la experiencia es real de todos modos). La crianza <strong>de baja activación y respetuosa de la autonomía</strong> funciona mejor que las luchas de poder: ofrezca opciones, use lenguaje indirecto/declarativo, despersonalice las peticiones, colabore (guía NAS sobre evitación de demanda; guía PDA de Reframing Autism; Child Mind Institute).</li>
+<li><strong>Aprenda el lenguaje declarativo.</strong> En lugar de imperativos y preguntas directas („¡Ponte los zapatos! ¿De qué color es esto?"), pruebe <strong>observaciones y reflejos</strong> („Veo tus zapatos junto a la puerta"; „Mmm, el autobús llega en diez minutos"). Esto quita presión a un sistema nervioso que se enciende con las exigencias e invita al niño a participar sin sentirse acorralado (Linda Murphy, vía Tilt Parenting, 2023).</li>
+<li><strong>Co-regule, no solo espere la autorregulación.</strong> Los niños construyen la capacidad de calmarse <em>a través</em> de un adulto calmado primero. Sea una <strong>presencia cálida y de baja activación</strong>; empatice; reduzca la entrada sensorial y elimine disparadores cuando los vea subir; ofrezca un entorno predecible y estructurado (Autism Awareness Centre; Autism Little Learners; Autism Ontario).</li>
+<li><strong>Construya rutinas <em>con</em> su hijo/a, no <em>sobre</em> él/ella.</strong> Las rutinas creadas en común reducen la carga de decisiones y se sienten seguras; las rutinas impuestas a menudo fallan (F. Murray, 2022).</li>
+<li><strong>Haga la casa amable sensorialmente.</strong> Reduzca ruido, desorden visual, luz fluorescente y olores fuertes innecesarios; cree un refugio tranquilo y con luz tenue; permita auriculares, gafas de sol y herramientas sensoriales (NAS, 2025; F. Murray, 2023).</li>
+<li><strong>Gestione las transiciones con suavidad.</strong> Horarios visuales, cuentas atrás, avisos <em>antes</em> de un cambio, objetos „puente" y tiempo extra marcan la diferencia entre un cambio fluido y un meltdown (Autism Little Learners).</li>
+<li><strong>Cuando ocurren meltdowns o shutdowns:</strong> son <strong>involuntarios</strong> — su hijo/a no está siendo mal educado y no puede „simplemente parar". Mantenga la calma, baje exigencias y estimulación, asegure la seguridad y <strong>conceda tiempo de recuperación</strong> (a veces un día o más). Un <strong>shutdown</strong> (retirada, quedarse quieto/callado) es el espejo interno de un meltdown y necesita paciencia calmada, no presión para „reaccionar" (Autism Society, 2025; guía de shutdown de Reframing Autism; Leicestershire NHS).</li>
+</ul>
+<h3 id="32-no-se-alarme-por-la-regresión">3.2 No se alarme por la „regresión"</h3>
+<p>A veces un niño autista parece <strong>perder habilidades</strong> que tenía. Cada vez más se entiende como <strong>agobio, burnout o un cambio en los recursos atencionales</strong> — no la pérdida permanente de capacidad que parece. La respuesta es <strong>reducir exigencias y restaurar el acceso al descanso y a los intereses</strong>, no apretar más ni añadir más terapia (Edgar, 2024; Raymaker et al., 2020).</p>
+<h3 id="33-defenderle-en-la-escuela">3.3 Defenderle en la escuela</h3>
+<p>Usted es el defensor más importante de su hijo/a, y tiene derechos. En España y Latinoamérica existen procedimientos de apoyo y necesidades educativas específicas; en el Reino Unido un <strong>EHCP</strong> (Education, Health and Care Plan) puede asegurar apoyo legalmente; en EE. UU. el <strong>IEP</strong> (Individualized Education Program) bajo IDEA da a los padres el derecho a <strong>participar significativamente</strong> en las decisiones (Therapist Neurodiversity Collective; ImpactParents). Las fuertes alianzas familia–escuela ayudan mediblemente a los alumnos autistas (PMC8863588; PMC8883377).</p>
+<p><strong>Responda a los objetivos capacitistas.</strong> Objetivos como „mantendrá contacto visual", „se quedará sentado" o „será indistinguible de los compañeros" no están en el interés de bienestar de su hijo/a y reflejan un pensamiento desfasado. Abogue en cambio por objetivos basados en <strong>autodeterminación, acomodo, comunicación y aprendizaje real</strong> (Therapist Neurodiversity Collective). Comparta lo que sabe de monotropismo: pida a la escuela que <strong>proteja los túneles de atención de su hijo/a, use sus intereses, dé tiempo de transición y ofrezca un espacio tranquilo</strong>.</p>
+<blockquote>
+<p><em>"Los niños lo hacen bien cuando pueden"</em> (Ross Greene) — si su hijo/a está luchando, asuma un <strong>déficit de habilidad o de acomodo</strong>, no desafío.</p>
+</blockquote>
+<h3 id="34-apoyar-a-los-hermanos">3.4 Apoyar a los hermanos</h3>
+<p>Los hermanos de niños autistas tienen <strong>experiencias mixtas</strong> — a menudo empatía y orgullo profundos, pero también estrés, preocupación, trato diferencial y sentir que debe minimizar sus propias necesidades. Lo que ayuda (revisión sistemática: PMC8264626; ASATonline; GVSU START):</p>
+<ul>
+<li><strong>Explicación honesta y adecuada a la edad</strong> del autismo, que se actualiza al crecer.</li>
+<li><strong>Tiempo protegido uno a uno</strong> con cada progenitor, y una vida e identidad propias.</li>
+<li><strong>Permiso para todos sus sentimientos</strong> — incluida la frustración y el resentimiento — sin culpa.</li>
+<li><strong>Su propia información y apoyo</strong> (grupos de hermanos, libros de/con personas autistas).</li>
+<li><strong>Incluirles en la defensa</strong> en un nivel adecuado a su edad, sin cargarles con preocupaciones de adultos.</li>
+<li><strong>Recuerde la vista larga:</strong> la relación entre hermanos suele ser la <strong>relación más larga</strong> de la vida de una persona. La planificación a futuro (especialmente cuando los padres envejecen) debe implicar a los hermanos pronto y con respeto.</li>
+</ul>
+<hr />
+<h2 id="parte-4--cuando-su-familiar-autista-es-un-adulto">Parte 4 — Cuando su familiar autista es un adulto</h2>
+<p><em>(Para padres de hijos adultos, parejas/cónyuges y hermanos.)</em></p>
+<p>Los adultos autistas son adultos. El cambio central para los familiares es pasar de <strong>proteger/decidir por</strong> a <strong>apoyar la autonomía y seguir su liderazgo</strong>.</p>
+<h3 id="41-si-fue-diagnosticado-en-la-edad-adulta">4.1 Si fue diagnosticado en la edad adulta</h3>
+<p>Muchos adultos autistas — especialmente mujeres, personas racializadas y sin discapacidad intelectual — se identifican solo más tarde (la „generación perdida", Lai &amp; Baron-Cohen). Un diagnóstico tardío suele traer <strong>alivio y duelo a la vez</strong>: alivio de que luchas de toda la vida por fin tengan sentido, duelo por los años de ser malentendido o maltratado (Prosper Health; deconstructingstigma; alumacare).</p>
+<p><strong>Lo mejor que la familia puede hacer: creerles.</strong> Es tristemente común que los familiares descarten un diagnóstico tardío („¡pero si eres tan normal!", „todo el mundo es un poco autista"). Este rechazo puede doler más que los años sin saberlo. En su lugar: escuche, lea lo que comparten, pregunte qué ayudaría y deje que lideren (PMC11074347; NAS apoyo emocional tras el diagnóstico).</p>
+<h3 id="42-apoyar-sin-infantilizar">4.2 Apoyar sin infantilizar</h3>
+<ul>
+<li><strong>Siga su liderazgo</strong> sobre qué ayuda quieren. Ofrezca; no imponga.</li>
+<li><strong>Prefiera la toma de decisiones con apoyo</strong> sobre la tutela/control siempre que sea posible — ayúdeles a reunir información y sopesar opciones, y luego respete su elección.</li>
+<li><strong>Comuníquese con claridad y literalmente</strong>; dé tiempo de procesamiento; use escrito/texto cuando ayude (reduce el número de canales que hay que manejar).</li>
+<li><strong>No les presione para enmascarar.</strong> Si se desenmascaran con usted — stimming, evitar contacto visual, hablar de su forma natural — es un <strong>regalo de confianza</strong>, no falta de respeto. Reaccionar con incomodidad les enseña que solo está a salvo cuando actúan.</li>
+<li><strong>Tome en serio sus intereses especiales.</strong> Pueden ser la fuente de su carrera, amistades, alegría y recuperación. Muestre interés genuino; haga preguntas; celébrelos.</li>
+<li><strong>Ayude con lo práctico difícil</strong> si se lo piden: navegar servicios, prestaciones, vivienda, sanidad, empleo — estos sistemas suelen estar construidos para personas neurotípicas y son agotadores de afrontar en solitario.</li>
+</ul>
+<h3 id="43-cuando-lo-pasan-mal-burnout-salud-mental-relaciones">4.3 Cuando lo pasan mal (burnout, salud mental, relaciones)</h3>
+<p>El <strong>burnout autista</strong> es real, grave y distinto de „simplemente cansado" o de la depresión: <strong>agotamiento crónico, pérdida de habilidades que tenía, y menor tolerancia a la entrada sensorial/social</strong>, tras largos periodos de empujar más allá de la capacidad (a menudo mientras enmascara). Puede durar meses y se vincula a pensamientos suicidas (Raymaker et al., 2020). Si su familiar está en burnout, la dirección con respaldo es <strong>reducir exigencias y expectativas, ofrecer aceptación y apoyo social, y permitirle „hacer las cosas a su manera autista" / desenmascarar</strong> — no „aguantar". Los intereses especiales y el descanso son parte de la recuperación, no el problema (Raymaker et al., 2020; Mantzalas et al., 2022).</p>
+<p>La ansiedad, depresión, TDAH, problemas de sueño y digestivos que coexisten son comunes y merecen atención real (informada sobre el autismo). Sea una presencia estable y sin juicios, y ayúdele a encontrar profesionales que se tomen en serio la experiencia autista.</p>
+<hr />
+<h2 id="parte-5--cuando-su-familiar-autista-envejece">Parte 5 — Cuando su familiar autista envejece</h2>
+<p><em>(Para hijos adultos, parejas y familiares de una persona autista mayor — incluido un padre que quizá nunca fue diagnosticado.)</em></p>
+<blockquote>
+<p><strong>Una nota honesta sobre la evidencia.</strong> Existe <em>muy poca</em> investigación sobre personas autistas en edades avanzadas — supone solo alrededor del <strong>0,4 % de la literatura sobre autismo</strong> (aunque crece rápido), y casi no se sabe nada específicamente sobre <strong>hijos adultos que cuidan a un padre autista mayor</strong> (Klein et al., 2024). Lo que sigue combina la mejor evidencia disponible con principios generales de buena atención a mayores, aplicados a través de la lente del monotropismo. Trátelo como guía sensata, no como protocolo probado — y siga escuchando a su familiar.</p>
+</blockquote>
+<h3 id="51-muchas-personas-autistas-mayores-nunca-fueron-identificadas">5.1 Muchas personas autistas mayores nunca fueron identificadas</h3>
+<p>Su padre o familiar mayor quizá nunca fue diagnosticado. Toda una vida de „ser un poco excéntrico", de rutinas e intereses fuertes, de encontrar agotadora la vida social, de que le llamaran „tímido" o „frío" o „demasiado sensible" — puede, en retrospectiva, ser autismo. Algunos adultos mayores buscan y reciben un diagnóstico tarde y lo encuentran <strong>enormemente validante</strong>; a otros no les interesa una etiqueta. De cualquier forma, <strong>entenderle como monotrópico explica mucho</strong> y apunta a un mejor apoyo (Klein et al., 2024; Step Ahead ABA).</p>
+<h3 id="52-a-qué-se-enfrentan-los-adultos-autistas-mayores">5.2 A qué se enfrentan los adultos autistas mayores</h3>
+<p>Los resultados en adultos autistas mayores son, por término medio, <strong>pobres</strong>: mayores tasas de problemas médicos (trastornos del estado de ánimo, problemas de sueño, problemas digestivos y cardíacos), menos actividad física, mayor riesgo de declive cognitivo, más dificultades de salud mental, menor calidad de vida y mayor aislamiento social que los iguales no autistas. En un gran estudio australiano, solo el <strong>3,3 %</strong> cumplió criterios de „envejecimiento con éxito" — y este patrón se mantiene en todos los niveles de capacidad (Klein et al., 2024). Su familiar navega un mundo que nunca se construyó para él — su comprensión importa enormemente.</p>
+<h3 id="53-envejecer-bien-al-estilo-monotrópico">5.3 Envejecer bien, al estilo monotrópico</h3>
+<ul>
+<li><strong>Proteja las rutinas, intereses y objetos de toda la vida.</strong> Son anclas de identidad y calma, y se vuelven <em>más</em> preciosos cuando cambian otras capacidades. Un plan de cuidados que los elimine „por seguridad" puede causar daño real.</li>
+<li><strong>Mantenga el entorno amable sensorialmente.</strong> El envejecimiento suele traer cambios de oído y vista que se suman a diferencias sensoriales de toda la vida. Espacios tranquilos, rutinas predecibles, cosas y personas familiares importan más que nunca.</li>
+<li><strong>Apoye la conexión y el sentido.</strong> El aislamiento social es un problema mayor en este grupo. Ayude a su familiar a mantenerse conectado con la comunidad autista, sus intereses especiales y la gente que le „entiende" — y considere actividad suave basada en intereses, adaptada a las capacidades físicas cambiantes (Klein et al., 2024).</li>
+<li><strong>Manténgale en el centro de las decisiones.</strong> Toma de decisiones con apoyo, comunicación clara y literal, respeto por la autonomía — especialmente cuando crecen las necesidades de cuidado.</li>
+</ul>
+<h3 id="54-la-pregunta-más-difícil-demencia-o-diferencia-autista">5.4 La pregunta más difícil: ¿demencia o diferencia autista?</h3>
+<p>Es genuinamente difícil y <strong>poco investigado</strong>. Algunos estudios sugieren que los adultos autistas pueden mostrar <strong>un declive de memoria acelerado y cambios en el hipocampo</strong>, y en una muestra alrededor del <strong>30 % de adultos autistas de mediana y mayor edad reportaron por sí mismos declive cognitivo</strong> (Klein et al., 2023, vía ARI). Pero distinguir <strong>patrones autistas de toda la vida</strong> (inercia, foco monotrópico, procesamiento más lento, menor compromiso social) de <strong>demencia real</strong> es clínicamente difícil y fácil de equivocar (Advanced Therapy Clinic; NTG; Step Ahead ABA).</p>
+<ul>
+<li><strong>No asuma.</strong> Una retirada, una respuesta más lenta o un cambio de rutina en una persona autista <em>no</em> es automáticamente demencia — puede ser burnout, agobio, depresión, un cambio sensorial o, simplemente, cómo siempre ha sido.</li>
+<li><strong>Consiga una evaluación cuidadosa e informada sobre el autismo.</strong> Los cribados estándar de demencia pueden malinterpretar rasgos autistas. Busque profesionales y recursos con experiencia en autismo (la <strong>National Task Group</strong> mantiene recursos sobre autismo y demencia).</li>
+<li><strong>Preserve la dignidad en todo momento.</strong> Sea cual sea el diagnóstico, su familiar sigue siendo la misma persona. Acomode, no patologice; proteja la autonomía y la identidad incluso cuando aumente la necesidad de cuidado.</li>
+</ul>
+<h3 id="55-el-cambio-de-roles-en-el-cuidado--y-planificar-con-antelación">5.5 El cambio de roles en el cuidado — y planificar con antelación</h3>
+<p>Si es el <strong>hijo/a adulto/a</strong> de un padre autista — o su cónyuge/pareja — puede enfrentarse a un <strong>cambio de roles</strong>: la persona que antes le cuidaba (o sostenía su propia vida) ahora necesita apoyo. Los temas de planificación con los que las familias luchan en esta situación incluyen <strong>vivienda, transporte, arreglos legales y financieros, prestaciones, redes sociales y deseos al final de la vida</strong> (mentalhealthandaging.com). Empiece estas conversaciones <strong>temprano, con suavidad y con su familiar liderando</strong> — mucho antes de una crisis.</p>
+<p>Si su familiar autista antes era apoyado por <em>sus</em> ahora ancianos padres (sus abuelos), el „tsunami plateado" de adultos autistas que envejecen y de cuidadores que envejecen hace que la planificación anticipada sea aún más importante.</p>
+<h3 id="56-residencias-y-hospitales">5.6 Residencias y hospitales</h3>
+<p>Estos entornos suelen ser sensorialmente hostiles y rompedores de rutina — de los más difíciles para una persona monotrópica. Abogue por: un espacio tranquilo, rutinas predecibles, conservación de objetos e intereses significativos, <strong>personal que entienda el autismo</strong> y <strong>comunicación clara, literal y paciente</strong>. Pida los acomodos como un derecho, no como un favor (véase la guía complementaria para profesionales para el detalle sanitario).</p>
+<h3 id="57-final-de-la-vida">5.7 Final de la vida</h3>
+<p>Aborde las conversaciones del final de la vida con el mismo respeto que ha mostrado siempre: información clara y literal; tiempo amplio de procesamiento; toma de decisiones con apoyo; conservación de la rutina y de las personas/cosas que importan; y respeto por cómo su familiar se comunica y elabora el duelo — que puede parecer distinto de lo que espera, y no por ello menos real.</p>
+<hr />
+<h2 id="parte-6--abuelos-tíos-tías-primos-familia-extensa">Parte 6 — Abuelos, tíos, tías, primos (familia extensa)</h2>
+<p>La familia extensa es un <strong>recurso de resiliencia infravalorado</strong> para las personas autistas y sus padres — pero también puede ser fuente de estrés cuando las actitudes chocan (Frontiers, 2026; PMC12162707; stageslearning; Marcus Foundation).</p>
+<p><strong>Lo que ayuda:</strong></p>
+<ul>
+<li><strong>Aprenda sobre autismo de voces autistas</strong>, no solo de fuentes basadas en el miedo. Un rato con textos/vídeos liderados por autistas transforma cómo ve a su familiar.</li>
+<li><strong>Escuche a los padres</strong> (si es un niño). Conocen a su hijo; confíe en sus peticiones de acomodo (sin abrazos sorpresa, bajar el volumen, no comentar la comida, seguir la rutina) aunque parezcan raras.</li>
+<li><strong>Eduqúese</strong> — los padres dicen pasar mucho esfuerzo explicando el autismo a los familiares; salirles al paso a medio camino es un regalo real (PMC12162707).</li>
+<li><strong>Construya su propia relación</strong> con su familiar autista, en sus términos. Entre en su mundo a través de sus intereses. No tome la falta de contacto visual o de „calor" típico como algo personal — la conexión puede verse distinta (alinear cosas juntos, compartir una pasión, juego paralelo, escribir).</li>
+<li><strong>Vigile su lenguaje</strong> en la familia y con la persona. Evite „cura", „tragedia", „padece", „por lo menos no es…". Celebre a la persona que tiene delante.</li>
+<li><strong>Ofrezca ayuda concreta</strong>: respiro, una comida, acudir a una cita, aprender las estrategias de regulación del niño. Las ofertas específicas superan a „avísame si necesitas algo".</li>
+<li><strong>Es normal sentirse inseguro/a.</strong> Los abuelos especialmente pueden sentirse insuficientes cuando la interacción esperada no ocurre. Es normal; lo que importa es presentarse con curiosidad y respeto.</li>
+</ul>
+<hr />
+<h2 id="parte-7--cuidar-de-ustedes-mismos-bienestar-familiar-y-del-cuidador">Parte 7 — Cuidar de ustedes mismos (bienestar familiar y del cuidador)</h2>
+<p>No se puede verter de una taza vacía, y el estrés familiar en el autismo es <strong>real y medible</strong> — no señal de amar menos a su familiar.</p>
+<ul>
+<li><strong>El burnout de padres/cuidadores es común.</strong> Los padres de niños autistas muestran más estrés, ansiedad y depresión que los padres de niños neurotípicos; el estrés crónico tiene consecuencias físicas y mentales reales (Yesilkaya &amp; Magallón-Neri, 2024; Frontiers, 2025; Schieve, 2007, vía ARI; childmind.org). Nombrarlo es el primer paso.</li>
+<li><strong>Lo que de verdad ayuda (con evidencia):</strong> los enfoques basados en aceptación y autocompasión reducen el estrés parental (RCT piloto de ACT; Neff; Torbet, 2019; Life Skills Advocate); las intervenciones basadas en mindfulness ayudan; <strong>la satisfacción con los servicios y un buen apoyo</strong> protegen el bienestar del cuidador (Fong, 2023); el apoyo de pares de otras familias afirmativas reduce el aislamiento.</li>
+<li><strong>Encuentre a los suyos.</strong> Los grupos de padres afirmativos de la neurodiversidad (presenciales u online) cambian la vida; evite los grupos centrados en el duelo/cura, que suelen ahondar la desesperación. Incluya espacios <strong>liderados por autistas</strong> en su lectura y escucha.</li>
+<li><strong>Tome un respiro real.</strong> Tiene derecho a descansar, a tener su propia vida, a pedir y aceptar ayuda. Su bienestar es parte del sistema de apoyo de su familiar, no algo separado.</li>
+<li><strong>Procese el duelo fuera de la relación.</strong> Es normal hacer el duelo de la vida que imaginaba. Haga ese trabajo con terapia, pareja o grupo de pares — no sobre o a través de su familiar autista.</li>
+<li><strong>Proteja también el bienestar de los hermanos</strong> (véase §3.4).</li>
+<li><strong>Para hijos adultos cuidadores de familiares autistas mayores:</strong> los riesgos de burnout del cuidado de mayores se le aplican también a usted, <em>además</em> de la escasez de servicios informados sobre el autismo. Construya un equipo de apoyo temprano; no puede ni debe hacerlo solo/a.</li>
+</ul>
+<hr />
+<h2 id="parte-8--un-rápido-haz--no-hagas-para-todos-los-familiares">Parte 8 — Un rápido „Haz / No hagas" para todos los familiares</h2>
+<p><strong>Haz</strong></p>
+<ul>
+<li>Entra en su mundo; comparte y honra sus intereses</li>
+<li>Comunícate con claridad, literalmente y con paciencia</li>
+<li>Da avisos y tiempo para las transiciones</li>
+<li>Protege sus rutinas, su stimming y su quietud</li>
+<li>Co-regula (mantén la calma, baja las exigencias) durante el agobio</li>
+<li>Aboga por los acomodos (escuela, trabajo, sanidad)</li>
+<li>Escucha voces autistas; centra las decisiones propias de tu familiar</li>
+<li>Cuida tu propio bienestar, con apoyo</li>
+</ul>
+<p><strong>No hagas</strong></p>
+<ul>
+<li>Fuerces contacto visual, suprimas el stimming o le empujes a „actuar normal"</li>
+<li>Le arranques abruptamente de la concentración ni interrumpas el flow constantemente</li>
+<li>Trates los meltdowns/shutdowns como mala educación o manipulación</li>
+<li>Uses lenguaje de „cura", „tragedia" o „carga", delante o sobre él/ella</li>
+<li>Tomes decisiones <em>sobre</em> él/ella <em>sin</em> él/ella</li>
+<li>Asumas que la retirada, la lentitud o el cambio en un familiar mayor es automáticamente demencia</li>
+<li>Lleves todo tú solo/a</li>
+</ul>
+<hr />
+<h2 id="parte-9--preguntas-abiertas-y-limitaciones-honestas">Parte 9 — Preguntas abiertas y limitaciones honestas</h2>
+<ol type="1">
+<li><strong>La edad avanzada es una asignatura pendiente de investigación.</strong> La mayor parte de la orientación para familiares autistas mayores se extrapola; autismo + demencia, autismo + menopausia y el cuidado del hijo adulto están poco estudiados (Klein et al., 2024). Sea honesto/a sobre la incertidumbre con su familia y los clínicos.</li>
+<li><strong>Los enfoques de crianza afirmativos específicos están emergiendo, no probados.</strong> Los métodos de baja exigencia, lenguaje declarativo y PDA tienen fuerte apoyo liderado por autistas y evidencia práctica creciente, pero pocos ensayos grandes. Trátelos como práctica sensata y centrada en la persona — y conserve lo que funciona para <em>su</em> familiar.</li>
+<li><strong>La investigación familiar está sesgada</strong> hacia familias blancas, occidentales, anglófonas, con dos progenitores y de menores necesidades de apoyo. Las experiencias varían según cultura, raza, género, ingresos y necesidades de apoyo; busque voces que reflejen a su familia.</li>
+<li><strong>No todas las personas autistas son monotrópicas</strong>, ni todas quieren lo mismo. Su familiar es, ante todo, un individuo; deje que corrija esta guía.</li>
+<li><strong>La coexistencia es la norma.</strong> TDAH (AuDHD), ansiedad, depresión, diferencias de aprendizaje y problemas físicos coexisten con frecuencia y configuran el cuadro.</li>
+</ol>
+<hr />
+<h2 id="fuentes">Fuentes</h2>
+<h3 id="teoría-central">Teoría central</h3>
+<ol type="1">
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a> — vía <a href="https://monotropism.org/murray-lesser-lawson">https://monotropism.org/murray-lesser-lawson</a></li>
+<li>Murray, F. (2018, actualizado 2025). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Murray, F. (2023). Monotropism and Wellbeing (ponencia, SARG 2023). <a href="https://monotropism.org/wellbeing">https://monotropism.org/wellbeing</a></li>
+<li>Murray, F. (2022). Understanding how routines can help autistic people thrive. <em>Thinking Person's Guide to Autism</em>. <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>Lawson, W. (2011). <em>The Passionate Mind</em>. Jessica Kingsley. — y Lawson, W. (2025). <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a></li>
+<li>Milton, D. (2012). The double empathy problem. Resumen: Reframing Autism, <a href="https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics">https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics</a></li>
+<li>Garau, V. et al. (2023). The Monotropism Questionnaire. Preprint OSF. <a href="https://osf.io/ft73y/">https://osf.io/ft73y/</a></li>
+<li>Reframing Autism (2025). Monotropism: understanding autistic ways of being through the lens of attention. <a href="https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention">https://reframingautism.org.au/monotropism-understanding-autistic-ways-of-being-through-the-lens-of-attention</a></li>
+<li>National Autistic Society (Edgar, H. &amp; Adkin, T., 2025). What is monotropism? <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+</ol>
+<h3 id="burnout-enmascaramiento-meltdownsshutdowns">Burnout, enmascaramiento, meltdowns/shutdowns</h3>
+<ol start="10" type="1">
+<li>Raymaker, D. M. et al. (2020). Defining autistic burnout. <em>Autism in Adulthood</em>, 2(2), 132–143. <a href="https://pubmed.ncbi.nlm.nih.gov/32851204">https://pubmed.ncbi.nlm.nih.gov/32851204</a></li>
+<li>Mantzalas, J. et al. (2022). A conceptual model of risk and protective factors for autistic burnout. <em>Autism Research</em>. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722</a></li>
+<li>Pearson, A. &amp; Rose, K. (2021). A conceptual analysis of autistic masking. <em>Autism in Adulthood</em>. <a href="https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043">https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043</a></li>
+<li>Autism Society (2025). Autistic meltdowns and shutdowns. <a href="https://autismsociety.org/">https://autismsociety.org/</a></li>
+<li>Reframing Autism. All about autistic shutdowns: a guide for allies. <a href="https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies">https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies</a></li>
+<li>Leicestershire Partnership NHS Trust — Autism Space. Understanding autistic meltdowns and shutdowns. <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+</ol>
+<h3 id="niños-crianza-hogar-y-escuela">Niños, crianza, hogar y escuela</h3>
+<ol start="16" type="1">
+<li>Autism Awareness Centre. Co-regulation: the bridge to self-regulation. <a href="https://autismawarenesscentre.com/co-regulation-the-bridge-to-self-regulation">https://autismawarenesscentre.com/co-regulation-the-bridge-to-self-regulation</a></li>
+<li>Autism Little Learners. Co-regulation and autism; transitions and autism. <a href="https://autismlittlelearners.com">https://autismlittlelearners.com</a></li>
+<li>Autism Ontario (2024). Supporting regulation using a neurodiversity affirmative approach. <a href="https://www.autismontario.com">https://www.autismontario.com</a></li>
+<li>Tilt Parenting (2023). Linda Murphy talks about declarative language. <a href="https://tiltparenting.com/2023/03/28/declarative-language">https://tiltparenting.com/2023/03/28/declarative-language</a></li>
+<li>Autistic Realms (Edgar, H.). Neurodivergent co-regulation. <a href="https://autisticrealms.com/neurodivergent-co-regulation">https://autisticrealms.com/neurodivergent-co-regulation</a></li>
+<li>Edgar, H. (2024). Autistic young people: skills regression, burnout or a shift in monotropic attentional resources? <a href="https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/">https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/</a></li>
+<li>National Autistic Society. Demand avoidance. <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a></li>
+<li>Reframing Autism. Pathological Demand Avoidance (PDA) and autism: a guide for allies. <a href="https://reframingautism.org.au/pathological-demand-avoidance-pda-and-autism-guide-for-allies">https://reframingautism.org.au/pathological-demand-avoidance-pda-and-autism-guide-for-allies</a></li>
+<li>Child Mind Institute. Pathological demand avoidance (PDA) in kids. <a href="https://childmind.org/article/pathological-demand-avoidance-in-kids">https://childmind.org/article/pathological-demand-avoidance-in-kids</a></li>
+<li>BERA (2021). Autism: the benefits of monotropism and flow states in the classroom. <a href="https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom">https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom</a></li>
+<li>Therapist Neurodiversity Collective (Roberts, J., 2023). IEPs, ableist goals, and parents' rights. <a href="https://therapistndc.org/ieps-ableist-goals-and-parents-rights">https://therapistndc.org/ieps-ableist-goals-and-parents-rights</a></li>
+<li>ImpactParents. How to make IEPs neuro-affirming and student-led. <a href="https://impactparents.com/how-to-make-ieps-neuro-affirming-and-student-led">https://impactparents.com/how-to-make-ieps-neuro-affirming-and-student-led</a></li>
+<li>University of Oregon (PMC8863588). Dimensions of family–school partnerships for autistic children. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8863588">https://pmc.ncbi.nlm.nih.gov/articles/PMC8863588</a></li>
+<li>PMC8883377. "I know how to advocate": parents' experiences advocating for children diagnosed with ASD. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8883377">https://pmc.ncbi.nlm.nih.gov/articles/PMC8883377</a></li>
+</ol>
+<h3 id="hermanos-y-familia-extensa">Hermanos y familia extensa</h3>
+<ol start="30" type="1">
+<li>PMC8264626. A systematic review of the experience of being a sibling of a child with an autism spectrum disorder. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264626">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264626</a></li>
+<li>PMC12162707. The role of extended family members in the lives of autistic individuals and their parents. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12162707">https://pmc.ncbi.nlm.nih.gov/articles/PMC12162707</a></li>
+<li>Frontiers in Education (2026). Supporting resilience for autistic children and their families: appreciating the roles of grandparents. <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1771073/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1771073/full</a></li>
+<li>Stages Learning. How grandparents can support their autistic grandchild. <a href="https://stageslearning.com/connect/articles/how-grandparents-can-support-their-autistic-grandchild">https://stageslearning.com/connect/articles/how-grandparents-can-support-their-autistic-grandchild</a></li>
+<li>Marcus Foundation. Being a grandparent to a child with autism. <a href="https://www.marcus.org/autism-resources/autism-tips-and-resources/being-a-grandparent-to-a-child-with-autism">https://www.marcus.org/autism-resources/autism-tips-and-resources/being-a-grandparent-to-a-child-with-autism</a></li>
+<li>ASAT. How to manage the impact of a child with autism on siblings. <a href="https://asatonline.org/research-treatment/clinical-corner/impact-on-siblings">https://asatonline.org/research-treatment/clinical-corner/impact-on-siblings</a></li>
+<li>Grand Valley State University START Project. Resources for siblings. <a href="https://www.gvsu.edu/autismcenter/resources-for-siblings-356.htm">https://www.gvsu.edu/autismcenter/resources-for-siblings-356.htm</a></li>
+</ol>
+<h3 id="adultos-diagnóstico-tardío-revelación">Adultos, diagnóstico tardío, revelación</h3>
+<ol start="37" type="1">
+<li>PMC11074347. "When I need help, I ask my friends": experiences of Spanish autistic women disclosing late diagnosis. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11074347">https://pmc.ncbi.nlm.nih.gov/articles/PMC11074347</a></li>
+<li>PMC9889483. Exploring the experiences of parents whose child has received a diagnosis of ASD in adulthood. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9889483">https://pmc.ncbi.nlm.nih.gov/articles/PMC9889483</a></li>
+<li>National Autistic Society. Emotional support for family members after a diagnosis. <a href="https://www.autism.org.uk/advice-and-guidance/diagnosis/after-diagnosis/emotional-support-for-family-members-after-a-diagn">https://www.autism.org.uk/advice-and-guidance/diagnosis/after-diagnosis/emotional-support-for-family-members-after-a-diagn</a></li>
+<li>Prosper Health. Why many adults receive a late autism diagnosis and what to do next. <a href="https://www.prosperhealth.io/blog/why-many-adults-receive-a-late-autism-diagnosis-and-what-to-do-next">https://www.prosperhealth.io/blog/why-many-adults-receive-a-late-autism-diagnosis-and-what-to-do-next</a></li>
+<li>Deconstructing Stigma. Supporting adults with late-diagnosed autism. <a href="https://deconstructingstigma.org/library/friedman-autism-adults">https://deconstructingstigma.org/library/friedman-autism-adults</a></li>
+</ol>
+<h3 id="envejecimiento-demencia-atención-a-mayores">Envejecimiento, demencia, atención a mayores</h3>
+<ol start="42" type="1">
+<li>Klein, C. B. et al. (2024). Aging well and autism: a narrative review. <em>Healthcare</em>, 12(12), 1207. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987">https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987</a></li>
+<li>Autism Research Institute. Editorial: autism and dementia and Alzheimer's disease. <a href="https://autism.org/editorial-autism-and-dementia-and-alzheimers-disease">https://autism.org/editorial-autism-and-dementia-and-alzheimers-disease</a></li>
+<li>The National Task Group (NTG). Autism and dementia resource library. <a href="https://www.the-ntg.org/autism-and-dementia">https://www.the-ntg.org/autism-and-dementia</a></li>
+<li>Mental Health and Aging. Caring for adults with autism and other disabilities. <a href="https://www.mentalhealthandaging.com/caring-for-adults-with-autism-and-other-disabilities">https://www.mentalhealthandaging.com/caring-for-adults-with-autism-and-other-disabilities</a></li>
+<li>Lai, M.-C. &amp; Baron-Cohen, S. (2015). Identifying the lost generation of adults with autism spectrum conditions. <em>Lancet Psychiatry</em>. (Citado en Klein et al., 2024.)</li>
+<li>Klein, C. B. et al. (2023). Self-reported cognitive decline in middle-aged and older autistic adults. (Citado en editorial ARI, ref 43.)</li>
+</ol>
+<h3 id="bienestar-del-cuidador-y-marco-afirmativo">Bienestar del cuidador y marco afirmativo</h3>
+<ol start="48" type="1">
+<li>Frontiers in Psychology (2025). Latent profile analysis of parental burnout among parents of children with and without ASD. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1581321/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1581321/full</a></li>
+<li>Autism Research Institute. Research on parental stress &amp; autism. <a href="https://autism.org/parental-stress">https://autism.org/parental-stress</a></li>
+<li>Child Mind Institute. Self-care tips for parents to prevent burnout. <a href="https://childmind.org/article/fighting-caregiver-burnout-special-needs-kids">https://childmind.org/article/fighting-caregiver-burnout-special-needs-kids</a></li>
+<li>Life Skills Advocate. Effective strategies for managing autism parent burnout. <a href="https://lifeskillsadvocate.com/blog/autism-parent-burnout">https://lifeskillsadvocate.com/blog/autism-parent-burnout</a></li>
+<li>PMC12967497. The emotional and psychological impact on families raising children with special needs. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12967497">https://pmc.ncbi.nlm.nih.gov/articles/PMC12967497</a></li>
+<li>Autistic Self Advocacy Network (ASAN). What we believe — "Nothing about us without us." <a href="https://autisticadvocacy.org/about-asan/what-we-believe">https://autisticadvocacy.org/about-asan/what-we-believe</a></li>
+<li>The Autistic Advocate (Kieran Rose). The danger of misunderstanding neuro-affirming practice. <a href="https://theautisticadvocate.com/the-danger-of-misunderstanding-neuro-affirming-practice">https://theautisticadvocate.com/the-danger-of-misunderstanding-neuro-affirming-practice</a></li>
+<li>Therapist Neurodiversity Collective. Neurodiversity-affirming therapy. <a href="https://therapistndc.org/neurodiversity-affirming-therapy">https://therapistndc.org/neurodiversity-affirming-therapy</a></li>
+<li>Estée Klar. Nothing about us without us: a declaration of relationality. <a href="https://www.esteerelation.com/life-art-collaboration-an-introduction">https://www.esteerelation.com/life-art-collaboration-an-introduction</a></li>
+</ol>
+<h3 id="guía-complementaria">Guía complementaria</h3>
+<ol start="57" type="1">
+<li>PieBru (2025). Supporting the autistic monotropic person across the lifespan — guía complementaria para profesionales y sanitarios. <a href="https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-lifespan-guide.md">https://github.com/PieBru/monotropism/blob/main/outputs/autistic-monotropism-lifespan-guide.md</a></li>
+</ol>
+</body>
+</html>

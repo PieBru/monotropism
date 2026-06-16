@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monotropismo: Una Explicación del Autismo Basado en el Interés</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Monotropismo: Una Explicación del Autismo Basado en el Interés</h1>
+</header>
+<h1 id="monotropismo-una-explicación-del-autismo-basado-en-el-interés">Monotropismo: Una Explicación del Autismo Basado en el Interés</h1>
+<h2 id="resumen-ejecutivo">Resumen Ejecutivo</h2>
+<p>El monotropismo es una teoría cognitiva del autismo que explica la experiencia autista a través de las diferencias en la atención y el interés. Desarrollada por los investigadores autistas Dinah Murray, Wenn Lawson y Mike Lesser desde principios de la década de 1990 en adelante, la teoría propone que las mentes monotrópicas tienden a enfocar la atención intensamente en un conjunto estrecho de intereses en cualquier momento dado, dejando menos recursos de procesamiento para todo lo demás. Esta única idea se ha utilizado para dar cuenta de toda la gama de rasgos autistas —desde las sensibilidades sensoriales y las diferencias sociales hasta la experiencia especializada y la disfunción ejecutiva— en un marco unificado y no patologizante. Dentro de la comunidad autista, el monotropismo es posiblemente la lente teórica dominante para comprender el autismo, y está ingresando cada vez más en el discurso académico y profesional. Este informe examina los orígenes de la teoría, sus afirmaciones fundamentales, la evidencia que la respalda, su relación con otros marcos teóricos y las preguntas abiertas.</p>
+<h2 id="1-orígenes-y-desarrollo">1. Orígenes y Desarrollo</h2>
+<p>El término "monotropismo" —del griego <em>mono</em> ("uno, único") y <em>tropismo</em> ("movimiento direccional")— fue acuñado en 1992 por Jeanette Buirski, una amiga de Dinah Murray.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Murray, una psicolingüista que completó su doctorado en el University College de Londres en 1985, había estado explorando la relación entre el lenguaje y los intereses durante años. Después de leer <em>Autismo: Hacia una explicación del enigma</em> de Uta Frith alrededor de 1990, encontró insatisfactorias las explicaciones existentes y comenzó a desarrollar una alternativa.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Su primera presentación pública de estas ideas fue "Attention Tunnelling and Autism" (Efecto túnel de la atención y autismo) en la conferencia de autismo de Durham en 1992.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>De forma independiente, en Australia, Wenn Lawson (entonces Wendy Lawson) —diagnosticado autista en 1994— estaba desarrollando un marco estrechamente relacionado que llamó "Single Focused Attention" (Atención de Enfoque Único). Lawson escribió por primera vez sobre la atención de enfoque único en su autobiografía de 1998 <em>Life Behind Glass</em> y en su tesis de licenciatura de 1999.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Cuando Murray y Lawson se conocieron en una conferencia en 1998, descubrieron que habían estado trabajando en las mismas ideas en lados opuestos del mundo.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>Junto con el científico matemático Mike Lesser —quien aportó su experiencia en la teoría de sistemas dinámicos— publicaron su artículo fundamental en la revista <em>Autism</em> en 2005: <strong>"Attention, monotropism and the diagnostic criteria for autism"</strong> (Atención, monotropismo y los criterios diagnósticos para el autismo).<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Este sigue siendo el texto base de la teoría. La posterior tesis doctoral de Lawson, <em>Single Attention and Associated Cognition in Autism</em> (SAACA), se convirtió en el libro de 2011 <em>The Passionate Mind</em>.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> La propia Dinah Murray fue diagnosticada autista en 2009, lo que significa que los tres creadores originales eran autistas.</p>
+<p>Desde entonces, la teoría ha sido popularizada y ampliada por, entre otros, Fergus Murray (hijo de Dinah, un profesor de ciencias autista) cuyo artículo de 2018 "Me and Monotropism: A Unified Theory of Autism" en <em>The Psychologist</em> se convirtió en el artículo más leído de la revista en 2019,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> y Patrick Dwyer, un investigador de doctorado autista en el Olga Tennison Autism Research Centre (OTARC).<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
+<h2 id="2-la-teoría-central-un-sistema-de-intereses">2. La Teoría Central: Un Sistema de Intereses</h2>
+<p>El monotropismo se basa en un modelo de la mente como un <strong>sistema de intereses</strong>: todos nos sentimos atraídos por muchas cosas, y estos intereses ayudan a dirigir nuestra atención. Fundamentalmente, la cantidad de atención disponible en cualquier momento es limitada, y los procesos mentales compiten por este recurso escaso.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+<p><strong>En una mente monotrópica</strong>, tienden a activarse menos intereses en un momento dado, pero aquellos que están activos atraen una proporción desproporcionada de los recursos de procesamiento. Esto crea un "túnel de atención": un enfoque estrecho e intenso en cualquier cosa que sea actualmente destacada. Todo lo que se encuentra fuera del túnel recibe una capacidad de procesamiento mínima.</p>
+<p><strong>En una mente politrópica</strong> (la modalidad neurotípica, según este enfoque), muchos intereses están activos simultáneamente, la atención se distribuye de manera más amplia y el cambio entre canales es relativamente fluido.</p>
+<p>La teoría hace tres predicciones centrales sobre la cognición monotrópica:</p>
+<ol type="1">
+<li><strong>Intensidad dentro del túnel</strong>: lo que está en foco se experimenta de manera vívida y profunda, lo que conduce a estados de flujo (<em>flow</em>), especialización e inmersión creativa.</li>
+<li><strong>Procesamiento reducido fuera del túnel</strong>: los estímulos, las señales sociales o incluso las sensaciones internas (hambre, dolor) fuera del interés actual pueden pasar desapercibidos.</li>
+<li><strong>Dificultad para cambiar la atención</strong>: las transiciones entre estados atencionales son lentas y requieren esfuerzo, lo que se denomina <strong>inercia autista</strong> (resistencia a iniciar, detener o cambiar la dirección mental).<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></li>
+</ol>
+<h2 id="3-cómo-explica-el-monotropismo-los-rasgos-autistas">3. Cómo Explica el Monotropismo los Rasgos Autistas</h2>
+<h3 id="31-intereses-focalizados-y-especialización">3.1 Intereses Focalizados y Especialización</h3>
+<p>Los criterios diagnósticos describen "patrones de interés restrictivos y repetitivos", pero el marco del monotropismo los reinterpreta como compromisos intensos y profundos que aportan alegría, significado y especialización. Fergus Murray escribe: "Cuando la gente habla de 'intereses restringidos', lo que la mayoría parece querer decir es que no pueden concebir nuestra falta de interés en las cosas que a ellos les parecen importantes".<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> Los intereses especiales no son periféricos al autismo, sino centrales para el estilo cognitivo mismo.</p>
+<h3 id="32-diferencias-sensoriales">3.2 Diferencias Sensoriales</h3>
+<p>El monotropismo ofrece una explicación unificada para el diverso perfil sensorial del autismo:</p>
+<ul>
+<li><strong>Hiperreactividad</strong>: cuando la atención limitada es capturada por un estímulo intrusivo (por ejemplo, una luz parpadeante, el parloteo de fondo), se experimenta con una intensidad inusual porque todos los recursos de procesamiento se dirigen a él.</li>
+<li><strong>Hiporreactividad</strong>: cuando la atención está completamente absorbida en otra parte, es posible que los estímulos externos (incluido el dolor) no se registren en absoluto.</li>
+<li><strong>Búsqueda sensorial</strong>: cuando un estímulo sensorial agradable se encuentra dentro del túnel de atención, se persigue con intensidad enfocada.</li>
+</ul>
+<p>La investigación de Patrick Dwyer en el OTARC ha encontrado que las diferencias de atención en los niños autistas están vinculadas tanto a la hiperreactividad como a la hiporreactividad a los estímulos sensoriales, de manera consistente con este modelo.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<h3 id="33-inercia-autista-disfunción-ejecutiva">3.3 Inercia Autista (Disfunción Ejecutiva)</h3>
+<p>En lugar de un problema con la "función ejecutiva" (una etiqueta que no es específica del autismo), el monotropismo predice <strong>inercia</strong>: dificultad para iniciar, detener o cambiar trayectorias mentales. Fergus Murray lo compara con el impulso: "Es como si hubiéramos cargado un carro hasta el tope con pensamientos y sentimientos, y de repente tuviéramos que girarlo en una esquina cerrada".<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> El estudio cualitativo en versión preprint de Karen Buckle sobre la inercia autista conecta directamente este fenómeno con el procesamiento monotrópico.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a></p>
+<h3 id="34-diferencias-sociales">3.4 Diferencias Sociales</h3>
+<p>Muchas dificultades sociales se derivan naturalmente de la atención monotrópica:</p>
+<ul>
+<li><strong>Procesamiento multicanal</strong>: la interacción social exige el procesamiento simultáneo del habla, la expresión facial, el tono, el lenguaje corporal y el contexto. Para una mente monotrópica, hacer malabarismos con estos flujos es cognitivamente costoso.</li>
+<li><strong>Literalidad</strong>: las mentes politrópicas decodifican sin esfuerzo la metáfora y el lenguaje indirecto; las mentes monotrópicas tienden a procesar primero el significado literal y requieren un paso de procesamiento adicional para la inferencia.<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></li>
+<li><strong>Tiempo de procesamiento</strong>: la inercia autista significa que las respuestas en la conversación son más lentas, lo que puede malinterpretarse como desinterés o incomprensión.</li>
+<li><strong>Desajuste de la saliencia</strong>: el <strong>problema de la doble empatía</strong> de Damian Milton —la idea de que la ruptura de la comunicación es bidireccional, no un déficit de las personas autistas— es complementario: el monotropismo explica por qué ocurre el desajuste.</li>
+</ul>
+<h3 id="35-permanencia-del-objeto-e-interocepción">3.5 Permanencia del Objeto e Interocepción</h3>
+<p>Wenn Lawson ha escrito extensamente sobre cómo el monotropismo afecta la <strong>permanencia del objeto</strong>: la conciencia de que los objetos, las personas o las necesidades continúan existiendo cuando no están en el foco de atención. Si la atención se consume por completo, es posible que las personas no registren la existencia de alguien que ha salido de la habitación, o que no noten el hambre, la sed o la necesidad de usar el baño (<strong>interocepción</strong> disminuida).<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> La guía de práctica de Autism.org.uk enfatiza de manera similar cómo los túneles de atención monotrópicos moldean lo que las personas autistas notan, lo que les resulta significativo y lo que les causa estrés.<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a></p>
+<h3 id="36-stimming-y-rutinas">3.6 Stimming y Rutinas</h3>
+<p>El <em>stimming</em> (balancearse, aletear, tararear) proporciona una entrada sensorial controlada y predecible que ayuda a filtrar los estímulos competitivos o a mantener el equilibrio. Las rutinas minimizan la carga mental, reduciendo la cantidad de decisiones que compiten por la atención.<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></p>
+<h2 id="4-relación-con-otras-teorías-del-autismo">4. Relación con Otras Teorías del Autismo</h2>
+<table>
+<thead>
+<tr>
+<th>Teoría</th>
+<th>Diferencia Clave con el Monotropismo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coherencia Central Débil</strong> (Frith, 1989)</td>
+<td>Se superpone pero patologiza el enfoque en el detalle; el monotropismo lo enmarca como una diferencia más que como un déficit.</td>
+</tr>
+<tr>
+<td><strong>Teoría de la Mente / Ceguera Mental</strong> (Baron-Cohen, 1995)</td>
+<td>El monotropismo sugiere que las dificultades surgen de recursos de procesamiento limitados, no de una incapacidad; cuestionada por la doble empatía.</td>
+</tr>
+<tr>
+<td><strong>Disfunción Ejecutiva</strong> (Ozonoff et al.)</td>
+<td>Describe los síntomas pero no es específica del autismo; el monotropismo ofrece el concepto más preciso de "inercia autista".</td>
+</tr>
+<tr>
+<td><strong>Funcionamiento Perceptivo Mejorado</strong> (Mottron, 2006)</td>
+<td>Coincide en las fortalezas; el monotropismo proporciona un mecanismo atencional unificador.</td>
+</tr>
+<tr>
+<td><strong>Teoría del Mundo Intenso</strong> (Markram &amp; Markram, 2007)</td>
+<td>Paralela: ambas predicen un hiperprocesamiento; el mundo intenso parte de los microcircuitos neuronales, el monotropismo de la atención/interés.</td>
+</tr>
+<tr>
+<td><strong>Teoría del Cerebro Masculino</strong> (Baron-Cohen, 2002)</td>
+<td>Ampliamente rechazada por mujeres autistas y personas no binarias; el monotropismo es neutral respecto al género.</td>
+</tr>
+<tr>
+<td><strong>Problema de la Doble Empatía</strong> (Milton, 2012)</td>
+<td>Complementaria: el monotropismo actúa a nivel individual, la doble empatía a nivel de la interacción.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-evidencia-empírica">5. Evidencia Empírica</h2>
+<p>Históricamente, el monotropismo ha sido descuidado por la investigación principal sobre el autismo. Patrick Dwyer señaló en 2021 que en los dieciséis años posteriores al artículo de 2005, prácticamente ningún estudio experimental se había diseñado específicamente para probar la hipótesis del monotropismo.<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> Esto está cambiando gradualmente, con la aparición regular de nuevos trabajos revisados por pares que hacen referencia al monotropismo.<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a> Sin embargo, varias líneas de evidencia convergentes lo respaldan actualmente:</p>
+<h3 id="51-atención-pegajosa-sticky-attention">5.1 Atención Pegajosa (Sticky Attention)</h3>
+<p>Landry y Bryson (2004) encontraron que los niños autistas eran significativamente más lentos para desvincular la atención visual de un estímulo central cuando aparecía un nuevo estímulo en la periferia, un efecto de "atención pegajosa" o persistente.<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a> Esto ha sido replicado en numerosos estudios y analizado en un metanálisis en <em>Neuroscience &amp; Biobehavioral Reviews</em> (2015).<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a> Se ha observado un cambio de atención igualmente lento en bebés que luego fueron diagnosticados como autistas, lo que sugiere que emerge temprano en el desarrollo.<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a></p>
+<h3 id="52-el-cuestionario-de-monotropismo">5.2 El Cuestionario de Monotropismo</h3>
+<p>Garau et al. (2023) desarrollaron el <strong>Monotropism Questionnaire (MQ)</strong>, una medida de autoinforme de 47 ítems sobre el estilo de atención monotrópico.<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> Los hallazgos iniciales (en versión preprint, a la espera de revisión por pares) muestran que:</p>
+<ul>
+<li>Las personas autistas y AuDHD (autistas + TDAH) obtienen puntuaciones significativamente más altas que las personas no autistas y sin TDAH.</li>
+<li>Las puntuaciones más altas se observaron en el grupo AuDHD.</li>
+<li>Las puntuaciones se distribuyen de forma continua, lo que es consistente con el monotropismo como un rasgo dimensional.</li>
+</ul>
+<h3 id="53-investigación-del-otarc">5.3 Investigación del OTARC</h3>
+<p>Dwyer y sus colegas en el Olga Tennison Autism Research Centre han descubierto que:</p>
+<ul>
+<li>Las diferencias de atención en los niños autistas pequeños se asocian con patrones sensoriales tanto hiperreactivos como hiporreactivos.<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></li>
+<li>Las diferencias de atención autoinformadas en adultos se correlacionan con la hiperreactividad auditiva.<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a></li>
+<li>Un mayor hiperfoco se asocia con un aumento del pensamiento rumiante, la depresión y la ansiedad.<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a></li>
+</ul>
+<h3 id="54-valididad-experiencial">5.4 Valididad Experiencial</h3>
+<p>Una forma común de evidencia citada a favor del monotropismo es su resonancia con la experiencia de vida autista. Un estudio de 2023 encontró que el monotropismo es calificado como altamente consistente con las experiencias personales de las personas autistas.<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a> Esto a menudo se atribuye a que la teoría fue desarrollada <em>por</em> personas autistas, una característica inusual en la investigación del autismo.</p>
+<h2 id="6-críticas-y-preguntas-abiertas">6. Críticas y Preguntas Abiertas</h2>
+<h3 id="61-vaguedad-y-falta-de-especificidad-mecanicista">6.1 Vaguedad y Falta de Especificidad Mecanicista</h3>
+<p>Patrick Dwyer señala que el monotropismo sigue siendo una teoría <em>descriptiva</em> más que <em>explicativa</em>: "No nos dice por qué ocurren estas experiencias, biológicamente hablando".<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a> El concepto aún no se ha conectado claramente con los marcos de la neurociencia cognitiva.</p>
+<h3 id="62-limitaciones-de-medición">6.2 Limitaciones de Medición</h3>
+<p>Hasta mediados de 2025, el Cuestionario de Monotropismo es la única herramienta de medición dedicada y aún se encuentra en proceso de revisión por pares. No existen tareas conductuales o de neuroimagen que indexen específicamente el monotropismo.<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a></p>
+<h3 id="63-la-paradoja-del-hiperfoco-y-la-distracción">6.3 La Paradoja del Hiperfoco y la Distracción</h3>
+<p>Un enigma persistente: las personas autistas suelen informar tanto de un hiperfoco intenso como de una alta distractibilidad. La propuesta de Dwyer de un "hiperfoco exógeno" —la idea de que la atención puede ser capturada tanto endógenamente (por intereses) como exógenamente (por estímulos destacados)— intenta reconciliar esto, pero la relación sigue sin resolverse teóricamente.<a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a></p>
+<h3 id="64-relación-con-el-tdah-el-flujo-y-el-hiperfoco">6.4 Relación con el TDAH, el Flujo y el Hiperfoco</h3>
+<p>La relación del monotropismo con el hiperfoco del TDAH, la literatura sobre el estado de flujo (<em>flow</em>) y el concepto de "hiperfoco" en la esquizofrenia no está clara. Estos constructos se superponen pero pueden no ser idénticos.<a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a></p>
+<h3 id="65-heterogeneidad">6.5 Heterogeneidad</h3>
+<p>No todas las personas autistas se identifican con el monotropismo. La página de la historia del sitio web señala explícitamente que "una minoría dice que no siente que el monotropismo los describa en absoluto", y se necesita más investigación para determinar si algunas personas autistas son politrópicas, si las descripciones son insuficientes o si está ocurriendo algo más.<a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a></p>
+<h3 id="66-competencia-teórica">6.6 Competencia Teórica</h3>
+<p>No se han realizado comparaciones experimentales directas entre el monotropismo y otras teorías (por ejemplo, la codificación predictiva o los enfoques bayesianos del autismo).</p>
+<h2 id="7-estado-actual-e-impacto">7. Estado Actual e Impacto</h2>
+<p>A pesar de una infraestructura académica inicialmente limitada, el monotropismo se ha convertido en la forma predominante de autocomprensión entre los adultos autistas. Desarrollos clave:</p>
+<ul>
+<li><strong>2018</strong>: El artículo de Fergus Murray en <em>The Psychologist</em> de la BPS se convirtió en la pieza más leída de la publicación en 2019.<a href="#fn36" class="footnote-ref" id="fnref36" role="doc-noteref"><sup>36</sup></a></li>
+<li><strong>2019</strong>: El PARC organizó una miniconferencia "Autistic Fringe" sobre el monotropismo junto con la conferencia anual de Scottish Autism.<a href="#fn37" class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a></li>
+<li><strong>2023</strong>: Garau et al. publicaron el Cuestionario de Monotropismo.</li>
+<li><strong>2025</strong>: Un nuevo libro de Springer, <em>Autism and Being Monotropic</em> (Neubert), se dirige a audiencias médicas y profesionales.<a href="#fn38" class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a></li>
+<li><strong>En curso</strong>: Aparecen regularmente nuevos trabajos revisados por pares que hacen referencia al monotropismo; se cubre cada vez más en los cursos universitarios sobre autismo.<a href="#fn39" class="footnote-ref" id="fnref39" role="doc-noteref"><sup>39</sup></a><a href="#fn40" class="footnote-ref" id="fnref40" role="doc-noteref"><sup>40</sup></a></li>
+</ul>
+<p>El sitio web monotropism.org sirve como recurso central, albergando el archivo del trabajo de Dinah Murray, explicaciones de la teoría, aplicaciones prácticas y actualizaciones de investigaciones.</p>
+<h2 id="8-conclusión">8. Conclusión</h2>
+<p>El monotropismo es una teoría del autismo desarrollada por personas autistas, para comprender a las personas autistas. Propone que el núcleo de la cognición autista es un estilo atencional —una tendencia hacia un enfoque profundo y estrecho impulsado por intereses intensos— que tiene efectos en cascada sobre la percepción, la interacción social, el control ejecutivo y el bienestar. Ofrece un marco unificado basado en las fortalezas, no patologizante y profundamente resonante con la experiencia de vida autista. Sin embargo, sigue siendo una explicación descriptiva con pruebas empíricas directas limitadas, una base de medición inmadura y preguntas sin resolver sobre la heterogeneidad y los mecanismos neurales. Su creciente influencia —particularmente dentro de la comunidad autista y cada vez más en la investigación— sugiere que es un marco que la ciencia del autismo no puede permitirse ignorar.</p>
+<hr />
+<h2 id="fuentes">Fuentes</h2>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Wikipedia, "Monotropism". Consultado el 15-06-2025. <a href="https://en.wikipedia.org/wiki/Monotropism"><span>https://en.wikipedia.org/wiki/Monotropism</span></a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Murray, D. (1992). "Attention Tunnelling and Autism". Durham Conference Proceedings. <a href="https://monotropism.org/dinah/attention-tunnelling-and-autism/"><span>https://monotropism.org/dinah/attention-tunnelling-and-autism/</span></a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Lawson, W. (2021). "Language, interests and autism: A tribute to Dr. Dinah Murray". <em>Autism</em>, 25(8). <a href="https://journals.sagepub.com/doi/full/10.1177/13623613211034072"><span>https://journals.sagepub.com/doi/full/10.1177/13623613211034072</span></a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Murray, D., Lesser, M., &amp; Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398"><span>https://doi.org/10.1177/1362361305051398</span></a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Lawson, W. (2011). <em>The Passionate Mind: How People with Autism Learn</em>. Jessica Kingsley Publishers.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm"><span>https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</span></a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Murray, D., Lesser, M., &amp; Lawson, W. (2005). "Attention, monotropism and the diagnostic criteria for autism". <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398"><span>https://doi.org/10.1177/1362361305051398</span></a><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, citado en el blog de OTARC de Dwyer (2025). Ver también <a href="https://doi.org/10.1177/27546330241237883"><span>https://doi.org/10.1177/27546330241237883</span></a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Buckle, K. (preprint). "Autistic inertia: A qualitative study". <a href="https://doi.org/10.31234/osf.io/ahk6x"><span>https://doi.org/10.31234/osf.io/ahk6x</span></a><a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>Lawson, W. &amp; Dombroski, B. (2015, 2017). Artículos sobre la permanencia del objeto y el autismo. <em>Journal of Intellectual Disability – Diagnosis and Treatment</em>. <a href="https://www.researchgate.net/publication/277564015"><span>https://www.researchgate.net/publication/277564015</span></a><a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/"><span>https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</span></a><a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>National Autistic Society. "What is monotropism? Understanding a neuroaffirming theory of autism." <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism"><span>https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</span></a><a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/"><span>https://www.autisticscholar.com/monotropism/</span></a><a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>Landry, R. &amp; Bryson, S. (2004). "Impaired disengagement of attention in young children with autism". <em>Journal of Child Psychology and Psychiatry</em>, 45(6), 1115–1122. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x"><span>https://doi.org/10.1111/j.1469-7610.2004.00304.x</span></a><a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>Sacrey, L.-A. et al. (2015). "Attention disengagement in autism spectrum disorder: A meta-analysis". <em>Neuroscience &amp; Biobehavioral Reviews</em>, 56, 111–121. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011"><span>https://doi.org/10.1016/j.neubiorev.2014.10.011</span></a><a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>"Sticky gaze may be early autism sign". The Transmitter. <a href="https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/"><span>https://www.thetransmitter.org/spectrum/cognition-and-behavior-sticky-gaze-may-be-early-autism-sign/</span></a><a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>Garau, V. et al. (2023). "Development and Validation of a Novel Self-Report Measure of Monotropism in Autistic and Non-Autistic People: The Monotropism Questionnaire". OSF Preprint. <a href="https://osf.io/ft73y/"><span>https://osf.io/ft73y/</span></a> — Cuestionario en <a href="https://dlcincluded.github.io/MQ/"><span>https://dlcincluded.github.io/MQ/</span></a><a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, citado en el blog de OTARC de Dwyer (2025). Ver también <a href="https://doi.org/10.1177/27546330241237883"><span>https://doi.org/10.1177/27546330241237883</span></a><a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p>Dwyer, P. et al. Attention and sensory responsiveness in autistic children, citado en el blog de OTARC de Dwyer (2025). Ver también <a href="https://doi.org/10.1177/27546330241237883"><span>https://doi.org/10.1177/27546330241237883</span></a><a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm"><span>https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</span></a><a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p>Referenciado en el blog de OTARC de Dwyer (2025). <a href="https://doi.org/10.1089/aut.2023.0032"><span>https://doi.org/10.1089/aut.2023.0032</span></a><a href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm"><span>https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</span></a><a href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn32"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm"><span>https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</span></a><a href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p>Dwyer, P. (2021). "Revisiting monotropism". Autistic Scholar. <a href="https://www.autisticscholar.com/monotropism/"><span>https://www.autisticscholar.com/monotropism/</span></a><a href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>Dwyer, P. (2025). "Monotropism: Between Obsessive Joy and Overwhelm". OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm"><span>https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</span></a><a href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>Murray, F. (2018, actualizado en 2025). "Me and Monotropism: A unified theory of autism". <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism"><span>https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</span></a><a href="#fnref36" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>Neubert (2025). <em>Autism and Being Monotropic: What Medical and Other Practitioners Need to Know</em>. Springer. <a href="https://link.springer.com/book/10.1007/978-981-96-2564-2"><span>https://link.springer.com/book/10.1007/978-981-96-2564-2</span></a><a href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn39"><p>Murray, F. &amp; Lawson, W. (2022). "History of Monotropism". <a href="https://monotropism.org/history"><span>https://monotropism.org/history</span></a><a href="#fnref39" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn40"><p>Lawson, W. (2025). "Research by autistic researchers: an 'insider's view' into autism. The autistic way of being." <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/"><span>https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</span></a><a href="#fnref40" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
