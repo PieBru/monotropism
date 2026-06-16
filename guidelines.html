@@ -24,7 +24,7 @@
   --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
   --fg:#e9ebf0; --fg-soft:#aeb4c0; --fg-faint:#767d8c;
   --border:#232833; --border-soft:#1b1f27;
-  --accent:#8aa6ff; --accent-2:#6d86e6; --accent-bg:rgba(138,166,255,.12);
+  --accent:#8aa6ff; --accent-2:#6d86e6; --accent-bg:rgba(138,166,255,.12); --accent-ring:rgba(138,166,255,.35);
   --teal:#4cc4c4; --teal-bg:rgba(76,196,196,.12);
   --green:#7fd29b; --amber:#e6b566; --red:#e58a8a; --violet:#b9a0ef;
   --shadow:0 10px 40px rgba(0,0,0,.45);
@@ -33,7 +33,7 @@
   --bg:#f6f7f9; --surface:#ffffff; --surface-2:#ffffff; --surface-hi:#f2f4f8;
   --fg:#1a1d24; --fg-soft:#4c5363; --fg-faint:#838b9a;
   --border:#e4e8ee; --border-soft:#eef1f5;
-  --accent:#2f5fae; --accent-2:#264f93; --accent-bg:rgba(47,95,174,.09);
+  --accent:#2f5fae; --accent-2:#264f93; --accent-bg:rgba(47,95,174,.09); --accent-ring:rgba(47,95,174,.30);
   --teal:#0b7d7d; --teal-bg:rgba(11,125,125,.09);
   --green:#1b7a3d; --amber:#9a6b00; --red:#b3261e; --violet:#6b4ba0;
   --shadow:0 12px 40px rgba(20,30,55,.10);
@@ -58,14 +58,35 @@ a:hover{text-decoration:underline;}
 .topbar-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 22px;}
 .brand{display:inline-flex;align-items:center;gap:9px;color:var(--fg);font-weight:600;font-size:18px;letter-spacing:-.01em;}
 .brand:hover{text-decoration:none;color:var(--fg);}
-.brand .dot{width:.7em;height:.7em;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--teal),var(--accent));display:inline-block;}
+.mark{display:inline-block;width:1em;height:1em;color:var(--accent);flex:none;}
+.brand .mark{font-size:22px;}
+.brand-stack{display:flex;flex-direction:column;line-height:1.12;}
+.brand-name{font-weight:600;font-size:18px;letter-spacing:-.01em;}
+.brand-motto{font-size:11px;font-weight:500;color:var(--fg-faint);letter-spacing:.01em;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:10px;}
 .btn{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 13px;font-size:14px;font-weight:500;
   color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
 .btn:hover{color:var(--fg);border-color:var(--accent);}
+.btn-ghost{background:transparent;color:var(--fg-soft);border-color:var(--border);}
+.btn-ghost:hover{color:var(--fg);border-color:var(--accent);text-decoration:none;}
+.btn-ghost.active{color:var(--accent);border-color:var(--accent);background:var(--accent-bg);}
+.btn .ar{font-size:12px;opacity:.85;}
+.langselect{font-size:14px;font-weight:600;color:var(--fg);background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;height:38px;padding:0 30px 0 12px;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--fg-soft) 50%),linear-gradient(135deg,var(--fg-soft) 50%,transparent 50%);
+  background-position:calc(100% - 14px) 17px,calc(100% - 9px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  transition:border-color .16s ease,color .16s ease;}
+.langselect:hover{border-color:var(--accent);color:var(--fg);}
+.langselect:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring);}
 .iconbtn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0;font-size:16px;
   color:var(--fg-soft);background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:.15s;}
 .iconbtn:hover{color:var(--fg);border-color:var(--accent);}
+.iconbtn svg{width:17px;height:17px;}
+@media (max-width:640px){
+  .topbar-inner{flex-wrap:wrap;row-gap:8px;}
+  .tb-right{flex-wrap:wrap;justify-content:flex-end;row-gap:8px;}
+  .brand .brand-name{display:none;}
+}
 
 /* hero */
 .hero{padding:46px 0 14px;text-align:center;}
@@ -130,10 +151,33 @@ footer a{color:var(--fg-soft);}
 <body>
 
 <header class="topbar"><div class="topbar-inner">
-  <a class="brand" href="index.html"><span class="dot"></span> Monotropism</a>
+  <a class="brand" href="index.html" aria-label="Monotropism — library home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1" opacity="0.22"/>
+      <circle cx="16" cy="16" r="9.2" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+      <circle cx="16" cy="16" r="4.8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="16" cy="16" r="2" fill="currentColor"/>
+    </svg><span class="brand-stack">
+      <span class="brand-name">Monotropism</span>
+      <span class="brand-motto">Follow the Focus. Ease the Way.</span>
+    </span>
+  </a>
   <div class="tb-right">
-    <a class="btn" href="index.html">← Back to library</a>
-    <button class="iconbtn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    <select class="langselect" id="langSel" aria-label="Choose language">
+      <option value="en" selected>🇬🇧&nbsp;English</option>
+      <option value="it">🇮🇹&nbsp;Italiano</option>
+      <option value="fr">🇫🇷&nbsp;Français</option>
+      <option value="es">🇪🇸&nbsp;Español</option>
+      <option value="de">🇩🇪&nbsp;Deutsch</option>
+      <option value="pl">🇵🇱&nbsp;Polski</option>
+      <option value="nl">🇳🇱&nbsp;Nederlands</option>
+      <option value="ro">🇷🇴&nbsp;Română</option>
+      <option value="pt">🇵🇹&nbsp;Português</option>
+    </select>
+    <a class="btn btn-ghost" href="index.html#/en/drafts">Research drafts <span class="ar">↗</span></a>
+    <a class="btn btn-ghost active" href="guidelines.html">Quick guides <span class="ar">↗</span></a>
+    <a class="btn btn-ghost" href="index.html#/sources">Scientific sources <span class="ar">↗</span></a>
+    <button class="iconbtn theme" id="themeBtn" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">◐</button>
   </div>
 </div></header>
 
@@ -263,12 +307,24 @@ ROWS.forEach(r => {
 html += `</tbody>`;
 document.getElementById("grid").innerHTML = html;
 
-/* ---------- theme ---------- */
-const tb = document.getElementById("themeBtn");
-tb.addEventListener("click", () => {
+/* ---------- theme + language switch ---------- */
+const SUN  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+
+const themeBtn = document.getElementById("themeBtn");
+function setThemeIcon(){ themeBtn.innerHTML = document.documentElement.getAttribute("data-theme")==="dark" ? SUN : MOON; }
+setThemeIcon();
+themeBtn.addEventListener("click", () => {
   const cur = document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
   document.documentElement.setAttribute("data-theme", cur);
   try{ localStorage.setItem("mono-theme", cur); }catch(e){}
+  setThemeIcon();
+});
+
+// Quick guides are English-only for now, so choosing a language lands on that language's library home
+document.getElementById("langSel").addEventListener("change", function (e) {
+  var v = e.target.value;
+  if (v) location.href = "index.html#/" + v;
 });
 </script>
 </body>
