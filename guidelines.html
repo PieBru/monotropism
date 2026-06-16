@@ -73,14 +73,8 @@ a:hover{text-decoration:underline;}
 .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 14px;letter-spacing:-.02em;}
 .hero p.lead{color:var(--fg-soft);max-width:720px;margin:0 auto;font-size:17px;}
 
-/* status bar */
-.status{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 6px;}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 16px;text-align:center;min-width:96px;}
-.stat .n{font-size:22px;font-weight:700;color:var(--accent);}
-.stat .l{font-size:12px;color:var(--fg-faint);text-transform:uppercase;letter-spacing:.04em;}
-
 /* legend */
-.legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:18px 0 30px;font-size:13.5px;color:var(--fg-soft);}
+.legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:26px 0 30px;font-size:13.5px;color:var(--fg-soft);}
 .legend span{display:inline-flex;align-items:center;gap:6px;}
 .swatch{width:14px;height:14px;border-radius:4px;border:1px solid var(--border);display:inline-block;}
 .sw-ready{background:var(--teal-bg);border-color:var(--teal);}
@@ -151,7 +145,6 @@ footer a{color:var(--fg-soft);}
     <p class="lead">A growing grid of short, CDC-style guides — derived from this project's research drafts. Pick the <strong>row</strong> for the person's life stage and the <strong>column</strong> for who you are. Each cell is a printable front-and-back sheet; the <strong>“All”</strong> tiles open a cumulative reference for a whole column or row.</p>
   </section>
 
-  <div class="status" id="status"></div>
   <div class="legend">
     <span><i class="swatch sw-ready"></i> Ready (PDF + web)</span>
     <span><i class="swatch sw-planned"></i> Planned</span>
@@ -270,20 +263,6 @@ ROWS.forEach(r => {
 });
 html += `</tbody>`;
 document.getElementById("grid").innerHTML = html;
-
-/* ---------- status ---------- */
-let readyCells=0, plannedCells=0, naCells=0;
-ROWS.forEach(r=>COLS.forEach(c=>{
-  const k=r.id+"-"+c.id;
-  if(NA.has(k))naCells++; else if(isReady(k))readyCells++; else plannedCells++;
-}));
-const totalCells = ROWS.length*COLS.length - naCells;
-document.getElementById("status").innerHTML = `
-  <div class="stat"><div class="n">${readyCells}/${totalCells}</div><div class="l">cells ready</div></div>
-  <div class="stat"><div class="n">${plannedCells}</div><div class="l">cells planned</div></div>
-  <div class="stat"><div class="n">${naCells}</div><div class="l">not applicable</div></div>
-  <div class="stat"><div class="n">${ROWS.filter(r=>isReady("row-"+r.id)).length}/${ROWS.length}</div><div class="l">row summaries</div></div>
-  <div class="stat"><div class="n">${COLS.filter(c=>isReady("col-"+c.id)).length}/${COLS.length}</div><div class="l">col summaries</div></div>`;
 
 /* ---------- theme ---------- */
 const tb = document.getElementById("themeBtn");
