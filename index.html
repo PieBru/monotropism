@@ -455,7 +455,7 @@ const LANG_SUFFIX = { en: "", it: "_ita", fr: "_fr", es: "_es", de: "_de" };
 /* ---- Localised UI strings ---- */
 const I18N = {
   en: {
-    name: "English", draftsWord: "drafts",
+    name: "English", title: "Monotropism", draftsWord: "drafts",
     tagline: "An Interest-Based Account of Autism",
     intro: "Monotropism is a cognitive theory of autism that explains autistic experience through differences in attention and interest. Developed by Dinah Murray, Wenn Lawson and Mike Lesser, it offers a unified, non-pathologising lens on autistic life.",
     choose: "Choose a language", lead: "Select a language to browse the research drafts and guides.",
@@ -468,7 +468,7 @@ const I18N = {
     cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
   },
   it: {
-    name: "Italiano", draftsWord: "bozze",
+    name: "Italiano", title: "Monotropismo", draftsWord: "bozze",
     tagline: "Una spiegazione dell\u2019autismo basata sugli interessi",
     intro: "Il monotropismo \u00E8 una teoria cognitiva dell\u2019autismo che spiega l\u2019esperienza autistica attraverso le differenze nell\u2019attenzione e negli interessi. Sviluppata da Dinah Murray, Wenn Lawson e Mike Lesser, offre una lente unificata e non patologizzante sull\u2019esperienza autistica.",
     choose: "Scegli una lingua", lead: "Seleziona una lingua per consultare le bozze di ricerca e le guide.",
@@ -481,7 +481,7 @@ const I18N = {
     cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e caregiver", kids: "Bambini (7\u201311 anni)" }
   },
   fr: {
-    name: "Fran\u00E7ais", draftsWord: "brouillons",
+    name: "Fran\u00E7ais", title: "Monotropisme", draftsWord: "brouillons",
     tagline: "Une approche de l\u2019autisme bas\u00E9e sur l\u2019int\u00E9r\u00EAt",
     intro: "Le monotropisme est une th\u00E9orie cognitive de l\u2019autisme qui explique l\u2019exp\u00E9rience autistique par des diff\u00E9rences d\u2019attention et d\u2019int\u00E9r\u00EAt. D\u00E9velopp\u00E9e par Dinah Murray, Wenn Lawson et Mike Lesser, elle offre une grille de lecture unifi\u00E9e et non pathologisante de la vie autistique.",
     choose: "Choisissez une langue", lead: "S\u00E9lectionnez une langue pour parcourir les brouillons de recherche et les guides.",
@@ -494,7 +494,7 @@ const I18N = {
     cat: { theory: "Th\u00E9orie et aper\u00E7u", practitioner: "Praticiens et cliniciens", family: "Famille et aidants", kids: "Enfants (7\u201311 ans)" }
   },
   es: {
-    name: "Espa\u00F1ol", draftsWord: "borradores",
+    name: "Espa\u00F1ol", title: "Monotropismo", draftsWord: "borradores",
     tagline: "Una explicaci\u00F3n del autismo basada en el inter\u00E9s",
     intro: "El monotropismo es una teor\u00EDa cognitiva del autismo que explica la experiencia autista a trav\u00E9s de las diferencias en la atenci\u00F3n y el inter\u00E9s. Desarrollada por Dinah Murray, Wenn Lawson y Mike Lesser, ofrece una lente unificada y no patologizadora sobre la vida autista.",
     choose: "Elige un idioma", lead: "Selecciona un idioma para explorar los borradores de investigaci\u00F3n y las gu\u00EDas.",
@@ -507,7 +507,7 @@ const I18N = {
     cat: { theory: "Teor\u00EDa y panorama", practitioner: "Profesionales y cl\u00EDnicos", family: "Familia y cuidadores", kids: "Ni\u00F1os (7\u201311 a\u00F1os)" }
   },
   de: {
-    name: "Deutsch", draftsWord: "Entw\u00FCrfe",
+    name: "Deutsch", title: "Monotropismus", draftsWord: "Entw\u00FCrfe",
     tagline: "Ein interessenbasierter Erkl\u00E4rungsansatz f\u00FCr Autismus",
     intro: "Der Monotropismus ist eine kognitive Theorie des Autismus, die autistisches Erleben \u00FCber Unterschiede in Aufmerksamkeit und Interesse erkl\u00E4rt. Entwickelt von Dinah Murray, Wenn Lawson und Mike Lesser, bietet er einen einheitlichen, nicht-pathologisierenden Blick auf das autistische Leben.",
     choose: "W\u00E4hlen Sie eine Sprache", lead: "W\u00E4hlen Sie eine Sprache, um die Forschungsentw\u00FCrfe und Leitf\u00E4den zu erkunden.",
@@ -724,8 +724,8 @@ function renderTopbar(code) {
   document.getElementById("topbar").innerHTML = `
     <div class="tb-left">
       ${back}
-      <a class="brand" href="#/" data-route="/" aria-label="Monotropism \u2014 ${esc(i18n.home)}">
-        ${MARK}<span class="brand-name">Monotropism</span>
+      <a class="brand" href="#/" data-route="/" aria-label="${esc(i18n.title)} \u2014 ${esc(i18n.home)}">
+        ${MARK}<span class="brand-name">${esc(i18n.title)}</span>
       </a>
     </div>
     <div class="tb-right">
@@ -777,7 +777,7 @@ function renderHome() {
 function renderLang(code) {
   const t = I18N[code];
   document.documentElement.lang = code;
-  document.title = "Monotropism \u2014 " + t.tagline;
+  document.title = t.title + " \u2014 " + t.tagline;
 
   renderTopbar(code);
 
@@ -800,7 +800,7 @@ function renderLang(code) {
       <div class="wrap">
         <div class="lang-hero">
           <span class="mark-big">${MARK}</span>
-          <h1>Monotropism</h1>
+          <h1>${esc(t.title)}</h1>
           <p class="tagline">${esc(t.tagline)}</p>
           <p class="intro">${esc(t.intro)}</p>
         </div>
