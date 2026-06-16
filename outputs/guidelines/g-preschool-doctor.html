@@ -177,7 +177,7 @@
      ============================================================ */
   @page {
     size: A4;
-    margin: 11mm 12mm 11mm 22mm;   /* wider right gutter for print/binding */
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
   }
 
   * { box-sizing: border-box; }
@@ -187,6 +187,8 @@
     color: #1c1c1c;
     line-height: 1.4;
     margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
