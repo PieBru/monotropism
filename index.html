@@ -347,6 +347,9 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
 }
 .site-footer .ai::before { content: "✦"; color: var(--accent); opacity: .8; font-style: normal; }
 .site-footer a { color: var(--fg-soft); }
+.site-footer .github-line { margin-top: 10px; color: var(--fg-faint); }
+.site-footer .github-line a { font-weight: 500; }
+.site-footer .github-line .sep { opacity: .5; margin: 0 8px; }
 
 /* ---------- References (source archive on the home page) ---------- */
 .refs { padding: 0 0 40px; }
@@ -472,7 +475,7 @@ const I18N = {
     allLanguages: "All languages", languages: "Languages", theme: "Toggle theme", home: "Home",
     aiNote: "Translations are AI-assisted and may contain inaccuracies.",
     footer: "Identity-first language (\u201Cautistic person\u201D) is used throughout. These resources are informational \u2014 not medical advice or a diagnostic tool.",
-    github: "View source on GitHub",
+    github: "Star this project on GitHub",
     cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
   },
   it: {
@@ -485,7 +488,7 @@ const I18N = {
     allLanguages: "Tutte le lingue", languages: "Lingue", theme: "Cambia tema", home: "Home",
     aiNote: "Le traduzioni sono assistite da IA e possono contenere imprecisioni.",
     footer: "Si usa il linguaggio identity-first (\u201Cpersona autistica\u201D). Queste risorse sono informative, non consigli medici né uno strumento diagnostico.",
-    github: "Vedi il sorgente su GitHub",
+    github: "Metti una stella a questo progetto su GitHub",
     cat: { theory: "Teoria e panoramica", practitioner: "Pratici e clinici", family: "Famiglia e assistenti", kids: "Bambini (7\u201311 anni)" }
   },
   fr: {
@@ -498,7 +501,7 @@ const I18N = {
     allLanguages: "Toutes les langues", languages: "Langues", theme: "Changer le th\u00E8me", home: "Accueil",
     aiNote: "Les traductions sont assist\u00E9es par IA et peuvent contenir des impr\u00E9cisions.",
     footer: "Le langage \u00AB\u00A0identit\u00E9 d\u2019abord\u00A0\u00BB (\u00AB\u00A0personne autistique\u00A0\u00BB) est utilis\u00E9 partout. Ces ressources sont informatives \u2014 ni un avis m\u00E9dical ni un outil de diagnostic.",
-    github: "Voir la source sur GitHub",
+    github: "Mettez une étoile à ce projet sur GitHub",
     cat: { theory: "Th\u00E9orie et aper\u00E7u", practitioner: "Praticiens et cliniciens", family: "Famille et aidants", kids: "Enfants (7\u201311 ans)" }
   },
   es: {
@@ -511,7 +514,7 @@ const I18N = {
     allLanguages: "Todos los idiomas", languages: "Idiomas", theme: "Cambiar tema", home: "Inicio",
     aiNote: "Las traducciones est\u00E1n asistidas por IA y pueden contener imprecisiones.",
     footer: "Se usa el lenguaje de \u00ABidentidad primero\u00BB (\u00ABpersona autista\u00BB). Estos recursos son informativos, no consejo m\u00E9dico ni una herramienta de diagn\u00F3stico.",
-    github: "Ver el c\u00F3digo en GitHub",
+    github: "Ponle una estrella a este proyecto en GitHub",
     cat: { theory: "Teor\u00EDa y panorama", practitioner: "Profesionales y cl\u00EDnicos", family: "Familia y cuidadores", kids: "Ni\u00F1os (7\u201311 a\u00F1os)" }
   },
   de: {
@@ -524,7 +527,7 @@ const I18N = {
     allLanguages: "Alle Sprachen", languages: "Sprachen", theme: "Design wechseln", home: "Start",
     aiNote: "\u00DCbersetzungen werden maschinell unterst\u00FCtzt und k\u00F6nnen Ungenauigkeiten enthalten.",
     footer: "Durchweg wird \u201EIdentity-first\u201C-Sprache (\u201Eautistischer Mensch\u201C) verwendet. Diese Materialien sind informativ \u2013 keine medizinische Beratung und kein Diagnosewerkzeug.",
-    github: "Quelltext auf GitHub ansehen",
+    github: "Verleihen Sie diesem Projekt einen Stern auf GitHub",
     cat: { theory: "Theorie & \u00DCberblick", practitioner: "Praktiker & Kliniker", family: "Familie & Angeh\u00F6rige", kids: "Kinder (7\u201311 Jahre)" }
   },
   pl: {
@@ -539,7 +542,7 @@ const I18N = {
     allLanguages: "Wszystkie j\u0119zyki", languages: "J\u0119zyki", theme: "Prze\u0142\u0105cz motyw", home: "Strona g\u0142\u00F3wna",
     aiNote: "T\u0142umaczenia s\u0105 wspierane przez AI i mog\u0105 zawiera\u0107 nie\u015Bcis\u0142o\u015Bci.",
     footer: "W ca\u0142ym serwisie stosuje si\u0119 j\u0119zyk identyfikuj\u0105cy najpierw (\u201Eosoba autystyczna\u201D). Materia\u0142y te maj\u0105 charakter informacyjny \u2014 nie s\u0105 porad\u0105 medyczn\u0105 ani narz\u0119dziem diagnostycznym.",
-    github: "Zobacz \u017Ar\u00F3d\u0142o na GitHub",
+    github: "Daj gwiazdkę temu projektowi na GitHub",
     cat: { theory: "Teoria i przegl\u0105d", practitioner: "Praktycy i klinicy\u015Bci", family: "Rodzina i opiekunowie", kids: "Dzieci (7\u201311 lat)" }
   },
   nl: {
@@ -554,7 +557,7 @@ const I18N = {
     allLanguages: "Alle talen", languages: "Talen", theme: "Thema wisselen", home: "Home",
     aiNote: "Vertalingen worden AI-ondersteund en kunnen onnauwkeurigheden bevatten.",
     footer: "Doorlopend wordt identiteit-eerst-taal (\u201Eautistisch persoon\u201D) gebruikt. Deze materialen zijn informatief \u2014 geen medisch advies of diagnostisch hulpmiddel.",
-    github: "Broncode op GitHub bekijken",
+    github: "Geef dit project een ster op GitHub",
     cat: { theory: "Theorie & Overzicht", practitioner: "Professionals & Clinici", family: "Familie en verzorgers", kids: "Kinderen (7\u201311 jaar)" }
   },
   ro: {
@@ -569,7 +572,7 @@ const I18N = {
     allLanguages: "Toate limbile", languages: "Limbi", theme: "Comut\u0103 tema", home: "Acas\u0103",
     aiNote: "Traducerile sunt asistate de AI \u0219i pot con\u021Bine inexactit\u0103\u021Bi.",
     footer: "\u00CEn tot cuprinsul se folose\u0219te limbajul identit\u0103\u021Bii-\u00EEnt\u00E2i (\u201Epersoan\u0103 autist\u0103\u201D). Aceste materiale sunt informative \u2014 nu sfat medical \u0219i nici instrument de diagnostic.",
-    github: "Vezi sursa pe GitHub",
+    github: "Oferă o stea acestui proiect pe GitHub",
     cat: { theory: "Teorie \u0219i prezentare general\u0103", practitioner: "Practicieni \u0219i clinicieni", family: "Familie \u0219i \u00EEngrijitori", kids: "Copii (7\u201311 ani)" }
   },
   pt: {
@@ -584,7 +587,7 @@ const I18N = {
     allLanguages: "Todos os idiomas", languages: "Idiomas", theme: "Alternar tema", home: "In\u00EDcio",
     aiNote: "As tradu\u00E7\u00F5es s\u00E3o assistidas por IA e podem conter imprecis\u00F5es.",
     footer: "Utiliza-se linguagem de identidade-primeiro (\u201Epessoa aut\u00EDstica\u201D) em todo o texto. Estes recursos s\u00E3o informativos \u2014 n\u00E3o aconselhamento m\u00E9dico nem ferramenta de diagn\u00F3stico.",
-    github: "Ver c\u00F3digo-fonte no GitHub",
+    github: "Dê uma estrela a este projeto no GitHub",
     cat: { theory: "Teoria e vis\u00E3o geral", practitioner: "Profissionais e cl\u00EDnicos", family: "Fam\u00EDlia e cuidadores", kids: "Crian\u00E7as (7\u201311 anos)" }
   },
 };
@@ -960,8 +963,7 @@ function renderFooter(code) {
     <div class="wrap">
       <p class="note">${esc(f.footer)}</p>
       <p class="ai">${esc(f.aiNote)}</p>
-      <p><a href="${REPO}" target="_blank" rel="noopener">${esc(f.github)}</a></p>
-      <p>\u00A9 ${new Date().getFullYear()} PieBru</p>
+      <p class="github-line"><a href="${REPO}" target="_blank" rel="noopener">${esc(f.github)}</a> <span class="sep" aria-hidden="true">·</span> \u00A9 ${new Date().getFullYear()} PieBru</p>
     </div>`;
 }
 
