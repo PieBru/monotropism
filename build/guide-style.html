@@ -22,6 +22,22 @@ body {
   print-color-adjust: exact;
 }
 
+/* ---- Screen / web: full-width and responsive. ----
+   Pandoc's default standalone template caps the body at max-width:36em with
+   a fixed 50px padding (a narrow centred column). We remove that cap so the
+   sheet fills the available width: on a phone the device sets the width, on a
+   computer/tablet the user sets it by sizing the window. Only a small fluid
+   gutter (clamp) keeps text off the window edge. Print is governed entirely
+   by @page above and is intentionally left untouched here. */
+@media screen {
+  html { background: #fdfdfd; }
+  body {
+    max-width: none;
+    margin: 0;
+    padding: clamp(10px, 3.2vw, 44px);
+  }
+}
+
 /* ---- Title band ---- */
 h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
 h1 {
