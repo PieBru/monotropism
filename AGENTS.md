@@ -44,7 +44,7 @@ monotropism/
 │
 ├── build/
 │   ├── style.html           # Shared <style> injected into every rendered HTML/PDF via pandoc -H
-│   ├── guide-style.html     # Printer-friendly CDC-style <style> for the quick-guide brochures
+│   ├── guide-style.html     # Printer-friendly practical <style> for the quick-guide brochures
 │   ├── build-html.sh        # md → standalone HTML (for landing-page "Read" links)
 │   ├── build-pdfs.sh        # md → HTML → Chromium print → PDF
 │   ├── build-guides.sh      # md → HTML → PDF for the quick-guide brochures (uses guide-style.html)
@@ -336,7 +336,7 @@ into individual Markdown files.
 ### Guidelines (Quick Guides) — a second content track
 
 Separate from the long-form drafts, the repo has a grid of **printable,
-two-page CDC-style quick guides** (`guidelines.html` hub).
+two-page practical quick guides** (`guidelines.html` hub).
 
 - **Hub page:** `guidelines.html` (self-contained, dark-by-default, data-driven).
   Linked as *“Quick guides”* in `index.html`’s top bar.
@@ -352,7 +352,7 @@ two-page CDC-style quick guides** (`guidelines.html` hub).
   - Some cells are **N/A** (e.g. a primary child has no *colleagues*); these are
     listed in the hub’s `NA` set and rendered dimmed, never authored.
 - **Build:** `bash build/build-guides.sh` (or `build/build-guides.sh <stem> …`).
-  Uses `build/guide-style.html` (printer-friendly, light, CDC-style) and renders
+  Uses `build/guide-style.html` (printer-friendly, light, practical) and renders
   with **`-f markdown`** (not `gfm`) so header **classes** are honoured:
   `{.lead}` (one-idea box), `{.do}` / `{.dont}` (green/red sections),
   `{.support}` (amber callout), `{.gender}` (violet note), `{.foot}` (footer).

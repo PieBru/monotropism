@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the printable Quick-Guide brochures (CDC-style, 2 pages, A4 front/back).
+# Build the printable Quick-Guide brochures (practical, 2 pages, A4 front/back).
 #   Source markdown : outputs/guidelines/<stem>.md   (pandoc 'markdown', so
 #                     header classes like {.do} {.dont} {.support} are honoured)
 #   Rendered output : outputs/guidelines/<stem>.html  +  <stem>.pdf
