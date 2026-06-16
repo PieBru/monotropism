@@ -21,6 +21,7 @@
 <style>
 
 
+
 :root { --maxw: 1180px; --radius: 12px; }
 [data-theme="dark"]{
   --bg:#0d0f13; --surface:#14171e; --surface-2:#181c25; --surface-hi:#1d222c;
@@ -96,13 +97,7 @@ a:hover{text-decoration:underline;}
 .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 14px;letter-spacing:-.02em;}
 .hero p.lead{color:var(--fg-soft);max-width:720px;margin:0 auto;font-size:17px;}
 
-/* legend */
-.legend{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:26px 0 30px;font-size:13.5px;color:var(--fg-soft);}
-.legend span{display:inline-flex;align-items:center;gap:6px;}
-.swatch{width:14px;height:14px;border-radius:4px;border:1px solid var(--border);display:inline-block;}
-.sw-ready{background:var(--teal-bg);border-color:var(--teal);}
-.sw-planned{background:transparent;border-style:dashed;border-color:var(--fg-faint);}
-.sw-na{background:var(--surface-2);}
+
 
 /* grid */
 .grid-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
@@ -156,6 +151,7 @@ footer{border-top:1px solid var(--border-soft);padding:26px 0 50px;color:var(--f
 footer a{color:var(--fg-soft);}
 
 
+
 </style>
 </head>
 <body>
@@ -164,7 +160,6 @@ footer a{color:var(--fg-soft);}
 
 <main class="wrap">
   <section class="hero" id="hero"></section>
-  <div class="legend" id="legend"></div>
   <div class="grid-card"><table class="matrix" id="grid"></table></div>
   <section class="notes" id="notes"></section>
 </main>
@@ -191,10 +186,6 @@ const I18N = {
     "eyebrow": "Quick Guides · printable two-page sheets",
     "h1": "How to support an autistic person",
     "lead": "A growing grid of short, practical guides — derived from this project's research drafts. Pick the <strong>row</strong> for the person's life stage and the <strong>column</strong> for who you are. Each cell is a printable front-and-back sheet; the <strong>“All”</strong> tiles open a cumulative reference for a whole column or row.",
-    "lgReady": "Ready (PDF + web)",
-    "lgPlanned": "Planned",
-    "lgNa": "Not applicable",
-    "lgSummary": "Row / column summary",
     "cornerTop": "stage ▾ &nbsp; counterpart ▸",
     "cornerRowSummary": "row<br>summary",
     "cornerColSummary": "column summary",
@@ -298,10 +289,6 @@ const I18N = {
     "eyebrow": "Guide rapide · schede di due pagine da stampare",
     "h1": "Come sostenere una persona autistica",
     "lead": "Una griglia in crescita di guide brevi e pratiche — derivate dalle bozze di ricerca del progetto. Scegli la <strong>riga</strong> per la fase di vita della persona e la <strong>colonna</strong> per chi sei. Ogni cella è una scheda fronte/retro stampabile; le tessere <strong>“Tutti”</strong> aprono un riferimento cumulativo per un'intera colonna o riga.",
-    "lgReady": "Pronto (PDF + web)",
-    "lgPlanned": "In programma",
-    "lgNa": "Non applicabile",
-    "lgSummary": "Sintesi di riga/colonna",
     "cornerTop": "età ▾ &nbsp; interlocutore ▸",
     "cornerRowSummary": "sintesi<br>riga",
     "cornerColSummary": "sintesi colonna",
@@ -405,10 +392,6 @@ const I18N = {
     "eyebrow": "Guides rapides · fiches de deux pages à imprimer",
     "h1": "Comment soutenir une personne autiste",
     "lead": "Une grille grandissante de guides courts et pratiques — dérivés des brouillons de recherche du projet. Choisissez la <strong>ligne</strong> pour l'étape de vie de la personne et la <strong>colonne</strong> selon qui vous êtes. Chaque case est une fiche recto/verso imprimable ; les cases <strong>« Tous »</strong> ouvrent une référence cumulée pour toute une colonne ou ligne.",
-    "lgReady": "Prêt (PDF + web)",
-    "lgPlanned": "À venir",
-    "lgNa": "Sans objet",
-    "lgSummary": "Synthèse ligne / colonne",
     "cornerTop": "âge ▾ &nbsp; interlocuteur ▸",
     "cornerRowSummary": "synthèse<br>ligne",
     "cornerColSummary": "synthèse colonne",
@@ -512,10 +495,6 @@ const I18N = {
     "eyebrow": "Guías rápidas · hojas de dos páginas para imprimir",
     "h1": "Cómo apoyar a una persona autista",
     "lead": "Una cuadrícula en crecimiento de guías breves y prácticas — derivadas de los borradores de investigación del proyecto. Elige la <strong>fila</strong> según la etapa vital de la persona y la <strong>columna</strong> según quién eres. Cada casilla es una hoja imprimible anverso/reverso; las casillas <strong>«Todos»</strong> abren una referencia acumulada para toda una columna o fila.",
-    "lgReady": "Listo (PDF + web)",
-    "lgPlanned": "Previsto",
-    "lgNa": "No aplica",
-    "lgSummary": "Resumen de fila / columna",
     "cornerTop": "edad ▾ &nbsp; interlocutor ▸",
     "cornerRowSummary": "resumen<br>de fila",
     "cornerColSummary": "resumen de columna",
@@ -619,10 +598,6 @@ const I18N = {
     "eyebrow": "Kurzanleitungen · zweiseitige Druckbögen",
     "h1": "Wie man eine autistische Person unterstützt",
     "lead": "Ein wachsendes Raster kurzer, praktischer Anleitungen — abgeleitet aus den Forschungsentwürfen des Projekts. Wähle die <strong>Zeile</strong> für die Lebensphase der Person und die <strong>Spalte</strong> dafür, wer du bist. Jede Zelle ist ein zweiseitiges Druckblatt; die <strong>„Alle“</strong>-Kacheln öffnen eine Sammelreferenz für eine ganze Spalte oder Zeile.",
-    "lgReady": "Fertig (PDF + Web)",
-    "lgPlanned": "Geplant",
-    "lgNa": "Nicht zutreffend",
-    "lgSummary": "Zeilen- / Spaltenübersicht",
     "cornerTop": "Alter ▾ &nbsp; Gegenüber ▸",
     "cornerRowSummary": "Zeilen-<br>übersicht",
     "cornerColSummary": "Spaltenübersicht",
@@ -726,10 +701,6 @@ const I18N = {
     "eyebrow": "Krótkie przewodniki · dwustronicowe kartki do druku",
     "h1": "Jak wspierać osobę autystyczną",
     "lead": "Powiększająca się siatka krótkich, praktycznych przewodników — opartych na wersjach roboczych badań projektu. Wybierz <strong>wiersz</strong> odpowiadający etapowi życia osoby i <strong>kolumnę</strong> określającą, kim jesteś. Każda komórka to dwustronna kartka do druku; pola <strong>„Wszystkie“</strong> otwierają zbiorcze odniesienie dla całej kolumny lub wiersza.",
-    "lgReady": "Gotowe (PDF + web)",
-    "lgPlanned": "Planowane",
-    "lgNa": "Nie dotyczy",
-    "lgSummary": "Podsumowanie wiersza / kolumny",
     "cornerTop": "wiek ▾ &nbsp; odbiorca ▸",
     "cornerRowSummary": "podsumowanie<br>wiersza",
     "cornerColSummary": "podsumowanie kolumny",
@@ -833,10 +804,6 @@ const I18N = {
     "eyebrow": "Snelle gidsen · printbare velles van twee pagina's",
     "h1": "Een autistisch persoon ondersteunen",
     "lead": "Een groeiend raster van korte, praktische gidsen — afgeleid uit de onderzoeksconcepten van het project. Kies de <strong>rij</strong> voor de levensfase van de persoon en de <strong>kolom</strong> voor wie jij bent. Elke cel is een printbaar voor-/achterblad; de <strong>„Alles“</strong>-tegels openen een cumulatieve verwijzing voor een hele kolom of rij.",
-    "lgReady": "Klaar (PDF + web)",
-    "lgPlanned": "Gepland",
-    "lgNa": "Niet van toepassing",
-    "lgSummary": "Rij- / kolomsamenvatting",
     "cornerTop": "leeftijd ▾ &nbsp; gesprekspartner ▸",
     "cornerRowSummary": "rij-<br>samenvatting",
     "cornerColSummary": "kolomsamenvatting",
@@ -940,10 +907,6 @@ const I18N = {
     "eyebrow": "Ghiduri rapide · foi de două pagini pentru tipărire",
     "h1": "Cum să sprijini o persoană autistă",
     "lead": "O grilă în creștere de ghiduri scurte și practice — derivate din ciornele de cercetare ale proiectului. Alege <strong>rândul</strong> pentru etapa de viață a persoanei și <strong>coloana</strong> pentru cine ești tu. Fiecare celulă este o foaie față/verso tipăribilă; casetele <strong>„Toate“</strong> deschid o referință cumulativă pentru o întreagă coloană sau rând.",
-    "lgReady": "Gata (PDF + web)",
-    "lgPlanned": "Planificat",
-    "lgNa": "Nu se aplică",
-    "lgSummary": "Sinteză rând / coloană",
     "cornerTop": "vârstă ▾ &nbsp; interlocutor ▸",
     "cornerRowSummary": "sinteză<br>rând",
     "cornerColSummary": "sinteză coloană",
@@ -1047,10 +1010,6 @@ const I18N = {
     "eyebrow": "Guias rápidos · folhas de duas páginas para imprimir",
     "h1": "Como apoiar uma pessoa autista",
     "lead": "Uma grelha em crescimento de guias curtos e práticos — derivados dos rascunhos de investigação do projeto. Escolhe a <strong>linha</strong> para a fase de vida da pessoa e a <strong>coluna</strong> para quem és. Cada célula é uma folha frente/verso para imprimir; as células <strong>«Todos»</strong> abrem uma referência cumulativa para uma coluna ou linha inteira.",
-    "lgReady": "Pronto (PDF + web)",
-    "lgPlanned": "Previsto",
-    "lgNa": "Não se aplica",
-    "lgSummary": "Resumo de linha / coluna",
     "cornerTop": "idade ▾ &nbsp; interlocutor ▸",
     "cornerRowSummary": "resumo<br>da linha",
     "cornerColSummary": "resumo da coluna",
@@ -1220,11 +1179,6 @@ function render(code){
   document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
   renderTopbar(code);
   document.getElementById("hero").innerHTML = '<p class="eyebrow">' + t.eyebrow + '</p><h1>' + esc(t.h1) + '</h1><p class="lead">' + t.lead + '</p>';
-  document.getElementById("legend").innerHTML =
-    '<span><i class="swatch sw-ready"></i> ' + t.lgReady + '</span>' +
-    '<span><i class="swatch sw-planned"></i> ' + t.lgPlanned + '</span>' +
-    '<span><i class="swatch sw-na"></i> ' + t.lgNa + '</span>' +
-    '<span><i class="swatch sw-ready" style="background:var(--accent-bg);border-color:var(--accent)"></i> ' + t.lgSummary + '</span>';
   renderGrid(t);
   document.getElementById("notes").innerHTML =
     '<div class="note"><h3>' + t.note1h + '</h3><p>' + t.note1p + '</p></div>' +
