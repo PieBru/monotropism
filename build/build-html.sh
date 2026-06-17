@@ -58,6 +58,11 @@ done
 # Comorbidity landscape research brief (theory companion, English)
 md_to_html "outputs/monotropism-comorbidity-landscape.md" "outputs/monotropism-comorbidity-landscape.html"
 
+# Research briefs (theory, English)
+md_to_html "outputs/monotropism-autism-prevalence-global.md" "outputs/monotropism-autism-prevalence-global.html"
+md_to_html "outputs/monotropism-scoring-levels-inertia.md" "outputs/monotropism-scoring-levels-inertia.html"
+md_to_html "outputs/monotropism-comorbidities-factcheck.md" "outputs/monotropism-comorbidities-factcheck.html"
+
 # Lifespan practitioner guide (English)
 md_to_html "outputs/autistic-monotropism-lifespan-guide.md" \
            "outputs/autistic-monotropism-lifespan-guide.html"

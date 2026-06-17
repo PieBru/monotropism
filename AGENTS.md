@@ -129,13 +129,17 @@ Four category slugs, displayed in this fixed order on the landing page
 |----------------------------------------|----------------|--------------------------------|
 | `monotropism`                          | `theory`       | en, it, fr, es, de, pl, nl, ro, pt |
 | `monotropism-comorbidity-landscape`    | `theory`       | en                             |
+| `monotropism-autism-prevalence-global` | `theory`       | en                             |
+| `monotropism-scoring-levels-inertia`   | `theory`       | en                             |
+| `monotropism-comorbidities-factcheck`  | `theory`       | en                             |
 | `autistic-monotropism-lifespan-guide`  | `practitioner` | en                             |
 | `autistic-monotropism-family-guide`    | `family`       | en, it, fr, es, de, pl, nl, ro, pt |
 | `monotropic-kids-guidelines`           | `kids`         | en, it, fr, es, de, pl, nl, ro, pt |
 
-> **Two English-only drafts** (`monotropism-comorbidity-landscape`,
-> `autistic-monotropism-lifespan-guide`) have no translations yet. Add languages
-> per §8B when translations are produced.
+> **Five English-only drafts** (`monotropism-comorbidity-landscape`,
+> `monotropism-autism-prevalence-global`, `monotropism-scoring-levels-inertia`,
+> `monotropism-comorbidities-factcheck`, `autistic-monotropism-lifespan-guide`)
+> have no translations yet. Add languages per §8B when translations are produced.
 
 ---
 
