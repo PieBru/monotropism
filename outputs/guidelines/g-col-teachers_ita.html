@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Insegnare a una persona autistica a ogni età</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="insegnare-a-una-persona-autistica-a-ogni-età">Insegnare a una persona autistica a ogni età</h1>
+<blockquote>
+<p><strong>La guida cumulativa per insegnanti, tutor ed educatori</strong> — lungo l’intero arco di vita autistico, dal nido all’educazione adulta e di comunità. <em>Una scheda di riferimento estesa; abbinatela alle guide rapide per singola età.</em></p>
+</blockquote>
+<h2 class="lead" id="lidea-chiave">L’idea chiave</h2>
+<p>L’autismo, attraverso il <strong>monotropismo</strong>, significa che l’attenzione di chi apprende si chiude in pochi „tunnel” profondi e intensi. La scuola e l’apprendimento formale sono spesso la prima prova di stress prolungata di un sistema monotropico — e, fatte bene, un luogo di profonda forza. Qualsiasi sia l’età del vostro allievo, gli stessi principi valgono: lavorate <em>con</em> l’interesse (è il miglior ponte verso ogni apprendimento), proteggete focus e flusso, aggiungete prevedibilità, riducete il carico sensoriale e comunicate alla lettera e per iscritto. La resistenza ai cambi è <strong>inerzia</strong> (cambiare binario costa energia), non sfida. Leggere la differenza come differenza, non come deficit, lascia emergere un allievo attento e capace a ogni età.</p>
+<h2 class="do" id="cosa-aiuta-a-ogni-età">Cosa aiuta a ogni età</h2>
+<ul>
+<li><strong>Rendete l’interesse speciale la spina dorsale dell’apprendimento</strong> — lettura, scrittura, matematica, progetti e valutazione <em>attraverso</em> di esso; è il miglior strumento di inclusione che esista.</li>
+<li><strong>Proteggete focus e flusso</strong> — concedete tempo esteso sul lavoro guidato dall’interesse; la concentrazione profonda <em>è</em> uno stato di apprendimento.</li>
+<li><strong>Aggiungete prevedibilità</strong> — agende visibili, posti/struttura, avvisi prima dei cambi, uno spazio calmo; mantenete gli approcci coerenti.</li>
+<li><strong>Mettete le istruzioni per iscritto</strong>, una cosa alla volta, con le ragioni; concedete tempo di elaborazione.</li>
+<li><strong>Riducete il carico sensoriale</strong> — spazi più quieti, meno disordine e riflessi, un angolo calmo; permettete movimento e stimming.</li>
+<li><strong>Parlate con l’allievo e credetegli</strong>; non insistete mai sul contatto visivo e non impeditegli lo stimming.</li>
+<li><strong>Leggete il comportamento come comunicazione</strong> — ritiro, rifiuto o un calo improvviso nel coinvolgimento segnala di solito sovraccarico o bisogno non soddisfatto, non sfida; rispondete abbassando il carico, non escalando.</li>
+</ul>
+<h2 class="dont" id="cosa-evitare-a-ogni-età">Cosa evitare a ogni età</h2>
+<ul>
+<li>Usare l’interesse solo come ricompensa da togliere; insistere sul contatto visivo o sull’immobilità.</li>
+<li>Accumulare istruzioni verbali, cambi a sorpresa o lavoro di gruppo forzato senza preparazione.</li>
+<li>Equiparare una lezione mascherata e accondiscendente a „sta bene”, o uno shutdown a rifiuto.</li>
+</ul>
+<h2 id="note-rapide-per-fase-di-vita">Note rapide per fase di vita</h2>
+<h3 class="stage" id="nido-prima-infanzia-25">Nido / prima infanzia (2–5)</h3>
+<p>Inseritevi nel loro interesse e onorate l’allineare/l’ordinare come gioco vero; agenda visiva, oggetti-ponte, un angolo calmo. Segnalate con tatto i segnali precoci ai genitori; l’aiuto precoce adatta l’ambiente, non il bambino.</p>
+<h3 id="scuola-primaria-611">Scuola primaria (6–11)</h3>
+<p>Rendete l’interesse la spina dorsale del curricolo; prevedibilità (agenda, „ora/dopo”, avvisi di transizione); un luogo quiete per intervallo e sovraccarico. La resistenza ai cambi è <strong>inerzia</strong>, non sfida; collaborate da vicino con i genitori e il referente BES/INCLUSIVE.</p>
+<h3 id="scuola-secondaria-1218">Scuola secondaria (12–18)</h3>
+<p>Fate da ponte al curricolo attraverso l’interesse; proteggete il tempo non strutturato (club del pranzo, spazio calmo); prendete sul serio la loro vita interiore. Questa è l’età di picco per ansia, depressione e burnout — segnalate presto bullismo e crisi.</p>
+<h3 id="università-college-1825">Università / college (18–25)</h3>
+<p>Mettete slide, istruzioni, scadenze e criteri per iscritto e in anticipo; offrite partecipazione flessibile e valutazione alternativa; segnalate il servizio disabilità. Un carico ridotto in crisi è recupero, non fallimento.</p>
+<h3 id="formazione-per-adulti-e-sul-lavoro">Formazione per adulti e sul lavoro</h3>
+<p>Mettete i materiali per iscritto, in anticipo; offrite alternative al lavoro di gruppo forzato; un’istruzione alla volta con le ragioni. Giocate su profondità e interesse; verificate alla lettera il carico.</p>
+<h3 id="insegnare-a-un-genitore-autistico-alla-scuola-del-figlio">Insegnare a un genitore autistico (alla scuola del figlio)</h3>
+<p>Usate di default la comunicazione scritta; siate prevedibili; prendete sul serio la sua competenza; tenete un linguaggio letterale. Riconoscete il suo carico doppio e segnalate il supporto.</p>
+<h3 id="educazione-di-comunità-per-adulti-adulti-più-anziani">Educazione di comunità / per adulti (adulti più anziani)</h3>
+<p>Mantenete il formato prevedibile; riducete il carico sensoriale; mettete per iscritto i punti chiave; accogliete l’interesse speciale. Tenete conto del calo uditivo/visivo; non equiparate la lentezza al declino.</p>
+<h3 id="allievi-ad-alto-supporto-qualsiasi-età-in-istruzione-specialistica-o-residenziale">Allievi ad alto supporto (qualsiasi età, in istruzione specialistica o residenziale)</h3>
+<p>Prima dolore e sovraccarico per ogni nuovo malessere; prevedibilità, oggetti e interessi conservati; agende visive; comunicazione supportata e guidata dall’interesse. Usate il decision-making supportato e un piano calmo per meltdown/shutdown.</p>
+<h2 class="support" id="trasversale-ciò-che-ogni-educatore-deve-sapere">Trasversale: ciò che ogni educatore deve sapere</h2>
+<blockquote>
+<p><strong>Gli interessi sono la chiave per l’inclusione</strong> — usateli come spina dorsale dell’apprendimento a ogni età; non limitateli e non toglieteli. <strong>Il burnout/„regressione” significa di solito sovraccarico</strong> — la risposta è richieste ridotte e ripristino di riposo e interessi, non spingere di più. <strong>Il camuffamento nasconde allievi in difficoltà</strong>, soprattutto ragazze e generi marginalizzati — prendete sul serio le differenze sottili e il collasso privato. <strong>I profili autistici sono „frastagliati”</strong> — non date mai per scontato che la capacità in un’area significhi capacità in un’altra. Costruite una vera partnership casa-scuola/allievo. Mettete sempre al centro l’allievo individuale.</p>
+</blockquote>
+<h2 class="foot" id="informazioni-su-questa-guida">Informazioni su questa guida</h2>
+<p><em>Con assistenza IA, derivata dalle bozze di ricerca del progetto — <strong>Crescere in modo monotropico</strong> (Parte 3), la guida <strong>Pratici e sanità lungo l’arco di vita</strong> (Parti 3.2–3.5) e la sintesi sul <strong>Monotropismo</strong>. Usa il linguaggio con l’identità per prima. <strong>Informativa — non è strumento diagnostico.</strong> Adattatela al singolo allievo.</em></p>
+<p><strong>Fonti chiave.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2019, <em>Monotropism at School</em>; 2023); Dwyer (2025); Wood (2019, interessi e inclusione); BERA (2021, flusso); Leatherland (2019, scuola secondaria); Edgar (2024, regressione/burnout); Knight (2021). Le citazioni complete sono nelle bozze di fonte.</p>
+</body>
+</html>

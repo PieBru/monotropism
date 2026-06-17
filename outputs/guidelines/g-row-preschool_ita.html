@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Tutti attorno a un bambino autistico in età prescolare</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="tutti-attorno-a-un-bambino-autistico-in-età-prescolare">Tutti attorno a un bambino autistico in età prescolare</h1>
+<blockquote>
+<p><strong>La guida cumulativa per l’intera équipe attorno a un bambino autistico</strong> (2–5 anni) — genitori e famiglia, personale di nido/doposcuola, responsabili di attività, puericultrici e medici, assistenti e famiglie dei pari. <em>Una scheda di riferimento estesa; abbinatela alle guide rapide per singolo interlocutore.</em></p>
+</blockquote>
+<h2 class="lead" id="lidea-chiave">L’idea chiave</h2>
+<p>L’autismo, attraverso il <strong>monotropismo</strong>, significa che l’attenzione di un bambino piccolo viene richiamata in pochi „tunnel” profondi e intensi alla volta. Dentro un tunnel, il focus è vivido e ricco; fuori, le cose si registrano a malapena — a volte inclusi fame, dolore o qualcuno che parla. Gli anni prescolastici sono dove il pattern si mostra per la prima volta e dove un aiuto precoce e di supporto cambia di più. Qualsiasi sia il vostro ruolo, la cosa singola più utile è lavorare <em>con</em> l’attenzione del bambino: inseritevi nel suo interesse, rendete prevedibile la giornata, abbassate il carico sensoriale e trattate il comportamento come comunicazione. Un approccio costante e accogliente tra casa, nido e attività moltiplica il beneficio.</p>
+<h2 class="do" id="cosa-aiuta-in-ogni-contesto">Cosa aiuta in ogni contesto</h2>
+<ul>
+<li><strong>Inseritevi nell’interesse prima di guidare</strong> — connessione, linguaggio e apprendimento si costruiscono <em>attraverso</em> il tunnel; onorate l’allineare, l’ordinare e il gioco ripetitivo come gioco vero.</li>
+<li><strong>Rendete la giornata prevedibile</strong> — personale e routine costanti, agende visive, avvisi prima di ogni cambio, oggetti-ponte tra le attività.</li>
+<li><strong>Riducete il carico sensoriale</strong> — spazi quieti in penombra; cuffie antirumore; meno disordine, riflessi e rumore improvviso; permettete movimento e stimming.</li>
+<li><strong>Comunicate in modo chiaro e letterale</strong>, una cosa alla volta, con tempo di elaborazione; gentili e specifici promemoria per cibo, bevanda e bagno.</li>
+<li><strong>Leggete il comportamento come comunicazione</strong> — un meltdown o uno shutdown è un involontario „troppo”; riducete gli input, assicurate la sicurezza, date tempo.</li>
+<li><strong>Condividete ciò che funziona tra i contesti</strong> — un semplice quaderno a due sensi tra casa e nido previene molte giornate difficili, e un rinvio precoce e di supporto aiuta.</li>
+<li><strong>Indagate prima il dolore o la malattia</strong> per ogni cambiamento improvviso nel comportamento — dentizione, otiti e stitichezza sono cause nascoste comuni di malessere a questa età.</li>
+</ul>
+<h2 class="dont" id="cosa-evitare-in-ogni-contesto">Cosa evitare in ogni contesto</h2>
+<ul>
+<li>Tirare bruscamente il bambino fuori dal focus, forzare il contatto visivo o trattenerlo.</li>
+<li>Cambi a sorpresa, richieste improvvisse e rumorose o frasi del „sii coraggioso!“.</li>
+<li>Trattare l’allineare, l’ordinare o il gioco sensoriale come comportamento „sbagliato” da correggere.</li>
+<li>Interpretare pochi minuti di calma come „sta bene” prima di un cambiamento improvviso.</li>
+</ul>
+<h2 id="note-rapide-per-ciascuno-attorno-al-bambino">Note rapide per ciascuno attorno al bambino</h2>
+<h3 class="stage" id="genitori-e-famiglia">Genitori e famiglia</h3>
+<p>Casa è la base sicura dove cade la maschera. Routine stabili, un angolo quiete, interessi protetti e richieste ridotte nelle giornate difficili. Avere un piano calmo per meltdown/shutdown, usare un linguaggio dichiarativo e fidarsi del proprio istinto — rinviate presto; l’aiuto precoce adatta l’ambiente, non il bambino. Prendetevi cura dei fratelli e di voi stessi.</p>
+<h3 id="nido-doposcuola-e-childminder">Nido / doposcuola e childminder</h3>
+<p>Siete spesso l’ancora prevedibile del bambino durante la giornata e talvolta i primi a notare le preoccupazioni. Mantenete costanti personale, stanza e sequenza; riducete il carico sensoriale; inseritevi nell’interesse. Indagate prima il dolore o la malattia per ogni nuovo malessere e tenete un quaderno a due sensi con casa.</p>
+<h3 id="responsabili-di-attività-e-allenatori">Responsabili di attività e allenatori</h3>
+<p>Stesso riscaldamento, stessa routine ogni sessione; mostrate, non solo spiegate; una breve istruzione alla volta. Riducete il rumore improvviso (segni con le mani, battiti quieti), permettete cuffie antirumore e un angolo quiete. A questa età l’obiettivo è un bambino che <em>vuole tornare la settimana dopo</em>.</p>
+<h3 id="puericultrici-medici-e-infermieri">Puericultrici, medici e infermieri</h3>
+<p>Rinviate presto alla valutazione se notate attenzione rallentata/„appiccicosa”, interessi intensi, differenze sensoriali o gioco atipico. Inseritevi nell’interesse del bambino prima di visitarlo; accogliete un oggetto di conforto; offrite la fascia più quiete. State attenti al burnout/„regressione” — riducete le richieste, non spingete.</p>
+<h3 id="assistenti-e-caregiver">Assistenti e caregiver</h3>
+<p>Mantenete costanti routine, personale e sequenza; conservate gli oggetti e gli interessi del bambino; indagate prima dolore e sovraccarico per ogni nuovo malessere. Avere un piano calmo per meltdown/shutdown (riducete gli stimoli, assicurate la sicurezza, nessuna contenzione). Condividete con la famiglia un profilo sensoriale/comunicativo individualizzato.</p>
+<h3 id="famiglie-dei-pari">Famiglie dei pari</h3>
+<p>Seguite l’interesse del bambino invece di tirarlo nel gioco „tipico”; tenete i playdate brevi, calmi e prevedibili. Siate modello di accoglienza per il vostro bambino — un amico di famiglia accogliente è un dono che dura per anni.</p>
+<h2 class="support" id="quando-chiedere-altro-supporto">Quando chiedere altro supporto</h2>
+<blockquote>
+<p>Una perdita improvvisa di competenze segnala di solito <strong>sovraccarico/burnout</strong>, non abilità perduta — rispondete <strong>riducendo le richieste e ripristinando riposo e interessi</strong>, contemporaneamente in <em>tutti</em> i contesti. Indagate prima il dolore o la malattia per ogni nuovo malessere. State attenti ai segnali precoci e rinviate con supporto — l’identificazione precoce aiuta le famiglie ad adattare l’ambiente, non il bambino. Cercate il supporto genitoriale/familiare guidato da persone autistiche.</p>
+</blockquote>
+<h2 class="gender" id="se-il-bambino-è-una-femmina">Se il bambino è una femmina</h2>
+<blockquote>
+<p>Le bambine sono spesso più abili nel <strong>camuffamento</strong> precoce e vengono individuate meno. Prendete sul serio la preoccupazione dei genitori in ogni contesto, anche quando il bambino sembra „socievole” o „sottile” in superficie — lo sforzo mascherato è sforzo reale.</p>
+</blockquote>
+<h2 class="foot" id="informazioni-su-questa-guida">Informazioni su questa guida</h2>
+<p><em>Con assistenza IA, derivata dalle bozze di ricerca del progetto — <strong>Crescere in modo monotropico</strong> (Parti 0–5), la guida per la <strong>famiglia</strong> (Parti 1 e 3) e la sintesi sul <strong>Monotropismo</strong>, con la guida <strong>Pratici e sanità lungo l’arco di vita</strong> (Parte 3.1). Usa il linguaggio con l’identità per prima („bambino autistico”). <strong>Informativa — non è consiglio medico né strumento diagnostico.</strong> Adattatela al singolo bambino; la famiglia lo conosce meglio.</em></p>
+<p><strong>Fonti chiave.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2018/2023; 2019, <em>Monotropism at School</em>); Dwyer (2025); Reframing Autism (2023); Donzelli (2021, gioco autistico); Edgar (2024, regressione/burnout); Kelly Mahler (2024, interocezione); Leicestershire Partnership NHS Trust (Autism Space). Le citazioni complete sono nelle bozze di fonte.</p>
+</body>
+</html>
