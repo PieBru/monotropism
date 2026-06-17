@@ -154,6 +154,36 @@ table.matrix{border-collapse:separate;border-spacing:5px;width:100%;min-width:88
 .note h3{margin:0 0 6px;font-size:15px;color:var(--fg);}
 .note p{margin:5px 0;}
 
+/* ---- mobile drill-down picker (replaces the grid on small screens) ---- */
+.picker{display:none;}
+@media (max-width:760px){
+  .grid-card{display:none;}
+  .picker{display:block;margin:0 0 28px;}
+  .pick-intro{color:var(--fg-soft);font-size:14.5px;margin:0 0 14px;line-height:1.55;}
+  .pick-fields{display:flex;flex-direction:column;gap:12px;margin-bottom:16px;}
+  .pick-field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:600;color:var(--fg-soft);}
+  .pick-field select{font-family:var(--font-sans);font-size:16px;font-weight:600;color:var(--fg);
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;height:46px;padding:0 40px 0 14px;cursor:pointer;
+    appearance:none;-webkit-appearance:none;-moz-appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--fg-soft) 50%),linear-gradient(135deg,var(--fg-soft) 50%,transparent 50%);
+    background-position:calc(100% - 17px) 20px,calc(100% - 12px) 20px;background-size:6px 6px,6px 6px;background-repeat:no-repeat;}
+  .pick-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-ring);}
+  .pick-result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+  .pick-empty{margin:0;color:var(--fg-faint);font-style:italic;}
+  .pick-ready{margin:0 0 10px;color:var(--fg);font-weight:600;}
+  .pick-na,.pick-planned{margin:0;color:var(--fg-faint);}
+  .pick-links{display:flex;gap:8px;}
+  .pk{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 11px;border-radius:6px;border:1px solid var(--accent-ring);color:var(--accent);background:var(--surface);text-decoration:none;
+    transition:background .15s ease,border-color .15s ease;}
+  .pk:hover{background:var(--accent-bg);border-color:var(--accent);text-decoration:none;}
+  .pk.cum{background:var(--accent-bg);border-color:var(--accent);text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600;color:var(--accent);}
+  .pk.cum.planned{background:transparent;border-style:dashed;border-color:var(--fg-faint);color:var(--fg-faint);}
+  .pick-cumwrap{margin-top:14px;border-top:1px solid var(--border-soft);padding-top:12px;display:flex;flex-direction:column;gap:9px;}
+  .pick-cum{font-size:13px;color:var(--fg-soft);display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+  html[dir="rtl"] .pick-field select{padding:0 14px 0 40px;background-position:17px 20px,12px 20px;}
+}
+
 footer{border-top:1px solid var(--border-soft);padding:26px 22px 50px;color:var(--fg-faint);font-size:13.5px;text-align:center;}
 footer a{color:var(--fg-soft);}
 
@@ -186,6 +216,7 @@ html[dir="rtl"] .langselect{padding:0 12px 0 30px;background-position:14px 17px,
 <main class="wrap">
   <section class="hero" id="hero"></section>
   <div class="grid-card"><table class="matrix" id="grid"></table></div>
+  <section class="picker" id="picker" aria-label="Quick guide finder"></section>
   <section class="notes" id="notes"></section>
 </main>
 
@@ -223,8 +254,6 @@ const I18N = {
     "webAndPdf": "web & PDF",
     "summaryRow": "Whole-row summary",
     "summaryCol": "Whole-column summary",
-    "note1h": "✅ English grid complete",
-    "note1p": "The full <strong>English grid is complete</strong> — every life stage (row) and counterpart (column), plus a cumulative summary for each. This hub page is available in all the library's languages; the individual guide sheets are still in English for now and will be translated once the template is finalised. Source for every sheet is tracked in the repository; <strong>all guides are AI-assisted</strong> and derived from the project's existing research drafts (the Monotropism brief, the Lifespan Practitioner &amp; Health-Care guide, the Family guide, and <em>Growing Up Monotropic</em>), with local source archives used where needed.",
     "note2h": "🧭 How the grid is organised",
     "note2p": "<strong>Rows</strong> = the autistic (monotropic) person, by life stage. <strong>Columns</strong> = the reader — the counterpart supporting them. <strong>Gender</strong> (male / female) is handled as a short, cross-cutting callout inside each sheet (on camouflaging and the under-identified female presentation) rather than as a separate axis.",
     "note3h": "⚖️ About these guides",
@@ -232,6 +261,16 @@ const I18N = {
     "foot": "Monotropism Quick Guides · derived from the project's research drafts ·",
     "footLink": "GitHub source",
     "footTail": "AI-assisted translations and summaries · not medical advice",
+    "pickIntro": "Pick the person's life stage, then who you are, to open the right two-page guide.",
+    "pickRow": "Person's life stage",
+    "pickCol": "Who you are",
+    "pickAny": "— choose —",
+    "pickResult": "Your guide",
+    "pickReady": "Open this quick guide:",
+    "pickNA": "Not applicable for this combination.",
+    "pickPlanned": "Not published yet (planned).",
+    "pickRowAll": "All counterparts for this stage",
+    "pickColAll": "All stages for this counterpart",
     "rows": {
       "preschool": {
         "label": "Pre-school",
@@ -326,8 +365,6 @@ const I18N = {
     "webAndPdf": "web e PDF",
     "summaryRow": "Sintesi dell'intera riga",
     "summaryCol": "Sintesi dell'intera colonna",
-    "note1h": "✅ Griglia inglese completa",
-    "note1p": "L'intera <strong>griglia inglese è completa</strong> — ogni fase di vita (riga) e interlocutore (colonna), più una sintesi cumulativa per ciascuna. Questa pagina hub è disponibile in tutte le lingue della biblioteca; le singole schede-guida sono ancora in inglese per ora e saranno tradotte una volta perfezionato il modello. La fonte di ogni scheda è tracciata nel repository; <strong>tutte le guide sono assistite da IA</strong> e derivate dalle bozze di ricerca esistenti del progetto (la sintesi sul Monotropismo, la guida Lifespan per professionisti e sanitari, la guida per la famiglia e <em>Growing Up Monotropic</em>), con archivi locali delle fonti usati dove serve.",
     "note2h": "🧭 Come è organizzata la griglia",
     "note2p": "Le <strong>righe</strong> = la persona autistica (monotropica), per fase di vita. Le <strong>colonne</strong> = chi legge — l'interlocutore che la sostiene. Il <strong>genere</strong> (maschile/femminile) è gestito come un breve richiamo trasversale dentro ogni scheda (sul camuffamento e sulla presentazione femminile sotto-diagnosticata) invece che come asse separato.",
     "note3h": "⚖️ Informazioni su queste guide",
@@ -429,8 +466,6 @@ const I18N = {
     "webAndPdf": "web et PDF",
     "summaryRow": "Synthèse de toute la ligne",
     "summaryCol": "Synthèse de toute la colonne",
-    "note1h": "✅ Grille anglaise complète",
-    "note1p": "La <strong>grille anglaise complète est terminée</strong> — chaque étape de vie (ligne) et interlocuteur (colonne), plus une synthèse cumulée pour chacune. Cette page centrale est disponible dans toutes les langues de la bibliothèque ; les fiches individuelles restent en anglais pour l'instant et seront traduites une fois le modèle finalisé. La source de chaque fiche est suivie dans le dépôt ; <strong>tous les guides sont assistés par IA</strong> et dérivés des brouillons de recherche existants du projet (la synthèse sur le Monotropisme, le guide Lifespan pour praticiens et soignants, le guide Famille et <em>Growing Up Monotropic</em>), avec des archives locales des sources utilisées au besoin.",
     "note2h": "🧭 Comment la grille est organisée",
     "note2p": "Les <strong>lignes</strong> = la personne autiste (monotropique), par étape de vie. Les <strong>colonnes</strong> = le lecteur — la personne qui l'accompagne. Le <strong>genre</strong> (masculin/féminin) est traité comme une courte note transversale dans chaque fiche (sur le camouflage et la présentation féminine sous-diagnostiquée) plutôt que comme un axe distinct.",
     "note3h": "⚖️ À propos de ces guides",
@@ -532,8 +567,6 @@ const I18N = {
     "webAndPdf": "web y PDF",
     "summaryRow": "Resumen de toda la fila",
     "summaryCol": "Resumen de toda la columna",
-    "note1h": "✅ Cuadrícula inglesa completa",
-    "note1p": "La <strong>cuadrícula inglesa completa está terminada</strong> — cada etapa vital (fila) e interlocutor (columna), más un resumen acumulado para cada una. Esta página central está disponible en todos los idiomas de la biblioteca; las hojas individuales siguen en inglés por ahora y se traducirán una vez afinado el modelo. La fuente de cada hoja se rastrea en el repositorio; <strong>todas las guías son asistidas por IA</strong> y derivadas de los borradores de investigación existentes del proyecto (el resumen sobre el Monotropismo, la guía Lifespan para profesionales y sanitarios, la guía para la familia y <em>Growing Up Monotropic</em>), con archivos locales de las fuentes donde hace falta.",
     "note2h": "🧭 Cómo se organiza la cuadrícula",
     "note2p": "Las <strong>filas</strong> = la persona autista (monotrópica), por etapa vital. Las <strong>columnas</strong> = quien lee — la persona que la apoya. El <strong>género</strong> (masculino/femenino) se trata como una nota breve transversal dentro de cada hoja (sobre el camuflaje y la presentación femenina infradiagnosticada) en lugar de un eje aparte.",
     "note3h": "⚖️ Sobre estas guías",
@@ -635,8 +668,6 @@ const I18N = {
     "webAndPdf": "Web & PDF",
     "summaryRow": "Ganzzzeilige Übersicht",
     "summaryCol": "Ganzspaltige Übersicht",
-    "note1h": "✅ Englisches Raster vollständig",
-    "note1p": "Das <strong>komplette englische Raster ist fertig</strong> — jede Lebensphase (Zeile) und jedes Gegenüber (Spalte), plus eine Sammelübersicht für jede. Diese Hub-Seite ist in allen Sprachen der Bibliothek verfügbar; die einzelnen Leitblätter sind vorerst noch auf Englisch und werden übersetzt, sobald die Vorlage steht. Die Quelle jedes Blatts ist im Repository nachvollziehbar; <strong>alle Anleitungen sind KI-gestützt</strong> und abgeleitet aus den bestehenden Forschungsentwürfen des Projekts (der Monotropismus-Kurzfassung, dem Lifespan-Leitfaden für Fach- und Gesundheitsberufe, dem Familien-Leitfaden und <em>Growing Up Monotropic</em>), mit lokalen Quellarchiven wo nötig.",
     "note2h": "🧭 Wie das Raster aufgebaut ist",
     "note2p": "<strong>Zeilen</strong> = die autistische (monotrope) Person, nach Lebensphase. <strong>Spalten</strong> = die lesende Person — das Gegenüber, das sie unterstützt. <strong>Geschlecht</strong> (männlich/weiblich) wird als kurzer, alle Blätter übergreifender Hinweis behandelt (zu Camouflaging und der untererkannten weiblichen Präsentation) statt als eigene Achse.",
     "note3h": "⚖️ Zu diesen Anleitungen",
@@ -738,8 +769,6 @@ const I18N = {
     "webAndPdf": "web i PDF",
     "summaryRow": "Podsumowanie całego wiersza",
     "summaryCol": "Podsumowanie całej kolumny",
-    "note1h": "✅ Angielska siatka kompletna",
-    "note1p": "<strong>Pełna angielska siatka jest gotowa</strong> — każdy etap życia (wiersz) i odbiorca (kolumna), plus zbiorcze podsumowanie dla każdego. Ta strona-hub jest dostępna we wszystkich językach biblioteki; poszczególne arkusze pozostają na razie po angielsku i zostaną przetłumaczone, gdy szablon będzie gotowy. Źródło każdego arkusza jest śledzone w repozytorium; <strong>wszystkie przewodniki powstają z pomocą AI</strong> i opierają się na istniejących wersjach roboczych badań projektu (streszczeniu Monotropizmu, przewodniku Lifespan dla praktyków i służby zdrowia, przewodniku dla rodziny oraz <em>Growing Up Monotropic</em>), z lokalnymi archiwami źródeł tam, gdzie to potrzebne.",
     "note2h": "🧭 Jak zorganizowana jest siatka",
     "note2p": "<strong>Wiersze</strong> = osoba autystyczna (monotropowa), według etapu życia. <strong>Kolumny</strong> = czytelnik — osoba ją wspierająca. <strong>Płeć</strong> (mężczyzna/kobieta) jest uwzględniona jako krótka, przekrojowa uwaga w każdym arkuszu (o kamuflażu i rzadziej rozpoznawanej prezentacji u kobiet) zamiast jako osobna oś.",
     "note3h": "⚖️ O tych przewodnikach",
@@ -841,8 +870,6 @@ const I18N = {
     "webAndPdf": "web en PDF",
     "summaryRow": "Samenvatting van de hele rij",
     "summaryCol": "Samenvatting van de hele kolom",
-    "note1h": "✅ Engels raster compleet",
-    "note1p": "Het <strong>volledige Engelse raster is klaar</strong> — elke levensfase (rij) en gesprekspartner (kolom), plus een cumulatieve samenvatting voor elk. Deze hub-pagina is beschikbaar in alle talen van de bibliotheek; de afzonderlijke gidsen staan voorlopig nog in het Engels en worden vertaald zodra het sjabloon klaar is. De bron van elk vel is traceerbaar in de repository; <strong>alle gidsen zijn AI-ondersteund</strong> en afgeleid uit de bestaande onderzoeksconcepten van het project (de Monotropisme-samenvatting, de Lifespan-gids voor professionals en zorgverleners, de gezins-gids en <em>Growing Up Monotropic</em>), met lokale bronarchieven waar nodig.",
     "note2h": "🧭 Hoe het raster is opgebouwd",
     "note2p": "<strong>Rijen</strong> = de autistische (monotrope) persoon, naar levensfase. <strong>Kolommen</strong> = de lezer — degene die ondersteunt. <strong>Geslacht</strong> (man/vrouw) wordt behandeld als een korte, alles overstijgende opmerking in elk vel (over camoufleren en de onderherkende vrouwelijke presentatie) in plaats van een aparte as.",
     "note3h": "⚖️ Over deze gidsen",
@@ -944,8 +971,6 @@ const I18N = {
     "webAndPdf": "web și PDF",
     "summaryRow": "Sinteza pe tot rândul",
     "summaryCol": "Sinteza pe toată coloana",
-    "note1h": "✅ Grila în engleză completă",
-    "note1p": "<strong>Întreaga grilă în engleză este completă</strong> — fiecare etapă de viață (rând) și interlocutor (coloană), plus o sinteză cumulativă pentru fiecare. Această pagină-hub este disponibilă în toate limbile bibliotecii; ghidurile individuale sunt încă în engleză deocamdată și vor fi traduse după ce șablonul este finalizat. Sursa fiecărei foi este urmărită în depozit; <strong>toate ghidurile sunt asistate de AI</strong> și derivate din ciornele de cercetare existente ale proiectului (sinteza despre Monotropism, ghidul Lifespan pentru practicieni și cadre sanitare, ghidul pentru familie și <em>Growing Up Monotropic</em>), cu arhive locale ale surselor acolo unde e nevoie.",
     "note2h": "🧭 Cum este organizată grila",
     "note2p": "<strong>Rândurile</strong> = persoana autistă (monotropică), pe etape de viață. <strong>Coloanele</strong> = cititorul — persoana care o sprijină. <strong>Genul</strong> (masculin/feminin) este tratat ca o scurtă notă transversală în fiecare foaie (despre camuflare și prezentarea feminină subdiagnosticată) și nu ca o axă separată.",
     "note3h": "⚖️ Despre aceste ghiduri",
@@ -1047,8 +1072,6 @@ const I18N = {
     "webAndPdf": "web e PDF",
     "summaryRow": "Resumo de toda a linha",
     "summaryCol": "Resumo de toda a coluna",
-    "note1h": "✅ Grelha inglesa completa",
-    "note1p": "A <strong>grelha inglesa completa está pronta</strong> — cada fase de vida (linha) e interlocutor (coluna), mais um resumo acumulado para cada. Esta página central está disponível em todos os idiomas da biblioteca; as folhas individuais ainda estão em inglês por agora e serão traduzidas assim que o modelo estiver finalizado. A fonte de cada folha é rastreada no repositório; <strong>todos os guias são assistidos por IA</strong> e derivados dos rascunhos de investigação existentes do projeto (o resumo sobre o Monotropismo, o guia Lifespan para profissionais e cuidados de saúde, o guia para a família e <em>Growing Up Monotropic</em>), com arquivos locais das fontes onde necessário.",
     "note2h": "🧭 Como a grelha está organizada",
     "note2p": "As <strong>linhas</strong> = a pessoa autista (monotrópica), por fase de vida. As <strong>colunas</strong> = quem lê — a pessoa que a apoia. O <strong>género</strong> (masculino/feminino) é tratado como uma breve nota transversal dentro de cada folha (sobre o camuflar e a apresentação feminina subdiagnosticada) em vez de um eixo separado.",
     "note3h": "⚖️ Sobre estes guias",
@@ -1150,8 +1173,6 @@ const I18N = {
     "webAndPdf": "web و PDF",
     "summaryRow": "ملخص الصف بالكامل",
     "summaryCol": "ملخص العمود بالكامل",
-    "note1h": "✅ الشبكة الإنجليزية مكتملة",
-    "note1p": "اكتملت <strong>الشبكة الإنجليزية بالكامل</strong> — كل مرحلة حياة (صف) وشريك (عمود)، بالإضافة إلى ملخص تراكمي لكل منهما. هذه الصفحة المركزية متاءة بكل لغات المكتبة؛ أما الأوراق الفردية فما زالت بالإنجليزية حتى الآن وستُترجم بمجرد اكتمال القالب. تُتابع مصادر كل ورقة في المستودع؛ و<strong>جميع الأدلة بمساعدة الذكاء الاصطناعي</strong> ومستمدة من مسودات البحث القائمة للمشروع (ملخص أحادية التركيز، ودليل ممارسي العمر والرعاية الصحية، ودليل الأسرة، و<em>النمو أحادي التركيز</em>)، مع أرشيفات محلية للمصادر حيث يلزم.",
     "note2h": "🧭 كيف تُنظم الشبكة",
     "note2p": "ال<strong>صفوف</strong> = الشخص التوحدي (أحادي التركيز)، حسب مرحلة الحياة. و<strong>الأعمدة</strong> = القارئ — الشريك الذي يدعمه. ويُعالَج <strong>الجنس</strong> (ذكر/أنثى) كإشارة عابرة موجزة داخل كل ورقة (عن التمويه والعرض الأنثوي غير المشخّص) بدلاً من كونه محورًا منفصلاً.",
     "note3h": "⚖️ حول هذه الأدلة",
@@ -1253,8 +1274,6 @@ const I18N = {
     "webAndPdf": "网页与 PDF",
     "summaryRow": "整行汇总",
     "summaryCol": "整列汇总",
-    "note1h": "✅ 英文网格已完成",
-    "note1p": "完整的<strong>英文网格现已完成</strong>——每个人生阶段（行）与角色（列），并为每行每列提供汇总参考。这个中心页面提供本资料库全部语言的版本；各份指南单张目前仍为英文，待模板定稿后即会翻译。每一张指南的来源都在代码库中可追溯；<strong>所有指南均由人工智能辅助</strong>完成，并源自项目已有的研究草稿（单焦注意纲要、终生从业者与医疗保健指南、家庭指南，以及《在单焦注意中成长》），必要时使用本地来源存档。",
     "note2h": "🧭 网格如何组织",
     "note2p": "<strong>行</strong>＝自闭症（单焦注意）人士，按人生阶段排列。<strong>列</strong>＝读者——即支持他们的人。<strong>性别</strong>（男/女）不作为单独的轴，而是作为每张单张内一段简短的跨切提示（关于伪装与漏诊的女性表现）来处理。",
     "note3h": "⚖️ 关于这些指南",
@@ -1333,12 +1352,20 @@ const I18N = {
   }
 };
 const DIR = "outputs/guidelines/";
+// Languages whose guide sheets are translated get a filename suffix here (matching
+// the project's LANG_SUFFIX convention). Languages not listed fall back to ""
+// (the English sheets), so an untranslated language page still shows the English
+// guides rather than broken links.
+const GUIDE_LANG_SUFFIX = { en: "", it: "_ita" };
+function guideSuffix(){ return GUIDE_LANG_SUFFIX[currentLang] || ""; }
 const REPO = "https://github.com/PieBru/monotropism";
 const MARK = "<svg class=\"mark\" viewBox=\"0 0 32 32\" aria-hidden=\"true\">\n      <circle cx=\"16\" cy=\"16\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.22\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"9.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" opacity=\"0.4\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"4.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"0.7\"/>\n      <circle cx=\"16\" cy=\"16\" r=\"2\" fill=\"currentColor\"/>\n    </svg>";
 const SUN = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8\"/></svg>";
 const MOON = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z\"/></svg>";
 
 function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+/* localised string with English fallback (for newly added picker strings) */
+function L(t, k){ return (t && t[k] != null) ? t[k] : (I18N.en[k] != null ? I18N.en[k] : k); }
 
 let currentLang = "en";
 function parseHash(){
@@ -1390,19 +1417,65 @@ function renderGrid(t){
 function cellTile(r,c,t){
   var key=r+"-"+c;
   if(NA.has(key)) return '<td><div class="cell na"><span class="mk">\u2014</span></div></td>';
-  if(READY.has(key)){ var row=t.rows[r], col=t.cols[c];
-    return '<td><div class="cell ready" title="' + esc(row.label) + ' \u00D7 ' + esc(col.label) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="mk">\u2713</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>'; }
+  if(READY.has(key)){ var row=t.rows[r], col=t.cols[c], suf=guideSuffix();
+    return '<td><div class="cell ready" title="' + esc(row.label) + ' \u00D7 ' + esc(col.label) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="mk">\u2713</span><span class="glinks"><a href="' + DIR + 'g-' + key + suf + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + suf + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>'; }
   return '<td><div class="cell planned" title="' + esc(t.titlePlanned) + '"><span class="mk">\u00B7</span><span class="lbl">' + esc(t.planned) + '</span></div></td>';
 }
 function rowTile(r,t){
-  var key="row-"+r;
+  var key="row-"+r, suf=guideSuffix();
   if(!READY.has(key)) return '<td><div class="cum-tile cum-row planned" title="' + esc(t.titlePlanned) + '">' + esc(t.all) + '</div></td>';
-  return '<td><div class="cum-tile cum-row" title="' + esc(t.summaryRow) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.all) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>';
+  return '<td><div class="cum-tile cum-row" title="' + esc(t.summaryRow) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.all) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + suf + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + suf + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div></td>';
 }
 function colTile(c,t){
-  var key="col-"+c;
+  var key="col-"+c, suf=guideSuffix();
   if(!READY.has(key)) return '<div class="cum-tile cum-col planned" title="' + esc(t.titlePlanned) + '">' + esc(t.allStages) + '</div>';
-  return '<div class="cum-tile cum-col" title="' + esc(t.summaryCol) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.allStages) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div>';
+  return '<div class="cum-tile cum-col" title="' + esc(t.summaryCol) + ' \u2014 ' + esc(t.webAndPdf) + '"><span class="cum-label">' + esc(t.allStages) + '</span><span class="glinks"><a href="' + DIR + 'g-' + key + suf + '.html" target="_blank" rel="noopener">' + esc(t.web) + '</a><a href="' + DIR + 'g-' + key + suf + '.pdf" target="_blank" rel="noopener">' + esc(t.pdf) + '</a></span></div>';
+}
+
+/* Mobile drill-down picker: shown only on small screens (CSS hides it on desktop).
+   Reuses READY/NA/ROW_IDS/COL_IDS so it always matches the grid. Picker-only UI
+   strings fall back to English until each language is translated. */
+function renderPicker(t){
+  var suf = guideSuffix();
+  function rowOpts(){
+    return '<option value="" disabled selected>' + esc(L(t,"pickAny")) + '</option>' +
+      ROW_IDS.map(function(r){ return '<option value="'+r+'">'+esc(t.rows[r].label+' · '+t.rows[r].ages)+'</option>'; }).join("");
+  }
+  function colOpts(){
+    return '<option value="" disabled selected>' + esc(L(t,"pickAny")) + '</option>' +
+      COL_IDS.map(function(c){ return '<option value="'+c+'">'+esc(t.cols[c].label)+'</option>'; }).join("");
+  }
+  function links(kkey){
+    return '<a class="pk web" href="'+DIR+'g-'+kkey+suf+'.html" target="_blank" rel="noopener">'+esc(t.web)+'</a>' +
+      '<a class="pk pdf" href="'+DIR+'g-'+kkey+suf+'.pdf" target="_blank" rel="noopener">'+esc(t.pdf)+'</a>';
+  }
+  function cumRow(r){ var k="row-"+r;
+    return READY.has(k) ? '<span class="pk cum">'+esc(L(t,"pickRowAll"))+'</span>'+links(k) : '<span class="pk cum planned">'+esc(L(t,"pickRowAll"))+'</span>'; }
+  function cumCol(c){ var k="col-"+c;
+    return READY.has(k) ? '<span class="pk cum">'+esc(L(t,"pickColAll"))+'</span>'+links(k) : '<span class="pk cum planned">'+esc(L(t,"pickColAll"))+'</span>'; }
+
+  document.getElementById("picker").innerHTML =
+    '<p class="pick-intro">'+esc(L(t,"pickIntro"))+'</p>' +
+    '<div class="pick-fields">' +
+      '<label class="pick-field"><span class="pick-l">'+esc(L(t,"pickRow"))+'</span><select id="pickRow">'+rowOpts()+'</select></label>' +
+      '<label class="pick-field"><span class="pick-l">'+esc(L(t,"pickCol"))+'</span><select id="pickCol">'+colOpts()+'</select></label>' +
+    '</div>' +
+    '<div class="pick-result" id="pickResult" role="status" aria-live="polite"></div>';
+
+  function upd(){
+    var r = document.getElementById("pickRow").value;
+    var c = document.getElementById("pickCol").value;
+    var out = document.getElementById("pickResult");
+    if(!r || !c){ out.innerHTML = '<p class="pick-empty">'+esc(L(t,"pickResult"))+'…</p>'; return; }
+    var key = r+"-"+c, cell;
+    if(NA.has(key)){ cell = '<p class="pick-na">'+esc(L(t,"pickNA"))+'</p>'; }
+    else if(READY.has(key)){ cell = '<p class="pick-ready">'+esc(L(t,"pickReady"))+'</p><div class="pick-links">'+links(key)+'</div>'; }
+    else { cell = '<p class="pick-planned">'+esc(L(t,"pickPlanned"))+'</p>'; }
+    out.innerHTML = cell + '<div class="pick-cumwrap"><div class="pick-cum">'+cumRow(r)+'</div><div class="pick-cum">'+cumCol(c)+'</div></div>';
+  }
+  document.getElementById("pickRow").addEventListener("change", upd);
+  document.getElementById("pickCol").addEventListener("change", upd);
+  upd();
 }
 
 function render(code){
@@ -1414,8 +1487,8 @@ function render(code){
   renderTopbar(code);
   document.getElementById("hero").innerHTML = '<p class="eyebrow">' + t.eyebrow + '</p><h1>' + esc(t.h1) + '</h1><p class="lead">' + t.lead + '</p>';
   renderGrid(t);
+  renderPicker(t);
   document.getElementById("notes").innerHTML =
-    '<div class="note"><h3>' + t.note1h + '</h3><p>' + t.note1p + '</p></div>' +
     '<div class="note"><h3>' + t.note2h + '</h3><p>' + t.note2p + '</p></div>' +
     '<div class="note"><h3>' + t.note3h + '</h3><p>' + t.note3p + '</p></div>';
   document.getElementById("footer").innerHTML = t.foot + ' <a href="' + REPO + '" target="_blank" rel="noopener">' + esc(t.footLink) + '</a> \u00B7 ' + t.footTail;
