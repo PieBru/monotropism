@@ -58,6 +58,12 @@
   --shadow:    0 10px 40px rgba(0,0,0,0.45);
   --shadow-sm: 0 2px 10px rgba(0,0,0,0.35);
   --selection: rgba(138,166,255,0.28);
+
+  /* Category accent colours (blog cards & chips) */
+  --cat-theory: #a78bfa;
+  --cat-practitioner: #5ec9b6;
+  --cat-family: #f0b86e;
+  --cat-kids: #7bd99a;
 }
 
 /* ---- Light theme ---- */
@@ -82,6 +88,12 @@
   --shadow:    0 12px 40px rgba(20,30,55,0.10);
   --shadow-sm: 0 1px 6px rgba(20,30,55,0.06);
   --selection: rgba(47,95,174,0.18);
+
+  /* Category accent colours (blog cards & chips) */
+  --cat-theory: #6d4fc4;
+  --cat-practitioner: #1f9c86;
+  --cat-family: #c98a2e;
+  --cat-kids: #2f9e5f;
 }
 
 * { box-sizing: border-box; }
@@ -223,6 +235,27 @@ a:hover { text-decoration: underline; text-underline-offset: 2px; }
   max-width: 660px; font-size: 16px; line-height: 1.72;
 }
 
+/* Self-assessment tool callout (e.g. Monotropism Questionnaire) */
+.tool-card {
+  margin: 40px auto 0; max-width: 720px; text-align: left;
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: var(--radius);
+  padding: 20px 22px; box-shadow: var(--shadow);
+}
+.tool-main { flex: 1 1 280px; min-width: 240px; }
+.tool-eyebrow { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; }
+.tool-title { margin: 4px 0 6px; font-size: 20px; letter-spacing: -0.01em; }
+.tool-desc { margin: 0; color: var(--fg-soft); font-size: 14.5px; line-height: 1.6; }
+.tool-actions { display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto; }
+.tool-actions .btn { justify-content: center; }
+@media (max-width: 640px) {
+  .tool-card { flex-direction: column; align-items: stretch; text-align: center; }
+  .tool-actions { width: 100%; flex-direction: row; }
+  .tool-actions .btn { flex: 1; }
+}
+
 /* Native language dropdown (home view, top bar) */
 .langselect {
   font-family: var(--font-sans);
@@ -318,6 +351,68 @@ html[dir="rtl"] .doc { flex-direction: row-reverse; }
 }
 .doc-desc { margin: 0; color: var(--fg-soft); font-size: 15px; line-height: 1.6; }
 .doc-actions { flex: 0 0 auto; display: flex; gap: 9px; align-items: center; }
+
+/* ============================================================
+   Research drafts — blog-style index
+   ============================================================ */
+.blog-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 8px;
+}
+.blog-head h2 {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: clamp(22px, 3.4vw, 28px); letter-spacing: -0.01em; margin: 0 0 4px;
+}
+.blog-head .count { align-self: center; }
+.blog-sub { margin: 0; color: var(--fg-faint); font-size: 14.5px; max-width: 620px; }
+
+/* category filter chips */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 26px; }
+.chip {
+  display: inline-flex; align-items: center; font-family: var(--font-sans);
+  font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border); background: var(--surface); color: var(--fg-soft);
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.chip:hover { color: var(--fg); border-color: var(--fg-faint); }
+.chip.active { color: var(--fg); border-color: var(--accent); background: var(--accent-bg); }
+.chip.sm { font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 9px; cursor: default; }
+.chip.sm:hover { color: inherit; border-color: inherit; background: inherit; }
+.chip.cat-theory       { color: var(--cat-theory);       border-color: color-mix(in srgb, var(--cat-theory) 45%, transparent);       background: color-mix(in srgb, var(--cat-theory) 12%, transparent); }
+.chip.cat-practitioner { color: var(--cat-practitioner); border-color: color-mix(in srgb, var(--cat-practitioner) 45%, transparent); background: color-mix(in srgb, var(--cat-practitioner) 12%, transparent); }
+.chip.cat-family       { color: var(--cat-family);       border-color: color-mix(in srgb, var(--cat-family) 45%, transparent);       background: color-mix(in srgb, var(--cat-family) 12%, transparent); }
+.chip.cat-kids         { color: var(--cat-kids);         border-color: color-mix(in srgb, var(--cat-kids) 45%, transparent);         background: color-mix(in srgb, var(--cat-kids) 12%, transparent); }
+
+/* card grid */
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 18px; }
+.bcard {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius);
+  padding: 20px 20px 16px; overflow: hidden;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.bcard:hover { border-color: var(--border); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+/* category accent strip (left edge) */
+.bcard::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--cat-theory); }
+.bcard.cat-practitioner::before { background: var(--cat-practitioner); }
+.bcard.cat-family::before       { background: var(--cat-family); }
+.bcard.cat-kids::before         { background: var(--cat-kids); }
+.bcard-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; min-height: 22px; }
+.bcard-meta { display: flex; align-items: center; gap: 8px; }
+.bdate { font-size: 12px; color: var(--fg-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.new-badge { font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-bg); border: 1px solid var(--accent-ring);
+  padding: 2px 8px; border-radius: 999px; }
+.bcard-title { font-family: var(--font-serif); font-weight: 600; font-size: clamp(18px, 2.2vw, 21px);
+  line-height: 1.3; margin: 0 0 8px; }
+.bcard-title a { color: var(--fg); }
+.bcard-title a:hover { color: var(--accent); text-decoration: none; }
+.bcard-desc { margin: 0; color: var(--fg-soft); font-size: 14.5px; line-height: 1.6; flex: 1 1 auto; }
+.bcard-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-soft); flex-wrap: wrap; }
+.baud { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-faint); }
+.bcard-actions { display: flex; gap: 8px; align-items: center; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 7px;
@@ -423,6 +518,14 @@ html[dir="rtl"] .doc { flex-direction: row-reverse; }
   .brand .brand-name { display: none; }
   .brand .brand-motto { display: none; }
   .langswitch .iconbtn .code { display: none; }
+  /* blog cards on phones */
+  .blog-head { flex-direction: column; align-items: flex-start; }
+  .blog-head .count { align-self: flex-start; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .bcard-foot { flex-direction: column; align-items: stretch; }
+  .baud { order: 2; }
+  .bcard-actions { width: 100%; }
+  .bcard-actions .btn { flex: 1; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -488,7 +591,17 @@ const I18N = {
     aiNote: "Translations are AI-assisted and may contain inaccuracies.",
     footer: "Identity-first language (\u201Cautistic person\u201D) is used throughout. These resources are informational \u2014 not medical advice or a diagnostic tool.",
     github: "Project source on GitHub",
-    cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" }
+    catAll: "All",
+    draftsSub: "Cited research drafts and briefs on monotropism — newest first.",
+    cat: { theory: "Theory & Overview", practitioner: "Practitioners & Clinicians", family: "Family & Caregivers", kids: "Children (Ages 7\u201311)" },
+    mq: {
+      eyebrow: "Self-assessment",
+      title: "The Monotropism Questionnaire (MQ)",
+      desc: "A 47-item self-report measure of monotropic attention. Take it right here on this site \u2014 your answers never leave your browser \u2014 or use the original online app. Not a diagnostic tool.",
+      take: "Take the questionnaire",
+      app: "Official online app",
+      repo: "MQ on GitHub"
+    }
   },
   it: {
     name: "Italiano", title: "Monotropismo", motto: "Segui l'attenzione. Facilita il cammino.", summary: "Il monotropismo \u00E8 una teoria cognitiva dell'autismo che spiega l'esperienza autistica attraverso le differenze nell'attenzione e nell'interesse. Sviluppata a partire dai primi anni '90 dai ricercatori autistici Dinah Murray, Wenn Lawson e Mike Lesser, la teoria propone che le menti monotropiche tendano a focalizzare l'attenzione in modo intenso su un insieme ristretto di interessi in un determinato momento, lasciando meno risorse di elaborazione per tutto il resto. Questa singola idea \u00E8 stata utilizzata per spiegare l'intera gamma dei tratti autistici \u2014 dalle sensibilit\u00E0 sensoriali e differenze sociali all'esperienza focalizzata e alla disfunzione esecutiva \u2014 all'interno di un quadro unificato e non patologizzante. All'interno della comunit\u00E0 autistica, il monotropismo \u00E8 senza dubbio la lente teorica dominante per comprendere l'autismo, e sta entrando sempre pi\u00F9 nel discorso accademico e professionale.", draftsBtn: "Bozze di ricerca", guidesBtn: "Guide rapide", sourcesBtn: "Fonti scientifiche", gdpr: "Nessun cookie, nessun log di accesso \u2014 privacy per impostazione predefinita.", draftsWord: "bozze",
@@ -637,6 +750,7 @@ const DOCS = [
   {
     cat: "theory",
     stem: "monotropism",
+    date: "2026-06-15",
     langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt", "ar", "zh"],
     content: {
       en: { title: "Monotropism: An Interest-Based Account of Autism", audience: "General \u00B7 Academic",
@@ -666,6 +780,7 @@ const DOCS = [
   {
     cat: "theory",
     stem: "monotropism-comorbidity-landscape",
+    date: "2026-06-16",
     langs: ["en"],
     content: {
       en: { title: "Monotropism and Its Web of Comorbidity", audience: "General \u00B7 Academic",
@@ -675,6 +790,7 @@ const DOCS = [
   {
     cat: "practitioner",
     stem: "autistic-monotropism-lifespan-guide",
+    date: "2026-06-15",
     langs: ["en"],
     content: {
       en: { title: "Supporting the Autistic Monotropic Person Across the Lifespan", audience: "Practitioners \u00B7 Health-care professionals",
@@ -684,6 +800,7 @@ const DOCS = [
   {
     cat: "family",
     stem: "autistic-monotropism-family-guide",
+    date: "2026-06-15",
     langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt", "ar", "zh"],
     content: {
       en: { title: "Loving an Autistic Monotropic Person", audience: "Parents \u00B7 Relatives \u00B7 Caregivers",
@@ -713,6 +830,7 @@ const DOCS = [
   {
     cat: "kids",
     stem: "monotropic-kids-guidelines",
+    date: "2026-06-15",
     langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro", "pt", "ar", "zh"],
     content: {
       en: { title: "Growing Up Monotropic", audience: "Parents \u00B7 Teachers \u00B7 Coaches",
@@ -737,6 +855,36 @@ const DOCS = [
             desc: "دليل ودّي للبالغين المحيطين بطفل توحدي أحادي التركيز تتراوح أعمارهم بين 7 و11 عامًا — الآباء ومقدمو الرعاية، والأجداد، ومعلمو المرحلة الابتدائية، ومدرّبي الرياضة والأنشطة. يغطّي المنزل والمدرسة وميدان الرياضة." },
       zh: { title: "在单焦注意中成长", audience: "父母 · 教师 · 教练",
             desc: "一本亲切的指南，写给 7 至 11 岁单焦注意自闭症儿童身边的大人——父母与照护者、祖父母、小学教师以及体育与活动教练。涵盖家庭、校园与运动场。" }
+    }
+  },
+  {
+    cat: "theory",
+    stem: "monotropism-autism-prevalence-global",
+    date: "2026-06-17",
+    langs: ["en"],
+    content: {
+      en: { title: "Autism and Monotropism: How Common Are They, Really?", audience: "General · Academic",
+            desc: "A cited brief fact-checking regional autism figures and the “what percentage of people are monotropic” question. Global prevalence is 1 in 127 (GBD/WHO); the regional table is corrected; monotropism has no prevalence — it is a dimensional trait measured by the MQ." }
+    }
+  },
+  {
+    cat: "theory",
+    stem: "monotropism-scoring-levels-inertia",
+    date: "2026-06-17",
+    langs: ["en"],
+    content: {
+      en: { title: "Scoring Monotropism: Inertia, “Friction,” and Cognitive Energy", audience: "General · Academic",
+            desc: "A cited brief on whether monotropism can be scored into levels. Affirms the dimensional MQ and the “switching friction” idea (the established construct of autistic inertia); corrects the invented four-level taxonomy, the “attentional inertia” conflation, and the monotropism→burnout causation claim." }
+    }
+  },
+  {
+    cat: "theory",
+    stem: "monotropism-comorbidities-factcheck",
+    date: "2026-06-17",
+    langs: ["en"],
+    content: {
+      en: { title: "Monotropic Comorbidities: A Fact-Check of the Four-Cluster Framing", audience: "General · Academic",
+            desc: "A cited brief fact-checking a popular “monotropic comorbidities” framing. Corrects the backwards “AuDHD scores highest on the MQ” claim (the autism×ADHD interaction is negative), reattributes “hyper-systemizing” to Baron-Cohen, and reframes the “object-permanence deficit.”" }
     }
   }
 ];
@@ -817,6 +965,13 @@ const artifacts = (stem, code) => {
 };
 const countFor = (code) => DOCS.filter(d => d.langs.includes(code)).length;
 const fmt = (str, n) => str.replace("{n}", n);
+/* Localised UI string with English fallback (for keys not yet translated in every language). */
+const uiStr = (t, key) => (t && t[key] != null) ? t[key] : (I18N.en[key] != null ? I18N.en[key] : "");
+/* Format an ISO date (YYYY-MM-DD) in the page's language, e.g. "Jun 2026". */
+const fmtDate = (iso, code) => {
+  try { return new Intl.DateTimeFormat(code === "en" ? "en-GB" : code, { year: "numeric", month: "short" }).format(new Date(iso + "T00:00:00")); }
+  catch (e) { return iso; }
+};
 
 /* ---------- shared SVG ---------- */
 const MARK = `<svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
@@ -905,6 +1060,22 @@ function renderLanding(code) {
 
   renderTopbar("landing", code);
 
+  // Self-assessment tool callout (Monotropism Questionnaire). Only rendered when
+  // the active language has the localized strings; English ships now, others follow.
+  const mq = t.mq ? `
+        <aside class="tool-card">
+          <div class="tool-main">
+            <span class="tool-eyebrow">${esc(t.mq.eyebrow)}</span>
+            <h2 class="tool-title">${esc(t.mq.title)}</h2>
+            <p class="tool-desc">${esc(t.mq.desc)}</p>
+          </div>
+          <div class="tool-actions">
+            <a class="btn btn-primary" href="mq.html">${esc(t.mq.take)} <span class="ar" aria-hidden="true">\u2192</span></a>
+            <a class="btn btn-ghost" href="https://dlcincluded.github.io/MQ/" target="_blank" rel="noopener">${esc(t.mq.app)} <span class="ar" aria-hidden="true">\u2197</span></a>
+            <a class="btn btn-ghost" href="https://github.com/DLCIncluded/MQ" target="_blank" rel="noopener">${esc(t.mq.repo)} <span class="ar" aria-hidden="true">\u2197</span></a>
+          </div>
+        </aside>` : "";
+
   document.getElementById("app").innerHTML = `
     <section class="home view">
       <div class="wrap">
@@ -914,6 +1085,7 @@ function renderLanding(code) {
           <p class="tagline">${esc(t.tagline)}</p>
           <p class="lead summary">${esc(t.summary)}</p>
         </div>
+        ${mq}
       </div>
     </section>`;
 
@@ -926,22 +1098,16 @@ function renderLanding(code) {
 function renderDrafts(code) {
   const t = I18N[code];
   setLangDir(code);
-  document.title = t.draftsHead + " \u2014 " + t.title;
+  document.title = uiStr(t,"draftsHead") + " — " + t.title;
 
   renderTopbar("drafts", code);
 
   const available = DOCS.filter(d => d.langs.includes(code));
-  const groups = CAT_ORDER
-    .map(cat => ({ cat, docs: available.filter(d => d.cat === cat) }))
-    .filter(g => g.docs.length);
-
-  const groupsHtml = groups.map(g => `
-      <div class="cat">
-        <h3 class="cat-title">${esc(t.cat[g.cat] || g.cat)}</h3>
-        <div class="cat-list">
-          ${g.docs.map(d => docCard(d, code, t)).join("")}
-        </div>
-      </div>`).join("");
+  // Blog feed: newest first (undated last).
+  const sorted = [...available].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const maxDate = sorted.length ? sorted[0].date : ""; // newest date-batch in this feed
+  // Category chips only for categories that have a draft in this language.
+  const cats = CAT_ORDER.filter(c => available.some(d => d.cat === c));
 
   document.getElementById("app").innerHTML = `
     <section class="langview view">
@@ -951,31 +1117,63 @@ function renderDrafts(code) {
           <h1>${esc(t.title)}</h1>
           <p class="tagline">${esc(t.tagline)}</p>
         </div>
-        <div class="section-head">
-          <h2>${esc(t.draftsHead)}</h2>
+        <div class="blog-head">
+          <div>
+            <h2>${esc(uiStr(t,"draftsHead"))}</h2>
+            <p class="blog-sub">${esc(uiStr(t,"draftsSub"))}</p>
+          </div>
           <span class="count">${esc(fmt(t.draftsCount, available.length))}</span>
         </div>
-        <div class="divider"></div>
-        ${groupsHtml}
+        <div class="filter-bar" id="filterBar">
+          <button class="chip active" data-filter="all">${esc(uiStr(t,"catAll"))}</button>
+          ${cats.map(c => `<button class="chip" data-filter="${c}">${esc(t.cat[c] || c)}</button>`).join("")}
+        </div>
+        <div class="blog-grid" id="blogGrid">
+          ${sorted.map(d => docCard(d, code, t, maxDate)).join("")}
+        </div>
       </div>
     </section>`;
+
+  // Category filter (event delegation).
+  const grid = document.getElementById("blogGrid");
+  document.getElementById("filterBar").addEventListener("click", (e) => {
+    const chip = e.target.closest(".chip");
+    if (!chip) return;
+    document.querySelectorAll("#filterBar .chip").forEach(c => c.classList.toggle("active", c === chip));
+    const f = chip.getAttribute("data-filter");
+    grid.querySelectorAll(".bcard").forEach(card => {
+      const show = (f === "all") || (card.getAttribute("data-cat") === f);
+      card.style.display = show ? "" : "none";
+    });
+  });
 
   renderFooter(code);
 }
 
-function docCard(doc, code, t) {
+function docCard(doc, code, t, maxDate) {
   const c = doc.content[code];
   const { html, pdf } = artifacts(doc.stem, code);
+  const cat = doc.cat;
+  const dateStr = doc.date ? fmtDate(doc.date, code) : "";
+  // “new” only for the newest date-batch in the feed (meaningful, self-adjusting).
+  const isNew = doc.date && maxDate && doc.date === maxDate;
   return `
-    <article class="doc">
-      <div class="doc-main">
-        <span class="audience">${esc(c.audience)}</span>
-        <h3 class="doc-title">${esc(c.title)}</h3>
-        <p class="doc-desc">${esc(c.desc)}</p>
+    <article class="bcard cat-${cat}" data-cat="${cat}">
+      <div class="bcard-top">
+        <span class="chip cat-${cat} sm">${esc(t.cat[cat] || cat)}</span>
+        <span class="bcard-meta">
+          ${dateStr ? `<time class="bdate" datetime="${esc(doc.date)}">${esc(dateStr)}</time>` : ""}
+          ${isNew ? `<span class="new-badge">new</span>` : ""}
+        </span>
       </div>
-      <div class="doc-actions">
-        <a class="btn btn-primary" href="${esc(html)}" target="_blank" rel="noopener">${esc(t.read)} <span class="ar" aria-hidden="true">\u2192</span></a>
-        <a class="btn btn-ghost" href="${esc(pdf)}" target="_blank" rel="noopener" download>${esc(t.pdf)} <span class="ar" aria-hidden="true">\u2193</span></a>
+      <h3 class="bcard-title"><a href="${esc(html)}" target="_blank" rel="noopener">${esc(c.title)}</a></h3>
+      <p class="bcard-desc">${esc(c.desc)}</p>
+      <div class="bcard-foot">
+        <span class="baud">${esc(c.audience)}</span>
+        <span class="bcard-actions">
+          <a class="btn btn-primary" href="${esc(html)}" target="_blank" rel="noopener">${esc(t.read)} <span class="ar" aria-hidden="true">\u2192</span></a>
+          <a class="btn btn-ghost" href="${esc(pdf)}" target="_blank" rel="noopener" download>${esc(t.pdf)} <span class="ar" aria-hidden="true">\u2193</span></a>
+        </span>
       </div>
     </article>`;
 }
