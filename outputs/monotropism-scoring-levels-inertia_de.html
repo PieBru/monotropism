@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monotropismus messen: Trägheit, „Reibung“ und kognitive Energie – was die Evidenz tatsächlich stützt</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="monotropismus-messen-trägheit-reibung-und-kognitive-energie--was-die-evidenz-tatsächlich-stützt">Monotropismus messen: Trägheit, „Reibung“ und kognitive Energie – was die Evidenz tatsächlich stützt</h1>
+<p><em>Ein zitiertes Forschungsdossier – es überprüft das Framing „Monotropismus in Stufen einteilen“.</em></p>
+<blockquote>
+<p><strong>Information, kein medizinischer Rat.</strong> Dieses Dossier bewertet, wie Monotropismus gemessen werden kann und wie nicht. Der Monotropism Questionnaire (MQ) ist ein Selbstbeurteilungs-Instrument der Forschung, <strong>kein diagnostisches oder klinisches Werkzeug</strong>, und er besitzt keine validierten Schweregrade.</p>
+</blockquote>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<ul>
+<li><strong>Ihr Instinkt ist bei der Kernidee richtig und bei der Verpackung falsch.</strong> Die Vorstellung, dass Monotropismus auf einem Spektrum <em>gemessen</em> werden kann und dass die eigentlich interessierende Größe die <strong>Anstrengung (die „Reibung“) beim Wechseln von Aufmerksamkeitszuständen</strong> ist, ist gut belegt – aber die spezifische Vier-Stufen-Taxonomie („Niedrig / Mittel / Hoch / Extrem-Absolut“) ist ein populäres Framing, <strong>keine validierte wissenschaftliche Klassifikation</strong>.</li>
+<li><strong>Monotropismus ist zutreffend ein <em>dimensionales Merkmal</em>, kein Syndrom.</strong> Das einzige validierte Instrument – der <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 – liefert eine kontinuierliche Punktzahl von 1 bis 5. Er hat <strong>keinen veröffentlichten Schwellenwert, keine Perzentilbänder und keine Schweregrade</strong> [2]. Ihn in benannte Stufen einzuteilen, ist immer eine willkürliche redaktionelle Entscheidung.</li>
+<li><strong>Die „Reibung“ des Wechselns hat bereits einen Namen: <em>autistische Trägheit</em>.</strong> Dies ist ein reales, zunehmend erforschtes Konstrukt – eine Schwierigkeit beim <em>Beginnen, Stoppen und Wechseln</em> von Tätigkeiten, die „nicht der bewussten Kontrolle unterliegt“. Es wurde zuerst in autistischen Community-Erzählungen formuliert und ist nun in begutachteter Literatur [3][4][5]. Ihre „Wechsel-Reibung“ ist im Wesentlichen genau das.</li>
+<li><strong>„Aufmerksamkeitsträgheit“ vereint zwei unterschiedliche Dinge.</strong> <em>Autistische Trägheit</em> (aufgabenbezogen: schwer zu beginnen/stoppen/wechseln) und <em>klebrige Aufmerksamkeit / gestörte Ablösung</em> (reizbezogen: schwer, die Aufmerksamkeit von etwas zu lösen, z. B. Landry &amp; Bryson 2004; Sacrey 2015 Metaanalyse) sind verwandt, werden aber unterschiedlich gemessen [6][7]. Sie unter einem Begriff zusammenzufassen, kostet Präzision.</li>
+<li><strong>„Kognitive Energieökonomie“ ist das stärkste einzelne Framing</strong> – und existiert akademisch bereits als Goldknopfs Modell der <strong>„atypischen Ressourcenverteilung“</strong> (2013), das Autismus als Unterschied darin fasst, <em>wie viel</em> Aufmerksamkeitsressourcen <em>wo</em> aufgewendet werden [10]. Das ist die neuroaffirmierende, nicht-defizitäre Version dessen, was Sie beschreiben.</li>
+<li><strong>Die Verbindung zu Burnout/Shutdown/Meltdown ist real, aber heuristisch.</strong> Autistisches Burnout (Erschöpfung, Verlust von Fähigkeiten, verminderte Toleranz) ist ein etabliertes Konstrukt, und die <em>narrative</em> Verbindung zu erzwungenem Wechseln + Masking ist überzeugend und von der Community validiert – aber der spezifische Pfad „Monotropismus → Tunnelriss → Burnout“ ist weitgehend theoretisch und aus der Ich-Perspektive, noch nicht experimentell belegt [8][9].</li>
+</ul>
+<hr />
+<h2 id="1-kann-monotropismus-gemessen-werden-ja--als-kontinuum-nicht-als-stufen">1. Kann Monotropismus „gemessen“ werden? Ja – als Kontinuum, nicht als Stufen</h2>
+<p>Monotropismus ist eine aufmerksamkeitsbasierte Erklärung von Autismus: Ein monotroner Geist leitet Verarbeitungsressourcen in eine kleine Zahl intensiv erregter „Aufmerksamkeitstunnel“ statt sie über viele Kanäle zu verteilen [1]. Weil er als <em>Unterschied in der Ressourcenverteilung</em> beschrieben wird, ist er naturgemäß ein <strong>Spektrum</strong>, keine Kategorie – weshalb Ihre „Stufen“-Intuition sich richtig anfühlt.</p>
+<p>Das validierte Instrument ist der <strong>Monotropism Questionnaire (MQ)</strong> – 47 Items, bewertet auf einer 5-stufigen Likert-Skala, 2023 von Garau und Kolleginnen und Kollegen <em>in Zusammenarbeit mit einer autistisch geführten Community-Gruppe</em> entwickelt [2]. Zwei Punkte sind für Ihre Frage entscheidend:</p>
+<ul>
+<li><strong>Er liefert einen einzigen kontinuierlichen Mittelwert (1–5) sowie acht Subskalen-Mittelwerte.</strong> In der Validierungsstudie (1.110 Teilnehmende) erreichten autistische Teilnehmende im Mittel <strong>4,15</strong> und nicht-autistische <strong>3,19</strong>, wobei ADHD die Werte unabhängig anhob [2]. Die beiden Verteilungen überschneiden sich stark – viele nicht-autistische Menschen erzielen höhere Werte als einige autistische und umgekehrt.</li>
+<li><strong>Es gibt keinen Schwellenwert, keine Diagnostikgrenze, kein Schweregradband.</strong> Ein Blick in die Validierungsarbeit bestätigt: Das Wort „cutoff“ erscheint nur als <em>statistischer</em> Verweis (Hu &amp; Bentlers Kriterien für Fit-Indizes) und „sensitivity“ nur als <em>Sensitivitätsanalyse</em> dessen, wie Autismus definiert wurde [2]. Die Autorinnen und Autoren des MQ selbst schlagen keine Stufen vor.</li>
+</ul>
+<p>Was also „bedeutet“ ein Wert? Nur seine relative Position auf der Dimension. Die Community-erstellte Online-App, die diese Frage anregte, übersetzt einen Wert hilfsweise in ein <em>Perzentil</em> („monotroner als etwa X % der autistischen / allistischen Menschen“), berechnet aus der Validierungsstichprobe – und das ist eine vernünftige, ehrliche Art, einen Wert einzuordnen. Aber es ist <strong>ein deskriptives Perzentil, keine klinische Stufe</strong>: „das 97. Perzentil der monotropen Neigung“ ist aussagekräftig; „Stufe 3 / Extremer Monotropismus“ ist ein Etikett, das die Evidenz nicht vergibt.</p>
+<blockquote>
+<p><strong>Fazit:</strong> Messen Sie ihn, tragen Sie ihn auf, perzentilieren Sie ihn – aber stufen Sie ihn <em>nicht</em> ein. Das Kontinuum ist real; die benannten Kategorien sind es nicht.</p>
+</blockquote>
+<h2 id="2-ihre-reibung-des-wechselns-existiert-bereits-sie-heißt-autistische-trägheit">2. Ihre „Reibung des Wechselns“ existiert bereits: Sie heißt <em>autistische Trägheit</em></h2>
+<p>Das ist die wichtigste Korrektur-nach-Name in diesem Dossier. Das Phänomen, das Sie beschreiben – die kognitive Kosten, <em>in</em> einen Aufmerksamkeitstunnel hinein- und vor allem wieder <em>hinaus</em>zugelangen – ist ein etabliertes Konstrukt namens <strong>autistische Trägheit</strong>: eine Schwierigkeit beim <strong>Beginnen, Stoppen und Wechseln von Tätigkeiten, die nicht der bewussten Kontrolle unterliegt</strong> [3].</p>
+<p>Drei Punkte machen es direkt relevant:</p>
+<ul>
+<li><strong>Es stammt aus der autistischen Community und hat die begutachtete Literatur erreicht.</strong> Die Association for Psychological Science beschreibt autistische Trägheit als „ein Konzept, das zuerst in autistischen Community-Erzählungen formuliert wurde“ und nun durch qualitative und theoretische Arbeit gestützt wird [4]. Karen Buckles Studie aus eigenem Erleben fand, dass Teilnehmende wiederholt beschrieben, Tätigkeiten nicht nach Belieben beginnen, stoppen oder wechseln zu können [3].</li>
+<li><strong>Die Literatur verwendet buchstäblich Ihre „Reibungs“-Sprache.</strong> Der APS-Beitrag nennt die Aufgabeninitiierung einen „hoch-reibungsbehafteten Start“, fasst Wechseln als mit „Wechselkosten“ verbunden und stellt fest, dass einmal vertieft „der Wechsel des Fokus mehr kognitive Anstrengung erfordert, manchmal bis zur Erschöpfung“ [4]. Ihr Instinkt, <em>Aufwand/Reibung</em> zu quantifizieren, ist derselbe Schritt, den Forschende gehen.</li>
+<li><strong>Es wird inzwischen formalisiert.</strong> Neuere begutachtete Arbeit fasst den „feststeckenden Zustand“ / die begrenzte Reaktionsinitiierung als ein Mehrebenen-Phänomen (muskulär-verhaltensbezogen „mikro“, relational und umweltbezogen „meso/makro“) und erarbeitet <em>mit</em> autistischen Menschen Unterstützungsrahmen [5]; andere modellieren es über Predictive-Processing-/Active-Inference-Ansätze (zitiert in [4]).</li>
+</ul>
+<p>Kurz: Wer „Wechsel-Reibung“ messen will, misst autistische Trägheit – und dieses Konstrukt hat bereits qualitative Evidenz, Validität aus gelebter Erfahrung und eine wachsende quantitative Literatur, auf der sich aufbauen lässt.</p>
+<h2 id="3-aufmerksamkeitsträgheit-bündelt-tatsächlich-zwei-verschiedene-mechanismen">3. „Aufmerksamkeitsträgheit“ bündelt tatsächlich zwei verschiedene Mechanismen</h2>
+<p>Hier zählt Präzision, denn die beiden Mechanismen verlangen unterschiedliche Sprache und (irgendwann) unterschiedliche Messinstrumente.</p>
+<p><strong>3.1 <em>Autistische Trägheit</em> – aufgabenbezogen, geht um Handlungsfähigkeit und Schwung.</strong> Schwierigkeit beim <em>Beginnen</em>, <em>Beenden</em> und <em>Wechseln</em> von Tätigkeiten, erlebt als unverhältnismäßiger Aufwand und ein Verlust der willentlichen Kontrolle (das Gefühl „ein Objekt in Bewegung bleibt in Bewegung / in Ruhe bleibt in Ruhe“) [3][4]. Das ist die nächste Passung zu Ihrer Idee, sich „aus dem Tunnel herauszuziehen“.</p>
+<p><strong>3.2 <em>Klebrige Aufmerksamkeit / gestörte Ablösung</em> – reizbezogen, geht um Wahrnehmung.</strong> Schwierigkeit, die Aufmerksamkeit von einem Reiz <em>zu lösen</em>, einmal fixiert. Landry &amp; Bryson (2004) zeigten, dass junge autistische Kinder deutlich langsamer waren, sich von einem zentralen Reiz zu lösen, wenn ein peripherer erschien – „klebrige Aufmerksamkeit“ [6]. Eine Metaanalyse von 2015 bestätigte die verlangsamte Aufmerksamkeits-Ablösung über Studien hinweg [7], und dieselbe träge Ablösung findet sich bei Säuglingen, die später als autistisch diagnostiziert werden [6]. Dies wird mit experimentellen Aufgaben (Gap/Overlap-Paradigmen) gemessen, nicht mit Fragebögen.</p>
+<p><strong>Warum die Unterscheidung zählt:</strong> Klebrige Aufmerksamkeit ist ein <em>perzeptueller</em> Erfassungseffekt (Sie bemerken die Unterbrechung buchstäblich nicht); autistische Trägheit ist ein <em>Kontroll-/Schwung</em>-Effekt (Sie bemerken es, können aber nicht wechseln). Ihre Vier-Stufen-Beschreibungen gleiten tatsächlich zwischen beiden – z. B. „Hintergrundreize werden vom Gehirn tatsächlich nicht verarbeitet“ ist klebrige Aufmerksamkeit [6], während „erzwungene Übergänge sich anfühlen, als ziehe man einen Zug von den Schienen“ Trägheit ist [3]. Ein sorgfältiges Modell sollte beide getrennt etikettieren, weil sie unterschiedliche Ursachen und unterschiedliche Unterstützung haben können.</p>
+<h2 id="4-die-vier-vorgeschlagenen-stufen--was-gestützt-ist-was-erfunden">4. Die vier vorgeschlagenen „Stufen“ – was gestützt ist, was erfunden</h2>
+<p>Anstatt die Taxonomie rundherum zu billigen oder zu verwerfen, wird hier jede vorgeschlagene Stufe gegen die Evidenz geprüft.</p>
+<table>
+<thead>
+<tr>
+<th>Vorgeschlagene Stufe</th>
+<th>Kernbehauptung</th>
+<th>Evidenzurteil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niedrig (polytrop-dominant)</strong></td>
+<td>Viele „Tabs“ offen; Wechselkosten nahe null</td>
+<td><strong>Als eines Ende des Kontinuums gestützt.</strong> Die niedrigeren Scorer des MQ und der nicht-autistische Gruppenmittelwert (3,19) beschreiben genau das [2]. „Polytrop“ ist der eigene Begriff der Theorie dafür [1].</td>
+</tr>
+<tr>
+<td><strong>Mittel</strong></td>
+<td>Kann tief fokussieren, behält aber Basisbewusstsein; leichte Wechselkosten</td>
+<td><strong>Als Mitte der Dimension gestützt.</strong> Flow-Zustände werden über die Bevölkerung berichtet; die MQ-Werte zwischen den Gruppenmitteln erfassen dieses Band [2][11]. Aber der <em>Name</em> ist willkürlich.</td>
+</tr>
+<tr>
+<td><strong>Hoch</strong></td>
+<td>Bevorzugt einen einzelnen, intensiven Tunnel; Unterbrechungen tatsächlich verpasst; hohe Wechselkosten</td>
+<td><strong>Mechanismus gestützt, Kategorie nicht.</strong> Die Bestandteile sind real – verpasste Unterbrechungen = klebrige Aufmerksamkeit [6][7]; hohe Wechselkosten = autistische Trägheit [3][4]; starke Autismus-/ADHD-Assoziation = MQ-Befunde [2]. Aber es gibt keine Schwelle, die „Hoch“ von „Mittel“ trennt.</td>
+</tr>
+<tr>
+<td><strong>Extrem / Absolut</strong></td>
+<td>Völliges Versenken; Störung verursacht „neurologischen Schock“, Meltdowns, Shutdowns</td>
+<td><strong>Überzogen.</strong> Tiefes Versenken („Flow“) und Belastung bei Störung sind real [11], aber <strong>„absolut“ impliziert einen qualitativen Sprung, den die Daten nicht zeigen</strong>, und <strong>„neurologischer Schock“ ist kein anerkannter Begriff</strong>. Meltdowns/Shutdowns sind unwillkürliche Überlastungsreaktionen, kein für ein Monotropismus-Band spezifischer „Schock“.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Drei Probleme, die Taxonomie so zu veröffentlichen:</strong></p>
+<ol type="1">
+<li><strong>Sie impliziert kategoriale Sprünge, wo die Daten ein glattes Kontinuum zeigen.</strong> Die MQ-Verteilungen autistischer und nicht-autistischer Menschen überschneiden sich beträchtlich [2]; es gibt keinen natürlichen „Knick“, der vier diskrete Stufen rechtfertigen würde.</li>
+<li><strong>Sie schmuggelt Schwere/Pathologie ein.</strong> „Extrem/absolut … Meltdowns, Burnout“ rahmt das obere Ende als inhärent schädlich – das Gegenteil des neuroaffirmierenden Framings, das die Theorie beabsichtigt [1]. Höherer Monotropismus ist <em>nicht</em> dasselbe wie schlechtere Ergebnisse; Ergebnisse hängen vom <em>Umwelt-Pass</em> ab, nicht von der Stufe.</li>
+<li><strong>Die Bänder haben keine Reliabilitätsdaten.</strong> Ein nützliches Stufensystem muss zeigen, dass Menschen beim Wiederholen im selben Band landen und dass Bänder etwas vorhersagen. Eine solche Studie existiert für Monotropismus nicht.</li>
+</ol>
+<p><strong>Was stattdessen tun.</strong> Drücken Sie dieselbe Idee als <em>Position auf der Dimension</em> plus ein <em>Profil</em> aus: „Hohe monotrope Neigung (≈ obere X % der autistischen Stichprobe), mit ausgeprägter autistischer Trägheit beim Aufgabenwechseln und häufigen störungsbedingten Meltdowns in wenig unterstützenden Umwelten.“ Das ist präzise, individualisiert und nicht-pathologisierend.</p>
+<h2 id="5-störung--meltdown-shutdown-burnout-was-die-evidenz-stützt">5. Störung → Meltdown, Shutdown, Burnout: was die Evidenz stützt</h2>
+<p>Dieser Teil Ihres Framings ist der folgenreichste und bedarf der größten Sorgfalt.</p>
+<p><strong>Meltdowns und Shutdowns sind real und gut beschrieben</strong> als unwillkürliche Reaktionen auf überwältigenden Stress oder sensorische/kognitive Last (ein externalisierender „Meltdown“ vs. ein internalisierender, sich zurückziehender „Shutdown“) – anerkannt in klinischen Leitlinien und im Community-Konsens. Sie werden durch <em>Überlastung</em> ausgelöst, wobei ein Tunnelriss ein häufiger Weg dorthin ist [4][8].</p>
+<p><strong>Autistisches Burnout ist inzwischen ein definiertes Konstrukt.</strong> Zwei grundlegende Studien – Raymaker et al. (2020) und Higgins et al. (2021, eine Grounded-Delphi-Studie mit autistischen Expertinnen und Experten aus eigenem Erleben) – konvergieren auf einer Definition: <strong>chronische Erschöpfung, Verlust von Fähigkeiten und verminderte Reiztoleranz</strong>, verstanden als Folge chronischen Lebensstresses und „einer Diskrepanz zwischen Erwartungen und Fähigkeiten“ ohne angemessene Unterstützung und Erholung [8][9].</p>
+<p><strong>Die Verbindung Monotropismus → Burnout ist heuristisch mächtig, aber noch nicht experimentell belegt.</strong> Die Erzählung ist überzeugend und von der Community validiert: Jeder erzwungene Übergang ist ein Tunnelriss; ständiges Masking und Wechseln in einer polytropen Welt verbrennt Ressourcen; ohne Erholungs-/Flow-Zeit erschöpft sich das System [8][9][11]. Aber der <em>spezifische</em> Beitrag des monotropen Tunnelrisses zum Burnout – gegenüber Masking, Trauma, sensorischer Last und chronischer Anforderung – wurde experimentell nicht isoliert. Formulieren Sie es als <em>starke, testbare Hypothese</em>, nicht als etablierte Tatsache.</p>
+<blockquote>
+<p>Die ehrliche, evidenzbasierte Aussage lautet: <em>„Autistisches Burnout wird durch chronischen Stress, Masking und eine Diskrepanz zwischen Anforderungen und Kapazität angetrieben; der Monotropismus-Rahmen sagt voraus, dass ständiges erzwungenes Wechseln und Tunnelrisse ein wesentlicher, zu wenig anerkannter Mitverursacher sind – eine Vorhersage, die zum gelebten Erleben passt und der direkten Prüfung noch harrt.“</em></p>
+</blockquote>
+<h2 id="6-kognitive-energieökonomie--ihr-stärkstes-framing">6. „Kognitive Energieökonomie“ – Ihr stärkstes Framing</h2>
+<p>Ihr Schlussschritt – der Wechsel von „Defizit“ zu „wie viel Kraft ein Gehirn beim Hochschalten verbraucht“ – ist genau richtig, und er hat bereits ein akademisches Zuhause.</p>
+<p>Goldknopfs Modell der <strong>„atypischen Ressourcenverteilung“</strong> (2013) operationalisiert Monotropismus als Unterschied in der <em>Ressourcenökonomie</em>: Aufmerksamkeitsressourcen bei Autismus sind <strong>verschmälert</strong> (auf weniger/kleinere Kanäle konzentriert, teils intensiver) und/oder <strong>in der Gesamtkapazität vermindert</strong> [10]. Auf dieser Sicht ist die „Kosten“ eines Übergangs buchstäblich der energetische Aufwand, ein Verteilungsmuster aufzulösen und ein neues aufzubauen. Das ist „kognitive Energieökonomie“, präzise formuliert – und es ist das Framing, das mit einem nicht-pathologisierendem Ansatz am besten vereinbar ist, weil es das Problem als <em>Ausgaben</em> (ein Unterschied im Haushalten) fasst statt als <em>Defekt</em>.</p>
+<p>Das ist das Framing, das Sie behalten sollten. Drei Vorteile:</p>
+<ul>
+<li>Es ist <strong>wertneutral</strong>: Intensiver Fokus ist ein Gewinn, wenn die Umwelt ihn trägt (Flow, Expertise), und ein Kostenpunkt, wenn die Umwelt ständiges Wechseln verlangt [10][11].</li>
+<li>Es <strong>sagt Interventionen voraus</strong>: unnötige Übergänge reduzieren, Flow-/Erholungszeiten schützen, Anforderungen an die Kapazität anpassen – und die „Kraftrechnung“ sinkt; genau das empfiehlt die Leitlinie zur Burnout-Prävention [8][9].</li>
+<li>Es <strong>vereint</strong> die Phänomene Ihrer vier Stufen, ohne die Stufen zu brauchen: verpasste Reize, Wechselkosten, Überlastung und Burnout werden allesamt Folgen <em>der Art, wie Ressourcen verteilt und erschöpft werden</em>, auf einem Kontinuum.</li>
+</ul>
+<h2 id="7-praktische-erkenntnisse--was-behaupten-was-vermeiden">7. Praktische Erkenntnisse – was behaupten, was vermeiden</h2>
+<p><strong>Zuversichtlich behaupten:</strong></p>
+<ul>
+<li>Monotropismus ist ein messbares, <strong>dimensionales</strong> Merkmal (MQ, 1–5, mit acht Subskalen); geben Sie den Wert und optional das Perzentil an, nicht eine „Stufe“ [2].</li>
+<li>Die von Ihnen beschriebene <strong>„Wechsel-Reibung“</strong> ist <strong>autistische Trägheit</strong> – ein reales, aus der Community stammendes, inzwischen begutachtetes Konstrukt [3][4][5].</li>
+<li><strong>Klebrige Aufmerksamkeit / gestörte Ablösung</strong> ist ein eigenständiger, experimentell gemessener Mechanismus [6][7].</li>
+<li><strong>Autistisches Burnout</strong> ist ein definiertes Konstrukt, angetrieben durch chronischen Stress, Masking und eine Anforderungs-Kapazitäts-Diskrepanz; monotoper Tunnelriss ist ein <em>plausibler, über gelebtes Erleben validierter</em> Mitverursacher [8][9].</li>
+<li>„Kognitive Energieökonomie“ ≈ Goldknopfs Modell der <strong>Ressourcenverteilung</strong> – das präziseste, neuroaffirmierendste Framing [10].</li>
+</ul>
+<p><strong>Vermeiden oder umbenennen:</strong></p>
+<ul>
+<li>Benannte <strong>Stufen / Bänder</strong> („Niedrig/Mittel/Hoch/Extrem“) – nicht validiert; verwenden Sie stattdessen Position-auf-der-Dimension + Profil.</li>
+<li><strong>„Aufmerksamkeitsträgheit“</strong> als Sammelbegriff – sie verwischt autistische Trägheit (Aufgabe/Kontrolle) mit klebriger Aufmerksamkeit (Wahrnehmung); verwenden Sie den präzisen Begriff [3][6].</li>
+<li><strong>„Absoluter“</strong> Monotropismus und <strong>„neurologischer Schock“</strong> – keine anerkannten Begriffe; sie implizieren einen kategorialen Sprung und eine Pathologie, die die Daten nicht stützen.</li>
+<li>Den Pfad <strong>Monotropismus → Burnout</strong> als etabliert darzustellen – es ist eine starke Hypothese, keine gemessene Wirkung [8].</li>
+<li>Jedes Framing, in dem <strong>höher = gestörter</strong> – die Ergebnisse von Monotropismus hängen vom Umwelt-Pass ab, nicht von der Stufe [1][10].</li>
+</ul>
+<hr />
+<h2 id="quellen">Quellen</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — Ursprung der Monotropismustheorie; fasst sie als Unterschied in der Ressourcenverteilung (ein Kontinuum), nicht als Defizit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (47-Item-Selbstbeurteilungsinstrument; Validierungs-Preprint). Open Science Framework. — dimensionaler 1–5-Wert + 8 Subskalen; n=1.110; autistischer Mittelwert 4,15 vs. nicht-autistisch 3,19; ADHD hebt die Werte; <strong>kein Schwellenwert/Perzentilband/Schweregrad</strong> (durch Sichten des Validierungs-Manuskripts bestätigt). Fragebogen: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · Validierungs-Preprint: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Lokales Archiv: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em> (Preprint / qualitativ). doi:10.31234/osf.io/ahk6x — autistische Menschen beschreiben die Schwierigkeit, Tätigkeiten zu beginnen, zu stoppen und zu wechseln, „die nicht ihrer bewussten Kontrolle unterlag“. Lokales Archiv: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a> · Manchester Research Explorer: <a href="https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-">https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-</a></p>
+<p>[4] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer, Association for Psychological Science. — fasst autistische Trägheit als „zuerst in autistischen Community-Erzählungen formuliert“, inzwischen begutachtet; verwendet die Sprache „hoch-reibungsbehafteter Start“ und „Wechselkosten“; zitiert Carls-Diamante &amp; Laciny (2024), Greaves-Lord et al. (2023), Buckle et al. (2021), Heasman et al. (2024), Rapaport et al. (2024), Phung et al. (2021). <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[5] Greaves-Lord, L. et al. (2023). <em>[Getting 'stuck': an integrative approach to support autistic people]</em> Frontiers in Psychology, doi:10.3389/fpsyg.2023.1229596. — begutachteter qualitativer + Delphi-Rahmen zur begrenzten Reaktionsinitiierung („feststeckender Zustand“) bei autistischen Menschen über Mikro-/Meso-/Makro-Ebenen, mit autistischen Menschen miterarbeitet. <a href="https://doi.org/10.3389/fpsyg.2023.1229596">https://doi.org/10.3389/fpsyg.2023.1229596</a></p>
+<p>[6] Landry, R. &amp; Bryson, S. (2004). <em>Impaired disengagement of attention in young children with autism.</em> Journal of Child Psychology and Psychiatry, 45(6), 1115–1122. doi:10.1111/j.1469-7610.2004.00304.x — „klebrige Aufmerksamkeit“: verlangsamte Ablösung von einem Reiz. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></p>
+<p>[7] Sacrey, L.-A. et al. (2015). <em>Attention disengagement in autism spectrum disorder: A meta-analysis.</em> Neuroscience &amp; Biobehavioral Reviews, 56, 111–121. doi:10.1016/j.neubiorev.2014.10.011 — bestätigt die verlangsamte Aufmerksamkeits-Ablösung über Studien hinweg. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></p>
+<p>[8] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — definiert autistisches Burnout als chronische Erschöpfung, Verlust von Fähigkeiten, verminderte Reiztoleranz, aus chronischem Lebensstress und einer Diskrepanz zwischen Erwartungen und Fähigkeiten. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · Open Archive: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[9] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — Konsensdefinition: Erschöpfung, Rückzug, Probleme im Denken, verminderte Alltagskompetenzen, Zunahme autistischer Züge. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<p>[10] Goldknopf, E. J. (2013). <em>Atypical resource allocation may contribute to many aspects of autism.</em> Frontiers in Integrative Neuroscience. PMC3872719 — modelliert Autismus als Unterschied in der <em>Ressourcenverteilung</em> (verschmälerte und/oder verminderte Aufmerksamkeitsressourcen); die akademische Form der „kognitiven Energieökonomie“. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a></p>
+<p>[11] Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., &amp; Pellicano, E. (2024). <em>"In a State of Flow": experiential validity of monotropism and its relation to autistic wellbeing.</em> Autism in Adulthood. doi:10.1089/aut.2023.0032 — der positive Pol tiefen monotropen Versenkens (Flow); stützt das Framing „ein Gewinn, wenn unterstützt“. Lokales Archiv: <code>sources/18-flow-experiential-validity-pmc.html</code> · <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a></p>
+</body>
+</html>

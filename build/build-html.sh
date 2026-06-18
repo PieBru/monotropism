@@ -58,20 +58,26 @@ done
 # Comorbidity landscape research brief (theory companion, English)
 md_to_html "outputs/monotropism-comorbidity-landscape.md" "outputs/monotropism-comorbidity-landscape.html"
 md_to_html "outputs/monotropism-comorbidity-landscape_ita.md" "outputs/monotropism-comorbidity-landscape_ita.html"
+md_to_html "outputs/monotropism-comorbidity-landscape_de.md" "outputs/monotropism-comorbidity-landscape_de.html"
 
 # Research briefs (theory, English)
 md_to_html "outputs/monotropism-autism-prevalence-global.md" "outputs/monotropism-autism-prevalence-global.html"
 md_to_html "outputs/monotropism-autism-prevalence-global_ita.md" "outputs/monotropism-autism-prevalence-global_ita.html"
+md_to_html "outputs/monotropism-autism-prevalence-global_de.md" "outputs/monotropism-autism-prevalence-global_de.html"
 md_to_html "outputs/monotropism-scoring-levels-inertia.md" "outputs/monotropism-scoring-levels-inertia.html"
 md_to_html "outputs/monotropism-scoring-levels-inertia_ita.md" "outputs/monotropism-scoring-levels-inertia_ita.html"
+md_to_html "outputs/monotropism-scoring-levels-inertia_de.md" "outputs/monotropism-scoring-levels-inertia_de.html"
 md_to_html "outputs/monotropism-comorbidities-factcheck.md" "outputs/monotropism-comorbidities-factcheck.html"
 md_to_html "outputs/monotropism-comorbidities-factcheck_ita.md" "outputs/monotropism-comorbidities-factcheck_ita.html"
+md_to_html "outputs/monotropism-comorbidities-factcheck_de.md" "outputs/monotropism-comorbidities-factcheck_de.html"
 
 # Lifespan practitioner guide (English)
 md_to_html "outputs/autistic-monotropism-lifespan-guide.md" \
            "outputs/autistic-monotropism-lifespan-guide.html"
 md_to_html "outputs/autistic-monotropism-lifespan-guide_ita.md" \
            "outputs/autistic-monotropism-lifespan-guide_ita.html"
+md_to_html "outputs/autistic-monotropism-lifespan-guide_de.md" \
+           "outputs/autistic-monotropism-lifespan-guide_de.html"
 
 # Family & relatives guide (English + translations)
 for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro" "_ar" "_zh"; do

@@ -60,20 +60,26 @@ done
 # Comorbidity landscape research brief (theory companion, English)
 md_to_pdf "outputs/monotropism-comorbidity-landscape.md" "outputs/monotropism-comorbidity-landscape.pdf"
 md_to_pdf "outputs/monotropism-comorbidity-landscape_ita.md" "outputs/monotropism-comorbidity-landscape_ita.pdf"
+md_to_pdf "outputs/monotropism-comorbidity-landscape_de.md" "outputs/monotropism-comorbidity-landscape_de.pdf"
 
 # Research briefs (theory, English)
 md_to_pdf "outputs/monotropism-autism-prevalence-global.md" "outputs/monotropism-autism-prevalence-global.pdf"
 md_to_pdf "outputs/monotropism-autism-prevalence-global_ita.md" "outputs/monotropism-autism-prevalence-global_ita.pdf"
+md_to_pdf "outputs/monotropism-autism-prevalence-global_de.md" "outputs/monotropism-autism-prevalence-global_de.pdf"
 md_to_pdf "outputs/monotropism-scoring-levels-inertia.md" "outputs/monotropism-scoring-levels-inertia.pdf"
 md_to_pdf "outputs/monotropism-scoring-levels-inertia_ita.md" "outputs/monotropism-scoring-levels-inertia_ita.pdf"
+md_to_pdf "outputs/monotropism-scoring-levels-inertia_de.md" "outputs/monotropism-scoring-levels-inertia_de.pdf"
 md_to_pdf "outputs/monotropism-comorbidities-factcheck.md" "outputs/monotropism-comorbidities-factcheck.pdf"
 md_to_pdf "outputs/monotropism-comorbidities-factcheck_ita.md" "outputs/monotropism-comorbidities-factcheck_ita.pdf"
+md_to_pdf "outputs/monotropism-comorbidities-factcheck_de.md" "outputs/monotropism-comorbidities-factcheck_de.pdf"
 
 # Lifespan practitioner guide (English)
 md_to_pdf "outputs/autistic-monotropism-lifespan-guide.md" \
           "outputs/autistic-monotropism-lifespan-guide.pdf"
 md_to_pdf "outputs/autistic-monotropism-lifespan-guide_ita.md" \
           "outputs/autistic-monotropism-lifespan-guide_ita.pdf"
+md_to_pdf "outputs/autistic-monotropism-lifespan-guide_de.md" \
+          "outputs/autistic-monotropism-lifespan-guide_de.pdf"
 
 # Family & relatives guide (English + translations)
 for lang in "" "_de" "_es" "_fr" "_ita" "_nl" "_pl" "_pt" "_ro" "_ar" "_zh"; do

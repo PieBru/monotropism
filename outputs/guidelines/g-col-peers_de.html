@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>In jedem Alter Freund:in einer autistischen Person sein</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="in-jedem-alter-freundin-einer-autistischen-person-sein">In jedem Alter Freund:in einer autistischen Person sein</h1>
+<blockquote>
+<p><strong>Der kumulative Leitfaden für Freund:innen, Mitschüler:innen, Mitbewohner:innen, Nachbar:innen und Familien von Peers</strong> — über die gesamte autistische Lebensspanne, von den Eltern eines Spielgefährten bis zu einer älteren Nachbarin/einem älteren Nachbarn. <em>Ein erweitertes Nachschlagewerk; kombinieren Sie es mit den Einzelalters-Kurzanleitungen.</em></p>
+</blockquote>
+<h2 class="lead" id="die-kernidee">Die Kernidee</h2>
+<p>Autismus bedeutet über den <strong>Monotropismus</strong>, dass sich die Aufmerksamkeit einer Freundin/eines Freundes in wenige tiefe, intensive „Tunnel” einschließt. Sie nimmt Dinge vielleicht wörtlich, braucht Vorhersagbarkeit, meidet das Laute und wird still, wenn überlastet — und sie sagt vielleicht häufiger ab oder lehnt ab als andere Freund:innen. Nichts davon ist Kälte oder verblassende Freundschaft; es ist ein begrenztes soziales/sensorisches Budget, sorgfältig ausgegeben. Welches Alter Ihre autistische Freundin/Ihr autistischer Freund auch hat, das Wertvollste, das Sie tun können, ist, ihr um ein geteiltes Interesse herum zu begegnen, alles druckarm und vorhersagbar zu halten, zu sagen, was Sie meinen, und einen Rückzug nicht persönlich zu nehmen. Eine akzeptierende Freundin/ein akzeptierender Freund ist genuinely schützend — in jedem Alter.</p>
+<h2 class="do" id="was-in-jedem-alter-hilft">Was in jedem Alter hilft</h2>
+<ul>
+<li><strong>Verbinden Sie sich über das Interesse</strong> — es ist ihre Eingangstür zur Freundschaft; lassen Sie sie Expertise teilen.</li>
+<li><strong>Halten Sie es druckarm und flexibel</strong> — eins-zu-eins, nebeneinander, kein „alle müssen kommen”-Druck; lassen Sie die Tür offen.</li>
+<li><strong>Sagen Sie, was Sie meinen</strong> — klar und wörtlich schlägt Andeutungen und Sarkasmus; unterstellen Sie gute Absicht bei schroffen Äußerungen.</li>
+<li><strong>Bieten Sie ruhigere, ruhigere Wege, sich zu treffen</strong> — ein Spaziergang, ein Spiel, ein Kaffee, über einer Menschenmenge.</li>
+<li><strong>Nehmen Sie eine Absage oder Schweigen nicht persönlich</strong> — es geht um ihr Budget, nicht um Ihre Freundschaft.</li>
+<li><strong>Wissen Sie, wann Sie handeln müssen</strong> — wenn sie von Hoffnungslosigkeit spricht oder auszubrennen scheint, sagen Sie jemandem, der helfen kann.</li>
+<li><strong>Lesen Sie Rückzug als verbrauchtes Budget, nicht als verblassende Freundschaft</strong> — eine Absage oder eine stille Phase bedeutet meist, sie ist überlastet, nicht dass sie sich weniger kümmert; eine druckarme offene Tür ist der freundlichste Schritt.</li>
+<li><strong>Begegnen Sie ihr, wo sie ist</strong> — nebeneinander, geteiltes Interesse, druckarme Zeit verbindet meist mehr als von-Angesicht-zu-Angesicht-„Plausch”; lassen Sie sie führen und teilen, was sie liebt.</li>
+<li><strong>Seien Sie geduldig mit einem anderen Rhythmus</strong> — Antworten können langsam sein, Pläne können sich verschieben, und Verbindung kann anders aussehen als Ihre anderen Freundschaften; Konsistenz und Akzeptanz zählen weit mehr als Häufigkeit.</li>
+<li><strong>Feiern Sie ihre Expertise</strong> — autistische Freund:innen bringen oft tiefes Wissen und einen frischen Blickwinkel; nach ihrem Interesse zu fragen und es zu werten, ist eines der besten Geschenke, die Sie machen können.</li>
+</ul>
+<h2 class="dont" id="was-sie-in-jedem-alter-vermeiden-sollten">Was Sie in jedem Alter vermeiden sollten</h2>
+<ul>
+<li>Sarkasmus, Necken oder Schuldvorwürfe wegen Überspringens von Sozial-Events.</li>
+<li>Laute Überraschungen, Gruppen-Druck oder „komm schon, leb ein bisschen”.</li>
+<li>Leise, einen anderen Stil oder eine langsame Antwort als Desinteresse lesen.</li>
+<li>Jedes Treffen in einen großen Plan oder ein Gruppen-Event verwandeln — eins-zu-eins, unauffällige, druckarme Zeit ist meist, wo die echte Freundschaft lebt.</li>
+</ul>
+<h2 id="kurzhinweise-nach-lebensphase">Kurzhinweise nach Lebensphase</h2>
+<h3 class="stage" id="spielgefährten-ihre-familien-25">Spielgefährten &amp; ihre Familien (2–5)</h3>
+<p>Folgen Sie dem Interesse des Kindes, statt es in „typisches” Spiel zu ziehen; halten Sie Spieltermine kurz, ruhig und vorhersagbar; modellieren Sie Akzeptanz für Ihr eigenes Kind.</p>
+<h3 id="grundschul-mitschülerinnen">Grundschul-Mitschüler:innen</h3>
+<p>Verbinden Sie sich über das Interesse; sagen Sie, was Sie meinen; bieten Sie eine ruhige Option in Pause/Mittag; warnen Sie vor Wechseln. Seien Sie die akzeptierende Freundin/der akzeptierende Freund; sagen Sie einer erwachsenen Person Bescheid, wenn sie gemobbt werden.</p>
+<h3 id="teenager-mitschülerinnen-freundinnen">Teenager-Mitschüler:innen &amp; Freund:innen</h3>
+<p>Verabreden Sie sich um das Interesse; halten Sie es druckarm; seien Sie die Freundin/der Freund, bei der/dem sie entmasken können. Wenn sie von Hoffnungslosigkeit sprechen, <strong>sagen Sie es einer vertrauten erwachsenen Person</strong> — ein:e Verbündete:r kann ein Leben retten.</p>
+<h3 id="mitbewohnerinnen-mitstudierende">Mitbewohner:innen &amp; Mitstudierende</h3>
+<p>Vereinbaren Sie WG-Normen früh und schriftlich; standardmäßig texten; schützen Sie Ruhezeiten. Fragen Sie wörtlich nach, wenn sie still wird; kennen Sie die Wegweiser und bieten Sie an, mitzugehen.</p>
+<h3 id="arbeitskolleginnen-als-freundinnen">Arbeitskolleg:innen als Freund:innen</h3>
+<p>Halten Sie Soziales optional und unauffällig; achten Sie Kopfhörer und Fokus; verbinden Sie sich über geteiltes Interesse. Wenn sie auszubrennen scheint, verweisen Sie behutsam an Hilfe.</p>
+<h3 id="freundinnen-eines-autistischen-elternteils">Freund:innen eines autistischen Elternteils</h3>
+<p>Bieten Sie konkrete Hilfe (eine Mahlzeit, einen Schul-Weg); halten Sie es druckarm und schuld-frei; lassen Sie die Tür offen. Verweisen Sie an Unterstützung, wenn sie überfordert scheint.</p>
+<h3 id="freundinnen-nachbarinnen-eines-älteren-erwachsenen">Freund:innen &amp; Nachbar:innen eines älteren Erwachsenen</h3>
+<p>Verbinden Sie sich über das Interesse; halten Sie es vorhersagbar und druckarm; gewähren Sie Verarbeitungszeit und Wiederholungen. Ihre Freundschaft ist genuinely schützend gegen Isolation.</p>
+<h2 class="support" id="querschnitt-was-jede-freundin-jeder-freund-wissen-muss">Querschnitt: was jede Freundin / jeder Freund wissen muss</h2>
+<blockquote>
+<p><strong>Eine gute Freundin/ein guter Freund ist stark schützend</strong> — autistische Menschen mit auch nur einer akzeptierenden Beziehung tun sich deutlich besser, und soziale Isolation ist ein ernstes Risiko über die Lebensspanne. <strong>Camouflaging ist erschöpfend</strong> — lassen Sie Freundschaft sie nicht ihre Energie kosten; halten Sie sie optional und unauffällig. <strong>Burnout verbirgt sich hinter einer kompetenten Oberfläche</strong>, besonders bei Mädchen und Frauen — nehmen Sie Rückzug und verminderte Toleranz ernst. <strong>Doppelt-Empathie geht in beide Richtungen</strong> — Sie finden ihre Art zu kommunizieren so rätselhaft wie sie die Ihre; treffen Sie sich in der Mitte. Wenn eine Freundin von Hoffnungslosigkeit oder Nicht-mehr-sein-Wollen spricht, <strong>behalten Sie es nicht für sich</strong> — sagen Sie jemandem, der helfen kann.</p>
+</blockquote>
+<h2 class="foot" id="über-diesen-leitfaden">Über diesen Leitfaden</h2>
+<p><em>KI-gestützt, abgeleitet aus den Forschungsentwürfen dieses Projekts — der Leitfaden für die <strong>Familie</strong> (Teile 4 &amp; 6), <strong>Monotrop aufwachsen</strong> (Teil 1) und das <strong>Monotropismus</strong>-Dossier, mit dem Leitfaden für <strong>Praktiker und Gesundheitsfachleute über die Lebensspanne</strong>. Verwendet identitätsfirst-Sprache. <strong>Information — kein diagnostisches Werkzeug.</strong> Passen Sie es an die einzelne Person an.</em></p>
+<p><strong>Schlüsselquellen.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2023); Dwyer (2025); Milton (2012, Doppelt-Empathie); Reframing Autism (2023); Raymaker et al. (2020, Burnout); Bradley et al. (2021, Camouflaging); Pearson &amp; Rose (2021, Masking); Klein et al. (2024, Altern). Vollständige Nachweise finden sich in den Quelldossiers.</p>
+</body>
+</html>

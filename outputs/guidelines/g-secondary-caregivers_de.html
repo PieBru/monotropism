@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ein autistischer Teenager / eine autistische Teenagerin, den/die Sie begleiten</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="ein-autistischer-teenager-eine-autistische-teenagerin-dendie-sie-begleiten">Ein autistischer Teenager / eine autistische Teenagerin, den/die Sie begleiten</h1>
+<blockquote>
+<p><strong>Für Betreuungskräfte, Assistenzkräfte, Mentor:innen und Jugendarbeit</strong> — einen autistischen <strong>Teenager</strong> (etwa 12–18 Jahre) unterstützen.</p>
+</blockquote>
+<h2 class="lead" id="die-kernidee">Die Kernidee</h2>
+<p>Autismus bedeutet über den <strong>Monotropismus</strong>, dass sich die Aufmerksamkeit eines Teenagers in wenige tiefe, intensive „Tunnel” einschließt. Dies ist das <strong>Spitzenalter für Angst, Depression und Burnout</strong>, und viele autistische Teenager masken den ganzen Tag und kommen erschöpft zu Ihnen. Ihre Rolle ist stetige, vorhersagbare, anforderungsarme Unterstützung: halten Sie Routinen, schützen Sie ihre Interessen und achten Sie auf die Überlastung und das Burnout, das sie vielleicht nicht benennen. Nehmen Sie ihr Innenleben ernst und lesen Sie einen Shutdown nie als „will nicht mitmachen”.</p>
+<h2 id="was-sie-beobachten-könnten-und-was-wirklich-dahintersteckt">Was Sie beobachten könnten — und was wirklich dahintersteckt</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Sie könnten sehen…</th>
+<th>Was oft tatsächlich passiert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Erschöpft, zurückgezogen, verweigert die Teilnahme</td>
+<td>Wahrscheinlich <strong>Burnout</strong> oder Überlastung — von Faulheit zu unterscheiden</td>
+</tr>
+<tr>
+<td>Wird plötzlich still oder geht</td>
+<td>Shutdown — unwillkürlich; braucht Ruhe und Zeit, keinen Druck</td>
+</tr>
+<tr>
+<td>Klammert an Routinen, Objekte, ein Interesse</td>
+<td>Diese sind <strong>Regulation und Identität</strong>, keine „Zwänge”</td>
+</tr>
+<tr>
+<td>Meldet keinen Schmerz, Hunger oder Kranksein</td>
+<td><strong>Interozeptions</strong>-Unterschiede; „nicht sagen” ≠ „nicht leiden”</td>
+</tr>
+<tr>
+<td>Will alles jedes Mal auf dieselbe Weise</td>
+<td>Vorhersagbarkeit senkt eine ohnehin hohe Last</td>
+</tr>
+</tbody>
+</table>
+<h2 class="do" id="versuchen-sie-dies">Versuchen Sie dies</h2>
+<ul>
+<li><strong>Halten Sie Personal, Routinen und Orte konsistent</strong>; warnen Sie vor jedem Wechsel; schaffen Sie den Plan <em>mit</em> ihnen gemeinsam.</li>
+<li><strong>Schützen Sie das Interesse und die Ruhezeit</strong> als Regulation und Erholung, nicht als „Verwöhnen”.</li>
+<li><strong>Kommunizieren Sie wörtlich, eins nach dem anderen</strong>, oft schriftlich/per Text; gewähren Sie Verarbeitungszeit und Wahl.</li>
+<li><strong>Senken Sie die sensorische Last</strong> — ruhiger, schwach beleuchteter Raum; erlauben Sie Kopfhörer, Stimming und Bewegung.</li>
+<li><strong>Haben Sie einen ruhigen Meltdown-/Shutdown-Plan</strong>: reduzieren Sie Input, sichern Sie Sicherheit, geben Sie Zeit, kein Festhalten.</li>
+<li><strong>Fragen Sie direkt, wörtlich</strong> nach Stimmung und Sicherheit, wenn Sie sich Sorgen machen — und geben Sie Bedenken weiter.</li>
+</ul>
+<h2 class="dont" id="vermeiden-sie-dies">Vermeiden Sie dies</h2>
+<ul>
+<li>Überraschungswechsel, Druck zum Masken oder „Mach mit!“-Forderungen, wenn sie erschöpft sind.</li>
+<li>Stimming stoppen oder einen Shutdown als Verweigerung lesen.</li>
+<li>Eine ruhige, maskierte Stunde mit „gut sein” gleichsetzen.</li>
+</ul>
+<h2 class="support" id="wann-weitere-hilfe-nötig-ist">Wann weitere Hilfe nötig ist</h2>
+<blockquote>
+<p>Achten Sie auf <strong>autistisches Burnout</strong> (Erschöpfung, Kompetenzverlust, verminderte Toleranz) und Krisenzeichen — teilen Sie Bedenken der Familie und, wo angemessen, der Schutzbeauftragten/dem Schutzbeauftragten mit. Untersuchen Sie <strong>zuerst Schmerz oder Krankheit</strong> bei jeder neuen Belastung. Verweisen Sie an autistisch geführte Peer-Gruppen und Mentor:innen.</p>
+</blockquote>
+<h2 class="gender" id="wenn-der-teenager-ein-mädchen-oder-ein-marginalisiertes-geschlecht-ist">Wenn der Teenager ein Mädchen oder ein marginalisiertes Geschlecht ist</h2>
+<blockquote>
+<p>Camouflaging gipfelt hier; die ruhige, „ängstliche Perfektionistin” kann ein erschöpfter autistischer Teenager sein, der leerläuft. Nehmen Sie ein privates, wörtliches Nachfragen ernst.</p>
+</blockquote>
+<h2 class="foot" id="über-diesen-leitfaden">Über diesen Leitfaden</h2>
+<p><em>KI-gestützt, abgeleitet aus den Forschungsentwürfen dieses Projekts — der Leitfaden für die <strong>Familie</strong> (Teil 4), der Leitfaden für <strong>Praktiker und Gesundheitsfachleute über die Lebensspanne</strong> (Teil 3.3) und das <strong>Monotropismus</strong>-Dossier. Verwendet identitätsfirst-Sprache. <strong>Information — kein diagnostisches Werkzeug.</strong> Passen Sie es an die einzelne Person an.</em></p>
+<p><strong>Schlüsselquellen.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2023); Dwyer (2025); Raymaker et al. (2020, Burnout); Pearson &amp; Rose (2021, Masking); Kelly Mahler (2024). Vollständige Nachweise finden sich in den Quelldossiers.</p>
+</body>
+</html>
