@@ -31,7 +31,7 @@ and **print-ready PDF**. A live landing page is served at
 
 ```
 monotropism/
-├── README.md                 # Human-facing catalogue + "at a glance" table (source of truth for the published list)
+├── README.md                 # Human-facing readme (catalogue lives on the live site)
 ├── AGENTS.md                 # This file
 ├── LICENSE
 ├── .nojekyll                 # Tells GitHub Pages to serve raw files (no Jekyll)
@@ -66,9 +66,11 @@ monotropism/
     └── NN-slug.pdf          #   OA PDF (OSF / figshare / institutional repo / journal)
 ```
 
-> **`README.md` is the source of truth for the *published* catalogue.** The
-> `DOCS` array in `index.html` must stay in sync with it. A draft is "published"
-> only once it is listed in both the README table and the landing page.
+> **The published catalogue lives on the live site**
+> (<https://piebru.github.io/monotropism/>), driven by the `DOCS` array in
+> `index.html`. A draft is "published" once it is listed in `DOCS` **and** its
+> rendered `.html`/`.pdf` exist. `README.md` is a short, human-facing readme
+> (no per-document catalogue table).
 
 > **`sources/` is a static archive** of the primary sources cited by the
 > foundational brief (`monotropism.md`). It is referenced by the `SOURCES` array
@@ -123,7 +125,7 @@ Four category slugs, displayed in this fixed order on the landing page
 | `family`       | Parents, relatives, caregivers            |
 | `kids`         | Adults around autistic children (ages 7–11) |
 
-### Currently published (must stay mirrored: README ↔ `index.html` DOCS)
+### Currently published (mirrors `index.html` `DOCS`)
 
 | Stem                                   | Cat            | Languages                       |
 |----------------------------------------|----------------|--------------------------------|
@@ -264,8 +266,9 @@ data agree, the links are correct.
   portable `index.html`.
 - **Escape user/content strings.** Display text flows through an `esc()`
   helper; keep using it for any dynamic string.
-- **Sync three things when publishing:** the Markdown in `outputs/`, the README
-  "at a glance" table, and the `DOCS` array (+ `I18N` if a new language).
+- **Sync two things when publishing:** the Markdown in `outputs/` and the
+  `DOCS` array in `index.html` (+ `I18N` if a new language). The README no longer
+  carries a per-document catalogue table.
 - Keep `data-theme="dark"` as the default in `<html>` and in the no-flash script.
 
 ### Source archive (`SOURCES` + `sources/`)
@@ -386,32 +389,30 @@ two-page practical quick guides** (`guidelines.html` hub).
 
 1. Author `outputs/<stem>.md` in English (identity-first, neuroaffirming,
    cited). Keep a `<stem>.provenance.md` sidecar (do not commit it).
-2. Add the document to the **README.md** "at a glance" table (new row, EN cell).
-3. Add a `DOCS` entry in `index.html` (`cat`, `stem`, `langs: ["en"]`,
+2. Add a `DOCS` entry in `index.html` (`cat`, `stem`, `date`, `langs: ["en"]`,
    `content.en`).
-4. Add the `md_to_html` / `md_to_pdf` call for the new stem in **both**
+3. Add the `md_to_html` / `md_to_pdf` call for the new stem in **both**
    `build/build-html.sh` and `build/build-pdfs.sh`.
-5. Run both builders; verify `outputs/<stem>.html` and `<stem>.pdf` exist.
-6. `git status` — confirm no `.provenance.md`, `.drafts/`, or `.plans/` files
+4. Run both builders; verify `outputs/<stem>.html` and `<stem>.pdf` exist.
+5. `git status` — confirm no `.provenance.md`, `.drafts/`, or `.plans` files
    are staged.
 
 ### B. Add a translation to an existing draft
 
 1. Create `outputs/<stem>_<suffix>.md` (use the correct suffix from §3;
    `_ita`, `_fr`, `_es`, `_de`). Translate from the English source.
-2. In the README table, fill that language's cell for the row.
-3. In `index.html`, add the language code to the draft's `langs[]` **and** add a
+2. In `index.html`, add the language code to the draft's `langs[]` **and** add a
    matching `content.<code>` block (localized `title`/`audience`/`desc`).
-4. Add the new language variant to both build scripts (mirror the existing
+3. Add the new language variant to both build scripts (mirror the existing
    `for lang in …` loops).
-5. Run both builders; confirm `outputs/<stem>_<suffix>.{html,pdf}` exist.
+4. Run both builders; confirm `outputs/<stem>_<suffix>.{html,pdf}` exist.
 
 ### C. Add a brand-new language
 
 1. Add to `LANGS` (with flag), `LANG_SUFFIX` (with suffix), and a full `I18N`
    block (every key, including `cat.theory…cat.kids`).
-2. For each draft that gets translated, add the suffix file, the README cell,
-   the `langs[]` entry, and the `content.<code>` block.
+2. For each draft that gets translated, add the suffix file, the `langs[]`
+   entry, and the `content.<code>` block.
 3. Add each new variant to both build scripts.
 4. Rebuild.
 
@@ -493,7 +494,7 @@ Key things to confirm after edits:
 - ❌ Don't commit `*.provenance.md`, `.drafts/`, `.plans/`, or `build/tmp/`.
 - ❌ Don't introduce pathologising/deficit framing or person-first language by
   default.
-- ❌ Don't publish a draft in `DOCS`/README without first generating its `.html`
+- ❌ Don't publish a draft in `DOCS` without first generating its `.html`
   and `.pdf` via the build scripts.
 
 ---
@@ -505,8 +506,8 @@ Key things to confirm after edits:
 | Render all HTML         | `bash build/build-html.sh`                                         |
 | Render all PDFs         | `bash build/build-pdfs.sh`                                         |
 | Preview locally         | open `index.html` (or `index.html#/it`) in a browser               |
-| Add a draft             | §8A — md → README → `DOCS` → both build scripts → build            |
-| Add a translation       | §8B — `_suffix.md` → README cell → `langs`+`content` → scripts → build |
+| Add a draft             | §8A — md → `DOCS` → both build scripts → build                    |
+| Add a translation       | §8B — `_suffix.md` → `langs`+`content` → scripts → build          |
 | Add a language          | §8C — `LANGS`/`LANG_SUFFIX`/`I18N` + per-draft data + scripts → build |
 | Restyle drafts          | edit `build/style.html` only, then rebuild                         |
 | Restyle landing page    | edit `index.html`, then §9 checks                                  |
