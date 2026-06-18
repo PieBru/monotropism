@@ -12,7 +12,7 @@ A growing grid of short, **practical quick guides** derived from the documents a
 
 The interactive grid lives at **[`guidelines.html`](guidelines.html)** (also linked as *“Quick guides”* in the site top bar). Source Markdown and rendered PDFs sit in [`outputs/guidelines/`](outputs/guidelines/), named `g-<row>-<col>.md` (cells), `g-row-<row>.md` (row summaries) and `g-col-<col>.md` (column summaries).
 
-**Status — full English grid complete:** every life stage (row) and every counterpart (column) is published — 54 printable two-page cell sheets plus 16 cumulative summaries (one per row and one per column), each rendered as HTML and PDF. The whole grid will be translated into the library's other languages once the English template is finalised. Gender (male/female) is handled as a cross-cutting callout inside each sheet rather than a separate axis; some cells are marked **N/A** (e.g. a pre-school child has no *colleagues*) and are intentionally left blank.
+**Status:** the full grid is published in **English** and **Italian** — every life stage (row) and every counterpart (column), 54 printable two-page cell sheets plus 16 cumulative summaries (one per row and one per column), each rendered as HTML and PDF. The Italian grid is an AI-assisted translation; the English original is the source of truth, and further languages are planned. Gender (male/female) is handled as a cross-cutting callout inside each sheet rather than a separate axis; some cells are marked **N/A** (e.g. a pre-school child has no *colleagues*) and are intentionally left blank.
 
 ---
 
