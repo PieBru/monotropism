@@ -128,18 +128,18 @@ Four category slugs, displayed in this fixed order on the landing page
 | Stem                                   | Cat            | Languages                       |
 |----------------------------------------|----------------|--------------------------------|
 | `monotropism`                          | `theory`       | en, it, fr, es, de, pl, nl, ro, pt |
-| `monotropism-comorbidity-landscape`    | `theory`       | en                             |
-| `monotropism-autism-prevalence-global` | `theory`       | en                             |
-| `monotropism-scoring-levels-inertia`   | `theory`       | en                             |
-| `monotropism-comorbidities-factcheck`  | `theory`       | en                             |
-| `autistic-monotropism-lifespan-guide`  | `practitioner` | en                             |
+| `monotropism-comorbidity-landscape`    | `theory`       | en, it                          |
+| `monotropism-autism-prevalence-global` | `theory`       | en, it                          |
+| `monotropism-scoring-levels-inertia`   | `theory`       | en, it                          |
+| `monotropism-comorbidities-factcheck`  | `theory`       | en, it                          |
+| `autistic-monotropism-lifespan-guide`  | `practitioner` | en, it                          |
 | `autistic-monotropism-family-guide`    | `family`       | en, it, fr, es, de, pl, nl, ro, pt |
 | `monotropic-kids-guidelines`           | `kids`         | en, it, fr, es, de, pl, nl, ro, pt |
 
-> **Five English-only drafts** (`monotropism-comorbidity-landscape`,
-> `monotropism-autism-prevalence-global`, `monotropism-scoring-levels-inertia`,
-> `monotropism-comorbidities-factcheck`, `autistic-monotropism-lifespan-guide`)
-> have no translations yet. Add languages per §8B when translations are produced.
+> Italian translations (AI-assisted) now exist for these five drafts and for the
+> `monotropism`, `family-guide` and `kids-guidelines`. Other-language
+> translations are still pending; add languages per §8B when translations are
+> produced.
 
 ---
 

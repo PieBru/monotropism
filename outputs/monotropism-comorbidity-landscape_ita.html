@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Il monotropismo e la sua ragnatela di comorbidità: legami diretti e indiretti con condizioni comportamentali, psichiatriche e neuroevolutive</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="il-monotropismo-e-la-sua-ragnatela-di-comorbidità-legami-diretti-e-indiretti-con-condizioni-comportamentali-psichiatriche-e-neuroevolutive">Il monotropismo e la sua ragnatela di comorbidità: legami diretti e indiretti con condizioni comportamentali, psichiatriche e neuroevolutive</h1>
+<p><em>Una breve ricerca citata.</em></p>
+<hr />
+<h2 id="sintesi-esecutiva">Sintesi esecutiva</h2>
+<p>Il <strong>monotropismo</strong> (Murray, Lawson &amp; Lesser, 2005) è una teoria dell'attenzione autistica che inquadra l'autismo come una differenza nell'<em>allocazione delle risorse</em>: una mente monotropica concentra le risorse di elaborazione in un piccolo numero di "tunnel di attenzione" altamente attivi, lasciando meno risorse per i canali periferici. Una misura di autovalutazione del 2023 — il <strong>Monotropism Questionnaire (MQ)</strong> — fornisce la prima validazione empirica, mostrando che le persone autistiche e con ADHD ottengono punteggi significativamente più alti dei controlli non-autistici/senza-ADHD [1][2][3]. Un modello strettamente correlato e sottoposto a revisione paritaria, il conto dell'<strong>allocazione atipica delle risorse</strong> di Goldknopf, sostiene che la stessa attenzione ristretta-intensa può tenere insieme le caratteristiche sensoriali, sociali, esecutive e motorie dell'autismo — pur avvertendo che "molto probabilmente è un fattore nelle persone autistiche con forti sintomi sensoriali", non l'unica causa [4].</p>
+<p>Poiché il monotropismo è una teoria di <em>come si spendono le risorse</em>, plausibilmente si ripercuote in molti domini. Il quadro onesto, però, si divide in tre livelli:</p>
+<ul>
+<li><strong>Livello 1 — Legami diretti, supportati empiricamente.</strong> L'accavallamento autismo–ADHD ("AuDHD") è il più forte: il MQ mostra che l'attenzione monotropica è elevata in <em>entrambe</em> le condizioni, reinquadrando lo "split monotropico" (tunnel in competizione o instabili) come un vero fenotipo attentivo misurabile [2][3][5]. Sovrapposizioni a livello di meccanismo — <strong>interocezione</strong> atipica e <strong>disfunzione esecutiva</strong> — sono ben evidenziate e aiutano a spiegare i problemi a valle con alimentazione, disordine ed evitamento [6][7][8].</li>
+<li><strong>Livello 2 — Comorbidità indiretta a meccanismo condiviso.</strong> L'autismo si accavalla marcatamente con <strong>anoressia/alimentazione restrittiva</strong> e <strong>OCD</strong>. In ciascun caso la comorbidità è reale e replicata, ma il ponte <em>meglio evidenziato</em> è un meccanismo condiviso (interocezione; elaborazione ego-sintonica vs ego-distonica) più che il monotropismo specificamente [6][9][10].</li>
+<li><strong>Livello 3 — Estrapolazione plausibile o costrutti contestati.</strong> Alcuni legami nell'inquadratura popolare — le "pile del destino" come un fallimento monotropico della permanenza dell'oggetto, l'agorafobia come esito primario del monotropismo, la <strong>PDA</strong> come profilo distinto — poggiano su evidenza più debole o contestata e vanno trattati come ipotesi, non fatti stabiliti [11][12][13].</li>
+</ul>
+<p>In tutto, un tema ricorrente: molti comportamenti che sembrano "disturbi" separati si leggono meglio come <strong>il costo cognitivo di un sistema attentivo ristretto che collide con un mondo politropico</strong> — ma solo alcune di quelle letture sono state testate direttamente.</p>
+<hr />
+<h2 id="1-fondamenti-cosè-il-monotropismo-e-quanto-è-solido">1. Fondamenti: cos'è il monotropismo e quanto è solido</h2>
+<p>Il monotropismo propone che le menti differiscano in come distribuiscono le risorse attentive. Una mente <strong>politropica</strong> tiene molti canali di interesse attivi contemporaneamente (ampia, superficiale, cambio facile); una mente <strong>monotropica</strong> convoglia le risorse in pochi "tunnel di attenzione" intensamente attivi (ristretta, profonda, difficile da cambiare) [1][3]. Gli estensori — Dinah Murray, Wenn Lawson e Mike Lesser — presentarono l'idea alle conferenze sull'autismo di Durham dal 1992 e la formalizzarono nel 2005, sostenendo che spiega i tratti autistici (interessi speciali, bisogno di uguaglianza, malessere alle transizioni, focalizzazione sul dettaglio) meglio dei modelli solo-deficitari [1][14].</p>
+<p>Il suo status scientifico si è spostato negli ultimi anni:</p>
+<ul>
+<li>È <strong>misurabile empiricamente</strong>. Il MQ (Garau et al., 2023) è uno strumento di autovalutazione a 47 item testato su 1.110 partecipanti (756 autistici, 354 non-autistici). I partecipanti autistici e con ADHD hanno ottenuto punteggi significativamente più alti dei controlli [2][3].</li>
+<li>Ha un <strong>cugino meccanicistico sottoposto a revisione paritaria</strong>. Il modello dell'"allocazione atipica delle risorse" di Goldknopf (<em>Frontiers in Integrative Neuroscience</em>, 2013) operazionalizza l'intuizione: nell'autismo, le risorse attentive sono <strong>ristrette</strong> (a meno/aree più piccole, modalità e stadi di elaborazione, talora più intensamente) e/o <strong>ridotte</strong> in capacità complessiva — un quadro che lega esplicitamente insieme linguaggio, cognizione sociale, atipicità sensoriale/attentiva e differenze esecutive/motorie [4].</li>
+<li>Sta <strong>accanto, non al posto di</strong>, altre teorie cognitive (Teoria della Mente; coerenza centrale debole / stile focalizzato sul dettaglio (Happé &amp; Frith, 2006); disfunzione esecutiva) [4][15].</li>
+<li>Rimane un <strong>modello, non un biomarcatore</strong>. Goldknopf è esplicito che è un fattore tra diversi, "molto probabilmente" saliente nelle persone autistiche con forti sintomi sensoriali [4]. Murray e colleghi inquadrano similmente il monotropismo come una <em>lente</em> unificante, non un'eziologia completa [1][14].</li>
+</ul>
+<p><strong>Implicazione per il resto della breve:</strong> il monotropismo è un'idea organizzativa credibile e sempre più validata, ma la sua <em>portata esplicativa</em> in ciascuna comorbidità va argomentata caso per caso — non data per scontata.</p>
+<hr />
+<h2 id="2-livello-1--legami-diretti-il-cluster-neuroevolutivo">2. Livello 1 — Legami diretti: il cluster neuroevolutivo</h2>
+<h3 id="21-audhd-e-lo-split-monotropico-legame-diretto-più-forte">2.1 AuDHD e lo "split monotropico" <em>(legame diretto più forte)</em></h3>
+<p>Autismo e ADHD co-occorrono molto più spesso di quanto prevederebbe il caso: l'ADHD è presente in circa il <strong>30–80%</strong> delle persone autistiche, e l'autismo in circa il <strong>20–50%</strong> di quelle con ADHD [5]; una meta-analisi pone i tassi di sintomi ASD nei campioni ADHD attorno al <strong>21%</strong> [16]; un ampio studio Medicaid ha trovato che il <strong>27%</strong> degli adulti autistici senza disabilità intellettiva aveva una diagnosi di ADHD co-occorrente — circa 10× il tasso generale [17]. La sovrapposizione è in larga parte genetica (~50–72%) [18].</p>
+<p>Il monotropismo aiuta a risolvere un vecchio enigma: se l'autismo è "iper-focus" e l'ADHD è "disattenzione", perché co-occorrono? Il MQ risponde empiricamente — <strong>le persone con ADHD, specialmente AuDHD, sono anche altamente monotropiche</strong> [2][3]. L'iper-focus nell'ADHD (Grotewiel et al., 2022) è concettualmente quasi identico al tunnel monotropico [19]. L'inquadratura dello "split monotropico" quindi re-inquadra l'AuDHD non come opposti ma come <strong>un sistema instabile di tunnel di attenzione in competizione o a rapido spostamento</strong>: il cervello richiede una focalizzazione monotropica profonda ma non riesce a stabilizzare il tunnel, producendo la familiare oscillazione AuDHD tra coinvolgimento intenso, burnout rapido e sotto-stimolazione cronica [19][20].</p>
+<p><strong>Caveat:</strong> il meccanismo dei "tunnel multipli in competizione" è <em>plausibile e coerente con i dati del MQ</em> ma non ancora testato direttamente come dinamica; va letto come una forte ipotesi.</p>
+<h3 id="22-burnout-autistico-e-rottura-del-tunnel">2.2 Burnout autistico e rottura del tunnel</h3>
+<p>Il burnout autistico — esaurimento cronico, perdita di competenze e ridotta tolleranza — è sempre più legato al costo cumulativo del cambio costante di tunnel, del masking e delle richieste che superano la capacità, con insufficiente tempo di recupero/flusso [20][21]. Questa è un'area in cui il monotropismo è euristicamente potente (ogni transizione forzata è una rottura del tunnel), anche se la letteratura sul burnout sta ancora maturando e la via monotropismo→burnout è in larga parte clinica/in prima persona più che stabilita sperimentalmente [20].</p>
+<h3 id="23-evitamento-della-domanda-e-pda-costrutto-contestato">2.3 Evitamento della domanda e PDA <em>(costrutto contestato)</em></h3>
+<p>Una domanda — "preparati", "fai questo modulo" — può essere vissuta come un'intrusione violenta in uno stato di flusso. Questo è il resoconto monotropico intuitivo dell'<strong>evitamento della domanda</strong>. Il costrutto più specifico <strong>Pathological Demand Avoidance (PDA)</strong>, coniato da Elizabeth Newson negli anni '80 e ora spesso re-inquadrato come "Pervasive Drive for Autonomy", descrive un bisogno di controllo e un evitamento delle richieste ordinarie guidati dall'ansia [11][22].</p>
+<p>Due cose vanno separate:</p>
+<ul>
+<li><strong>Il comportamento di evitamento della domanda è reale e comune</strong> nell'autismo, e il resoconto monotropico della "rottura del tunnel" è una <em>storia meccanicistica</em> ragionevole per il panico e la resistenza che produce.</li>
+<li><strong>La PDA come <em>profilo o sottotipo distinto</em> non è stabilita.</strong> La National Autistic Society del Regno Unito afferma che "nessuna ricerca ha trovato prove solide a favore della [PDA] come profilo distinto" [11]; lo studio fondazionale di Newson è stato criticato per <strong>ragionamento circolare e sovra-interpretazione</strong> (i gruppi definiti dai ricercatori erano poi "studiati") [12][13]; e le revisioni notano problemi persistenti con definizione, validità del costrutto e misurazione [23]. Una revisione del 2023 si intitola pointedly <em>"Pathological Demand Avoidance: Current State of Research and Critical Discussion"</em> [13].</li>
+</ul>
+<p>Quindi l'inquadratura del testo-seme è per metà giusta: l'<em>esperienza</em> (una richiesta frantuma il tunnel) è ben descritta dal monotropismo; l'<em>entità diagnostica</em> (PDA) è contestata e non va presentata come acquisita.</p>
+<hr />
+<h2 id="3-livello-2--comorbidità-indiretta-a-meccanismo-condiviso">3. Livello 2 — Comorbidità indiretta a meccanismo condiviso</h2>
+<h3 id="31-anoressia-e-alimentazione-restrittiva">3.1 Anoressia e alimentazione restrittiva</h3>
+<p>L'accavallamento autismo–anoressia è robusto e bidirezionale: all'incirca il <strong>20–30%</strong> dei pazienti con disturbi alimentari mostra tratti autistici clinicamente significativi, con i tassi più alti nell'anoressia nervosa e nell'ARFID [6][24]; viceversa, gli adulti autistici hanno tassi elevati di disturbi alimentari. Fondamentalmente, i tratti autistici si osservano <strong>prima</strong> dell'insorgenza del DA, quindi l'accavallamento non è un mero effetto dell'inedia [6].</p>
+<p>Il ponte <em>meccanicistico</em> meglio evidenziato è l'<strong>interocezione</strong> — la percezione dei segnali corporei interni (battito, sazietà). Un'interocezione atipica è implicata nell'eziologia <em>sia</em> dell'autismo sia dei disturbi alimentari e "può, almeno in parte, essere responsabile" della loro comorbidità [6]. La stessa atipicità interocettiva sta alla base dell'<strong>alessitimia</strong> (difficoltà a identificare/verbalizzare le emozioni), presente in ~50% delle persone autistiche e essa stessa legata alla patologia alimentare [7][8].</p>
+<p><strong>Dove il monotropismo entra (e non entra):</strong> è ragionevole dire che una persona monotropica immersa in un tunnel possa <em>non cogliere</em> i segnali della fame — ma l'affermazione specifica del testo-seme che "il monotropismo riduce l'interocezione" sopravvaluta la catena causale. La relazione evidenziata è <strong>autismo → interocezione/alessitimia atipiche → vulnerabilità alimentare</strong>; il monotropismo è una caratteristica parallela dell'autismo, non la <em>causa</em> dimostrata della differenza interocettiva [6][7]. Il tracciamento di cibo/calorie può anche diventare un tunnel a sé, ma questo è plausibile a livello di meccanismo più che testato.</p>
+<h3 id="32-ocd-vs-iper-focus-una-distinzione-genuina">3.2 OCD vs iper-focus: una distinzione genuina</h3>
+<p>Autismo e OCD co-occorrono sostanzialmente: ~<strong>17%</strong> delle persone autistiche soddisfa i criteri per OCD, vs ~1–2% nella popolazione generale [9]. Nonostante la somiglianza superficiale (comportamento ripetitivo, rigidità), il <strong>driver affettivo differisce</strong> e questo è ben stabilito clinicamente:</p>
+<ul>
+<li>Gli interessi e le routine ristrette/ripetitive <strong>autistiche</strong> sono tipicamente <strong>ego-sintonici</strong> — piacevoli, autocalmanti, guidati dall'interesse, spesso regolatori.</li>
+<li>Le compulsioni <strong>OCD</strong> sono <strong>ego-distoniciche</strong> — indesiderate, guidate dall'ansia, eseguite per neutralizzare gli esiti temuti [9][10].</li>
+</ul>
+<p>La distinzione del testo-seme è quindi corretta e supportata dall'evidenza, ed è confermata direttamente dagli stessi partecipanti autistici: in uno studio qualitativo hanno riferito che i comportamenti ripetitivi sono "parte di chi sono", mentre i sintomi OCD "entravano in conflitto con come vedono sé stesse/i" [10]. Lo stesso studio inquadra acutamente la co-occorrenza come <em>"Autism is the arena and OCD is the lion"</em> — i sintomi OCD possono "dirottare" gli interessi speciali autistici, gonfiandone intensità e malessere [10]. Il monotropismo aggiunge contesto (un tunnel può essere <em>catturato</em> da contenuti OCD) ma la differenziazione poggia sull'asse ego-sintonico/distonico, non sul monotropismo in sé.</p>
+<h3 id="33-ansia-e-disturbi-affettivi-il-substrato-sotto-agorafobia">3.3 Ansia e disturbi affettivi (il substrato sotto "agorafobia")</h3>
+<p>L'ansia è tra le comorbidità dell'autismo più comuni (una revisione secondaria cita ≥1 comorbidità psichiatrica in ~86% delle persone autistiche) [25]. Due punti di meccanismo contano per il cluster comportamentale qui sotto: (i) l'<strong>iper-responsività sensoriale</strong> e l'ansia sono legate, e attraverso il <em>condizionamento di contesto</em> producono <strong>evitamento comportamentale di luoghi generalizzati</strong> (ristoranti, negozi, feste) [26]; (ii) la frequente co-occorrenza di alessitimia/difficoltà interocettiva fa sì che gli stati emotivi siano spesso male-etichettati, alimentando un'ansia diffusa [7].</p>
+<hr />
+<h2 id="4-livello-3--cluster-comportamentalefunzionale-disordine-accumulo-evitamento-ritiro-sociale">4. Livello 3 — Cluster comportamentale/funzionale: disordine, accumulo, evitamento, ritiro sociale</h2>
+<h3 id="41-disordine-pile-del-destino-e-disfunzione-esecutiva">4.1 Disordine, "pile del destino" e disfunzione esecutiva</h3>
+<p>Il <em>fenomeno</em> è ben supportato: persone autistiche e con ADHD mostrano alti tassi di disorganizzazione e disordine, e la via meglio evidenziata è la <strong>disfunzione esecutiva</strong> — deficit di categorizzazione, decision-making, pianificazione e memoria di lavoro [8][27]. I sintomi di accumulo sono elevati sia nell'ADHD (con uno "speciale legame con la disattenzione" [8a]) sia nell'autismo [8]; nell'autismo specificamente, lavori qualitativi mostrano che la difficoltà a scartare è legata a <strong>attaccamenti di interesse e significato</strong>, non solo al valore dell'oggetto [28].</p>
+<p><strong>Caveat sul testo-seme:</strong> l'affermazione specifica che il disordine persiste a causa di un <strong>"deficit di permanenza dell'oggetto" autistico</strong> ("lontano dagli occhi, lontano dalla mente") <strong>non è supportata da evidenza sottoposta a revisione paritaria</strong> che io abbia potuto reperire. La permanenza dell'oggetto è tipicamente <em>intatta o superiore</em> nell'autismo; l'esperienza "lontano dagli occhi, lontano dalla mente" si legge meglio come un effetto di <strong>memoria di lavoro/allocazione dell'attenzione</strong> (una mente a tunnel non si ri-orienta agli oggetti immagazzinati) più che come un fallimento percettivo della permanenza dell'oggetto. Il meccanismo evidenziato per il disordine resta <strong>disfunzione esecutiva più attaccamento-all'interesse</strong>, che si accavalla alla popolazione monotropica/AuDHD ma non è unicamente "monotropico" [4][8][28].</p>
+<h3 id="42-comportamento-dello-spettro-dellaccumulo">4.2 Comportamento dello spettro dell'accumulo</h3>
+<p>Il disturbo da accumulo colpisce ~1,5–6% della popolazione generale ma è elevato nell'autismo [29]. Negli adulti autistici, la difficoltà di accumulo-simile a scartare è spesso riportata accanto a <strong>difficoltà cognitive (esecutive) e forti attaccamenti di interesse/significato</strong> — gli oggetti sono nodi in una rete di idee e utilità futura, quindi scartarli sembra una perdita [28]. Questo è coerente con uno <em>stile</em> monotropico (elaborazione profonda degli oggetti) ma, ancora, il driver evidenziato è EF/attaccamento, condiviso tra le condizioni neuroevolutive [8].</p>
+<h3 id="43-agorafobia-e-delimitazione-dello-spazio-sicuro-da-correggere">4.3 Agorafobia e delimitazione dello "spazio sicuro" <em>(da correggere)</em></h3>
+<p>Il testo-seme inquadra il confinamento domestico agorafobico come un esito del monotropismo quasi diretto. I dati sono più sfumati:</p>
+<ul>
+<li>L'agorafobia <em>è</em> elevata nell'autismo — ~<strong>23–25%</strong> degli adulti autistici (senza disabilità intellettiva) vs ~1,3% nella popolazione generale — <strong>ma è meno comune della fobia sociale o del GAD</strong>, e l'effetto si concentra in chi è senza DI [25].</li>
+<li>Il driver meglio evidenziato è l'<strong>iper-responsività sensoriale + ansia sociale</strong>, con evitamento condizionato al contesto dei luoghi soverchianti — cioè il comportamento di "spazio sicuro" è reale ma è <strong>secondario all'ansia sensoriale/sociale</strong>, non un fenomeno monotropico primario [25][26].</li>
+</ul>
+<p>Quindi: il monotropismo aiuta a spiegare <em>perché</em> il mondo esterno si sente dirompente (imprevedibile, politropico, frantuma-tunnel), ma classificare il confinamento risultante come "agorafobia" specifica del monotropismo sopravvaluta il legame. È un evitamento guidato dall'ansia sensoriale che <em>si accavalla</em> all'esperienza monotropica.</p>
+<h3 id="44-ritiro-sociale-info-dumping-e-il-problema-della-doppia-empatia">4.4 Ritiro sociale, "info-dumping" e il problema della doppia empatia</h3>
+<p>L'interazione sociale è genuinamente politropica — richiede di seguire simultaneamente volti, tono, gerarchia, tempistica e regole non scritte — quindi è sproporzionatamente costosa per un sistema monotropico, un punto coerente col modello di risorse di Goldknopf [4]. L'intuizione del testo-seme è fondata.</p>
+<p>Ma l'inquadratura più acuta ed <em>empiricamente supportata</em> per la risultante rottura della comunicazione è il <strong>Problema della Doppia Empatia</strong> (Milton, 2012; 2017): la difficoltà è <em>bidirezionale</em> e relazionale — una "rottura nella reciprocità tra due attori sociali disposti in modo diverso" — non un deficit empatico unidirezionale nella persona autistica [30]. Lavori empirici mostrano ora che gli osservatori non-autistici <em>rilevano e dimostrano</em> il problema della doppia empatia nelle interazioni miste [31]. L'"info-dumping" si inserisce naturalmente: è una comunicazione che cerca profondità da un sistema monotropico, che fallisce quando il partner non può eguagliare la profondità — un disallineamento di stili di elaborazione, non una mancanza di empatia [30][31].</p>
+<p><strong>Lacuna da segnalare:</strong> la letteratura sul PDE esclude ancora in larga parte i bambini autistici, le persone non-parlanti e le persone con disabilità intellettiva, quindi la generalizzabilità è limitata [32].</p>
+<hr />
+<h2 id="5-il-confine-dove-il-resoconto-monotropico-si-spinge-troppo-oltre">5. Il confine: dove il resoconto monotropico si spinge troppo oltre</h2>
+<table>
+<thead>
+<tr>
+<th>Affermazione nell'inquadratura di seme/divulgativa</th>
+<th>Status dell'evidenza</th>
+<th>Inquadratura migliore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Il monotropismo <em>causa</em> le caratteristiche dell'autismo</td>
+<td>Parzialmente supportato (MQ; Goldknopf)</td>
+<td>Un fattore organizzativo validato tra diversi; più forte nell'autismo con sensorialità presente [1][4]</td>
+</tr>
+<tr>
+<td>AuDHD = "split monotropico" (tunnel in competizione)</td>
+<td>Forte + direttamente misurabile (MQ)</td>
+<td>Un fenotipo attentivo reale; il meccanismo dinamico è a livello di ipotesi [2][3]</td>
+</tr>
+<tr>
+<td>La PDA è un profilo autistico distinto</td>
+<td><strong>Contestato</strong></td>
+<td>L'evitamento della domanda è reale; la PDA-come-entità manca di validità di costrutto [11][12][13]</td>
+</tr>
+<tr>
+<td>Il monotropismo <em>riduce l'interocezione</em> → anoressia</td>
+<td>Indiretto</td>
+<td>Il ponte è autismo→interocezione/alessitimia→vulnerabilità DA; il monotropismo è parallelo, non la causa mostrata [6][7]</td>
+</tr>
+<tr>
+<td>Disordine da un "deficit di permanenza dell'oggetto"</td>
+<td><strong>Non supportato</strong></td>
+<td>Disfunzione esecutiva + attaccamento-all'interesse; nessun deficit percettivo di permanenza dell'oggetto evidenziato [4][8][28]</td>
+</tr>
+<tr>
+<td>Agorafobia come esito primario del monotropismo</td>
+<td>Sopravvalutato</td>
+<td>Secondaria a iper-responsività sensoriale + ansia sociale; meno comune di GAD/fobia sociale [25][26]</td>
+</tr>
+<tr>
+<td>OCD vs "ossessioni" monotropiche differiscono per affetto</td>
+<td>Ben supportato</td>
+<td>Ego-distonico (OCD) vs ego-sintonico (interesse autistico); l'OCD può "dirottare" i tunnel [9][10]</td>
+</tr>
+<tr>
+<td>Il Problema della Doppia Empatia spiega la rottura sociale</td>
+<td>Supportato (ma lacune)</td>
+<td>Disallineamento bidirezionale; i campioni sbilanciano verso adulti parlanti senza DI [30][31][32]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-questioni-aperte">6. Questioni aperte</h2>
+<ol type="1">
+<li><strong>Test dinamico del tunnel.</strong> Il MQ è una misura di <em>tratto</em>. Lo "split monotropico" (tunnel in competizione/instabili nell'AuDHD) è osservabile in attenzione/EEG in tempo reale? In gran parte non testato.</li>
+<li><strong>Freccia causale verso l'interocezione.</strong> Una distribuzione monotropica delle risorse <em>produce</em> un'atipicità interocettiva, o condividono una causa a monte comune? L'evidenza attuale non sa separarle [6][7].</li>
+<li><strong>Risoluzione della PDA.</strong> La ricerca sull'evitamento della domanda convergerà su un costrutto validato e misurabile, o rimarrà una categoria divulgativa/clinica contestata? [11][13]</li>
+<li><strong>Meccanismo del disordine.</strong> "Lontano dagli occhi, lontano dalla mente" è un effetto di memoria di lavoro/allocazione (plausibile) o altro? Nessuno studio dedicato trovato.</li>
+<li><strong>Generalizzabilità del PDE.</strong> Come opera il problema della doppia empatia per le persone autistiche non-parlanti, i bambini e le persone con disabilità intellettiva co-occorrente? [32]</li>
+<li><strong>Burnout.</strong> Qual è lo specifico contributo testabile della rottura del tunnel monotropico al burnout autistico vs masking, trauma e domanda cronica? [20]</li>
+</ol>
+<hr />
+<h2 id="fonti">Fonti</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>. <a href="https://journals.sagepub.com/doi/abs/10.1177/1362361305051398">https://journals.sagepub.com/doi/abs/10.1177/1362361305051398</a>
+[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A., &amp; Fletcher-Watson, S. (2023). The Monotropism Questionnaire (MQ). Open Science Framework (preprint). Commentario/sintesi: <a href="https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire">https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire</a> ; mirror: <a href="https://stimpunks.org/monotropism-questionnaire">https://stimpunks.org/monotropism-questionnaire</a>
+[3] Autistic Realms / Neurodiverse Connection (Edgar) — sintesi dei risultati del MQ (47 item; N=1.110; autistici + ADHD ottengono punteggi significativamente più alti): <a href="https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention">https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention</a>
+[4] Goldknopf, E. J. (2013). Atypical resource allocation may contribute to many aspects of autism. <em>Frontiers in Integrative Neuroscience</em>. PMC3872719. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a>
+[5] Psych Scene Hub — rassegna sulla comorbidità ADHD e autismo (ADHD in ~30–80% di ASD; ASD in ~20–50% di ADHD; cita Lau-Zhu 2019; Hollingdale 2019): <a href="https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review">https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review</a>
+[6] Adams, K. L., Murphy, J., Catmur, C., &amp; Bird, G. (2022). The role of interoception in the overlap between eating disorders and autism: methodological considerations. <em>European Eating Disorders Review</em>. PMC9543236. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236">https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236</a>
+[7] Klein, M., Witthöft, M., &amp; Jungmann, S. M. (2025). Interoception in individuals with autism spectrum disorder: a systematic literature review and meta-analysis. <em>Frontiers in Psychiatry</em> (10.3389/fpsyt.2025.1573263) — ~50% delle persone autistiche ha alessitimia, mediata da deficit interocettivi. <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full">https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full</a>
+[8] Morein-Zamir, S., Kasese, M., Chamberlain, S. R., &amp; Trachtenberg, M. (2020). Elevated levels of hoarding in ADHD: a special link with inattention. <em>Journal of Psychiatric Research</em>. PMC7612156. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156">https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156</a> — [8a] lo "speciale legame con la disattenzione" è il sottotitolo stesso del paper. Si veda anche il Drake Institute su ADHD/disfunzione esecutiva: <a href="https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection">https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection</a>
+[9] Animosanopsychiatry — sintesi di revisione sistematica: ~17% delle persone autistiche soddisfa i criteri per OCD vs ~1–2% generale; distinzione ego-sintonico vs ego-distonico: <a href="https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps">https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps</a>
+[10] Long, H., Cooper, K., &amp; Russell, A. (2024). "Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours (qualitativo). PMC11497754. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a>
+[11] National Autistic Society — Demand avoidance ("nessuna ricerca ha trovato prove solide a favore della [PDA] come profilo distinto"): <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a>
+[12] Frontiers in Education (2024). Methods of studying PDA — critica del ragionamento circolare di Newson (Green et al. 2018; O'Nions &amp; Eaton 2020): <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full</a>
+[13] Kildahl, A., et al. (2023). Pathological Demand Avoidance: Current State of Research and Critical Discussion. PubMed 36892327. <a href="https://pubmed.ncbi.nlm.nih.gov/36892327">https://pubmed.ncbi.nlm.nih.gov/36892327</a>
+[14] Murray, F. (Lawson) (2018). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em> (BPS). <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a>
+[15] Happé, F., &amp; Frith, U. (2006). The weak coherence account: detail-focused cognitive style in ASD. <em>J Autism Dev Disord</em> 36:5–25 (citato via studio comparativo Frontiers 2024): <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full</a>
+[16] Hollingdale, J., et al. (2019). Meta-analytic review of ASD symptoms in ADHD (citato via Psych Scene Hub e Autistica): <a href="https://www.autistica.org.uk/what-is-autism/adhd-and-autism">https://www.autistica.org.uk/what-is-autism/adhd-and-autism</a>
+[17] Children's Hospital of Philadelphia — 27% degli adulti autistici senza DI aveva ADHD co-occorrente (~10× generale): <a href="https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism">https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism</a>
+[18] Behavioral Innovations — sintesi della sovrapposizione genetica (~50–72%): <a href="https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd">https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd</a>
+[19] Autistic Scholar — "Revisiting monotropism" (AuDHD come tunnel in competizione; riferisce Grotewiel et al. 2022 sull'iper-focus dell'ADHD): <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a>
+[20] Neurodiverse Connection (Edgar) — Monotropism, young people and autistic burnout: <a href="https://ndconnection.co.uk/blog/monotropism-young-people">https://ndconnection.co.uk/blog/monotropism-young-people</a> ; Autistic Realms — Reclaiming rest: <a href="https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance">https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance</a>
+[21] National Autistic Society — What is monotropism? (stati di flusso; riferisce Heasman et al. 2024 "autistic flow theory"): <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a>
+[22] PDA North America — What is PDA? (Newson, anni '80; re-inquadratura "Pervasive Drive for Autonomy"): <a href="https://pdanorthamerica.org/what-is-pda">https://pdanorthamerica.org/what-is-pda</a>
+[23] O'Nions, V., et al. (2016). Identifying features of PDA using the DISCO. PMC4820467. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467">https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467</a>
+[24] Nickel, K., Maier, S., Endres, D., &amp; Joos, A. (2019). Systematic Review: Overlap Between Eating, Autism Spectrum, and Attention-Deficit/Hyperactivity Disorder. <em>Frontiers in Psychiatry</em>. PMC6796791 (cita anche Westwood, Mandy &amp; Tchanturia 2017; Huke et al. 2013). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791">https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791</a>
+[25] Discussing Psychology (Loker) — agorafobia nell'autismo ~23–25% (senza DI) vs ~1,3% generale; meno comune di fobia sociale/GAD (fonte secondaria, attinge a Helles et al. 2020 e Lugnegård et al. 2012): <a href="https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked">https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked</a>
+[26] Green, S. A., &amp; Ben-Sasson, A. (2010). Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship? <em>Journal of Autism and Developmental Disorders</em> — condizionamento di contesto ed evitamento. PMC2980623. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a>
+[27] Embrace Autism — Autism and hoarding (funzione esecutiva, decision-making): <a href="https://embrace-autism.com/autism-and-hoarding">https://embrace-autism.com/autism-and-hoarding</a>
+[28] Goldfarb, Y., Zafrani, O., Hedley, D., &amp; Yaari, M. (2021). Autistic adults' subjective experiences of hoarding and self-injurious behaviors (qualitativo). <em>Autism</em>. PMC8264636. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636</a>
+[29] Abouzed, M., Gabr, A., Elag, K. A., Soliman, M., Elsaadouni, N., Elzahab, N. A., &amp; Barakat, M. (2024). The prevalence, correlates, and clinical implications of hoarding behaviors in high-functioning autism. <em>Scientific Reports</em> (s41598-024-75371-8). <a href="https://www.nature.com/articles/s41598-024-75371-8">https://www.nature.com/articles/s41598-024-75371-8</a>
+[30] Milton, D. (2012). On the ontological status of autism: the 'double empathy problem'. <em>Disability &amp; Society</em> 27(6):883–887; estensione di Milton (2017). Sintesi: <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy</a>
+[31] Jones, D. R., Botha, M., Ackerman, R. A., &amp; King, K. (2024). Non-autistic observers both detect and demonstrate the double empathy problem when evaluating interactions between autistic and non-autistic adults. <em>Autism</em>. PMC11308351. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351">https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351</a>
+[32] Wikipedia — Double empathy problem (lacune di ricerca riconosciute: bambini, non-parlanti, disabilità intellettiva): <a href="https://en.wikipedia.org/wiki/Double_empathy_problem">https://en.wikipedia.org/wiki/Double_empathy_problem</a></p>
+<hr />
+<p><em>Nota sui livelli di evidenza:</em> Livello 1 = misurazione diretta e replicata (MQ; tassi AuDHD); Livello 2 = comorbidità replicata con un meccanismo condiviso evidenziato; Livello 3 = estrapolazione plausibile, a fonte singola o costrutto contestato. Si veda §5.</p>
+</body>
+</html>

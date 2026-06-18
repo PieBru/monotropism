@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Comorbidità monotropiche: una verifica dell'inquadratura a quattro cluster</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="comorbidità-monotropiche-una-verifica-dellinquadratura-a-quattro-cluster">Comorbidità monotropiche: una verifica dell'inquadratura a quattro cluster</h1>
+<p><em>Una breve ricerca citata — verifica di un'inquadratura dei "comorbidità monotropiche" ampiamente condivisa.</em></p>
+<blockquote>
+<p><strong>Informativo, non consiglio medico.</strong> Il monotropismo è uno <em>stile</em> cognitivo, non una diagnosi; non ha "comorbidità" nel senso di malattia. Questa breve valuta cosa gli accavallamenti con l'inquadratura qui sotto <em>sono</em> e <em>non sono</em> supportati come essere. Integra la breve paesaggistica più completa del progetto, <em>"Il monotropismo e la sua ragnatela di comorbidità".</em></p>
+</blockquote>
+<hr />
+<h2 id="sintesi-esecutiva">Sintesi esecutiva</h2>
+<ul>
+<li><strong>L'esordio dell'inquadratura è proprio giusto: il monotropismo non ha "comorbidità" nel senso di malattia.</strong> È uno stile attentivo su uno spettro; gli accavallamenti con condizioni cliniche sono <em>associazioni e meccanismi condivisi</em>, non conseguenze di una malattia [1].</li>
+<li><strong>Un'affermazione-titolo è al contrario.</strong> <em>"Le persone AuDHD ottengono il punteggio più alto di tutti i gruppi al MQ"</em> <strong>non</strong> è ciò che mostrano i dati. Nello studio di validazione del MQ, autismo e ADHD alzano ciascuno i punteggi di monotropismo, ma il loro effetto <em>combinato</em> è un'<strong>interazione negativa</strong> (β = −0,43, p&lt;,001): le persone autistiche-con-ADHD ottengono <strong>un punteggio più basso di quanto prevedrebbe un modello puramente additivo</strong>, non più alto [2].</li>
+<li><strong>Due termini sono attribuiti correttamente ma hanno bisogno di definizioni precise.</strong> Lo <em>"split monotropico"</em> <strong>è</strong> davvero coniato dall'attivista autistica <strong>Tanya Adkin</strong> — ma indica il costo cognitivo di <em>costringere una mente monotropica a operare in modi politropici</em> (dividendo l'attenzione), <strong>non</strong> i "tunnel in competizione AuDHD" con cui a volte viene confuso [3].</li>
+<li><strong>Le "questioni di permanenza dell'oggetto" sono contestate, non stabilite.</strong> L'unica fonte accademica (Lawson &amp; Dombroski, 2017) propone una permanenza dell'oggetto <strong>ritardata</strong> come <em>ipotesi</em> per parte dello stress legato all'autismo — e la letteratura più ampia trova che la permanenza dell'oggetto è tipicamente <em>intatta o superiore</em> nell'autismo. L'esperienza "lontano dagli occhi, lontano dalla mente" si legge meglio come un effetto di <strong>memoria di lavoro / allocazione dell'attenzione</strong> [4].</li>
+<li><strong>Il resto è ampiamente supportato ma classificato per evidenza.</strong> Autismo (fondazionale), iper-focus da ADHD (reale), accavallamento ansia/ruminazione e OCD (robusto), inerzia autistica (reale), sovraccarico sensoriale → meltdown/shutdown (reale) e burnout da transizioni forzate + masking (costrutto affermato) superano tutti lo scrutinio — con l'iper-sistematizzazione che è la <strong>separata teoria E-S di Baron-Cohen</strong>, non un risultato del monotropismo [5].</li>
+<li><strong>Un reframing affermante la neurodivergenza:</strong> ogni accavallamento si enuncia meglio come <em>"come un sistema attentivo ristretto e intenso interagisce con un mondo politropico"</em> più che come un elenco di disturbi che un cervello monotropico "causa."</li>
+</ul>
+<hr />
+<h2 id="1-il-principio-centrale-linquadratura-lo-coglie-giusto">1. Il principio centrale (l'inquadratura lo coglie giusto)</h2>
+<p>Il monotropismo (Murray, Lawson &amp; Lesser, 2005) sostiene che le menti differiscono in <em>come allocano l'attenzione</em>: una mente monotropica concentra le risorse in pochi "tunnel di attenzione" intensamente attivi; una mente politropica le distribuisce su molti [1]. Essendo uno <strong>stile cognitivo dimensionale</strong> — misurabile sul Monotropism Questionnaire (MQ) su scala 1–5 — non "ha comorbidità." Quello che <em>ha</em> sono <strong>associazioni statistiche</strong> (gruppi che ottengono punteggi più alti) e <strong>meccanismi condivisi</strong> (condizioni le cui caratteristiche una lente di allocazione dell'attenzione aiuta a spiegare). Mantenere questa distinzione è tutto il gioco [1][2].</p>
+<p>Questa breve è organizzata come una <strong>verifica affermazione per affermazione</strong> dell'inquadratura a quattro cluster, classificando ogni voce. Integra (non ripete) la breve paesaggistica esistente del progetto, che copre disturbi alimentari, accumulo, agorafobia, evitamento della domanda e il problema della doppia empatia con maggiore profondità.</p>
+<h2 id="2-cluster-1--profili-neurodivergenti-centrali">2. Cluster 1 — Profili neurodivergenti centrali</h2>
+<h3 id="autismo-white_check_mark-fondazionale-legame-più-forte">Autismo ✅ (fondazionale, legame più forte)</h3>
+<p>Il monotropismo è stato <em>creato</em> per spiegare i tratti autistici — interessi speciali intensi, bisogno di routine (che protegge il tunnel di attenzione) e differenze nell'interazione sociale [1]. Il MQ lo conferma empiricamente: i partecipanti autistici ottenevano in media <strong>4,15/5</strong> vs <strong>3,19/5</strong> per i non-autistici (n=1.110) [2]. Questo è il terreno d'origine della teoria e il legame meglio evidenziato.</p>
+<h3 id="adhd-white_check_mark-reale-e-misurato">ADHD ✅ (reale e misurato)</h3>
+<p>L'ADHD alza significativamente i punteggi di monotropismo (β = +0,55, p&lt;,001) [2]. Il collegamento è concettuale oltre che statistico: l'<strong>iper-focus</strong> dell'ADHD (Grotewiel et al., 2022, sull'iper-focus come costrutto distinto) è quasi identico al tunnel monotropico, e la "disfunzione esecutiva" di attivare l'attenzione per compiti non di interesse è una naturale previsione di un sistema a tunnel [2][6]. <strong>Supportato.</strong></p>
+<h3 id="audhd-x-laffermazione-titolo-è-al-contrario--la-correzione-chiave">AuDHD ❌ (l'affermazione-titolo è al contrario) — <em>la correzione chiave</em></h3>
+<blockquote>
+<p><strong>Affermazione verificata:</strong> <em>"Le persone con un profilo combinato AuDHD ottengono il punteggio più alto di tutti i gruppi al MQ."</em></p>
+</blockquote>
+<p><strong>Non</strong> è ciò che mostrano i dati. La regressione multipla del paper del MQ ha regredito il monotropismo su stato di ADHD, stato di autismo e la loro <strong>interazione</strong> [2]:</p>
+<table>
+<thead>
+<tr>
+<th>Predittore (vs nessuna condizione)</th>
+<th>β</th>
+<th>p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADHD, non autistico</td>
+<td><strong>+0,55</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td>Autistico, non ADHD</td>
+<td><strong>+1,04</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td><strong>Interazione Autistico × ADHD</strong></td>
+<td><strong>−0,43</strong></td>
+<td><strong>&lt;,001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Il termine di interazione è <strong>negativo e significativo</strong>. Gli autori lo dichiarano apertamente: <em>"i punteggi di monotropismo non sono alti come ci si aspetterebbe sulla base di effetti puramente additivi per le persone autistiche con ADHD"</em> [2]. In altre parole, aggiungere l'ADHD all'autismo <strong>non</strong> spinge il monotropismo più in alto di quanto prevederebbe l'autismo da solo — viene <strong>più basso</strong> della somma dei due effetti indipendenti.</p>
+<ul>
+<li>Il <strong>singolo gruppo</strong> col punteggio più alto è quello autistico (4,15); se la <em>media di cella</em> empirica per autistico-con-ADHD stia appena sopra o sotto dipende dalla combinazione esatta, ma l'affermazione dell'inquadratura che AuDHD sia <em>"il più alto di tutti"</em> come effetto additivo/super-additivo è <strong>non supportata e contraddetta dall'interazione.</strong></li>
+<li>Il quadro <em>intuitivo</em> che offre l'inquadratura — "una tensione interna tra il bisogno autistico di un tunnel stabile e profondo e la spinta dell'ADHD verso input nuovo" — è una descrizione popolare e fenomenologicamente risonante dell'esperienza AuDHD, ma è <strong>narrativa clinica/di comunità, non un risultato dei punteggi del monotropismo.</strong> Statela come esperienza vissuta, non come risultato del MQ [6].</li>
+</ul>
+<blockquote>
+<p><strong>Affermazione corretta:</strong> <em>"Sia l'autismo sia l'ADHD alzano indipendentemente i punteggi di monotropismo, ma i due interagiscono in modo non-additivo: le persone autistiche con ADHD ottengono al MQ un punteggio più basso di quanto prevedrebbe un modello puramente additivo — il che suggerisce che le due condizioni non si 'sommano' semplicemente sulla tendenza monotropica."</em> [2]</p>
+</blockquote>
+<h2 id="3-cluster-2--tratti-cognitivi-e-di-salute-mentale">3. Cluster 2 — Tratti cognitivi e di salute mentale</h2>
+<h3 id="ansia-e-ruminazione-white_check_mark-associazione-robusta-meccanismo-plausibile">Ansia e ruminazione ✅ (associazione robusta, meccanismo plausibile)</h3>
+<p>Ansia e ruminazione sono elevate nella popolazione autistica/ADHD, e l'inquadratura del monotropismo offre un meccanismo pulito: una mente a tunnel che si aggancia a una preoccupazione continua a elaborarla in un ciclo ("ruminazione"), rendendo l'ansia "appiccicosa" [7][8]. La struttura a 8 fattori del MQ include persino una sottoscala <strong>"ruminazione e ansia"</strong>, a dimostrazione che il cluster è empiricamente stretto [2]. <strong>Supportato</strong> — anche se la freccia causale (il monotropismo <em>produce</em> ansia, o condivide un substrato con essa?) non è stabilita.</p>
+<h3 id="ocd-white_check_mark-accavallamento-robusto-distinzione-importante">OCD ✅ (accavallamento robusto, distinzione importante)</h3>
+<p>L'accavallamento autismo–OCD è reale e replicato. Una meta-analisi trova che all'incirca <strong>~17% delle persone autistiche soddisfa i criteri per OCD</strong> (vs ~1–2% nella popolazione generale); anche il viceversa è elevato [9]. La distinzione qualitativa che traccia l'inquadratura è proprio giusta e ben articolata: <strong>gli interessi monotropici sono ego-sintonici</strong> (guidati da fascinazione/gioia), mentre <strong>le compulsioni OCD sono ego-distoniciche</strong> (guidate da malessere ed eseguite per neutralizzare la paura) [10]. Questa distinzione è clinicamente importante perché in pratica le due altrimenti sono difficili da distinguere. <strong>Supportato.</strong></p>
+<h3 id="iper-sistematizzazione-warning-costrutto-reale-ma-è-di-baron-cohen-non-un-risultato-del-monotropismo">Iper-sistematizzazione ⚠️ (costrutto reale, ma è di Baron-Cohen, non un risultato del monotropismo)</h3>
+<p>L'"iper-sistematizzazione" — la spinta ad analizzare, costruire ed esplorare sistemi — è un tratto autistico genuino e ben studiato, ma appartiene alla <strong>teoria Empatia-Sistematizzazione (E-S) di Simon Baron-Cohen</strong>, non al monotropismo [5]. Le due teorie si sovrappongono pesantemente (entrambe descrivono uno stile cognitivo intenso e focalizzato sui dettagli) e a volte vengono fatte girare insieme, ma sono <strong>quadri distinti</strong> con misure distinte (il quoziente EQ/SQ vs il MQ). La mossa onesta: presentare l'iper-sistematizzazione come <em>coerente con</em> uno stile monotropico (una mente a tunnel è ben adatta a padroneggiare sistemi) accreditando però la teoria E-S come cosa a sé [1][5].</p>
+<h2 id="4-cluster-3--fenomeni-neurologici-e-di-elaborazione">4. Cluster 3 — Fenomeni neurologici e di elaborazione</h2>
+<h3 id="questioni-di-permanenza-delloggetto-x-contestate--la-seconda-correzione-chiave">Questioni di permanenza dell'oggetto ❌ (contestate — la seconda correzione chiave)</h3>
+<blockquote>
+<p><strong>Affermazione verificata:</strong> <em>"Le persone monotropiche vivono la permanenza dell'oggetto in modo diverso … il cervello smette di fatto di elaborarne l'esistenza finché qualcosa non le riporta lì esogenamente."</em></p>
+</blockquote>
+<p>Questa è l'<strong>affermazione più debole</strong> dell'inquadratura e ha bisogno di cura:</p>
+<ul>
+<li>C'è <strong>una</strong> fonte accademica che propone un legame con la permanenza dell'oggetto: <strong>Lawson &amp; Dombroski (2017)</strong>, che <em>ipotizza</em> che una permanenza dell'oggetto <strong>ritardata</strong> possa contribuire a parte dello stress e dell'ansia legati all'autismo [4]. Nota: è un articolo che costruisce un'ipotesi, non uno studio di conferma.</li>
+<li>La letteratura dello sviluppo più ampia trova che la <strong>permanenza dell'oggetto di base è tipicamente <em>intatta o superiore</em> nell'autismo</strong>; i compiti piagetiani di permanenza dell'oggetto di solito sono superati alle età tipiche [4].</li>
+<li>Il <em>vero</em> fenomeno che l'inquadratura sta cercando — "lontano dagli occhi, lontano dalla mente" per compiti, oggetti e persino persone — si spiega meglio come un effetto di <strong>memoria di lavoro / allocazione dell'attenzione</strong>: una mente a tunnel non <em>fallisce</em> nel rappresentare l'oggetto, <strong>fallisce nel ri-orientare l'attenzione verso di esso</strong>. Questo è il monotropismo che funziona come previsto (un sistema a tunnel ha poche risorse libere per il ri-orientamento periferico), non un deficit di permanenza dell'oggetto [1][4].</li>
+</ul>
+<blockquote>
+<p><strong>Affermazione corretta:</strong> <em>"L'esperienza 'lontano dagli occhi, lontano dalla mente' nelle persone altamente monotropiche si capisce meglio come effetto di allocazione dell'attenzione / memoria di lavoro — la mente rappresenta l'oggetto ma non si ri-orienta verso di esso mentre è a tunnel — più che come un deficit di permanenza dell'oggetto (che di solito è intatto nell'autismo)."</em> [1][4]</p>
+</blockquote>
+<h3 id="deregolazione-sensoriale--sovraccarico-white_check_mark-meccanismo-ben-supportato">Deregolazione sensoriale / sovraccarico ✅ (meccanismo ben supportato)</h3>
+<p>Questo è fortemente supportato. Poiché un sistema a tunnel spende le risorse centralmente, un input sensoriale intrusivo improvviso (sirena, luce, tocco) richiede una costosa ri-allocazione — vissuta come una "disruption violenta." Questo è coerente con la letteratura affermata sull'iper-responsività sensoriale e con la ben documentata via dal sovraccarico sensoriale al <strong>meltdown</strong> (esternalizzante) e allo <strong>shutdown</strong> (ritiro internalizzante), entrambi riconosciuti come risposte involontarie di sovraccarico [7][11]. L'inquadratura del monotropismo aggiunge un <em>meccanismo</em> (costo di ri-allocazione) a un dato altrimenti descrittivo. <strong>Supportato.</strong></p>
+<h3 id="inerzia-autistica-white_check_mark-reale-sempre-più-studiata">Inerzia autistica ✅ (reale, sempre più studiata)</h3>
+<p>"Profonda difficoltà con le transizioni — problemi a iniziare, fermare o cambiare direzione" è il costrutto affermato dell'<strong>inerzia autistica</strong>: difficoltà con avvio/terminazione/cambio del compito che "non è nel controllo cosciente," articolata per prima nelle narrazioni della comunità autistica e ora in lavori sottoposti a revisione paritaria [12][13]. È concettualmente la faccia <em>comportamentale</em> del "costo di switching" che il fattore ambiente-e-tunnel del MQ coglie [2]. <strong>Supportato</strong> — ed è il termine tecnico corretto (si veda la breve complementare su valutazione/inerzia).</p>
+<h2 id="5-cluster-4--esiti-di-stress-cronico">5. Cluster 4 — Esiti di stress cronico</h2>
+<h3 id="split-monotropico-warning-attribuito-correttamente-ad-adkin-ma-due-significati-sono-confusi">Split monotropico ⚠️ (attribuito correttamente ad Adkin, ma due significati sono confusi)</h3>
+<blockquote>
+<p><strong>Affermazione verificata:</strong> <em>"Lo split monotropico, coniato dalla praticante Tanya Adkin, si verifica quando una mente monotropica è costretta dal suo ambiente a dividere il suo canale a fuoco singolo tra flussi multipli in competizione."</em></p>
+</blockquote>
+<p>L'<strong>attribuzione è corretta</strong>: l'attivista autistica <strong>Tanya Adkin</strong> ha davvero coniato "split monotropico", confermato da molteplici fonti indipendenti della comunità [3]. E la definizione dell'inquadratura qui è <strong>vicina al significato reale di Adkin</strong> — il costo cognitivo/burnout che nasce quando una mente monotropica è <em>costretta a "recitare il politropico"</em> o a dividere la propria attenzione tra flussi in competizione [3][14].</p>
+<p>Due cautele:</p>
+<ol type="1">
+<li><strong>È un concetto di comunità/praticante, non un costrutto empiricamente validato.</strong> "Split monotropico" compare negli scritti della comunità autistica e dei clinici (es. tramite Neurodivergent Insights, Kelly Mahler, David Gray Hammond) ma non ha <strong>nessuno studio di validazione sottoposto a revisione paritaria</strong> dietro di sé [3]. Trattatelo come una potente <em>descrizione</em> valida per l'esperienza vissuta, non come un'entità misurata.</li>
+<li><strong>Due cose diverse viaggiano sotto lo stesso nome.</strong> Il senso di Adkin = <em>recita politropica forzata di una mente monotropica</em> (un problema di adattamento all'ambiente). Un secondo senso — usato in alcuni scritti AuDHD — = la <em>competizione interna tra il bisogno autistico di un tunnel stabile e la spinta dell'ADHD verso la novità</em> (un problema di dinamiche interne). L'inquadratura qui descrive il <strong>primo</strong> (ambientale) senso. I due sono correlati ma distinti; collassarli offusca il concetto. (La breve paesaggistica del progetto usa "split monotropico" nel secondo senso AuDHD — quindi il termine è genuinamente sovraccaricato nel campo.) [3][6]</li>
+</ol>
+<blockquote>
+<p>Statelo come: <em>"Il termine 'split monotropico' dell'attivista autistica Tanya Adkin descrive il costo cognitivo e il burnout che nascono quando una mente monotropica è costretta a operare in modi politropici — un potente concetto di comunità che attende validazione formale."</em> [3]</p>
+</blockquote>
+<h3 id="burnout-white_check_mark-costrutto-affermato-il-legame-col-monotropismo-è-euristico">Burnout ✅ (costrutto affermato; il legame col monotropismo è euristico)</h3>
+<p>Il burnout autistico è ora un costrutto ben definito: <strong>esaurimento cronico, perdita di competenze e ridotta tolleranza agli stimoli</strong>, concettualizzato come risultante da stress di vita cronico e "un mancato adattamento tra aspettative e capacità" senza adeguato supporto e recupero (Raymaker et al., 2020; Higgins et al., 2021, uno studio Grounded-Delphi con esperti autistici) [15][16]. La via del monotropismo verso il burnout — transizioni forzate costanti, masking e "split monotropico" che drenano risorse senza tempo di recupero/flusso — è <strong>uristicamente potente e convalidata dalla comunità</strong>, ma lo specifico contributo della rottura del tunnel al burnout (rispetto a masking, trauma, carico sensoriale, domanda cronica) <strong>non è stato isolato sperimentalmente</strong> [15]. <strong>Supportato come forte ipotesi, non come catena causale stabilita.</strong></p>
+<h2 id="6-una-scheda-di-valutazione-graduata">6. Una scheda di valutazione graduata</h2>
+<table>
+<thead>
+<tr>
+<th>Affermazione nell'inquadratura</th>
+<th>Verdetto</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Il monotropismo non ha comorbidità-malattia</td>
+<td>✅ Corretto</td>
+<td>Ha associazioni + meccanismi condivisi [1]</td>
+</tr>
+<tr>
+<td>Autismo = legame primario</td>
+<td>✅ Fondazionale</td>
+<td>MQ 4,15 vs 3,19 [2]</td>
+</tr>
+<tr>
+<td>L'ADHD alza il monotropismo</td>
+<td>✅ Supportato</td>
+<td>β = +0,55 [2]</td>
+</tr>
+<tr>
+<td><strong>AuDHD ha il punteggio più alto di tutti</strong></td>
+<td>❌ <strong>Al contrario</strong></td>
+<td>L'interazione è <strong>negativa</strong> (β=−0,43) [2]</td>
+</tr>
+<tr>
+<td>Accavallamento ansia e ruminazione</td>
+<td>✅ Robusto</td>
+<td>Il MQ ha un fattore ruminazione/ansia [2]</td>
+</tr>
+<tr>
+<td>Accavallamento OCD (ego-sintonico vs distonico)</td>
+<td>✅ Supportato</td>
+<td>~17% di co-occorrenza; distinzione corretta [9][10]</td>
+</tr>
+<tr>
+<td>Iper-sistematizzazione</td>
+<td>⚠️ Reale ma male-etichettata</td>
+<td>È la teoria E-S di Baron-Cohen, non il monotropismo [5]</td>
+</tr>
+<tr>
+<td>Questioni di permanenza dell'oggetto</td>
+<td>❌ Contestato</td>
+<td>1 paper di ipotesi; la PO di solito è intatta; è allocazione dell'attenzione [4]</td>
+</tr>
+<tr>
+<td>Sovraccarico sensoriale → meltdown/shutdown</td>
+<td>✅ Ben supportato</td>
+<td>Meccanismo = costo di ri-allocazione [7][11]</td>
+</tr>
+<tr>
+<td>Inerzia autistica</td>
+<td>✅ Reale</td>
+<td>Termine corretto; sottoposta a revisione paritaria [12][13]</td>
+</tr>
+<tr>
+<td>Split monotropico coniato da Adkin</td>
+<td>⚠️ Attribuzione giusta; di comunità, non validato</td>
+<td>Due significati confusi [3]</td>
+</tr>
+<tr>
+<td>Burnout da transizioni forzate + masking</td>
+<td>✅ Costrutto affermato; legame euristico</td>
+<td>Non isolato sperimentalmente [15][16]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-considerazioni-pratiche">7. Considerazioni pratiche</h2>
+<ul>
+<li><strong>Aprite col principio:</strong> il monotropismo è uno stile attentivo misurabile i cui <em>accavallamenti</em> con condizioni sono associazioni e meccanismi condivisi — mai "causa X." [1]</li>
+<li><strong>Citatelo correttamente il MQ:</strong> autismo e ADHD alzano ciascuno i punteggi, ma la combinazione è <strong>non-additiva (più bassa del previsto)</strong> — non dite che AuDHD ha il punteggio più alto [2].</li>
+<li><strong>Mantenete la distinzione ego-sintonico/ego-distonicico</strong> quando parlate di OCD vs interessi speciali — è clinicamente utile e correttamente inquadrata [10].</li>
+<li><strong>Accreditate i quadri con precisione:</strong> iper-sistematizzazione = teoria E-S di Baron-Cohen; split monotropico = concetto di comunità di Adkin (senso ambientale di politropia forzata); inerzia autistica = il costrutto sottoposto a revisione paritaria sulla difficoltà di transizione [3][5][12].</li>
+<li><strong>Abbandonate il "deficit di permanenza dell'oggetto":</strong> reinquadrate come allocazione dell'attenzione / memoria di lavoro, che è sia accurata sia più utile per il supporto [1][4].</li>
+<li><strong>Distinguiete validato vs euristico:</strong> il burnout è un costrutto affermato, ma la via monotropismo→burnout è una forte ipotesi, non un effetto misurato; "split monotropico" è valido per l'esperienza vissuta ma non validato [3][15].</li>
+</ul>
+<hr />
+<h2 id="fonti">Fonti</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — origine del monotropismo; una differenza nell'allocazione delle risorse (un continuum), non un deficit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (autovalutazione a 47 item; preprint di validazione). Open Science Framework. — n=1.110; media autistici 4,15 (DS ,347) vs non-autistici 3,19 (DS ,578); regressione β(ADHD)=+0,55, β(autismo)=+1,04, <strong>β(interazione)=−0,43, p&lt;,001</strong>; l'interazione ADHD+autismo è <em>sub-additiva</em>; struttura a 8 fattori incl. fattori ruminazione/ansia e ambiente/tunnel. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · validazione: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Archivio locale: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Adkin, T. — "split monotropico" (attivista autistica / praticante; concetto di comunità). Confermato tramite molteplici fonti indipendenti di comunità: Neurodivergent Insights (glossario), Kelly Mahler (post ospite), David Gray Hammond, Jade Farrington ("Quando le persone monotropiche sono costrette a operare in modi politropici si parla di split monotropico"). Definizione: il costo cognitivo/burnout di costringere una mente monotropica a "recitare il politropico." Concetto di comunità/praticante — <strong>nessuno studio di validazione sottoposto a revisione paritaria.</strong> <a href="https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017">https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017</a> · <a href="https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism">https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism</a></p>
+<p>[4] Lawson, W. &amp; Dombroski, B. (2017). <em>Problems with Object Permanence: Rethinking Traditional Beliefs Associated with Poor Theory of Mind in Autism.</em> J. Intellectual Disability – Diagnosis and Treatment, 5(1). doi:10.6000/2292-2598.2017.05.01.1 — <em>ipotizza</em> una permanenza dell'oggetto <strong>ritardata</strong> come contributrice a parte dello stress legato all'autismo (un articolo che costruisce un'ipotesi, non una conferma). Letteratura più ampia: la permanenza dell'oggetto è tipicamente intatta/superiore nell'autismo; "lontano dagli occhi, lontano dalla mente" si legge meglio come allocazione dell'attenzione/memoria di lavoro. Archivio locale: <code>sources/12-object-permanence-lawson-dombroski.pdf</code> · <a href="https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562">https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562</a></p>
+<p>[5] Baron-Cohen, S. (2009/2010). <em>Autism and the empathizing–systemizing (E-S) theory; the hyper-systemizing theory of autism.</em> Annals of the NYAS; APA PsycNet. — l'iper-sistematizzazione e la teoria E-S sono il quadro di Baron-Cohen, misurato tramite il quoziente EQ/SQ; distinto da (pur sovrapponendosi a) monotropismo. <a href="https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory">https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory</a> · rassegna: Greenberg &amp; Baron-Cohen, <em>Empathizing-Systemizing Theory: Past, Present, and Future.</em></p>
+<p>[6] Autistic Scholar — <em>"Revisiting monotropism"</em> (AuDHD come tunnel in competizione/instabili; riferisce Grotewiel et al. 2022 sull'iper-focus dell'ADHD come costrutto distinto). Resoconto fenomenologico/di comunità, non un risultato dei punteggi del MQ. Archivio locale: <code>sources/13-revisiting-monotropism-autisticscholar.html</code> · <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a></p>
+<p>[7] Green, S. A. &amp; Ben-Sasson, A. (2010). <em>Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship?</em> J. Autism and Developmental Disorders. PMC2980623 — iper-responsività sensoriale, condizionamento di contesto e la via del sovraccarico. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a></p>
+<p>[8] Oakley, B. et al. / letteratura sull'ansia nell'autismo — ansia e ruminazione elevate nella popolazione autistica/ADHD (citato tramite la breve paesaggistica di comorbidità del progetto per il substrato dell'ansia).</p>
+<p>[9] Meier, S. M. et al. / meta-analisi della concordanza autismo–OCD — ~17% delle persone autistiche soddisfa i criteri per OCD (vs ~1–2% generale); ~17% dei bambini con OCD mostra sintomi autistici lievi. Riassunto tramite Move Up ABA che cita ricerche del 2015 e la rassegna di The Transmitter/Spectrum. <a href="https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions">https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions</a> · meta-analisi autismo↔︎OCD: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346">https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346</a></p>
+<p>[10] Long, H., Cooper, K., &amp; Russell, A. (2024). <em>"Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours</em> (qualitativo). PMC11497754 — la distinzione ego-sintonico (interessi) vs ego-distonico (compulsioni). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a></p>
+<p>[11] Autism Society (2025). <em>Autistic Meltdowns and Shutdowns</em> — meltdown (esternalizzante) e shutdown (ritiro internalizzante) come risposte involontarie a stress soverchiante/input sensoriale. <a href="https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf">https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf</a></p>
+<p>[12] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia</em> (preprint/qualitativo). doi:10.31234/osf.io/ahk6x — difficoltà a iniziare, fermare e cambiare compiti "non nel controllo cosciente." Archivio locale: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a></p>
+<p>[13] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer — inerzia autistica: nata nella comunità, ora sottoposta a revisione paritaria; cita Carls-Diamante &amp; Laciny 2024, Greaves-Lord et al. 2023, Buckle 2021, Heasman 2024, Rapaport 2024. <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[14] Neurodivergent Insights — <em>Monotropism</em> (glossario) e <em>ADHD vs Autism vs OCD</em> (accavallamento a tre vie). Risorsa di comunità/clinica che inquadra lo split monotropico e gli accavallamenti. <a href="https://neurodivergentinsights.com/glossary/monotropism">https://neurodivergentinsights.com/glossary/monotropism</a> · <a href="https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd">https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd</a></p>
+<p>[15] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — esaurimento cronico, perdita di competenze, ridotta tolleranza agli stimoli; da stress di vita cronico e mancato adattamento tra aspettative e capacità. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[16] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — definizione di consenso: esaurimento, ritiro, problemi di cognizione, ridotte capacità di vita quotidiana, aumenti dei tratti autistici. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<hr />
+<p><em>Complementare alla breve paesaggistica più completa del progetto: <code>outputs/monotropism-comorbidity-landscape.md</code> (che copre disturbi alimentari, accumulo, agorafobia, evitamento della domanda/PDA e il problema della doppia empatia). Questa breve si concentra sulla verifica dell'inquadratura a quattro cluster qui sopra e non ripete quel materiale.</em></p>
+</body>
+</html>

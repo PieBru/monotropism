@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Sostenere la persona autistica monotropica lungo l'arco di vita</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="sostenere-la-persona-autistica-monotropica-lungo-larco-di-vita">Sostenere la persona autistica monotropica lungo l'arco di vita</h1>
+<h3 id="una-guida-per-pratici-e-professionisti-sanitari">Una guida per pratici e professionisti sanitari</h3>
+<hr />
+<blockquote>
+<p><strong>Scopo.</strong> Questa guida spiega cos'è una mente <em>autistica monotropica</em>, come le sue caratteristiche cambiano lungo l'arco di vita e come pratici e professionisti sanitari possano <strong>interagire con, stimolare (coinvolgere) e sostenere</strong> le persone autistiche dalla prima infanzia alla vecchiaia. Si fonda sulla teoria del <strong>monotropismo</strong> dell'autismo — un resoconto basato sull'attenzione e affermante la neurodivergenza, sviluppato dai ricercatori autistici Dinah Murray, Wenn Lawson e Mike Lesser (2005) — e sull'evidenza sottoposta a revisione paritaria e sulle linee guida cliniche/di pratica dove esistono. Non sostituisce una valutazione individualizzata; ogni persona autistica è diversa.</p>
+</blockquote>
+<blockquote>
+<p><strong>Una nota sul linguaggio.</strong> Questa guida usa il <strong>linguaggio con l'identità per prima</strong> ("persona autistica"), che è la preferenza della maggioranza della comunità autistica ed è coerente con la teoria di fonte. Alcuni individui e famiglie preferiscono il linguaggio persona-prima ("persona con autismo"); seguite la preferenza dell'individuo. La guida evita deliberatamente i termini basati sul deficit ("disordinato", "deficiente", "sintomo") tranne quando cita criteri clinici, e descrive invece <em>differenze</em> con <em>punti di forza e sfide</em>. Il monotropismo è una lente; una minoranza di persone autistiche non sente che le descrive, e dovrebbe integrare, non sostituire, l'ascolto dell'individuo.</p>
+</blockquote>
+<hr />
+<h2 id="parte-1--cosè-una-mente-autistica-monotropica">Parte 1 — Cos'è una mente autistica monotropica?</h2>
+<p>Il monotropismo propone che le menti funzionino come un <strong>sistema di interessi</strong>: siamo attratti da molte cose, questi interessi richiamano la nostra attenzione, e <strong>l'attenzione è una risorsa limitata</strong> per cui i processi mentali competono (Murray, Lesser &amp; Lawson, 2005). La differenza tra cognizione autistica e non-autistica è inquadrata come una differenza in <em>come l'attenzione è allocata</em>, non un deficit.</p>
+<blockquote>
+<p><em>"In ogni singolo momento, la quantità di attenzione disponibile a un individuo cosciente è limitata. C'è competizione tra i processi mentali per questa risorsa scarsa."</em> — Murray, Lesser &amp; Lawson (2005), via la National Autistic Society (NAS, 2025).</p>
+</blockquote>
+<p><strong>Una mente monotropica</strong> tende ad attivare <strong>meno interessi contemporaneamente</strong>, ma ogni interesse attivo cattura una quota <strong>sproporzionata e intensa</strong> delle risorse di elaborazione, producendo un <strong>"tunnel di attenzione"</strong> ristretto e profondo. Tutto ciò che è fuori dal tunnel viene elaborato al minimo. Una mente <strong>politropica</strong> (la modalità non-autistica più comune) distribuisce l'attenzione su più interessi e passa tra loro più fluidamente (Murray, Lesser &amp; Lawson, 2005; F. Murray, 2018).</p>
+<p>La teoria fa tre previsioni centrali che si mappano sull'esperienza autistica quotidiana (F. Murray, 2018; Dwyer, 2025; NAS, 2025):</p>
+<ol type="1">
+<li><strong>Intensità dentro il tunnel</strong> — focalizzazione vivida e profonda che supporta competenza, creatività e stati di <strong>flusso</strong>.</li>
+<li><strong>Elaborazione ridotta fuori dal tunnel</strong> — stimoli, segnali sociali e persino segnali interni (fame, dolore, bisogni del bagno) possono non registrarsi.</li>
+<li><strong>Difficoltà a spostarsi</strong> — le transizioni tra stati attentivi sono lente e faticose; questa è l'<strong>inerzia autistica</strong>.</li>
+</ol>
+<h3 id="11-il-profilo-caratteristico-a-colpo-docchio">1.1 Il profilo caratteristico a colpo d'occhio</h3>
+<table>
+<thead>
+<tr>
+<th>Dominio</th>
+<th>Caratteristica informata dal monotropismo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Attenzione / interesse</strong></td>
+<td>Focalizzazione profonda e ristretta; poche tracce simultanee; gli "interessi speciali" sono centrali, gioiosi e significativi, non periferici</td>
+</tr>
+<tr>
+<td><strong>Sensoriale</strong></td>
+<td><strong>Iper-responsività</strong> (uno stimolo intrusivo catturato nel tunnel è sentito intensamente); <strong>ipo-responsività</strong> (quando si è assorti altrove, stimoli/dolore possono non registrarsi); <strong>ricerca sensoriale</strong> (uno stimolo piacevole nel tunnel inseguito intensamente) — una spiegazione <em>unificata</em></td>
+</tr>
+<tr>
+<td><strong>Interocezione e corpo</strong></td>
+<td>Consapevolezza ridotta di fame, sete, dolore, fatica, bisogni del bagno quando si è in flusso ("disconnessione interocettiva")</td>
+</tr>
+<tr>
+<td><strong>Spostamento / funzione esecutiva</strong></td>
+<td><strong>Inerzia autistica</strong> — difficoltà a iniziare, fermare o cambiare binario; non una generica "disfunzione esecutiva"</td>
+</tr>
+<tr>
+<td><strong>Sociale / comunicazione</strong></td>
+<td>L'elaborazione sociale multicanale è costosa; interpretazione letterale; bisogno di tempo di elaborazione; il <strong>problema della doppia empatia</strong> significa che l'incomprensione è <em>bidirezionale</em>, non un deficit autistico</td>
+</tr>
+<tr>
+<td><strong>Routine e stimming</strong></td>
+<td>Le routine riducono le decisioni in competizione e il carico mentale; lo stimming fornisce input prevedibile e auto-controllato che filtra il sovraccarico e ripristina l'equilibrio</td>
+</tr>
+<tr>
+<td><strong>Punti di forza</strong></td>
+<td>Competenza, ricerca di pattern, concentrazione sostenuta, flusso, onestà, profondità di conoscenza, immersione creativa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-i-rischi-per-il-benessere-che-ne-conseguono">1.2 I rischi per il benessere che ne conseguono</h3>
+<p>Capire il <em>meccanismo</em> rende i rischi prevedibili e — cosa cruciale — prevenibili:</p>
+<ul>
+<li><strong>Split monotropico</strong> (termine coniato da Tanya Adkin): la dissonanza mentale e il depauperamento dall'essere costretti a dividere o spostare rapidamente l'attenzione in modi politropici; "può avere effetti disastrosi sia nel breve che nel lungo termine" (F. Murray, 2023).</li>
+<li><strong>Meltdown e shutdown</strong> sono risposte <strong>involontarie</strong> del sistema nervoso al sovraccarico, non scelte comportamentali o "capricci". Un <strong>meltdown</strong> è visibile (pianto, urla, andirivieni, stimming, tentativi di fuga); uno <strong>shutdown</strong> è lo specchio internalizzato — ritiro, mancanza di risposta, disimpegno, uno "spegnimento" protettivo per conservare energia (Autism Society, 2025; Leicestershire Partnership NHS Trust; Reframing Autism). Entrambi richiedono sostanziale <strong>tempo di recupero</strong> (a volte giorni) e sono aggravati dalla mancanza di comprensione degli altri.</li>
+<li>Il <strong>burnout autistico</strong> è "una sindrome … risultante da stress di vita cronico e un mancato adattamento tra aspettative e capacità senza supporti adeguati", caratterizzata da <strong>esaurimento pervasivo e a lungo termine (tipicamente 3+ mesi), perdita di funzione e ridotta tolleranza agli stimoli</strong> (Raymaker et al., 2020). È <strong>distinto dal burnout occupazionale e dalla depressione clinica</strong>, è legato al <strong>comportamento suicidario</strong>, ed è aggravato dall'essere insegnati a <strong>mascherare/camuffare</strong> i tratti autistici. Il recupero è associato ad <strong>accettazione e supporto sociale, congedo / aspettative ridotte, e "fare le cose a modo autistico" / rimozione della maschera</strong> (Raymaker et al., 2020).</li>
+<li>Il <strong>masking / camuffamento</strong> (nascondere i tratti autistici per apparire non-autistici) è estenuante ed è associato ad ansia, depressione e diagnosi mancata — in particolare tra ragazze e donne, a cui più spesso si insegna socialmente a mascherare (F. Murray, 2023; Pearson &amp; Rose, 2021; Bradley et al., 2021).</li>
+<li><strong>Ruminazione / "loop di preoccupazione"</strong>: lo stesso tunneling che produce interesse profondo può fissarsi su preoccupazioni e ansie (Hallett, 2021; F. Murray, 2023).</li>
+</ul>
+<h3 id="13-status-dellevidenza-siate-onesti-con-voi-stessi-e-con-i-clienti">1.3 Status dell'evidenza (siate onesti con voi stessi e con i clienti)</h3>
+<p>Il monotropismo risuona fortemente con l'esperienza vissuta autistica ed è sempre più citato nella ricerca, ma rimane una teoria <strong>descrittiva</strong> con test sperimentale diretto limitato e una base di misurazione immatura — il <strong>Monotropism Questionnaire</strong> (Garau et al., 2023) è l'unico strumento dedicato ed è ancora in maturazione (Dwyer, 2021; Dwyer, 2025). L'evidenza convergente di supporto include il disimpegno dell'attenzione "vischioso" / rallentato nei bambini autistici (Landry &amp; Bryson, 2004; meta-analisi: Sacrey et al., 2015) e una letteratura emergente sul <strong>flusso autistico</strong> (Heasman et al., 2024). Trattate il monotropismo come una potente <em>euristica clinica</em> — non un'etichetta diagnostica.</p>
+<hr />
+<h2 id="parte-2--principi-trasversali-per-ogni-praticante">Parte 2 — Principi trasversali per ogni praticante</h2>
+<p>Prima delle sezioni per età, questi principi si applicano <strong>a ogni tappa di vita e in ogni contesto</strong>. Sono il nucleo pratico di "come interagire con e gestire" bene una persona monotropica.</p>
+<ol type="1">
+<li><strong>Incontratela dove è la sua attenzione.</strong> L'implicazione pratica più citata del monotropismo è lavorare <em>con</em> l'interesse attuale della persona piuttosto che contro. Gli interessi sono "leva", non ostacoli da reindirizzare (F. Murray, 2018; Wood, 2019; Lawson). <em>"Trattate gli interessi come qualcosa con cui lavorare"</em> (F. Murray, 2018).</li>
+<li><strong>Proteggere il tunnel di attenzione; minimizzare lo "split monotropico".</strong> Evitate interruzioni, cambio rapido forzato di compiti e multitasking non necessario. Dove uno spostamento è inevitabile, date <strong>avvisi e tempo di transizione</strong> (si veda §3). Come inquadra la pianificazione del posto di lavoro l'ingegnere autistico Jamie Knight: costruite <strong>"tunnel non compiti"</strong>, e lasciate che <em>l'ambiente apra uno spazio affinché il tunnel passi</em> piuttosto che costringere la persona a trapanarlo (Knight, 2021/2022).</li>
+<li><strong>Rispettate gli interessi profondi come risorse di benessere.</strong> Gli interessi speciali forniscono gioia, stabilità, identità, apprendimento e recupero dal burnout; non sono "ossessioni" da limitare (F. Murray, 2023; Mantzalas et al., 2022). Ridurne l'accesso è un rischio clinico, non una cura.</li>
+<li><strong>Riducete il carico sensoriale non necessario</strong> e progettate ambienti accessibili (meno rumore/disordine visivo; permettete spazi quieti in penombra; evitate abbagliamento fluorescente e odori forti dove possibile) (NAS, 2025; F. Murray, 2023).</li>
+<li><strong>Comunicate in modo chiaro e letterale.</strong> Dite ciò che intendete; evitate sarcasmo, richieste indirette e forte affidamento su solo tono/espressione; concedete <strong>tempo extra di elaborazione</strong>; offrite le informazioni per iscritto. Non equiparate una risposta lenta a disinteresse o mancanza di comprensione (F. Murray, 2023).</li>
+<li><strong>Praticate la postura della doppia empatia.</strong> Riconoscete che le rotture comunicative sono <strong>bidirezionali</strong> (Milton, 2012). Quando qualcosa va male nell'interazione, chiedetevi cosa <em>voi</em> potreste non cogliere, piuttosto che attribuirlo al deficit della persona autistica.</li>
+<li><strong>Sostenete agency e autenticità; non forzate il masking.</strong> Riducete la pressione a "passare" per non-autistico. Sopprimere gli stim o la comunicazione naturale è dannoso (F. Murray, 2023; Raymaker et al., 2020; Pearson &amp; Rose, 2021).</li>
+<li><strong>Costruite prevedibilità e routine <em>con</em> la persona, non <em>su</em> di lei.</strong> Le routine imposte spesso si ritorcono contro; le routine co-create riducono il carico decisionale e sono benvenute (F. Murray, 2022).</li>
+<li><strong>Pianificate il recupero.</strong> Dopo eventi ad alta domanda (visite cliniche, transizioni, richieste sociali), aspettatevi e permettete tempo libero, stimming e accesso agli interessi.</li>
+<li><strong>Ascoltate l'individuo come esperto della propria esperienza.</strong> L'autovalutazione è prova primaria; il Monotropism Questionnaire (Garau et al., 2023) può essere un utile <em>avvio di conversazione</em>, non uno strumento diagnostico.</li>
+</ol>
+<hr />
+<h2 id="parte-3--la-guida-lungo-larco-di-vita">Parte 3 — La guida lungo l'arco di vita</h2>
+<p>Ogni sezione copre: <strong>(a) cosa potreste osservare</strong>, <strong>(b) come interagire</strong>, <strong>(c) come stimolare / coinvolgere</strong>, e <strong>(d) come sostenere / gestire le sfide.</strong></p>
+<hr />
+<h3 id="31-prima-infanzia-circa-05-anni">3.1 Prima infanzia (circa 0–5 anni)</h3>
+<p><strong>(a) Cosa potreste osservare.</strong> Focalizzazione intensa su oggetti/argomenti specifici; interessi intensi a insorgenza precoce (spesso prima che nei bambini non-autistici); allineare, ordinare, categorizzare e fare-pattern come gioco; attenzione congiunta e risposta al nome ridotte o atipiche; <strong>disimpegno rallentato dell'attenzione</strong> ("sguardo vischioso") — misurabile dall'infanzia e uno dei primi segni; iper- o ipo-responsività sensoriale; routine e gioco ripetitivo; meltdown alle transizioni. Un bambino monotropico può essere profondamente assorto e perdersi molto al di fuori del tunnel, inclusi fame, dolore o un genitore che lascia la stanza (Landry &amp; Bryson, 2004; F. Murray, 2023; Donzelli, 2021; Lawson, sulla permanenza dell'oggetto).</p>
+<p><strong>(b) Come interagire.</strong> Entrate nel tunnel attentivo del bambino invece di tirarlo fuori — <strong>inseritevi nel suo gioco e nel suo interesse per primi</strong>, poi estendete gentilmente da lì. Usate l'interesse per costruire connessione e attenzione condivisa (Lawson). Tenete il linguaggio chiaro, lento e letterale; concedete tempo di elaborazione; non forzate il contatto visivo (il contatto visivo può esso stesso consumare scarse risorse attentive) (F. Murray, 2023). Riducete il carico sensoriale nella stanza.</p>
+<p><strong>(c) Come stimolare / coinvolgere.</strong> Usate l'<strong>interesse intenso del bambino come ponte verso apprendimento e costruzione di competenze</strong> — sequenziamento, linguaggio, conteggio, competenze motorie e di gioco si possono tutte praticare <em>attraverso</em> l'interesse (Lawson; Wood, 2019; BERA, sugli stati di flusso in classe). Sostenete l'emergere dell'<strong>attenzione congiunta</strong> attraverso gioco guidato dall'interesse e basato sulla relazione e intervento precoce (il modello JASPER e approcci simili basati su interesse/gioco mirano all'attenzione congiunta e al gioco simbolico; Kasari et al., 2006). Onorate la <strong>cultura del gioco autistico</strong> — allineare, ordinare e l'esplorazione sensoriale sono gioco valido, non gioco "sbagliato" da correggere (Donzelli, 2021).</p>
+<p><strong>(d) Come sostenere / gestire.</strong> Gestite le <strong>transizioni</strong> con agende visive/timer, conteggi alla rovescia, avvisi verbali + visivi <em>prima</em> del cambio, oggetti "ponte" da un'attività alla successiva e tempo extra; non strappate mai bruscamente un bambino fuori da un tunnel di attenzione (Autism Little Learners; F. Murray, 2023). Per i <strong>meltdown</strong>: restate calmi, riducete la stimolazione, non giudicate e non punite — sono involontari; assicurate la sicurezza, poi permettete il recupero (Autism Society, 2025). Proteggete l'accesso allo stimming (è autoregolazione) (F. Murray, 2023). Evitate programmi basati sulla compliance che addestrano via gli stim o i comportamenti naturali: questi aumentano il masking e il danno a lungo termine (F. Murray, 2023; Raymaker et al., 2020).</p>
+<hr />
+<h3 id="32-infanzia-in-età-scolare-circa-612-anni">3.2 Infanzia in età scolare (circa 6–12 anni)</h3>
+<p><strong>(a) Cosa potreste osservare.</strong> La scuola è spesso la prima prova di stress prolungata di un sistema monotropico ed è "un inferno per molti bambini monotropici — anche se molti di noi amano imparare" (F. Murray, 2023). L'aula, i corridoi e gli intervalli sono tipicamente <strong>troppo rumorosi, troppo pieni di stimoli visivi e troppo imprevedibili</strong>, consumando attenzione che dovrebbe andare all'apprendimento. I bambini possono sembrare "comportarsi male" alle transizioni, ritirarsi agli intervalli, essere bullizzati per interessi "strani" o gioco autodiretto, o essere fraintesi dal personale come sfidanti, pigri o disinteressati. L'inerzia si manifesta come difficoltà a iniziare il lavoro, cambiare materia o fare la borsa. Alcuni bambini iniziano qui a mascherare pesantemente, con costi di salute mentale (F. Murray, 2023; Leatherland, 2019; NAS, 2025).</p>
+<p><strong>(b) Come interagire (insegnanti, infermieri scolastici, terapisti).</strong> Riconoscete che la resistenza alle transizioni è un problema di <strong>costo cognitivo</strong>, non sfida. Fornite spazi quieti/in penombra (es. "incarichi" in biblioteca all'intervallo, un angolo calmo). Costruite relazioni attraverso l'interesse del bambino. Comunicate alla lettera, in anticipo e per iscritto dove possibile. Siate modello della postura della doppia empatia per pari e colleghi — inquadrate le differenze come differenze, non deficit (F. Murray, 2023; Wood, 2019).</p>
+<p><strong>(c) Come stimolare / coinvolgere (il "curricolo monotropico").</strong> Rendete <strong>l'interesse speciale la spina dorsale dell'apprendimento</strong>: insegnate lettura, scrittura, matematica, storia e scienze <em>attraverso</em> l'interesse; permettete tempo esteso nel flusso guidato dall'interesse; progettate compiti attorno a meno tracce più profonde invece del cambio costante (Wood, 2019, "interessi intensi … la chiave per l'inclusione educativa"; F. Murray, "Monotropism at School", 2019; BERA). Gli stati di flusso sono stati di apprendimento — proteggeteli: <em>"se uno studente si sente sovraccarico … e sapete che ha un interesse monotropico per i Lego, perché non creare uno spazio quiete … e permettergli tempo esteso?"</em> (BERA). Connettetevi con uno studente autistico appassionato <em>attraverso</em> la passione (Wood et al., 2022; Lawson).</p>
+<p><strong>(d) Come sostenere / gestire.</strong> Usate agende visive, avvisi di transizione e attività-ponte; date tempo di transizione generoso e riducete il numero di transizioni al giorno dove possibile (Autism Little Learners; F. Murray, 2023). Co-create le routine <em>con</em> il bambino. State attenti al <strong>burnout autistico e alla "regressione delle competenze"</strong> nei bambini in età scolare — questi spesso riflettono sovraccarico e uno spostamento nelle risorse attentive, non perdita di abilità innata, e la risposta è <strong>ridurre le richieste e ripristinare l'accesso a interessi/riposo</strong>, non spingere di più (Edgar, 2024; Raymaker et al., 2020). Identificate e riducete la pressione al masking, specialmente nelle ragazze, a cui la diagnosi manca spesso perché mascherano (F. Murray, 2023). Usate una guida per insegnanti sul burnout (es. Edgar, 2023) e consultate i genitori come esperti del proprio bambino.</p>
+<hr />
+<h3 id="33-adolescenza-circa-1318-anni">3.3 Adolescenza (circa 13–18 anni)</h3>
+<p><strong>(a) Cosa potreste osservare.</strong> La pubertà porta cambiamenti ormonali e cerebrali (potatura sinaptica, mielinizzazione) che possono intensificare le risposte sensoriali ed emotive e disruptare un equilibrio stabilito. Le richieste sociali dell'adolescenza — gerarchie tra pari che si spostano, regole sociali implicite, frequentazioni, formazione dell'identità — sono estremamente ad alto canale ed estenuanti per un sistema monotropico. Le difficoltà di salute mentale (ansia, depressione) qui raggiungono il picco; la ruminazione / i "loop di preoccupazione" possono radicarsi; il camuffamento si intensifica, e molte ragazze autistiche e giovani di genere marginalizzato sono <strong>identificati per la prima volta solo in crisi</strong>. Gli interessi speciali diventano centrali per l'identità e il recupero. Le amicizie, quando di alta qualità, sono protettive per la salute mentale (ARI, sulla pubertà; Autism Awareness Australia; F. Murray, 2023; Hallett, 2021; Sedgewick/Cook et al., via PMC9597130).</p>
+<p><strong>(b) Come interagire.</strong> Trattate il giovane come esperto della propria esperienza. Usate comunicazione chiara, letterale e rispettosa; date tempo di elaborazione e opzioni scritte. Validate gli interessi come legittimi e formativi dell'identità. Siate attenti al problema della doppia empatia nelle interazioni con pari e clinici. Fornite <strong>prevedibilità</strong> attorno agli appuntamenti e riducete il carico sociale/sensoriale non necessario (Autism Awareness Australia; F. Murray, 2023).</p>
+<p><strong>(c) Come stimolare / coinvolgere.</strong> Incanalate gli interessi speciali in <strong>studio, progetti, portfolio, volontariato ed esplorazione professionale precoce</strong> — sono la più grande risorsa motivazionale e di costruzione di competenze dell'adolescente. Sostenete <strong>identità e comunità</strong>: gruppi tra pari autistici, club di interessi speciali, mentor e comunità autistiche online possono trasformare il benessere. Insegnate l'<strong>auto-comprensione</strong> del monotropismo affinché il giovane possa difendere i propri bisogni attentivi (anziché interiorizzare "sono pigro/rotto").</p>
+<p><strong>(d) Come sostenere / gestire.</strong> Affrontate proattivamente la <strong>salute mentale</strong>; fate screening per ansia, depressione, burnout e suicidalità, riconoscendo che il <strong>burnout autistico è distinto dalla depressione</strong> e dal burnout occupazionale e richiede <em>richieste ridotte, accettazione e rimozione della maschera</em>, non solo CBT o antidepressivi (Raymaker et al., 2020). Sostenete i bisogni pratici e sensoriali legati alla pubertà (mestruazione, igiene, cambiamenti corporei) esplicitamente e concretamente (ARI). Affrontate il <strong>danno del camuffamento</strong> — riducete esplicitamente l'aspettativa di mascherare. Insegnate l'autogestione di meltdown/shutdown e assicurate che il giovane abbia una via di recupero a bassa domanda. Pianificate le <strong>transizioni all'età adulta</strong> (istruzione, lavoro, passaggio sanitario) presto e con gli interessi del giovane al centro. <em>(Inferenza, segnalata: gran parte della guida clinica qui è estrapolata dalla letteratura adulta su burnout/masking e dai resoconti di esperienza vissuta autistica più che da RCT specifici sull'adolescenza.)</em></p>
+<hr />
+<h3 id="34-età-adulta-circa-19mezza-età">3.4 Età adulta (circa 19–mezza età)</h3>
+<p><strong>(a) Cosa potreste osservare.</strong> Molti adulti autistici — specialmente donne, persone di colore e quelli senza disabilità intellettiva — sono <strong>diagnosticati solo in età adulta</strong> (la "generazione perduta", Lai &amp; Baron-Cohen). Nell'ambiente giusto, gli adulti monotropici portano <strong>competenza profonda, concentrazione sostenuta, affidabilità, rilevamento di pattern e onestà</strong> che sono risorse genuine. Nell'ambiente sbagliato — uffici open-space, interruzioni costanti, aspettative poco chiare, carico sensoriale, richieste socio-politiche — affrontano depauperamento cronico, masking, meltdown/shutdown e <strong>burnout autistico</strong> (Knight, 2021/2022; Booth, 2021; Raymaker et al., 2020; Mantzalas et al., 2022).</p>
+<p><strong>(b) Come interagire.</strong> Comunicate <strong>esplicitamente e per iscritto</strong>; definite aspettative, scadenze e norme sociali concretamente piuttosto che implicarle. Permettete comunicazione scritta/asincrona (email, testo) che riduce il carico di canale. Date tempo di elaborazione; non leggete una pausa come resistenza. Chiedete alla persona cosa l'aiuta — è l'esperta (F. Murray, 2023; Knight, 2021).</p>
+<p><strong>(c) Come stimolare / coinvolgere (posto di lavoro).</strong> Strutturate il ruolo attorno a <strong>pochi "tunnel più profondi, non compiti"</strong> (Knight, 2021): riducete al minimo riunioni e interruzioni, raggruppate il lavoro superficiale, permettete tempo di flusso e date accesso a spazio quiete/controllato sensorialmente. Abbinate i compiti a <strong>punti di forza e interessi speciali</strong>; l'intensità della focalizzazione autistica, quando protetta, è una grande risorsa di produttività e innovazione (Advanced Autism Services, 2025; Sachs Center; Booth, 2021). Costruite <strong>routine</strong> con l'adulto e usate gli adattamenti legalmente disponibili (es. ADA/Legge sull'uguaglianza) (Links ABA). Incoraggiate il <strong>"vivere poco"</strong> dove utile — semplificare la vita in poche aree di focus può migliorare marcatamente funzione e felicità (Knight, 2021).</p>
+<p><strong>(d) Come sostenere / gestire.</strong> Trattate il <strong>burnout autistico</strong> come un'entità clinica seria e distinta: riconoscete esaurimento cronico, perdita di competenze precedentemente detenute e ridotta tolleranza agli stimoli; valutate la suicidalità (Raymaker et al., 2020). La direzione di recupero supportata dall'evidenza è <strong>ridurre richieste e aspettative, fornire accettazione e supporto sociale, e permettere "fare le cose a modo autistico" / rimozione della maschera</strong> (Raymaker et al., 2020; Mantzalas et al., 2022). <em>Non</em> prescrivete training delle abilità sociali basato sul masking come soluzione. Affrontate le condizioni co-occorrenti di ansia, depressione, ADHD, sonno e gastrointestinali (più comuni negli adulti autistici). Rispettate che gli <strong>interessi speciali sono protettivi e ricostituenti</strong>, non compulsioni da limitare (Mantzalas et al., 2022).</p>
+<hr />
+<h3 id="35-adulti-più-anziani-e-anziani-circa-60">3.5 Adulti più anziani e anziani (circa 60+)</h3>
+<p><strong>(a) Cosa potreste osservare — e gli onesti limiti della nostra conoscenza.</strong> Questa è la <strong>parte meno studiata dell'arco di vita autistico</strong>: al 2024, la ricerca sugli adulti autistici più anziani rappresentava solo circa lo <strong>0,4% della letteratura sull'autismo</strong> (pur crescendo ~392% dal 2012) (Klein et al., 2024). L'evidenza esistente è preoccupante: gli esiti per gli adulti autistici più anziani sono <strong>generalmente scadenti</strong> in tutti e quattro i domini dell'"invecchiare bene" (salute e funzionamento; funzionamento cognitivo e fisico; affetto positivo e controllo; partecipazione sociale). Mostrano <strong>aumento delle condizioni mediche, basse capacità adattive, rischio elevato di declino cognitivo, limitata attività fisica, alti tassi di condizioni di salute mentale, bassa qualità della vita e ridotta partecipazione sociale/di comunità</strong> (Klein et al., 2024). In un campione australiano (età 40+), solo il <strong>3,3% soddisfaceva i criteri per "invecchiamento di successo"</strong> (Klein et al., 2024). Gli adulti autistici più anziani hanno <strong>tassi più alti della maggior parte delle condizioni di salute</strong> — disturbi dell'umore, problemi di sonno, condizioni gastrointestinali e cardiache — dei coetanei non-autistici (Additude, che riassume studi di popolazione). Molti adulti autistici più anziani sono <strong>non diagnosticati</strong> ("generazione perduta"); i clinici devono essere pronti a riconoscere l'autismo in adulti più anziani che si presentano con differenze sociali/sensoriali lifelong, burnout o crisi di salute mentale (OAR; Klein et al., 2024).</p>
+<p><strong>(b) Come interagire.</strong> Tutti i principi trasversali si applicano con peso extra: comunicazione chiara, letterale e rispettosa; concedete ampio tempo di elaborazione e informazioni scritte; riducete il carico sensoriale (i cambiamenti di udito e visione si sommano alle differenze sensoriali di base); non presumete mai incapacità cognitiva da una risposta lenta o atipica. Tenete conto del <strong>problema della doppia empatia</strong> esplicitamente nei contesti di cura.</p>
+<p><strong>(c) Come stimolare / coinvolgere.</strong> Conservate e <strong>proteggete gli interessi speciali e le routine lifelong</strong> — sono ancore di identità, cognizione e benessere, e possono essere specialmente protettive mentre altre capacità cambiano. Adattate le attività alle <strong>capacità fisiche e sensoriali che cambiano</strong> invece di rimuoverle. Sostenete la <strong>comunità e la connessione autistica</strong> per contrastare la grave isolamento sociale visto in questo gruppo (Klein et al., 2024; OAR). Incoraggiate attività fisica dolce tarata sulla persona (l'inattività fisica è un problema identificato) (Klein et al., 2024).</p>
+<p><strong>(d) Come sostenere / gestire.</strong></p>
+<ul>
+<li>L'<strong>accesso all'assistenza sanitaria</strong> è una lacuna critica: molti adulti autistici più anziani evitano le cure a causa di esperienze negative lifelong e barriere sensoriali/comunicative; le cliniche hanno bisogno di formazione (OAR; si veda Parte 4).</li>
+<li>State attenti al <strong>burnout autistico</strong> — il rischio si accumula attraverso decenni di masking e bisogni non soddisfatti, e può essere frainteso come depressione o "declino legato all'età" (Raymaker et al., 2020).</li>
+<li>Siate all'erta al <strong>cambiamento cognitivo vs differenza autistica</strong>: distinguere i pattern monotropici/di inerzia autistici dalla vera <strong>demenza/declino cognitivo</strong> è clinicamente difficile e poco studiato; non presupponete. C'è <em>ricerca molto limitata</em> su autismo + demenza/Alzheimer — segnalate l'incertezza e valutate attentamente (ABTABA; Klein et al., 2024).</li>
+<li>Gli <strong>ambienti di cura</strong> (RSA, ospedali) sono spesso ostili sensorialmente e dirompenti per la routine; fate pressione per spazi quieti, routine prevedibili, conservazione di oggetti/interessi significativi e formazione del personale sull'autismo.</li>
+<li>Sostenete la <strong>fine vita e la pianificazione anticipata</strong> con comunicazione chiara e letterale e rispetto dell'autonomia.</li>
+<li><em>Inferenza, segnalata:</em> Poiché l'evidenza specifica sull'autismo in vecchiaia è scarsa, gran parte di questa sezione applica il modello di monotropismo lungo l'arco di vita più i risultati generali sull'invecchiamento-con-autismo; trattate come guida di buona pratica, non protocollo stabilito.</li>
+</ul>
+<hr />
+<h2 id="parte-4--guida-specifica-per-i-professionisti-sanitari">Parte 4 — Guida specifica per i professionisti sanitari</h2>
+<p>I contesti sanitari (luci fluorescenti brillanti, attese imprevedibili, istruzioni vaghe, richieste sensoriali e sociali, dolore e invasività) sono tra gli ambienti più difficili per le persone monotropiche e scatenano spesso shutdown, meltdown ed evitamento delle cure (Autism Society, 2025; revisione narrativa PMC11305600 sull'assistenza sanitaria amica dell'autismo). Quanto segue è tratto dalla letteratura sull'assistenza sanitaria amica dell'autismo e dall'<strong>AASPIRE Healthcare Toolkit / Autism Healthcare Accommodations Tool (AHAT)</strong> (autismandhealth.org).</p>
+<h3 id="prima-della-visita">Prima della visita</h3>
+<ul>
+<li><strong>Offrite un questionario pre-visita / l'AHAT</strong> per cogliere i bisogni sensoriali, comunicativi e procedurali specifici dell'individuo e produrre un report personalizzato degli adattamenti (AASPIRE).</li>
+<li><strong>Fornite informazioni scritte e letterali</strong> su cosa accadrà, in che ordine e quanto durerà; offrite foto della stanza/personale se possibile.</li>
+<li><strong>Offrite scelta di orario</strong>: primo/ultimo appuntamento (i più quieti), attese più brevi, nessuna clinica rumorosa sovrapposta.</li>
+<li>Permettete alla persona di <strong>portare un accompagnatore di fiducia</strong> e il proprio <strong>kit sensoriale</strong> (cuffie antirumore, occhiali da sole, oggetti fidget) (CHOP; Grateful Care ABA).</li>
+</ul>
+<h3 id="durante-la-visita">Durante la visita</h3>
+<ul>
+<li><strong>Riducete il carico sensoriale</strong>: illuminazione soffusa o morbida dove possibile, minimizzate i bip, offrite una stanza quiete, evitate odori forti/profumo (Autism Spectrum News; CHOP).</li>
+<li><strong>Comunicate alla lettera e concretamente</strong>: spiegate ogni passaggio <em>prima</em> di farlo; dite ciò che intendete; evitate le figure retoriche; verificate la comprensione chiedendo alla persona di parafrasare; <strong>permettete lunghi silenzi per l'elaborazione</strong>.</li>
+<li><strong>Non forzate il contatto visivo</strong>; permettete alla persona di guardare altrove, fare stimming o comunicare per iscritto/digitazione/CAA.</li>
+<li><strong>Andate piano; offrite pause.</strong> Tenete disponibile un kit di distrazione sensoriale (CHOP).</li>
+<li><strong>Rispettate il tunnel di attenzione</strong>: se la persona usa un interesse o uno stim per autoregolarsi durante una procedura, non interrompetelo.</li>
+<li>Applicate la <strong>postura della doppia empatia</strong> (Milton, 2012; Neurodivergent Insights): se la comunicazione si blocca, presumete un divario <em>reciproco</em> e adattatevi, piuttosto che etichettare il paziente "difficile" o "non collaborante".</li>
+</ul>
+<h3 id="dopo-la-visita">dopo la visita</h3>
+<ul>
+<li>Fornite <strong>follow-up scritto</strong> (diagnosi, istruzioni, passi successivi) in linguaggio letterale.</li>
+<li>Inserite <strong>tempo di recupero</strong> e avvertite che la persona potrebbe aver bisogno di riposare/andare in shutdown dopo.</li>
+<li>Documentate gli adattamenti efficaci nella cartella affinché siano automatici la volta dopo.</li>
+</ul>
+<h3 id="riconoscimenti-clinicamente-critici">Riconoscimenti clinicamente critici</h3>
+<ul>
+<li><strong>Il burnout autistico non è depressione.</strong> Si presenta come esaurimento cronico, perdita di competenze e ridotta tolleranza agli stimoli, guidato da carico cumulativo e un mancato adattamento aspettative–capacità; trattarlo come depressione (o spingere il paziente a "sforzarsi di più") può approfondirlo e rischiare suicidalità. Il recupero richiede richieste ridotte, accettazione e permesso di togliere la maschera (Raymaker et al., 2020).</li>
+<li><strong>Il masking in clinica è comune e costoso.</strong> Un paziente che "sembra a posto" in un appuntamento di 15 minuti potrebbe star camuffando e pagandone il costo dopo; non lasciate che una presentazione mascherata sovrasti l'autovalutazione o l'anamnesi (Pearson &amp; Rose, 2021; F. Murray, 2023).</li>
+<li><strong>Dolore e interocezione.</strong> Una persona monotropica potrebbe non notare o segnalare dolore, fame, sete, fatica o sintomi interni se non quando gravi (Kelly Mahler, 2024; Lawson). Non equiparate il "non lamentarsi" al "non soffrire"; chiedete proattivamente, e considerate che i pattern sintomatici riportati possono essere ritardati o atipici.</li>
+<li><strong>Farmaci ed effetti collaterali.</strong> Le persone autistiche riferiscono spesso risposte sensoriali ed emotive atipiche ai farmaci; iniziate bassi, titolate lentamente e monitorate attentamente l'autovalutazione.</li>
+<li><strong>Meltdown/shutdown in clinica.</strong> Sono involontari: riducete la stimolazione, abbassate le richieste, assicurate la sicurezza, date tempo e spazio, non contenete e non punite; un ritiro/shutdown ha bisogno di pazienza calma e a basso input, non di pressione a "collaborare" (Autism Society, 2025; Leicestershire Partnership NHS Trust; Reframing Autism).</li>
+<li><strong>Consenso e capacità.</strong> Fornite le informazioni in forma accessibile e letterale; concedete tempo di elaborazione e decision-making supportato; non presumete mai l'incapacità dalla comunicazione atipica.</li>
+<li><strong>Gli adattamenti aiutano tutti.</strong> Una cura adatta ai sensi, prevedibile e chiaramente comunicata giova anche a pazienti con ADHD, PTSD, ansia, cali sensoriali, cambiamenti cognitivi e molti altri (UNC Health, 2025).</li>
+</ul>
+<hr />
+<h2 id="parte-5--cosa-evitare-danno-comune">Parte 5 — Cosa evitare (danno comune)</h2>
+<ul>
+<li>Tirare bruscamente una persona fuori da un tunnel di attenzione o interrompere il flusso ripetutamente (F. Murray, 2023).</li>
+<li>Addestrare via stim, differenze di contatto visivo o comunicazione naturale ("normalizzazione" basata sulla compliance) — aumenta il masking e il danno a lungo termine (F. Murray, 2023; Raymaker et al., 2020).</li>
+<li>Inquadrare gli interessi speciali come "ossessioni" da limitare; ridurre l'accesso all'interesse (Mantzalas et al., 2022).</li>
+<li>Imporre routine/aspettative <em>sulla</em> persona piuttosto che co-crearle (F. Murray, 2022).</li>
+<li>Usare linguaggio basato sul deficit e patologizzante; attribuire tutti i problemi di interazione alla persona autistica (Milton, 2012).</li>
+<li>Trattare il burnout autistico come depressione o pigrizia; spingere la persona a mascherare di più (Raymaker et al., 2020).</li>
+<li>Cliniche ostili sensorialmente, procedure a sorpresa e istruzioni vaghe (PMC11305600; AASPIRE).</li>
+<li>Presumere che le differenze lifelong di un adulto più anziano siano "solo invecchiamento" o demenza senza una valutazione adeguata (Klein et al., 2024).</li>
+</ul>
+<hr />
+<h2 id="parte-6--questioni-aperte-e-caveats-di-evidenza-per-una-pratica-onesta">Parte 6 — Questioni aperte e caveats di evidenza (per una pratica onesta)</h2>
+<ol type="1">
+<li><strong>La vecchiaia è una lacuna di ricerca.</strong> Gran parte della guida sull'arco di vita per gli anziani è estrapolata; autismo + demenza, autismo + menopausa/andropausa e cure di fine vita sono in larga parte non studiati (Klein et al., 2024). Siate trasparenti sull'incertezza con i pazienti e le famiglie.</li>
+<li><strong>Il monotropismo è descrittivo, non ancora meccanicistico o pienamente testato.</strong> È un'ottima euristica clinica con crescente supporto convergente, ma non una diagnosi né una teoria completa (Dwyer, 2021; 2025).</li>
+<li><strong>Non tutte le persone autistiche sono monotropiche.</strong> Una minoranza non si riconosce nel quadro; mettete sempre al centro l'individuo (monotropism.org).</li>
+<li><strong>L'intersezionalità è poco affrontata.</strong> Gran parte della ricerca è bianca, occidentale, verbale e con bias verso bisogni di supporto inferiori; presentazioni, diagnosi e bisogni differiscono tra genere, razza, profilo di abilità intellettiva e comunicazione (limiti in Raymaker et al., 2020).</li>
+<li><strong>La co-occorrenza è la regola.</strong> ADHD (AuDHD), ansia, depressione, differenze di apprendimento, condizioni GI/del sonno co-occorrono comunemente; il monotropismo può aiutare a spiegare la sovrapposizione AuDHD, e i punteggi del Monotropism Questionnaire sono più alti nell'AuDHD (Garau et al., 2023; NAS, 2025).</li>
+</ol>
+<hr />
+<h2 id="fonti">Fonti</h2>
+<ol type="1">
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a> — via <a href="https://monotropism.org/murray-lesser-lawson">https://monotropism.org/murray-lesser-lawson</a></li>
+<li>Murray, F. (2018, aggiornato 2025). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Murray, F. (2023). Monotropism and Wellbeing (keynote, Scottish Autism Research Group 2023). <a href="https://monotropism.org/wellbeing">https://monotropism.org/wellbeing</a></li>
+<li>Murray, F. (2019). Monotropism at School (originariamente in <em>Tes</em>). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a> — indicizzato a <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2022). Understanding how routines can help autistic people thrive. <em>Thinking Person's Guide to Autism</em>. <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>National Autistic Society (Edgar, H. &amp; Adkin, T., 2025). What is monotropism? Understanding a neuroaffirming theory of autism. <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+<li>Dwyer, P. (2021). Revisiting monotropism. <em>Autistic Scholar</em>. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Dwyer, P. (2025). Monotropism: between obsessive joy and overwhelm. OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Garau, V. et al. (2023). Development and validation of a novel self-report measure of monotropism (the Monotropism Questionnaire). OSF preprint. <a href="https://osf.io/ft73y/">https://osf.io/ft73y/</a> — strumento a <a href="https://dlcincluded.github.io/MQ/">https://dlcincluded.github.io/MQ/</a></li>
+<li>Landry, R. &amp; Bryson, S. (2004). Impaired disengagement of attention in young children with autism. <em>J Child Psychol Psychiatry</em>, 45(6), 1115–1122. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></li>
+<li>Sacrey, L.-A. et al. (2015). Attention disengagement in autism spectrum disorder: a meta-analysis. <em>Neurosci Biobehav Rev</em>, 56, 111–121. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></li>
+<li>Heasman, T. et al. (2024). Autistic flow theory. (Citato in NAS, 2025.)</li>
+<li>Raymaker, D. M. et al. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": defining autistic burnout. <em>Autism in Adulthood</em>, 2(2), 132–143. <a href="https://pubmed.ncbi.nlm.nih.gov/32851204">https://pubmed.ncbi.nlm.nih.gov/32851204</a> — testo completo: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></li>
+<li>Mantzalas, J. et al. (2022). A conceptual model of risk and protective factors for autistic burnout. <em>Autism Research</em>. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722</a></li>
+<li>Pearson, A. &amp; Rose, K. (2021). A conceptual analysis of autistic masking: understanding the narrative of stigma and the illusion of choice. <em>Autism in Adulthood</em>, 3(1). <a href="https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043">https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043</a></li>
+<li>Bradley, L. et al. (2021). Autistic adults' experiences of camouflaging and its perceived impact on mental health. <em>Autism in Adulthood</em>, 3(4), 320–329. (PubMed 36601637.)</li>
+<li>Milton, D. (2012). On the epistemic and ontological value of the double empathy problem. <em>Dis &amp; Soc</em>. Sintesi: Reframing Autism, <a href="https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics">https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics</a></li>
+<li>Lawson, W. (2011). <em>The Passionate Mind: How People with Autism Learn</em>. Jessica Kingsley. — e Lawson, W. (2025). Research by autistic researchers: an 'insider's view' into autism. <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a></li>
+<li>Wood, R. (2019). Autism, intense interests and support in school: from wasted efforts to shared understandings. <em>Educational Studies</em>. Sintesi: <a href="https://woodbug.blog/2019/03/27/autistic-children-and-intense-interests-the-key-to-their-educational-inclusion/">https://woodbug.blog/2019/03/27/autistic-children-and-intense-interests-the-key-to-their-educational-inclusion/</a></li>
+<li>Wood, R. et al. (2022). <em>Learning From Autistic Teachers</em>. Jessica Kingsley.</li>
+<li>Leatherland, J. (2019). Understanding how autistic pupils experience secondary school (tesi di dottorato, Sheffield Hallam). <a href="http://shura.shu.ac.uk/23231/">http://shura.shu.ac.uk/23231/</a></li>
+<li>Kasari, C., Freeman, S., &amp; Paparella, T. (2006). Joint attention and symbolic play in young children with autism: a randomized controlled intervention study. <em>J Child Psychol Psychiatry</em>, 47, 611–620. (Riferito via PMC5683273.)</li>
+<li>Donzelli, S. (2021). Autistic play at forest school: pretend play characteristics seen otherwise. <em>Forest School Association</em>. <a href="https://forestschoolassociation.org/autistic-play-at-forest-school-pretend-play-characteristics-seen-otherwise/">https://forestschoolassociation.org/autistic-play-at-forest-school-pretend-play-characteristics-seen-otherwise/</a></li>
+<li>Hallett, S. (2021). Loops of concern (guida sulla ruminazione autistica). <a href="https://medium.com/@sonyahallett/loops-of-concern-ff792eebad03">https://medium.com/@sonyahallett/loops-of-concern-ff792eebad03</a></li>
+<li>Kelly Mahler (2024). Interoception and monotropism. <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Knight, J. (2021). Staying put, monotropism &amp; me (tunnels not tasks); (2022) Applying monotropism. <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Booth, J. (2021). Why does work not work for autistic people? <a href="https://janinebooth.com/content/why-does-work-not-work-autistic-people">https://janinebooth.com/content/why-does-work-not-work-autistic-people</a></li>
+<li>BERA (2021). Autism: the benefits of monotropism and flow states and its applications for the classroom. <a href="https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom">https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom</a></li>
+<li>Autism Society (2025). Autistic meltdowns and shutdowns (scheda informativa). <a href="https://autismsociety.org/">https://autismsociety.org/</a></li>
+<li>Leicestershire Partnership NHS Trust — Autism Space. Understanding autistic meltdowns and shutdowns. <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+<li>Reframing Autism. All about autistic shutdowns: a guide for allies. <a href="https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies">https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies</a></li>
+<li>AASPIRE Healthcare Toolkit / Autism Healthcare Accommodations Tool (AHAT). <a href="https://autismandhealth.org">https://autismandhealth.org</a></li>
+<li>Children's Hospital of Philadelphia (CHOP). Tips for more positive office visits for patients with ASD. <a href="https://www.chop.edu/news/tips-more-positive-office-visits-patients-asd">https://www.chop.edu/news/tips-more-positive-office-visits-patients-asd</a></li>
+<li>UNC Health (2025). Autistic patients need better care, accommodations in the medical office. <a href="https://news.unchealthcare.org/2025/04/autistic-patients-need-better-care-accomodations-in-the-medical-office">https://news.unchealthcare.org/2025/04/autistic-patients-need-better-care-accomodations-in-the-medical-office</a></li>
+<li>Autism Spectrum News. Creating sensory-friendly health care environments for autistic patients. <a href="https://autismspectrumnews.org/creating-sensory-friendly-health-care-environments-for-autistic-patients">https://autismspectrumnews.org/creating-sensory-friendly-health-care-environments-for-autistic-patients</a></li>
+<li>Klein, C. B. et al. (2024). Aging well and autism: a narrative review and recommendations for future research. <em>Healthcare</em>, 12(12), 1207. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987">https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987</a> — <a href="https://doi.org/10.3390/healthcare12121207">https://doi.org/10.3390/healthcare12121207</a></li>
+<li>Organization for Autism Research (OAR). Aging on the autism spectrum. <a href="https://researchautism.org/oaracle-newsletter/aging-on-the-autism-spectrum">https://researchautism.org/oaracle-newsletter/aging-on-the-autism-spectrum</a></li>
+<li>Lai, M.-C. &amp; Baron-Cohen, S. (2015). Identifying the lost generation of adults with autism spectrum conditions. <em>Lancet Psychiatry</em>. (Riferito in Klein et al., 2024.)</li>
+<li>Edgar, H. (2023). Supporting pupils through autistic burnout (guida per insegnanti). <a href="https://autisticrealms.com/supporting-pupils-through-autistic-burnout-teacher-guide/">https://autisticrealms.com/supporting-pupils-through-autistic-burnout-teacher-guide/</a></li>
+<li>Edgar, H. (2024). Autistic young people: skills regression, burnout or a shift in monotropic attentional resources? <a href="https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/">https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/</a></li>
+<li>Autism Awareness Australia. Understanding mental health in autistic teenagers. <a href="https://www.autismawareness.com.au/navigating-autism/understanding-mental-health-in-autistic-teenagers">https://www.autismawareness.com.au/navigating-autism/understanding-mental-health-in-autistic-teenagers</a></li>
+<li>Autism Research Institute (ARI). Understanding and supporting puberty in autistic girls and boys. <a href="https://autism.org/understanding-and-supporting-puberty">https://autism.org/understanding-and-supporting-puberty</a></li>
+<li>Neurodivergent Insights. Autism and the double empathy problem in medicine. <a href="https://neurodivergentinsights.com/the-double-empathy-problem-in-medicine">https://neurodivergentinsights.com/the-double-empathy-problem-in-medicine</a></li>
+<li>PieBru (2025). Monotropism: an interest-based account of autism (breve di fonte). <a href="https://github.com/PieBru/monotropism/blob/main/monotropism.md">https://github.com/PieBru/monotropism/blob/main/monotropism.md</a></li>
+<li>Revisione narrativa: Autism-friendly healthcare — a narrative review of the literature (PMC11305600). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11305600">https://pmc.ncbi.nlm.nih.gov/articles/PMC11305600</a></li>
+</ol>
+<h3 id="risorse-pratiche-di-supporto-citate-in-linea-sopra-per-affermazioni-pratiche-a-basse-poste">Risorse pratiche di supporto (citate in linea sopra per affermazioni pratiche a basse poste)</h3>
+<ul>
+<li>Advanced Autism Services (2025). How to support autistic adults in the workplace. <a href="https://www.advancedautism.com/post/how-to-support-autistic-adults-in-the-workplace">https://www.advancedautism.com/post/how-to-support-autistic-adults-in-the-workplace</a></li>
+<li>Sachs Center. Autism workplace accommodations that actually work. <a href="https://sachscenter.com/autism-workplace-accommodations">https://sachscenter.com/autism-workplace-accommodations</a></li>
+<li>Links ABA. Accessing healthcare as an autistic individual; work and mental health tips for autistic adults. <a href="https://linksaba.com">https://linksaba.com</a></li>
+<li>Autism Little Learners. Transitions and autism; smoother transitions in young autistic kids. <a href="https://autismlittlelearners.com">https://autismlittlelearners.com</a></li>
+<li>Grateful Care ABA. Preparing for doctor visits with autism. <a href="https://www.gratefulcareaba.com/blog/preparing-for-doctor-visits-with-autism">https://www.gratefulcareaba.com/blog/preparing-for-doctor-visits-with-autism</a></li>
+<li>ABTABA / Above and Beyond Therapy. Autism aging out; autism shutdown. <a href="https://www.abtaba.com">https://www.abtaba.com</a></li>
+<li>Additude. Aging with autism: cognition, health, loneliness &amp; other factors. <a href="https://www.additudemag.com/aging-with-autism-research">https://www.additudemag.com/aging-with-autism-research</a></li>
+<li>Retireguide. Aging with autism: a seniors &amp; caregivers guide. <a href="https://www.retireguide.com/guides/seniors-autism-spectrum">https://www.retireguide.com/guides/seniors-autism-spectrum</a></li>
+<li>Raising Children Network (Australia). Self-identity for your autistic teen. <a href="https://raisingchildren.net.au/autism">https://raisingchildren.net.au/autism</a></li>
+<li>Autistic Realms (Edgar, H.). Monotropism = happy flow state. <a href="https://autisticrealms.com/monotropism-happy-flow-state">https://autisticrealms.com/monotropism-happy-flow-state</a></li>
+<li>Neurodiverse Connection. Embracing autistic children's monotropic flow states. <a href="https://ndconnection.co.uk/blog/embracing-autistic-childrens-monotropic-flow-states">https://ndconnection.co.uk/blog/embracing-autistic-childrens-monotropic-flow-states</a></li>
+</ul>
+</body>
+</html>
