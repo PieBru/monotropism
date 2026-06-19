@@ -23,12 +23,20 @@ build_guide () {
   title="$(grep -m1 '^# ' "$src" | sed 's/^#[[:space:]]*//; s/[[:space:]]*$//')"
   [ -n "$title" ] || title="$stem"
 
+  # RTL + lang metadata for translated guides (Arabic is right-to-left).
+  local langmeta=""
+  case "$stem" in
+    *_ar) langmeta="--metadata lang=ar --metadata dir=rtl" ;;
+    *_zh) langmeta="--metadata lang=zh" ;;
+  esac
+
   echo ">> $stem"
   pandoc "$src" \
     -f markdown+autolink_bare_uris \
     -t html5 \
     -s \
     --metadata title="$title" \
+    $langmeta \
     --wrap=preserve \
     -H "$STYLE" \
     -o "$html"
