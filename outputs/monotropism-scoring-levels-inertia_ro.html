@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Măsurarea monotropismului: inerție, „frecare&quot; și energie cognitivă — ce susține dovada efectiv</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="măsurarea-monotropismului-inerție-frecare-și-energie-cognitivă--ce-susține-dovada-efectiv">Măsurarea monotropismului: inerție, „frecare" și energie cognitivă — ce susține dovada efectiv</h1>
+<p><em>Un dosar de cercetare citat — verificând cadrul „scorului monotropismului pe niveluri".</em></p>
+<blockquote>
+<p><strong>Informațional, nu sfat medical.</strong> Acest dosar evaluează cum monotropismul poate și nu poate fi măsurat. Monotropism Questionnaire (MQ) este un instrument de cercetare prin auto-raportare, <strong>nu un instrument diagnostic sau clinic</strong>, și nu are benzi de severitate validate.</p>
+</blockquote>
+<hr />
+<h2 id="rezumat">Rezumat</h2>
+<ul>
+<li><strong>Instinctul tău este corect la ideea de bază și greșit la ambalaj.</strong> Noțiunea că monotropismul poate fi <em>măsurat</em> de-a lungul unui spectru, și că cantitatea reală de interes este <strong>efortul („frecarea") de comutare a stărilor de atenție</strong>, este bine susținută — dar taxonomia specifică cu patru niveluri („Scăzut / Moderat / Ridicat / Extrem-Absolut") este un cadru popular, <strong>nu o clasificare științifică validată</strong>.</li>
+<li><strong>Monotropismul este corect o <em>trăsătură dimensională</em>, nu un sindrom.</strong> Singura măsură validată — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — returnează un scor continuu de la 1 la 5. Nu are <strong>niciun prag publicat, nicio bandă de percentile, și niciun nivel de severitate</strong> [2]. Împărțirea lui în niveluri numite este întotdeauna o alegere editorială arbitrară.</li>
+<li><strong>„Frecarea" de comutare are deja un nume: <em>inerția autistă</em>.</strong> Acesta este un construct real, din ce în ce mai cercetat — dificultate de a <em>începe, opri și comuta</em> sarcini care „nu este sub control conștient". A fost articulată prima dată în narațiuni comunitare autiste și este acum în lucrări evaluate de colegi [3][4][5]. „Frecarea ta de comutare" este esențial asta.</li>
+<li><strong>„Inerția atenției" confundă două lucruri distincte.</strong> <em>Inerția autistă</em> (la nivel de sarcină: greu de început/oprit/comutat) și <em>atenția lipicioasă / dezangajare afectată</em> (la nivel de stimul: greu de tras atenția de pe ceva, de ex. Landry &amp; Bryson 2004; metaanaliză Sacrey 2015) sunt înrudite dar măsurate diferit [6][7]. Gruparea lor sub un termen pierde precizie.</li>
+<li><strong>„Economia energiei cognitive" este cel mai puternic cadru</strong> — și există deja academic ca modelul de <strong>„alocare atipică a resurselor"</strong> al lui Goldknopf (2013), care tratează autismul ca o diferență în <em>cât și unde</em> sunt cheltuite resursele de atenție [10]. Aceasta este versiunea neuroafirmativă, non-deficitară a ceea ce descrii.</li>
+<li><strong>Legătura burnout/shutdown/meltdown este reală dar euristică.</strong> Burnout-ul autist (epuizare, pierdere de abilități, toleranță redusă) este un construct stabilit, iar legătura <em>narativă</em> cu comutarea forțată + mascheria este convingătoare și validată de comunitate — dar calea specifică „monotropism → ruptură de tunel → burnout" este în mare parte teoretică și din prima persoană, încă nu stabilită experimental [8][9].</li>
+</ul>
+<hr />
+<h2 id="1-poate-monotropismul-fi-scorat-da--ca-un-continuum-nu-ca-niveluri">1. Poate monotropismul fi „scorat"? Da — ca un continuum, nu ca niveluri</h2>
+<p>Monotropismul este o explicație a autismului bazată pe atenție: o minte monotropă canalizează resurse de procesare într-un număr mic de „tuneluri de atenție" intens activate în loc să le răspândească pe multe canale [1]. Pentru că este descris ca o <em>diferență în alocarea resurselor</em>, este în mod natural un <strong>spectru</strong>, nu o categorie — care este exact de ce intuiția ta de „niveluri" se simte corect.</p>
+<p>Instrumentul validat este <strong>Monotropism Questionnaire (MQ)</strong> — 47 itemi, scorat pe o scară Likert de 5 puncte, dezvoltat în 2023 de Garau și colegi <em>în colaborare cu un grup comunitar condus de autiști</em> [2]. Două lucruri sunt decisive pentru întrebarea ta:</p>
+<ul>
+<li><strong>Returnează o singură medie continuă (1–5), plus opt medii de subscală.</strong> În studiul de validare (1.110 participanți), participanții autiști au avut în medie <strong>4,15</strong> iar cei non-autiști <strong>3,19</strong>, cu ADHD ridicând independent scorurile [2]. Cele două distribuții se suprapun puternic — mulți non-autiști depășesc unii autiști și viceversa.</li>
+<li><strong>Nu există prag, prag diagnostic, bandă de severitate.</strong> O scanare a lucrării de validare confirmă că cuvântul „cutoff" apare doar ca citare <em>statistică</em> (criterii ale indexului de potrivire Hu &amp; Bentler) și „sensitivity" doar ca <em>analiză de sensibilitate</em> a modului în care autismul a fost definit [2]. Autorii înșiși ai MQ nu propun niveluri.</li>
+</ul>
+<p>Deci ce „înseamnă" un scor? Doar poziția sa relativă pe dimensiune. Aplicația online construită de comunitate care a inspirat această întrebare traduce util un scor într-un <em>percentil</em> („mai monotrop decât aproximativ X% din persoanele autiste / allistice"), calculat din eșantionul de validare — și acesta este un mod rezonabil, sincer de a situa un scor. Dar este <strong>un percentil descriptiv, nu o bandă clinică</strong>: „percentila 97 a tendinței monotrope" este semnificativă; „Nivelul 3 / Monotropism extrem" este o etichetă pe care dovada nu o conferă.</p>
+<blockquote>
+<p><strong>Concluzie:</strong> scor-o, traseaz-o, percentilează-o — dar nu o <em>nivelifica</em>. Continuumul este real; categoriile numite nu.</p>
+</blockquote>
+<h2 id="2-frecarea-ta-de-comutare-există-deja-se-numește-inerție-autistă">2. „Frecarea ta de comutare" există deja: se numește <em>inerție autistă</em></h2>
+<p>Aceasta este cea mai importantă corecție-prin-nume din dosar. Fenomenul pe care îl descrii — costul cognitiv de a intra în și mai ales ieși dintr-un tunel de atenție — este un construct stabilit numit <strong>inerție autistă</strong>: o dificultate cu <strong>începerea, oprirea și comutarea sarcinilor care nu este sub control conștient</strong> [3].</p>
+<p>Trei lucruri îl fac direct relevant:</p>
+<ul>
+<li><strong>A provenit din comunitatea autistă și a intrat în literatura evaluată de colegi.</strong> Association for Psychological Science descrie inerția autistă ca „un concept articulat prima dată în narațiuni comunitare autiste", acum susținut de lucru calitativ și teoretic [4]. Studiul de relatări la prima mână al Karen Buckle a constatat că participanții descriau în mod repetat că nu pot începe, opri sau schimba activități la voință [3].</li>
+<li><strong>Literatura folosește literalmente limbajul tău de „frecare".</strong> Articolul APS numește inițierea sarcinii un „lansare cu frecare ridicată", încadrează comutarea ca purtând „costuri de comutare", și notează că odată angajat, „comutarea focusului necesită mai mult efort cognitiv, uneori ducând la epuizare" [4]. Instinctul tău de a cuantifica <em>efort/frecare</em> este aceeași mișcare pe care o fac cercetătorii.</li>
+<li><strong>Este acum formalizat.</strong> Lucrare recentă evaluată de colegi tratează „starea blocată" / inițiere limitată de răspuns ca un fenomen multivelar (muscular-comportamental „micro", relațional și de mediu „mezo/macro") și co-creează cadre de suport cu oameni autiști [5]; alții îl modelează prin conturi de procesare predictivă / inferență activă (referit în [4]).</li>
+</ul>
+<p>Pe scurt: dacă vrei să măsori „frecarea de comutare", măsori inerția autistă — și acel construct are deja dovadă calitativă, validitate din experiența trăită, și o literatură cantitativă crescândă pe care să construiești.</p>
+<h2 id="3-inerția-atenției-de-fapt-grupează-două-mecanisme-diferite">3. „Inerția atenției" de fapt grupează două mecanisme diferite</h2>
+<p>Precizia contează aici, pentru că cele două mecanisme cer limbaj diferit și (eventual) măsuri diferite.</p>
+<p><strong>3.1 <em>Inerția autistă</em> — la nivel de sarcină, despre agentivitate și impuls.</strong> Dificultate de a <em>iniția</em>, <em>termina</em> și <em>comuta</em> activități, experimentată ca efort disproporționat și o pierdere a controlului voluntar (sentimentul „un obiect în mișcare rămâne în mișcare / în repaus rămâne în repaus") [3][4]. Aceasta este potrivirea cea mai apropiată de ideea ta de „a te trage singur din tunel".</p>
+<p><strong>3.2 <em>Atenția lipicioasă / dezangajare afectată</em> — la nivel de stimul, despre percepție.</strong> Dificultate de a <em>trage atenția</em> de pe un stimul odată blocat. Landry &amp; Bryson (2004) au arătat că copiii autiști tineri erau mult mai lenți să se dezangajeze de la un stimul central când apărea unul periferic — „atenție lipicioasă" [6]. O metaanaliză din 2015 a confirmat dezangajarea lentă a atenției printre studii [7], și aceeași dezangajare lentă apare la sugari mai târziu diagnosticați autiști [6]. Aceasta se măsoară cu sarcini experimentale (paradigme gap/overlap), nu cu chestionare.</p>
+<p><strong>De ce contează distincția:</strong> atenția lipicioasă este un efect de captare <em>perceptuală</em> (literal nu observi întreruperea); inerția autistă este un efect de <em>control/impuls</em> (observi dar nu poți comuta). Descrierile tale de patru niveluri de fapt alunecă între cele două — de ex. „stimulii de fundal sunt într-adevăr neprocesați de creier" este atenție lipicioasă [6], pe când „tranzițiile forțate se simt ca tragerea unui tren de pe șine" este inerție [3]. Un model atent ar trebui să le ină etichetate separat, pentru că pot avea cauze diferite și suport diferit.</p>
+<h2 id="4-cele-patru-niveluri-propuse--ce-este-susținut-ce-este-inventat">4. Cele patru „niveluri" propuse — ce este susținut, ce este inventat</h2>
+<p>Mai degrabă decât a endorsa sau respinge taxonomia de plano, iată fiecare bandă propusă testată față de dovadă.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel propus</th>
+<th>Afirmația de bază</th>
+<th>Verdictul dovezi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scăzut (poliotrop-dominant)</strong></td>
+<td>Multe „tab-uri" deschise; cost de comutare aproape zero</td>
+<td><strong>Susținut ca un capăt al continuumului.</strong> Scorerii mai mici MQ și media grupului non-autist (3,19) descriu exact asta [2]. „Polytrop" este propriul termen al teoriei pentru aceasta [1].</td>
+</tr>
+<tr>
+<td><strong>Moderat</strong></td>
+<td>Poate focusa profund dar păstrează conștiența de bază; cost de comutare ușor</td>
+<td><strong>Susținut ca mijlocul dimensiunii.</strong> Stările de flux sunt raportate în populație; scorurile MQ între mediile de grup captează această bandă [2][11]. Dar <em>numele</em> este arbitrar.</td>
+</tr>
+<tr>
+<td><strong>Ridicat</strong></td>
+<td>Preferă un singur tunel intens; întreruperi într-adevăr ratate; cost de comutare ridicat</td>
+<td><strong>Mecanism susținut, categorie nu.</strong> Componentele sunt reale — întreruperi ratate = atenție lipicioasă [6][7]; cost de comutare ridicat = inerție autistă [3][4]; asociație puternică autism/ADHD = constatări MQ [2]. Dar nu există prag separând „Ridicat" de „Moderat".</td>
+</tr>
+<tr>
+<td><strong>Extrem / Absolut</strong></td>
+<td>Imersiune totală; perturbare cauzează „șoc neurologic", meltdowns, shutdowns</td>
+<td><strong>Exagerat.</strong> Imersiunea profundă („flux") și distresul la perturbare sunt reale [11], dar <strong>„absolut" implică un salt calitativ pe care datele nu-l arată</strong>, și <strong>„șoc neurologic" nu este un termen recunoscut</strong>. Meltdown-urile/shutdown-urile sunt răspunsuri involuntare de copleșire, nu un „șoc" specific unei benzi de monotropism.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trei probleme cu publicarea taxonomiei ca atare:</strong></p>
+<ol type="1">
+<li><strong>Implică salturi categoriale unde datele arată un continuum lin.</strong> Distribuțiile MQ ale oamenilor autiști și non-autiști se suprapun substanțial [2]; nu există „cot" natural care ar justifica patru niveluri discrete.</li>
+<li><strong>Smugglere severitate/patologie.</strong> „Extrem/absolut … meltdowns, burnout" încadrează capătul înalt ca inerent dăunător — opusul cadrului neuroafirmativ pe care teoria îl intenționează [1]. Monotropism mai ridicat <em>nu</em> este același cu rezultate mai rele; rezultatele depind de <em>potrivirea de mediu</em>, nu de nivel.</li>
+<li><strong>Benzi nu au date de fiabilitate.</strong> Un sistem de niveluri util trebuie să arate că oamenii cad în aceeași bandă la re-test și că benzile prezic ceva. Un astfel de studiu nu există pentru monotropism.</li>
+</ol>
+<p><strong>Ce să faci în schimb.</strong> Exprimă aceeași idee ca o <em>poziție pe dimensiune</em> plus un <em>profil</em>: „tendință monotropă ridicată (≈top X% din eșantionul autist), cu inerție autistă pronunțată la comutarea sarcinii și meltdown-uri frecvente conduse de perturbare în medii slab suportive." Aceasta este precisă, individualizată și non-patologizantă.</p>
+<h2 id="5-perturbare--meltdown-shutdown-burnout-ce-susține-dovada">5. Perturbare → meltdown, shutdown, burnout: ce susține dovada</h2>
+<p>Această parte a cadrului tău este cea mai consecventă și are nevoie de cea mai mare grijă.</p>
+<p><strong>Meltdown-urile și shutdown-urile sunt reale și bine descrise</strong> ca răspunsuri involuntare la stres copleșitor sau încărcare senzorială/cognitivă (un „meltdown" externalizant vs un „shutdown" internalizant de retragere) — recunoscute în îndrumare clinică și consens comunitar. Sunt declanșate de <em>copleșire</em>, din care ruptura de tunel este o rută comună [4][8].</p>
+<p><strong>Burnout-ul autist este acum un construct definit.</strong> Două studii fundamentale — Raymaker et al. (2020) și Higgins et al. (2021, un studiu Grounded-Delphi cu experți autiști prin experiență) — converg pe o definiție: <strong>epuizare cronică, pierdere de abilități și toleranță redusă la stimul</strong>, conceptualizată ca rezultând din stres de viață cronic și „o nepotrivire a așteptărilor și abilităților" fără suport și recuperare adecvate [8][9].</p>
+<p><strong>Legătura monotropism → burnout este euristic puternică dar încă nu stabilită experimental.</strong> Narațiunea este convingătoare și validată de comunitate: fiecare tranziție forțată este o ruptură de tunel; mascheria și comutarea constantă într-o lume polyiotropă ard resurse; fără timp de recuperare/flux, sistemul se epuizează [8][9][11]. Dar contribuția <em>specifică</em> a rupturii de tunel monotrope la burnout — versus mascherie, traumă, încărcare senzorială, și cerere cronică — <strong>nu a fost izolată experimental</strong>. Formuleaz-o ca o <em>ipoteză puternică, testabilă</em>, nu un fapt stabilit.</p>
+<blockquote>
+<p>Afirmația sinceră, bazată pe dovezi, este: <em>„Burnout-ul autist este condus de stres cronic, mascherie, și o nepotrivire între cereri și capacitate; cadrul monotropismului prezice că comutarea forțată constantă și rupturile de tunel sunt un contributor major, sub-recunoscut — o predicție care se potrivește cu experiența trăită și așteaptă testare directă."</em></p>
+</blockquote>
+<h2 id="6-economia-energiei-cognitive--cadrul-tău-cel-mai-puternic">6. „Economia energiei cognitive" — cadrul tău cel mai puternic</h2>
+<p>Mișcarea ta finală — schimbarea de la „deficit" la „cât combustibil arde un creier la schimbarea treptelor" — este exact corectă, și are deja o casă academică.</p>
+<p>Modelul de <strong>„alocare atipică a resurselor"</strong> al lui Goldknopf (2013) operționalizează monotropismul ca o diferență de <em>economie a resurselor</em>: resursele de atenție în autism sunt <strong>îngustate</strong> (concentrate în mai mult/mai mici canale, uneori mai intens) și/sau <strong>reduse</strong> în capacitate globală [10]. Pe această vedere, „costul" unei tranziții este literal cheltuiala energetică de a sparge un tipar de alocare și de a construi altul. Aceasta este „economia energiei cognitive" enunțată precis — și este cadrul cel mai consistent cu o explicație non-patologizantă, pentru că încadrează problema ca <em>cheltuială</em> (o diferență de bugetare) mai degrabă decât <em>stricaciune</em>.</p>
+<p>Acesta este cadrul de păstrat. Trei avantaje:</p>
+<ul>
+<li>Este <strong>neutru valoric</strong>: focusul intens este un avantaj când mediul îl susține (flux, expertiză) și un cost când mediul cere comutare constantă [10][11].</li>
+<li><strong>Prezice intervenție</strong>: reduce tranzițiile inutile, protejează timpul de flux/recuperare, potrivește cererile la capacitate, și „factura de combustibil" scade — care este exact ce recomandă îndrumarea de prevenire a burnout-ului [8][9].</li>
+<li><strong>Unifică</strong> fenomenele din cele patru niveluri ale tale fără a avea nevoie de niveluri: stimuli ratați, cost de comutare, copleșire, și burnout devin toate consecințe ale <em>cum sunt alocate și epuizate resursele</em>, pe un continuum.</li>
+</ul>
+<h2 id="7-concluzii-practice--ce-să-afirmi-și-ce-să-eviti">7. Concluzii practice — ce să afirmi, și ce să eviti</h2>
+<p><strong>Afirmă cu încredere:</strong></p>
+<ul>
+<li>Monotropismul este o trăsătură măsurabilă, <strong>dimensională</strong> (MQ, 1–5, cu opt subscala); raportează scorul și percentila opțională, nu un „nivel" [2].</li>
+<li><strong>„Frecarea de comutare"</strong> pe care o descrii este <strong>inerție autistă</strong> — un construct real, originar din comunitate, acum evaluat de colegi [3][4][5].</li>
+<li><strong>Atenția lipicioasă / dezangajarea afectată</strong> este un mecanism distinct, măsurat experimental [6][7].</li>
+<li><strong>Burnout-ul autist</strong> este un construct definit condus de stres cronic, mascherie, și nepotrivire cerere-capacitate; ruptura de tunel monotropă este un contributor <em>plauzibil, validat din experiența trăită</em> [8][9].</li>
+<li>„Economia energiei cognitive" ≈ modelul de <strong>alocare a resurselor</strong> al lui Goldknopf — cadrul cel mai precis, neuroafirmativ [10].</li>
+</ul>
+<p><strong>Evită sau re-etichetează:</strong></p>
+<ul>
+<li><strong>Niveluri / benzi numite</strong> („Scăzut/Moderat/Ridicat/Extrem") — nu validate; folosește poziție-pe-dimensiune + profil în schimb.</li>
+<li><strong>„Inerția atenției"</strong> ca umbrelă — estompează inerția autistă (sarcină/control) cu atenția lipicioasă (percepție); folosește termenul precis [3][6].</li>
+<li>Monotropism <strong>„absolut"</strong> și <strong>„șoc neurologic"</strong> — termeni nerecunoscuți; implică un salt categorial și o patologie pe care datele nu o susțin.</li>
+<li>A afirma calea <strong>monotropism → burnout</strong> ca stabilită — este o ipoteză puternică, nu un efect măsurat [8].</li>
+<li>Orice cadru unde <strong>mai ridicat = mai deranjat</strong> — rezultatele monotropismului depind de potrivirea de mediu, nu de nivel [1][10].</li>
+</ul>
+<hr />
+<h2 id="surse">Surse</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — originea teoriei monotropismului; o încadrează ca o diferență în alocarea resurselor (un continuum), nu un deficit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (măsură de auto-raportare 47-itemi; preprint de validare). Open Science Framework. — scor dimensional 1–5 + 8 subscala; n=1.110; medie autiști 4,15 vs non-autiști 3,19; ADHD ridică scorurile; <strong>fără prag/bandă de percentilă/nivel de severitate</strong> (confirmat prin scanarea manuscrisului de validare). Chestionar: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · preprint de validare: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Arhivă locală: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em> (Preprint / calitativ). doi:10.31234/osf.io/ahk6x — oamenii autiști descriu dificultate de a începe, opri și schimba activități „care nu era sub controlul lor conștient". Arhivă locală: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a> · Manchester Research Explorer: <a href="https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-">https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-</a></p>
+<p>[4] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer, Association for Psychological Science. — încadrează inerția autistă ca „articulată prima dată în narațiuni comunitare autiste", acum evaluată de colegi; folosește limbajul „lansare cu frecare ridicată" și „costuri de comutare"; citează Carls-Diamante &amp; Laciny (2024), Greaves-Lord et al. (2023), Buckle et al. (2021), Heasman et al. (2024), Rapaport et al. (2024), Phung et al. (2021). <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[5] Greaves-Lord, L. et al. (2023). <em>[Getting 'stuck': an integrative approach to support autistic people]</em> Frontiers in Psychology, doi:10.3389/fpsyg.2023.1229596. — cadru calitativ + Delphi evaluat de colegi despre inițiere limitată de răspuns („stare blocată") la oameni autiști peste niveluri micro/mezo/macro, co-creat cu oameni autiști. <a href="https://doi.org/10.3389/fpsyg.2023.1229596">https://doi.org/10.3389/fpsyg.2023.1229596</a></p>
+<p>[6] Landry, R. &amp; Bryson, S. (2004). <em>Impaired disengagement of attention in young children with autism.</em> Journal of Child Psychology and Psychiatry, 45(6), 1115–1122. doi:10.1111/j.1469-7610.2004.00304.x — „atenție lipicioasă": dezangajare lentă de la un stimul. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></p>
+<p>[7] Sacrey, L.-A. et al. (2015). <em>Attention disengagement in autism spectrum disorder: A meta-analysis.</em> Neuroscience &amp; Biobehavioral Reviews, 56, 111–121. doi:10.1016/j.neubiorev.2014.10.011 — confirmă dezangajarea lentă a atenției printre studii. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></p>
+<p>[8] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — definește burnout-ul autist ca epuizare cronică, pierdere de abilități, toleranță redusă la stimul, din stres de viață cronic și o nepotrivire a așteptărilor și abilităților. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · arhivă deschisă: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[9] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — definiție de consens: epuizare, retragere, probleme de cogniție, abilități de viață zilnică reduse, creșterea trasăturilor autiste. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<p>[10] Goldknopf, E. J. (2013). <em>Atypical resource allocation may contribute to many aspects of autism.</em> Frontiers in Integrative Neuroscience. PMC3872719 — modelează autismul ca o diferență de <em>alocare a resurselor</em> (resurse de atenție îngustate și/sau reduse); forma academică a „economiei energiei cognitive". <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a></p>
+<p>[11] Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., &amp; Pellicano, E. (2024). <em>"In a State of Flow": experiential validity of monotropism and its relation to autistic wellbeing.</em> Autism in Adulthood. doi:10.1089/aut.2023.0032 — polul pozitiv al imersiunii monotrope profunde (flux); susține cadrul „avantaj când susținut". Arhivă locală: <code>sources/18-flow-experiential-validity-pmc.html</code> · <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a></p>
+</body>
+</html>

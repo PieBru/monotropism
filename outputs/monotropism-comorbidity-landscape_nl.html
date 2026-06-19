@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Monotropisme en zijn web van comorbiditeit: directe en indirecte links aan gedrags-, psychiatrische en neuroontwikkelingscondities</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="monotropisme-en-zijn-web-van-comorbiditeit-directe-en-indirecte-links-aan-gedrags--psychiatrische-en-neuroontwikkelingscondities">Monotropisme en zijn web van comorbiditeit: directe en indirecte links aan gedrags-, psychiatrische en neuroontwikkelingscondities</h1>
+<p><em>Een geciteerd onderzoeksdossier.</em></p>
+<hr />
+<h2 id="samenvatting">Samenvatting</h2>
+<p><strong>Monotropisme</strong> (Murray, Lawson &amp; Lesser, 2005) is een theorie van autistische aandacht die autisme kadert als een verschil in <em>brontoewijzing</em>: een monotrope geest concentreert verwerkingsbronnen in een klein aantal hoog-geactiveerde „aandachtstunnels", waardoor minder bronnen overblijven voor perifere kanalen. Een zelfrapportagemeting uit 2023 — de <strong>Monotropism Questionnaire (MQ)</strong> — biedt de eerste empirische validatie, tonend dat autistische en ADHD-mensen significant hoger scoren dan niet-autistische/niet-ADHD-controles [1][2][3]. Een nauw verwant door-vakgenoten-beoordeeld model, Goldknopfs <strong>atypische brontoewijzing</strong>-account, betoogt dat dezelfde versmalde-intense aandacht autismes zintuiglijke, sociale, executieve en motorische kenmerken kan samenbinden — terwijl waarschuwend dat het „hoogstwaarschijnlijk een factor is bij autistische mensen met sterke zintuiglijke symptomen", niet de enige oorzaak [4].</p>
+<p>Omdat monotropisme een theorie is van <em>hoe bronnen worden besteed</em>, rimpelt het plausibel in vele domeinen. Het eerlijke beeld splitst echter in drie lagen:</p>
+<ul>
+<li><strong>Laag 1 — Directe, empirisch ondersteunde links.</strong> De autisme–ADHD-overlapping („AuDHD") is de sterkste: de MQ toont dat monotrope aandacht verhoogd is in <em>beide</em> condities, herkaderend „monotrope splitsing" (concurrerende of onstabiele tunnels) als een echt, meetbaar aandachts-fenotype [2][3][5]. Mechanismeniveau overlappingen — atypische <strong>interoceptie</strong> en <strong>executieve disfunctie</strong> — zijn goed bewezen en helpen downstream-problemen met eten, rommel en vermijding te verklaren [6][7][8].</li>
+<li><strong>Laag 2 — Indirecte, gedeeld-mechanisme comorbiditeit.</strong> Autism overlapt merkbaar met <strong>anorexia/restrictief eten</strong> en <strong>OCD</strong>. In elk geval is de comorbiditeit echt en gerepliceerd, maar de <em>best-bewezen</em> brug is een gedeeld mechanisme (interoceptie; ego-syntone vs ego-dystone verwerking) eerder dan monotropisme specifiek [6][9][10].</li>
+<li><strong>Laag 3 — Plausibele extrapolatie of betwiste constructen.</strong> Enkele links in het populaire kader — „noodlotsstapels" als een monotrope objectpermanentie-faling, agorafobie als een primaire monotrope uitkomst, <strong>PDA</strong> als een onderscheiden profiel — rusten op zwakker of betwist bewijs en moeten als hypothesen worden behandeld, niet als vaststaande feiten [11][12][13].</li>
+</ul>
+<p>Doorlopend een terugkerend thema: veel gedragingen die op afzonderlijke „stoornissen" lijken worden beter gelezen als <strong>de cognitieve kosten van een smal aandachtssysteem dat botst met een polytrope wereld</strong> — maar slechts enkele van die lezingen zijn direct getest.</p>
+<hr />
+<h2 id="1-funderingen-wat-monotropisme-is-en-hoe-solide-het-is">1. Funderingen: wat monotropisme is, en hoe solide het is</h2>
+<p>Monotropisme poneert dat geesten verschillen in hoe ze aandachtsbronnen verdelen. Een <strong>polytrope</strong> geest houdt vele belangstellingskanalen tegelijk actief (breed, ondiep, gemakkelijk schakelen); een <strong>monotrope</strong> geest trekt bronnen in enkele intensief geactiveerde „aandachtstunnels" (smal, diep, moeilijk te schakelen) [1][3]. De oprichters — Dinah Murray, Wenn Lawson en Mike Lesser — presenteerden het idee eerst op de Durham-autismeconferenties vanaf 1992 en formaliseerden het in 2005, betogend dat het autistische trekken verklaart (speciale interesses, behoefte aan gelijkblijvendheid, distress bij transities, detail-focus) beter dan alleen-deficit-modellen [1][14].</p>
+<p>Zijn wetenschappelijke status is de laatste jaren verschoven:</p>
+<ul>
+<li>Het is <strong>empirisch meetbaar</strong>. De MQ (Garau et al., 2023) is een 47-item zelfrapportage-instrument getest op 1.110 deelnemers (756 autistisch, 354 niet-autistisch). Autistische en ADHD-deelnemers scoorden significant hoger dan controles [2][3].</li>
+<li>Het heeft een <strong>door-vakgenoten-beoordeelde mechanistische neef</strong>. Goldknopfs „atypische brontoewijzing"-model (<em>Frontiers in Integrative Neuroscience</em>, 2013) operationaliseert de intuitie: bij autisme zijn aandachtsbronnen <strong>versmald</strong> (naar minder/kleinere gebieden, modaliteiten en verwerkingsstadia, soms intenser) en/of <strong>verminderd</strong> in totale capaciteit — een kader dat expliciet taal, sociale cognitie, zintuiglijke/aandachtelijke atypicaliteit en executieve/motorische verschillen samenbindt [4].</li>
+<li>Het zit <strong>naast, niet in plaats van</strong>, andere cognitieve theorieën (Theory of Mind; zwakke centrale coherentie / detail-gerichte cognitieve stijl (Happé &amp; Frith, 2006); executieve disfunctie) [4][15].</li>
+<li>Het is nog een <strong>model, geen biomarker</strong>. Goldknopf is expliciet dat het één factor is onder meerdere, „hoogstwaarschijnlijk" saillant bij autistische mensen met sterke zintuiglijke symptomen [4]. Murray en collega's kadertten monotropisme vergelijkbaar als een verenigende <em>lens</em>, niet een volledige etiologie [1][14].</li>
+</ul>
+<p><strong>Implicatie voor de rest van dit dossier:</strong> monotropisme is een geloofwaardig, toenemend gevalideerd ordenend idee, maar zijn <em>verklarende reikwijdte</em> in elke comorbiditeit moet geval voor geval worden beargumenteerd — niet verondersteld.</p>
+<hr />
+<h2 id="2-laag-1--directe-links-het-neuroontwikkelingscluster">2. Laag 1 — Directe links: het neuroontwikkelingscluster</h2>
+<h3 id="21-audhd-en-de-monotrope-splitsing-sterkste-directe-link">2.1 AuDHD en de „monotrope splitsing" <em>(sterkste directe link)</em></h3>
+<p>Autisme en ADHD co-voorkomen veel vaker dan toeval zou voorspellen: ADHD is aanwezig bij ongeveer <strong>30–80%</strong> van autistische mensen, en autisme bij ongeveer <strong>20–50%</strong> van degenen met ADHD [5]; een meta-analyse plaatst ASD-symptoompercentages in ADHD-samples rond <strong>21%</strong> [16]; één grote Medicaid-studie vond dat <strong>27%</strong> van autistische volwassenen zonder verstandelijke beperking een co-voorkomende ADHD-diagnose hadden — ongeveer 10× het algemene percentage [17]. De overlapping is aanzienlijk genetisch (~50–72%) [18].</p>
+<p>Monotropisme helpt een oude puzzel oplossen: als autisme „hyperfocus" is en ADHD „aandachtstekort", waarom co-voorkomen ze dan? De MQ beantwoordt dit empirisch — <strong>ADHD-mensen, vooral AuDHD-mensen, zijn ook hoog monotroop</strong> [2][3]. Hyperfocus bij ADHD (Grotewiel et al., 2022) is conceptueel vrijwel identiek aan de monotrope tunnel [19]. Het „monotrope splitsing"-kader herkaderdt AuDHD dus niet als tegengestelden maar als <strong>een onstabiel systeem van concurrerende of snel-schakelende aandachtstunnels</strong>: het brein eist diepe monotrope focus maar kan de tunnel niet stabiliseren, wat de vertrouwde AuDHD-oscillatie tussen intense betrokkenheid, snelle burnout en chronische onderstimulatie produceert [19][20].</p>
+<p><strong>Kanttekening:</strong> het „meerdere concurrerende tunnels"-mechanisme is <em>plausibel en consistent met de MQ-data</em> maar nog niet direct getest als dynamiek; het moet als sterke hypothese worden gelezen.</p>
+<h3 id="22-autistische-burnout-en-tunnelbreuk">2.2 Autistische burnout en tunnelbreuk</h3>
+<p>Autistische burnout — chronische uitputting, verlies van vaardigheden en verminderde tolerantie — wordt toenemend gelinkt aan de cumulatieve kosten van constant tunnel-schakelen, maskeren en eisen die capaciteit overschrijden, met onvoldoende herstel-/flow-tijd [20][21]. Dit is een gebied waar monotropisme heuristisch krachtig is (elke geforceerde transitie is een tunnelbreuk), hoewel de burnout-literatuur zelf nog aan het rijpen is en het monotropisme→burnout-pad grotendeels klinisch/first-person is eerder dan experimenteel vastgesteld [20].</p>
+<h3 id="23-vraagvermijding-en-pda-betwist-construct">2.3 Vraagvermijding en PDA <em>(betwist construct)</em></h3>
+<p>Een vraag — „maak je klaar", „vul dit formulier in" — kan worden ervaren als een gewelddadige inbreuk in een flow-staat. Dit is het intuïtieve monotrope account van <strong>vraagvermijding</strong>. Het meer specifieke construct <strong>Pathological Demand Avoidance (PDA)</strong>, gemunt door Elizabeth Newson in de jaren 1980 en nu vaak herkaderd als „Pervasive Drive for Autonomy", beschrijft een angst-gedreven behoefte aan controle en vermijding van gewone vragen [11][22].</p>
+<p>Twee dingen moeten worden gescheiden:</p>
+<ul>
+<li><strong>Vraag-vermijdend gedrag is echt en veelvoorkomend</strong> bij autisme, en het monotrope „tunnelbreuk"-account is een redelijk <em>mechanistisch verhaal</em> voor de paniek en weerstand die het produceert.</li>
+<li><strong>PDA als <em>onderscheiden profiel of subtype</em> is niet vastgesteld.</strong> De Britse National Autistic Society stelt „geen onderzoek heeft sterk bewijs gevonden voor [PDA] als onderscheiden profiel" [11]; Newsons funderende studie is bekritisiseerd wegens <strong>cirkelredenering en overinterpretatie</strong> (groepen gedefinieerd door de onderzoekers werden vervolgens „bestudeerd") [12][13]; en overzichten noteren aanhoudende problemen met definitie, constructvaliditeit en meting [23]. Een 2023-overzicht is pointillig getiteld <em>„Pathological Demand Avoidance: Current State of Research and Critical Discussion"</em> [13].</li>
+</ul>
+<p>Dus het kader van de brontekst is half juist: de <em>ervaring</em> (een vraag versplintert de tunnel) wordt goed beschreven door monotropisme; de <em>diagnostische entiteit</em> (PDA) is betwist en moet niet als vastgesteld worden gepresenteerd.</p>
+<hr />
+<h2 id="3-laag-2--indirecte-gedeeld-mechanisme-comorbiditeit">3. Laag 2 — Indirecte, gedeeld-mechanisme comorbiditeit</h2>
+<h3 id="31-anorexia-en-restrictief-eten">3.1 Anorexia en restrictief eten</h3>
+<p>De autisme–anorexia-overlapping is robuust en bidirectioneel: ongeveer <strong>20–30%</strong> van eetstoornis-patiënten toont klinisch significante autistische trekken, met de hoogste percentages bij anorexia nervosa en ARFID [6][24]; omgekeerd hebben autistische volwassenen verhoogde eetstoornis-percentages. Cruciaal: autistische trekken worden <strong>voor</strong> ES-begin geobserveerd, dus de overlapping is niet slechts een verhongeringseffect [6].</p>
+<p>De best-bewezen <em>mechanistische</em> brug is <strong>interoceptie</strong> — de perceptie van interne lichaamssignalen (hartslag, verzadiging). Atypische interoceptie is betrokken bij de etiologie van <em>zowel</em> autisme als eetstoornissen en „kan, althans deels, verantwoordelijk zijn" voor hun comorbiditeit [6]. Dezelfde interoceptieve atypicaliteit onderligt <strong>alexithymie</strong> (moeite met het identificeren/verbaliseren van emoties), aanwezig bij ~50% van autistische mensen en zelf gelinkt aan eetpathologie [7][8].</p>
+<p><strong>Waar monotropisme past (en niet past):</strong> het is redelijk om te zeggen dat een monotrope persoon diep in een tunnel misschien honger-cues <em>mist</em> — maar de specifieke claim van de brontekst dat „monotropisme interoceptie vermindert" overdrijft de causale keten. De bewezen relatie is <strong>autisme → atypische interoceptie/alexithymie → eet-kwetsbaarheid</strong>; monotropisme is een parallel kenmerk van autisme, niet de <em>getoonde oorzaak</em> van het interoceptieve verschil [6][7]. Voedsel/calorie-tracking kan ook een tunnel op zich worden, maar dit is mechanisme-plausibel eerder dan getest.</p>
+<h3 id="32-ocd-vs-hyperfocus-een-genuine-onderscheid">3.2 OCD vs hyperfocus: een genuine onderscheid</h3>
+<p>Autisme en OCD co-voorkomen aanzienlijk: ~<strong>17%</strong> van autistische mensen voldoet aan OCD-criteria, vs ~1–2% in de algemene bevolking [9]. Ondanks oppervlakkige gelijkenis (repetitief gedrag, rigiditeit), verschilt de <strong>affectieve drijver</strong> en dit is klinisch goed vastgesteld:</p>
+<ul>
+<li><strong>Autistische</strong> beperkte/repetitieve interesses en routines zijn typisch <strong>ego-syntoon</strong> — plezierig, zelf-kalmerend, belangstellings-gedreven, vaak regulerend.</li>
+<li><strong>OCD</strong>-compulsies zijn <strong>ego-dystoon</strong> — ongewenst, angst-gedreven, uitgevoerd om gevreesde uitkomsten te neutraliseren [9][10].</li>
+</ul>
+<p>Het onderscheid van de brontekst is dus correct en bewijs-ondersteund, en wordt direct bevestigd door autistische deelnemers zelf: in een kwalitatieve studie rapporteerden zij dat repetitief gedrag „deel is van wie ze zijn", terwijl OCD-symptomen „conflicteerden met hoe ze zichzelf zien" [10]. Dezelfde studie kadert het co-voorkomen treffend als <em>„Autism is the arena and OCD is the lion"</em> — OCD-symptomen kunnen autistische speciale interesses „kapen", hun intensiteit en distress opblazend [10]. Monotropisme voegt context toe (een tunnel kan worden <em>gevangen</em> door OCD-inhoud) maar de differentiatie rust op de ego-syntoon/dystoon-as, niet op monotropisme per se.</p>
+<h3 id="33-angst-en-affectieve-stoornissen-het-substraat-onder-agorafobie">3.3 Angst en affectieve stoornissen (het substraat onder „agorafobie")</h3>
+<p>Angst is een van de meest voorkomende autism-comorbiditeiten (één secondair overzicht citeert ≥1 psychiatrische comorbiditeit bij ~86% van autistische mensen) [25]. Twee mechanisme-punten zijn belangrijk voor het gedragscluster hieronder: (i) <strong>zintuiglijke over-responsiviteit</strong> en angst zijn gelinkt, en door <em>contextconditionering</em> produceren ze <strong>gedragsvermijding van gegeneraliseerde locaties</strong> (restaurants, winkels, feesten) [26]; (ii) het frequente co-voorkomen van alexithymie/interoceptieve moeite betekent dat emotionele toestanden vaak slecht worden gelabeld, wat diffuse angst voedt [7].</p>
+<hr />
+<h2 id="4-laag-3--gedrags-functioneel-cluster-rommel-hording-vermijding-sociale-terugtrekking">4. Laag 3 — Gedrags-/functioneel cluster: rommel, hording, vermijding, sociale terugtrekking</h2>
+<h3 id="41-rommel-noodlotsstapels-en-executieve-disfunctie">4.1 Rommel, „noodlotsstapels", en executieve disfunctie</h3>
+<p>Het <em>fenomeen</em> is goed ondersteund: autistische en ADHD-mensen tonen hoge percentages desorganisatie en rommel, en de best-bewezen route is <strong>executieve disfunctie</strong> — tekorten in categorisatie, besluitvorming, planning en werkgeheugen [8][27]. Hording-symptomen zijn verhoogd zowel bij ADHD (met een „speciale link met onoplettendheid" [8a]) als bij autisme [8]; bij autisme specifiek toont kwalitatief werk dat moeite met weggooien is gelinkt aan <strong>belangstellings-hechtingen en betekenis</strong>, niet slechts objectwaarde [28].</p>
+<p><strong>Kanttekening bij de brontekst:</strong> de specifieke claim dat rommel aanhoudt wegens een autistisch <strong>„objectpermanentie-tekort"</strong> („uit het oog, uit het hoofd") wordt <strong>niet ondersteund door door-vakgenoten-beoordeeld bewijs</strong> dat ik kon lokaliseren. Objectpermanentie is typisch <em>intact of superieur</em> bij autisme; de „uit het oog, uit het hoofd"-ervaring wordt beter gelezen als een <strong>werkgeheugen-/aandachtstoewijzing</strong>-effect (een getunnelde geest heroriënteert niet naar opgeslagen items) dan een perceptuele-objectpermanentie-faling. Het bewezen mechanisme voor rommel blijft <strong>executieve disfunctie plus belangstellings-hechting</strong>, dat de monotrope/AuDHD-populatie overlapt maar niet uniek „monotroop" is [4][8][28].</p>
+<h3 id="42-hording-spectrumgedrag">4.2 Hording-spectrumgedrag</h3>
+<p>Hordingstoornis treft ~1,5–6% van de algemene bevolking maar is verhoogd bij autisme [29]. Bij autistische volwassenen wordt hording-achtige moeite met weggooien frequent gerapporteerd naast <strong>cognitieve (executieve) moeilijkheden en sterke belangstellings-/betekenis-hechtingen</strong> — items zijn knooppunten in een web van ideeën en toekomstig nut, dus weggooien voelt verlies [28]. Dit is consistent met een monotrope <em>stijl</em> (diepe verwerking van objecten) maar, weer, de bewezen drijver is EF/hechting, gedeeld over neuroontwikkelingscondities [8].</p>
+<h3 id="43-agorafobie-en-veilige-ruimte-begrenzing-behoeft-correctie">4.3 Agorafobie en „veilige-ruimte"-begrenzing <em>(behoeft correctie)</em></h3>
+<p>De brontekst kadert agorafobisch thuis-opgesloten-zijn als een bijna-directe monotrope uitkomst. De data zijn genuanceerder:</p>
+<ul>
+<li>Agorafobie <em>is</em> verhoogd bij autisme — ~<strong>23–25%</strong> van autistische volwassenen (zonder verstandelijke beperking) vs ~1,3% in de algemene bevolking — <strong>maar het is minder vaak dan sociale fobie of GAD</strong>, en het effect concentreert zich bij degenen zonder VB [25].</li>
+<li>De beter-bewezen drijver is <strong>zintuiglijke over-responsiviteit + sociale angst</strong>, met context-geconditioneerde vermijding van overweldigende locaties — d.w.z. het „veilige-ruimte"-gedrag is echt maar is <strong>secundair aan zintuiglijke/sociale angst</strong>, geen primair monotroop fenomeen [25][26].</li>
+</ul>
+<p>Dus: monotropisme helpt verklaren <em>waarom</em> de buitenwereld verstorend voelt (onvoorspelbaar, polytroop, tunnel-brekend), maar het resulterende opgesloten-zijn classificeren als „agorafobie" specifiek voor monotropisme overdrijft de link. Het is een zintuiglijk-angst-gedreven vermijding die de monotrope ervaring <em>overlapt</em>.</p>
+<h3 id="44-sociale-terugtrekking-info-dumping-en-het-dubbele-empathie-probleem">4.4 Sociale terugtrekking, info-dumping, en het dubbele-empathie-probleem</h3>
+<p>Sociale interactie is genuine polytroop — het vereist gelijktijdig volgen van gezichten, toon, hiërarchie, timing en ongeschreven regels — dus het is disproportioneel kostbaar voor een monotroop systeem, een punt consistent met Goldknopfs bronmodel [4]. De intuïtie van de brontekst is juist.</p>
+<p>Maar het scherpere, <em>empirisch ondersteunde</em> kader voor de resulterende communicatie-breuk is het <strong>dubbele-empathie-probleem</strong> (Milton, 2012; 2017): de moeite is <em>bidirectioneel</em> en relationeel — een „ontwrichting in de wederkerigheid tussen twee verschillend gezinde sociale actoren" — geen eenzijdig empathie-tekort bij de autistische persoon [30]. Empirisch werk toont nu dat niet-autistische waarnemers het dubbele-empathie-probleem <em>zowel detecteren als demonstreren</em> in gemengde interacties [31]. „Info-dumping" past natuurlijk: het is diepte-zoekende communicatie van een monotroop systeem, dat faalt wanneer de partner de diepte niet kan evenaren — een mismatch van verwerkingsstijlen, geen gebrek aan empathie [30][31].</p>
+<p><strong>Hiaat om te vlaggen:</strong> de DEP-literatuur sluit nog grotendeels autistische kinderen, niet-sprekende mensen en mensen met verstandelijke beperking uit, dus generalisatie is beperkt [32].</p>
+<hr />
+<h2 id="5-de-grens-waar-het-monotrope-account-te-ver-reikt">5. De grens: waar het monotrope account te ver reikt</h2>
+<table>
+<thead>
+<tr>
+<th>Claim in bron/leken-kader</th>
+<th>Bewijsstatus</th>
+<th>Beter kader</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monotropisme <em>veroorzaakt</em> autismes kenmerken</td>
+<td>Deels ondersteund (MQ; Goldknopf)</td>
+<td>Eén gevalideerde ordenende factor onder meerdere; sterkst bij zintuiglijk autisme [1][4]</td>
+</tr>
+<tr>
+<td>AuDHD = „monotrope splitsing" (concurrerende tunnels)</td>
+<td>Sterk + direct meetbaar (MQ)</td>
+<td>Een echt aandachts-fenotype; dynamisch mechanisme is hypothese-niveau [2][3]</td>
+</tr>
+<tr>
+<td>PDA is een onderscheiden autisme-profiel</td>
+<td><strong>Betwist</strong></td>
+<td>Vraagvermijding is echt; PDA-als-entiteit mist constructvaliditeit [11][12][13]</td>
+</tr>
+<tr>
+<td>Monotropisme <em>vermindert interoceptie</em> → anorexia</td>
+<td>Indirect</td>
+<td>Brug is autisme→interoceptie/alexithymie→eet-kwetsbaarheid; monotropisme is parallel, niet de getoonde oorzaak [6][7]</td>
+</tr>
+<tr>
+<td>Rommel door een „objectpermanentie-tekort"</td>
+<td><strong>Niet-ondersteund</strong></td>
+<td>Executieve disfunctie + belangstellings-hechting; geen perceptueel objectpermanentie-tekort bewezen [4][8][28]</td>
+</tr>
+<tr>
+<td>Agorafobie als primaire monotrope uitkomst</td>
+<td>Overdreven</td>
+<td>Secundair aan zintuiglijke over-responsiviteit + sociale angst; minder vaak dan GAD/sociale fobie [25][26]</td>
+</tr>
+<tr>
+<td>OCD vs monotrope „obsessies" verschillen in affect</td>
+<td>Goed ondersteund</td>
+<td>Ego-dystoon (OCD) vs ego-syntoon (autistische interesse); OCD kan tunnels „kapen" [9][10]</td>
+</tr>
+<tr>
+<td>Dubbele-empathie-probleem verklaart sociale breuk</td>
+<td>Ondersteund (maar hiaten)</td>
+<td>Bidirectionele mismatch; steekproeven vertekenen naar sprekende volwassenen zonder VB [30][31][32]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-open-vragen">6. Open vragen</h2>
+<ol type="1">
+<li><strong>Dynamische tunnel-test.</strong> De MQ is een <em>trait</em>-maat. Is de „monotrope splitsing" (concurrerende/onstabiele tunnels bij AuDHD) observeerbaar in real-time aandacht/EEG? Largelijk ongetest.</li>
+<li><strong>Causale pijl naar interoceptie.</strong> Produceert een monotrope bronverdeling interoceptieve atypicaliteit, of delen ze een gemeenschappelijke upstream-oorzaak? Huidig bewijs kan deze niet scheiden [6][7].</li>
+<li><strong>PDA-resolutie.</strong> Zal vraagvermijdingsonderzoek convergeren naar een gevalideerd, meetbaar construct, of een betwist leken/klinisch categorie blijven? [11][13]</li>
+<li><strong>Rommel-mechanisme.</strong> Is „uit het oog, uit het hoofd" een werkgeheugen/toewijzing-effect (plausibel) of iets anders? Geen toegewijde studie gevonden.</li>
+<li><strong>DEP-generaliseerbaarheid.</strong> Hoe opereert het dubbele-empathie-probleem voor niet-sprekende autistische mensen, kinderen en mensen met co-voorkomende verstandelijke beperking? [32]</li>
+<li><strong>Burnout.</strong> Wat is de specifieke, testbare bijdrage van monotrope tunnelbreuk aan autistische burnout versus maskeren, trauma en chronische vraag? [20]</li>
+</ol>
+<hr />
+<h2 id="bronnen">Bronnen</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>. <a href="https://journals.sagepub.com/doi/abs/10.1177/1362361305051398">https://journals.sagepub.com/doi/abs/10.1177/1362361305051398</a>
+[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A., &amp; Fletcher-Watson, S. (2023). The Monotropism Questionnaire (MQ). Open Science Framework (preprint). Commentaar/samenvatting: <a href="https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire">https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire</a> ; spiegel: <a href="https://stimpunks.org/monotropism-questionnaire">https://stimpunks.org/monotropism-questionnaire</a>
+[3] Autistic Realms / Neurodiverse Connection (Edgar) — samenvatting van MQ-bevindingen (47 items; N=1.110; autistisch + ADHD scoren significant hoger): <a href="https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention">https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention</a>
+[4] Goldknopf, E. J. (2013). Atypical resource allocation may contribute to many aspects of autism. <em>Frontiers in Integrative Neuroscience</em>. PMC3872719. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a>
+[5] Psych Scene Hub — ADHD en autisme comorbiditeit review (ADHD bij ~30–80% van ASD; ASD bij ~20–50% van ADHD; citeert Lau-Zhu 2019; Hollingdale 2019): <a href="https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review">https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review</a>
+[6] Adams, K. L., Murphy, J., Catmur, C., &amp; Bird, G. (2022). The role of interoception in the overlap between eating disorders and autism: methodological considerations. <em>European Eating Disorders Review</em>. PMC9543236. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236">https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236</a>
+[7] Klein, M., Witthöft, M., &amp; Jungmann, S. M. (2025). Interoception in individuals with autism spectrum disorder: a systematic literature review and meta-analysis. <em>Frontiers in Psychiatry</em> (10.3389/fpsyt.2025.1573263) — ~50% van autistische mensen heeft alexithymie, gemedieerd door interoceptieve tekorten. <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full">https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full</a>
+[8] Morein-Zamir, S., Kasese, M., Chamberlain, S. R., &amp; Trachtenberg, M. (2020). Elevated levels of hoarding in ADHD: a special link with inattention. <em>Journal of Psychiatric Research</em>. PMC7612156. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156">https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156</a> — [8a] de „speciale link met onoplettendheid" is de eigen ondertitel van het paper. Zie ook Drake Institute over ADHD/executieve disfunctie: <a href="https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection">https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection</a>
+[9] Animosanopsychiatry — systematic-review samenvatting: ~17% van autistische mensen voldoet aan OCD-criteria vs ~1–2% algemeen; ego-syntoon vs ego-dystoon onderscheid: <a href="https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps">https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps</a>
+[10] Long, H., Cooper, K., &amp; Russell, A. (2024). "Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours (kwalitatief). PMC11497754. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a>
+[11] National Autistic Society — Demand avoidance („geen onderzoek heeft sterk bewijs gevonden voor [PDA] als onderscheiden profiel"): <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a>
+[12] Frontiers in Education (2024). Methods of studying PDA — kritiek op Newsons cirkelredenering (Green et al. 2018; O'Nions &amp; Eaton 2020): <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full</a>
+[13] Kildahl, A., et al. (2023). Pathological Demand Avoidance: Current State of Research and Critical Discussion. PubMed 36892327. <a href="https://pubmed.ncbi.nlm.nih.gov/36892327">https://pubmed.ncbi.nlm.nih.gov/36892327</a>
+[14] Murray, F. (Lawson) (2018). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em> (BPS). <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a>
+[15] Happé, F., &amp; Frith, U. (2006). The weak coherence account: detail-focused cognitive style in ASD. <em>J Autism Dev Disord</em> 36:5–25 (geciteerd via Frontiers 2024 vergelijkende studie): <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full</a>
+[16] Hollingdale, J., et al. (2019). Meta-analytic review of ASD symptoms in ADHD (geciteerd via Psych Scene Hub en Autistica): <a href="https://www.autistica.org.uk/what-is-autism/adhd-and-autism">https://www.autistica.org.uk/what-is-autism/adhd-and-autism</a>
+[17] Children's Hospital of Philadelphia — 27% van autistische volwassenen zonder VB had co-voorkomend ADHD (~10× algemeen): <a href="https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism">https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism</a>
+[18] Behavioral Innovations — samenvatting van genetische overlap (~50–72%): <a href="https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd">https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd</a>
+[19] Autistic Scholar — "Revisiting monotropism" (AuDHD als concurrerende tunnels; referenties Grotewiel et al. 2022 over ADHD-hyperfocus): <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a>
+[20] Neurodiverse Connection (Edgar) — Monotropism, young people and autistic burnout: <a href="https://ndconnection.co.uk/blog/monotropism-young-people">https://ndconnection.co.uk/blog/monotropism-young-people</a> ; Autistic Realms — Reclaiming rest: <a href="https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance">https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance</a>
+[21] National Autistic Society — What is monotropism? (flow-staten; referenties Heasman et al. 2024 „autistic flow theory"): <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a>
+[22] PDA North America — What is PDA? (Newson, 1980s; herkadering „Pervasive Drive for Autonomy"): <a href="https://pdanorthamerica.org/what-is-pda">https://pdanorthamerica.org/what-is-pda</a>
+[23] O'Nions, V., et al. (2016). Identifying features of PDA using the DISCO. PMC4820467. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467">https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467</a>
+[24] Nickel, K., Maier, S., Endres, D., &amp; Joos, A. (2019). Systematic Review: Overlap Between Eating, Autism Spectrum, and Attention-Deficit/Hyperactivity Disorder. <em>Frontiers in Psychiatry</em>. PMC6796791 (citeert ook Westwood, Mandy &amp; Tchanturia 2017; Huke et al. 2013). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791">https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791</a>
+[25] Discussing Psychology (Loker) — agorafobie bij autisme ~23–25% (zonder VB) vs ~1,3% algemeen; minder vaak dan sociale fobie/GAD (secondaire bron, leunend op Helles et al. 2020 en Lugnegård et al. 2012): <a href="https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked">https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked</a>
+[26] Green, S. A., &amp; Ben-Sasson, A. (2010). Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship? <em>Journal of Autism and Developmental Disorders</em> — contextconditionering en vermijding. PMC2980623. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a>
+[27] Embrace Autism — Autism and hoarding (executieve functie, besluitvorming): <a href="https://embrace-autism.com/autism-and-hoarding">https://embrace-autism.com/autism-and-hoarding</a>
+[28] Goldfarb, Y., Zafrani, O., Hedley, D., &amp; Yaari, M. (2021). Autistic adults' subjective experiences of hoarding and self-injurious behaviors (kwalitatief). <em>Autism</em>. PMC8264636. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636</a>
+[29] Abouzed, M., Gabr, A., Elag, K. A., Soliman, M., Elsaadouni, N., Elzahab, N. A., &amp; Barakat, M. (2024). The prevalence, correlates, and clinical implications of hoarding behaviors in high-functioning autism. <em>Scientific Reports</em> (s41598-024-75371-8). <a href="https://www.nature.com/articles/s41598-024-75371-8">https://www.nature.com/articles/s41598-024-75371-8</a>
+[30] Milton, D. (2012). On the ontological status of autism: the 'double empathy problem'. <em>Disability &amp; Society</em> 27(6):883–887 ; Milton (2017) uitbreiding. Samenvatting: <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy</a>
+[31] Jones, D. R., Botha, M., Ackerman, R. A., &amp; King, K. (2024). Non-autistic observers both detect and demonstrate the double empathy problem when evaluating interactions between autistic and non-autistic adults. <em>Autism</em>. PMC11308351. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351">https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351</a>
+[32] Wikipedia — Double empathy problem (erkende onderzoekshiaten: kinderen, niet-sprekend, verstandelijke beperking): <a href="https://en.wikipedia.org/wiki/Double_empathy_problem">https://en.wikipedia.org/wiki/Double_empathy_problem</a></p>
+<hr />
+<p><em>Notitie over bewijslagen:</em> Laag 1 = directe, gerepliceerde meting (MQ; AuDHD-percentages); Laag 2 = gerepliceerde comorbiditeit met een bewezen gedeeld mechanisme; Laag 3 = plausibele extrapolatie, enkelvoudige bron of betwist construct. Zie §5.</p>
+</body>
+</html>

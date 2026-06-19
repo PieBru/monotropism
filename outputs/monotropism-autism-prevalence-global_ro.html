@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Autism și monotropism: cât de comune sunt, de fapt?</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="autism-și-monotropism-cât-de-comune-sunt-de-fapt">Autism și monotropism: cât de comune sunt, de fapt?</h1>
+<p><em>Un dosar de cercetare citat — verificând cifrele regionale ale autismului și întrebarea „ce procent din oameni sunt monotropi".</em></p>
+<blockquote>
+<p><strong>Informațional, nu sfat medical.</strong> Aceste cifre descriu <em>câți oameni sunt numărați ca autiști sau au scoruri mari pe o scară de monotropism</em>. Numărarea depinde mult de cine caută, cum și unde. Nimic de aici nu este diagnostic.</p>
+</blockquote>
+<hr />
+<h2 id="rezumat">Rezumat</h2>
+<ul>
+<li><strong>Autismul nu este 1% peste tot.</strong> Cifra globală cea mai curată este estimarea <strong>Global Burden of Disease (GBD) 2021</strong>, acum adoptată de OMS: aproximativ <strong>1 din 127 persoane (~0,8%)</strong> era pe spectrul autist în 2021 [1][2]. Pentru <em>copii</em>, recenziile grupate încă ajung în jur de <strong>~1 din 100</strong> de mult timp [3]. Statele Unite — țara cea mai intens depistată — raportează <strong>1 din 31 (3,2%)</strong> printre copiii de 8 ani (CDC, date 2022) [4].</li>
+<li><strong>Diferențele regionale sunt în mare parte un artefact de măsurare, nu biologie.</strong> Aceeași studie GBD a găsit povara legată de autism <em>cea mai scăzută</em> în Asia de Sud-Est/Estică și Oceania și <em>cea mai mare</em> în super-regiunea cu venituri mari [1]. Acest tipar urmărește infrastructura de diagnostic, conștientizarea și depistarea — nu diferențe reale în frecvența autismului.</li>
+<li><strong>Tabelul regional frecvent citat este substanțial greșit pentru Orientul Mijlociu și supra-simplificat pentru Asia.</strong> O metaanaliză din 2025 plasează prevalența grupată a Orientului Mijlociu și Africii de Nord (MENA) la doar <strong>~0,14%</strong> (interval 0,01% Oman → 2,51% Arabia Saudită) [6], și o metaanaliză asiatică raportează pentru Asia de Est <strong>~0,51%</strong> și China continentală ~0,7% [5][7] — departe de „0,9–1,5%" adesea susținute pentru lumea arabă.</li>
+<li><strong>Monotropismul nu are o „prevalență" agreată, iar cifra „15–20% din oameni sunt monotropi" este o eroare de categorie.</strong> Monotropismul este un stil cognitiv <em>dimensional</em> (o trăsătură continuă), nu un diagnostic. Singurul studiu empiric mare — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — a constatat că participanții autiști au avut în medie <strong>4,15/5</strong> iar participanții non-autiști <strong>3,19/5</strong>, cu suprapunere substanțială [10]. Nu spune „X% din oameni sunt monotropi".</li>
+<li><strong>Afirmarea „peste 90% din oamenii autiști sunt monotropi" este o afirmație teoretică despre cât de bine captează teoria experiența autistă, nu un procent măsurat.</strong> Este apărabilă ca <em>validitate subiectivă</em>, înșelătoare ca <em>epidemiologie</em>.</li>
+</ul>
+<hr />
+<h2 id="1-câți-oameni-sunt-autiști-și-de-ce-există-două-cifre-de-titlu">1. Câți oameni sunt autiști? (și de ce există două cifre de titlu)</h2>
+<p>Două cifre circulă, și răspund la întrebări ușor diferite:</p>
+<ul>
+<li><strong>~1 din 100 copii.</strong> Aceasta este cifra grupată din zeci de studii în recenzii sistematice (de ex. Zeidan et al., 2022) și este rezumatul de lungă durată <em>centrat pe copii</em> al OMS [3]. Reflectă studii care depistează în mare parte populații pediatrică.</li>
+<li><strong>1 din 127 persoane (~0,79%), toate vârstele.</strong> Aceasta este estimarea modelată a <strong>GBD 2021</strong> — 61,8 milioane de oameni în 2021 — pe care OMS a adoptat-o acum textual („În 2021 aproximativ 1 din 127 persoane a avut autism") [1][2]. Este mai mică per locuitor pentru că acoperă toată durata vieții, inclusiv generațiile mai în vârstă care nu au fost niciodată depistate.</li>
+</ul>
+<blockquote>
+<p>Diferența dintre „1 din 100" și „1 din 127" nu este o contradicție: prima este <em>copii</em>, a doua <em>toți</em>. Ambele sunt apărabile dacă populația este menționată.</p>
+</blockquote>
+<p>GBD oferă și o defalcare clară pe sexe — aproximativ <strong>1,06% bărbați</strong> versus <strong>0,51% femei</strong> (1.064,7 vs 508,1 la 100.000) — reflectând sub-identificarea bine documentată a fetelor și femeilor autiste, nu o diferență biologică dublă [1].</p>
+<h2 id="2-de-ce-diferă-cifrele-regionale-diferențele-măsoară-în-mare-parte-detectarea-nu-biologia">2. De ce diferă cifrele regionale (diferențele măsoară în mare parte <em>detectarea</em>, nu biologia)</h2>
+<p>Acesta este cel mai important punct la citirea oricărui tabel regional. Autorii GBD 2021 au constatat că povara de sănătate legată de autism a variat de la <strong>126,5 ani de viață ajustați după dizabilitate (DALY) la 100.000</strong> în super-regiunea Asia de Sud-Est / Asia de Est / Oceania până la <strong>204,1 la 100.000</strong> în super-regiunea cu venituri mari [1]. În termeni simpli: părțile mai bogate, mai depistate ale lumii <em>găsesc</em> mult mai mult autism decât restul.</p>
+<p>Motorii diferenței sunt aproape în întregime metodologici și sociali:</p>
+<ul>
+<li><strong>Infrastructura de diagnostic</strong> — rețele active de supraveghere (de ex. ADDM al CDC american) caută sistematic cazuri în școli și clinici; multe țări nu au un astfel de sistem și se bazează pe dosare clinice pasive.</li>
+<li><strong>Criterii și conștientizare</strong> — schimbarea de la îngustul „tulburare autistă" (DSM-IV) la spectrul autist mai larg (DSM-5, 2013), plus conștientizare publică și profesională în creștere, a crescut constant <em>prevalența identificată</em> în țările care re-depistează.</li>
+<li><strong>Stigmă, limbă și acces la servicii</strong> — în multe regiuni autismul este sub-raportat pentru că familiile se confruntă cu stigmă, servicii lipsesc, sau instrumente de depistare nu sunt validate în limba și cultura locală.</li>
+</ul>
+<p>Deci când un tabel arată „0,1% în regiunea X și 3% în regiunea Y", citiți-l ca <em>„regiunea Y caută mai intens și are mai multă capacitate de diagnostic"</em>, nu <em>„autismul este de treizeci de ori mai rar în regiunea X"</em>. Autorii GBD subliniază exact asta: o acoperire mai bună a datelor globale este necesară înainte ca variația geografică să poată fi interpretată cu încredere [1].</p>
+<h2 id="3-un-tabel-regional-corectat">3. Un tabel regional corectat</h2>
+<p>Cifrele care au motivat acest dosar sunt reproduse aici față de cea mai bună dovadă disponibilă. Coloanele „Cea mai bună estimare" citează recenzii sistematice primare sau modelul GBD — nu rotunjiri de advocație.</p>
+<table>
+<thead>
+<tr>
+<th>Regiune</th>
+<th>Cifra adesea citată</th>
+<th>Ceea ce dovada susține</th>
+<th>Sursă</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lume — toate vârstele</strong></td>
+<td>„1%"</td>
+<td><strong>1 din 127 (~0,79%)</strong> în 2021 (GBD; acum cifra OMS)</td>
+<td>[1][2]</td>
+</tr>
+<tr>
+<td><strong>Lume — copii</strong></td>
+<td>„1 din 100"</td>
+<td>~1 din 100 copii (recenzii grupate)</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>America de Nord</strong></td>
+<td>„1–3,2%"</td>
+<td><strong>3,2% (1 din 31)</strong> copii americani de 8 ani (2022, CDC ADDM); ~1 din 45 adulți</td>
+<td>[4]</td>
+</tr>
+<tr>
+<td><strong>Europa</strong></td>
+<td>„0,7–1%"</td>
+<td>Studiile bazate pe registre se grupează în jur de <strong>~1%</strong> (de ex. Danemarca, Finlanda, Islanda); estimările populaționale oarecum mai mari</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>Orientul Mijlociu și Africa de Nord</strong></td>
+<td>„0,9–1,5%"</td>
+<td>Grupat <strong>~0,14%</strong> (IC 95% 0,02–0,36%); interval pe țară <strong>0,01% (Oman) → 2,51% (Arabia Saudită)</strong></td>
+<td>[6]</td>
+</tr>
+<tr>
+<td><strong>Asia de Est / Sud-Est</strong></td>
+<td>„0,4–1,4%"</td>
+<td>Metaanaliză asiatică: Asia de Est <strong>~0,51%</strong>, Asia de Sud ~0,31%, Asia de Vest ~0,35%; China continentală ~<strong>0,7% (1 din 143)</strong>; buzunare intens depistate (Singapore, Japonia, Coreea de S.) raportează mai mult</td>
+<td>[5][7]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Două concluzii din tabel:</strong></p>
+<ol type="1">
+<li>Intervalele <strong>nord-americane</strong> și <strong>europene</strong> sunt în mare parte corecte — acestea sunt cele mai depistate regiuni, deci numerele lor mari sunt de așteptat.</li>
+<li>Cifra <strong>MENA</strong> este marea eroare. O prevalență grupată aproape de <strong>0,14%</strong> reflectă aproape sigur <em>sub-diagnosticare și supraveghere slabă</em>, nu un autism genuinely mai rar. Răspândirea enormă în interiorul regiunii (Oman 0,01% până la Arabia Saudită 2,51%) este ea însăși semnul: biologia reală nu variază atât de mult între țări vecine; supravegherea da [6].</li>
+</ol>
+<h2 id="4-este-autismul-într-adevăr-în-creștere">4. Este autismul într-adevăr „în creștere"?</h2>
+<p>Prevalența de titlu a urcat abrupt — în SUA de la aproximativ 1 din 150 (2000) la 1 din 31 (2022) [4]. Explicația dominantă printre epidemiologi este <strong>identificare mai bună și mai largă</strong>, nu neapărat mai mult autism:</p>
+<ul>
+<li>criterii lărgite (DSM-IV → DSM-5),</li>
+<li>căutare activă de cazuri (supraveghere tip ADDM),</li>
+<li>depistare mai timpurie și mai echitabilă pe gen, rasă și etnie,</li>
+<li>stigmă redusă care duce la mai multe evaluări.</li>
+</ul>
+<p>Autorii GBD notează că prevalența a fost comparativ <em>stabilă</em> acolo unde calitatea datelor este controlată, și că „creșterile" aparente urmăresc în mare parte capacitatea de detectare [1]. Rezumatul sincer: <strong>numărăm din ce în ce mai mult un autism care a fost mereu acolo.</strong></p>
+<h2 id="5-câți-oameni-sunt-monotropi-întrebarea-care-nu-are-un-singur-răspuns">5. Câți oameni sunt „monotropi"? (întrebarea care nu are un singur răspuns)</h2>
+<p>Monotropismul (Murray, Lawson &amp; Lesser, 2005) este o explicație a autismului <em>bazată pe atenție</em>: o minte monotropă își concentrează resursele în câteva „tuneluri de atenție" intens activate, în loc să răspândească atenția pe multe canale (polytropism). Crucial, este încadrat ca o <strong>diferență în alocarea atenției, nu un deficit</strong> — și ca un <strong>spectru</strong>, nu o categorie da/nu.</p>
+<p>Din acest motiv, nu există <strong>o prevalență agreată a „monotropismului"</strong>, din trei motive structurale:</p>
+<ol type="1">
+<li><strong>Nu este un diagnostic.</strong> Monotropismul nu apare nicăieri în DSM-5 sau CIM-11. Nu există registru de cazuri și nici prag de diagnostic.</li>
+<li><strong>Este dimensional, nu categorial.</strong> Oricine poate intra într-o stare de „flux" concentrată; diferența autistă este că focusul adânc, îngust este <em>modul implicit de operare</em> mai degrabă decât o stare ocazională. O linie între „monotrop" și „polytrop" ar fi arbitrară.</li>
+<li><strong>Instrumentul raportează medii, nu cazuri.</strong> Instrumentul validat — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — produce un scor continuu de la 1 la 5, iar cercetătorii compară <em>medii de grup</em>, nu „câți oameni depășesc un prag" [10].</li>
+</ol>
+<h3 id="numerele-reale-pe-care-le-avem-studiul-de-validare-mq">Numerele reale pe care le avem (studiul de validare MQ)</h3>
+<p>În studiul de dezvoltare al MQ (1.110 participanți: 756 autiști, 354 non-autiști) [10]:</p>
+<ul>
+<li><strong>Participanți autiști: medie 4,15 / 5</strong> (DS 0,347)</li>
+<li><strong>Participanți non-autiști: medie 3,19 / 5</strong> (DS 0,578)</li>
+<li><strong>Status ADHD</strong> a prezis independent scoruri mai mari de monotropism (relevant pentru că autismul și ADHD co-apar în aproximativ 30–80% din cazuri în funcție de direcție).</li>
+<li>O analiză factorială exploratorie a produs o <strong>structură cu 8 factori</strong> (interese speciale; ruminare/anxietate; nevoie de rutine; mediu și tunelul de atenție; pierderea contactului cu mediul; luarea deciziilor; efectul reducător de anxietate al intereselor; gestionarea interacțiunilor sociale).</li>
+</ul>
+<p>Suprapunerea dintre cele două distribuții este substanțială — mulți oameni non-autiști au scoruri peste unii autiști și invers. Această suprapunere este <em>exact</em> motivul pentru care un titlu „X% din populație este monotropă" nu este semnificativ fără un prag arbitrar (și contestat).</p>
+<h2 id="6-de-unde-provin-cifrele-peste-90-și-1520--și-de-ce-nu-sunt-date-de-prevalență">6. De unde provin cifrele „peste 90%" și „15–20%" — și de ce nu sunt date de prevalență</h2>
+<p>Aceste două numere, care circulă pe scară largă online, merită o verificare directă.</p>
+<p><strong>„Peste 90% din oamenii autiști sunt monotropi."</strong> Acesta se citește cel mai bine ca o afirmație despre <strong>validitatea subiectivă</strong> — adică <em>când persoanele autiste întâlnesc cadrul monotropismului, o majoritate covârșitoare îl recunoaște ca o descriere corectă a experienței lor.</em> Acesta este un fenomen real și semnificativ (MQ a fost construit <em>cu</em> un grup comunitar condus de autiști tocmai pentru că descrierea rezonează [10]). Dar <strong>nu este o prevalență epidemiologică</strong>; niciun studiu nu a calculat „proporția de persoane autiste care sunt monotrope" față de un prag validat, pentru că nu există un prag agreat. Formulat ca <em>„monotropismul are o validitate subiectivă foarte mare pentru persoanele autiste"</em>, este apărabil; formulat ca <em>„peste 90% din persoanele autiste sunt monotrope"</em>, supraestimează ce a fost măsurat.</p>
+<p><strong>„15–20% din populația generală este monotropă."</strong> Această cifră este aproape sigur o <strong>confuzie cu „neurodivergența".</strong> Estimările comunitare plasează <em>o formă</em> de neurodivergență (ADHD, dislexie, dispraxie, sindrom Tourette etc., cu suprapunere mare) în ordinul de 15–20% din populație. Pentru context, chiar și componentele mai bine măsurate sunt mult mai mici izolat: ADHD la adulți afectează aproximativ <strong>2,58%</strong> (persistent) la <strong>6,76%</strong> (simptomatic) din adulți global [8], iar ADHD-ul copilăriei este adesea estimat în jur de 5–8%. Dislexia este adesea citată în jur de ~10% în funcție de definiție. <strong>Niciuna dintre acestea nu este o cifră de monotropism.</strong> A egaliza „neurodivergent" cu „monotrop" este o eroare de categorie: monotropismul este o <em>dimensiune</em> a stilului cognitiv care este ridicată în — dar nu identică cu — mai multe profiluri neurodivergente. În prezent <strong>nu există un număr bazat pe dovezi</strong> pentru prevalența monotropismului în populația generală.</p>
+<blockquote>
+<p><strong>Concluzie pe monotropism:</strong> tratați-l ca pe o <em>tendință măsurabilă</em> pe un spectru, strâns (dar nu exclusiv) asociat cu autismul și ADHD-ul, cu o validitate ridicată din experiența trăită pentru persoanele autiste. Răspunsul sincer la „ce procent din oameni sunt monotropi?" este: <em>aceasta nu este încă o întrebare bine definită, iar orice procent precis pe care îl vedeți este inventat.</em></p>
+</blockquote>
+<h2 id="7-concluzii-practice">7. Concluzii practice</h2>
+<ul>
+<li><strong>Citați cifra care se potrivește populației.</strong> „1 din 127 persoane" (toate vârstele, GBD/OMS) și „~1 din 100 copii" sunt ambele corecte — numiți pe care o aveți în vedere [1][2][3].</li>
+<li><strong>Tratați diferențele regionale ca diferențe de detectare.</strong> Prevalența scăzut raportată în MENA, părți din Asia, și printre fete/femei, adulți în vârstă și grupuri rasializate reflectă sub-identificare, nu absență [1][6].</li>
+<li><strong>Nu prezentați monotropismul ca având o prevalență.</strong> Raportați mediile MQ și cadrul dimensional; evitați „peste 90%" și „15–20%" ca afirmații de prevalență [10].</li>
+<li><strong>Păstrați cadrul neuroafirmativ.</strong> <em>Identificarea</em> mai mare a autismului în țări bine echipate este un succes al conștientizării și accesului; monotrop versus polytrop este o <em>diferență de atenție</em>, nu un deficit — în concordanță cu modul în care creatorii și comunitatea autistă încadrează teoria.</li>
+</ul>
+<hr />
+<h2 id="surse">Surse</h2>
+<p>[1] Global Burden of Disease Study 2021 Autism Spectrum Collaborators (2024). <em>The global epidemiology and health burden of the autism spectrum: findings from the Global Burden of Disease Study 2021.</em> The Lancet Psychiatry (19 dec. 2024). doi:10.1016/S2215-0366(24)00363-8 — 61,8M persoane (1 din 127) în 2021; prevalență standardizată pe vârstă 788,3/100.000 (bărbați 1.064,7; femei 508,1); DALY super-regionali 126,5 (Asia SE/E &amp; Oceania) la 204,1 (venituri mari) la 100.000. <a href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext">https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext</a> · rezumat IHME: <a href="https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global">https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global</a></p>
+<p>[2] Organizația Mondială a Sănătății (2024). <em>Autism fact sheet (key facts).</em> — „In 2021 about 1 in 127 persons had autism." <a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders">https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders</a></p>
+<p>[3] Zeidan, J. et al. (2022). <em>Global prevalence of autism: A systematic review update.</em> Autism Research (Wiley). doi:10.1002/aur.2696 — ~1 din 100 copii; date de registru european (Franța, Danemarca, Finlanda, Islanda). <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696</a></p>
+<p>[4] CDC, Autism and Developmental Disabilities Monitoring (ADDM) Network (2025). <em>Prevalence and Early Identification of Autism Spectrum Disorder Among Children Aged 8 Years — ADDM Network, 16 sites, United States, 2022.</em> MMWR, 74(SS-2). — 1 din 31 (3,2%) printre copiii de 8 ani. Raport comunitar: <a href="https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf">https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf</a> · MMWR: <a href="https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm">https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm</a></p>
+<p>[5] Lu, Y. et al. (2020). <em>Prevalence of autism spectrum disorder in Asia: a systematic review and meta-analysis.</em> Psychiatry Research, 284, 112679. doi:10.1016/j.psychres.2019.112679 (PMID 31735373) — Asia de Est 0,51%, Asia de Sud 0,31%, Asia de Vest 0,35%. <a href="https://pubmed.ncbi.nlm.nih.gov/31735373">https://pubmed.ncbi.nlm.nih.gov/31735373</a></p>
+<p>[6] Abdallah, B.M. et al. (2025). <em>Estimates of the prevalence of autism spectrum disorder in the Middle East and North Africa region: a systematic review and meta-analysis.</em> BMC Public Health, 25:2519. doi:10.1186/s12889-025-23651-x (PMID 40691829) — grupat 0,14% (IC 95% 0,02–0,36%); interval pe țară 0,01% (Oman) la 2,51% (Arabia Saudită). <a href="https://pubmed.ncbi.nlm.nih.gov/40691829">https://pubmed.ncbi.nlm.nih.gov/40691829</a></p>
+<p>[7] Jiang, X. et al. (2024). <em>Prevalence of autism spectrum disorder in mainland China over the past 6 years: a systematic review and meta-analysis.</em> BMC Psychiatry (PMID 38811881) — ~0,7% din 2017 (~1 din 143). Coroborat de o revizuire de explorare a politicilor (SAGE) 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38811881">https://pubmed.ncbi.nlm.nih.gov/38811881</a></p>
+<p>[8] Song, P. et al. (2021). <em>The prevalence of adult attention-deficit hyperactivity disorder: a global systematic review and meta-analysis.</em> General Psychiatry / PMC7916320 — ADHD persistent la adulți 2,58%; simptomatic 6,76%. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320">https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320</a></p>
+<p>[9] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — originea teoriei monotropismului. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[10] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (măsură de auto-raportare cu 47 itemi; preprint de validare). Open Science Framework. — n = 1.110 (756 autiști, 354 non-autiști); medie autiști 4,15 (DS 0,347) vs non-autiști 3,19 (DS 0,578) pe o scară 1–5; ADHD a prezis independent scoruri mai mari; structură cu 8 factori. Fișier chestionar: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · preprint de validare: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · licență: CC BY-NC-SA 4.0. Arhivă locală: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+</body>
+</html>

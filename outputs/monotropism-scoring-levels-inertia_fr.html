@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Mesurer le monotropisme : inertie, « friction » et énergie cognitive — ce que les données soutiennent réellement</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="mesurer-le-monotropisme--inertie--friction--et-énergie-cognitive--ce-que-les-données-soutiennent-réellement">Mesurer le monotropisme : inertie, « friction » et énergie cognitive — ce que les données soutiennent réellement</h1>
+<p><em>Un brief de recherche cité — vérifiant le cadre du « scoring du monotropisme en niveaux ».</em></p>
+<blockquote>
+<p><strong>Informationnel, non un avis médical.</strong> Ce brief évalue comment le monotropisme peut et ne peut pas être mesuré. Le Monotropism Questionnaire (MQ) est un instrument de recherche d'auto-évaluation, <strong>pas un outil diagnostique ou clinique</strong>, et il n'a pas de bandes de sévérité validées.</p>
+</blockquote>
+<hr />
+<h2 id="synthèse">Synthèse</h2>
+<ul>
+<li><strong>Votre instinct est juste sur l'idée centrale et faux sur l'emballage.</strong> L'idée que le monotropisme peut être <em>mesuré</em> le long d'un spectre, et que la quantité réellement intéressante est l'<strong>effort (« friction ») de bascule entre états attentionnels</strong>, est bien soutenue — mais la taxonomie à quatre niveaux spécifique (« Faible / Modéré / Élevé / Extrême-Absolu ») est un cadre populaire, <strong>pas une classification scientifique validée</strong>.</li>
+<li><strong>Le monotropisme est à juste titre un <em>trait dimensionnel</em>, pas un syndrome.</strong> La seule mesure validée — le <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — renvoie un score continu de 1 à 5. Il n'a <strong>pas de seuil publié, pas de bandes de percentiles, pas de niveaux de sévérité</strong> [2]. Le répartir en niveaux nommés est toujours un choix éditorial arbitraire.</li>
+<li><strong>La « friction » de bascule a déjà un nom : <em>l'inertie autistique</em>.</strong> C'est un construit réel, de plus en plus étudié — une difficulté à <em>commencer, arrêter et basculer</em> des tâches qui n'est « pas sous contrôle conscient ». Il fut d'abord articulé dans des récits communautaires autistiques et est désormais dans des travaux évalués par les pairs [3][4][5]. Votre « friction de bascule » est essentiellement cela.</li>
+<li><strong>« L'inertie attentionnelle » confond deux choses distinctes.</strong> <em>L'inertie autistique</em> (au niveau tâche : dur de commencer/arrêter/basculer) et <em>l'attention collante / désengagement altéré</em> (au niveau stimulus : dur de détacher l'attention de quelque chose, p. ex. Landry &amp; Bryson 2004 ; méta-analyse Sacrey 2015) sont liées mais mesurées différemment [6][7]. Les regrouper sous un seul terme fait perdre de la précision.</li>
+<li><strong>« L'économie de l'énergie cognitive » est le cadre le plus fort</strong> — et il existe déjà académiquement comme modèle d'<strong>« allocation atypique des ressources »</strong> de Goldknopf (2013), qui traite l'autisme comme une différence dans <em>combien et où</em> les ressources attentionnelles sont dépensées [10]. C'est la version neuroaffirmante, non déficitaire de ce que vous décrivez.</li>
+<li><strong>Le lien burnout/shutdown/meltdown est réel mais heuristique.</strong> Le burnout autistique (épuisement, perte de compétences, tolérance réduite) est un construit établi, et le lien <em>narratif</em> avec la bascule forcée + le masquage est convaincant et validé par la communauté — mais le chemin spécifique « monotropisme → rupture de tunnel → burnout » est largement théorique et à la première personne, pas encore établi expérimentalement [8][9].</li>
+</ul>
+<hr />
+<h2 id="1-le-monotropisme-peut-il-être--scoré---oui--comme-un-continuum-pas-comme-des-niveaux">1. Le monotropisme peut-il être « scoré » ? Oui — comme un continuum, pas comme des niveaux</h2>
+<p>Le monotropisme est un compte de l'autisme basé sur l'attention : un esprit monotrope canalise les ressources de traitement vers un petit nombre de « tunnels d'attention » intensément activés plutôt que de les répartir sur de nombreux canaux [1]. Parce qu'il est décrit comme une <em>différence d'allocation des ressources</em>, il est naturellement un <strong>spectre</strong>, pas une catégorie — c'est exactement pourquoi votre intuition des « niveaux » semble juste.</p>
+<p>L'instrument validé est le <strong>Monotropism Questionnaire (MQ)</strong> — 47 items, scorés sur une échelle de Likert à 5 points, développé en 2023 par Garau et ses collègues <em>en collaboration avec un groupe communautaire dirigé par des autistes</em> [2]. Deux choses sont décisives pour votre question :</p>
+<ul>
+<li><strong>Il renvoie une seule moyenne continue (1–5), plus huit moyennes de sous-échelles.</strong> Dans l'étude de validation (1 110 participants), les participants autistes obtenaient en moyenne <strong>4,15</strong> et les non-autistes <strong>3,19</strong>, le TDAH augmentant indépendamment les scores [2]. Les deux distributions se chevauchent fortement — de nombreux non-autistes dépassent certains autistes, et inversement.</li>
+<li><strong>Il n'y a pas de seuil, pas de seuil diagnostique, pas de bande de sévérité.</strong> Une lecture du papier de validation confirme que le mot « cutoff » n'apparaît que comme une citation <em>statistique</em> (critères d'indice d'ajustement de Hu &amp; Bentler) et « sensitivity » seulement comme une <em>analyse de sensibilité</em> de la façon dont l'autisme était défini [2]. Les auteurs mêmes du MQ ne proposent pas de niveaux.</li>
+</ul>
+<p>Alors que « signifie » un score ? Seulement sa position relative sur la dimension. L'application en ligne communautaire qui a inspiré cette question traduit utilement un score en <em>percentile</em> (« plus monotrope qu'environ X % des autistes / allostypiques »), calculé à partir de l'échantillon de validation — et c'est une façon raisonnable, honnête de situer un score. Mais c'est <strong>un percentile descriptif, pas une bande clinique</strong> : « le 97e percentile de tendance monotrope » est significatif ; « Niveau 3 / Monotropisme extrême » est une étiquette que les données ne confèrent pas.</p>
+<blockquote>
+<p><strong>Conclusion :</strong> scorez-le, tracez-le, percentilez-le — mais ne le <em>nivelez</em> pas. Le continuum est réel ; les catégories nommées ne le sont pas.</p>
+</blockquote>
+<h2 id="2-votre--friction-de-bascule--existe-déjà--elle-sappelle-linertie-autistique">2. Votre « friction de bascule » existe déjà : elle s'appelle <em>l'inertie autistique</em></h2>
+<p>C'est la correction-par-le-nom la plus importante du brief. Le phénomène que vous décrivez — le coût cognitif d'entrer dans et surtout de sortir d'un tunnel d'attention — est un construit établi appelé <strong>inertie autistique</strong> : une difficulté à <strong>commencer, arrêter et basculer des tâches qui n'est pas sous contrôle conscient</strong> [3].</p>
+<p>Trois choses le rendent directement pertinent :</p>
+<ul>
+<li><strong>Il est né dans la communauté autistique et est entré dans la littérature évaluée par les pairs.</strong> L'Association for Psychological Science décrit l'inertie autistique comme « un concept d'abord articulé dans des récits communautaires autistes », désormais étayé par un travail qualitatif et théorique [4]. L'étude de témoignages directs de Karen Buckle a trouvé que les participants décrivaient à plusieurs reprises être incapables de commencer, d'arrêter ou de changer d'activité à volonté [3].</li>
+<li><strong>La littérature utilise littéralement votre langage de « friction ».</strong> L'article de l'APS appelle le démarrage des tâches un « lancement à haute friction », cadre la bascule comme portant des « coûts de bascule », et note qu'une fois engagé, « basculer le focus exige plus d'effort cognitif, menant parfois à l'épuisement » [4]. Votre instinct de quantifier <em>l'effort/friction</em> est le même mouvement que font les chercheurs.</li>
+<li><strong>Il est désormais formalisé.</strong> Des travaux récents évalués par les pairs traitent l'« état coincé » / l'initiation de réponse limitée comme un phénomène multi-niveaux (musculo-comportemental « micro », relationnel et environnemental « méso/macro ») et co-créent des cadres de soutien avec des autistes [5] ; d'autres le modélisent via des comptes de traitement prédictif / d'inférence active (référencé dans [4])).</li>
+</ul>
+<p>En bref : si vous voulez mesurer la « friction de bascule », vous mesurez l'inertie autistique — et ce construit a déjà une évidence qualitative, une validité d'expérience vécue et une littérature quantitative croissante sur laquelle bâtir.</p>
+<h2 id="3--linertie-attentionnelle--regroupe-en-réalité-deux-mécanismes-différents">3. « L'inertie attentionnelle » regroupe en réalité deux mécanismes différents</h2>
+<p>La précision compte ici, car les deux mécanismes appellent un langage différent et (éventuellement) des mesures différentes.</p>
+<p><strong>3.1 <em>L'inertie autistique</em> — niveau tâche, concerne l'agentivité et l'élan.</strong> Difficulté à <em>initier</em>, <em>terminer</em> et <em>basculer</em> des activités, vécue comme un effort disproportionné et une perte de contrôle volontaire (le sentiment « un objet en mouvement reste en mouvement / au repos reste au repos ») [3][4]. C'est la correspondance la plus proche de votre idée « se tirer soi-même hors du tunnel ».</p>
+<p><strong>3.2 <em>L'attention collante / désengagement altéré</em> — niveau stimulus, concerne la perception.</strong> Difficulté à <em>détacher l'attention</em> d'un stimulus une fois verrouillé. Landry &amp; Bryson (2004) ont montré que de jeunes enfants autistes étaient nettement plus lents à se désengager d'un stimulus central quand un stimulus périphérique apparaissait — « attention collante » [6]. Une méta-analyse de 2015 a confirmé un désengagement de l'attention ralenti à travers les études [7], et ce même désengagement lent apparaît chez des nourrissons ensuite diagnostiqués autistes [6]. Cela se mesure avec des tâches expérimentales (paradigmes gap/overlap), pas avec des questionnaires.</p>
+<p><strong>Pourquoi la distinction compte :</strong> l'attention collante est un effet de capture <em>perceptif</em> (vous ne remarquez littéralement pas l'interruption) ; l'inertie autistique est un effet de <em>contrôle/élan</em> (vous remarquez mais ne pouvez pas basculer). Vos descriptions à quatre niveaux glissent en fait entre les deux — p. ex. « les stimuli d'arrière-plan ne sont vraiment pas traités par le cerveau » est l'attention collante [6], tandis que « les transitions forcées ressemblent à tirer un train hors de ses rails » est l'inertie [3]. Un modèle soigneux devrait les garder étiquetés séparément, car ils peuvent avoir des causes et des soutiens différents.</p>
+<h2 id="4-les-quatre--niveaux--proposés--ce-qui-est-soutenu-ce-qui-est-inventé">4. Les quatre « niveaux » proposés — ce qui est soutenu, ce qui est inventé</h2>
+<p>Plutôt que d'endosser ou d'écarter la taxonomie d'emblée, voici chaque bande proposée testée contre les données.</p>
+<table>
+<thead>
+<tr>
+<th>Niveau proposé</th>
+<th>Affirmation centrale</th>
+<th>Verdict des données</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Faible (dominance polytrope)</strong></td>
+<td>Beaucoup d'« onglets » ouverts ; coût de bascule quasi nul</td>
+<td><strong>Soutenu comme une extrémité du continuum.</strong> Les scores bas du MQ et la moyenne du groupe non-autiste (3,19) décrivent exactement cela [2]. « Polytrope » est le propre terme de la théorie pour cela [1].</td>
+</tr>
+<tr>
+<td><strong>Modéré</strong></td>
+<td>Peut se concentrer profondément mais garde une conscience de base ; coût de bascule léger</td>
+<td><strong>Soutenu comme le milieu de la dimension.</strong> Les états de flux sont rapportés dans toute la population ; les scores du MQ entre les moyennes de groupe capturent cette bande [2][11]. Mais le <em>nom</em> est arbitraire.</td>
+</tr>
+<tr>
+<td><strong>Élevé</strong></td>
+<td>Préfère un seul tunnel intense ; interruptions réellement manquées ; coût de bascule élevé</td>
+<td><strong>Mécanisme soutenu, catégorie non.</strong> Les composantes sont réelles — interruptions manquées = attention collante [6][7] ; coût de bascule élevé = inertie autistique [3][4] ; forte association autisme/TDAH = données du MQ [2]. Mais il n'y a pas de seuil séparant « Élevé » de « Modéré ».</td>
+</tr>
+<tr>
+<td><strong>Extrême / Absolu</strong></td>
+<td>Immersion totale ; la perturbation cause un « choc neurologique », meltdowns, shutdowns</td>
+<td><strong>Exagéré.</strong> L'immersion profonde (« flux ») et la détresse à la perturbation sont réelles [11], mais <strong>« absolu » implique un saut qualitatif que les données ne montrent pas</strong>, et <strong>« choc neurologique » n'est pas un terme reconnu</strong>. Les meltdowns/shutdowns sont des réponses de débordement involontaires, pas un « choc » spécifique à une bande de monotropisme.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trois problèmes à publier la taxonomie telle quelle :</strong></p>
+<ol type="1">
+<li><strong>Elle implique des sauts catégoriels là où les données montrent un continuum lisse.</strong> Les distributions du MQ des autistes et non-autistes se chevauchent substantiellement [2] ; il n'y a pas de « coude » naturel qui justifierait quatre niveaux discrets.</li>
+<li><strong>Elle introduit subrepticement la sévérité/la pathologie.</strong> « Extrême/absolu … meltdowns, burnout » cadre la borne haute comme intrinsèquement nuisible — l'opposé du cadre neuroaffirmant que la théorie entend [1]. Un monotropisme plus élevé n'est <em>pas</em> synonyme de meilleurs résultats ; les résultats dépendent de <em>l'adéquation environnementale</em>, pas du niveau.</li>
+<li><strong>Les bandes n'ont pas de données de fiabilité.</strong> Un système de niveaux utile doit montrer que les gens tombent dans la même bande au retest et que les bandes prédisent quelque chose. Aucune telle étude n'existe pour le monotropisme.</li>
+</ol>
+<p><strong>Que faire à la place.</strong> Exprimez la même idée comme une <em>position sur la dimension</em> plus un <em>profil</em> : « tendance monotrope élevée (≈top X % de l'échantillon autiste), avec inertie autistique prononcée sur la bascule de tâche et meltdowns fréquents pilotés par la perturbation dans des environnements peu soutenant. » C'est précis, individualisé et non pathologisant.</p>
+<h2 id="5-perturbation--meltdown-shutdown-burnout--ce-que-les-données-soutiennent">5. Perturbation → meltdown, shutdown, burnout : ce que les données soutiennent</h2>
+<p>Cette partie de votre cadre est la plus consécutive et demande le plus de soin.</p>
+<p><strong>Les meltdowns et shutdowns sont réels et bien décrits</strong> comme des réponses involontaires à un stress écrasant ou à une charge sensorielle/cognitive (un « meltdown » externalisant vs un « shutdown » internalisant de retrait) — reconnus dans les guides cliniques et le consensus communautaire. Ils sont déclenchés par du <em>débordement</em>, dont la rupture de tunnel est une voie courante [4][8].</p>
+<p><strong>Le burnout autistique est désormais un construit défini.</strong> Deux études fondatrices — Raymaker et al. (2020) et Higgins et al. (2021, une étude Grounded-Delphi avec des experts autistes par l'expérience) — convergent sur une définition : <strong>épuisement chronique, perte de compétences et tolérance réduite au stimulus</strong>, conceptualisé comme résultant d'un stress de vie chronique et « d'une inadéquation des attentes et des capacités » sans soutien et récupération adéquats [8][9].</p>
+<p><strong>Le lien monotropisme → burnout est heuristiquement puissant mais pas encore établi expérimentalement.</strong> Le récit est convaincant et validé par la communauté : chaque transition forcée est une rupture de tunnel ; le masquage et la bascule constants dans un monde polytrope brûlent les ressources ; sans temps de récupération/flux, le système s'épuise [8][9][11]. Mais la contribution <em>spécifique</em> de la rupture de tunnel monotrope au burnout — versus le masquage, le traumatisme, la charge sensorielle et la demande chronique — n'a pas été isolée expérimentalement. Énoncez-le comme une <em>hypothèse forte, testable</em>, pas un fait établi.</p>
+<blockquote>
+<p>L'affirmation honnête, fondée sur les données, est : <em>« Le burnout autistique est piloté par le stress chronique, le masquage et une inadéquation entre exigences et capacités ; le cadre du monotropisme prédit que la bascule forcée constante et la rupture de tunnel sont un contributeur majeur sous-reconnu — une prédiction qui colle à l'expérience vécue et attend un test direct. »</em></p>
+</blockquote>
+<h2 id="6--économie-de-lénergie-cognitive---votre-cadre-le-plus-fort">6. « Économie de l'énergie cognitive » — votre cadre le plus fort</h2>
+<p>Votre mouvement final — passer de « déficit » à « combien de carburant un cerveau brûle à passer les vitesses » — est exactement juste, et il a déjà un foyer académique.</p>
+<p>Le modèle d'<strong>« allocation atypique des ressources »</strong> de Goldknopf (2013) opérationnalise le monotropisme comme une différence d'<em>économie des ressources</em> : les ressources attentionnelles dans l'autisme sont <strong>rétrécies</strong> (concentrées dans moins/plus petits canaux, parfois plus intensément) et/ou <strong>réduites en capacité globale</strong> [10]. Sur cette vue, le « coût » d'une transition est littéralement la dépense énergétique de briser un schéma d'allocation et d'en bâtir un autre. C'est « l'économie de l'énergie cognitive » énoncée précisément — et c'est le cadre le plus cohérent avec un compte non pathologisant, car il cadre le problème comme une <em>dépense</em> (une différence de budgétisation) plutôt que comme de la <em>casse</em>.</p>
+<p>C'est le cadre à garder. Trois avantages :</p>
+<ul>
+<li>Il est <strong>neutre sur la valeur</strong> : le focus intense est un atout quand l'environnement le soutient (flux, expertise) et un coût quand l'environnement exige une bascule constante [10][11].</li>
+<li>Il <strong>prédit l'intervention</strong> : réduire les transitions inutiles, protéger le temps de flux/récupération, ajuster les exigences aux capacités, et la « facture de carburant » baisse — ce que recommande précisément le guide de prévention du burnout [8][9].</li>
+<li>Il <strong>unifie</strong> les phénomènes de vos quatre niveaux sans avoir besoin des niveaux : stimuli manqués, coût de bascule, débordement et burnout deviennent tous des conséquences de <em>la façon dont les ressources sont allouées et épuisées</em>, sur un continuum.</li>
+</ul>
+<h2 id="7-enseignements-pratiques--ce-quaffirmer-et-ce-quéviter">7. Enseignements pratiques — ce qu'affirmer, et ce qu'éviter</h2>
+<p><strong>Affirmer avec confiance :</strong></p>
+<ul>
+<li>Le monotropisme est un trait mesurable, <strong>dimensionnel</strong> (MQ, 1–5, avec huit sous-échelles) ; rapportez le score et le percentile optionnel, pas un « niveau » [2].</li>
+<li>La <strong>« friction de bascule »</strong> que vous décrivez est <strong>l'inertie autistique</strong> — un construit réel, né de la communauté, désormais évalué par les pairs [3][4][5].</li>
+<li><strong>L'attention collante / le désengagement altéré</strong> est un mécanisme distinct, mesuré expérimentalement [6][7].</li>
+<li><strong>Le burnout autistique</strong> est un construit défini piloté par le stress chronique, le masquage et l'inadéquation exigence–capacité ; la rupture de tunnel monotrope est un contributeur <em>plausible, validé par l'expérience vécue</em> [8][9].</li>
+<li>« Économie de l'énergie cognitive » ≈ modèle d'<strong>allocation des ressources</strong> de Goldknopf — le cadre le plus précis, neuroaffirmant [10].</li>
+</ul>
+<p><strong>Éviter ou renommer :</strong></p>
+<ul>
+<li>Les <strong>niveaux / bandes nommés</strong> (« Faible/Modéré/Élevé/Extrême ») — non validés ; utilisez position-sur-la-dimension + profil à la place.</li>
+<li><strong>« L'inertie attentionnelle »</strong> comme parapluie — elle brouille l'inertie autistique (tâche/contrôle) avec l'attention collante (perception) ; utilisez le terme précis [3][6].</li>
+<li>Le monotropisme <strong>« absolu »</strong> et le <strong>« choc neurologique »</strong> — termes non reconnus ; impliquent un saut catégoriel et une pathologie que les données ne soutiennent pas.</li>
+<li>Énoncer le chemin <strong>monotropisme → burnout</strong> comme établi — c'est une hypothèse forte, pas un effet mesuré [8].</li>
+<li>Tout cadre où <strong>plus élevé = plus de trouble</strong> — les résultats du monotropisme dépendent de l'adéquation environnementale, pas du niveau [1][10].</li>
+</ul>
+<hr />
+<h2 id="sources">Sources</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — origine de la théorie du monotropisme ; le cadre comme une différence d'allocation des ressources (un continuum), pas un déficit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (mesure d'auto-évaluation à 47 items ; préprint de validation). Open Science Framework. — score dimensionnel 1–5 + 8 sous-échelles ; n=1 110 ; moyenne autistes 4,15 vs non-autistes 3,19 ; le TDAH augmente les scores ; <strong>pas de seuil/bande de percentile/niveau de sévérité</strong> (confirmé par lecture du manuscrit de validation). Questionnaire : <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · préprint de validation : <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Archive locale : <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em> (Préprint / qualitatif). doi:10.31234/osf.io/ahk6x — les autistes décrivent la difficulté à commencer, arrêter et changer d'activité « qui n'était pas sous leur contrôle conscient ». Archive locale : <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a> · Manchester Research Explorer : <a href="https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-">https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-</a></p>
+<p>[4] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer, Association for Psychological Science. — cadre l'inertie autistique comme « d'abord articulée dans des récits communautaires autistes », désormais évaluée par les pairs ; utilise le langage « lancement à haute friction » et « coûts de bascule » ; cite Carls-Diamante &amp; Laciny (2024), Greaves-Lord et al. (2023), Buckle et al. (2021), Heasman et al. (2024), Rapaport et al. (2024), Phung et al. (2021). <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[5] Greaves-Lord, L. et al. (2023). <em>[Getting 'stuck': an integrative approach to support autistic people]</em> Frontiers in Psychology, doi:10.3389/fpsyg.2023.1229596. — cadre qualitatif évalué par les pairs + Delphi sur l'initiation de réponse limitée (« état coincé ») chez les autistes à travers les niveaux micro/méso/macro, co-créé avec des autistes. <a href="https://doi.org/10.3389/fpsyg.2023.1229596">https://doi.org/10.3389/fpsyg.2023.1229596</a></p>
+<p>[6] Landry, R. &amp; Bryson, S. (2004). <em>Impaired disengagement of attention in young children with autism.</em> Journal of Child Psychology and Psychiatry, 45(6), 1115–1122. doi:10.1111/j.1469-7610.2004.00304.x — « attention collante » : désengagement ralenti d'un stimulus. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></p>
+<p>[7] Sacrey, L.-A. et al. (2015). <em>Attention disengagement in autism spectrum disorder: A meta-analysis.</em> Neuroscience &amp; Biobehavioral Reviews, 56, 111–121. doi:10.1016/j.neubiorev.2014.10.011 — confirme le désengagement de l'attention ralenti à travers les études. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></p>
+<p>[8] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — définit le burnout autistique comme épuisement chronique, perte de compétences, tolérance réduite au stimulus, par stress de vie chronique et inadéquation des attentes et capacités. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · archive ouverte : <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[9] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — définition de consensus : épuisement, retrait, problèmes de pensée, compétences de vie quotidienne réduites, augmentation des traits autistiques. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<p>[10] Goldknopf, E. J. (2013). <em>Atypical resource allocation may contribute to many aspects of autism.</em> Frontiers in Integrative Neuroscience. PMC3872719 — modélise l'autisme comme une différence d'<em>allocation des ressources</em> (ressources attentionnelles rétrécies et/ou réduites) ; la forme académique de « l'économie de l'énergie cognitive ». <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a></p>
+<p>[11] Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., &amp; Pellicano, E. (2024). <em>"In a State of Flow": experiential validity of monotropism and its relation to autistic wellbeing.</em> Autism in Adulthood. doi:10.1089/aut.2023.0032 — le pôle positif de l'immersion monotrope profonde (flux) ; soutient le cadre « atout quand soutenu ». Archive locale : <code>sources/18-flow-experiential-validity-pmc.html</code> · <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a></p>
+</body>
+</html>

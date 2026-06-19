@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Comorbidități monotrope: o verificare a cadrului cu patru clustere</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="comorbidități-monotrope-o-verificare-a-cadrului-cu-patru-clustere">Comorbidități monotrope: o verificare a cadrului cu patru clustere</h1>
+<p><em>Un dosar de cercetare citat — verificând un cadru larg împărtășit al „comorbidităților monotrope".</em></p>
+<blockquote>
+<p><strong>Informațional, nu sfat medical.</strong> Monotropismul este un <em>stil</em> cognitiv, nu un diagnostic; nu are „comorbidități" în sens de boală. Acest dosar evaluează ce <em>sunt</em> și <em>nu sunt</em> susținute suprapunerile cu cadrul de mai jos. Completează dosarul peisagistic mai complet al proiectului, <em>„Monotropismul și pânza sa de comorbiditate".</em></p>
+</blockquote>
+<hr />
+<h2 id="rezumat">Rezumat</h2>
+<ul>
+<li><strong>Deschiderea cadrului este exact corectă: monotropismul nu are „comorbidități" în sens de boală.</strong> Este un stil de atenție pe un spectru; suprapunerile cu condiții clinice sunt <em>asociații și mecanisme comune</em>, nu sechele ale unei boli [1].</li>
+<li><strong>O afirmație de titlu este inversă.</strong> <em>„Oamenii AuDHD au cele mai mari scoruri MQ dintre toate grupurile"</em> <strong>nu</strong> este ce arată datele. În studiul de validare MQ, autismul și ADHD-ul fiecare ridică scorurile de monotropism, dar efectul lor <em>combinat</em> este o <strong>interacțiune negativă</strong> (β = −0,43, p&lt;,001): autiștii-cu-ADHD au scoruri <strong>mai mici decât ar prezice un model pur aditiv</strong>, nu mai mari [2].</li>
+<li><strong>Doi termeni sunt corect atribuiți dar au nevoie de definiții precise.</strong> <strong><em>„Scindare monotropă" (monotropic split)</em> ESTE</strong> într-adevăr inventat de avocata autistă <strong>Tanya Adkin</strong> — dar înseamnă costul cognitiv de <em>a forța o minte monotropă să opereze polyiotropic</em> (împărțind atenția), <strong>nu</strong> „tunelurile AuDHD concurente" cu care este uneori confundat [3].</li>
+<li><strong>„Probleme de permanență a obiectului" sunt contestate, nu stabilite.</strong> <em>Singura</em> sursă academică (Lawson &amp; Dombroski, 2017) propune <strong>permanență a obiectului întârziată</strong> ca o <em>ipoteză</em> pentru un stres legat de autism — iar literatura mai largă constată că permanența obiectului este tipic <em>intactă sau superioară</em> în autism. Experiența „din vedere, din minte" se citește mai bine ca un efect de <strong>memorie de lucru / alocație a atenției</strong> [4].</li>
+<li><strong>Restul este pe larg susținut dar gradat prin dovadă.</strong> Autismul (fondator), hiperfocus-ul ADHD (real), suprapunerea anxietate/ruminare și TOC (robustă), inerția autistă (reală), suprasolicitarea senzorială → meltdown/shutdown (reală), și burnout din tranziții forțate + mascherie (construct stabilit) supraviețuiesc toate examinării — cu hiper-sistematizare fiind <strong>teoria E-S separată a lui Baron-Cohen</strong>, nu o constatare de monotropism [5].</li>
+<li><strong>O reîncadrare neuroafirmativă:</strong> fiecare suprapunere se enunță mai bine ca <em>„cum un sistem de atenție îngust și intens interacționează cu o lume polyiotropă"</em> decât ca o listă de tulburări pe care o minte monotropă „le cauzează".</li>
+</ul>
+<hr />
+<h2 id="1-principiul-de-bază-cadrul-are-asta-corect">1. Principiul de bază (cadrul are asta corect)</h2>
+<p>Monotropismul (Murray, Lawson &amp; Lesser, 2005) susține că mințile diferă în <em>cum aloca atenția</em>: o minte monotropă concentrează resurse în câteva „tuneluri de atenție" intens activate; o minte polyiotropă le răspândește pe multe [1]. Pentru că este un <strong>stil cognitiv dimensional</strong> — măsurabil pe Monotropism Questionnaire (MQ) pe o scară 1–5 — nu „are comorbidități". Ce <em>are</em> sunt <strong>asociații statistice</strong> (grupuri care scor mai mare) și <strong>mecanisme comune</strong> (condiții ale căror caracteristici o lentilă de alocație a atenției ajută să explice). Menținerea acelei distincții este tot jocul [1][2].</p>
+<p>Acest dosar este organizat ca o <strong>verificare afirmație-cu-afirmație</strong> a cadrului cu patru clustere, gradând fiecare element. Completează (nu repetă) dosarul peisagistic existent al proiectului, care acoperă tulburările de alimentație, adunarea, agorafobia, evitarea cererii și problema dublei empatii mai în profunzime.</p>
+<h2 id="2-clusterul-1--profile-neurodivergente-de-bază">2. Clusterul 1 — Profile neurodivergente de bază</h2>
+<h3 id="autism-white_check_mark-fondator-cea-mai-puternică-legătură">Autism ✅ (fondator, cea mai puternică legătură)</h3>
+<p>Monotropismul a fost <em>creat</em> pentru a explica trasăturile autiste — interese speciale intense, nevoie de rutină (care protejează tunelul de atenție), și diferențe în interacțiunea socială [1]. MQ confirmă empiric: participanții autiști au avut în medie <strong>4,15/5</strong> vs <strong>3,19/5</strong> pentru participanții non-autiști (n=1.110) [2]. Acesta este terenul de origine al teoriei și cea mai bine documentată legătură.</p>
+<h3 id="adhd-white_check_mark-real-și-măsurat">ADHD ✅ (real și măsurat)</h3>
+<p>ADHD ridică semnificativ scorurile de monotropism (β = +0,55, p&lt;,001) [2]. Conexiunea este conceptuală precum și statistică: <strong>hiperfocus-ul</strong> ADHD (Grotewiel et al., 2022, despre hiperfocus ca construct distinct) este conceptual aproape identic cu tunelul monotrop, iar „disfuncția executivă" de activare a atenției pentru sarcini neinteresante este o predicție naturală a unui sistem tuneiat [2][6]. <strong>Susținut.</strong></p>
+<h3 id="audhd-x-afirmația-de-titlu-este-inversă--corecția-cheie">AuDHD ❌ (afirmația de titlu este inversă) — <em>corecția cheie</em></h3>
+<blockquote>
+<p><strong>Afirmație verificată:</strong> <em>„Oamenii cu un profil AuDHD combinat au cele mai mari scoruri MQ dintre toate grupurile."</em></p>
+</blockquote>
+<p><strong>Aceasta nu este</strong> ce arată datele. Regresia multiplă a lucrării MQ a regresat monotropismul pe status ADHD, status autism, și <strong>interacțiunea</strong> lor [2]:</p>
+<table>
+<thead>
+<tr>
+<th>Predictor (vs nici o condiție)</th>
+<th>β</th>
+<th>p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADHD, nu autist</td>
+<td><strong>+0,55</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td>Autist, nu ADHD</td>
+<td><strong>+1,04</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td><strong>Interacțiune Autism × ADHD</strong></td>
+<td><strong>−0,43</strong></td>
+<td><strong>&lt;,001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Termenul de interacțiune este <strong>negativ și semnificativ</strong>. Autorii o enunță clar: <em>„scorurile de monotropism nu sunt la fel de mari pentru indivizii autiști cu ADHD pe cât s-ar aștepta pe baza efectelor pur aditive"</em> [2]. Cu alte cuvinte, adăugarea ADHD la autism <strong>nu</strong> împinge monotropismul mai sus decât autismul singur ar prezice — vine <strong>mai jos</strong> decât suma celor două efecte independente.</p>
+<ul>
+<li><strong>Grupul <em>singular</em> cu cel mai mare scor</strong> sunt oamenii autiști (4,15); dacă <em>media celulei</em> empirică pentru autist-cu-ADHD stă exact deasupra sau dedesubtul aceleia depinde de combinația exactă, dar afirmația cadrului că AuDHD este <em>„cel mai mare dintre toate"</em> ca efect aditiv/super-aditiv este <strong>nesusținută și contrazisă de interacțiune</strong>.</li>
+<li>Imaginea <em>intuitivă</em> pe care cadrul o oferă — „o tracțiune internă între nevoie autistă de un tunel stabil și profund și impulsul ADHD spre input nou" — este o descriere populară și fenomenologic rezonantă a experienței AuDHD, dar este <strong>narațiune clinică/comunitară, nu o constatare de scor MQ.</strong> Formuleaz-o ca experiență trăită, nu ca rezultat MQ [6].</li>
+</ul>
+<blockquote>
+<p><strong>Afirmație corectată:</strong> <em>„Atât autismul cât și ADHD-ul cresc independent scorurile de monotropism, dar cele două interacționează non-aditiv: oamenii autiști cu ADHD scor mai mic pe MQ decât ar prezice un model pur aditiv — sugerând că cele două condiții nu se „stivuiesc" pur și simplu pe tendința monotropă."</em> [2]</p>
+</blockquote>
+<h2 id="3-clusterul-2--trasături-cognitive--de-sănătate-mintală">3. Clusterul 2 — Trasături cognitive &amp; de sănătate mintală</h2>
+<h3 id="anxietate-și-ruminare-white_check_mark-asociație-robustă-mecanism-plauzibil">Anxietate și ruminare ✅ (asociație robustă, mecanism plauzibil)</h3>
+<p>Anxietatea și ruminarea sunt ridicate în populația autistă/ADHD, iar cadrul monotropismului oferă un mecanism curat: o minte tuneiată care se agață de o grijă o procesează într-o buclă („ruminare"), făcând anxietatea „lipicioasă" [7][8]. Structura cu 8 factori a MQ include chiar o subscală <strong>„ruminare și anxietate"</strong>, arătând că clusterul este empiric strâns [2]. <strong>Susținut</strong> — deși notezi că săgeata cauzală (produce monotropismul <em>anxietate</em>, sau împărtășește un substrat cu ea?) nu este stabilită.</p>
+<h3 id="toc-white_check_mark-suprapunere-robustă-distincție-importantă">TOC ✅ (suprapunere robustă, distincție importantă)</h3>
+<p>Suprapunerea autism–TOC este reală și replicată. O metaanaliză constată că aproximativ <strong>~17% din oamenii autiști îndeplinesc criteriile de TOC</strong> (vs ~1–2% în populația generală); inversul este de asemenea ridicat [9]. Distincția calitativă pe care o trage cadrul este exact corectă și bine articulată: <strong>interesele monotrope sunt ego-sintonice</strong> (conduse de fascinație/bucurie), pe când <strong>compulsiunile TOC sunt ego-distonice</strong> (conduse de distres și efectuate pentru a neutraliza frica) [10]. Această distincție este clinic importantă pentru că cele două pot altfel fi greu de distins în practică. <strong>Susținut.</strong></p>
+<h3 id="hiper-sistematizare-warning-construct-real-dar-este-al-lui-baron-cohen-nu-o-constatare-de-monotropism">Hiper-sistematizare ⚠️ (construct real, dar este al lui Baron-Cohen, nu o constatare de monotropism)</h3>
+<p>„Hiper-sistematizare" — impulsul de a analiza, construi și explora sisteme — este o trasătură autistă genuine și bine cercetată, dar aparține <strong>teoriei Empathizing–Systemizing (E-S)</strong> a lui Simon Baron-Cohen, nu monotropismului [5]. Cele două teorii se suprapun puternic (ambele descriu un stil cognitiv intens, centrat pe detaliu) și sunt uneori rulate împreună, dar sunt <strong>cadre distincte</strong> cu măsuri distincte (coeficientul EQ/SQ vs MQ). Mișcarea sinceră: prezintă hiper-sistematizarea ca <em>consistentă cu</em> un stil monotrop (o minte tuneiată este bine dotată pentru a stăpâni sisteme) în timp ce creditezi teoria E-S ca lucrul ei propriu [1][5].</p>
+<h2 id="4-clusterul-3--fenomene-neurologice--de-procesare">4. Clusterul 3 — Fenomene neurologice &amp; de procesare</h2>
+<h3 id="probleme-de-permanență-a-obiectului-x-contestate--a-doua-corecție-cheie">Probleme de permanență a obiectului ❌ (contestate — a doua corecție cheie)</h3>
+<blockquote>
+<p><strong>Afirmație verificată:</strong> <em>„Indivizii monotropi experimentează permanența obiectului diferit … creierul oprește efectiv procesarea existenței sale până când ceva exogen îi trage înapoi."</em></p>
+</blockquote>
+<p>Aceasta este afirmația <strong>cea mai slabă</strong> din cadru și are nevoie de manipulare atentă:</p>
+<ul>
+<li>Există <strong>o</strong> sursă academică care propune o legătură de permanență a obiectului: <strong>Lawson &amp; Dombroski (2017)</strong>, care <em>ipotetizează</em> că <strong>permanență a obiectului întârziată</strong> ar putea contribui la un stres și anxietate legate de autism [4]. Notă: este un articol de construire a ipotezelor, nu un studiu de confirmare.</li>
+<li>Literatura de dezvoltare mai largă constată că <strong>permanența obiectului de bază este tipic <em>intactă sau superioară</em> în autism</strong>; sarcinile piagetiene de permanență a obiectului sunt de obicei trecute la vârste tipice [4].</li>
+<li>Fenomenul <em>real</em> pe care cadrul îl caută — „din vedere, din minte" pentru sarcini, obiecte, și chiar oameni — este mai bine explicat ca un efect de <strong>memorie de lucru / alocație a atenției</strong>: o minte tuneiată nu <em>eșuează</em> să reprezinte articolul, <strong>eșuează să reorienteze atenția înapoi la el</strong>. Acela este monotropismul funcționând ca prezis (un sistem tuneiat are puține resurse libere pentru reorientare periferică), nu un deficit de permanență a obiectului [1][4].</li>
+</ul>
+<blockquote>
+<p><strong>Afirmație corectată:</strong> <em>„Experiența „din vedere, din minte" la oamenii puternic monotropi se înțelege mai bine ca un efect de alocație a atenției / memorie de lucru — mintea reprezintă articolul dar nu se reorientează la el în timp ce este tuneiat — decât ca un deficit în permanența obiectului (care este tipic intactă în autism)."</em> [1][4]</p>
+</blockquote>
+<h3 id="disreglare-senzorială--suprasolicitare-white_check_mark-mecanism-bine-susținut">Disreglare senzorială / suprasolicitare ✅ (mecanism bine susținut)</h3>
+<p>Aceasta este puternic susținută. Pentru că un sistem tuneiat își cheltuie resursele central, input senzorial intruziv brusc (sirenă, lumină, atingere) cere o realocare costisitoare — experimentată ca o „perturbare violentă". Aceasta se aliniază cu literatura stabilită de hiper-reactivitate senzorială și calea bine documentată de la supraincărcare senzorială la <strong>meltdown</strong> (externalizant) și <strong>shutdown</strong> (retragere internalizantă), ambele recunoscute ca răspunsuri involuntare de copleșire [7][11]. Cadrul monotropismului adaugă un <em>mecanism</em> (cost de realocare) la ceea ce altfel este o constatare descriptivă. <strong>Susținut.</strong></p>
+<h3 id="inerție-autistă-white_check_mark-reală-din-ce-în-ce-mai-cercetată">Inerție autistă ✅ (reală, din ce în ce mai cercetată)</h3>
+<p>„Dificultate profundă cu tranzițiile — necaz cu începutul, oprirea sau schimbarea direcției" este constructul stabilit de <strong>inerție autistă</strong>: dificultate cu inițiere/terminare/comutare a sarcinii care „nu este sub control conștient", articulată prima dată în narațiuni comunitare autiste și acum în lucrare evaluată de colegi [12][13]. Este conceptual <em>fața comportamentală</em> a „costului de comutare" pe care factorul mediu-și-tunel al MQ îl captează [2]. <strong>Susținut</strong> — și este termenul tehnic corect (vezi dosarul companion despre scor/inerție).</p>
+<h2 id="5-clusterul-4--rezultate-ale-stresului-cronic">5. Clusterul 4 — Rezultate ale stresului cronic</h2>
+<h3 id="scindare-monotropă-warning-corect-atribuită-lui-adkin-dar-două-sensuri-sunt-confundate">Scindare monotropă ⚠️ (corect atribuită lui Adkin, dar două sensuri sunt confundate)</h3>
+<blockquote>
+<p><strong>Afirmație verificată:</strong> <em>„Scindare monotropă, inventată de practiciana Tanya Adkin, apare când o minte monotropă este forțată de mediul ei să-și împartă canalul de focus unic pe multiple fluxuri concurente."</em></p>
+</blockquote>
+<p><strong>Atribuirea este corectă</strong>: avocata autistă <strong>Tanya Adkin</strong> a inventat într-adevăr „monotropic split", confirmat de multiple surse comunitare independente [3]. Și definiția cadrului aici este <strong>aproape de sensul efectiv al lui Adkin</strong> — costul cognitiv/burnout care apare când o minte monotropă este <em>forțată să „performeze polyiotropic"</em> sau să-și împartă atenția pe fluxuri concurente [3][14].</p>
+<p>Două rezerve:</p>
+<ol type="1">
+<li><strong>Este un concept comunitar/practician, nu un construct empiric validat.</strong> „Monotropic split" apare în scriere comunitară-autistă și clinică (de ex. prin Neurodivergent Insights, Kelly Mahler, David Gray Hammond) dar <strong>nu are un studiu de validare evaluat de colegi</strong> în spatele ei [3]. Trateaz-o ca o <em>descriere</em> puternică, validă din experiența trăită, nu o entitate măsurată.</li>
+<li><strong>Două lucruri diferite călătoresc sub nume.</strong> Sensul lui Adkin = <em>performanță polyiotropică forțată de o minte monotropă</em> (o problemă de potrivire de mediu). Un al doilea sens — folosit în unele scriere AuDHD — = <em>competiția internă între o nevoie autistă de tunel stabil și un impuls ADHD spre noutate</em> (o problemă de dinamică internă). Cadrul aici descrie <strong>primul</strong> (de mediu) sens. Acestea sunt înrudite dar distincte; colapsarea lor înnegurește conceptul. (Dosarul peisagistic al proiectului folosește „monotropic split" în al doilea sens AuDHD — deci termenul este genuinely supraîncărcat în domeniu.) [3][6]</li>
+</ol>
+<blockquote>
+<p>Formuleaz-o ca: <em>„Termenul „scindare monotropă" al avocatei autiste Tanya Adkin descrie costul cognitiv și burnout care apar când o minte monotropă este forțată să opereze polyiotropic — un concept comunitar puternic care așteaptă validare formală."</em> [3]</p>
+</blockquote>
+<h3 id="burnout-white_check_mark-construct-stabilit-legătura-cu-monotropismul-este-euristică">Burnout ✅ (construct stabilit; legătura cu monotropismul este euristică)</h3>
+<p>Burnout-ul autist este acum un construct bine definit: <strong>epuizare cronică, pierdere de abilități, și toleranță redusă la stimul</strong>, conceptualizat ca rezultând din stres de viață cronic și „o nepotrivire a așteptărilor și abilităților" fără suport și recuperare adecvate (Raymaker et al., 2020; Higgins et al., 2021, un studiu Grounded-Delphi cu experți autiști) [15][16]. Calea monotropismului în burnout — tranziții forțate constante, mascherie, și „scindare monotropă" drenând resurse fără timp de recuperare/flux — este <strong>euristic puternică și validată de comunitate</strong>, dar contribuția <em>specifică</em> a rupturii de tunel la burnout (versus mascherie, traumă, încărcare senzorială, cerere cronică) <strong>nu a fost izolată experimental</strong> [15]. <strong>Susținută ca ipoteză puternică, nu ca lanț cauzal stabilit.</strong></p>
+<h2 id="6-o-fișă-de-scor-gradată">6. O fișă de scor gradată</h2>
+<table>
+<thead>
+<tr>
+<th>Afirmație în cadru</th>
+<th>Verdict</th>
+<th>Notă</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monotropismul nu are comorbidități-boală</td>
+<td>✅ Corect</td>
+<td>Are asociații + mecanisme comune [1]</td>
+</tr>
+<tr>
+<td>Autism = legătura primară</td>
+<td>✅ Fondator</td>
+<td>MQ 4,15 vs 3,19 [2]</td>
+</tr>
+<tr>
+<td>ADHD ridică monotropismul</td>
+<td>✅ Susținut</td>
+<td>β = +0,55 [2]</td>
+</tr>
+<tr>
+<td><strong>AuDHD scor cel mai mare dintre toți</strong></td>
+<td>❌ <strong>Invers</strong></td>
+<td>Interacțiunea este <strong>negativă</strong> (β=−0,43) [2]</td>
+</tr>
+<tr>
+<td>Suprapunere anxietate &amp; ruminare</td>
+<td>✅ Robustă</td>
+<td>MQ are un factor ruminare/anxietate [2]</td>
+</tr>
+<tr>
+<td>Suprapunere TOC (ego-sintonic vs distonic)</td>
+<td>✅ Susținut</td>
+<td>~17% co-apariție; distincție corectă [9][10]</td>
+</tr>
+<tr>
+<td>Hiper-sistematizare</td>
+<td>⚠️ Reală dar etichetată greșit</td>
+<td>Este teoria E-S a lui Baron-Cohen, nu monotropism [5]</td>
+</tr>
+<tr>
+<td>Probleme de permanență a obiectului</td>
+<td>❌ Contestate</td>
+<td>1 articol de ipoteză; PO de obicei intactă; este alocație atenție [4]</td>
+</tr>
+<tr>
+<td>Suprasolicitare senzorială → meltdown/shutdown</td>
+<td>✅ Bine susținut</td>
+<td>Mecanism = cost realocare [7][11]</td>
+</tr>
+<tr>
+<td>Inerție autistă</td>
+<td>✅ Reală</td>
+<td>Termen corect; evaluat de colegi [12][13]</td>
+</tr>
+<tr>
+<td>Scindare monotropă inventată de Adkin</td>
+<td>⚠️ Atribuire corectă; comunitar, nu validat</td>
+<td>Două sensuri confundate [3]</td>
+</tr>
+<tr>
+<td>Burnout din tranziții forțate + mascherie</td>
+<td>✅ Construct stabilit; legătură euristică</td>
+<td>Nu izolat experimental [15][16]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-concluzii-practice">7. Concluzii practice</h2>
+<ul>
+<li><strong>Deschide cu principiul:</strong> monotropismul este un stil de atenție măsurabil ale cărui <em>suprapuneri</em> cu condiții sunt asociații și mecanisme comune — niciodată „cauzează X." [1]</li>
+<li><strong>Citează MQ corect:</strong> autismul și ADHD-ul fiecare ridică scorurile, dar combinația este <strong>non-aditivă (mai mică decât așteptat)</strong> — nu spune că AuDHD scor cel mai mare [2].</li>
+<li><strong>Păstrează distincția ego-sintonic/ego-distonic</strong> când discuți TOC vs interese speciale — este clinic utilă și corect încadrată [10].</li>
+<li><strong>Creditează cadrele precis:</strong> hiper-sistematizare = teoria E-S a lui Baron-Cohen; scindare monotropă = concept comunitar al lui Adkin (sensul de mediu al polyiotropiei forțate); inerție autistă = constructul evaluat de colegi de dificultate de tranziție [3][5][12].</li>
+<li><strong>Renunță la „deficit de permanență a obiectului":</strong> reîncadrează ca alocație atenție / memorie de lucru, care este și precisă și mai utilă pentru suport [1][4].</li>
+<li><strong>Distinge validat vs euristic:</strong> burnout este un construct stabilit, dar calea monotropism→burnout este o ipoteză puternică, nu un efect măsurat; „scindare monotropă" este validă din experiența trăită dar nevalidată [3][15].</li>
+</ul>
+<hr />
+<h2 id="surse">Surse</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — originea monotropismului; o diferență în alocarea resurselor (un continuum), nu un deficit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (auto-raport 47-itemi; preprint de validare). Open Science Framework. — n=1.110; medie autiști 4,15 (DS ,347) vs non-autiști 3,19 (DS ,578); regresie β(ADHD)=+0,55, β(autism)=+1,04, <strong>β(interacțiune)=−0,43, p&lt;,001</strong>; interacțiunea ADHD+autism este <em>sub-aditivă</em>; structură cu 8 factori incl. factori ruminare/anxietate și mediu/tunel. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · validare: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Arhivă locală: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Adkin, T. — „monotropic split" (avocată autistă / practiciana; concept comunitar). Confirmat prin multiple surse comunitare independente: Neurodivergent Insights (glosar), Kelly Mahler (post invitat), David Gray Hammond, Jade Farrington („Când oamenii monotropi sunt forțați să opereze polyiotropic este cunoscut ca monotropic split"). Definiție: costul cognitiv/burnout de a forța o minte monotropă să „performeze polyiotropic". Concept comunitar/practician — <strong>niciun studiu de validare evaluat de colegi.</strong> <a href="https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017">https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017</a> · <a href="https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism">https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism</a></p>
+<p>[4] Lawson, W. &amp; Dombroski, B. (2017). <em>Problems with Object Permanence: Rethinking Traditional Beliefs Associated with Poor Theory of Mind in Autism.</em> J. Intellectual Disability – Diagnosis and Treatment, 5(1). doi:10.6000/2292-2598.2017.05.01.1 — <em>ipotetizează</em> <strong>permanență a obiectului întârziată</strong> ca contributor la un stres legat de autism (un articol de construire a ipotezelor, nu o confirmare). Literatură mai largă: permanența obiectului este tipic intactă/superioară în autism; „din vedere, din minte" se citește mai bine ca alocație atenție/memorie de lucru. Arhivă locală: <code>sources/12-object-permanence-lawson-dombroski.pdf</code> · <a href="https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562">https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562</a></p>
+<p>[5] Baron-Cohen, S. (2009/2010). <em>Autism and the empathizing–systemizing (E-S) theory; the hyper-systemizing theory of autism.</em> Annals of the NYAS; APA PsycNet. — hiper-sistematizarea și teoria E-S sunt cadrul lui Baron-Cohen, măsurate prin coeficientul EQ/SQ; distinct de (deși suprapus cu) monotropism. <a href="https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory">https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory</a> · revizuire: Greenberg &amp; Baron-Cohen, <em>Empathizing-Systemizing Theory: Past, Present, and Future.</em></p>
+<p>[6] Autistic Scholar — <em>„Revisiting monotropism"</em> (AuDHD ca tuneluri concurente/instabile; referințe Grotewiel et al. 2022 despre hiperfocus ADHD ca construct distinct). Cont fenomenologic/comunitar, nu o constatare de scor MQ. Arhivă locală: <code>sources/13-revisiting-monotropism-autisticscholar.html</code> · <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a></p>
+<p>[7] Green, S. A. &amp; Ben-Sasson, A. (2010). <em>Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship?</em> J. Autism and Developmental Disorders. PMC2980623 — hiper-reactivitate senzorială, condiționare de context și calea suprasolicitării. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a></p>
+<p>[8] Oakley, B. et al. / literatura anxietății în autism — anxietate și ruminare ridicate în populația autistă/ADHD (citat prin dosarul peisagistic de comorbiditate al proiectului pentru substratul anxietății).</p>
+<p>[9] Meier, S. M. et al. / metaanalize ale concordanței autism–TOC — ~17% din oamenii autiști îndeplinesc criteriile de TOC (vs ~1–2% populație generală); ~17% din copiii cu TOC arată simptome autism ușoare. Rezumat prin Move Up ABA citând cercetare 2015 și prezentarea generală The Transmitter/Spectrum. <a href="https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions">https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions</a> · metaanaliză autism↔︎TOC: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346">https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346</a></p>
+<p>[10] Long, H., Cooper, K., &amp; Russell, A. (2024). <em>"Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours</em> (calitativ). PMC11497754 — distincția ego-sintonic (interese) vs ego-distonic (compulsiuni). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a></p>
+<p>[11] Autism Society (2025). <em>Autistic Meltdowns and Shutdowns</em> — meltdown (externalizant) și shutdown (retragere internalizantă) ca răspunsuri involuntare la stres/input senzorial copleșitor. <a href="https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf">https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf</a></p>
+<p>[12] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia</em> (preprint/calitativ). doi:10.31234/osf.io/ahk6x — dificultate de a începe, opri și comuta sarcini „nu sub control conștient". Arhivă locală: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a></p>
+<p>[13] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer — inerție autistă: originară din comunitate, acum evaluată de colegi; citează Carls-Diamante &amp; Laciny 2024, Greaves-Lord et al. 2023, Buckle 2021, Heasman 2024, Rapaport 2024. <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[14] Neurodivergent Insights — <em>Monotropism</em> (glosar) și <em>ADHD vs Autism vs OCD</em> (suprapunere în trei). Resursă comunitar/clinic care încadrează scindarea monotropă și suprapunerile. <a href="https://neurodivergentinsights.com/glossary/monotropism">https://neurodivergentinsights.com/glossary/monotropism</a> · <a href="https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd">https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd</a></p>
+<p>[15] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — epuizare cronică, pierdere de abilități, toleranță redusă la stimul; din stres de viață cronic și nepotrivire a așteptărilor și abilităților. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[16] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — definiție de consens: epuizare, retragere, probleme de cogniție, abilități de viață zilnică reduse, creșterea trasăturilor autiste. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<hr />
+<p><em>Completează dosarul peisagistic mai complet al proiectului: <code>outputs/monotropism-comorbidity-landscape.md</code> (care acoperă tulburările de alimentație, adunarea, agorafobia, evitarea cererii/PDA și problema dublei empatii). Acest dosar se concentrează pe verificarea cadrului cu patru clustere de mai sus și nu repetă acel material.</em></p>
+</body>
+</html>

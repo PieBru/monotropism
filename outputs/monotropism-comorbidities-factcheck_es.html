@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Comorbilidades monotrópicas: verificación del encuadre de cuatro clusters</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="comorbilidades-monotrópicas-verificación-del-encuadre-de-cuatro-clusters">Comorbilidades monotrópicas: verificación del encuadre de cuatro clusters</h1>
+<p><em>Un brief de investigación citado — verificando un encuadre ampliamente compartido de las «comorbilidades monotrópicas».</em></p>
+<blockquote>
+<p><strong>Informativo, no consejo médico.</strong> El monotropismo es un <em>estilo</em> cognitivo, no un diagnóstico; no tiene «comorbilidades» en el sentido de enfermedad. Este brief evalúa qué son y qué no son los solapamientos con el encuadre de abajo. Complementa el brief paisajístico más completo del proyecto, <em>«El monotropismo y su telaraña de comorbilidad».</em></p>
+</blockquote>
+<hr />
+<h2 id="resumen-ejecutivo">Resumen ejecutivo</h2>
+<ul>
+<li><strong>La apertura del encuadre es exactamente correcta: el monotropismo no tiene «comorbilidades» en el sentido de enfermedad.</strong> Es un estilo atencional en un espectro; los solapamientos con condiciones clínicas son <em>asociaciones y mecanismos compartidos</em>, no secuelas de una enfermedad [1].</li>
+<li><strong>Una afirmación estelar está al revés.</strong> <em>«Las personas AuDHD obtienen las puntuaciones más altas de todos los grupos en el MQ»</em> <strong>no</strong> es lo que muestran los datos. En el estudio de validación del MQ, el autismo y el TDAH elevan cada uno las puntuaciones de monotropismo, pero su efecto <em>combinado</em> es una <strong>interacción negativa</strong> (β = −0,43, p&lt;,001): las personas autistas-con-TDAH puntúan <strong>más bajo de lo que predeciría un modelo puramente aditivo</strong>, no más alto [2].</li>
+<li><strong>Dos términos están correctamente atribuidos pero necesitan definiciones precisas.</strong> La <strong><em>«escisión monotrópica» (monotropic split)</em> SÍ</strong> está genuinamente acuñada por la defensora autista <strong>Tanya Adkin</strong> — pero significa el coste cognitivo de <em>forzar una mente monotrópica a operar de forma politrópica</em> (dividir la atención), <strong>no</strong> los «túneles AuDHD competidores» con los que a veces se confunde [3].</li>
+<li><strong>Los «problemas de permanencia del objeto» son discutidos, no establecidos.</strong> La <em>única</em> fuente académica (Lawson &amp; Dombroski, 2017) propone una permanencia del objeto <strong>retrasada</strong> como <em>hipótesis</em> para algunos estrés relacionados con el autismo — y la literatura más amplia encuentra que la permanencia del objeto es típicamente <em>intacta o superior</em> en el autismo. La experiencia de «fuera de la vista, fuera de la mente» se lee mejor como un efecto de <strong>memoria de trabajo / asignación de la atención</strong> [4].</li>
+<li><strong>El resto está ampliamente apoyado pero graduado por la evidencia.</strong> El autismo (fundacional), la hiperfocalización del TDAH (real), el solapamiento ansiedad/rumiación y TOC (robusto), la inercia autista (real), el abrumamiento sensorial → meltdown/shutdown (real), y el burnout por transiciones forzadas + enmascaramiento (constructo establecido) sobreviven todos al escrutinio — siendo la hiper-sistematización la <strong>teoría E-S separada de Baron-Cohen</strong>, no un hallazgo del monotropismo [5].</li>
+<li><strong>Un reencuadre neuroafirmativo:</strong> cada solapamiento se enuncia mejor como <em>«cómo interactúa un sistema de atención estrecho e intenso con un mundo politrópico»</em> en lugar de como una lista de trastornos que un cerebro monotrópico «causa».</li>
+</ul>
+<hr />
+<h2 id="1-el-principio-central-el-encuadre-acierta-en-esto">1. El principio central (el encuadre acierta en esto)</h2>
+<p>El monotropismo (Murray, Lawson &amp; Lesser, 2005) sostiene que las mentes difieren en <em>cómo asignan la atención</em>: una mente monotrópica concentra recursos en pocos «túneles de atención» intensamente activados; una mente politrópica los reparte entre muchos [1]. Como es un <strong>estilo cognitivo dimensional</strong> — medible en el Monotropism Questionnaire (MQ) en una escala 1–5 — no «tiene comorbilidades». Lo que <em>tiene</em> son <strong>asociaciones estadísticas</strong> (grupos que puntúan más alto) y <strong>mecanismos compartidos</strong> (condiciones cuyas características una lente de asignación de la atención ayuda a explicar). Mantener esa distinción es todo el juego [1][2].</p>
+<p>Este brief está organizado como una <strong>verificación afirmación por afirmación</strong> del encuadre de cuatro clusters, graduando cada elemento. Complementa (no repite) el brief paisajístico existente del proyecto, que cubre los trastornos alimentarios, la acumulación, la agorafobia, el evitar demandas y el problema de la doble empatía con más profundidad.</p>
+<h2 id="2-cluster-1--perfiles-neurodivergentes-centrales">2. Cluster 1 — Perfiles neurodivergentes centrales</h2>
+<h3 id="autismo-white_check_mark-fundacional-vínculo-más-fuerte">Autismo ✅ (fundacional, vínculo más fuerte)</h3>
+<p>El monotropismo fue <em>creado</em> para explicar rasgos autistas — intereses especiales intensos, necesidad de rutina (que protege el túnel de atención), y diferencias en la interacción social [1]. El MQ lo confirma empíricamente: los participantes autistas promediaron <strong>4,15/5</strong> frente a <strong>3,19/5</strong> para los no autistas (n=1.110) [2]. Este es el terreno nativo de la teoría y el vínculo mejor documentado.</p>
+<h3 id="tdah-white_check_mark-real-y-medido">TDAH ✅ (real y medido)</h3>
+<p>El TDAH eleva significativamente las puntuaciones de monotropismo (β = +0,55, p&lt;,001) [2]. La conexión es conceptual además de estadística: la <strong>hiperfocalización</strong> del TDAH (Grotewiel et al., 2022, sobre la hiperfocalización como constructo distinto) es casi idéntica conceptualmente al túnel monotrópico, y la «disfunción ejecutiva» de activar la atención para tareas no interesantes es una predicción natural de un sistema tunelizado [2][6]. <strong>Apoyado.</strong></p>
+<h3 id="audhd-x-la-afirmación-estelar-está-al-revés--la-corrección-clave">AuDHD ❌ (la afirmación estelar está al revés) — <em>la corrección clave</em></h3>
+<blockquote>
+<p><strong>Afirmación verificada:</strong> <em>«Las personas con un perfil AuDHD combinado puntúan lo más alto de todos los grupos en el MQ.»</em></p>
+</blockquote>
+<p><strong>Esto no es lo que muestran los datos.</strong> La regresión múltiple del artículo del MQ regresó el monotropismo sobre el estatus TDAH, el estatus autismo, y su <strong>interacción</strong> [2]:</p>
+<table>
+<thead>
+<tr>
+<th>Predictor (frente a ninguna condición)</th>
+<th>β</th>
+<th>p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TDAH, no autista</td>
+<td><strong>+0,55</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td>Autista, no TDAH</td>
+<td><strong>+1,04</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td><strong>Interacción Autismo × TDAH</strong></td>
+<td><strong>−0,43</strong></td>
+<td><strong>&lt;,001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El término de interacción es <strong>negativo y significativo</strong>. Los autores lo enuncian claramente: <em>«las puntuaciones de monotropismo no son tan altas para individuos autistas con TDAH como cabría esperar basándose en efectos puramente aditivos»</em> [2]. En otras palabras, añadir TDAH al autismo <strong>no</strong> empuja el monotropismo más alto de lo que el autismo solo predeciría — sale <strong>más bajo</strong> que la suma de los dos efectos independientes.</p>
+<ul>
+<li>El <strong>grupo <em>único</em> que puntúa más alto</strong> son las personas autistas (4,15); si la <em>media de celda</em> empírica para autista-con-TDAH se sitúa justo por encima o por debajo depende de la combinación exacta, pero la afirmación del encuadre de que AuDHD es <em>«el más alto de todos»</em> como efecto aditivo/super-aditivo está <strong>sin apoyar y contradicha por la interacción</strong>.</li>
+<li>La imagen <em>intuitiva</em> que ofrece el encuadre — «un tirón interno entre la necesidad autista de un túnel estable y profundo y el impulso TDAH de input novedoso» — es una descripción popular y fenomenológicamente resonante de la experiencia AuDHD, pero es <strong>narrativa clínica/comunitaria, no un hallazgo de puntuación MQ.</strong> Enúncielo como experiencia vivida, no como un resultado del MQ [6].</li>
+</ul>
+<blockquote>
+<p><strong>Afirmación corregida:</strong> <em>«Tanto el autismo como el TDAH elevan independientemente las puntuaciones de monotropismo, pero los dos interactúan de forma no aditiva: las personas autistas con TDAH puntúan más bajo en el MQ de lo que predeciría un modelo puramente aditivo — sugiriendo que las dos condiciones no simplemente se 'apilan' en la tendencia monotrópica.»</em> [2]</p>
+</blockquote>
+<h2 id="3-cluster-2--rasgos-cognitivos-y-de-salud-mental">3. Cluster 2 — Rasgos cognitivos y de salud mental</h2>
+<h3 id="ansiedad-y-rumiación-white_check_mark-asociación-robusta-mecanismo-plausible">Ansiedad y rumiación ✅ (asociación robusta, mecanismo plausible)</h3>
+<p>La ansiedad y la rumiación están elevadas en la población autista/TDAH, y el encuadre del monotropismo ofrece un mecanismo limpio: una mente tunelizada que se aferra a una preocupación la procesa en bucle («rumiación»), haciendo la ansiedad «pegajosa» [7][8]. La estructura de 8 factores del MQ incluso incluye una subescala de <strong>«rumiación y ansiedad»</strong>, mostrando que el cluster es empíricamente estrecho [2]. <strong>Apoyado</strong> — aunque note que la flecha causal (¿el monotropismo <em>produce</em> ansiedad, o comparte un sustrato con ella?) no está establecida.</p>
+<h3 id="toc-white_check_mark-solapamiento-robusto-distinción-importante">TOC ✅ (solapamiento robusto, distinción importante)</h3>
+<p>El solapamiento autismo–TOC es real y replicado. Una metanálisis encuentra que aproximadamente <strong>~17 % de las personas autistas cumplen criterios de TOC</strong> (frente a ~1–2 % en la población general); la inversa también está elevada [9]. La distinción cualitativa que traza el encuadre es exactamente correcta y bien articulada: <strong>los intereses monotrópicos son ego-sintónicos</strong> (impulsados por la fascinación/alegría), mientras que <strong>las compulsiones del TOC son ego-distónicas</strong> (impulsadas por la angustia y realizadas para neutralizar el miedo) [10]. Esta distinción es clínicamente importante porque los dos pueden ser de otro modo difíciles de distinguir en la práctica. <strong>Apoyado.</strong></p>
+<h3 id="hiper-sistematización-warning-constructo-real-pero-es-de-baron-cohen-no-un-hallazgo-del-monotropismo">Hiper-sistematización ⚠️ (constructo real, pero es de Baron-Cohen, no un hallazgo del monotropismo)</h3>
+<p>La «hiper-sistematización» — el impulso de analizar, construir y explorar sistemas — es un rasgo autista genuino y bien investigado, pero pertenece a la <strong>teoría Empathizing–Systemizing (E-S)</strong> de Simon Baron-Cohen, no al monotropismo [5]. Las dos teorías se solapan fuertemente (ambas describen un estilo cognitivo intenso y centrado en el detalle) y a veces se confunden, pero son <strong>marcos distintos</strong> con medidas distintas (el cociente EQ/SQ frente al MQ). El movimiento honesto: presente la hiper-sistematización como <em>consistente con</em> un estilo monotrópico (una mente tunelizada está bien dotada para dominar sistemas) mientras acredita la teoría E-S como algo propio [1][5].</p>
+<h2 id="4-cluster-3--fenómenos-neurológicos-y-de-procesamiento">4. Cluster 3 — Fenómenos neurológicos y de procesamiento</h2>
+<h3 id="problemas-de-permanencia-del-objeto-x-discutido--la-segunda-corrección-clave">Problemas de permanencia del objeto ❌ (discutido — la segunda corrección clave)</h3>
+<blockquote>
+<p><strong>Afirmación verificada:</strong> <em>«Los individuos monotrópicos experimentan la permanencia del objeto de forma diferente … el cerebro deja efectivamente de procesar su existencia hasta que algo exógenamente los retrae.»</em></p>
+</blockquote>
+<p>Esta es la afirmación <strong>más débil</strong> del encuadre y necesita un manejo cuidadoso:</p>
+<ul>
+<li>Hay <strong>una</strong> fuente académica que propone un vínculo de permanencia del objeto: <strong>Lawson &amp; Dombroski (2017)</strong>, que <em>plantea la hipótesis</em> de que una permanencia del objeto <strong>retrasada</strong> podría contribuir a algún estrés y ansiedad relacionados con el autismo [4]. Nota: es un artículo de construcción de hipótesis, no un estudio de confirmación.</li>
+<li>La literatura del desarrollo más amplia encuentra que la <strong>permanencia del objeto básica es típicamente <em>intacta o superior</em> en el autismo</strong>; las tareas piagetianas de permanencia del objeto se suelen superar a edades típicas [4].</li>
+<li>El fenómeno <em>real</em> que el encuadre busca — «fuera de la vista, fuera de la mente» para tareas, objetos e incluso personas — se explica mejor como un efecto de <strong>memoria de trabajo / asignación de la atención</strong>: una mente tunelizada no <em>falla</em> en representar el ítem, <strong>falla en reorientar la atención de vuelta a él.</strong> Eso es el monotropismo funcionando como se predice (un sistema tunelizado tiene pocos recursos libres para la reorientación periférica), no un déficit de permanencia del objeto [1][4].</li>
+</ul>
+<blockquote>
+<p><strong>Afirmación corregida:</strong> <em>«La experiencia de 'fuera de la vista, fuera de la mente' en personas altamente monotrópicas se entiende mejor como un efecto de asignación de la atención / memoria de trabajo — la mente representa el ítem pero no se reorienta a él mientras está tunelizada — más que como un déficit en la permanencia del objeto (que es típicamente intacta en el autismo).»</em> [1][4]</p>
+</blockquote>
+<h3 id="desregulación-sensorial--abrumamiento-white_check_mark-mecanismo-bien-apoyado">Desregulación sensorial / abrumamiento ✅ (mecanismo bien apoyado)</h3>
+<p>Esto está fuertemente apoyado. Como un sistema tunelizado gasta sus recursos centralmente, el input sensorial intrusivo repentino (sirena, luz, tacto) exige una reasignación costosa — experimentada como una «interrupción violenta». Esto se alinea con la literatura establecida de hiper-responsividad sensorial y la vía bien documentada desde la sobrecarga sensorial al <strong>meltdown</strong> (externalizante) y al <strong>shutdown</strong> (retirada internalizante), ambos reconocidos como respuestas involuntarias de abrumación [7][11]. El encuadre del monotropismo añade un <em>mecanismo</em> (coste de reasignación) a lo que de otro modo es un hallazgo descriptivo. <strong>Apoyado.</strong></p>
+<h3 id="inercia-autista-white_check_mark-real-cada-vez-más-investigada">Inercia autista ✅ (real, cada vez más investigada)</h3>
+<p>La «dificultad profunda con las transiciones — problema para iniciar, detener o cambiar de dirección» es el constructo establecido de <strong>inercia autista</strong>: dificultad con la iniciación/terminación/cambio de tareas que «no está bajo control consciente», articulada primero en narrativas comunitarias autistas y ahora en trabajo revisado por pares [12][13]. Es conceptualmente la cara <em>conductual</em> del «coste de cambio» que captura el factor entorno-y-túnel del MQ [2]. <strong>Apoyado</strong> — y es el término técnico correcto (véase el brief complementario sobre puntuación/inercia).</p>
+<h2 id="5-cluster-4--resultados-de-estrés-crónico">5. Cluster 4 — Resultados de estrés crónico</h2>
+<h3 id="escisión-monotrópica-warning-correctamente-atribuida-a-adkin-pero-dos-significados-se-confunden">Escisión monotrópica ⚠️ (correctamente atribuida a Adkin, pero dos significados se confunden)</h3>
+<blockquote>
+<p><strong>Afirmación verificada:</strong> <em>«La escisión monotrópica, acuñada por la practicante Tanya Adkin, ocurre cuando una mente monotrópica es forzada por su entorno a dividir su canal de foco único a través de múltiples flujos competidores.»</em></p>
+</blockquote>
+<p>La <strong>atribución es correcta</strong>: la defensora autista <strong>Tanya Adkin</strong> acuñó «monotropic split», confirmado por múltiples fuentes comunitarias independientes [3]. Y la definición del encuadre aquí está <strong>cerca del significado real de Adkin</strong> — el coste cognitivo/burnout que surge cuando una mente monotrópica es <em>forzada a «realizar politropía»</em> o dividir su atención a través de flujos competidores [3][14].</p>
+<p>Dos advertencias:</p>
+<ol type="1">
+<li><strong>Es un concepto comunitario/practicante, no un constructo empíricamente validado.</strong> «Monotropic split» aparece en la escritura comunidad-autista y clínica (p. ej. vía Neurodivergent Insights, Kelly Mahler, David Gray Hammond) pero <strong>no tiene estudio de validación revisado por pares</strong> tras él [3]. Trátelo como una <em>descripción</em> poderosa, válida por experiencia vivida, no una entidad medida.</li>
+<li><strong>Dos cosas diferentes viajan bajo el nombre.</strong> El sentido de Adkin = <em>realización politrópica forzada por una mente monotrópica</em> (un problema de ajuste ambiental). Un segundo sentido — usado en alguna escritura AuDHD — = la <em>competición interna entre una necesidad autista de un túnel estable y un impulso TDAH de novedad</em> (un problema de dinámica interna). El encuadre aquí describe el <strong>primer</strong> sentido (ambiental). Están relacionados pero son distintos; colapsarlos enturbia el concepto. (El brief paisajístico del proyecto usa «monotropic split» en el segundo sentido AuDHD — así que el término está genuinamente sobrecargado en el campo.) [3][6]</li>
+</ol>
+<blockquote>
+<p>Enúncielo como: <em>«El término 'escisión monotrópica' de la defensora autista Tanya Adkin describe el coste cognitivo y el burnout que surgen cuando una mente monotrópica es forzada a operar de forma politrópica — un poderoso concepto comunitario que aguarda validación formal.»</em> [3]</p>
+</blockquote>
+<h3 id="burnout-white_check_mark-constructo-establecido-el-vínculo-con-el-monotropismo-es-heurístico">Burnout ✅ (constructo establecido; el vínculo con el monotropismo es heurístico)</h3>
+<p>El burnout autista es ahora un constructo bien definido: <strong>agotamiento crónico, pérdida de habilidades y tolerancia reducida al estímulo</strong>, conceptualizado como resultante de estrés vital crónico y «un desajuste de expectativas y capacidades» sin apoyo y recuperación adecuados (Raymaker et al., 2020; Higgins et al., 2021, un estudio Grounded-Delphi con expertos autistas) [15][16]. La vía del monotropismo hacia el burnout — transiciones forzadas constantes, enmascaramiento y «escisión monotrópica» drenando recursos sin tiempo de recuperación/flujo — es <strong>heurísticamente poderosa y validada por la comunidad</strong>, pero la contribución <em>específica</em> de la ruptura del túnel al burnout (frente al enmascaramiento, el trauma, la carga sensorial, la demanda crónica) <strong>no se ha aislado experimentalmente</strong> [15]. <strong>Apoyado como hipótesis fuerte, no como cadena causal establecida.</strong></p>
+<h2 id="6-un-marcador-graduado">6. Un marcador graduado</h2>
+<table>
+<thead>
+<tr>
+<th>Afirmación en el encuadre</th>
+<th>Veredicto</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El monotropismo no tiene comorbilidades-enfermedad</td>
+<td>✅ Correcto</td>
+<td>Tiene asociaciones + mecanismos compartidos [1]</td>
+</tr>
+<tr>
+<td>Autismo = vínculo primario</td>
+<td>✅ Fundacional</td>
+<td>MQ 4,15 vs 3,19 [2]</td>
+</tr>
+<tr>
+<td>El TDAH eleva el monotropismo</td>
+<td>✅ Apoyado</td>
+<td>β = +0,55 [2]</td>
+</tr>
+<tr>
+<td><strong>AuDHD puntúa lo más alto de todos</strong></td>
+<td>❌ <strong>Al revés</strong></td>
+<td>La interacción es <strong>negativa</strong> (β=−0,43) [2]</td>
+</tr>
+<tr>
+<td>Solapamiento ansiedad y rumiación</td>
+<td>✅ Robusto</td>
+<td>El MQ tiene un factor rumiación/ansiedad [2]</td>
+</tr>
+<tr>
+<td>Solapamiento TOC (ego-sintónico vs distónico)</td>
+<td>✅ Apoyado</td>
+<td>~17 % de co-ocurrencia; distinción correcta [9][10]</td>
+</tr>
+<tr>
+<td>Hiper-sistematización</td>
+<td>⚠️ Real pero mal etiquetado</td>
+<td>Es la teoría E-S de Baron-Cohen, no el monotropismo [5]</td>
+</tr>
+<tr>
+<td>Problemas de permanencia del objeto</td>
+<td>❌ Discutido</td>
+<td>1 artículo de hipótesis; la PO suele ser intacta; es asignación de atención [4]</td>
+</tr>
+<tr>
+<td>Abrumamiento sensorial → meltdown/shutdown</td>
+<td>✅ Bien apoyado</td>
+<td>Mecanismo = coste de reasignación [7][11]</td>
+</tr>
+<tr>
+<td>Inercia autista</td>
+<td>✅ Real</td>
+<td>Término correcto; revisado por pares [12][13]</td>
+</tr>
+<tr>
+<td>Escisión monotrópica acuñada por Adkin</td>
+<td>⚠️ Atribución correcta; comunitario, no validado</td>
+<td>Dos significados confundidos [3]</td>
+</tr>
+<tr>
+<td>Burnout por transiciones forzadas + enmascaramiento</td>
+<td>✅ Constructo establecido; vínculo heurístico</td>
+<td>No aislado experimentalmente [15][16]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-conclusiones-prácticas">7. Conclusiones prácticas</h2>
+<ul>
+<li><strong>Abra con el principio:</strong> el monotropismo es un estilo atencional medible cuyos <em>solapamientos</em> con condiciones son asociaciones y mecanismos compartidos — nunca «causa X». [1]</li>
+<li><strong>Cite el MQ correctamente:</strong> el autismo y el TDAH elevan cada uno las puntuaciones, pero la combinación es <strong>no aditiva (más baja de lo esperado)</strong> — no diga que AuDHD puntúa lo más alto [2].</li>
+<li><strong>Mantenga la distinción ego-sintónico/ego-distónico</strong> al discutir TOC frente a intereses especiales — es clínicamente útil y correctamente encuadrada [10].</li>
+<li><strong>Acredite los marcos con precisión:</strong> la hiper-sistematización = teoría E-S de Baron-Cohen; la escisión monotrópica = concepto comunitario de Adkin (sentido ambiental de politropía forzada); la inercia autista = el constructo revisado por pares de dificultad de transición [3][5][12].</li>
+<li><strong>Suelte «el déficit de permanencia del objeto»:</strong> reencadre como asignación de atención / memoria de trabajo, que es tanto preciso como más útil para el apoyo [1][4].</li>
+<li><strong>Distinga validado vs heurístico:</strong> el burnout es un constructo establecido, pero la vía monotropismo→burnout es una hipótesis fuerte, no un efecto medido; la «escisión monotrópica» es válida por experiencia vivida pero no validada [3][15].</li>
+</ul>
+<hr />
+<h2 id="fuentes">Fuentes</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — origen del monotropismo; una diferencia en la asignación de recursos (un continuo), no un déficit. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (autoinforme de 47 ítems; preprint de validación). Open Science Framework. — n=1.110; media autista 4,15 (DE ,347) vs no autista 3,19 (DE ,578); regresión β(TDAH)=+0,55, β(autismo)=+1,04, <strong>β(interacción)=−0,43, p&lt;,001</strong>; la interacción TDAH+autismo es <em>sub-aditiva</em>; estructura de 8 factores incl. factores rumiación/ansiedad y entorno/túnel. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · validación: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Archivo local: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Adkin, T. — «monotropic split» (defensora autista / practicante; concepto comunitario). Confirmado vía múltiples fuentes comunitarias independientes: Neurodivergent Insights (glosario), Kelly Mahler (entrada invitada), David Gray Hammond, Jade Farrington («Cuando personas monotrópicas son forzadas a operar de forma politrópica se conoce como escisión monotrópica»). Definición: el coste cognitivo/burnout de forzar una mente monotrópica a «realizar politropía». Concepto comunitario/practicante — <strong>sin estudio de validación revisado por pares.</strong> <a href="https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017">https://jade-farrington.medium.com/what-is-monotropic-split-1c7c46fd9017</a> · <a href="https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism">https://www.kelly-mahler.com/what-is-interoception/interoception-and-monotropism</a></p>
+<p>[4] Lawson, W. &amp; Dombroski, B. (2017). <em>Problems with Object Permanence: Rethinking Traditional Beliefs Associated with Poor Theory of Mind in Autism.</em> J. Intellectual Disability – Diagnosis and Treatment, 5(1). doi:10.6000/2292-2598.2017.05.01.1 — <em>plantea la hipótesis</em> de una permanencia del objeto <strong>retrasada</strong> como contribuyente a algún estrés relacionado con el autismo (un artículo de construcción de hipótesis, no una confirmación). Literatura más amplia: la permanencia del objeto es típicamente intacta/superior en el autismo; «fuera de la vista, fuera de la mente» se lee mejor como asignación de atención/memoria de trabajo. Archivo local: <code>sources/12-object-permanence-lawson-dombroski.pdf</code> · <a href="https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562">https://www.lifescienceglobal.com/pms/index.php/jiddt/article/view/4562</a></p>
+<p>[5] Baron-Cohen, S. (2009/2010). <em>Autism and the empathizing–systemizing (E-S) theory; the hyper-systemizing theory of autism.</em> Annals of the NYAS; APA PsycNet. — la hiper-sistematización y la teoría E-S son el marco de Baron-Cohen, medido vía el cociente EQ/SQ; distinto del (aunque solapado con) monotropismo. <a href="https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory">https://en.wikipedia.org/wiki/Empathising%E2%80%93systemising_theory</a> · revisión: Greenberg &amp; Baron-Cohen, <em>Empathizing-Systemizing Theory: Past, Present, and Future.</em></p>
+<p>[6] Autistic Scholar — <em>«Revisiting monotropism»</em> (AuDHD como túneles competidores/inestables; referencias Grotewiel et al. 2022 sobre hiperfocalización del TDAH como constructo distinto). Cuenta fenomenológica/comunitaria, no un hallazgo de puntuación MQ. Archivo local: <code>sources/13-revisiting-monotropism-autisticscholar.html</code> · <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a></p>
+<p>[7] Green, S. A. &amp; Ben-Sasson, A. (2010). <em>Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship?</em> J. Autism and Developmental Disorders. PMC2980623 — hiper-responsividad sensorial, condicionamiento de contexto y la vía de abrumación. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a></p>
+<p>[8] Oakley, B. et al. / literatura de ansiedad en autismo — ansiedad y rumiación elevadas en la población autista/TDAH (citada vía el brief paisajístico de comorbilidad del proyecto para el sustrato de ansiedad).</p>
+<p>[9] Meier, S. M. et al. / metanálisis de la concordancia autismo–TOC — ~17 % de las personas autistas cumplen criterios de TOC (frente a ~1–2 % población general); ~17 % de niños con TOC muestran síntomas autistas leves. Resumido vía Move Up ABA citando investigación de 2015 y el resumen The Transmitter/Spectrum. <a href="https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions">https://www.thetransmitter.org/spectrum/sweeping-study-underscores-autisms-overlap-with-obsessions</a> · metanálisis autismo↔︎TOC: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346">https://pmc.ncbi.nlm.nih.gov/articles/PMC11048346</a></p>
+<p>[10] Long, H., Cooper, K., &amp; Russell, A. (2024). <em>"Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours</em> (cualitativo). PMC11497754 — la distinción ego-sintónico (intereses) vs ego-distónico (compulsiones). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a></p>
+<p>[11] Autism Society (2025). <em>Autistic Meltdowns and Shutdowns</em> — meltdown (externalizante) y shutdown (retirada internalizante) como respuestas involuntarias a estrés/input sensorial abrumador. <a href="https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf">https://autismsociety.org/wp-content/uploads/2025/07/AutismSociety_Autistic-Meltdowns-Shutdowns_2025-06V2F_Digital.pdf</a></p>
+<p>[12] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia</em> (preprint/cualitativo). doi:10.31234/osf.io/ahk6x — dificultad para iniciar, detener y cambiar tareas «no bajo control consciente». Archivo local: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a></p>
+<p>[13] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer — inercia autista: originada en la comunidad, ahora revisada por pares; cita Carls-Diamante &amp; Laciny 2024, Greaves-Lord et al. 2023, Buckle 2021, Heasman 2024, Rapaport 2024. <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[14] Neurodivergent Insights — <em>Monotropism</em> (glosario) y <em>ADHD vs Autism vs OCD</em> (solapamiento triple). Recurso comunitario/clínico que enmarca la escisión monotrópica y los solapamientos. <a href="https://neurodivergentinsights.com/glossary/monotropism">https://neurodivergentinsights.com/glossary/monotropism</a> · <a href="https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd">https://neurodivergentinsights.com/adhd-vs-autism-vs-ocd</a></p>
+<p>[15] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — agotamiento crónico, pérdida de habilidades, tolerancia reducida al estímulo; por estrés vital crónico y desajuste de expectativas y capacidades. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[16] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — definición de consenso: agotamiento, retirada, problemas de cognición, habilidades de vida diaria reducidas, aumento de rasgos autistas. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<hr />
+<p><em>Complemento del brief paisajístico más completo del proyecto: <code>outputs/monotropism-comorbidity-landscape.md</code> (que cubre los trastornos alimentarios, la acumulación, la agorafobia, el evitar demandas/PDA y el problema de la doble empatía). Este brief se centra en verificar el encuadre de cuatro clusters de arriba y no repite ese material.</em></p>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Autyzm i monotropizm: jak naprawdę powszechne są?</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="autyzm-i-monotropizm-jak-naprawdę-powszechne-są">Autyzm i monotropizm: jak naprawdę powszechne są?</h1>
+<p><em>Cytowany przegląd badawczy — sprawdzający regionalne dane o autyzmie i pytanie „jaki odsetek ludzi jest monotropowy".</em></p>
+<blockquote>
+<p><strong>Informacyjne, nie porada medyczna.</strong> Te liczby opisują <em>ilu ludzi jest liczonych jako autystyczni lub osiąga wysokie wyniki w skali monotropizmu</em>. Liczenie zależy mocno od tego, kto szuka, jak i gdzie. Nic tu nie jest diagnostyczne.</p>
+</blockquote>
+<hr />
+<h2 id="podsumowanie">Podsumowanie</h2>
+<ul>
+<li><strong>Autyzm to nie 1% wszędzie.</strong> Najczystszą globalną liczbą jest szacunek <strong>Global Burden of Disease (GBD) 2021</strong>, obecnie przyjęty przez WHO: około <strong>1 na 127 osób (~0,8%)</strong> było w spektrum autyzmu w 2021 [1][2]. Dla <em>dzieci</em> zrecenzowane przeglądy wciąż dają około <strong>~1 na 100</strong> od dawna [3]. Stany Zjednoczone — kraj najbardziej intensywnie badany — raportują <strong>1 na 31 (3,2%)</strong> wśród 8-latków (CDC, dane 2022) [4].</li>
+<li><strong>Różnice regionalne są głównie artefaktem pomiaru, nie biologią.</strong> Ta sama studia GBD znalazła obciążenie związane z autyzmem <em>najniższe</em> w Azji Południowo-Wschodniej/Wschodniej i Oceani oraz <em>najwyższe</em> w superregionie o wysokich dochodach [1]. Ten wzorzec odzwierciedla infrastrukturę diagnostyczną, świadomość i skrining — nie rzeczywiste różnice w częstości występowania autyzmu.</li>
+<li><strong>Często cytowana tabela regionalna jest istotnie błędna dla Bliskiego Wschodu i zbyt uproszczona dla Azji.</strong> Metaanaliza z 2025 podaje połączoną prevalencję Bliskiego Wschodu i Afryki Północnej (MENA) tylko <strong>~0,14%</strong> (zakres 0,01% Oman → 2,51% Arabia Saudyjska) [6], a azjatycka metaanaliza raportuje dla Azji Wschodniej <strong>~0,51%</strong> i Chiny kontynentalne ~0,7% [5][7] — daleko poniżej często twierdzonych „0,9–1,5%" dla świata arabskiego.</li>
+<li><strong>Monotropizm nie ma uzgodnionej „prevalencji", a liczba „15–20% ludzi jest monotropowych" jest błędem kategorii.</strong> Monotropizm jest <em>wymiarowym</em> stylem poznawczym (cechą ciągłą), nie diagnozą. Jedyna duża studia empiryczna — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — znalazła, że uczestnicy autystyczni osiągali średnio <strong>4,15/5</strong> a nie-autystyczni <strong>3,19/5</strong>, ze znacznym nakładaniem [10]. Nie mówi <strong>nie</strong> „X% ludzi jest monotropowych".</li>
+<li><strong>Twierdzenie „&gt;90% ludzi autystycznych jest monotropowych" jest stwierdzeniem teoretycznym o tym, jak dobrze teoria ujmuje doświadczenie autystyczne, nie mierzonym odsetkiem.</strong> Jest obronne jako <em>ważność subiektywna</em>, mylące jako <em>epidemiologia</em>.</li>
+</ul>
+<hr />
+<h2 id="1-ilu-ludzi-jest-autystycznych-i-dlaczego-istnieją-dwie-liczby-wiodące">1. Ilu ludzi jest autystycznych? (i dlaczego istnieją dwie liczby wiodące)</h2>
+<p>Dwie liczby krążą i odpowiadają na nieco inne pytania:</p>
+<ul>
+<li><strong>~1 na 100 dzieci.</strong> To liczba połączona z dziesiątek studiów w przeglądach systematycznych (np. Zeidan et al., 2022) i jest od dawna <em>skoncentrowanym na dzieciach</em> podsumowaniem WHO [3]. Odbija studia, które głównie badają populacje dziecięce.</li>
+<li><strong>1 na 127 osób (~0,79%), wszystkie wieki.</strong> To modelowy szacunek <strong>GBD 2021</strong> — 61,8 miliona ludzi w 2021 — który WHO przyjęło dosłownie („W 2021 około 1 na 127 osób miało autyzm") [1][2]. Jest niższy na mieszkańca, bo obejmuje całą długość życia, włączając starsze pokolenia, które nigdy nie były badane.</li>
+</ul>
+<blockquote>
+<p>Różnica między „1 na 100" a „1 na 127" nie jest sprzecznością: pierwsza to <em>dzieci</em>, druga to <em>wszyscy</em>. Obie są obronne, jeśli populacja jest określona.</p>
+</blockquote>
+<p>GBD podaje też jasny podział na płeć — około <strong>1,06% mężczyzn</strong> vs <strong>0,51% kobiet</strong> (1.064,7 vs 508,1 na 100.000) — odzwierciedlający dobrze udokumentowane niedorozpoznanie autystycznych dziewcząt i kobiet, nie dwukrotną różnicę biologiczną [1].</p>
+<h2 id="2-dlaczego-liczby-regionalne-się-różnią-różnice-mierzą-głównie-wykrywanie-nie-biologię">2. Dlaczego liczby regionalne się różnią (różnice mierzą głównie <em>wykrywanie</em>, nie biologię)</h2>
+<p>To jest najważniejszy punkt przy czytaniu jakiejkolwiek tabeli regionalnej. Autorzy GBD 2021 stwierdzili, że obciążenie zdrowotne związane z autyzmem wahało się od <strong>126,5 lat życia skorygowanych o niepełnosprawność (DALY) na 100.000</strong> w superregionie Azja Płd-Wsch/Wsch i Oceania do <strong>204,1 na 100.000</strong> w superregionie o wysokich dochodach [1]. Mówiąc wprost: bogatsze, bardziej badane części świata <em>znajdują</em> znacznie więcej autyzmu niż reszta.</p>
+<p>Sterowniki luki są niemal całkowicie metodologiczne i społeczne:</p>
+<ul>
+<li><strong>Infrastruktura diagnostyczna</strong> — aktywne sieci nadzoru (np. ADDM CDC w USA) systematycznie szukają przypadków w szkołach i klinikach; wiele krajów nie ma takiego systemu i polega na pasywnych aktach klinicznych.</li>
+<li><strong>Kryteria i świadomość</strong> — przejście od wąskiego „zaburzenia autystycznego" (DSM-IV) do szerszego spektrum autyzmu (DSM-5, 2013), plus rosnąca publiczna i fachowa świadomość, stale zwiększały <em>zidentyfikowaną</em> prevalencję w krajach ponownie badających.</li>
+<li><strong>Stygmatyzacja, język i dostęp do usług</strong> — w wielu regionach autyzm jest niedostatecznie raportowany, bo rodziny stygmatyzują, brakuje usług, albo narzędzia skriningowe nie są walidowane w lokalnym języku i kulturze.</li>
+</ul>
+<p>Więc kiedy tabela pokazuje „0,1% w regionie X i 3% w regionie Y", czytaj to jako <em>„region Y szuka intensywniej i ma większą zdolność diagnozowania"</em> nie <em>„autyzm jest trzydzieści razy rzadszy w regionie X"</em>. Autorzy GBD podkreślają właśnie to: lepsze globalne pokrycie danymi jest potrzebne, zanim można pewnie interpretować zmienność geograficzną [1].</p>
+<h2 id="3-poprawiona-tabela-regionalna">3. Poprawiona tabela regionalna</h2>
+<p>Liczby, które wywołały ten przegląd, są tu zestawione z najlepszą dostępną evidencją. Kolumny „najlepszy szacunek" cytują podstawowe przeglądy systematyczne lub model GBD — nie zaokrąglone zestawienia rzecznictwa.</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Często cytowana liczba</th>
+<th>Co wspiera evidencja</th>
+<th>Źródło</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Świat — wszystkie wieki</strong></td>
+<td>„1%"</td>
+<td><strong>1 na 127 (~0,79%)</strong> w 2021 (GBD; obecnie liczba WHO)</td>
+<td>[1][2]</td>
+</tr>
+<tr>
+<td><strong>Świat — dzieci</strong></td>
+<td>„1 na 100"</td>
+<td>~1 na 100 dzieci (połączone przeglądy)</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>Ameryka Północna</strong></td>
+<td>„1–3,2%"</td>
+<td><strong>3,2% (1 na 31)</strong> amerykańskich 8-latków (2022, CDC ADDM); ~1 na 45 dorosłych</td>
+<td>[4]</td>
+</tr>
+<tr>
+<td><strong>Europa</strong></td>
+<td>„0,7–1%"</td>
+<td>Studia oparte na rejestrach skupiają się wokół <strong>~1%</strong> (np. Dania, Finlandia, Islandia); populacyjne szacunki nieco wyższe</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>Bliski Wschód i Afryka Płn.</strong></td>
+<td>„0,9–1,5%"</td>
+<td>Połączone <strong>~0,14%</strong> (95% CI 0,02–0,36%); zakres krajowy <strong>0,01% (Oman) → 2,51% (Arabia Saudyjska)</strong></td>
+<td>[6]</td>
+</tr>
+<tr>
+<td><strong>Azja Wschodnia / Płd-Wsch.</strong></td>
+<td>„0,4–1,4%"</td>
+<td>Azjatycka metaanaliza: Azja Wschodnia <strong>~0,51%</strong>, Azja Południowa ~0,31%, Azja Zachodnia ~0,35%; Chiny kontynentalne ~<strong>0,7% (1 na 143)</strong>; silnie badane obszary (Singapur, Japonia, Korea Płd.) raportują wyższe</td>
+<td>[5][7]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dwa wnioski z tabeli:</strong></p>
+<ol type="1">
+<li>Zakresy <strong>północnoamerykańskie</strong> i <strong>europejskie</strong> są ogólnie poprawne — to najbardziej badane regiony, więc ich wysokie liczby są oczekiwane.</li>
+<li>Liczba <strong>MENA</strong> to duży błąd. Połączona prevalencja bliska <strong>0,14%</strong> niemal na pewno odzwierciedla <em>niedodiagnozowanie i słaby nadzór</em>, nie genuinely rzadszy autyzm. Ogromne rozstrzał wewnątrz-regionu (Oman 0,01% do Arabia Saudyjska 2,51%) jest sam w sobie znakiem: prawdziwa biologia nie różni się tak bardzo między sąsiednimi krajami; nadzór już tak [6].</li>
+</ol>
+<h2 id="4-czy-autyzm-naprawdę-rośnie">4. Czy autyzm naprawdę „rośnie"?</h2>
+<p>Prevalencja nagłówkowa silnie wzrosła — w USA z około 1 na 150 (2000) do 1 na 31 (2022) [4]. Dominujące wyjaśnienie epidemiologów to <strong>lepsza i szersza identyfikacja</strong>, niekoniecznie więcej autyzmu:</p>
+<ul>
+<li>poszerzone kryteria (DSM-IV → DSM-5),</li>
+<li>aktywne szukanie przypadków (nadzór typu ADDM),</li>
+<li>wcześniejszy i bardziej sprawiedliwy skrining wg płci, rasy i pochodzenia etnicznego,</li>
+<li>zmniejszona stygmatyzacja prowadząca do więcej ocen.</li>
+</ul>
+<p>Autorzy GBD notują, że prevalencja była porównywczo <em>stabilna</em> tam, gdzie kontroluje się jakość danych, i że pozorne „wzrosty" głównie idą za zdolnością wykrywania [1]. Uczciwe podsumowanie: <strong>coraz bardziej liczymy autyzm, który zawsze tam był.</strong></p>
+<h2 id="5-ilu-ludzi-jest-monotropowych-pytanie-bez-jednej-odpowiedzi">5. Ilu ludzi jest „monotropowych"? (pytanie bez jednej odpowiedzi)</h2>
+<p>Monotropizm (Murray, Lawson &amp; Lesser, 2005) to <em>oparty na uwadze</em> opis autyzmu: umysł monotropowy koncentruje zasoby w kilku intensywnie aktywnych „tunelach uwagi", zamiast rozkładać uwagę na wiele kanałów (polytropizm). Co kluczowe, jest ujęty jako <strong>różnica w alokacji uwagi, nie deficyt</strong> — i jako <strong>spektrum</strong>, nie kategoria tak/nie.</p>
+<p>Dlatego nie ma <strong>uzgodnionej prevalencji „monotropizmu"</strong>, z trzech powodów strukturalnych:</p>
+<ol type="1">
+<li><strong>Nie jest diagnozą.</strong> Monotropizm nie występuje ani w DSM-5, ani w ICD-11. Nie ma rejestru przypadków ani progu diagnostycznego.</li>
+<li><strong>Jest wymiarowy, nie kategorialny.</strong> Każdy może wejść w skoncentrowany stan „flow"; różnica autystyczna polega na tym, że głęboki, wąski fokus jest <em>domyślnym trybem operacyjnym</em> raczej niż stanem okazjonalnym. Linia między „monotropowym" a „polytropowym" byłaby arbitralna.</li>
+<li><strong>Narzędzie raportuje średnie, nie przypadki.</strong> Zwalidowane narzędzie — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — daje ciągły wynik od 1 do 5, a badacze porównują <em>średnie grupowe</em>, nie „ilu ludzi przekracza punkt odcięcia" [10].</li>
+</ol>
+<h3 id="rzeczywiste-liczby-które-mamy-studia-walidacyjne-mq">Rzeczywiste liczby, które mamy (studia walidacyjne MQ)</h3>
+<p>W studium rozwoju MQ (1.110 uczestników: 756 autystycznych, 354 nie-autystycznych) [10]:</p>
+<ul>
+<li><strong>Uczestnicy autystyczni: średnia 4,15 / 5</strong> (OD 0,347)</li>
+<li><strong>Uczestnicy nie-autystyczni: średnia 3,19 / 5</strong> (OD 0,578)</li>
+<li><strong>Status ADHD</strong> niezależnie przewidywał wyższe wyniki monotropizmu (istotne, bo autyzm i ADHD współwystępują w około 30–80% przypadków w zależności od kierunku).</li>
+<li>Eksploracyjna analiza czynnikowa dała <strong>strukturę 8-czynnikową</strong> (specjalne zainteresowania; ruminacja/lęk; potrzeba rutyn; środowisko i tunel uwagi; gubienie otoczenia; podejmowanie decyzji; efekt lękowstrzymujący zainteresowań; zarządzanie interakcjami społecznymi).</li>
+</ul>
+<p>Nakładanie się dwóch rozkładów jest znaczne — wielu nie-autystycznych ludzi ma wyniki powyżej niektórych autystycznych i odwrotnie. To nakładanie to <em>dokładnie</em> dlaczego nagłówek „X% populacji jest monotropowa" nie jest sensowny bez arbitralnego (i spornego) punktu odcięcia.</p>
+<h2 id="6-skąd-liczby-90-i-1520--i-dlaczego-nie-są-danymi-prevalencji">6. Skąd liczby „&gt;90%" i „15–20%" — i dlaczego nie są danymi prevalencji</h2>
+<p>Te dwie liczby, szeroko krążące w sieci, zasługują na bezpośrednie sprawdzenie.</p>
+<p><strong>„&gt;90% ludzi autystycznych jest monotropowych."</strong> To najlepiej czytać jako twierdzenie o <strong>ważności subiektywnej</strong> — to znaczy: <em>kiedy ludzie autystyczni spotykają się z ramą monotropizmu, przytłaczająca większość rozpoznaje ją jako dokładny opis swojego doświadczenia.</em> To jest realne i znaczące zjawisko (MQ był zbudowany <em>z</em> grupą społeczności kierowaną przez autystów właśnie dlatego, że opis rezonował [10]). Ale <strong>to nie jest epidemiologiczna prevalencja</strong>; żadne studium nie obliczyło „odsetka ludzi autystycznych, którzy są monotropowi" względem zwalidowanego progu, bo nie ma uzgodnionego progu. Sformułowane jako <em>„monotropizm ma bardzo wysoką ważność subiektywną dla ludzi autystycznych"</em>, jest obronne; sformułowane jako <em>„ponad 90% ludzi autystycznych jest monotropowych"</em>, przecenia to, co zmierzono.</p>
+<p><strong>„15–20% populacji ogólnej jest monotropowych."</strong> Ta liczba jest prawie na pewno <strong>pomieszaniem z „neurodywergencją".</strong> Szacunki społeczności sytuują <em>jakąś</em> formę neurodywergencji (ADHD, dysleksja, dyspraksja, Tourette, itp., z silnym nakładaniem) rzędu 15–20% populacji. Dla kontekstu, nawet lepiej mierzone komponenty są znacznie mniejsze w izolacji: dorosłe ADHD dotyka około <strong>2,58%</strong> (persistentne) do <strong>6,76%</strong> (symptomatyczne) dorosłych globalnie [8], a dziecięce ADHD jest często szacowane wokół 5–8%. Dysleksja jest często cytowana blisko ~10% w zależności od definicji. <strong>Żadna z tych nie jest liczbą monotropizmu.</strong> Równanie „neurodywergencyjny" z „monotropowy" jest błędem kategorii: monotropizm jest jednym <em>wymiarem</em> stylu poznawczego, który jest podwyższony w — ale nie identyczny z — kilkoma profilami neurodywergencyjnymi. Obecnie <strong>nie ma liczby opartej na evidencji</strong> dla prevalencji monotropizmu w populacji ogólnej.</p>
+<blockquote>
+<p><strong>Konkluzja o monotropizmie:</strong> traktuj go jako <em>mierzalną tendencję</em> na spektrum, silnie (ale nie wyłącznie) związaną z autyzmem i ADHD, o wysokiej ważności z doświadczenia dla ludzi autystycznych. Uczciwa odpowiedź na „jaki odsetek ludzi jest monotropowy?" brzmi: <em>to nie jest jeszcze dobrze zdefiniowane pytanie, a każdy precyzyjny odsetek, który widzisz, jest wymyślony.</em></p>
+</blockquote>
+<h2 id="7-praktyczne-wnioski">7. Praktyczne wnioski</h2>
+<ul>
+<li><strong>Cytuj liczbę pasującą do populacji.</strong> „1 na 127 osób" (wszystkie wieki, GBD/WHO) i „~1 na 100 dzieci" to oba poprawne — nazwij, którą masz na myśli [1][2][3].</li>
+<li><strong>Traktuj regionalne luki jako luki w wykrywaniu.</strong> Nisko raportowana prevalencja w MENA, części Azji oraz u dziewcząt/kobiet, starszych dorosłych i grup rasializowanych odzwierciedla niedoidentyfikowanie, nie brak [1][6].</li>
+<li><strong>Nie przedstawiaj monotropizmu jako mającego prevalencję.</strong> Raportuj średnie MQ i ramy wymiarowe; unikaj „&gt;90%" i „15–20%" jako twierdzeń prevalencji [10].</li>
+<li><strong>Utrzymuj ramy neuroafirmujące.</strong> Wyższa <em>identyfikacja</em> autyzmu w dobrze zaopatrzonych krajach to sukces świadomości i dostępu; monotropowy vs polytropowy to <em>różnica uwagi</em>, nie deficyt — spójne z tym, jak twórcy i społeczność autystyczna ramują teorię.</li>
+</ul>
+<hr />
+<h2 id="źródła">Źródła</h2>
+<p>[1] Global Burden of Disease Study 2021 Autism Spectrum Collaborators (2024). <em>The global epidemiology and health burden of the autism spectrum: findings from the Global Burden of Disease Study 2021.</em> The Lancet Psychiatry (19 Dec 2024). doi:10.1016/S2215-0366(24)00363-8 — 61,8 mln ludzi (1 na 127) w 2021; prevalencja standaryzowana wiekowo 788,3/100.000 (mężczyźni 1.064,7; kobiety 508,1); super-regionalne DALY 126,5 (SE/E Azja i Oceania) do 204,1 (wysokie dochody) na 100.000. <a href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext">https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext</a> · IHME: <a href="https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global">https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global</a></p>
+<p>[2] World Health Organization (2024). <em>Autism fact sheet (key facts).</em> — „In 2021 about 1 in 127 persons had autism." <a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders">https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders</a></p>
+<p>[3] Zeidan, J. et al. (2022). <em>Global prevalence of autism: A systematic review update.</em> Autism Research (Wiley). doi:10.1002/aur.2696 — ~1 na 100 dzieci; europejskie dane rejestrowe (Francja, Dania, Finlandia, Islandia). <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696</a></p>
+<p>[4] CDC, Autism and Developmental Disabilities Monitoring (ADDM) Network (2025). <em>Prevalence and Early Identification of Autism Spectrum Disorder Among Children Aged 8 Years — ADDM Network, 16 sites, United States, 2022.</em> MMWR, 74(SS-2). — 1 na 31 (3,2%) wśród 8-latków. Raport społeczności: <a href="https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf">https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf</a> · MMWR: <a href="https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm">https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm</a></p>
+<p>[5] Lu, Y. et al. (2020). <em>Prevalence of autism spectrum disorder in Asia: a systematic review and meta-analysis.</em> Psychiatry Research, 284, 112679. doi:10.1016/j.psychres.2019.112679 (PMID 31735373) — Azja Wschodnia 0,51%, Azja Południowa 0,31%, Azja Zachodnia 0,35%. <a href="https://pubmed.ncbi.nlm.nih.gov/31735373">https://pubmed.ncbi.nlm.nih.gov/31735373</a></p>
+<p>[6] Abdallah, B.M. et al. (2025). <em>Estimates of the prevalence of autism spectrum disorder in the Middle East and North Africa region: a systematic review and meta-analysis.</em> BMC Public Health, 25:2519. doi:10.1186/s12889-025-23651-x (PMID 40691829) — połączone 0,14% (95% CI 0,02–0,36%); zakres krajowy 0,01% (Oman) do 2,51% (Arabia Saudyjska). <a href="https://pubmed.ncbi.nlm.nih.gov/40691829">https://pubmed.ncbi.nlm.nih.gov/40691829</a></p>
+<p>[7] Jiang, X. et al. (2024). <em>Prevalence of autism spectrum disorder in mainland China over the past 6 years: a systematic review and meta-analysis.</em> BMC Psychiatry (PMID 38811881) — ~0,7% od 2017 (~1 na 143). Potwierdzone przez policyjny przegląd (SAGE) 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38811881">https://pubmed.ncbi.nlm.nih.gov/38811881</a></p>
+<p>[8] Song, P. et al. (2021). <em>The prevalence of adult attention-deficit hyperactivity disorder: a global systematic review and meta-analysis.</em> General Psychiatry / PMC7916320 — persistente dorosłe ADHD 2,58%; symptomatyczne 6,76%. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320">https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320</a></p>
+<p>[9] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — początek teorii monotropizmu. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[10] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (47-item self-report measure; validation preprint). Open Science Framework. — n = 1.110 (756 autystycznych, 354 nie-autystycznych); średnia autystycznych 4,15 (OD 0,347) vs nie-autystycznych 3,19 (OD 0,578) na skali 1–5; ADHD niezależnie przewidywało wyższe wyniki; struktura 8-czynnikowa. Plik kwestionariusza: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · preprint walidacyjny: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · licencja: CC BY-NC-SA 4.0. Lokalne archiwum: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+</body>
+</html>

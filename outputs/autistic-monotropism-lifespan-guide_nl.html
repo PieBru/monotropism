@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>De autistische, monotrope persoon begeleiden door de hele levensloop</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="de-autistische-monotrope-persoon-begeleiden-door-de-hele-levensloop">De autistische, monotrope persoon begeleiden door de hele levensloop</h1>
+<h3 id="een-gids-voor-professionals-en-zorgprofessionals">Een gids voor professionals en zorgprofessionals</h3>
+<hr />
+<blockquote>
+<p><strong>Doel.</strong> Deze gids legt uit wat een <em>autistisch monotroop</em> brein is, hoe zijn kenmerken veranderen door de levensloop, en hoe professionals en zorgprofessionals kunnen <strong>interageren met, stimuleren (betrokken maken) en ondersteunen</strong> autistische mensen van vroege kindertijd tot hoge ouderdom. Het is gefundeerd op de <strong>monotropisme</strong>-theorie van autisme — een op-aandacht-gebaseerd, neurobevestigend account ontwikkeld door autistische onderzoekers Dinah Murray, Wenn Lawson en Mike Lesser (2005) — en op door-vakgenoten-beoordeeld bewijs en klinische/praktijkrichtlijnen waar deze bestaan. Het vervangt geen geïndividualiseerde beoordeling; elke autistische persoon is anders.</p>
+</blockquote>
+<blockquote>
+<p><strong>Een notitie over taal.</strong> Deze gids gebruikt <strong>identiteit-eerst-taal</strong> („autistische persoon"), de voorkeur van de meerderheid van de autistische gemeenschap en consistent met de bronentheorie. Sommige individuen en families prefereren persoon-eerst-taal („persoon met autisme"); volg de voorkeur van het individu. De gids vermijdt opzettelijk deficit-gebaseerde termen („gestoord", „deficiënt", „symptoom") behalve bij het citeren van klinische criteria, en beschrijft in plaats daarvan <em>verschillen</em> met <em>sterktes en uitdagingen</em>. Monotropisme is één lens; een minderheid van autistische mensen voelt niet dat het hen beschrijft, en het zou moeten aanvullen, niet vervangen, het luisteren naar het individu.</p>
+</blockquote>
+<hr />
+<h2 id="deel-1--wat-is-een-autistisch-monotroop-brein">Deel 1 — Wat is een autistisch monotroop brein?</h2>
+<p>Monotropisme poneert dat geesten werken als een <strong>belangstellingssysteem</strong>: we worden tot veel dingen aangetrokken, deze belangstellingen trekken onze aandacht, en <strong>aandacht is een beperkte bron</strong> waar mentale processen om concurreren (Murray, Lesser &amp; Lawson, 2005). Het verschil tussen autistische en niet-autistische cognitie wordt gekaderd als een verschil in <em>hoe aandacht wordt toegewezen</em>, niet een tekort.</p>
+<blockquote>
+<p><em>"Op elk moment is de hoeveelheid aandacht die beschikbaar is voor een bewust individu beperkt. Er is competitie tussen mentale processen voor deze schaarse bron."</em> — Murray, Lesser &amp; Lawson (2005), via de National Autistic Society (NAS, 2025).</p>
+</blockquote>
+<p>Een <strong>monotroop brein</strong> neigt ertoe <strong>minder belangstellingen tegelijk</strong> te activeren, maar elke actieve belangstelling vangt een <strong>disproportioneel, intens aandeel</strong> van verwerkingsbronnen, producerend een smalle, diepe <strong>„aandachtstunnel"</strong>. Alles buiten de tunnel wordt minimaal verwerkt. Een <strong>polytroop</strong> brein (de meer voorkomende, niet-autistische modus) verspreidt aandacht over meer belangstellingen en schakelt vloeiender tussen hen (Murray, Lesser &amp; Lawson, 2005; F. Murray, 2018).</p>
+<p>De theorie maakt drie kernvoorspellingen die zich op alledaagse autistische ervaring mappen (F. Murray, 2018; Dwyer, 2025; NAS, 2025):</p>
+<ol type="1">
+<li><strong>Intensiteit binnen de tunnel</strong> — levendige, diepe focus die expertise, creativiteit en <strong>flow</strong>-staten ondersteunt.</li>
+<li><strong>Verminderde verwerking buiten de tunnel</strong> — stimuli, sociale cues en zelfs interne signalen (honger, pijn, toiletnoden) registreren mogelijk niet.</li>
+<li><strong>Moeite met schakelen</strong> — transities tussen aandachtstoestanden zijn langzaam en moeizaam; dit is <strong>autistische traagheid</strong>.</li>
+</ol>
+<h3 id="11-het-kenmerkende-profiel-in-één-oogopslag">1.1 Het kenmerkende profiel in één oogopslag</h3>
+<table>
+<thead>
+<tr>
+<th>Domein</th>
+<th>Monotropisme-geïnformeerd kenmerk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aandacht / belangstelling</strong></td>
+<td>Diepe, smalle focus; weinig gelijktijdige sporen; „speciale belangstellingen" zijn centraal, vreugdevol en betekenisvol, niet perifeer</td>
+</tr>
+<tr>
+<td><strong>Zintuiglijk</strong></td>
+<td><strong>Hyper-responsiviteit</strong> (een indringende stimulus gevangen in de tunnel wordt intens gevoeld); <strong>hypo-responsiviteit</strong> (wanneer ergens anders verdiept, registreren stimuli/pijn mogelijk niet); <strong>zintuiglijk zoeken</strong> (een aangename in-tunnel stimulus wordt intens nagejaagd) — een <em>geünificeerde</em> verklaring</td>
+</tr>
+<tr>
+<td><strong>Interoceptie &amp; lichaam</strong></td>
+<td>Verminderd bewustzijn van honger, dorst, pijn, vermoeidheid, toiletnoden in flow („interoceptieve ontkoppeling")</td>
+</tr>
+<tr>
+<td><strong>Schakelen / executieve functie</strong></td>
+<td><strong>Autistische traagheid</strong> — moeite met beginnen, stoppen of veranderen van spoor; geen generieke „executieve disfunctie"</td>
+</tr>
+<tr>
+<td><strong>Sociaal / communicatie</strong></td>
+<td>Multikanaal sociale verwerking is kostbaar; letterlijke interpretatie; behoefte aan verwerkingstijd; het <strong>dubbele-empathie-probleem</strong> betekent dat misverstand <em>bidirectioneel</em> is, geen autistisch tekort</td>
+</tr>
+<tr>
+<td><strong>Routines &amp; stimming</strong></td>
+<td>Routines verminderen concurrerende beslissingen en mentale belasting; stimming verschaft voorspelbare, zelf-gecontroleerde input die overbelasting filtert en evenwicht herstelt</td>
+</tr>
+<tr>
+<td><strong>Sterktes</strong></td>
+<td>Expertise, patroonherkenning, volgehouden concentratie, flow, eerlijkheid, diepte van kennis, creatieve onderdompeling</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-de-welzijn-risicos-die-volgen">1.2 De welzijn-risico's die volgen</h3>
+<p>Het <em>mechanisme</em> begrijpen maakt de risico's voorspelbaar en — cruciaal — vermijdbaar:</p>
+<ul>
+<li><strong>Monotrope splitsing</strong> (een term gemunt door Tanya Adkin): de mentale dissonantie en uitputting van gedwongen worden aandacht te splitsen of snel te schakelen op polytrope manieren; het „kan desastreuze effecten hebben zowel op korte als lange termijn" (F. Murray, 2023).</li>
+<li><strong>Meltdowns en shutdowns</strong> zijn <strong>onvrijwillige</strong> zenuwstelsel-responsen op overweldiging, geen gedragskeuzes of „woedeaanvallen". Een <strong>meltdown</strong> is zichtbaar (huilen, schreeuwen, ijsberen, stimming, pogingen om te ontsnappen); een <strong>shutdown</strong> is de geïnternaliseerde spiegel — terugtrekking, niet-responsiviteit, ontbetrokkenheid, een beschermende „uitschakeling" om energie te besparen (Autism Society, 2025; Leicestershire Partnership NHS Trust; Reframing Autism). Beide vereisen aanzienlijke <strong>hersteltijd</strong> (soms dagen) en worden verergerd door anderen' gebrek aan begrip.</li>
+<li><strong>Autistische burnout</strong> is „een syndroom … resulterend uit chronische levensstress en een mismatch van verwachtingen en capaciteiten zonder adequate ondersteuning," gekenmerkt door <strong>alomvattende, langetermijn (typisch 3+ maanden) uitputting, verlies van functie en verminderde tolerantie voor stimulus</strong> (Raymaker et al., 2020). Het is <strong>onderscheiden van beroepsburnout en klinische depressie</strong>, is gelinkt aan <strong>suïcidaal gedrag</strong>, en wordt verergerd door geleerd te worden te <strong>maskeren/camoufleren</strong> autistische trekken. Herstel wordt geassocieerd met <strong>acceptatie en sociale steun, vrij / verminderde verwachtingen, en „dingen op een autistische manier doen" / ontmaskeren</strong> (Raymaker et al., 2020).</li>
+<li><strong>Maskering / camoufleren</strong> (autistische trekken verbergen om niet-autistisch te lijken) is uitputtend en wordt geassocieerd met angst, depressie en gemiste diagnose — vooral onder meisjes en vrouwen, die vaker gesocialiseerd worden om te maskeren (F. Murray, 2023; Pearson &amp; Rose, 2021; Bradley et al., 2021).</li>
+<li><strong>Piekeren / „zorgespiralen"</strong>: hetzelfde tunnelen dat diepe belangstelling produceert kan zich fixeren op zorgen en angsten (Hallett, 2021; F. Murray, 2023).</li>
+</ul>
+<h3 id="13-bewijsstatus-wees-eerlijk-met-uzelf-en-cliënten">1.3 Bewijsstatus (wees eerlijk met uzelf en cliënten)</h3>
+<p>Monotropisme resoneert sterk met autistische geleefde ervaring en wordt toenemend in onderzoek geciteerd, maar het blijft een <strong>beschrijvende</strong> theorie met beperkte directe experimentele testing en een onrijpe meetbasis — de <strong>Monotropism Questionnaire</strong> (Garau et al., 2023) is het enige toegewijde hulpmiddel en is nog aan het rijpen (Dwyer, 2021; Dwyer, 2025). Ondersteunend convergerend bewijs omvat „kleverige" / vertraagde loskoppeling van aandacht bij autistische kinderen (Landry &amp; Bryson, 2004; meta-analyse: Sacrey et al., 2015) en een opkomende literatuur over <strong>autistische flow</strong> (Heasman et al., 2024). Behandel monotropisme als een krachtige <em>klinische heuristiek</em> — geen diagnostisch label.</p>
+<hr />
+<h2 id="deel-2--dwarsdoorsnijdende-principes-voor-elke-professional">Deel 2 — Dwarsdoorsnijdende principes voor elke professional</h2>
+<p>Voor de leeftijdspecifieke secties gelden deze principes <strong>op elke levensfase en in elke setting</strong>. Ze vormen de praktische kern van „goed interageren met en omgaan met" een monotrope persoon.</p>
+<ol type="1">
+<li><strong>Tref hen waar hun aandacht is.</strong> De meest geciteerde praktische implicatie van monotropisme is om <em>met</em> de huidige belangstelling van de persoon te werken in plaats van ertegen. Belangstellingen zijn „hefboom", geen obstakels om te heroriënteren (F. Murray, 2018; Wood, 2019; Lawson). <em>"Behandel belangstellingen als iets om mee te werken"</em> (F. Murray, 2018).</li>
+<li><strong>Bescherm de aandachtstunnel; minimaliseer „monotrope splitsing".</strong> Vermijd onderbrekingen, gedwongen snelle taak-schakelen en onnodig multitasken. Waar een schakeling onvermijdelijk is, geef <strong>waarschuwingen en transitietijd</strong> (zie §3). Zoals autistisch ingenieur Jamie Knight werkplekplanning kadert: bouw <strong>„tunnels, geen taken"</strong>, en laat <em>de omgeving een ruimte openen voor de tunnel om doorheen te passeren</em> in plaats van de persoon te dwingen erdoorheen te boren (Knight, 2021/2022).</li>
+<li><strong>Respecteer diepe belangstellingen als welzijnsbronnen.</strong> Speciale belangstellingen verschaffen vreugde, stabiliteit, identiteit, leren en herstel van burnout; het zijn geen „obsessies" om te beperken (F. Murray, 2023; Mantzalas et al., 2022). Toegang ertoe verminderen is een klinisch risico, geen behandeling.</li>
+<li><strong>Verminder onnodige zintuiglijke belasting</strong> en ontwerp toegankelijke omgevingen (minder lawaai/visuele rommel; sta rustige, gedimde ruimtes toe; vermijd fluorescente schittering en sterke geuren waar mogelijk) (NAS, 2025; F. Murray, 2023).</li>
+<li><strong>Communiceer duidelijk en letterlijk.</strong> Zeg wat u bedoelt; vermijd sarcasme, indirecte verzoeken en zware afhankelijkheid van toon/expressie alleen; geef <strong>extra verwerkingstijd</strong>; bied informatie schriftelijk aan. Gelijk een trage reactie niet aan desinteresse of onbegrip (F. Murray, 2023).</li>
+<li><strong>Beoefen de dubbele-empathie-houding.</strong> Erken dat communicatiebreuken <strong>bidirectioneel</strong> zijn (Milton, 2012). Als er iets misgaat in de interactie, vraag wat <em>u</em> zou kunnen missen, in plaats van het toe te schrijven aan het tekort van de autistische persoon.</li>
+<li><strong>Ondersteun agentschap en authenticiteit; dwing geen maskering.</strong> Verminder de druk om „door te gaan" als niet-autistisch. Stimmen of natuurlijke communicatie onderdrukken is schadelijk (F. Murray, 2023; Raymaker et al., 2020; Pearson &amp; Rose, 2021).</li>
+<li><strong>Bouw voorspelbaarheid en routines <em>met</em> de persoon, niet <em>over</em> hen.</strong> Opgelegde routines falen vaak; co-gecreëerde routines verminderen beslissingslast en worden gewaardeerd (F. Murray, 2022).</li>
+<li><strong>Plan herstel.</strong> Na hoog-eisende evenementen (kliniekbezoeken, transities, sociale eisen), verwacht en sta downtime, stimming en toegang tot belangstellingen toe.</li>
+<li><strong>Luister naar het individu als de expert van zijn eigen ervaring.</strong> Zelfrapportage is primair bewijs; de Monotropism Questionnaire (Garau et al., 2023) kan een nuttige <em>gespreksstarter</em> zijn, geen diagnose.</li>
+</ol>
+<hr />
+<h2 id="deel-3--de-levensloop-gids">Deel 3 — De levensloop-gids</h2>
+<p>Elke sectie behandelt: <strong>(a) wat u kunt observeren</strong>, <strong>(b) hoe te interageren</strong>, <strong>(c) hoe te stimuleren / betrekken</strong>, en <strong>(d) hoe te ondersteunen / uitdagingen aan te pakken.</strong></p>
+<hr />
+<h3 id="31-vroege-kindertijd-ongeveer-05-jaar">3.1 Vroege kindertijd (ongeveer 0–5 jaar)</h3>
+<p><strong>(a) Wat u kunt observeren.</strong> Intense focus op specifieke objecten/onderwerpen; vroeg-opkomende intense belangstellingen (vaak eerder verschijnend dan bij niet-autistische kinderen); oprijen, sorteren, categoriseren en patronen maken als spel; verminderde of atypische gezamenlijke aandacht en naamaandacht; <strong>vertraagde loskoppeling van aandacht</strong> („kleverige blik") — meetbaar vanaf zuigelingenleeftijd en een van de vroegste tekenen; zintuiglijke hyper- of hypo-responsiviteit; routines en repetitief spel; meltdowns bij transities. Een monotrope peuter kan diep verdiept zijn en veel missen buiten de tunnel, inclusief honger, pijn of een ouder die de kamer verlaat (Landry &amp; Bryson, 2004; F. Murray, 2023; Donzelli, 2021; Lawson, over objectpermanentie).</p>
+<p><strong>(b) Hoe te interageren.</strong> Betreed de aandachtstunnel van het kind in plaats van het eruit te trekken — <strong>sluit aan bij zijn spel en zijn belangstelling eerst</strong>, breid dan voorzichtig uit vanuit daar. Gebruik de belangstelling om verbinding en gezamenlijke aandacht op te bouwen (Lawson). Houd taal duidelijk, langzaam en letterlijk; sta verwerkingstijd toe; dwing geen oogcontact (oogcontact kan zelf schaarse aandachtsbronnen verbruiken) (F. Murray, 2023). Verminder de zintuiglijke belasting in de kamer.</p>
+<p><strong>(c) Hoe te stimuleren / betrekken.</strong> Gebruik de <strong>intense belangstelling van het kind als brug naar leren en vaardigheidsopbouw</strong> — sequentiëren, taal, tellen, motorische en spelvaardigheden kunnen allemaal worden geoefend <em>doorheen</em> de belangstelling (Lawson; Wood, 2019; BERA, over flow-staten in de klas). Ondersteun opkomende <strong>gezamenlijke aandacht</strong> door belangstelling-geleid, relatie-gebaseerd spel en vroege interventie (het JASPER-model en vergelijkbare belangstelling-/spel-gebaseerde benaderingen richten zich op gezamenlijke aandacht en symbolisch spel; Kasari et al., 2006). Eer <strong>autistische spelcultuur</strong> — oprijen, sorteren en zintuiglijke exploratie zijn geldig spel, geen „verkeerd" spel om te corrigeren (Donzelli, 2021).</p>
+<p><strong>(d) Hoe te ondersteunen / aan te pakken.</strong> Beheer <strong>transities</strong> met visuele schema's/timers, aftellingen, verbale + visuele waarschuwingen <em>voor</em> de verandering, „brug"-objecten van de ene activiteit naar de volgende, en extra tijd; ruk nooit abrupt een kind uit een aandachtstunnel (Autism Little Learners; F. Murray, 2023). Voor <strong>meltdowns</strong>: blijf kalm, verminder stimulatie, veroordeel of straf niet — ze zijn onvrijwillig; zorg voor veiligheid, sta dan herstel toe (Autism Society, 2025). Bescherm toegang tot stimming (het is zelfregulatie) (F. Murray, 2023). Vermijd op-compliance-gebaseerde programma's die stims of natuurlijk gedrag aftrainen: deze verhogen maskering en langetermijnschade (F. Murray, 2023; Raymaker et al., 2020).</p>
+<hr />
+<h3 id="32-schoolgaande-kindertijd-ongeveer-612-jaar">3.2 Schoolgaande kindertijd (ongeveer 6–12 jaar)</h3>
+<p><strong>(a) Wat u kunt observeren.</strong> School is vaak de eerste volgehouden stresstest van een monotroop systeem en is „een hel voor veel monotrope kinderen — ook al houden veel van ons van leren" (F. Murray, 2023). Het klaslokaal, de gangen en de pauzes zijn typisch <strong>te luid, te visueel druk en te onvoorspelbaar</strong>, aandacht verbruikend die naar leren zou moeten gaan. Kinderen kunnen „ongewenst gedrag" vertonen bij transities, zich terugtrekken bij pauzes, worden gepest voor „vreemde" belangstellingen of zelf-gericht spel, of worden verkeerd begrepen door personeel als defiant, lui of ongeïnteresseerd. Traagheid toont als moeite met werk beginnen, van vak wisselen of inpakken. Sommige kinderen beginnen hier zwaar te maskeren, met mentale-gezondheidskosten (F. Murray, 2023; Leatherland, 2019; NAS, 2025).</p>
+<p><strong>(b) Hoe te interageren (leraren, schoolverpleegkundigen, therapeuten).</strong> Erken dat weerstand bij transities een <strong>cognitieve-kosten</strong>-probleem is, geen defaintie. Bied rustige/gedimde ruimtes (bijv. „klusjes" in de bibliotheek bij pauze, een rustige hoek). Bouw relaties door de belangstelling van het kind. Communiceer letterlijk, vooraf, en schriftelijk waar mogelijk. Modelleer de dubbele-empathie-houding voor peers en collega's — kader verschillen als verschillen, niet tekorten (F. Murray, 2023; Wood, 2019).</p>
+<p><strong>(c) Hoe te stimuleren / betrekken (het „monotrope curriculum").</strong> Maak de <strong>speciale belangstelling de ruggengraat van leren</strong> — lezen, schrijven, wiskunde, geschiedenis en wetenschap <em>doorheen</em> het; sta uitgebreide tijd toe in belangstelling-geleide flow; ontwerp taken rond minder, diepere sporen in plaats van constant schakelen (Wood, 2019, „intense belangstellingen … de sleutel tot educatieve inclusie"; F. Murray, „Monotropism at School", 2019; BERA). Flow-staten zijn leerstaten — bescherm ze: <em>"als een leerling zich overweldigd voelt … en u weet dat hij een monotrope belangstelling voor Lego heeft, waarom dan geen rustige ruimte creëren … en hem uitgebreide tijd toestaan?"</em> (BERA). Verbind met een gepassioneerde autistische leerling <em>doorheen</em> de passie (Wood et al., 2022; Lawson).</p>
+<p><strong>(d) Hoe te ondersteunen / aan te pakken.</strong> Gebruik visuele roosters, transitiewaarschuwingen en brug-activiteiten; geef royale transitietijd en verminder het aantal transities per dag waar mogelijk (Autism Little Learners; F. Murray, 2023). Co-creëer routines <em>met</em> het kind. Let op <strong>autistische burnout en „vaardigheidsregressie"</strong> bij schoolgaande kinderen — deze weerspiegelen vaak overweldiging en een verschuiving in aandachtsbronnen, niet verlies van aangeboren vaardigheid, en de respons is <strong>eisen verminderen en toegang tot belangstellingen/rust herstellen</strong>, niet harder duwen (Edgar, 2024; Raymaker et al., 2020). Identificeer en verminder maskeringsdruk, vooral bij meisjes, die vaak voor diagnose worden gemist omdat ze maskeren (F. Murray, 2023). Gebruik een burnout-gids voor leraren (bijv. Edgar, 2023) en raadpleeg ouders als experts van hun kind.</p>
+<hr />
+<h3 id="33-adolescentie-ongeveer-1318-jaar">3.3 Adolescentie (ongeveer 13–18 jaar)</h3>
+<p><strong>(a) Wat u kunt observeren.</strong> Puberteit brengt hormonale en hersenveranderingen (synaptisch snoeien, myelinisatie) die zintuiglijke en emotionele responsen kunnen intensiveren en een gevestigd evenwicht kunnen verstoren. De sociale eisen van adolescentie — verschuivende peer-hiërarchieën, impliciete sociale regels, daten, identiteitsvorming — zijn extreem hoger-kanaal en uitputtend voor een monotroop systeem. Mentale-gezondheidsmoeilijkheden (angst, depressie) pieken hier; piekeren / „zorgespiralen" kunnen ingeburgerd raken; camoufleren intensiveert, en veel autistische meisjes en gemarginaliseerde-gender jongeren worden <strong>pas in crisis geïdentificeerd</strong>. Speciale belangstellingen worden centraal voor identiteit en herstel. Vriendschappen, indien van hoge kwaliteit, zijn beschermend voor mentale gezondheid (ARI, over puberteit; Autism Awareness Australia; F. Murray, 2023; Hallett, 2021; Sedgewick/Cook et al., via PMC9597130).</p>
+<p><strong>(b) Hoe te interageren.</strong> Behandel de jongere als expert van zijn eigen ervaring. Gebruik heldere, letterlijke, respectvolle communicatie; geef verwerkingstijd en schriftelijke opties. Valideer belangstellingen als legitiem en identiteitsvormend. Wees alert op het dubbele-empathie-probleem in peer- en klinische interacties. Bied <strong>voorspelbaarheid</strong> rond afspraken en verminder onnodige sociale/zintuiglijke belasting (Autism Awareness Australia; F. Murray, 2023).</p>
+<p><strong>(c) Hoe te stimuleren / betrekken.</strong> Kanaliseer speciale belangstellingen naar <strong>studie, projecten, portfolio's, vrijwilligerswerk en vroege carrièrexploratie</strong> — ze zijn de grootste motivationele en vaardigheids-opbouwende asset van de adolescent. Ondersteun <strong>identiteit en gemeenschap</strong>: autistische peer-groepen, speciale-belangstellings-clubs, mentoring en online autistische gemeenschappen kunnen welzijn transformeren. Onderwijs <strong>zelfbegrip</strong> van monotropisme zodat de jongere voor zijn aandachtsbehoeften kan opkomen (in plaats van „ik ben lui/kapot" te internaliseren).</p>
+<p><strong>(d) Hoe te ondersteunen / aan te pakken.</strong> Pak proactief <strong>mentale gezondheid</strong> aan; screen op angst, depressie, burnout en suïcidaliteit, erkennend dat <strong>autistische burnout onderscheiden is van depressie</strong> en van beroepsburnout en <em>verminderde eisen, acceptatie en ontmaskeren</em> vereist, niet slechts CBT of antidepressiva (Raymaker et al., 2020). Ondersteun puberteit-gerelateerde praktische en zintuiglijke behoeften (menstruatie, hygiëne, lichaamsveranderingen) expliciet en concreet (ARI). Pak <strong>camouflagschade</strong> aan — verminder expliciet de verwachting om te maskeren. Onderwijs meltdown/shutdown-zelfmanagement en zorg dat de jongere een laag-eisend herstelpad heeft. Plan <strong>transities naar volwassenheid</strong> (onderwijs, werk, gezondheidsoverdracht) vroeg en met de belangstellingen van de jongere centraal. <em>(Inferentie, gevlagd: veel klinische richtlijn hier is geëxtrapoleerd uit volwassen burnout/maskeringsliteratuur en autistische geleefde-ervaring-accounts eerder dan adolescentie-specifieke RCT's.)</em></p>
+<hr />
+<h3 id="34-volwassenheid-ongeveer-19midden-leven">3.4 Volwassenheid (ongeveer 19–midden leven)</h3>
+<p><strong>(a) Wat u kunt observeren.</strong> Veel autistische volwassenen — vooral vrouwen, mensen van kleur, en degenen zonder verstandelijke beperking — worden <strong>pas in volwassenheid gediagnosticeerd</strong> (de „verloren generatie", Lai &amp; Baron-Cohen). In de juiste omgeving brengen monotrope volwassenen <strong>diepe expertise, volgehouden concentratie, betrouwbaarheid, patroonherkenning en eerlijkheid</strong> die genuine assets zijn. In de verkeerde omgeving — open-kantoor-ruimtes, constante onderbreking, onduidelijke verwachtingen, zintuiglijke belasting, sociaal-politieke eisen — staan ze voor chronische uitputting, maskering, meltdowns/shutdowns en <strong>autistische burnout</strong> (Knight, 2021/2022; Booth, 2021; Raymaker et al., 2020; Mantzalas et al., 2022).</p>
+<p><strong>(b) Hoe te interageren.</strong> Communiceer <strong>expliciet en schriftelijk</strong>; definieer verwachtingen, deadlines en sociale normen concreet in plaats van ze te impliceren. Sta schriftelijke/asynchrone communicatie (e-mail, tekst) toe die kanaalbelasting vermindert. Geef verwerkingstijd; lees een pauze niet als weerstand. Vraag de persoon welke aanpassingen helpen — hij is de expert (F. Murray, 2023; Knight, 2021).</p>
+<p><strong>(c) Hoe te stimuleren / betrekken (werkplek).</strong> Structureer de rol rond <strong>minder, diepere „tunnels, geen taken"</strong> (Knight, 2021): minimaliseer meetings en onderbrekingen, batch ondiep werk, sta flow-tijd toe en geef toegang tot rustige/zintuiglijk-gecontroleerde ruimte. Match taken aan <strong>sterktes en speciale belangstellingen</strong>; de intensiteit van autistische focus is, indien beschermd, een belangrijke productiviteits- en innovatie-asset (Advanced Autism Services, 2025; Sachs Center; Booth, 2021). Bouw <strong>routines</strong> met de volwassene, en gebruik wettelijk beschikbare aanpassingen (bijv. ADA/Equality Act) (Links ABA). Moedig <strong>„klein leven"</strong> aan waar behulpzaam — het leven versimplificeren tot enkele focusgebieden kan functie en geluk merkbaar verbeteren (Knight, 2021).</p>
+<p><strong>(d) Hoe te ondersteunen / aan te pakken.</strong> Behandel <strong>autistische burnout</strong> als een serieuze, onderscheiden klinische entiteit: herken chronische uitputting, verlies van eerder-bezeten vaardigheden en verminderde tolerantie voor stimulus; beoordeel op suïcidaliteit (Raymaker et al., 2020). De bewijs-ondersteunde herstelrichting is <strong>eisen en verwachtingen verminderen, acceptatie en sociale steun bieden, en „dingen op een autistische manier doen" / ontmaskeren toestaan</strong> (Raymaker et al., 2020; Mantzalas et al., 2022). Schrijf <em>geen</em> op maskering gebaseerd sociale-vaardigheidstraining voor als oplossing. Behandel co-voorkomende angst, depressie, ADHD, slaap en GI-condities (die vaker voorkomen bij autistische volwassenen). Respecteer dat <strong>speciale belangstellingen beschermend en herstellend zijn</strong>, geen compulsies om te beperken (Mantzalas et al., 2022).</p>
+<hr />
+<h3 id="35-oudere-volwassenen--bejaarden-ongeveer-60">3.5 Oudere volwassenen &amp; bejaarden (ongeveer 60+)</h3>
+<p><strong>(a) Wat u kunt observeren — en de eerlijke grenzen van onze kennis.</strong> Dit is het <strong>minst-onderzochte deel van de autistische levensloop</strong>: per 2024 besloeg onderzoek naar oudere autistische volwassenen slechts ongeveer <strong>0,4% van de autisme-literatuur</strong> (hoewel groeiend ~392% sinds 2012) (Klein et al., 2024). Het bestaande bewijs is verontrustend: uitkomsten voor oudere autistische volwassenen zijn <strong>over het algemeen slecht</strong> over alle vier domeinen van „goed ouder worden" (gezondheid en functioneren; cognitief en fysiek functioneren; positief affect en controle; sociale participatie). Ze tonen <strong>meer medische condities, lage adaptieve vaardigheden, verhoogd risico op cognitief verval, beperkte fysieke activiteit, hoge percentages mentale-gezondheidscondities, lage levenskwaliteit en verminderde sociale/community-participatie</strong> (Klein et al., 2024). In een Australische steekproef (leeftijd 40+) voldeed slechts <strong>3,3% aan criteria voor „succesvol ouder worden"</strong> (Klein et al., 2024). Oudere autistische volwassenen hebben <strong>hogere percentages van de meeste gezondheidscondities</strong> — stemmingsstoornissen, slaapproblemen, GI- en hartcondities — dan niet-autistische peers (Additude, populatiestudies samenvattend). Veel oudere autistische mensen zijn <strong>on-diagnosticeerd</strong> („verloren generatie"); clinici moeten bereid zijn autisme te herkennen bij oudere volwassenen die presenteren met levenslange sociale/zintuiglijke verschillen, burnout of mentale-gezondheidscrisis (OAR; Klein et al., 2024).</p>
+<p><strong>(b) Hoe te interageren.</strong> Alle dwarsdoorsnijdende principes gelden met extra gewicht: heldere, letterlijke, respectvolle communicatie; sta royale verwerkingstijd en schriftelijke informatie toe; verminder zintuiglijke belasting (gehoor- en gezichtsveranderingen stapelen zich op baseline-zintuiglijke verschillen); neem nooit cognitieve incapaciteit aan van een trage of atypische reactie. Houd rekening met het <strong>dubbele-empathie-probleem</strong> expliciet in zorgsettings.</p>
+<p><strong>(c) Hoe te stimuleren / betrekken.</strong> Behoud en <strong>bescherm levenslange speciale belangstellingen en routines</strong> — dit zijn ankers van identiteit, cognitie en welzijn, en kunnen vooral beschermend zijn naarmate andere capaciteiten veranderen. Pas activiteiten aan aan <strong>veranderende fysieke en zintuiglijke capaciteiten</strong> in plaats van ze te verwijderen. Ondersteun <strong>autistische gemeenschap en verbinding</strong> om de ernstige sociale isolatie tegemoet te treden die in deze groep wordt gezien (Klein et al., 2024; OAR). Moedig zachte fysieke activiteit afgestemd op de persoon aan (fysieke inactiviteit is een geïdentificeerd probleem) (Klein et al., 2024).</p>
+<p><strong>(d) Hoe te ondersteunen / aan te pakken.</strong></p>
+<ul>
+<li><strong>Toegang tot gezondheidszorg</strong> is een kritieke kloof: veel oudere autistische volwassenen vermijden zorg wegens levenslange negatieve ervaringen en zintuiglijke/communicatie-barrières; klinieken hebben training nodig (OAR; zie Deel 4).</li>
+<li>Let op <strong>autistische burnout</strong> — het risico stapelt zich op over decennia van maskeren en onvervulde behoefte, en kan verkeerd worden gelezen als depressie of „leeftijdsgerelateerd verval" (Raymaker et al., 2020).</li>
+<li>Wees alert op <strong>cognitieve verandering vs autistisch verschil</strong>: autistische monotrope/traagheid-patronen onderscheiden van genuine <strong>dementie/cognitief verval</strong> is klinisch moeilijk en onder-onderzocht; neem niet aan. Er is <em>zeer beperkt</em> onderzoek naar autisme + dementie/Alzheimer — vlag onzekerheid en beoordeel zorgvuldig (ABTABA; Klein et al., 2024).</li>
+<li><strong>Zorgomgevingen</strong> (verzorgingshuizen, ziekenhuizen) zijn vaak zintuiglijk vijandig en routine-verstorend; pleit voor rustige ruimtes, voorspelbare routines, behoud van betekenisvolle objecten/belangstellingen, en personeels-autisme-training.</li>
+<li>Ondersteun <strong>eindelevens- en vooraf-planning</strong> met heldere, letterlijke communicatie en respect voor autonomie.</li>
+<li><em>Inferentie, gevlagd:</em> Omdat autisme-specifiek bewijs op hoge leeftijd dun is, past deze sectie grotendeels het levensloop-monotropisme-model toe plus algemene ouder-worden-met-autisme-bevindingen; behandel als best-practice-richtlijn, niet vastgesteld protocol.</li>
+</ul>
+<hr />
+<h2 id="deel-4--specifieke-richtlijn-voor-zorgprofessionals">Deel 4 — Specifieke richtlijn voor zorgprofessionals</h2>
+<p>Zorgsettings (heldere fluorescente lichten, onvoorspelbare wachttijden, vage instructies, zintuiglijke en sociale eisen, pijn en invasiviteit) behoren tot de moeilijkste omgevingen voor monotrope mensen en triggeren frequent shutdowns, meltdowns en zorgvermijding (Autism Society, 2025; PMC11305600 narratief overzicht over autisme-vriendelijke gezondheidszorg). Het volgende is ontleend aan de autisme-vriendelijke-gezondheidszorg-literatuur en de <strong>AASPIRE Healthcare Toolkit / Autism Healthcare Accommodations Tool (AHAT)</strong> (autismandhealth.org).</p>
+<h3 id="voor-het-bezoek">Voor het bezoek</h3>
+<ul>
+<li><strong>Bied een pre-bezoek-vragenlijst / de AHAT aan</strong> om de specifieke zintuiglijke, communicatie- en procedurele behoeften van het individu vast te leggen en een gepersonaliseerd aanpassingenrapport te produceren (AASPIRE).</li>
+<li><strong>Verschaf schriftelijke, letterlijke informatie</strong> over wat er zal gebeuren, in welke volgorde, en hoe lang het zal duren; bied foto's van de ruimte/het personeel aan indien mogelijk.</li>
+<li><strong>Bied planningskeuzes</strong>: eerste/laatste afspraak (rustigst), kortere wachttijden, geen overlappende luidruchtige klinieken.</li>
+<li>Sta de persoon toe een <strong>vertrouwde begeleider</strong> en zijn eigen <strong>zintuiglijk kit</strong> (noise-cancelling-koptelefoons, zonnebril, fidget-items) mee te brengen (CHOP; Grateful Care ABA).</li>
+</ul>
+<h3 id="tijdens-het-bezoek">Tijdens het bezoek</h3>
+<ul>
+<li><strong>Verminder zintuiglijke belasting</strong>: dim of zacht licht waar mogelijk, minimaliseer piepgeluiden, bied een rustige kamer aan, vermijd sterke geuren/parfums (Autism Spectrum News; CHOP).</li>
+<li><strong>Communiceer letterlijk en concreet</strong>: leg elke stap <em>voor</em> het doen uit; zeg wat u bedoelt; vermijd stijlfiguren; controleer begrip door de persoon te vragen samen te vatten; <strong>sta lange stiltes toe voor verwerking</strong>.</li>
+<li><strong>Dwing geen oogcontact</strong>; sta de persoon toe weg te kijken, te stimmen, of schriftelijk/typing/AAC te communiceren.</li>
+<li><strong>Ga langzaam; bied pauzes.</strong> Heb een zintuiglijke-afleidings-kit beschikbaar (CHOP).</li>
+<li><strong>Respecteer de aandachtstunnel</strong>: als de persoon een belangstelling of stim gebruikt om zichzelf te reguleren tijdens een procedure, onderbreek deze niet.</li>
+<li>Pas de <strong>dubbele-empathie-houding</strong> toe (Milton, 2012; Neurodivergent Insights): als communicatie vastloopt, neem een <em>wederzijdse</em> kloof aan en pas aan, in plaats van de patiënt „moeilijk" of „non-compliant" te labelen.</li>
+</ul>
+<h3 id="na-het-bezoek">Na het bezoek</h3>
+<ul>
+<li>Verschaf <strong>schriftelijke follow-up</strong> (diagnose, instructies, volgende stappen) in letterlijke taal.</li>
+<li>Bouw <strong>hersteltijd</strong> in en waarschuw dat de persoon mogelijk moet rusten/shutdownen nadien.</li>
+<li>Documenteer effectieve aanpassingen in het dossier zodat ze de volgende keer automatisch zijn.</li>
+</ul>
+<h3 id="klinisch-kritische-herkenningen">Klinisch kritische herkenningen</h3>
+<ul>
+<li><strong>Autistische burnout is geen depressie.</strong> Het presenteert als chronische uitputting, verlies van vaardigheden en verminderde tolerantie voor stimulus, aangedreven door cumulatieve belasting en een verwachtingen–capaciteiten-mismatch; het behandelen als depressie (of de patiënt pushen om „harder te proberen") kan het verdiepen en suïcidaliteitsrisico verhogen. Herstel vereist verminderde eisen, acceptatie en toestemming om te ontmaskeren (Raymaker et al., 2020).</li>
+<li><strong>Maskering in de kliniek is vaak en kostbaar.</strong> Een patiënt die „fijn lijkt" op een 15-minuten-afspraak kan camoufleren en het nadien betalen; laat een gemaskeerde presentatie niet prevaleren boven zelfrapport of anamnese (Pearson &amp; Rose, 2021; F. Murray, 2023).</li>
+<li><strong>Pijn en interoceptie.</strong> Een monotrope persoon merkt of meldt mogelijk geen pijn, honger, dorst, vermoeidheid of interne symptomen tot ernstig (Kelly Mahler, 2024; Lawson). Gelijk „niet klagen" niet met „niet lijden"; vraag proactief, en overweeg dat gemelde symptoompatronen vertraagd of atypisch kunnen zijn.</li>
+<li><strong>Medicatie &amp; bijwerkingen.</strong> Autistische mensen rapporteren frequent atypische zintuiglijke en emotionele responsen op medicatie; start laag, titreer langzaam, en monitor zelfrapport zorgvuldig.</li>
+<li><strong>Meltdown/shutdown in de kliniek.</strong> Deze zijn onvrijwillig: verminder stimulatie, verlaag eisen, zorg voor veiligheid, geef tijd en ruimte, fixeer of straf niet; een terugtrekking/shutdown heeft rustige, laag-input geduld nodig, geen druk om te „betrokken zijn" (Autism Society, 2025; Leicestershire Partnership NHS Trust; Reframing Autism).</li>
+<li><strong>Toestemming &amp; capaciteit.</strong> Verschaf informatie in een toegankelijke, letterlijke vorm; sta verwerkingstijd en ondersteunde besluitvorming toe; neem nooit een gebrek aan capaciteit aan van atypische communicatie.</li>
+<li><strong>Aanpassingen helpen iedereen.</strong> Zintuiglijk-vriendelijke, voorspelbare, duidelijk gecommuniceerde zorg komt ook patiënten met ADHD, PTSS, angst, zintuigligverlies, cognitieve verandering en vele anderen ten goede (UNC Health, 2025).</li>
+</ul>
+<hr />
+<h2 id="deel-5--wat-te-vermijden-veelvoorkomende-schade">Deel 5 — Wat te vermijden (veelvoorkomende schade)</h2>
+<ul>
+<li>Een persoon abrupt uit een aandachtstunnel trekken of flow herhaaldelijk onderbreken (F. Murray, 2023).</li>
+<li>Stims, oogcontact-verschillen of natuurlijke communicatie aftrainen (op-compliance-gebaseerde „normalisatie") — verhoogt maskering en langetermijnschade (F. Murray, 2023; Raymaker et al., 2020).</li>
+<li>Speciale belangstellingen als „obsessies" kaderen om te beperken; belangstellings-toegang verminderen (Mantzalas et al., 2022).</li>
+<li>Routines/verwachtingen <em>over</em> de persoon opleggen in plaats van ze co-te-creëren (F. Murray, 2022).</li>
+<li>Deficit-gebaseerde, pathologiserende taal gebruiken; alle interactieproblemen aan de autistische persoon toeschrijven (Milton, 2012).</li>
+<li>Autistische burnout behandelen als depressie of luiheid; de persoon pushen om meer te maskeren (Raymaker et al., 2020).</li>
+<li>Zintuiglijk-vijandige klinieken, verrassingsprocedures en vage instructies (PMC11305600; AASPIRE).</li>
+<li>Aannemen dat levenslange verschillen van een oudere volwassene „gewoon ouder worden" of dementie zijn zonder passende beoordeling (Klein et al., 2024).</li>
+</ul>
+<hr />
+<h2 id="deel-6--open-vragen--bewijskanttekeningen-voor-eerlijke-praktijk">Deel 6 — Open vragen &amp; bewijskanttekeningen (voor eerlijke praktijk)</h2>
+<ol type="1">
+<li><strong>Hoge ouderdom is een onderzoekshiaat.</strong> Veel levensloop-richtlijn voor bejaarden is geëxtrapoleerd; autisme + dementie, autisme + menopauze/andropauze en eindelevens-zorg zijn grotendeels onbestudeerd (Klein et al., 2024). Wees transparant over onzekerheid met patiënten en families.</li>
+<li><strong>Monotropisme is beschrijvend, nog niet mechanistisch of volledig getest.</strong> Het is een uitstekende klinische heuristiek met groeiend convergerend support, maar geen diagnose of volledige theorie (Dwyer, 2021; 2025).</li>
+<li><strong>Niet alle autistische mensen zijn monotoop.</strong> Een minderheid identificeert zich niet met het kader; centreer altijd het individu (monotropism.org).</li>
+<li><strong>Intersectionaliteit wordt onderbehandeld.</strong> Meest onderzoek is blank, westers, verbaal en lager-ondersteuningsbehoefte-vertrokken; presentaties, diagnose en behoeften verschillen over gender, ras, intellectuele capaciteit en communicatieprofielen (Raymaker et al., 2020 beperkingen).</li>
+<li><strong>Co-voorkomen is de regel.</strong> ADHD (AuDHD), angst, depressie, leerverschillen, GI-/slaapcondities komen vaak co-voor; monotropisme kan AuDHD-overlapping helpen verklaren, en de Monotropism Questionnaire-scores zijn het hoogst in AuDHD (Garau et al., 2023; NAS, 2025).</li>
+</ol>
+<hr />
+<h2 id="bronnen">Bronnen</h2>
+<ol type="1">
+<li>Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a> — via <a href="https://monotropism.org/murray-lesser-lawson">https://monotropism.org/murray-lesser-lawson</a></li>
+<li>Murray, F. (2018, bijgewerkt 2025). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em>, BPS. <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a></li>
+<li>Murray, F. (2023). Monotropism and Wellbeing (keynote, Scottish Autism Research Group 2023). <a href="https://monotropism.org/wellbeing">https://monotropism.org/wellbeing</a></li>
+<li>Murray, F. (2019). Monotropism at School (oorspronkelijk in <em>Tes</em>). <a href="https://monotropism.org/school/">https://monotropism.org/school/</a> — geïndexeerd op <a href="https://monotropism.org/in-practice">https://monotropism.org/in-practice</a></li>
+<li>Murray, F. (2022). Understanding how routines can help autistic people thrive. <em>Thinking Person's Guide to Autism</em>. <a href="https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html">https://thinkingautismguide.com/2022/04/understanding-how-routines-can-help-autistic-people.html</a></li>
+<li>National Autistic Society (Edgar, H. &amp; Adkin, T., 2025). What is monotropism? Understanding a neuroaffirming theory of autism. <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a></li>
+<li>Dwyer, P. (2021). Revisiting monotropism. <em>Autistic Scholar</em>. <a href="https://www.autisticscholar.com/monotropism/">https://www.autisticscholar.com/monotropism/</a></li>
+<li>Dwyer, P. (2025). Monotropism: between obsessive joy and overwhelm. OTARC Blog, La Trobe University. <a href="https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm">https://otarc.blogs.latrobe.edu.au/monotropism-between-obsessive-joy-and-overwhelm</a></li>
+<li>Garau, V. et al. (2023). Development and validation of a novel self-report measure of monotropism (the Monotropism Questionnaire). OSF preprint. <a href="https://osf.io/ft73y/">https://osf.io/ft73y/</a> — hulpmiddel op <a href="https://dlcincluded.github.io/MQ/">https://dlcincluded.github.io/MQ/</a></li>
+<li>Landry, R. &amp; Bryson, S. (2004). Impaired disengagement of attention in young children with autism. <em>J Child Psychol Psychiatry</em>, 45(6), 1115–1122. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></li>
+<li>Sacrey, L.-A. et al. (2015). Attention disengagement in autism spectrum disorder: a meta-analysis. <em>Neurosci Biobehav Rev</em>, 56, 111–121. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></li>
+<li>Heasman, T. et al. (2024). Autistic flow theory. (Geciteerd in NAS, 2025.)</li>
+<li>Raymaker, D. M. et al. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": defining autistic burnout. <em>Autism in Adulthood</em>, 2(2), 132–143. <a href="https://pubmed.ncbi.nlm.nih.gov/32851204">https://pubmed.ncbi.nlm.nih.gov/32851204</a> — volledige tekst: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></li>
+<li>Mantzalas, J. et al. (2022). A conceptual model of risk and protective factors for autistic burnout. <em>Autism Research</em>. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2722</a></li>
+<li>Pearson, A. &amp; Rose, K. (2021). A conceptual analysis of autistic masking: understanding the narrative of stigma and the illusion of choice. <em>Autism in Adulthood</em>, 3(1). <a href="https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043">https://www.liebertpub.com/doi/full/10.1089/aut.2020.0043</a></li>
+<li>Bradley, L. et al. (2021). Autistic adults' experiences of camouflaging and its perceived impact on mental health. <em>Autism in Adulthood</em>, 3(4), 320–329. (PubMed 36601637.)</li>
+<li>Milton, D. (2012). On the epistemic and ontological value of the double empathy problem. <em>Dis &amp; Soc</em>. Samenvatting: Reframing Autism, <a href="https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics">https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics</a></li>
+<li>Lawson, W. (2011). <em>The Passionate Mind: How People with Autism Learn</em>. Jessica Kingsley. — en Lawson, W. (2025). Research by autistic researchers: an 'insider's view' into autism. <em>Frontiers in Psychiatry</em>, 16, 1664507. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12586063/</a></li>
+<li>Wood, R. (2019). Autism, intense interests and support in school: from wasted efforts to shared understandings. <em>Educational Studies</em>. Samenvatting: <a href="https://woodbug.blog/2019/03/27/autistic-children-and-intense-interests-the-key-to-their-educational-inclusion/">https://woodbug.blog/2019/03/27/autistic-children-and-intense-interests-the-key-to-their-educational-inclusion/</a></li>
+<li>Wood, R. et al. (2022). <em>Learning From Autistic Teachers</em>. Jessica Kingsley.</li>
+<li>Leatherland, J. (2019). Understanding how autistic pupils experience secondary school (doctoraatsproefschrift, Sheffield Hallam). <a href="http://shura.shu.ac.uk/23231/">http://shura.shu.ac.uk/23231/</a></li>
+<li>Kasari, C., Freeman, S., &amp; Paparella, T. (2006). Joint attention and symbolic play in young children with autism: a randomized controlled intervention study. <em>J Child Psychol Psychiatry</em>, 47, 611–620. (Verwezen via PMC5683273.)</li>
+<li>Donzelli, S. (2021). Autistic play at forest school: pretend play characteristics seen otherwise. <em>Forest School Association</em>. <a href="https://forestschoolassociation.org/autistic-play-at-forest-school-pretend-play-characteristics-seen-otherwise/">https://forestschoolassociation.org/autistic-play-at-forest-school-pretend-play-characteristics-seen-otherwise/</a></li>
+<li>Hallett, S. (2021). Loops of concern (gids over autistisch piekeren). <a href="https://medium.com/@sonyahallett/loops-of-concern-ff792eebad03">https://medium.com/@sonyahallett/loops-of-concern-ff792eebad03</a></li>
+<li>Kelly Mahler (2024). Interoception and monotropism. <a href="https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/">https://www.kelly-mahler.com/resources/blog/interoception-and-monotropism-paying-attention-to-autistic-adhd-experiences/</a></li>
+<li>Knight, J. (2021). Staying put, monotropism &amp; me (tunnels not tasks); (2022) Applying monotropism. <a href="https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me">https://spacedoutandsmiling.com/blog/2021-11-27-staying-put-monotropism-me</a></li>
+<li>Booth, J. (2021). Why does work not work for autistic people? <a href="https://janinebooth.com/content/why-does-work-not-work-autistic-people">https://janinebooth.com/content/why-does-work-not-work-autistic-people</a></li>
+<li>BERA (2021). Autism: the benefits of monotropism and flow states and its applications for the classroom. <a href="https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom">https://www.bera.ac.uk/blog/autism-the-benefits-of-monotropism-and-flow-states-and-its-applications-for-the-classroom</a></li>
+<li>Autism Society (2025). Autistic meltdowns and shutdowns (factsheet). <a href="https://autismsociety.org/">https://autismsociety.org/</a></li>
+<li>Leicestershire Partnership NHS Trust — Autism Space. Understanding autistic meltdowns and shutdowns. <a href="https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns">https://www.leicspart.nhs.uk/autism-space/health-and-lifestyle/meltdowns-and-shutdowns</a></li>
+<li>Reframing Autism. All about autistic shutdowns: a guide for allies. <a href="https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies">https://reframingautism.org.au/all-about-autistic-shutdown-guide-for-allies</a></li>
+<li>AASPIRE Healthcare Toolkit / Autism Healthcare Accommodations Tool (AHAT). <a href="https://autismandhealth.org">https://autismandhealth.org</a></li>
+<li>Children's Hospital of Philadelphia (CHOP). Tips for more positive office visits for patients with ASD. <a href="https://www.chop.edu/news/tips-more-positive-office-visits-patients-asd">https://www.chop.edu/news/tips-more-positive-office-visits-patients-asd</a></li>
+<li>UNC Health (2025). Autistic patients need better care, accommodations in the medical office. <a href="https://news.unchealthcare.org/2025/04/autistic-patients-need-better-care-accomodations-in-the-medical-office">https://news.unchealthcare.org/2025/04/autistic-patients-need-better-care-accomodations-in-the-medical-office</a></li>
+<li>Autism Spectrum News. Creating sensory-friendly health care environments for autistic patients. <a href="https://autismspectrumnews.org/creating-sensory-friendly-health-care-environments-for-autistic-patients">https://autismspectrumnews.org/creating-sensory-friendly-health-care-environments-for-autistic-patients</a></li>
+<li>Klein, C. B. et al. (2024). Aging well and autism: a narrative review and recommendations for future research. <em>Healthcare</em>, 12(12), 1207. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987">https://pmc.ncbi.nlm.nih.gov/articles/PMC11203987</a> — <a href="https://doi.org/10.3390/healthcare12121207">https://doi.org/10.3390/healthcare12121207</a></li>
+<li>Organization for Autism Research (OAR). Aging on the autism spectrum. <a href="https://researchautism.org/oaracle-newsletter/aging-on-the-autism-spectrum">https://researchautism.org/oaracle-newsletter/aging-on-the-autism-spectrum</a></li>
+<li>Lai, M.-C. &amp; Baron-Cohen, S. (2015). Identifying the lost generation of adults with autism spectrum conditions. <em>Lancet Psychiatry</em>. (Verwezen in Klein et al., 2024.)</li>
+<li>Edgar, H. (2023). Supporting pupils through autistic burnout (lerarengids). <a href="https://autisticrealms.com/supporting-pupils-through-autistic-burnout-teacher-guide/">https://autisticrealms.com/supporting-pupils-through-autistic-burnout-teacher-guide/</a></li>
+<li>Edgar, H. (2024). Autistic young people: skills regression, burnout or a shift in monotropic attentional resources? <a href="https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/">https://autisticrealms.com/autistic-young-people-skills-regression-burnout-or-a-shift-in-monotropic-attentional-resources/</a></li>
+<li>Autism Awareness Australia. Understanding mental health in autistic teenagers. <a href="https://www.autismawareness.com.au/navigating-autism/understanding-mental-health-in-autistic-teenagers">https://www.autismawareness.com.au/navigating-autism/understanding-mental-health-in-autistic-teenagers</a></li>
+<li>Autism Research Institute (ARI). Understanding and supporting puberty in autistic girls and boys. <a href="https://autism.org/understanding-and-supporting-puberty">https://autism.org/understanding-and-supporting-puberty</a></li>
+<li>Neurodivergent Insights. Autism and the double empathy problem in medicine. <a href="https://neurodivergentinsights.com/the-double-empathy-problem-in-medicine">https://neurodivergentinsights.com/the-double-empathy-problem-in-medicine</a></li>
+<li>PieBru (2025). Monotropism: an interest-based account of autism (bron-brief). <a href="https://github.com/PieBru/monotropism/blob/main/monotropism.md">https://github.com/PieBru/monotropism/blob/main/monotropism.md</a></li>
+<li>Narrative review: Autism-friendly healthcare — a narrative review of the literature (PMC11305600). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11305600">https://pmc.ncbi.nlm.nih.gov/articles/PMC11305600</a></li>
+</ol>
+<h3 id="ondersteunende-praktische-hulpbronnen-inline-hierboven-geciteerd-voor-praktische-uitspragen-van-lagere-inzet">Ondersteunende praktische hulpbronnen (inline hierboven geciteerd voor praktische uitspragen van lagere inzet)</h3>
+<ul>
+<li>Advanced Autism Services (2025). How to support autistic adults in the workplace. <a href="https://www.advancedautism.com/post/how-to-support-autistic-adults-in-the-workplace">https://www.advancedautism.com/post/how-to-support-autistic-adults-in-the-workplace</a></li>
+<li>Sachs Center. Autism workplace accommodations that actually work. <a href="https://sachscenter.com/autism-workplace-accommodations">https://sachscenter.com/autism-workplace-accommodations</a></li>
+<li>Links ABA. Accessing healthcare as an autistic individual; work and mental health tips for autistic adults. <a href="https://linksaba.com">https://linksaba.com</a></li>
+<li>Autism Little Learners. Transitions and autism; smoother transitions in young autistic kids. <a href="https://autismlittlelearners.com">https://autismlittlelearners.com</a></li>
+<li>Grateful Care ABA. Preparing for doctor visits with autism. <a href="https://www.gratefulcareaba.com/blog/preparing-for-doctor-visits-with-autism">https://www.gratefulcareaba.com/blog/preparing-for-doctor-visits-with-autism</a></li>
+<li>ABTABA / Above and Beyond Therapy. Autism aging out; autism shutdown. <a href="https://www.abtaba.com">https://www.abtaba.com</a></li>
+<li>Additude. Aging with autism: cognition, health, loneliness &amp; other factors. <a href="https://www.additudemag.com/aging-with-autism-research">https://www.additudemag.com/aging-with-autism-research</a></li>
+<li>Retireguide. Aging with autism: a seniors &amp; caregivers guide. <a href="https://www.retireguide.com/guides/seniors-autism-spectrum">https://www.retireguide.com/guides/seniors-autism-spectrum</a></li>
+<li>Raising Children Network (Australia). Self-identity for your autistic teen. <a href="https://raisingchildren.net.au/autism">https://raisingchildren.net.au/autism</a></li>
+<li>Autistic Realms (Edgar, H.). Monotropism = happy flow state. <a href="https://autisticrealms.com/monotropism-happy-flow-state">https://autisticrealms.com/monotropism-happy-flow-state</a></li>
+<li>Neurodiverse Connection. Embracing autistic children's monotropic flow states. <a href="https://ndconnection.co.uk/blog/embracing-autistic-childrens-monotropic-flow-states">https://ndconnection.co.uk/blog/embracing-autistic-childrens-monotropic-flow-states</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Autisme en monotropisme: hoeveel komen ze echt voor?</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="autisme-en-monotropisme-hoeveel-komen-ze-echt-voor">Autisme en monotropisme: hoeveel komen ze echt voor?</h1>
+<p><em>Een geciteerd onderzoeksdossier — de regionale autismecijfers en de vraag „hoeveel procent van de mensen is monotoop" controlerend.</em></p>
+<blockquote>
+<p><strong>Informatief, geen medisch advies.</strong> Deze cijfers beschrijven <em>hoeveel mensen als autistisch worden geteld of hoog scoren op een monotropisme-schaal</em>. Tellen hangt sterk af van wie zoekt, hoe en waar. Niets hiervan is diagnostisch.</p>
+</blockquote>
+<hr />
+<h2 id="samenvatting">Samenvatting</h2>
+<ul>
+<li><strong>Autisme is niet overal 1%.</strong> Het zuiverste wereldwijde cijfer is de <strong>Global Burden of Disease (GBD) 2021</strong>-schatting, nu overgenomen door de WHO: ongeveer <strong>1 op de 127 mensen (~0,8%)</strong> was op het autismspectrum in 2021 [1][2]. Voor <em>kinderen</em> komen gepoolde overzichten nog uit rond het langdurige <strong>~1 op de 100</strong> [3]. De Verenigde Staten — het meest intensief gescreende land — rapporteert <strong>1 op de 31 (3,2%)</strong> onder 8-jarigen (CDC, data 2022) [4].</li>
+<li><strong>Regionale verschillen zijn grotendeels een meetartefact, niet biologie.</strong> Dezelfde GBD-studie vond autisme-gerelateerde ziektelast het <em>laagst</em> in Zuidoost-/Oost-Azië en Oceanië en het <em>hoogst</em> in de superregio met hoge inkomens [1]. Dat patroon volgt diagnostische infrastructuur, bewustzijn en screening — niet echte verschillen in hoe vaak autisme voorkomt.</li>
+<li><strong>De vaak geciteerde regionale tabel is aanzienlijk fout voor het Midden-Oosten en te sterk vereenvoudigd voor Azië.</strong> Een meta-analyse uit 2025 plaatst de gepoolde prevalentie van het Midden-Oosten en Noord-Afrika (MENA) op slechts <strong>~0,14%</strong> (bereik 0,01% Oman → 2,51% Saoedi-Arabië) [6], en een Aziatische meta-analyse rapporteert voor Oost-Azië <strong>~0,51%</strong> en vasteland China ~0,7% [5][7] — ver onder de vaak geclaimde „0,9–1,5%" voor de Arabische wereld.</li>
+<li><strong>Monotropisme heeft geen overeengekomen „prevalentie", en het cijfer „15–20% van de mensen is monotoop" is een categoriefout.</strong> Monotropisme is een <em>dimensionele</em> cognitieve stijl (een continue eigenschap), geen diagnose. De enige grote empirische studie — de <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — vond dat autistische deelnemers gemiddeld <strong>4,15/5</strong> scoorden en niet-autistische deelnemers <strong>3,19/5</strong>, met aanzienlijke overlap [10]. Hij zegt <strong>niet</strong> „X% van de mensen is monotoop."</li>
+<li><strong>De claim „&gt;90% van autistische mensen is monotoop" is een theoretische uitspraak over hoe goed de theorie autistische ervaring vangt, geen gemeten percentage.</strong> Het is verdedigbaar als <em>subjectieve validiteit</em>, misleidend als <em>epidemiologie</em>.</li>
+</ul>
+<hr />
+<h2 id="1-hoeveel-mensen-zijn-autistisch-en-waarom-twee-hoofdnummers-bestaan">1. Hoeveel mensen zijn autistisch? (en waarom twee hoofdnummers bestaan)</h2>
+<p>Twee cijfers circuleren, en ze beantwoorden licht verschillende vragen:</p>
+<ul>
+<li><strong>~1 op de 100 kinderen.</strong> Dit is het cijfer gepoogd uit tientallen studies in systematische overzichten (bijv. Zeidan et al., 2022) en is de langdurige <em>kindgerichte</em> samenvatting van de WHO [3]. Het weerspiegelt studies die voornamelijk pediatrische populaties screenen.</li>
+<li><strong>1 op de 127 mensen (~0,79%), alle leeftijden.</strong> Dit is de gemodelleerde schatting van de <strong>GBD 2021</strong> — 61,8 miljoen mensen in 2021 — die de WHO nu woordelijk heeft overgenomen („In 2021 had ongeveer 1 op de 127 personen autisme") [1][2]. Het is lager per hoofd van de bevolking omdat het de hele levensspanne beslaat, inclusief oudere generaties die nooit zijn gescreend.</li>
+</ul>
+<blockquote>
+<p>De kloof tussen „1 op de 100" en „1 op de 127" is geen tegenspraak: het eerste zijn <em>kinderen</em>, het tweede <em>iedereen</em>. Beide zijn verdedigbaar als de populatie wordt vermeld.</p>
+</blockquote>
+<p>De GBD geeft ook een duidelijke geslachtsverdeling — ongeveer <strong>1,06% van de mannen</strong> versus <strong>0,51% van de vrouwen</strong> (1.064,7 vs 508,1 per 100.000) — wat de goed gedocumenteerde onderidentificatie van autistische meisjes en vrouwen weerspiegelt, geen tweevoudig biologisch verschil [1].</p>
+<h2 id="2-waarom-regionale-cijfers-verschillen-de-verschillen-meten-vooral-detectie-niet-biologie">2. Waarom regionale cijfers verschillen (de verschillen meten vooral <em>detectie</em>, niet biologie)</h2>
+<p>Dit is het belangrijkste punt bij het lezen van elke regionale tabel. De GBD 2021-auteurs vonden dat autisme-gerelateerde gezondheidslast varieerde van <strong>126,5 door ziekte aangepaste levensjaren (DALY's) per 100.000</strong> in de superregio Zuidoost-Azië / Oost-Azië / Oceanië tot <strong>204,1 per 100.000</strong> in de superregio met hoge inkomens [1]. In gewone taal: de rijkere, meer gescreende delen van de wereld <em>vinden</em> veel meer autisme dan de rest.</p>
+<p>De drijvers van de kloof zijn bijna geheel methodologisch en sociaal:</p>
+<ul>
+<li><strong>Diagnostische infrastructuur</strong> — actieve surveillancenetwerken (bijv. de ADDM van de Amerikaanse CDC) zoeken systematisch naar gevallen in scholen en klinieken; veel landen hebben zo'n systeem niet en vertrouwen op passieve klinische dossiers.</li>
+<li><strong>Criteria en bewustzijn</strong> — de verschuiving van de enge „autistische stoornis" (DSM-IV) naar het bredere autismspectrum (DSM-5, 2013), plus groeiend publiek en professioneel bewustzijn, heeft gestaag de <em>geïdentificeerde</em> prevalentie verhoogd in landen die opnieuw screenen.</li>
+<li><strong>Stigma, taal en toegang tot diensten</strong> — in veel regio's wordt autisme ondergerapporteerd omdat gezinnen stigma ervaren, diensten afwezig zijn, of screening-instrumenten niet gevalideerd zijn in de lokale taal en cultuur.</li>
+</ul>
+<p>Dus wanneer een tabel „0,1% in regio X en 3% in regio Y" toont, lees het als <em>„regio Y zoekt harder en heeft meer diagnostische capaciteit"</em>, niet <em>„autisme is dertig keer zeldzamer in regio X"</em>. De GBD-auteurs benadrukken precies dit: een betere wereldwijde datadekking is nodig voordat geografische variatie met vertrouwen kan worden geïnterpreteerd [1].</p>
+<h2 id="3-een-gecorrigeerde-regionale-tabel">3. Een gecorrigeerde regionale tabel</h2>
+<p>De cijfers die dit dossier uitlokten worden hier vergeleken met het beste beschikbare bewijs. De „Beste schatting"-kolommen citeren primaire systematische overzichten of het GBD-model — geen belangenronddraaiingen.</p>
+<table>
+<thead>
+<tr>
+<th>Regio</th>
+<th>Vaak geciteerd cijfer</th>
+<th>Wat het bewijs ondersteunt</th>
+<th>Bron</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wereld — alle leeftijden</strong></td>
+<td>„1%"</td>
+<td><strong>1 op de 127 (~0,79%)</strong> in 2021 (GBD; nu het WHO-cijfer)</td>
+<td>[1][2]</td>
+</tr>
+<tr>
+<td><strong>Wereld — kinderen</strong></td>
+<td>„1 op de 100"</td>
+<td>~1 op de 100 kinderen (gepoolde overzichten)</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>Noord-Amerika</strong></td>
+<td>„1–3,2%"</td>
+<td><strong>3,2% (1 op de 31)</strong> Amerikaanse 8-jarigen (2022, CDC ADDM); ~1 op de 45 volwassenen</td>
+<td>[4]</td>
+</tr>
+<tr>
+<td><strong>Europa</strong></td>
+<td>„0,7–1%"</td>
+<td>Op registers gebaseerde studies clusteren rond <strong>~1%</strong> (bijv. Denemarken, Finland, IJsland); bevolkingsgebaseerde schattingen iets hoger</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>Midden-Oosten en Noord-Afrika</strong></td>
+<td>„0,9–1,5%"</td>
+<td>Gepoogd <strong>~0,14%</strong> (95% BI 0,02–0,36%); landbereik <strong>0,01% (Oman) → 2,51% (Saoedi-Arabië)</strong></td>
+<td>[6]</td>
+</tr>
+<tr>
+<td><strong>Oost- / Zuidoost-Azië</strong></td>
+<td>„0,4–1,4%"</td>
+<td>Aziatische meta-analyse: Oost-Azië <strong>~0,51%</strong>, Zuid-Azië ~0,31%, West-Azië ~0,35%; vasteland China ~<strong>0,7% (1 op de 143)</strong>; sterk gescreende eilanden (Singapore, Japan, Zuid-Korea) rapporteren hoger</td>
+<td>[5][7]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Twee conclusies uit de tabel:</strong></p>
+<ol type="1">
+<li>De <strong>Noord-Amerikaanse</strong> en <strong>Europese</strong> bereiken zijn breeduit juist — dit zijn de meest gescreende regio's, dus hun hoge cijfers zijn te verwachten.</li>
+<li>Het <strong>MENA</strong>-cijfer is de grote fout. Een gepoolde prevalentie dichtbij <strong>0,14%</strong> weerspiegelt hoogstwaarschijnlijk <em>onderdiagnose en zwakke surveillance</em>, niet een genuinely zeldzaamder autisme. De enorme verspreiding binnen de regio (Oman 0,01% tot Saoedi-Arabië 2,51%) is zelf de aanwijzing: echte biologie varieert niet zoveel tussen buurlanden; surveillance wel [6].</li>
+</ol>
+<h2 id="4-neemt-autisme-werkelijk-toe">4. Neemt autisme werkelijk „toe"?</h2>
+<p>De kopprevalentie is sterk gestegen — in de VS van ongeveer 1 op de 150 (2000) naar 1 op de 31 (2022) [4]. De dominante verklaring onder epidemiologen is <strong>betere en bredere identificatie</strong>, niet noodzakelijk meer autisme:</p>
+<ul>
+<li>verbrede criteria (DSM-IV → DSM-5),</li>
+<li>actieve gevalsvinding (ADDM-achtige surveillance),</li>
+<li>eerdere en rechtvaardigere screening over geslacht, ras en etniciteit,</li>
+<li>verminderd stigma dat leidt tot meer beoordelingen.</li>
+</ul>
+<p>De GBD-auteurs merken op dat de prevalentie vergelijkenderwijs <em>stabiel</em> is waar de datakwaliteit wordt gecontroleerd, en dat schijnbare „stijgingen" grotendeels de detectiecapaciteit volgen [1]. De eerlijke samenvatting: <strong>we tellen steeds meer een autisme dat er altijd al was.</strong></p>
+<h2 id="5-hoeveel-mensen-zijn-monotroop-de-vraag-die-geen-enkel-antwoord-heeft">5. Hoeveel mensen zijn „monotroop"? (de vraag die geen enkel antwoord heeft)</h2>
+<p>Monotropisme (Murray, Lawson &amp; Lesser, 2005) is een <em>op aandacht gebaseerde</em> verklaring van autisme: een monotrope geest concentreert zijn bronnen in enkele intensief geactiveerde „aandachtstunnels", in plaats van aandacht over vele kanalen te verspreiden (polytropisme). Cruciaal is dat het wordt gekaderd als een <strong>verschil in aandachtstoewijzing, niet een tekort</strong> — en als een <strong>spectrum</strong>, niet een ja/nee-categorie.</p>
+<p>Daarom is er <strong>geen overeengekomen prevalentie van „monotropisme"</strong>, om drie structurele redenen:</p>
+<ol type="1">
+<li><strong>Het is geen diagnose.</strong> Monotropisme verschijnt nergens in de DSM-5 of ICD-11. Er is geen casusregister en geen diagnostische drempel.</li>
+<li><strong>Het is dimensioneel, niet categorisch.</strong> Iedereen kan een gefocuste „flow"-staat binnengaan; het autistische verschil is dat diepe, nauwe focus de <em>standaard werkingsmodus</em> is in plaats van een occasionele staat. Een lijn tussen „monotroop" en „polytroop" zou arbitrair zijn.</li>
+<li><strong>Het instrument rapporteert gemiddelden, niet gevallen.</strong> Het gevalideerde instrument — de <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — levert een continue score van 1 tot 5, en de onderzoekers vergelijken <em>groepsgemiddelden</em>, niet „hoeveel mensen een afkappunt overschrijden" [10].</li>
+</ol>
+<h3 id="de-werkelijke-cijfers-die-we-hebben-mq-validatiestudie">De werkelijke cijfers die we hebben (MQ-validatiestudie)</h3>
+<p>In de ontwikkelingsstudie van de MQ (1.110 deelnemers: 756 autistisch, 354 niet-autistisch) [10]:</p>
+<ul>
+<li><strong>Autistische deelnemers: gemiddelde 4,15 / 5</strong> (SD 0,347)</li>
+<li><strong>Niet-autistische deelnemers: gemiddelde 3,19 / 5</strong> (SD 0,578)</li>
+<li><strong>ADHD-status</strong> voorspelde onafhankelijk hogere monotropisme-scores (relevant omdat autisme en ADHD in ongeveer 30–80% van de gevallen co-voorkomen, afhankelijk van de richting).</li>
+<li>Een verkennende factoranalyse produceerde een <strong>8-factor structuur</strong> (speciale interesses; piekeren/angst; behoefte aan routines; omgeving en de aandachtstunnel; het contact met de omgeving verliezen; besluitvorming; angstverlagend effect van interesses; sociale interacties beheren).</li>
+</ul>
+<p>De overlap tussen de twee verdelingen is aanzienlijk — veel niet-autistische mensen scoren boven sommige autistische mensen, en vice versa. Die overlap is <em>precies</em> waarom een kop „X% van de bevolking is monotoop" niet zinvol is zonder een arbitrair (en betwist) afkappunt.</p>
+<h2 id="6-waar-de-cijfers-90-en-1520-vandaan-komen--en-waarom-het-geen-prevalentiedata-zijn">6. Waar de cijfers „&gt;90%" en „15–20%" vandaan komen — en waarom het geen prevalentiedata zijn</h2>
+<p>Deze twee cijfers, die online veel circuleren, verdienen een directe feitcontrole.</p>
+<p><strong>„&gt;90% van autistische mensen is monotoop."</strong> Dit wordt het best gelezen als een claim over <strong>subjectieve validiteit</strong> — dat wil zeggen: <em>wanneer autistische mensen het monotropisme-kader tegenkomen, herkent een overweldigende meerderheid het als een accurate beschrijving van hun ervaring.</em> Dat is een echt en betekenisvol fenomeen (de MQ is <em>met</em> een door autisten geleide groep gebouwd precies omdat de beschrijving resoneerde [10]). Maar het is <strong>geen epidemiologische prevalentie</strong>; geen studie heeft „de proportie autistische mensen die monotoop zijn" berekend tegen een gevalideerde drempel, omdat er geen overeengekomen drempel is. Geformuleerd als <em>„monotropisme heeft een zeer hoge subjectieve validiteit voor autistische mensen"</em>, is het verdedigbaar; geformuleerd als <em>„meer dan 90% van autistische mensen is monotoop"</em>, overdrijft het wat is gemeten.</p>
+<p><strong>„15–20% van de algemene bevolking is monotoop."</strong> Dit cijfer is vrijwel zeker een <strong>vermenging met „neurodivergentie".</strong> Gemeenschapsschattingen plaatsen <em>een of andere vorm</em> van neurodivergentie (ADHD, dyslexie, dyspraxie, syndroom van Tourette, enz., met zware overlap) in de orde van 15–20% van de bevolking. Voor context, zelfs de beter gemeten componenten zijn veel kleiner geïsoleerd: volwassen ADHD treft ongeveer <strong>2,58%</strong> (persistent) tot <strong>6,76%</strong> (symptomatisch) van volwassenen wereldwijd [8], en ADHD bij kinderen wordt vaak geschat rond 5–8%. Dyslexie wordt vaak geciteerd rond ~10%, afhankelijk van de definitie. <strong>Geen van deze is een monotropisme-cijfer.</strong> „Neurodivergent" gelijkstellen aan „monotroop" is een categoriefout: monotropisme is één <em>dimensie</em> van cognitieve stijl die verhoogd is in — maar niet identiek aan — meerdere neurodivergente profielen. Er is momenteel <strong>geen op bewijs gebaseerd cijfer</strong> voor de prevalentie van monotropisme in de algemene bevolking.</p>
+<blockquote>
+<p><strong>Conclusie over monotropisme:</strong> behandel het als een <em>meetbare neiging</em> op een spectrum, sterk (maar niet exclusief) geassocieerd met autisme en ADHD, met een hoge validiteit uit geleefde ervaring voor autistische mensen. Het eerlijke antwoord op „hoeveel procent van de mensen is monotoop?" is: <em>dat is nog geen goed gedefinieerde vraag, en elk exact percentage dat u ziet is verzonnen.</em></p>
+</blockquote>
+<h2 id="7-praktische-conclusies">7. Praktische conclusies</h2>
+<ul>
+<li><strong>Citeer het cijfer dat overeenkomt met de populatie.</strong> „1 op de 127 mensen" (alle leeftijden, GBD/WHO) en „~1 op de 100 kinderen" zijn beide prima — benoem welke u bedoelt [1][2][3].</li>
+<li><strong>Behandel regionale kloven als detectiekloven.</strong> Laag gerapporteerde prevalentie in MENA, delen van Azië, en onder meisjes/vrouwen, oudere volwassenen en geracialiseerde groepen weerspiegelt onderidentificatie, niet afwezigheid [1][6].</li>
+<li><strong>Presenteer monotropisme niet als hebbende een prevalentie.</strong> Rapporteer MQ-gemiddelden en het dimensionele kader; vermijd „&gt;90%" en „15–20%" als prevalentie-uitspraken [10].</li>
+<li><strong>Behoud het neurobevestigende kader.</strong> Hogere autisme-<em>identificatie</em> in goed voorziene landen is een succes van bewustzijn en toegang; monotoop versus polytroop is een <em>verschil in aandacht</em>, geen tekort — consistent met hoe de scheppers en de autistische gemeenschap de theorie kaderen.</li>
+</ul>
+<hr />
+<h2 id="bronnen">Bronnen</h2>
+<p>[1] Global Burden of Disease Study 2021 Autism Spectrum Collaborators (2024). <em>The global epidemiology and health burden of the autism spectrum: findings from the Global Burden of Disease Study 2021.</em> The Lancet Psychiatry (19 dec. 2024). doi:10.1016/S2215-0366(24)00363-8 — 61,8M mensen (1 op de 127) in 2021; leeftijds-gestandaardiseerde prevalentie 788,3/100.000 (mannen 1.064,7; vrouwen 508,1); superregionale DALY's 126,5 (ZO/O-Azië &amp; Oceanië) tot 204,1 (hoge inkomens) per 100.000. <a href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext">https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext</a> · IHME-samenvatting: <a href="https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global">https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global</a></p>
+<p>[2] World Health Organization (2024). <em>Autism fact sheet (key facts).</em> — „In 2021 about 1 in 127 persons had autism." <a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders">https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders</a></p>
+<p>[3] Zeidan, J. et al. (2022). <em>Global prevalence of autism: A systematic review update.</em> Autism Research (Wiley). doi:10.1002/aur.2696 — ~1 op de 100 kinderen; Europese registerdata (Frankrijk, Denemarken, Finland, IJsland). <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696</a></p>
+<p>[4] CDC, Autism and Developmental Disabilities Monitoring (ADDM) Network (2025). <em>Prevalence and Early Identification of Autism Spectrum Disorder Among Children Aged 8 Years — ADDM Network, 16 sites, United States, 2022.</em> MMWR, 74(SS-2). — 1 op de 31 (3,2%) onder 8-jarigen. Gemeenschapsrapport: <a href="https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf">https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf</a> · MMWR: <a href="https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm">https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm</a></p>
+<p>[5] Lu, Y. et al. (2020). <em>Prevalence of autism spectrum disorder in Asia: a systematic review and meta-analysis.</em> Psychiatry Research, 284, 112679. doi:10.1016/j.psychres.2019.112679 (PMID 31735373) — Oost-Azië 0,51%, Zuid-Azië 0,31%, West-Azië 0,35%. <a href="https://pubmed.ncbi.nlm.nih.gov/31735373">https://pubmed.ncbi.nlm.nih.gov/31735373</a></p>
+<p>[6] Abdallah, B.M. et al. (2025). <em>Estimates of the prevalence of autism spectrum disorder in the Middle East and North Africa region: a systematic review and meta-analysis.</em> BMC Public Health, 25:2519. doi:10.1186/s12889-025-23651-x (PMID 40691829) — gepoold 0,14% (95% BI 0,02–0,36%); landbereik 0,01% (Oman) tot 2,51% (Saoedi-Arabië). <a href="https://pubmed.ncbi.nlm.nih.gov/40691829">https://pubmed.ncbi.nlm.nih.gov/40691829</a></p>
+<p>[7] Jiang, X. et al. (2024). <em>Prevalence of autism spectrum disorder in mainland China over the past 6 years: a systematic review and meta-analysis.</em> BMC Psychiatry (PMID 38811881) — ~0,7% sinds 2017 (~1 op de 143). Bevestigd door een 2024 beleidsverkennend overzicht (SAGE). <a href="https://pubmed.ncbi.nlm.nih.gov/38811881">https://pubmed.ncbi.nlm.nih.gov/38811881</a></p>
+<p>[8] Song, P. et al. (2021). <em>The prevalence of adult attention-deficit hyperactivity disorder: a global systematic review and meta-analysis.</em> General Psychiatry / PMC7916320 — persistent volwassen ADHD 2,58%; symptomatisch 6,76%. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320">https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320</a></p>
+<p>[9] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — oorsprong van de monotropisme-theorie. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[10] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (47-item zelfrapportagemeting; validatie-preprint). Open Science Framework. — n = 1.110 (756 autistisch, 354 niet-autistisch); autistisch gemiddelde 4,15 (SD 0,347) vs niet-autistisch 3,19 (SD 0,578) op een 1–5 schaal; ADHD voorspelde onafhankelijk hogere scores; 8-factor structuur. Vragenlijstbestand: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · validatie-preprint: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · licentie: CC BY-NC-SA 4.0. Lokaal archief: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+</body>
+</html>

@@ -779,28 +779,60 @@ const DOCS = [
     cat: "theory",
     stem: "monotropism-comorbidity-landscape",
     date: "2026-06-16",
-    langs: ["en", "it", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro"],
     content: {
       en: { title: "Monotropism and Its Web of Comorbidity", audience: "General \u00B7 Academic",
             desc: "A cited research brief extending the foundational theory. Maps monotropism\u2019s links to common co-occurring conditions in three tiers \u2014 direct (AuDHD, autistic burnout), shared-mechanism (anorexia/restrictive eating, OCD, anxiety), and plausible-but-contested (clutter/hoarding, agoraphobia, PDA) \u2014 and is explicit about where the account reaches too far." },
       it: { title: "Il monotropismo e la sua ragnatela di comorbidità", audience: "Pubblico generale \u00B7 Accademico",
             desc: "Una breve ricerca citata che estende la teoria fondazionale. Mappa i legami del monotropismo con le condizioni co-occorrenti comuni in tre livelli \u2014 diretti (AuDHD, burnout autistico), a meccanismo condiviso (anoressia/alimentazione restrittiva, OCD, ansia) e plausibili-ma-contestati (disordine/accumulo, agorafobia, PDA) \u2014 ed è esplicita su dove il resoconto si spinge troppo oltre." },
       de: { title: "Monotropismus und sein Geflecht an Komorbiditäten", audience: "Allgemein · Akademisch",
-            desc: "Ein zitiertes Forschungsdossier, das die Gründungstheorie erweitert. Es ordnet die Verbindungen des Monotropismus zu häufig ko-auftretenden Zuständen in drei Ebenen ein – direkte (AuDHD, autistisches Burnout), über gemeinsame Mechanismen (Anorexie/restriktives Essen, Zwangsstörung, Angst) sowie plausible-aber-umstrittene (Vermüllung/Horten, Agoraphobie, PDA) – und benennt klar, wo die Erklärung zu weit geht." }
+            desc: "Ein zitiertes Forschungsdossier, das die Gründungstheorie erweitert. Es ordnet die Verbindungen des Monotropismus zu häufig ko-auftretenden Zuständen in drei Ebenen ein – direkte (AuDHD, autistisches Burnout), über gemeinsame Mechanismen (Anorexie/restriktives Essen, Zwangsstörung, Angst) sowie plausible-aber-umstrittene (Vermüllung/Horten, Agoraphobie, PDA) – und benennt klar, wo die Erklärung zu weit geht." },
+      fr: { title: "Le monotropisme et sa toile de comorbidité", audience: "Grand public · Académique",
+            desc: "Un dossier de recherche cité qui étend la théorie fondatrice. Il cartographie les liens du monotropisme avec les conditions fréquemment co-occurentes en trois niveaux — directs (AuDHD, burnout autistique), à mécanisme partagé (anorexie/alimentation restrictive, TOC, anxiété) et plausibles-mais-contestés (encombrement/accumulation, agoraphobie, PDA) — et dit clairement où le propos va trop loin." },
+      es: { title: "El monotropismo y su telaraña de comorbilidad", audience: "Público general · Académico",
+            desc: "Un informe de investigación citado que extiende la teoría fundacional. Cartografia los vínculos del monotropismo con afecciones comúnmente co-ocurrentes en tres niveles — directos (AuDHD, burnout autista), de mecanismo compartido (anorexia/alimentación restrictiva, TOC, ansiedad) y plausibles-pero-controvertidos (desorden/acumulación, agorafobia, PDA) — y es explícito sobre dónde la explicación llega demasiado lejos." },
+      pl: { title: "Monotropizm i jego sieć komorbidności", audience: "Ogół · Akademicki",
+            desc: "Cytowany brief badawczy rozwijający teorię foundationalną. Mapuje powiązania monotropizmu ze stanami często współwystępującymi w trzech warstwach — bezpośrednie (AuDHD, autistyczne wypalenie), o wspólnym mechanizmie (anoreksja/restrykcyjne jedzenie, OCD, lęk) oraz prawdopodobne-ale-sporne (bałagan/zbieractwo, agorafobia, PDA) — i jasno wskazuje, gdzie wyjaśnienie sięga za daleko." },
+      nl: { title: "Monotropisme en zijn web van comorbiditeit", audience: "Breder publiek · Academisch",
+            desc: "Een geciteerd onderzoeksdossier dat de fundamentele theorie uitbreidt. Het brengt de verbanden van monotropisme met veelvoorkomend co-voorkomende aandoeningen in drie lagen in kaart — direct (AuDHD, autistische burnout), met gedeeld mechanisme (anorexia/restrictief eten, OCD, angst) en plausibel-maar-betwist (rommel/hoarding, agorafobie, PDA) — en is expliciet over waar de uitleg te ver gaat." },
+      ro: { title: "Monotropismul și pânza lui de comorbidități", audience: "Public larg · Academic",
+            desc: "Un dosar de cercetare citat care extinde teoria fondatoare. Cartografiază legăturile monotropismului cu afecțiuni frecvent co-ocurente în trei niveluri — directe (AuDHD, burnout autist), cu mecanism comun (anorexie/alimentație restrictivă, TOC, anxietate) și plauzibile-dar-contestate (dezordine/adunare, agorafobie, PDA) — și spune clar unde relatarea merge prea departe." },
+      pt: { title: "O monotropismo e a sua teia de comorbilidades", audience: "Público geral · Académico",
+            desc: "Um brief de investigação citado que estende a teoria fundacional. Mapeia as ligações do monotropismo a condições frequentemente co-ocorrentes em três níveis — diretas (AuDHD, burnout autístico), de mecanismo partilhado (anorexia/alimentação restritiva, TOC, ansiedade) e plausíveis-mas-contestadas (desarrumação/acumulação, agorafobia, PDA) — e é explícito sobre onde a explicação vai longe demais." },
+      ar: { title: "الأحادية وشبكة الأمراض المصاحبة له", audience: "العموم · الأكاديميون",
+            desc: "ملخص بحثي مستشفد يوسع النظرية الأساسية. يرسم روابط الأحادية مع الحالات المتزامنة الشائعة في ثلاث مستويات — مباشرة (AuDHD، الاحتراق التحتي)، بآلية مشتركة (الأنوركسيا/الأكل المتماسك، الوسواس القهري، القلق)، ومحتملة-لكن-محاورة (الفوضى/الاكتناز، الرهاب الدوري، PDA) — ويكون صريحاً حيث يذهب الشرح أبعد من اللازم." },
+      zh: { title: "单焦注意及其共病网", audience: "公众 · 学术",
+            desc: "一份引用文献的研究简报，延伸了基础理论。它将单焦注意与常见共病状况的关联分为三层——直接（AuDHD、自闭症倦惫）、共享机制（厌食症/限制性进食、强迫症、焦虑）以及似乎合理但有争议（杂乱/堆积、广场恐惧症、PDA）——并明确指出该解释何处过度。" }
     }
   },
   {
     cat: "practitioner",
     stem: "autistic-monotropism-lifespan-guide",
     date: "2026-06-15",
-    langs: ["en", "it", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro"],
     content: {
       en: { title: "Supporting the Autistic Monotropic Person Across the Lifespan", audience: "Practitioners \u00B7 Health-care professionals",
             desc: "A neuroaffirming guide for practitioners and clinicians: how to interact with, engage and support autistic people from childhood to old age, including clinical and medical settings." },
       it: { title: "Sostenere la persona autistica monotropica lungo l'arco di vita", audience: "Pratici \u00B7 Professionisti sanitari",
             desc: "Una guida affermante la neurodivergenza per pratici e clinici: come interagire con, coinvolgere e sostenere le persone autistiche dall'infanzia alla vecchiaia, inclusi i contesti clinici e medici." },
       de: { title: "Die autistische, monotrope Person über die Lebensspanne begleiten", audience: "Praktiker · Gesundheitsfachleute",
-            desc: "Ein neuroaffirmierender Leitfaden für Praktiker und Kliniker: wie man mit autistischen Menschen interagiert, sie einbezieht und unterstützt – von der Kindheit bis ins hohe Alter, einschließlich klinischer und medizinischer Settings." }
+            desc: "Ein neuroaffirmierender Leitfaden für Praktiker und Kliniker: wie man mit autistischen Menschen interagiert, sie einbezieht und unterstützt – von der Kindheit bis ins hohe Alter, einschließlich klinischer und medizinischer Settings." },
+      fr: { title: "Accompagner la personne autistique monotrope tout au long de la vie", audience: "Praticiens · Professionnels de santé",
+            desc: "Un guide neuroaffirmant pour praticiens et cliniciens : comment interagir avec, engager et soutenir les personnes autistes, de l’enfance au grand âge, y compris en contextes cliniques et médicaux." },
+      es: { title: "Acompañar a la persona autista monotrópica a lo largo de la vida", audience: "Profesionales · Personal sanitario",
+            desc: "Una guía neuroafirmativa para profesionales y clínicos: cómo interactuar, involucrar y apoyar a las personas autistas desde la infancia hasta la vejez, incluidos los entornos clínicos y médicos." },
+      pl: { title: "Wspieranie osoby autystycznej monotropowej na przestrzeni życia", audience: "Praktycy · Personel medyczny",
+            desc: "Neuroafirmujący przewodnik dla praktyków i klinicystów: jak wchodzić w interakcję, angażować i wspierać osoby autystyczne od dzieciństwa do późnej starości, w tym w warunkach klinicznych i medycznych." },
+      nl: { title: "De autistische, monotrope persoon begeleiden door de hele levensloop", audience: "Professionals · Zorgprofessionals",
+            desc: "Een neuroaffirmerende gids voor professionals en clinici: hoe om te gaan met, betrekken en ondersteunen van autistische mensen, van kindsheid tot ouderdom, inclusief klinische en medische settings." },
+      ro: { title: "Sprijinirea persoanei autiste monotrope de-a lungul vieții", audience: "Practicieni · Profesioniști din sănătate",
+            desc: "Un ghid neuroafirmativ pentru practicieni și clinicieni: cum să interacționezi, să implici și să susții persoanele autiste de la copilărie până la bătrânețe, inclusiv în contexte clinice și medicale." },
+      pt: { title: "Apoiar a pessoa autística monotrópica ao longo da vida", audience: "Profissionais · Profissionais de saúde",
+            desc: "Um guia neuroafirmativo para profissionais e clínicos: como interagir, envolver e apoiar pessoas autistas desde a infância até à velhice, incluindo em contextos clínicos e médicos." },
+      ar: { title: "دعم الشخص التحتي الأحادي عبر مختلف العمر", audience: "الممارسون · المتخصصون الصحيون",
+            desc: "دليل مؤكِّد للتنوع العصبي للممارسين والأطباء: كيفية التفاعل مع الأشخاص التحتيين وإثراءهم ودعمهم من الطفولة إلى الشيخوخة، بما في ذلك الأسياد السريرية والطبية." },
+      zh: { title: "在人生各阶段支持自闭症单焦注意者", audience: "从业者 · 医疗专业人员",
+            desc: "一份面向从业者与临床医生的神经肯定指南：如何与自闭症人士互动、吸引与支持他们，从童年到老年，包括临床与医疗场景。" }
     }
   },
   {
@@ -867,42 +899,90 @@ const DOCS = [
     cat: "theory",
     stem: "monotropism-autism-prevalence-global",
     date: "2026-06-17",
-    langs: ["en", "it", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro"],
     content: {
       en: { title: "Autism and Monotropism: How Common Are They, Really?", audience: "General · Academic",
             desc: "A cited brief fact-checking regional autism figures and the “what percentage of people are monotropic” question. Global prevalence is 1 in 127 (GBD/WHO); the regional table is corrected; monotropism has no prevalence — it is a dimensional trait measured by the MQ." },
       it: { title: "Autismo e monotropismo: quanto sono comuni, in realtà?", audience: "Pubblico generale · Accademico",
             desc: "Una breve citata che verifica le cifre regionali sull'autismo e la domanda “quale percentuale di persone è monotropica”. La prevalenza globale è 1 su 127 (GBD/OMS); la tabella regionale è corretta; il monotropismo non ha prevalenza — è un tratto dimensionale misurato dal MQ." },
       de: { title: "Autismus und Monotropismus: Wie verbreitet sind sie wirklich?", audience: "Allgemein · Akademisch",
-            desc: "Ein zitiertes Dossier, das regionale Autismuszahlen und die Frage „wie viel Prozent der Menschen monotron sind“ überprüft. Die globale Prävalenz liegt bei 1 von 127 (GBD/WHO); die regionale Tabelle wird korrigiert; Monotropismus hat keine Prävalenz – er ist ein dimensionales, mit dem MQ gemessenes Merkmal." }
+            desc: "Ein zitiertes Dossier, das regionale Autismuszahlen und die Frage „wie viel Prozent der Menschen monotron sind“ überprüft. Die globale Prävalenz liegt bei 1 von 127 (GBD/WHO); die regionale Tabelle wird korrigiert; Monotropismus hat keine Prävalenz – er ist ein dimensionales, mit dem MQ gemessenes Merkmal." },
+      fr: { title: "Autisme et monotropisme : sont-ils vraiment si courants ?", audience: "Grand public · Académique",
+            desc: "Un brief cité vérifiant les chiffres régionaux de l’autisme et la question « quel pourcentage de gens sont monotropes ». La prévalence mondiale est de 1 sur 127 (GBD/OMS) ; le tableau régional est corrigé ; le monotropisme n’a pas de prévalence — c’est un trait dimensionnel mesuré par le MQ." },
+      es: { title: "Autismo y monotropismo: ¿son realmente tan comunes?", audience: "Público general · Académico",
+            desc: "Un brief citado que verifica las cifras regionales de autismo y la pregunta «qué porcentaje de personas son monotrópicas». La prevalencia global es de 1 entre 127 (GBD/OMS); se corrige la tabla regional; el monotropismo no tiene prevalencia — es un rasgo dimensional medido por el MQ." },
+      pl: { title: "Autyzm i monotropizm: jak naprawdę częste są?", audience: "Ogół · Akademicki",
+            desc: "Cytowany brief sprawdzający regionalne liczby autyzmu i pytanie „jaki odsetek ludzi jest monotropowy”. Globalna rozpowszechnioność to 1 na 127 (GBD/WHO); tabela regionalna jest poprawiona; monotropizm nie ma rozpowszechnioności — to cecha wymiarowa mierzona kwestionariuszem MQ." },
+      nl: { title: "Autisme en monotropisme: hoeveel voorkomend zijn ze echt?", audience: "Breder publiek · Academisch",
+            desc: "Een geciteerd dossier dat regionale autismecijfers en de vraag „hoeveel procent van de mensen monotroop is” controleert. De wereldwijde prevalentie is 1 op 127 (GBD/WHO); de regionale tabel wordt gecorrigeerd; monotropisme heeft geen prevalentie — het is een dimensionele eigenschap gemeten met de MQ." },
+      ro: { title: "Autism și monotropism: cât de comune sunt, de fapt?", audience: "Public larg · Academic",
+            desc: "Un dosar citat care verifică cifrele regionale de autism și întrebarea „cât la sută din oameni sunt monotropi”. Prevalența globală este de 1 din 127 (GBD/OMS); tabelul regional este corectat; monotropismul nu are prevalență — este o trăsătură dimensională măsurată de MQ." },
+      pt: { title: "Autismo e monotropismo: quão comuns são, na realidade?", audience: "Público geral · Académico",
+            desc: "Um brief citado que verifica os números regionais do autismo e a pergunta „que percentagem de pessoas é monotrópica“. A prevalência global é de 1 em 127 (GBD/OMS); a tabela regional é corrigida; o monotropismo não tem prevalência — é uma característica dimensional medida pelo MQ." },
+      ar: { title: "التوحد والأحادية: ما مدى شيوعهما حقييقة؟", audience: "العموم · الأكاديميون",
+            desc: "ملخص مستشفد يتحقق من أرقام التوحد الإقليمية ومن سؤال «ما نسبة الأشخاص الأحاديين؟». الانتشار العالمي 1 من 127 (GBD/المنظمة)، والجدول الإقليمي مصحح، والأحادية ليس لها انتشار — بل هي سمة بعدية يقيسها استبيان MQ." },
+      zh: { title: "自闭症与单焦注意：它们究竟有多普遍？", audience: "公众 · 学术",
+            desc: "一份引用简报，核实各地区自闭症数字及“有多少比例的人属单焦注意”这一问题。全球患病率为 1/127（GBD/世界卫生组织）；区域表已予以纠正；单焦注意没有患病率——它是一种由 MQ 测量的维度特质。" }
     }
   },
   {
     cat: "theory",
     stem: "monotropism-scoring-levels-inertia",
     date: "2026-06-17",
-    langs: ["en", "it", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro"],
     content: {
       en: { title: "Scoring Monotropism: Inertia, “Friction,” and Cognitive Energy", audience: "General · Academic",
             desc: "A cited brief on whether monotropism can be scored into levels. Affirms the dimensional MQ and the “switching friction” idea (the established construct of autistic inertia); corrects the invented four-level taxonomy, the “attentional inertia” conflation, and the monotropism→burnout causation claim." },
       it: { title: "Valutare il monotropismo: inerzia, “attrito” ed energia cognitiva", audience: "Pubblico generale · Accademico",
             desc: "Una breve citata sul se il monotropismo si possa valutare in livelli. Afferma il MQ dimensionale e l'idea dell'“attrito di switching” (il costrutto affermato dell'inerzia autistica); corregge l'inventata tassonomia a quattro livelli, la confusione sull'“inerzia attentiva” e l'affermazione di causalità monotropismo→burnout." },
       de: { title: "Monotropismus messen: Trägheit, „Reibung“ und kognitive Energie", audience: "Allgemein · Akademisch",
-            desc: "Ein zitiertes Dossier zur Frage, ob sich Monotropismus in Stufen einteilen lässt. Es bestätigt das dimensionale MQ und die Idee der „Wechsel-Reibung“ (den etablierten Konstrukt der autistischen Trägheit) und korrigiert die erfundene Vier-Stufen-Taxonomie, die Vermengung mit „Aufmerksamkeitsträgheit“ sowie die Kausalbehauptung Monotropismus→Burnout." }
+            desc: "Ein zitiertes Dossier zur Frage, ob sich Monotropismus in Stufen einteilen lässt. Es bestätigt das dimensionale MQ und die Idee der „Wechsel-Reibung“ (den etablierten Konstrukt der autistischen Trägheit) und korrigiert die erfundene Vier-Stufen-Taxonomie, die Vermengung mit „Aufmerksamkeitsträgheit“ sowie die Kausalbehauptung Monotropismus→Burnout." },
+      fr: { title: "Mesurer le monotropisme : inertie, « friction » et énergie cognitive", audience: "Grand public · Académique",
+            desc: "Un brief cité sur la possibilité de scorer le monotropisme en niveaux. Affirme le MQ dimensionnel et l’idée de « friction de bascule » (le construit établi d’inertie autistique) ; corrige la taxonomie inventée à quatre niveaux, la confusion sur l’« inertie attentionnelle » et l’affirmation de causalité monotropisme→burnout." },
+      es: { title: "Medir el monotropismo: inercia, «fricción» y energía cognitiva", audience: "Público general · Académico",
+            desc: "Un brief citado sobre si el monotropismo puede puntuarse en niveles. Afirma el MQ dimensional y la idea de la «fricción de cambio» (el constructo establecido de inercia autista); corrige la taxonomía inventada de cuatro niveles, la confusión con la «inercia atencional» y la afirmación causal monotropismo→burnout." },
+      pl: { title: "Mierzenie monotropizmu: bezwładność, „tarcie” i energia poznawcza", audience: "Ogół · Akademicki",
+            desc: "Cytowany brief o tym, czy monotropizm można punktować w poziomach. Potwierdza wymiarowy MQ i ideę „tarcia przełączania” (ustalony konstrukt autystycznej bezwładności); poprawia wymyśloną czteropoziomową taksonomię, zrównanie z „bezwładnością uwagi” oraz twierdzenie o przyczynowości monotropizm→wypalenie." },
+      nl: { title: "Monotropisme meten: traagheid, „wrijving” en cognitieve energie", audience: "Breder publiek · Academisch",
+            desc: "Een geciteerd dossier over de vraag of monotropisme in niveaus kan worden gescoord. Het bevestigt de dimensionele MQ en het idee van de „schakelwrijving” (het gevestigde construct van autistische traagheid); het corrigeert de verzonnen vier-niveaus-taxonomie, de vermenging met „aandachtstraagheid” en de causaliteitsclaim monotropisme→burnout." },
+      ro: { title: "Măsurarea monotropismului: inerție, „fricțiune” și energie cognitivă", audience: "Public larg · Academic",
+            desc: "Un dosar citat despre dacă monotropismul poate fi scorat în niveluri. Afirmă MQ dimensional și ideea de „fricțiune de comutare” (constructul stabilit de inerție autistă); corectează taxonomia inventată cu patru niveluri, confuzia cu „inerția atențională” și afirmația cauzală monotropism→burnout." },
+      pt: { title: "Medir o monotropismo: inércia, „atrito” e energia cognitiva", audience: "Público geral · Académico",
+            desc: "Um brief citado sobre se o monotropismo pode ser pontuado em níveis. Afirma o MQ dimensional e a ideia da „atrito de mudança“ (o constructo estabelecido de inércia autística); corrige a taxonomia inventada de quatro níveis, a confluência com a „inércia atencional“ e a afirmação de causalidade monotropismo→burnout." },
+      ar: { title: "قياس الأحادية: الخمول، «الاحتكاك» والطاقة المعرفية", audience: "العموم · الأكاديميون",
+            desc: "ملخص مستشفد عن ما إذا كانت الأحادية يمكن تقديرها في مستويات. يؤكِّد على المقياس البعدي MQ وفكرة «احتكاك التبديل» (مفهوْم خمول التحت المؤسس)، ويصحِّح التصنيف المخترع ذا الأربعة مستويات، وخلط «خمول الانتباه»، وادّعاء السببية الأحادية‏→‏الاحتراق." },
+      zh: { title: "衡量单焦注意：惯性、“摩擦”与认知能量", audience: "公众 · 学术",
+            desc: "一份引用简报，探讨单焦注意是否可以划分为等级。它肯定了维度型 MQ 与“切换摩擦”理念（已确立的自闭症惯性构建）；纠正了据造的四级分类、“注意惯性”的混淆，以及“单焦注意→倦惫”的因果断言。" }
     }
   },
   {
     cat: "theory",
     stem: "monotropism-comorbidities-factcheck",
     date: "2026-06-17",
-    langs: ["en", "it", "de"],
+    langs: ["en", "it", "fr", "es", "de", "pl", "nl", "ro"],
     content: {
       en: { title: "Monotropic Comorbidities: A Fact-Check of the Four-Cluster Framing", audience: "General · Academic",
             desc: "A cited brief fact-checking a popular “monotropic comorbidities” framing. Corrects the backwards “AuDHD scores highest on the MQ” claim (the autism×ADHD interaction is negative), reattributes “hyper-systemizing” to Baron-Cohen, and reframes the “object-permanence deficit.”" },
       it: { title: "Comorbidità monotropiche: una verifica dell'inquadratura a quattro cluster", audience: "Pubblico generale · Accademico",
             desc: "Una breve citata che verifica una popolare inquadratura delle “comorbidità monotropiche”. Corregge l'affermazione al contrario “l'AuDHD ottiene il punteggio più alto al MQ” (l'interazione autismo×ADHD è negativa), riattribuisce l'“iper-sistematizzazione” a Baron-Cohen e reinquadra il “deficit di permanenza dell'oggetto”." },
       de: { title: "Monotrope Komorbiditäten: Eine Faktenprüfung der Vier-Cluster-Rahmung", audience: "Allgemein · Akademisch",
-            desc: "Ein zitiertes Dossier, das eine populäre „monotrope Komorbiditäten“-Rahmung überprüft. Es korrigiert die verdrehte Behauptung „AuDHD erzielt die höchsten MQ-Werte“ (die Autismus×ADHD-Interaktion ist negativ), ordnet „Hyper-Systematisierung“ Baron-Cohen zu und rahmt das vermeintliche „Objektpermanenz-Defizit“ neu." }
+            desc: "Ein zitiertes Dossier, das eine populäre „monotrope Komorbiditäten“-Rahmung überprüft. Es korrigiert die verdrehte Behauptung „AuDHD erzielt die höchsten MQ-Werte“ (die Autismus×ADHD-Interaktion ist negativ), ordnet „Hyper-Systematisierung“ Baron-Cohen zu und rahmt das vermeintliche „Objektpermanenz-Defizit“ neu." },
+      fr: { title: "Comorbidités monotropes : vérification du cadrage à quatre clusters", audience: "Grand public · Académique",
+            desc: "Un brief cité vérifiant un cadrage populaire des « comorbidités monotropes ». Corrige l’affirmation inversée « les AuDHD ont les scores MQ les plus élevés » (l’interaction autisme×ADHD est négative), réattribue l’« hyper-systématisation » à Baron-Cohen et recadre le prétendu « déficit de permanence de l’objet »." },
+      es: { title: "Comorbilidades monotrópicas: verificación del encuadre de cuatro clusters", audience: "Público general · Académico",
+            desc: "Un brief citado que verifica un encuadre popular de las «comorbilidades monotrópicas». Corrige la afirmación invertida «los AuDHD obtienen las puntuaciones MQ más altas» (la interacción autismo×ADHD es negativa), reatribuye la «hipersistematización» a Baron-Cohen y reencuadra el supuesto «déficit de permanencia del objeto»." },
+      pl: { title: "Komorbidności monotropowe: weryfikacja ujęcia czterech klastrów", audience: "Ogół · Akademicki",
+            desc: "Cytowany brief sprawdzający popularne ujęcie „komorbidności monotropowych”. Poprawia odwróconą tezę „AuDHD osiąga najwyższe wyniki MQ” (interakcja autyzm×ADHD jest ujemna), ponownie przypisuje „hiper-systematyzację” Baron-Cohenowi i przeformułowuje rzekomy „deficyt trwałości obiektu”." },
+      nl: { title: "Monotrope comorbiditeiten: een feitcontrole van de vier-cluster-raamstelling", audience: "Breder publiek · Academisch",
+            desc: "Een geciteerd dossier dat een populaire „monotrope comorbiditeiten”-raamstelling controleert. Het corrigeert de omgekeerde bewering „AuDHD scoort het hoogst op de MQ” (de autisme×ADHD-interactie is negatief), herkent „hyper-systematisering” aan Baron-Cohen en herkadert het vermeende objectpermanentie-tekort." },
+      ro: { title: "Comorbidități monotrope: o verificare a cadrului cu patru clustere", audience: "Public larg · Academic",
+            desc: "Un dosar citat care verifică un cadru popular al „comorbidităților monotrope”. Corectează afirmația inversată „AuDHD are cele mai mari scoruri MQ” (interacțiunea autism×ADHD este negativă), reatribuie „hiper-sistematizarea” lui Baron-Cohen și recadrează pretinsul „deficit de permanență a obiectului”." },
+      pt: { title: "Comorbilidades monotrópicas: uma verificação do enquadramento de quatro clusters", audience: "Público geral · Académico",
+            desc: "Um brief citado que verifica um enquadramento popular das „comorbilidades monotrópicas“. Corrige a afirmação invertida „os AuDHD têm as pontuações MQ mais altas“ (a interação autismo×ADHD é negativa), reatribui a „hiper-sistematização“ a Baron-Cohen e reenquadra o alegado „défice de permanência do objeto“." },
+      ar: { title: "الأمراض المصاحبة للأحادية: تحقيق من إطار الأربعة مجموعات", audience: "العموم · الأكاديميون",
+            desc: "ملخص مستشفد يتحقق من إطار شائع لـ«الأمراض المصاحبة للأحادية». يصحِّح الادّعاء المعكوس «الـAuDHD يحصلون على أعلى نتائج MQ» (تفاعل التوحد×ADHD سالبي)، وينسب «النظم المفرط» إلى بارون-كوهن، ويعيد تأطير «القصور في دوام الأشياء» المزعوم." },
+      zh: { title: "单焦注意的共病：对“四类群”分类框架的核查", audience: "公众 · 学术",
+            desc: "一份引用简报，核查了一种流行的“单焦注意共病”框架。它纠正了颠倒的“AuDHD 在 MQ 上得分最高”的说法（自闭症×ADHD 的交互为负），将“超系统化”重新归于 Baron-Cohen，并重新框定了所谓的“客体永久性缺陷”。" }
     }
   }
 ];
@@ -1287,4 +1367,6 @@ window.addEventListener("DOMContentLoaded", route);
 </script>
 </body>
 </html>
+
+
 

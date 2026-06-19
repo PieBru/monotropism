@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Mierzenie monotropizmu: bezwładność, „tarcie&quot; i energia poznawcza — co evidencja naprawdę wspiera</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="mierzenie-monotropizmu-bezwładność-tarcie-i-energia-poznawcza--co-evidencja-naprawdę-wspiera">Mierzenie monotropizmu: bezwładność, „tarcie" i energia poznawcza — co evidencja naprawdę wspiera</h1>
+<p><em>Cytowany przegląd badawczy — sprawdzający ramy „oceny monotropizmu w poziomach".</em></p>
+<blockquote>
+<p><strong>Informacyjne, nie porada medyczna.</strong> Ten przegląd ocenia, jak monotropizm może i jak nie może być mierzony. Monotropism Questionnaire (MQ) jest narzędziem badawczym samooceny, <strong>nie narzędziem diagnostycznym ani klinicznym</strong>, i nie ma zwalidowanych pasm nasilenia.</p>
+</blockquote>
+<hr />
+<h2 id="podsumowanie">Podsumowanie</h2>
+<ul>
+<li><strong>Twój instynkt jest słuszny w głównej idei i błędny w opakowaniu.</strong> Pojęcie, że monotropizm może być <em>mierzony</em> wzdłuż spektrum i że rzeczywiście interesująca wielkość to <strong>wysiłek („tarcie") przełączania stanów uwagi</strong>, jest dobrze poparte — ale specyficzna taksonomia czterech poziomów („Niski / Umiarkowany / Wysoki / Ekstremalny-Absolutny") jest popularną ramą, <strong>nie zwalidowaną klasyfikacją naukową</strong>.</li>
+<li><strong>Monotropizm jest poprawnie <em>cechą wymiarową</em>, nie zespołem.</strong> Jedynie zwalidowane narzędzie — <strong>Monotropism Questionnaire (MQ)</strong>, Garau et al. 2023 — zwraca ciągły wynik od 1 do 5. Nie ma <strong>opublikowanego punktu odcięcia, pasm percentyli ani poziomów nasilenia</strong> [2]. Przypisywanie nazwanych poziomów jest zawsze arbitralnym wyborem redakcyjnym.</li>
+<li><strong>„Tarcie" przełączania ma już nazwę: <em>autystyczna bezwładność</em>.</strong> To realny, coraz bardziej badany konstrukt — trudność w <em>rozpoczynaniu, zatrzymywaniu i przełączaniu</em> zadań, która „nie jest pod świadomą kontrolą". Został po raz pierwszy sformułowany w narracjach społeczności autystycznej i jest teraz w pracach recenzowanych [3][4][5]. Twoje „tarcie przełączania" to w istocie to.</li>
+<li><strong>„Bezwładność uwagi" łączy dwie różne rzeczy.</strong> <em>Autystyczna bezwładność</em> (poziom zadania: trudno rozpocząć/zatrzymać/przełączyć) i <em>lepka uwaga / upośledzone odłączanie</em> (poziom bodźca: trudno oderwać uwagę od czegoś, np. Landry &amp; Bryson 2004; metaanaliza Sacrey 2015) są powiązane, ale mierzone różnie [6][7]. Grupowanie ich pod jednym terminem traci precyzję.</li>
+<li><strong>„Ekonomia energii poznawczej" to najsilniejsze ramy</strong> — i już istnieją akademicko jako model <strong>„atypowej alokacji zasobów"</strong> Goldknopfa (2013), który traktuje autyzm jako różnicę w <em>ile i gdzie</em> zasoby uwagi są wydawane [10]. To jest neuroafirmująca, nie-deficytowa wersja tego, co opisujesz.</li>
+<li><strong>Związek burnout/shutdown/meltdown jest realny, ale heurystyczny.</strong> Autystyczny burnout (wyczerpanie, utrata umiejętności, zmniejszona tolerancja) to ugruntowany konstrukt, a <em>narracyjny</em> związek z wymuszonym przełączaniem + maskowaniem jest przekonujący i społecznościowo zwalidowany — ale specyficzna ścieżka „monotropizm → pęknięcie tunelu → burnout" jest w dużej mierze teoretyczna i z pierwszej osoby, jeszcze nie ugruntowana eksperymentalnie [8][9].</li>
+</ul>
+<hr />
+<h2 id="1-czy-monotropizm-może-być-oceniany-tak--jako-kontinuum-nie-jako-poziomy">1. Czy monotropizm może być „oceniany"? Tak — jako kontinuum, nie jako poziomy</h2>
+<p>Monotropizm to oparty na uwadze opis autyzmu: umysł monotropowy leje zasoby przetwarzania w małą liczbę intensywnie aktywnych „tuneli uwagi" zamiast rozkładać je na wiele kanałów [1]. Ponieważ jest opisany jako <em>różnica w alokacji zasobów</em>, jest naturalnie <strong>spektrum</strong>, nie kategoria — co jest dokładnie tym, dlaczego twoja intuicja „poziomów" wydaje się trafna.</p>
+<p>Zwalidowanym narzędziem jest <strong>Monotropism Questionnaire (MQ)</strong> — 47 pozycji, ocenianych na 5-stopniowej skali Likerta, opracowany w 2023 przez Garau i współpracowników <em>we współpracy z grupą społeczności prowadzoną przez autystów</em> [2]. Dwie rzeczy są decydujące dla twojego pytania:</p>
+<ul>
+<li><strong>Zwraca jedną ciągłą średnią (1–5), plus osiem średnich subskal.</strong> W studium walidacyjnym (1.110 uczestników) uczestnicy autystyczni osiągali średnio <strong>4,15</strong> a nie-autystyczni <strong>3,19</strong>, przy czym ADHD niezależnie podnosił wyniki [2]. Dwa rozkłady mocno się nakładają — wielu nie-autystycznych przewyższa niektórych autystycznych i odwrotnie.</li>
+<li><strong>Nie ma punktu odcięcia, progu diagnostycznego ani pasma nasilenia.</strong> Przegląd pracy walidacyjnej potwierdza, że słowo „cutoff" pojawia się tylko jako <em>statystyczny</em> cytat (kryteria indeksu dopasowania Hu &amp; Bentlera), a „sensitivity" tylko jako <em>analiza wrażliwości</em> tego, jak autyzm był definiowany [2]. Sami autorzy MQ nie proponują poziomów.</li>
+</ul>
+<p>Więc co „oznacza" wynik? Tylko jego względną pozycję na wymiarze. Społecznościowo zbudowana aplikacja online, która zainspirowała to pytanie, pomocnie tłumaczy wynik na <em>percentyl</em> („bardziej monotropowy niż około X% ludzi autystycznych / allistycznych"), obliczony z próby walidacyjnej — i to jest rozsądny, uczciwy sposób na lokalizację wyniku. Ale to <strong>deskryptywny percentyl, nie pasmo kliniczne</strong>: „97. percentyl tendencji monotropowej" jest znaczący; „Poziom 3 / Ekstremalny monotropizm" to etykieta, której evidencja nie nadaje.</p>
+<blockquote>
+<p><strong>Konkluzja:</strong> oceniaj go, kreśl go, percentyluj go — ale nie <em>poziomuj</em> go. Kontinuum jest realne; nazwane kategorie nie.</p>
+</blockquote>
+<h2 id="2-twoje-tarcie-przełączania-już-istnieje-nazywa-się-autystyczną-bezwładnością">2. Twoje „tarcie przełączania" już istnieje: nazywa się <em>autystyczną bezwładnością</em></h2>
+<p>To jest najważniejsza korekta-przez-nazwę w tym przeglądzie. Zjawisko, które opisujesz — kognitywny koszt wchodzenia w i zwłaszcza wychodzenia z tunelu uwagi — to ugruntowany konstrukt zwany <strong>autystyczną bezwładnością</strong>: trudność w <strong>rozpoczynaniu, zatrzymywaniu i przełączaniu zadań, która nie jest pod świadomą kontrolą</strong> [3].</p>
+<p>Trzy rzeczy czynią to bezpośrednio istotnym:</p>
+<ul>
+<li><strong>Pochodzi ze społeczności autystycznej i wszedł do literatury recenzowanej.</strong> Association for Psychological Science opisuje autystyczną bezwładność jako „koncept po raz pierwszy sformułowany w narracjach społeczności autystycznej", teraz poparty pracą jakościową i teoretyczną [4]. Studia relacji z pierwszej ręki Karen Buckle znalazła, że uczestnicy wielokrotnie opisywali niezdolność do rozpoczęcia, zatrzymania lub zmiany czynności z własnej woli [3].</li>
+<li><strong>Literatura dosłownie używa twojego języka „tarcia".</strong> Tekst APS nazywa inicjację zadania „wysoko-tarciowym startem", ramuje przełączanie jako niosące „koszty przełączania" i zauważa, że raz zaangażowany, „przełączenie focusu wymaga więcej wysiłku poznawczego, czasem prowadząc do wyczerpania" [4]. Twój instynkt, by kwantyfikować <em>wysiłek/tarcie</em>, jest tym samym ruchem, który robią badacze.</li>
+<li><strong>Jest teraz formalizowany.</strong> Ostatnie prace recenzowane traktują „utknięty stan" / ograniczoną inicjację reakcji jako zjawisko wielopoziomowe (mięśniowo-behawioralne „mikro", relacyjne i środowiskowe „mezo/makro") i współtworzą ramy wsparcia z ludźmi autystycznymi [5]; inni modelują je przez konta predykcyjnego przetwarzania / aktywnej inferencji (zacytowane w [4]).</li>
+</ul>
+<p>Krótko: jeśli chcesz mierzyć „tarcie przełączania", mierzysz autystyczną bezwładność — i ten konstrukt ma już evidencję jakościową, ważność z doświadczenia i rosnącą literaturę ilościową, na której można budować.</p>
+<h2 id="3-bezwładność-uwagi-w-istocie-łączy-dwa-różne-mechanizmy">3. „Bezwładność uwagi" w istocie łączy dwa różne mechanizmy</h2>
+<p>Precyzja jest tu istotna, bo dwa mechanizmy wzywają innego języka i (ostatecznie) innych miar.</p>
+<p><strong>3.1 <em>Autystyczna bezwładność</em> — poziom zadania, o sprawstwie i pędzie.</strong> Trudność <em>inicjowania</em>, <em>kończenia</em> i <em>przełączania</em> czynności, doświadczana jako nieproporcjonalny wysiłek i utrata dobrowolnej kontroli (uczucie „obiekt w ruchu pozostaje w ruchu / w spoczynku pozostaje w spoczynku") [3][4]. To jest najbliższe dopasowanie do twojej idei „wyciągnięcia się z tunelu".</p>
+<p><strong>3.2 <em>Lepka uwaga / upośledzone odłączanie</em> — poziom bodźca, o percepcji.</strong> Trudność <em>oderwania uwagi</em> od bodźca, gdy raz zablokowana. Landry &amp; Bryson (2004) pokazali, że małe dzieci autystyczne były wyraźnie wolniejsze w odłączaniu od centralnego bodźca, gdy pojawiał się obwodowy — „lepka uwaga" [6]. Metaanaliza z 2015 potwierdziła spowolnione odłączanie uwagi w badaniach [7], i to samo powolne odłączanie pojawia się u niemowląt później diagnozowanych autystycznych [6]. To jest mierzone zadaniami eksperymentalnymi (paradygmaty gap/overlap), nie kwestionariuszami.</p>
+<p><strong>Dlaczego rozróżnienie ma znaczenie:</strong> lepka uwaga to efekt <em>percepcyjnego</em> przechwycenia (dosłownie nie zauważasz przerwy); autystyczna bezwładność to efekt <em>kontroli/pędu</em> (zauważasz, ale nie możesz przełączyć). Twoje opisy czterech poziomów w istocie ślizgają się między oboma — np. „bodźce tła są naprawdę nieprzetwarzane przez mózg" to lepka uwaga [6], podczas gdy „wymuszone przejścia czują się jak ciągnięcie pociągu z torów" to bezwładność [3]. Ostrożny model powinien trzymać je oddzielnie etykietowane, bo mogą mieć różne przyczyny i różne wsparcie.</p>
+<h2 id="4-cztery-proponowane-poziomy--co-poparte-co-wymyślone">4. Cztery proponowane „poziomy" — co poparte, co wymyślone</h2>
+<p>Zamiast endorse'ować lub odrzucać taksonomię w całości, oto każde proponowane pasmo sprawdzone z evidencją.</p>
+<table>
+<thead>
+<tr>
+<th>Proponowany poziom</th>
+<th>Główne twierdzenie</th>
+<th>Werdykt evidencji</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niski (polytropowy-dominujący)</strong></td>
+<td>Wiele otwartych „zakładek"; koszt przełączania bliski zeru</td>
+<td><strong>Poparty jako jeden koniec kontinuum.</strong> Niżej oceniający MQ i średnia grupy nie-autystycznej (3,19) opisują dokładnie to [2]. „Polytropowy" to własny termin teorii na to [1].</td>
+</tr>
+<tr>
+<td><strong>Umiarkowany</strong></td>
+<td>Może głęboko skupić, ale zachowuje świadomość bazową; lekki koszt przełączania</td>
+<td><strong>Poparty jako środek wymiaru.</strong> Stany flow są raportowane w populacji; wyniki MQ między średnimi grupowymi chwytają to pasmo [2][11]. Ale <em>nazwa</em> jest arbitralna.</td>
+</tr>
+<tr>
+<td><strong>Wysoki</strong></td>
+<td>Preferuje pojedynczy intensywny tunel; przerwy rzeczywiście przeoczone; wysoki koszt przełączania</td>
+<td><strong>Mechanizm poparty, kategoria nie.</strong> Komponenty są realne — przeoczone przerwy = lepka uwaga [6][7]; wysoki koszt przełączania = autystyczna bezwładność [3][4]; silne powiązanie autyzm/ADHD = dane MQ [2]. Ale nie ma progu oddzielającego „Wysoki" od „Umiarkowany".</td>
+</tr>
+<tr>
+<td><strong>Ekstremalny / Absolutny</strong></td>
+<td>Całkowite zanurzenie; zakłócenie powoduje „wstrząs neurologiczny", meltdown, shutdown</td>
+<td><strong>Przesadzone.</strong> Głębokie zanurzenie („flow") i dystres przy zakłóceniu są realne [11], ale <strong>„absolutny" implikuje jakościowy skok, którego dane nie pokazują</strong>, i <strong>„wstrząs neurologiczny" nie jest uznanym terminem</strong>. Meltdowns/shutdowns to nieświadome reakcje przytłoczenia, nie „wstrząs" specyficzny dla pasma monotropizmu.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trzy problemy z publikowaniem taksonomii tak jak jest:</strong></p>
+<ol type="1">
+<li><strong>Implikuje skoki kategorialne tam, gdzie dane pokazują gładkie kontinuum.</strong> Rozkłady MQ ludzi autystycznych i nie-autystycznych znacznie się nakładają [2]; nie ma naturalnego „załamania", który usprawiedliwiałby cztery dyskretne poziomy.</li>
+<li><strong>Przemyca nasilenie/patologię.</strong> „Ekstremalny/absolutny … meltdowns, burnout" ramuje górny koniec jako inherentnie szkodliwy — przeciwieństwo neuroafirmujących ram, które teoria zamierza [1]. Wyższy monotropizm <em>nie</em> to samo co gorsze wyniki; wyniki zależą od <em>dopasowania środowiskowego</em>, nie poziomu.</li>
+<li><strong>Pasma nie mają danych rzetelności.</strong> Użyteczny system poziomów musi pokazać, że ludzi lądują w tym samym pasmie przy re-teście i że pasma coś przewidują. Takie studium nie istnieje dla monotropizmu.</li>
+</ol>
+<p><strong>Co robić zamiast tego.</strong> Wyraź tę samą ideę jako <em>pozycję na wymiarze</em> plus <em>profil</em>: „wysoka tendencja monotropowa (≈górne X% próby autystycznej), z wyraźną autystyczną bezwładnością przy przełączaniu zadań i częstymi przerwanymi meltdownami w mało wspierających środowiskach." To jest dokładne, zindywidualizowane i nie-patologizujące.</p>
+<h2 id="5-zakłócenie--meltdown-shutdown-burnout-co-evidencja-wspiera">5. Zakłócenie → meltdown, shutdown, burnout: co evidencja wspiera</h2>
+<p>Ta część twoich ram jest najbardziej konsekwentna i wymaga największej ostrożności.</p>
+<p><strong>Meltdowns i shutdowns są realne i dobrze opisane</strong> jako nieświadome reakcje na przytłaczający stres lub obciążenie sensoryczne/poznawcze (externalizujący „meltdown" vs internalizujący „shutdown" wycofania) — uznane w wytycznych klinicznych i konsensusie społeczności. Wyzwalane są przez <em>przytłoczenie</em>, którego pęknięcie tunelu jest jedną z częstych dróg [4][8].</p>
+<p><strong>Autystyczny burnout jest teraz zdefiniowanym konstrukttem.</strong> Dwa fundamentalne studia — Raymaker et al. (2020) i Higgins et al. (2021, studium Grounded-Delphi z autystycznymi ekspertami z doświadczenia) — konwergują na definicji: <strong>przewlekłe wyczerpanie, utrata umiejętności i zmniejszona tolerancja na bodziec</strong>, konceptualizowane jako wynik przewlekłego stresu życiowego i „niedopasowania oczekiwań i zdolności" bez odpowiedniego wsparcia i regeneracji [8][9].</p>
+<p><strong>Związek monotropizm → burnout jest heurystycznie potężny, ale jeszcze nie ugruntowany eksperymentalnie.</strong> Narracja jest przekonująca i społecznościowo zwalidowana: każde wymuszone przejście to pęknięcie tunelu; ciągłe maskowanie i przełączanie w polytropowym świecie pali zasoby; bez czasu regeneracji/flow, system się wyczerpuje [8][9][11]. Ale <em>specyficzny</em> wkład monotropowego pęknięcia tunelu w burnout — vs maskowanie, trauma, obciążenie sensoryczne, przewlekłe żądanie — nie został wyizolowany eksperymentalnie. Sformułuj to jako <em>silną, testowalną hipotezę</em>, nie ugruntowany fakt.</p>
+<blockquote>
+<p>Uczciwe, oparte na evidencji twierdzenie brzmi: <em>„Autystyczny burnout jest napędzany przez przewlekły stres, maskowanie i niedopasowanie między żądaniami a zdolnością; ramy monotropizmu przewidują, że ciągłe wymuszone przełączanie i pęknięcia tuneli są głównym, niedocenianym współpracownikiem — przewidywanie, które pasuje do doświadczenia i czeka na bezpośredni test."</em></p>
+</blockquote>
+<h2 id="6-ekonomia-energii-poznawczej--twoje-najsilniejsze-ramy">6. „Ekonomia energii poznawczej" — twoje najsilniejsze ramy</h2>
+<p>Twój końcowy ruch — przejście od „deficytu" do „ile paliwa mózg pali przy zmianie biegów" — jest dokładnie trafny i już ma akademicki dom.</p>
+<p>Model <strong>„atypowej alokacji zasobów"</strong> Goldknopfa (2013) operacjonalizuje monotropizm jako różnicę w <em>ekonomii zasobów</em>: zasoby uwagi w autizmie są <strong>zwężone</strong> (skoncentrowane na mniej/mniejszych kanałach, czasem intensywniej) i/lub <strong>zmniejszone</strong> w ogólnej pojemności [10]. Na tym ujęciu „koszt" przejścia to dosłownie energetyczny wydatek złamania jednego wzorca alokacji i zbudowania innego. To jest „ekonomia energii poznawczej" stwierdzona precyzyjnie — i to są ramy najbardziej spójne z nie-patologizującym opisem, bo ramuje problem jako <em>wydawanie</em> (różnicę w budżetowaniu) raczej niż <em>zepsucie</em>.</p>
+<p>To są ramy do zachowania. Trzy zalety:</p>
+<ul>
+<li>Jest <strong>neutralne wartościowo</strong>: intensywny fokus jest atutem, gdy środowisko go wspiera (flow, ekspertyza), i kosztem, gdy środowisko wymaga ciągłego przełączania [10][11].</li>
+<li><strong>Przewiduje interwencję</strong>: redukuj niepotrzebne przejścia, chron czas flow/regeneracji, dopasuj żądania do zdolności, a „rachunek paliwa" spada — co jest dokładnie tym, co zaleca wytyczna zapobiegania burnout'owi [8][9].</li>
+<li><strong>Ujednolica</strong> zjawiska z twoich czterech poziomów bez potrzeby poziomów: przeoczone bodźce, koszt przełączania, przytłoczenie i burnout stają się wszystkie konsekwencjami <em>tego, jak zasoby są alokowane i wyczerpywane</em>, na kontinuum.</li>
+</ul>
+<h2 id="7-praktyczne-wnioski--co-twierdzić-a-czego-unikać">7. Praktyczne wnioski — co twierdzić, a czego unikać</h2>
+<p><strong>Twierdzić pewnie:</strong></p>
+<ul>
+<li>Monotropizm jest mierzalną, <strong>wymiarową</strong> cechą (MQ, 1–5, z ośmioma subskalami); raportuj wynik i opcjonalny percentyl, nie „poziom" [2].</li>
+<li><strong>„Tarcie przełączania"</strong>, które opisujesz, to <strong>autystyczna bezwładność</strong> — realny, społecznościowo-pochodny, teraz recenzowany konstrukt [3][4][5].</li>
+<li><strong>Lepka uwaga / upośledzone odłączanie</strong> to odrębny, eksperymentalnie mierzony mechanizm [6][7].</li>
+<li><strong>Autystyczny burnout</strong> to zdefiniowany konstrukt napędzany przez przewlekły stres, maskowanie i niedopasowanie żądanie–zdolność; monotropowe pęknięcie tunelu to <em>plauzybilny, z doświadczenia zwalidowany</em> współpracownik [8][9].</li>
+<li>„Ekonomia energii poznawczej" ≈ model <strong>alokacji zasobów</strong> Goldknopfa — najdokładniejsze, neuroafirmujące ramy [10].</li>
+</ul>
+<p><strong>Unikać lub relabelować:</strong></p>
+<ul>
+<li>Nazwane <strong>poziomy / pasma</strong> („Niski/Umiarkowany/Wysoki/Ekstremalny") — nie zwalidowane; użyj pozycji-na-wymiarze + profilu zamiast.</li>
+<li><strong>„Bezwładność uwagi"</strong> jako parasol — zaciera autystyczną bezwładność (zadanie/kontrola) z lepką uwagą (percepcja); użyj precyzyjnego terminu [3][6].</li>
+<li><strong>„Absolutny"</strong> monotropizm i <strong>„wstrząs neurologiczny"</strong> — nieuznane terminy; implikują skok kategorialny i patologię, której dane nie popierają.</li>
+<li>Stwierdzanie ścieżki <strong>monotropizm → burnout</strong> jako ugruntowanej — to silna hipoteza, nie mierzony efekt [8].</li>
+<li>Jakiekolwiek ramy, gdzie <strong>wyższy = bardziej zaburzony</strong> — wyniki monotropizmu zależą od dopasowania środowiskowego, nie poziomu [1][10].</li>
+</ul>
+<hr />
+<h2 id="źródła">Źródła</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — początek teorii monotropizmu; ramy jako różnica alokacji zasobów (kontinuum), nie deficyt. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a></p>
+<p>[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R., Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (47-item self-report measure; validation preprint). Open Science Framework. — wymiarowy wynik 1–5 + 8 subskal; n=1.110; średnia autystycznych 4,15 vs nie-autystycznych 3,19; ADHD podnosi wyniki; <strong>brak punktu odcięcia/pasma percentyla/poziomu nasilenia</strong> (potwierdzone przez przegląd manuskryptu walidacyjnego). Kwestionariusz: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · preprint walidacyjny: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · CC BY-NC-SA 4.0. Lokalne archiwum: <code>sources/17-monotropism-questionnaire-osf.pdf</code></p>
+<p>[3] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em> (Preprint / jakościowo). doi:10.31234/osf.io/ahk6x — ludzie autystyczni opisują trudność rozpoczynania, zatrzymywania i zmiany czynności „która nie była pod ich świadomą kontrolą". Lokalne archiwum: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a> · Manchester Research Explorer: <a href="https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-">https://research.manchester.ac.uk/en/publications/no-way-out-except-from-external-intervention-first-hand-accounts-</a></p>
+<p>[4] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer, Association for Psychological Science. — ramy autystyczną bezwładność jako „po raz pierwszy sformułowaną w narracjach społeczności autystycznej", teraz recenzowaną; używa języka „wysoko-tarciowy start" i „koszty przełączania"; cytuje Carls-Diamante &amp; Laciny (2024), Greaves-Lord et al. (2023), Buckle et al. (2021), Heasman et al. (2024), Rapaport et al. (2024), Phung et al. (2021). <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a></p>
+<p>[5] Greaves-Lord, L. et al. (2023). <em>[Getting 'stuck': an integrative approach to support autistic people]</em> Frontiers in Psychology, doi:10.3389/fpsyg.2023.1229596. — recenzowane jakościowe + ramy Delphi o ograniczonej inicjacji reakcji („utknięty stan") u ludzi autystycznych na poziomach mikro/mezo/makro, współtworzone z ludźmi autystycznymi. <a href="https://doi.org/10.3389/fpsyg.2023.1229596">https://doi.org/10.3389/fpsyg.2023.1229596</a></p>
+<p>[6] Landry, R. &amp; Bryson, S. (2004). <em>Impaired disengagement of attention in young children with autism.</em> Journal of Child Psychology and Psychiatry, 45(6), 1115–1122. doi:10.1111/j.1469-7610.2004.00304.x — „lepka uwaga": spowolnione odłączanie od bodźca. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a></p>
+<p>[7] Sacrey, L.-A. et al. (2015). <em>Attention disengagement in autism spectrum disorder: A meta-analysis.</em> Neuroscience &amp; Biobehavioral Reviews, 56, 111–121. doi:10.1016/j.neubiorev.2014.10.011 — potwierdza spowolnione odłączanie uwagi w badaniach. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a></p>
+<p>[8] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — definiuje autystyczny burnout jako przewlekłe wyczerpanie, utrata umiejętności, zmniejszona tolerancja na bodziec, z przewlekłego stresu i niedopasowania oczekiwań i zdolności. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · otwarte archiwum: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a></p>
+<p>[9] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — definicja konsensusu: wyczerpanie, wycofanie, problemy z myśleniem, zmniejszone umiejętności życia codziennego, zwiększone cechy autystyczne. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a></p>
+<p>[10] Goldknopf, E. J. (2013). <em>Atypical resource allocation may contribute to many aspects of autism.</em> Frontiers in Integrative Neuroscience. PMC3872719 — modeluje autyzm jako różnicę w <em>alokacji zasobów</em> (zwężone i/lub zmniejszone zasoby uwagi); akademicka forma „ekonomii energii poznawczej". <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a></p>
+<p>[11] Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., &amp; Pellicano, E. (2024). <em>"In a State of Flow": experiential validity of monotropism and its relation to autistic wellbeing.</em> Autism in Adulthood. doi:10.1089/aut.2023.0032 — pozytywny biegun głębokiego monotropowego zanurzenia (flow); wspiera ramy „atut, gdy wspierany". Lokalne archiwum: <code>sources/18-flow-experiential-validity-pmc.html</code> · <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a></p>
+</body>
+</html>
