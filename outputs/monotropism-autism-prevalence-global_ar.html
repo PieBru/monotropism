@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>التوحد والمونتروبيزم: ما مدى شيوعهما حقاً؟</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">التوحد والمونتروبيزم: ما مدى شيوعهما حقاً؟</h1>
+</header>
+<h1 id="التوحد-والمونتروبيزم-ما-مدى-شيوعهما-حقاً">التوحد والمونتروبيزم: ما مدى شيوعهما حقاً؟</h1>
+<p><em>ملخص بحثي موثق — تدقيق في أرقام التوحد الإقليمية وسؤال "ما هي النسبة المئوية للأشخاص المونتروبيين".</em></p>
+<blockquote>
+<p><strong>لأغراض معلوماتية، وليس نصيحة طبية.</strong> تصف هذه الأرقام <em>عدد الأشخاص الذين يتم إحصاؤهم كتوحديين أو الذين يسجلون درجات عالية على مقياس المونتروبيزم</em>. يعتمد الإحصاء بشكل كبير على من يقوم بالبحث، وكيف، وأين. لا يوجد شيء هنا يعتبر تشخيصاً.</p>
+</blockquote>
+<hr />
+<h2 id="ملخص-تنفيذي">ملخص تنفيذي</h2>
+<ul>
+<li><strong>التوحد ليس بنسبة 1% في كل مكان.</strong> الرقم العالمي الأكثر دقة هو تقدير <strong>دراسة العبء العالمي للأمراض (GBD) لعام 2021</strong>، والذي اعتمدته منظمة الصحة العالمية الآن: حوالي <strong>شخص واحد من بين كل 127 شخصاً (~0.8%)</strong> كانوا على طيف التوحد في عام 2021 [1][2]. بالنسبة <em>للأطفال</em>، لا تزال المراجعات المجمعة تستقر بالقرب من النسبة طويلة الأمد وهي <strong>~1 من كل 100</strong> [3]. أما الولايات المتحدة — الدولة الأكثر تكثيفاً في الفحص — فتسجل <strong>1 من كل 31 (3.2%)</strong> بين الأطفال في سن 8 سنوات (بيانات CDC لعام 2022) [4].</li>
+<li><strong>الاختلافات الإقليمية هي في الغالب نتيجة لآليات القياس، وليست بيولوجية.</strong> وجدت نفس دراسة GBD أن عبء التوحد كان <em>الأدنى</em> في جنوب شرق/شرق آسيا وأوقيانوسيا، و<em>الأعلى</em> في المناطق ذات الدخل المرتفع [1]. يتتبع هذا النمط البنية التحتية للتشخيص، والوعي، والفحص — وليس اختلافات حقيقية في معدل حدوث التوحد.</li>
+<li><strong>الجدول الإقليمي المقتبس كثيراً خاطئ بشكل جوهري بالنسبة للشرق الأوسط ومبسط للغاية بالنسبة لآسيا.</strong> تضع مراجعة شاملة لعام 2025 انتشار التوحد المجمع في الشرق الأوسط وشمال أفريقيا (MENA) عند <strong>~0.14%</strong> فقط (المدى من 0.01% في عُمان <span class="math inline">→</span> 2.51% في السعودية) [6]، وتذكر مراجعة آسيوية أن شرق آسيا يبلغ <strong>~0.51%</strong> والصين القارية ~0.7% [5][7] — وهو أقل بكثير من نسبة "0.9-1.5%" التي تُذكر غالباً عن العالم العربي.</li>
+<li><strong>لا يوجد "معدل انتشار" متفق عليه للمونتروبيزم، ورقم "15-20% من الناس مونتروبيون" هو خطأ في التصنيف.</strong> المونتروبيزم هو أسلوب معرفي <em>بعدي</em> (سمة مستمرة)، وليس تشخيصاً. الدراسة التجريبية الوحيدة الكبيرة — <strong>استبيان المونتروبيزم (MQ)</strong>، Garau et al. 2023 — وجدت أن المشاركين التوحديين سجلوا في المتوسط <strong>4.15/5</strong> والمشاركين غير التوحديين <strong>3.19/5</strong>، مع تداخل كبير [10]. هي لا تقول "X% من الناس مونتروبيون".</li>
+<li><strong>الادعاء بأن "&gt;90% من التوحديين مونتروبيون" هو تصريح نظري حول مدى دقة النظرية في وصف التجربة التوحدية، وليس نسبة مئوية مقاسة.</strong> هذا الادعاء مقبول كـ <em>صلاحية ذاتية</em>، ولكنه مضلل كـ <em>علم أوبئة</em>.</li>
+</ul>
+<hr />
+<h2 id="1-كم-عدد-الأشخاص-التوحديين-ولماذا-يوجد-رقمان-رئيسيان">1. كم عدد الأشخاص التوحديين؟ (ولماذا يوجد رقمان رئيسيان)</h2>
+<p>يتداول الناس رقمين، وهما يجيبان على أسئلة مختلفة قليلاً:</p>
+<ul>
+<li><strong>~1 من كل 100 طفل.</strong> هذا هو الرقم المجمع من عشرات الدراسات في المراجعات المنهجية (مثل Zeidan et al., 2022) وهو ملخص منظمة الصحة العالمية <em>المركز على الأطفال</em> [3]. يعكس هذا الدراسات التي تفحص أساساً مجموعات الأطفال.</li>
+<li><strong>1 من كل 127 شخصاً (~0.79%)، لجميع الأعمار.</strong> هذا هو التقدير المنمذج لـ <strong>GBD 2021</strong> — 61.8 مليون شخص في عام 2021 — والذي اعتمدته منظمة الصحة العالمية حرفياً ("في عام 2021 كان حوالي 1 من كل 127 شخصاً مصاباً بالتوحد") [1][2]. وهو أقل للفرد الواحد لأنه يشمل دورة الحياة كاملة، بما في ذلك الأجيال الأكبر سناً التي لم يتم فحصها أبداً.</li>
+</ul>
+<blockquote>
+<p>الفجوة بين "1 من كل 100" و"1 من كل 127" ليست تناقضاً: الأول يتعلق <em>بالأطفال</em>، والثاني يتعلق <em>بالجميع</em>. كلاهما مقبول إذا تم تحديد المجتمع المستهدف.</p>
+</blockquote>
+<p>تعطي GBD أيضاً تفصيلاً دقيقاً للجنس — حوالي <strong>1.06% من الذكور</strong> مقابل <strong>0.51% من الإناث</strong> (1,064.7 مقابل 508.1 لكل 100,000) — مما يعكس نقص التشخيص الموثق للفتيات والنساء التوحديات، وليس اختلافاً بيولوجياً بمقدار الضعف [1].</p>
+<h2 id="2-لماذا-تختلف-الأرقام-الإقليمية-الاختلافات-تقيس-الاكتشاف-لا-البيولوجيا">2. لماذا تختلف الأرقام الإقليمية (الاختلافات تقيس <em>الاكتشاف</em>، لا البيولوجيا)</h2>
+<p>هذه هي النقطة الأكثر أهمية عند قراءة أي جدول إقليمي. وجد مؤلفو GBD 2021 أن عبء الصحة المرتبط بالتوحد يتراوح من <strong>126.5 سنة حياة معدلة حسب العجز (DALYs) لكل 100,000</strong> في منطقة جنوب شرق آسيا / شرق آسيا / أوقيانوسيا إلى <strong>204.1 لكل 100,000</strong> في المناطق ذات الدخل المرتفع [1]. بعبارات بسيطة: المناطق الأكثر ثراءً والأكثر فحصاً في العالم <em>تجد</em> توحداً أكثر بكثير من الباقي.</p>
+<p>الدوافع وراء هذه الفجوة هي منهجية واجتماعية بالكامل تقريباً:</p>
+<ul>
+<li><strong>البنية التحتية للتشخيص</strong> — شبكات المراقبة النشطة (مثل شبكة ADDM في الولايات المتحدة) تبحث بشكل منهجي عن الحالات في المدارس والعيادات؛ بينما لا تملك العديد من الدول مثل هذا النظام وتعتمد على السجلات السريرية السلبية.</li>
+<li><strong>المعايير والوعي</strong> — التحول من "اضطراب التوحد" الضيق (DSM-IV) إلى طيف التوحد الأوسع (DSM-5, 2013)، بالإضافة إلى زيادة الوعي العام والمهني، أدى إلى زيادة مطردة في الانتشار <em>المكتشف</em> في الدول التي تعيد الفحص.</li>
+<li><strong>الوصمة، اللغة والوصول إلى الخدمات</strong> — في العديد من المناطق يتم الإبلاغ عن التوحد بنسبة أقل لأن العائلات تواجه وصمة عار، أو لأن الخدمات غائبة، أو لأن أدوات الفحص غير معتمدة في اللغة والثقافة المحلية.</li>
+</ul>
+<p>لذا عندما يظهر جدول "0.1% في المنطقة X و 3% في المنطقة Y"، اقرأها كـ <em>"المنطقة Y تبحث بجهد أكبر ولديها قدرة أكبر على التشخيص"</em>، وليس <em>"التوحد أندر بثلاثين مرة في المنطقة X"</em>. يؤكد مؤلفو GBD هذا بالضبط: هناك حاجة إلى تغطية بيانات عالمية أفضل قبل تفسير التباين الجغرافي بثقة [1].</p>
+<h2 id="3-جدول-إقليمي-مصحح">3. جدول إقليمي مصحح</h2>
+<p>الأرقام التي استدعت هذا الملخص معروضة هنا مقابل أفضل الأدلة المتاحة. تعتمد أعمدة "أفضل تقدير" على مراجعات منهجية أولية أو نموذج GBD — وليس على تجميعات دعائية.</p>
+<table>
+<thead>
+<tr>
+<th>المنطقة</th>
+<th>الرقم المقتبس كثيراً</th>
+<th>ما تدعمه الأدلة</th>
+<th>المصدر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>العالم — جميع الأعمار</strong></td>
+<td>"1%"</td>
+<td><strong>1 من كل 127 (~0.79%)</strong> في 2021 (GBD; رقم منظمة الصحة العالمية الآن)</td>
+<td>[1][2]</td>
+</tr>
+<tr>
+<td><strong>العالم — الأطفال</strong></td>
+<td>"1 من كل 100"</td>
+<td>~1 من كل 100 طفل (مراجعات مجمعة)</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>أمريكا الشمالية</strong></td>
+<td>"1–3.2%"</td>
+<td><strong>3.2% (1 من كل 31)</strong> أطفال في سن 8 سنوات في أمريكا (2022, CDC ADDM); ~1 من كل 45 بالغاً</td>
+<td>[4]</td>
+</tr>
+<tr>
+<td><strong>أوروبا</strong></td>
+<td>"0.7–1%"</td>
+<td>الدراسات القائمة على السجلات تتجمع حول <strong>~1%</strong> (مثل الدنمارك، فنلندا، أيسلندا); التقديرات القائمة على السكان أعلى قليلاً</td>
+<td>[3]</td>
+</tr>
+<tr>
+<td><strong>الشرق الأوسط وشمال أفريقيا</strong></td>
+<td>"0.9–1.5%"</td>
+<td>مجمّع <strong>~0.14%</strong> (فاصل ثقة 95% 0.02–0.36%); المدى بين الدول <strong>0.01% (عُمان) <span class="math inline">→</span> 2.51% (السعودية)</strong></td>
+<td>[6]</td>
+</tr>
+<tr>
+<td><strong>شرق / جنوب شرق آسيا</strong></td>
+<td>"0.4–1.4%"</td>
+<td>مراجعة آسيوية: شرق آسيا <strong>~0.51%</strong>، جنوب آسيا ~0.31%، غرب آسيا ~0.35%; الصين القارية ~<strong>0.7% (1 من كل 143)</strong>; جيوب مفحوصة بكثافة (سنغافورة، اليابان، كوريا الجنوبية) تسجل أرقاماً أعلى</td>
+<td>[5][7]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>استنتاجان من الجدول:</strong></p>
+<ol type="1">
+<li>النطاقات <strong>الأمريكية الشمالية</strong> و<strong>الأوروبية</strong> صحيحة بشكل عام — هذه هي المناطق الأكثر فحصاً، لذا فإن أرقامها المرتفعة متوقعة.</li>
+<li>رقم <strong>الشرق الأوسط وشمال أفريقيا</strong> هو الخطأ الأكبر. الانتشار المجمّع القريب من <strong>0.14%</strong> يعكس بالتأكيد <em>نقص التشخيص وضعف المراقبة</em>، وليس توحداً أندر حقاً. التشتت الهائل داخل المنطقة (عُمان 0.01% إلى السعودية 2.51%) هو الدليل: البيولوجيا الحقيقية لا تختلف بهذا القدر بين الدول المتجاورة; بينما تختلف المراقبة [6].</li>
+</ol>
+<h2 id="4-هل-التوحد-في-ارتفاع-حقاً">4. هل التوحد "في ارتفاع" حقاً؟</h2>
+<p>صعدت أرقام الانتشار بشكل حاد — في الولايات المتحدة من حوالي 1 من كل 150 (2000) إلى 1 من كل 31 (2022) [4]. التفسير السائد بين علماء الأوبئة هو <strong>تحسن واتساع نطاق التعرف</strong>، وليس بالضرورة زيادة في حالات التوحد:</p>
+<ul>
+<li>معايير أوسع (DSM-IV <span class="math inline">→</span> DSM-5)،</li>
+<li>بحث نشط عن الحالات (مراقبة بنمط ADDM)،</li>
+<li>فحص مبكر وأكثر إنصافاً عبر الجنس والعرق والإثنية،</li>
+<li>تقليل الوصمة مما أدى إلى زيادة التقييمات.</li>
+</ul>
+<p>يلاحظ مؤلفو GBD أن الانتشار كان مستقراً نسبياً حيثما تم ضبط جودة البيانات، وأن "الزيادات" الظاهرة تتبعها قدرة الكشف [1]. الملخص الصادق: <strong>نحن نقوم بـ <em>إحصاء</em> التوحد الذي كان موجوداً دائماً بشكل متزايد.</strong></p>
+<h2 id="5-كم-عدد-الأشخاص-المونتروبيين-السؤال-الذي-ليس-له-إجابة-واحدة">5. كم عدد الأشخاص "المونتروبيين"؟ (السؤال الذي ليس له إجابة واحدة)</h2>
+<p>المونتروبيزم (Murray, Lawson &amp; Lesser, 2005) هو تفسير <em>قائم على الانتباه</em> للتوحد: العقل المونتروبي يركز موارده في عدد قليل من "أنفاق الانتباه" المثارة بشدة، بدلاً من توزيع الانتباه عبر قنوات متعددة (بوليتريبزم). وبشكل حاسم، يتم تأطيره كـ <strong>اختلاف في تخصيص الانتباه، وليس عجزاً</strong> — وكـ <strong>طيف</strong>، وليس فئة (نعم/لا).</p>
+<p>بسبب ذلك، <strong>لا يوجد معدل انتشار متفق عليه لـ "المونتروبيزم"</strong>، لثلاثة أسباب هيكلية:</p>
+<ol type="1">
+<li><strong>ليس تشخيصاً.</strong> المونتروبيزم لا يظهر في DSM-5 أو ICD-11. لا يوجد سجل حالات ولا عتبة تشخيصية.</li>
+<li><strong>هو بُعدي وليس فئوياً.</strong> يمكن لأي شخص الدخول في حالة "تدفق" مركزة; الاختلاف التوحدي هو أن التركيز العميق والضيق هو <em>نمط التشغيل الافتراضي</em> وليس حالة عارضة. وضع خط فاصل بين "مونتروبي" و"بوليتريبي" سيكون تعسفياً.</li>
+<li><strong>المقياس يبلغ المتوسطات، لا الحالات.</strong> الأداة المعتمدة — <strong>استبيان المونتروبيزم (MQ)</strong>، Garau et al. 2023 — تعطي درجة مستمرة من 1 إلى 5، والباحثون يقارنون <em>متوسطات المجموعات</em>، وليس "كم شخصاً يتجاوز عتبة معينة" [10].</li>
+</ol>
+<h3 id="الأرقام-الفعلية-التي-نملكها-دراسة-التحقق-من-mq">الأرقام الفعلية التي نملكها (دراسة التحقق من MQ)</h3>
+<p>في دراسة تطوير MQ (1,110 مشاركاً: 756 توحدي، 354 غير توحدي) [10]:</p>
+<ul>
+<li><strong>المشاركون التوحديون: المتوسط 4.15 / 5</strong> (انحراف معياري 0.347)</li>
+<li><strong>المشاركون غير التوحديين: المتوسط 3.19 / 5</strong> (انحراف معياري 0.578)</li>
+<li><strong>حالة ADHD</strong> تنبأت بشكل مستقل بدرجات مونتروبيزم أعلى (وهذا مهم لأن التوحد وADHD يتداخلان في حوالي 30-80% من الحالات حسب الاتجاه).</li>
+<li>أنتج التحليلات العاملية الاستكشافية <strong>بنية من 8 عوامل</strong> (الاهتمامات الخاصة; الاجترار/القلق; الحاجة إلى الروتينات; البيئة ونفق الانتباه; فقدان تتبع المحيط; اتخاذ القرار; التأثير المهدئ للاهتمامات; إدارة التفاعلات الاجتماعية).</li>
+</ul>
+<p>التداخل بين التوزيعين كبير — العديد من غير التوحديين يسجلون درجات أعلى من بعض التوحديين، والعكس صحيح. هذا التداخل هو <em>بالضبط</em> السبب في أن headline مثل "X% من الناس مونتروبيون" ليس ذا معنى بدون عتبة تعسفية (ومتنازع عليها).</p>
+<h2 id="6-من-أين-تأتي-أرقام-90-و-15-20--ولماذا-ليست-بيانات-انتشار">6. من أين تأتي أرقام "&gt;90%" و "15-20%" — ولماذا ليست بيانات انتشار</h2>
+<p>هذان الرقمان، اللذان ينتشران على نطاق واسع عبر الإنترنت، يستحقان تدقيقاً مباشراً.</p>
+<p><strong>"&gt;90% من التوحديين مونتروبيون".</strong> يفضل قراءة هذا كادعاء حول <strong>الصلاحية الذاتية</strong> — أي أنه <em>عندما يواجه التوحديون إطار المونتروبيزم، فإن أغلبية ساحقة تراه وصفاً دقيقاً لتجربتهم</em>. هذه ظاهرة حقيقية وذات مغزى (بُني استبيان MQ مع مجموعة قيادية من التوحديين تحديداً لأن هذا الوصف كان يلقى صدى لديهم [10]). لكنها <strong>ليست نسبة انتشار وبائية</strong>; لم تقم أي دراسة بحساب "نسبة الأشخاص التوحديين الذين هم مونتروبيون" مقابل عتبة معتمدة، لأنه لا توجد عتبة متفق عليها. إذا قيل <em>"المونتروبيزم لديه صلاحية ذاتية عالية جداً لدى التوحديين"</em>، يكون الادعاء مقبولاً; أما إذا قيل <em>"أكثر من 90% من التوحديين مونتروبيون"</em>، فإنه يبالغ فيما تم قياسه.</p>
+<p><strong>"15-20% من السكان العامين مونتروبيون".</strong> هذا الرقم هو على الأرجح <strong>خلط مع مفهوم "التنوع العصبي" (neurodivergence).</strong> تقديرات المجتمع تضع <em>بعض</em> أشكال التنوع العصبي (ADHD، عسر القراءة، عسر الأداء، متلازمة توريت، إلخ، مع تداخل كبير) في حدود 15-20% من السكان. على سبيل المثال، ADHD للبالغين يبلغ حوالي <strong>2.58%</strong> (مستمر) إلى <strong>6.76%</strong> (ظاهري) عالمياً [8]، وADHD الأطفال يقدر بـ 5-8% غالباً. عسر القراءة يقدر بـ ~10% حسب التعريف. <strong>لا يوجد أي من هذه الأرقام كنسبة للمونتروبيزم.</strong> مساواة "التنوع العصبي" بـ "المونتروبيزم" هو خطأ في التصنيف: المونتروبيزم هو <em>بُعد واحد</em> من الأساليب المعرفية وهو مرتفع في — ولكن ليس مطابقاً لـ — عدة أنماط متنوعة عصبياً. حالياً <strong>لا يوجد رقم قائم على الأدلة</strong> لانتشار المونتروبيزم في السكان العامين.</p>
+<blockquote>
+<p><strong>الخلاصة بشأن المونتروبيزم:</strong> تعامل معه كـ <em>ميل قابل للقياس</em> على طيف، مرتبط بقوة (ولكن ليس حصرياً) بالتوحد وADHD، وذو صلاحية ذاتية عالية للتوحديين. الإجابة الصادقة على سؤال "ما هي النسبة المئوية للمونتروبيين؟" هي: <em>هذا ليس سؤالاً محدداً جيداً بعد، وأي نسبة دقيقة تراها هي رقم مخترع.</em></p>
+</blockquote>
+<h2 id="7-خلاصات-عملية">7. خلاصات عملية</h2>
+<ul>
+<li><strong>استخدم الرقم الذي يناسب المجتمع.</strong> "1 من كل 127 شخصاً" (جميع الأعمار, GBD/WHO) و"~1 من كل 100 طفل" كلاهما صحيحان — حدد أيهما تقصد [1][2][3].</li>
+<li><strong>تعامل مع الفجوات الإقليمية كفجوات في الاكتشاف.</strong> الانتشار المنخفضات في الشرق الأوسط وشمال أفريقيا، وأجزاء من آسيا، وبين الفتيات والنساء، والبالغين وكبار السن، والمجموعات العرقية المختلفة، يعكس نقص التشخيص، لا غياب التوحد [1][6].</li>
+<li><strong>لا تقدم المونتروبيزم على أنه يملك نسبة انتشار.</strong> أبلغ عن متوسطات MQ والإطار البعدي; تجنب استخدام "&gt;90%" و "15-20%" كبيانات انتشار [10].</li>
+<li><strong>حافظ على إطار عمل Neuroaffirming (مؤكد للأعصاب).</strong> زيادة <em>تحديد</em> التوحد في الدول ذات الموارد العالية هي نجاح في الوعي والوصول; المونتروبي مقابل البوليتريبي هو <em>اختلاف في الانتباه</em>، وليس عجزاً — بما يتسق مع كيفية صياغة المؤسسين والمجتمع التوحدي للنظرية.</li>
+</ul>
+<hr />
+<h2 id="المصادر">المصادر</h2>
+<p>[1] Global Burden of Disease Study 2021 Autism Spectrum Collaborators (2024). <em>The global epidemiology and health burden of the autism spectrum: findings from the Global Burden of Disease Study 2021.</em> The Lancet Psychiatry (19 Dec 2024). doi:10.1016/S2215-0366(24)00363-8 — 61.8 مليون شخص (1 من كل 127) في 2021; معدل الانتشار المعياري للعمر 788.3/100,000 (ذكور 1,064.7; إناث 508.1); DALYs المنطقة الفائقة 126.5 (جنوب شرق/شرق آسيا وأوقيانوسيا) إلى 204.1 (الدخل المرتفع) لكل 100,000. <a href="https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext">https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(24)00363-8/fulltext</a> · ملخص IHME: <a href="https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global">https://www.healthdata.org/research-analysis/library/global-epidemiology-and-health-burden-autism-spectrum-findings-global</a>
+[2] World Health Organization (2024). <em>Autism fact sheet (key facts).</em> — "In 2021 about 1 in 127 persons had autism." <a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders">https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders</a>
+[3] Zeidan, J. et al. (2022). <em>Global prevalence of autism: A systematic review update.</em> Autism Research (Wiley). doi:10.1002/aur.2696 — ~1 من كل 100 طفل; بيانات السجلات الأوروبية (فرنسا، الدنمارك، فنلندا، أيسلندا). <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696">https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2696</a>
+[4] CDC, Autism and Developmental Disabilities Monitoring (ADDM) Network (2025). <em>Prevalence and Early Identification of Autism Spectrum Disorder Among Children Aged 8 Years — ADDM Network, 16 sites, United States, 2022.</em> MMWR, 74(SS-2). — 1 من كل 31 (3.2%) بين الأطفال في سن 8 سنوات. تقرير المجتمع: <a href="https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf">https://www.cdc.gov/autism/media/pdfs/2025/04/ADDM-Community-Report-SY2022.pdf</a> · MMWR: <a href="https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm">https://www.cdc.gov/mmwr/volumes/74/ss/ss7402a1.htm</a>
+[5] Lu, Y. et al. (2020). <em>Prevalence of autism spectrum disorder in Asia: a systematic review and meta-analysis.</em> Psychiatry Research, 284, 112679. doi:10.1016/j.psychres.2019.112679 (PMID 31735373) — شرق آسيا 0.51%، جنوب آسيا 0.31%، غرب آسيا 0.35%; الصين القارية ~0.7% (1 من كل 143). <a href="https://pubmed.ncbi.nlm.nih.gov/31735373">https://pubmed.ncbi.nlm.nih.gov/31735373</a>
+[6] Abdallah, B.M. et al. (2025). <em>Estimates of the prevalence of autism spectrum disorder in the Middle East and North Africa region: a systematic review and meta-analysis.</em> BMC Public Health, 25:2519. doi:10.1186/s12889-025-23651-x (PMID 40691829) — مجمّع 0.14% (فاصل ثقة 95% 0.02–0.36%); المدى بين الدول 0.01% (عُمان) <span class="math inline">→</span> 2.51% (السعودية). <a href="https://pubmed.ncbi.nlm.nih.gov/40691829">https://pubmed.ncbi.nlm.nih.gov/40691829</a>
+[7] Jiang, X. et al. (2024). <em>Prevalence of autism spectrum disorder in mainland China over the past 6 years: a systematic review and meta-analysis.</em> BMC Psychiatry (PMID 38811881) — ~0.7% منذ 2017 (~1 من كل 143). مؤيد بمراجعة سياسات 2024 (SAGE). <a href="https://pubmed.ncbi.nlm.nih.gov/38811881">https://pubmed.ncbi.nlm.nih.gov/38811881</a>
+[8] Song, P. et al. (2021). <em>The prevalence of adult attention-deficit hyperactivity disorder: a global systematic review and meta-analysis.</em> General Psychiatry / PMC7916320 — ADHD البالغين المستمر 2.58%; ADHD البالغين العرضي 6.76% عالمياً. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320">https://pmc.ncbi.nlm.nih.gov/articles/PMC7916320</a>
+[9] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — أصل نظرية المونتروبيزم. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a>
+[10] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R, Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (أداة تقرير ذاتي من 47 بنداً; مسودة مسبقة). Open Science Framework. — n = 1,110 (756 توحدي, 354 غير توحدي); متوسط التوحديين 4.15 (انحراف 0.347) مقابل غير التوحديين 3.19 (انحراف 0.578) على مقياس 1-5; ADHD تنبأ بشكل مستقل بدرجات مونتروبيزم أعلى; بنية من 8 عوامل. ملف الاستبيان: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · مسودة التحقق: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · الترخيص: CC BY-NC-SA 4.0. أرشيف محلي: <code>sources/17-monotropism-questionnaire-osf.pdf</code>
+[11] National Autistic Society — تجنب الطلب ("لا توجد أبحاث وجدت أدلة قوية على [PDA] كنمط متميز"): <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a>
+[12] Frontiers in Education (2024). طرق دراسة PDA — نقد تفكير نيوسون الدائري (Green et al. 2018; O'Nions &amp; Eaton 2020): <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full</a>
+[13] Kildahl, A., et al. (2023). Pathological Demand Avoidance: Current State of Research and Critical Discussion. PubMed 36892327. <a href="https://pubmed.ncbi.nlm.nih.gov/36892327">https://pubmed.ncbi.nlm.nih.gov/36892327</a>
+[14] Murray, F. (Lawson) (2018). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em> (BPS). <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a>
+[15] Happé, F., &amp; Frith, U. (2006). The weak coherence account: detail-focused cognitive style in ASD. <em>J Autism Dev Disord</em> 36:5–25 (مستشهد بها في دراسة مقارنة Frontiers 2024): <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full</a>
+[16] Hollingdale, J., et al. (2019). Meta-analytic review of ASD symptoms in ADHD (مستشهد بها في Psych Scene Hub و Autistica): <a href="https://www.autistica.org.uk/what-is-autism/adhd-and-autism">https://www.autistica.org.uk/what-is-autism/adhd-and-autism</a>
+[17] Children's Hospital of Philadelphia — 27% من البالغين التوحديين بدون إعاقة ذهنية لديهم تشخيص ADHD مصاحب — حوالي 10 أضعاف المعدل العام: <a href="https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism">https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism</a>
+[18] Behavioral Innovations — تداخل جيني (~50-72%) ملخص: <a href="https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd">https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd</a>
+[19] Autistic Scholar — "Revisiting monotropism" (AuDHD كأنفاق متنافسة; يشير إلى Grotewiel et al. 2022 حول التركيز الفائق في ADHD): <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a>
+[20] Neurodiverse Connection (Edgar) — المونتروبيزم، الشباب والاحتراق التوحدي: <a href="https://ndconnection.co.uk/blog/monotropism-young-people">https://ndconnection.co.uk/blog/monotropism-young-people</a> ; Autistic Realms — استعادة الراحة: <a href="https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance">https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance</a>
+[21] National Autistic Society — ما هو المونتروبيزم؟ (حالات التدفق; يشير إلى Heasman et al. 2024 "نظرية التدفق التوحدي"): <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a>
+[22] PDA North America — ما هو PDA؟ (نيوسون، الثمانينيات؛ إعادة الصياغة إلى "دافع غريزي للاستقلالية"): <a href="https://pdanorthamerica.org/what-is-pda">https://pdanorthamerica.org/what-is-pda</a>
+[23] O'Nions, V., et al. (2016). Identifying features of PDA using the DISCO. PMC4820467. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467">https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467</a>
+[24] Nickel, K., Maier, S., Endres, D., &amp; Joos, A. (2019). Systematic Review: Overlap Between Eating, Autism Spectrum, and Attention-Deficit/Hyperactivity Disorder. <em>Frontiers in Psychiatry</em>. PMC6796791 (يستشهد أيضاً بـ Westwood, Mandy &amp; Tchanturia 2017; Huke et al. 2013). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791">https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791</a>
+[25] Discussing Psychology (Loker) — رهاب الساح في التوحد ~23-25% (بدون إعاقة ذهنية) مقابل ~1.3% عام; أقل شيوعاً من الفوبيا الاجتماعية أو GAD (مصدر ثانوي، يعتمد على Helles et al. 2020 و Lugnegård et al. 2012): <a href="https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked">https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked</a>
+[26] Green, S. A., &amp; Ben-Sasson, A. (2010). Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship? <em>Journal of Autism and Developmental Disorders</em> — التكيف السياقي وتجنب المواقع العامة. PMC2980623. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a>
+[27] Embrace Autism — التوحد والاكتناز (خلل وظيفي تنفيذي, اتخاذ قرار): <a href="https://embrace-autism.com/autism-and-hoarding">https://embrace-autism.com/autism-and-hoarding</a>
+[28] Goldfarb, Y., Zafrani, O., Hedley, D., &amp; Yaari, M. (2021). Autistic adults' subjective experiences of hoarding and self-injurious behaviors (qualitative). <em>Autism</em>. PMC8264636. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636</a>
+[29] Abouzed, M., Gabr, A., Elag, K. A., Soliman, M., Elsaadouni, N., Elzahab, N. A., &amp; Barakat, M. (2024). The prevalence, correlates, and clinical implications of hoarding behaviors in high-functioning autism. <em>Scientific Reports</em> (s41598-024-75371-8). <a href="https://www.nature.com/articles/s41598-024-75371-8">https://www.nature.com/articles/s41598-024-75371-8</a>
+[30] Milton, D. (2012). On the ontological status of autism: the 'double empathy problem'. <em>Disability &amp; Society</em> 27(6):883–887; Milton (2017) توسعة. ملخص: <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy</a>
+[31] Jones, D. R., Botha, M., Ackerman, R. A, &amp; King, K. (2024). Non-autistic observers both detect and demonstrate the double empathy problem when evaluating interactions between autistic and non-autistic adults. <em>Autism</em>. PMC11308351. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351">https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351</a>
+[32] ويكيبيديا — مشكلة التعاطف المزدوج (اعتراف بالفجوات البحثية: الأطفال، غير الناطقين، ذوي الإعاقة الذهنية): <a href="https://en.wikipedia.org/wiki/Double_empathy_problem">https://en.wikipedia.org/wiki/Double_empathy_problem</a></p>
+<hr />
+<p><em>ملاحظة حول مستويات الأدلة:</em> المستوى 1 = قياس مباشر ومكرر (MQ; معدلات AuDHD); المستوى 2 = مراضة مشتركة مكررة مع آلية مشتركة مثبتة; المستوى 3 = استقراء محتمل، مصدر واحد، أو مفهوم متنازع عليه. انظر §5.</p>
+</body>
+</html>

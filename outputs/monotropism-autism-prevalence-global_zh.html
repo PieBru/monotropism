@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>全球自闭症患病率：从单向注意力（Monotropism）视角审视</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<h1 id="全球自闭症患病率从单向注意力monotropism视角审视">全球自闭症患病率：从单向注意力（Monotropism）视角审视</h1>
+<p><em>引用研究摘要 — 审查自闭症患病率数据并将其与单向注意力理论联系起来。</em></p>
+<blockquote>
+<p><strong>仅供参考，并非医疗建议。</strong> 本摘要基于可用全球数据评估自闭症的患病率，并探讨单向注意力理论如何解释诊断中的差异。</p>
+</blockquote>
+<hr />
+<h2 id="执行摘要">执行摘要</h2>
+<ul>
+<li><strong>全球患病率：</strong> 现代估计（如 GBD 2021 研究）表明全球自闭症患病率约为 <strong>1%</strong>，但这一数字掩盖了基于诊断标准、服务可及性和文化意识的巨大差异 [1]。</li>
+<li><strong>性别差异：</strong> 男女诊断率之间仍存在显著差异。虽然传统观点认为自闭症是“男性疾病”，但最新数据显示，许多女性在成年后才被诊断，这主要是由于 <strong>社交掩饰 (Masking)</strong> 以及在模仿社交行为方面的更高能力 [2]。</li>
+<li><strong>单向注意力作为诊断维度：</strong> 单向注意力理论提出，自闭症并非“社交技能缺失”，而是 <strong>注意力分配的差异</strong>。单向注意力者将处理资源集中在极少数深度激活的“注意力隧道”中，从而忽略了边缘刺激 [3]。</li>
+<li><strong>单向注意力对诊断的影响：</strong> 患病率的波动部分可能是由于传统诊断工具关注“外部行为”而非“内部注意力体验”。使用 <strong>单向注意力问卷 (MQ)</strong> 显示，许多不符合传统临床标准的人表现出高度的单向注意力倾向，这表明存在一个更广泛的、未被诊断的神经多样性谱系 [4]。</li>
+<li><strong>结论：</strong> 自闭症并非一组症状，而是一种认知模式（单向注意力）。理解这一模式有助于发现被忽视的群体，尤其是女性和成年人。</li>
+</ul>
+<hr />
+<h2 id="1-自闭症患病率的现状数据与差异">1. 自闭症患病率的现状：数据与差异</h2>
+<p>自闭症的患病率估计根据所采用的方法而大相径庭：</p>
+<h3 id="11-全球估计-gbd-2021-及之后">1.1 全球估计 (GBD 2021 及之后)</h3>
+<p>全球疾病负担 (Global Burden of Disease) 的汇总数据表明，患病率约为全球人口的 <strong>1%</strong> [1]。然而，在发达国家（如美国），疾病控制与预防中心 (CDC) 的数据表明比例要高得多（约为 <strong>1/36</strong>），这反映了筛查工具的改进和意识的提高 [5]。</p>
+<h3 id="12-性别之谜与社交掩饰-masking">1.2 性别之谜与社交掩饰 (Masking)</h3>
+<p>历史上，男性的诊断率远高于女性。但现代研究表明，这种差异源于 <strong>诊断工具的偏差</strong>，因为这些工具是基于男性行为设计的。</p>
+<ul>
+<li><strong>社交掩饰：</strong> 自闭症女性表现出更强的“掩饰”能力，即通过巨大的认知努力模仿可接受的社交行为，以隐藏自闭症特质 [2]。</li>
+<li><strong>特殊兴趣：</strong> 自闭症女性的单向注意力隧道可能集中在社会认为“不那么奇怪”的领域（如动物或艺术），使得她们的注意力隧道在临床观察中不如男性（如火车或地图）那样明显 [3]。</li>
+</ul>
+<hr />
+<h2 id="2-单向注意力重新定义核心">2. 单向注意力：重新定义“核心”</h2>
+<p>单向注意力理论 (Murray et al., 2005) 提出，自闭症应被视为一种资源分配方式：</p>
+<ul>
+<li><strong>单向注意力 (Monotropic)：</strong> 将注意力资源集中在极少数深层的通道中。这解释了“特殊兴趣”和极高的专注力 (Hyperfocus) [3]。</li>
+<li><strong>多向注意力 (Polytropic)：</strong> 能够同时在多个通道中分配注意力（非自闭症者的常见模式）。</li>
+</ul>
+<h3 id="这如何影响患病率">这如何影响患病率？</h3>
+<p>当我们依赖“社交行为”进行诊断时，我们会忽略那些社交能力“足够”但因被迫分配注意力而感到极度疲惫（掩饰）的人。如果将 <strong>单向注意力</strong> 作为标准，我们可能会发现，处理信息方式为单向注意力的人数远高于获得临床自闭症诊断的人数 [4]。</p>
+<hr />
+<h2 id="3-单向注意力问卷-mq-与实证验证">3. 单向注意力问卷 (MQ) 与实证验证</h2>
+<p>2023 年，Garau 等人开发了 <strong>单向注意力问卷 (Monotropism Questionnaire)</strong>，这是首个基于自评的单向注意力特质测量工具 [4]。</p>
+<h3 id="研究主要结果-n1110">研究主要结果 (N=1,110)：</h3>
+<ul>
+<li><strong>平均分：</strong> 自闭症组平均分 <strong>4.15</strong>（满分 5），而非自闭症组为 <strong>3.19</strong>。</li>
+<li><strong>数据重叠：</strong> 两组之间存在显著重叠，这意味着单向注意力是一种 <strong>维度特质 (Dimensional trait)</strong>，在所有人身上都以不同程度存在，而非简单的“有或无” [4]。</li>
+<li><strong>TDAH（多动症）：</strong> 研究显示，TDAH 患者同样表现出高度的单向注意力倾向，表明自闭症与 TDAH 在注意力模式上存在重叠 [4]。</li>
+</ul>
+<hr />
+<h2 id="4-对护理和诊断的影响">4. 对护理和诊断的影响</h2>
+<p>通过单向注意力视角理解患病率，会带来临床实践的根本转变：</p>
+<ol type="1">
+<li><strong>打破刻板印象：</strong> 停止寻找“不进行眼神接触的孩子”，转而寻找“拥有深度注意力隧道的人” [3]。</li>
+<li><strong>承认掩饰的代价：</strong> 意识到缺乏可见症状并不意味着没有自闭症，而可能意味着个体在进行艰苦的掩饰，从而导致心理崩溃 (Burnout) [2]。</li>
+<li><strong>支持“流状态” (Flow)：</strong> 不要强迫个体进行多向注意力的分配，而应支持其深度专注的能力，将其作为获得成功和心理健康的工具 [3]。</li>
+</ol>
+<hr />
+<h2 id="5-结论">5. 结论</h2>
+<p>自闭症的患病率不仅是统计数字，更是我们对神经多样性理解程度的反映。通过将单向注意力理论引入诊断，我们可以从“识别疾病”转向“理解处理模式”，确保所有个体（无论性别或掩饰能力如何）都能获得必要的支持。</p>
+<hr />
+<h2 id="参考文献">参考文献</h2>
+<p>[1] Global Burden of Disease (GBD) 2021 Study. 全球神经发育障碍患病率估计.
+[2] Hull, L., et al. (2017). <em>Putting on a Performance: Social Camouflaging in Adults with Autism Spectrum Conditions.</em> Autism. doi:10.1177/1362361317730930.
+[3] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398.
+[4] Garau, V., et al. (2023). <em>The Monotropism Questionnaire.</em> OSF Preprint. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a>.
+[5] Centers for Disease Control and Prevention (CDC). <em>Prevalence of Autism Spectrum Disorder</em>. (最新数据).</p>
+</body>
+</html>

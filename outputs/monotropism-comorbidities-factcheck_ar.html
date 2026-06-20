@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>التداخلات المونوتروبية: مراجعة لإطار المجموعات الأربع</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">التداخلات المونوتروبية: مراجعة لإطار المجموعات الأربع</h1>
+</header>
+<h1 id="التداخلات-المونوتروبية-مراجعة-لإطار-المجموعات-الأربع">التداخلات المونوتروبية: مراجعة لإطار المجموعات الأربع</h1>
+<p><em>ملخص بحثي موثق — مراجعة لإطار شائع حول "التداخلات المونوتروبية".</em></p>
+<blockquote>
+<p><strong>للمعلومات فقط، وليس نصيحة طبية.</strong> المونوتروبيزم هو <em>نمط</em> معرفي، وليس تشخيصًا؛ لذا فهو لا يمتلك "تداخلات مرضية" بالمعنى الطبي. يقيّم هذا الملخص ما هو مدعوم وما هو غير مدعوم في إطار المجموعات أدناه. يكمل هذا الملخص "الملخص الشامل للتداخلات" الموجود في المشروع.</p>
+</blockquote>
+<hr />
+<h2 id="الملخص-التنفيذي">الملخص التنفيذي</h2>
+<ul>
+<li><strong>بداية الإطار صحيحة تمامًا: المونوتروبيزم لا يمتلك "تداخلات مرضية" بالمعنى الطبي.</strong> هو نمط انتباه ضمن طيف؛ التداخلات مع الحالات السريرية هي <em>ارتباطات وآليات مشتركة</em>، وليست مضاعفات لمرض [1].</li>
+<li><strong>ادعاء بارز خاطئ.</strong> <em>"الأشخاص المصابون بالتوحد و TDAH (AuDHD) يحصلون على أعلى الدرجات في استبيان MQ"</em> <strong>ليس</strong> هذا ما تظهره البيانات. في دراسة MQ، يزيد التوحد و TDAH بشكل مستقل درجات المونوتروبيزم، لكن تأثيرهما <em>المشترك</em> هو <strong>تفاعل سلبي</strong> (β = −0,43): الأشخاص المصابون بالتوحد و TDAH يحصلون على درجات <strong>أقل مما يتوقعه النموذج الجمعي البسيط</strong>، وليس أعلى [2].</li>
+<li><strong>مصطلحان منسوبان بشكل صحيح ولكن يحتاجان لتعريف دقيق.</strong> "الانقسام المونوتروبيك" (Monotropic Split) <strong>صيغ بالفعل</strong> بواسطة المحامية التوحدية <strong>Tanya Adkin</strong> — ولكنه يعني التكلفة المعرفية <em>لإجبار عقل مونوتروبيك على العمل بشكل بوليتـروبيك</em> (تقسيم الانتباه)، <strong>وليس</strong> "أنفاق AuDHD المتنافسة" كما يُفهم أحيانًا [3].</li>
+<li><strong>"مشكلات ثبات الشيء" غير مثبتة ومثيرة للجدل.</strong> المصدر الأكاديمي الوحيد (Lawson &amp; Dombroski, 2017) يقترح ثبات الشيء <strong>المتأخر</strong> كـ <em>فرضية</em> لبعض الضغوط المرتبطة بالتوحد — بينما تظهر الأدبيات الأوسع أن ثبات الشيء عادة ما يكون <em>سليمًا أو حتى متفوقًا</em> في التوحد. تجربة "بعيد عن العين، بعيد عن العقل" تُفهم بشكل أفضل كأثر لـ <strong>الذاكرة العاملة / تخصيص الانتباه</strong> [4].</li>
+<li><strong>بقية العناصر مدعومة بشكل عام ولكن بدرجات متفاوتة.</strong> التوحد (تأسيسي)، والتركيز المفرط في TDAH (حقيقي)، وتداخل القلق والاجترار والوسواس القهري (قوي)، والقصور الذاتي التوحدي (حقيقي)، والتحميل الحسي <span class="math inline">→</span> الانهيار/الإغلاق (حقيقي)، والاحتراق الناتج عن التبديلات القسرية والتمويه (مفهوم راسخ) جميعها تصمد أمام التدقيق — بينما "النظم المفرطة" هي <strong>نظرية Baron-Cohen (E-S)</strong> وليست اكتشافًا للمونوتروبيزم [5].</li>
+<li><strong>إعادة صياغة إيجابية:</strong> يفضل وصف كل تداخل على أنه <em>"كيف يتفاعل نظام انتباه ضيق ومكثف مع عالم بوليتـروبيك"</em> بدلاً من وصفها كقائمة من الاضطرابات التي "يسببها" الدماغ المونوتروبيك.</li>
+</ul>
+<hr />
+<h2 id="1-المبدأ-المركزي-الإطار-أصاب-في-هذا">1. المبدأ المركزي (الإطار أصاب في هذا)</h2>
+<p>يفترض المونوتروبيزم (Murray, Lawson &amp; Lesser, 2005) أن العقول تختلف في <em>كيفية تخصيص الانتباه</em>: العقل المونوتروبيك يركز الموارد في "أنفاق انتباه" قليلة ونشطة بكثافة؛ بينما العقل البوليتـروبيك يوزعها على قنوات متعددة [1]. ولأنه <strong>نمط معرفي بُعدي</strong> — يمكن قياسه عبر استبيان MQ على مقياس من 1-5 — فهو لا "يمتلك تداخلات مرضية". بل لديه <strong>ارتباطات إحصائية</strong> وآليات مشتركة.</p>
+<p>هذا الملخص منظم كـ <strong>تحقق من كل ادعاء</strong> في إطار المجموعات الأربع.</p>
+<h2 id="2-المجموعة-1--الأنماط-العصبية-المركزية">2. المجموعة 1 — الأنماط العصبية المركزية</h2>
+<h3 id="التوحد-white_check_mark-تأسيسي-الارتباط-الأقوى">التوحد ✅ (تأسيسي، الارتباط الأقوى)</h3>
+<p>أُنشئ المونوتروبيزم لتفسير سمات التوحد — الاهتمامات الخاصة المكثفة، الحاجة للروتين، والاختلافات في التفاعل الاجتماعي [1]. يؤكد MQ ذلك تجريبيًا: حصل التوحديون في المتوسط على <strong>4.15/5</strong> مقابل <strong>3.19/5</strong> لغير التوحديين (n=1,110) [2].</p>
+<h3 id="tdah-white_check_mark-حقيقي-ومقاس">TDAH ✅ (حقيقي ومقاس)</h3>
+<p>يزيد TDAH بشكل كبير من درجات المونوتروبيزم (β = +0,55, p&lt;,001) [2]. الارتباط مفاهيمي وإحصائي: "التركيز المفرط" (Hyperfocus) في TDAH يكاد يكون متطابقًا مفاهيميًا مع النفق المونوتروبيك [2][6].</p>
+<h3 id="audhd-x-الادعاء-البارز-خاطئ--التصحيح-الجوهري">AuDHD ❌ (الادعاء البارز خاطئ) — <em>التصحيح الجوهري</em></h3>
+<blockquote>
+<p><strong>الادعاء المراجع:</strong> <em>"الأشخاص الذين يمتلكون نمط AuDHD المدمج يحصلون على أعلى الدرجات في MQ من بين جميع المجموعات."</em></p>
+</blockquote>
+<p><strong>هذا ليس</strong> ما تظهره البيانات. أظهر تحليل الانحدار في مقال MQ أن التوحد و TDAH وتفاعلهما يؤثرون كالتالي [2]:</p>
+<table>
+<thead>
+<tr>
+<th>المتنبئ (مقابل المجموعات الأخرى)</th>
+<th>β</th>
+<th>p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TDAH، غير توحدي</td>
+<td><strong>+0,55</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td>توحدي، غير TDAH</td>
+<td><strong>+1,04</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td><strong>التفاعل (توحد × TDAH)</strong></td>
+<td><strong>−0,43</strong></td>
+<td><strong>&lt;,001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>مصطلح التفاعل <strong>سلبي ومعنوي</strong>. يذكر المؤلفون بوضوح: <em>"درجات المونوتروبيزم ليست عالية لدى الأفراد التوحديين المصابين بـ TDAH كما هو متوقع بناءً على التأثيرات الجمعية البسيطة"</em> [2]. بعبارة أخرى، إضافة TDAH إلى التوحد <strong>لا</strong> ترفع المونوتروبيزم أكثر مما يتوقعه التوحد وحده — بل تكون <strong>أقل</strong> من مجموع التأثيرين المستقلين.</p>
+<ul>
+<li><strong>المجموعة الوحيدة التي تسجل أعلى الدرجات</strong> هي التوحديون (4.15). الادعاء بأن AuDHD هو "الأعلى على الإطلاق" كأثر تجميعي هو <strong>ادعاء غير مدعوم وتناقضه البيانات</strong>.</li>
+<li>الصورة <em>الحدسية</em> التي يقدمها الإطار — "شد وجذب داخلي بين حاجة التوحد لنفق مستقر واندفاع TDAH نحو الجديد" — هي وصف شائع وتجربة معيشة، لكنها <strong>رواية سريرية/مجتمعية وليست اكتشافًا إحصائيًا من MQ.</strong></li>
+</ul>
+<blockquote>
+<p><strong>الادعاء المصحح:</strong> <em>"يزيد كل من التوحد و TDAH بشكل مستقل درجات المونوتروبيزم، لكن الاثنين يتفاعلان بشكل غير جمعي: الأشخاص التوحديون المصابون بـ TDAH يحصلون على درجات في MQ أقل مما يتوقعه النموذج الجمعي البسيط."</em> [2]</p>
+</blockquote>
+<h2 id="3-المجموعة-2--السمات-المعرفية-والصحة-النفسية">3. المجموعة 2 — السمات المعرفية والصحة النفسية</h2>
+<h3 id="القلق-والاجترار-white_check_mark-ارتباط-قوي-آلية-محتملة">القلق والاجترار ✅ (ارتباط قوي، آلية محتملة)</h3>
+<p>القلق والاجترار مرتفعان في مجموعات التوحد/TDAH، ويوفر المونوتروبيزم آلية واضحة: العقل في نفق يتشبث بقلق معين ويعالجه في حلقة مفرغة ("اجترار")، مما يجعل القلق "لاصقًا" [7][8]. تتضمن بنية MQ الثمانية مقياسًا فرعيًا لـ <strong>"الاجترار والقلق"</strong>، مما يثبت أن هذه المجموعة صحيحة تجريبيًا [2].</p>
+<h3 id="الوسواس-القهري-ocd-white_check_mark-تداخل-قوي-تمييز-مهم">الوسواس القهري (OCD) ✅ (تداخل قوي، تمييز مهم)</h3>
+<p>التداخل بين التوحد والوسواس القهري حقيقي ومكرر. تظهر المراجعات أن حوالي <strong>~17% من التوحديين يستوفون معايير OCD</strong> (مقابل ~1–2% في عامة السكان) [9]. التمييز النوعي الذي يطرحه الإطار صحيح ودقيق: <strong>الاهتمامات المونوتروبية هي "متوافقة مع الأنا" (ego-syntonic)</strong> (مدفوعة بالشغف/البهجة)، بينما <strong>قهر الوسواس القهري "غير متوافق مع الأنا" (ego-dystonic)</strong> (مدفوع بالقلق وينفذ لتحييد الخوف) [10].</p>
+<h3 id="النظم-المفرطة-hyper-systemizing-warning-مفهوم-حقيقي-ولكن-يتبع-baron-cohen">النظم المفرطة (Hyper-systemizing) ⚠️ (مفهوم حقيقي، ولكن يتبع Baron-Cohen)</h3>
+<p>"النظم المفرطة" — الاندفاع لتحليل وبناء واستكشاف الأنظمة — سمة توحدية حقيقية، ولكنها تنتمي إلى <strong>نظرية التعاطف-النظم (E-S)</strong> لـ Simon Baron-Cohen، وليست اكتشافًا للمونوتروبيزم [5]. النظريتان تتقاطعان بقوة، ولكن يجب نسب الفضل لنظرية E-S في هذا المفهوم [1][5].</p>
+<h2 id="4-المجموعة-3--الظواهر-العصبية-والمعالجة">4. المجموعة 3 — الظواهر العصبية والمعالجة</h2>
+<h3 id="مشكلات-ثبات-الشيء-x-مثير-للجدل--التصحيح-الثاني">مشكلات ثبات الشيء ❌ (مثير للجدل — التصحيح الثاني)</h3>
+<blockquote>
+<p><strong>الادعاء المراجع:</strong> <em>"الأفراد المونوتروبيون يختبرون ثبات الشيء بشكل مختلف... يتوقف الدماغ فعليًا عن معالجة وجود الشيء حتى يسحبه شيء خارجي."</em></p>
+</blockquote>
+<p>هذا هو <strong>أضعف ادعاء</strong> في الإطار ويحتاج لمعاملة دقيقة:</p>
+<ul>
+<li>هناك مصدر أكاديمي <strong>واحد</strong> يقترح رابطًا: <strong>Lawson &amp; Dombroski (2017)</strong>، الذين <em>يفترضون</em> أن ثبات الشيء <strong>المتأخر</strong> قد يساهم في بعض الضغوط المرتبطة بالتوحد [4]. هذا مقال لبناء الفرضيات، وليس دراسة تأكيدية.</li>
+<li>الأدبيات التنموية الأوسع تظهر أن <strong>ثبات الشيء الأساسي عادة ما يكون سليمًا أو حتى متفوقًا في التوحد</strong> [4].</li>
+<li>الظاهرة <em>الحقيقية</em> التي يقصدها الإطار — "بعيد عن العين، بعيد عن العقل" بالنسبة للمهام أو الأشياء — تُفسر بشكل أفضل كأثر لـ <strong>الذاكرة العاملة / تخصيص الانتباه</strong>: العقل في نفق لا <em>يفشل</em> في تمثيل الشيء، بل <strong>يفشل في إعادة توجيه الانتباه إليه</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>الادعاء المصحح:</strong> <em>"تجربة 'بعيد عن العين، بعيد عن العقل' لدى المونوتروبيين تُفهم بشكل أفضل كأثر لتخصيص الانتباه / الذاكرة العاملة — العقل يمثل الشيء ولكنه لا يعيد التوجيه إليه أثناء وجوده في النفق — بدلاً من كونها نقصًا في ثبات الشيء (الذي يكون سليمًا عادة في التوحد)."</em> [1][4]</p>
+</blockquote>
+<h3 id="خلل-التنظيم-الحسي--التحميل-الزائد-white_check_mark-آلية-مدعومة-بقوة">خلل التنظيم الحسي / التحميل الزائد ✅ (آلية مدعومة بقوة)</h3>
+<p>هذا مدعوم بقوة. لأن النظام في نفق ينفق موارده مركزيًا، فإن أي محفز حسي دخيل ومفاجئ يتطلب إعادة تخصيص مكلفة للموارد — مما يُشعر الشخص بـ "كسر عنيف". يؤدي هذا إلى <strong>الانهيار (Meltdown)</strong> أو <strong>الإغلاق (Shutdown)</strong> [7][11].</p>
+<h3 id="القصور-الذاتي-التوحدي-white_check_mark-حقيقي-وبحث-متزايد">القصور الذاتي التوحدي ✅ (حقيقي، وبحث متزايد)</h3>
+<p>"الصعوبة العميقة في الانتقالات — مشكلات في البدء، التوقف أو تغيير الاتجاه" هو المفهوم الراسخ لـ <strong>القصور الذاتي التوحدي</strong>: صعوبة في بدء/إنهاء/تبديل المهام التي "لا تخضع للسيطرة الواعية" [12][13].</p>
+<h2 id="5-المجموعة-4--نتائج-الضغط-المزمن">5. المجموعة 4 — نتائج الضغط المزمن</h2>
+<h3 id="الانقسام-المونوتروبيك-warning-منسوب-بشكل-صحيح-لـ-adkin-ولكن-هناك-خلط-في-المعاني">الانقسام المونوتروبيك ⚠️ (منسوب بشكل صحيح لـ Adkin، ولكن هناك خلط في المعاني)</h3>
+<blockquote>
+<p><strong>الادعاء المراجع:</strong> <em>"الانقسام المونوتروبيك، الذي صاغته Tanya Adkin، يحدث عندما يُجبر العقل المونوتروبيك من قبل بيئته على تقسيم قناة تركيزه الوحيدة عبر تيارات متعددة متنافسة."</em></p>
+</blockquote>
+<p><strong>النسبة صحيحة</strong>: المحامية التوحدية <strong>Tanya Adkin</strong> هي من صاغت "monotropic split" فعليًا [3]. والتعريف هنا <strong>قريب من المعنى الحقيقي لـ Adkin</strong> — التكلفة المعرفية/الاحتراق الناتج عن إجبار العقل المونوتروبيك على "الأداء بشكل بوليتـروبيك" [3][14].</p>
+<p>ملاحظتان:</p>
+<ol type="1">
+<li><strong>هو مفهوم مجتمعي/تطبيقي، وليس بناءً تم التحقق منه تجريبيًا.</strong> يظهر في كتابات المجتمع والعيادات، لكن لا توجد له دراسة تحقق مراجعة من قبل الأقران [3].</li>
+<li><strong>هناك معنيان مختلفان.</strong> معنى Adkin = <em>الأداء البوليتـروبيك القسري بسبب البيئة</em>. معنى آخر (يستخدم في بعض كتابات AuDHD) = <em>التنافس الداخلي بين حاجة التوحد للاستقرار واندفاع TDAH للجديد</em>. الإطار هنا يصف المعنى <strong>الأول</strong> (البيئي).</li>
+</ol>
+<h3 id="الاحتراق-النفسي-white_check_mark-مفهوم-راسخ-الارتباط-بالمونوتروبيزم-استنتاجي">الاحتراق النفسي ✅ (مفهوم راسخ؛ الارتباط بالمونوتروبيزم استنتاجي)</h3>
+<p>الاحتراق التوحدي مفهوم محدد: <strong>إرهاق مزمن، فقدان مهارات، وانخفاض تحمل المحفزات</strong>، ناتج عن ضغط حياة مزمن وعدم توافق التوقعات مع القدرات (Raymaker et al., 2020; Higgins et al., 2021) [15][16]. المسار من المونوتروبيزم إلى الاحتراق — التبديلات القسرية والتمويه — هو <strong>فرضية قوية ومدعومة مجتمعيًا</strong>، ولكن لم يتم عزل مساهمة كسر النفق تجريبيًا [15].</p>
+<h2 id="6-جدول-التقييم-الممنهج">6. جدول التقييم الممنهج</h2>
+<table>
+<thead>
+<tr>
+<th>الادعاء في الإطار</th>
+<th>الحكم</th>
+<th>ملاحظة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>المونوتروبيزم لا يملك تداخلات مرضية</td>
+<td>✅ صحيح</td>
+<td>لديه ارتباطات + آليات مشتركة [1]</td>
+</tr>
+<tr>
+<td>التوحد = الارتباط الأساسي</td>
+<td>✅ تأسيسي</td>
+<td>MQ 4.15 مقابل 3.19 [2]</td>
+</tr>
+<tr>
+<td>TDAH يزيد المونوتروبيزم</td>
+<td>✅ مدعوم</td>
+<td>β = +0.55 [2]</td>
+</tr>
+<tr>
+<td><strong>AuDHD هو الأعلى على الإطلاق</strong></td>
+<td>❌ <strong>عكس ذلك</strong></td>
+<td>التفاعل <strong>سلبي</strong> (β=−0.43) [2]</td>
+</tr>
+<tr>
+<td>تداخل القلق والاجترار</td>
+<td>✅ قوي</td>
+<td>MQ يحتوي على عامل القلق/الاجترار [2]</td>
+</tr>
+<tr>
+<td>تداخل OCD (متوافق vs غير متوافق مع الأنا)</td>
+<td>✅ مدعوم</td>
+<td>~17% تداخل؛ التمييز صحيح [9][10]</td>
+</tr>
+<tr>
+<td>النظم المفرطة</td>
+<td>⚠️ حقيقي ولكن منسوب خطأ</td>
+<td>تتبع نظرية Baron-Cohen (E-S) [5]</td>
+</tr>
+<tr>
+<td>مشكلات ثبات الشيء</td>
+<td>❌ مثير للجدل</td>
+<td>مقال فرضية واحد؛ ثبات الشيء سليم عادة [4]</td>
+</tr>
+<tr>
+<td>التحميل الحسي <span class="math inline">→</span> الانهيار/الإغلاق</td>
+<td>✅ مدعوم بقوة</td>
+<td>الآلية = تكلفة إعادة التخصيص [7][11]</td>
+</tr>
+<tr>
+<td>القصور الذاتي التوحدي</td>
+<td>✅ حقيقي</td>
+<td>المصطلح الصحيح؛ مراجع أكاديميًا [12][13]</td>
+</tr>
+<tr>
+<td>الانقسام المونوتروبيك منسوب لـ Adkin</td>
+<td>⚠️ نسبة صحيحة؛ مفهوم مجتمعي</td>
+<td>معنيان مختلفان يتم خلطهما [3]</td>
+</tr>
+<tr>
+<td>الاحتراق بسبب التبديلات القسرية والتمويه</td>
+<td>✅ مفهوم راسخ؛ ارتباط استنتاجي</td>
+<td>لم يتم عزله تجريبيًا [15][16]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-استنتاجات-عملية">7. استنتاجات عملية</h2>
+<ul>
+<li><strong>ابدأ بالمبدأ:</strong> المونوتروبيزم هو نمط انتباه قابل للقياس، وتداخلاته مع الحالات الأخرى هي ارتباطات وآليات مشتركة — لا تقل أبدًا أنه "يسبب X" [1].</li>
+<li><strong>اقتبس MQ بشكل صحيح:</strong> التوحد و TDAH يزيدان الدرجات، لكن الجمع بينهما <strong>غير تجميعي (أقل مما هو متوقع)</strong> — لا تقل أن AuDHD هو الأعلى [2].</li>
+<li><strong>حافظ على التمييز متوافق/غير متوافق مع الأنا</strong> عند مناقشة OCD مقابل الاهتمامات الخاصة [10].</li>
+<li><strong>دقة المصطلحات:</strong> النظم المفرطة = نظرية Baron-Cohen؛ الانقسام المونوتروبيك = مفهوم Adkin (الضغط البيئي)؛ القصور الذاتي التوحدي = المصطلح الأكاديمي لصعوبة الانتقال [3][5][12].</li>
+<li><strong>اترك "نقص ثبات الشيء":</strong> أعد صياغته كأثر لتخصيص الانتباه / الذاكرة العاملة، وهو أدق وأكثر فائدة للدعم [1][4].</li>
+<li><strong>ميز بين المثبت والاستنتاجي:</strong> الاحتراق مفهوم راسخ، لكن مسار المونوتروبيزم <span class="math inline">→</span> الاحتراق هو فرضية قوية وليست أثرًا مقاسًا [3][15].</li>
+</ul>
+<hr />
+<h2 id="المصادر">المصادر</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398.
+[2] Garau, V., et al. (2023). <em>The Monotropism Questionnaire.</em> OSF Preprint. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a>.
+[3] Adkin, T. — "monotropic split" (محامية توحدية / ممارسة؛ مفهوم مجتمعي). مؤكد عبر مصادر مجتمعية مستقلة متعددة.
+[4] Lawson, W. &amp; Dombroski, B. (2017). <em>Problems with Object Permanence: Rethinking Traditional Beliefs.</em> J. Intellectual Disability – Diagnosis and Treatment, 5(1).
+[5] Baron-Cohen, S. (2009/2010). <em>Autism and the empathizing–systemizing (E-S) theory.</em> Annals of the NYAS.
+[6] Autistic Scholar — <em>"Revisiting monotropism"</em> (AuDHD كأنفاق متنافسة).
+[7] Green, S. A. &amp; Ben-Sasson, A. (2010). <em>Anxiety disorders and sensory over-responsivity in children with ASD.</em> J. Autism and Developmental Disorders.
+[8] Oakley, B. et al. / أدبيات القلق في التوحد — القلق والاجترار مرتفعان في مجموعات التوحد/TDAH.
+[9] Meier, S. M. et al. / مراجعات توافق التوحد-OCD — ~17% من التوحديين يستوفون معايير OCD.
+[10] Long, H., Cooper, K., &amp; Russell, A. (2024). <em>"Autism is the arena and OCD is the lion".</em> PMC11497754.
+[11] Autism Society (2025). <em>Autistic Meltdowns and Shutdowns.</em>
+[12] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em>
+[13] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia.</em> APS Observer.
+[14] Neurodivergent Insights — <em>Monotropism</em> (glossary).
+[15] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure": Defining autistic burnout.</em> Autism in Adulthood.
+[16] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience.</em> Autism, 25(8).</p>
+<hr />
+<p><em>يكمل هذا الملخص "الملخص الشامل للتداخلات" الموجود في المشروع: <code>outputs/monotropism-comorbidity-landscape_ar.md</code> (الذي يغطي اضطرابات الأكل، التخزين، رهاب الساحات، وتجنب المطالب PDA ومجال التعاطف المزدوج). يركز هذا الملخص على التحقق من إطار المجموعات الأربع أعلاه ولا يكرر تلك المواد.</em></p>
+</body>
+</html>

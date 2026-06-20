@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>قياس المونتروبيزم: القصور الذاتي، &quot;الاحتكاك&quot;، والطاقة المعرفية — ما الذي تدعمه الأدلة فعلياً</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">قياس المونتروبيزم: القصور الذاتي، "الاحتكاك"، والطاقة المعرفية — ما الذي تدعمه الأدلة فعلياً</h1>
+</header>
+<h1 id="قياس-المونتروبيزم-القصور-الذاتي-الاحتكاك-والطاقة-المعرفية--ما-الذي-تدعمه-الأدلة-فعلياً">قياس المونتروبيزم: القصور الذاتي، "الاحتكاك"، والطاقة المعرفية — ما الذي تدعمه الأدلة فعلياً</h1>
+<p><em>ملخص بحثي موثق — تدقيق في إطار "تقسيم المونتروبيزم إلى مستويات".</em></p>
+<blockquote>
+<p><strong>لأغراض معلوماتية، وليس نصيحة طبية.</strong> يقيم هذا الملخص كيف يمكن وكيف لا يمكن قياس المونتروبيزم. استبيان المونتروبيزم (MQ) هو أداة بحثية تعتمد على التقرير الذاتي، <strong>وليس أداة تشخيصية أو سريرية</strong>، ولا يملك نطاقات شدة معتمدة.</p>
+</blockquote>
+<hr />
+<h2 id="ملخص-تنفيذي">ملخص تنفيذي</h2>
+<ul>
+<li><strong>حدسك صحيح في الفكرة الجوهرية وخاطئ في طريقة التغليف.</strong> إن فكرة إمكانية <em>قياس</em> المونتروبيزم على طول طيف، وأن الكمية الحقيقية ذات الأهمية هي <strong>الجهد ("الاحتكاك") المبذول في تبديل حالات الانتباه</strong>، هي فكرة مدعومة جيداً — لكن التصنيف المحدد من أربعة مستويات ("منخفض / متوسط / مرتفع / مطلق-شديد") هو إطار شائع، <strong>وليس تصنيفاً علمياً معتمداً</strong>.</li>
+<li><strong>المونتروبيزم هو "سمة بعدية" (dimensional trait) بشكل صحيح، وليس متلازمة.</strong> المقياس المعتمد الوحيد — <strong>استبيان المونتروبيزم (MQ)</strong>، Garau et al. 2023 — يعطي درجة مستمرة من 1 إلى 5. <strong>ليس لديه نقطة قطع منشورة، ولا نطاقات مئوية، ولا مستويات شدة</strong> [2]. لذا فإن تقسيمه إلى مستويات مسمى هو دائماً خيار تحريري تعسفي.</li>
+<li><strong>"احتكاك التبديل" له اسم بالفعل: القصور الذاتي التوحدي (Autistic Inertia).</strong> هذا مفهوم حقيقي ومبحوث بشكل متزايد — صعوبة <em>بدء</em> المهام، <em>إيقافها</em>، و<em>تبديلها</em> بشكل "لا يخضع للسيطرة الواعية". تم صياغته لأول مرة في روايات المجتمع التوحدي وهو الآن موجود في أعمال مراجعة من قبل الأقران [3][4][5]. "احتكاك التبديل" لديك هو أساساً هذا المفهوم.</li>
+<li><strong>"القصور الذاتي الانتباهي" يخلط بين آليتين مختلفتين.</strong> <em>القصور الذاتي التوحدي</em> (على مستوى المهمة: صعوبة البدء/الإيقاف/التبديل) و<em>الانتباه "اللزج" / ضعف فك الارتباط</em> (على مستوى المحفز: صعوبة سحب الانتباه بعيداً عن شيء ما، مثل Landry &amp; Bryson 2004; Sacrey 2015) مرتبطان ولكن يتم قياسهما بشكل مختلف [6][7]. جمعهم تحت مصطلح واحد يفقدنا الدقة.</li>
+<li><strong>"اقتصاديات الطاقة المعرفية" هو الإطار الأقوى على الإطلاق</strong> — وهو موجود بالفعل أكاديمياً في نموذج غولدكنوبف <strong>"تخصيص الموارد غير النمطي"</strong> (2013)، والذي يتعامل مع التوحد كاختلاف في <em>كمية وأين</em> يتم إنفاق موارد الانتباه [10]. هذه هي النسخة المؤكدة للعصبيات وغير القائمة على العجز لما تصفه.</li>
+<li><strong>الرابط بين الاحتراق/الانغلاق/الانهيار حقيقي ولكنه استدلالي.</strong> الاحتراق التوحدي (إرهاق، فقدان مهارات، انخفاض التحمل) هو مفهوم راسخ، والرابط السردي بين التبديل القسري + التمويه (masking) وبين الاحتراق هو أمر مقنع ومعتمد من المجتمع — ولكن المسار المحدد "مونتروبيزم <span class="math inline">→</span> تمزق النفق <span class="math inline">→</span> احتراق" هو نظري وشخصي إلى حد كبير، ولم يتم إثباته تجريبياً بعد [8][9].</li>
+</ul>
+<hr />
+<h2 id="1-هل-يمكن-قياس-المونتروبيزم-نعم--كمتصل-وليس-كمستويات">1. هل يمكن "قياس" المونتروبيزم؟ نعم — كمتصل، وليس كمستويات</h2>
+<p>المونتروبيزم هو تفسير قائم على الانتباه للتوحد: العقل المونتروبي يوجه موارد المعالجة إلى عدد قليل من "أنفاق الانتباه" المثارة بشدة بدلاً من توزيعها عبر قنوات متعددة [1]. ولأنه يوصف كاختلاف في تخصيص الموارد، فهو بطبيعته <strong>طيف</strong>، وليس فئة — وهذا هو السبب في أن حدسك حول "المستويات" يبدو صحيحاً.</p>
+<p>الأداة المعتمدة هي <strong>استبيان المونتروبيزم (MQ)</strong> — 47 بنداً، يتم تسجيلها على مقياس ليكرت خماسي، تم تطويره في عام 2023 من قبل غاراو وزملائه <em>بالتعاون مع مجموعة قيادية من التوحديين</em> [2]. هناك أمران حاسمان لسؤالك:</p>
+<ul>
+<li><strong>يعطي متوسطاً مستمراً واحداً (1-5)، بالإضافة إلى متوسطات ثمانية مقاييس فرعية.</strong> في دراسة التحقق (1,110 مشاركاً)، سجل المشاركون التوحديون في المتوسط <strong>4.15</strong> والمشاركون غير التوحديين <strong>3.19</strong>، مع رفع ADHD للدرجات بشكل مستقل [2]. يتداخل التوزيعان بشكل كبير — فالعديد من غير التوحديين يتفوقون في الدرجات على بعض التوحديين، والعكس صحيح.</li>
+<li><strong>لا توجد نقطة قطع، ولا عتبة تشخيصية، ولا نطاق شدة.</strong> مسح لورقة التحقق يؤكد أن كلمة "cutoff" تظهر فقط كاستشهاد <em>إحصائي</em> (معايير مؤشر الملاءمة لـ Hu &amp; Bentler) و"sensitivity" تظهر فقط كـ <em>تحليل حساسية</em> لكيفية تعريف التوحد [2]. مؤلفو MQ أنفسهم لا يقترحون مستويات.</li>
+</ul>
+<p>إذن ماذا تعني الدرجة؟ تعني فقط موقعها النسبي على البعد. التطبيق عبر الإنترنت المبني من المجتمع والذي ألهم هذا السؤال يترجم الدرجة بشكل مفيد إلى <em>مئوية</em> ("أكثر مونتروبية من حوالي X% من التوحديين / غير التوحديين")، وهي محسوبة من عينة التحقق — وهذه طريقة معقولة وصادقة لتحديد موقع الدرجة. لكنها <strong>مئوية وصفية، وليست نطاقاً سريرياً</strong>: "المئوية 97 من الميل المونتروبي" تعبير ذو معنى; "المستوى 3 / المونتروبيزم الشديد" هو تسمية لا تدعمها الأدلة.</p>
+<blockquote>
+<p><strong>الخلاصة:</strong> قم بقياسه، ورسمه بيانياً، واستخدام المئوية — ولكن لا تقسمه إلى <em>مستويات</em>. المتصل حقيقي؛ الفئات المسمى ليست كذلك.</p>
+</blockquote>
+<h2 id="2-احتكاك-التبديل-لديك-موجود-بالفعل-يسمى-القصور-الذاتي-التوحدي">2. "احتكاك التبديل" لديك موجود بالفعل: يسمى <em>القصور الذاتي التوحدي</em></h2>
+<p>هذا هو أهم تصحيح للمصطلحات في هذا الملخص. الظاهرة التي تصفها — التكلفة المعرفية للانتقال <em>إلى</em> وخاصة <em>الخروج</em> من نفق الانتباه — هي مفهوم راسخ يسمى <strong>القصور الذاتي التوحدي (Autistic Inertia)</strong>: صعوبة في <strong>بدء، وإيقاف، وتبديل المهام بشكل لا يخضع للسيطرة الواعية</strong> [3].</p>
+<p>ثلاثة أشياء تجعل هذا ذا صلة مباشرة:</p>
+<ul>
+<li><strong>نشأ في المجتمع التوحدي ودخل أدبيات مراجعة الأقران.</strong> تصف جمعية العلوم النفسية القصور الذاتي التوحدي بأنه "مفهوم تمت صياغته لأول مرة في روايات المجتمع التوحدي"، وهو الآن مدعوم بأعمال نوعية ونظرية [4]. وجدت دراسة كارين باكل (Buckle) بناءً على شهادات مباشرة أن المشاركين وصفوا مراراً عدم قدرتهم على بدء أو إيقاف أو تغيير الأنشطة بإرادتهم [3].</li>
+<li><strong>تستخدم الأدبيات حرفياً لغة "الاحتكاك" الخاصة بك.</strong> تصف قطعة APS بدء المهمة بأنه "إطلاق عالي الاحتكاك"، وتصيغ التبديل كحمل "تكاليف تبديل"، وتلاحظ أنه بمجرد الاندماج، "يتطلب تبديل التركيز جهداً معرفياً أكبر، مما يؤدي أحياناً إلى الإرهاق" [4]. حدسك في قياس <em>الجهد/الاحتكاك</em> هو نفس التوجه الذي يتخذه الباحثون.</li>
+<li><strong>يتم الآن صياغته رسمياً.</strong> تعالج الأعمال المراجعة حديثاً "حالة التوقف" / صعوبة بدء الاستجابة كظاهرة متعددة المستويات (عضلي-سلوكي "ميكرو"، علاقي وبيئي "ميزو/ماكرو") وتصيغ أطر دعم بالتعاون مع التوحديين [5]; بينما ينمذجه آخرون من خلال حسابات المعالجة التنبؤية / الاستدلال النشط (مشار إليه في [4]).</li>
+</ul>
+<p>باختصار: إذا كنت تريد قياس "احتكاك التبديل"، فأنت تقيس القصور الذاتي التوحدي — وهذا المفهوم يملك بالفعل أدلة نوعية، وصلاحية من التجربة المعيشية، وأدبيات كمية متنامية يمكن البناء عليها.</p>
+<h2 id="3-القصور-الذاتي-الانتباهي-يدمج-في-الواقع-آليتين-مختلفتين">3. "القصور الذاتي الانتباهي" يدمج في الواقع آليتين مختلفتين</h2>
+<p>الدقة مهمة هنا، لأن الآليتين تتطلبان لغة مختلفة (وفي النهاية) مقاييس مختلفة.</p>
+<p><strong>3.1 <em>القصور الذاتي التوحدي</em> — على مستوى المهمة، يتعلق بالوكالة والزخم.</strong> صعوبة في <em>بدء</em>، <em>إنهاء</em>، و<em>تبديل</em> الأنشطة، تُجرب كجهد غير متناسب وفقدان للسيطرة الطوعية (شعور "الجسم المتحرك يبقى متحركاً / والساكن يبقى ساكناً") [3][4]. هذا هو الأقرب لفكرتك عن "سحب أنفسهم من النفق".</p>
+<p><strong>3.2 <em>الانتباه "اللزج" / ضعف فك الارتباط</em> — على مستوى المحفز، يتعلق بالإدراك.</strong> صعوبة في <em>سحب الانتباه</em> بعيداً عن محفز بمجرد الانغلاق عليه. أظهر لاندري وبريسون (2004) أن الأطفال التوحديين الصغار كانوا أبطأ بشكل ملحوظ في فك الارتباط عن محفز مركزي عند ظهور محفز طرفي — "انتباه لزج" [6]. أكدت مراجعة شاملة لعام 2015 بطء فك ارتباط الانتباه عبر الدراسات [7]، ويظهر نفس البطء في فك الارتباط لدى الرضع الذين يتم تشخيصهم بالتوحد لاحقاً [6]. يتم قياس هذا بمهام تجريبية (نماذج الفجوة/التداخل)، وليس باستبيانات.</p>
+<p><strong>لماذا يهم هذا التمييز:</strong> الانتباه اللزج هو تأثير <em>إدراكي</em> (أنت حرفياً لا تلاحظ المقاطعة); القصور الذاتي التوحدي هو تأثير <em>تحكم/زخم</em> (أنت تلاحظ ولكن لا تستطيع التبديل). أوصافك في "المستويات الأربعة" تنزلق بين الاثنين — على سبيل المثال "المحفزات الخلفية لا يتم معالجتها حقاً بواسطة الدماغ" هي انتباه لزج [6]، بينما "الانتقالات القسرية تشعر وكأنها سحب قطار عن مساره" هي قصور ذاتي [3]. يجب أن يبقيهما النموذج الدقيق منفصلين، لأنهما قد يملكان أسباباً ودعائم مختلفة.</p>
+<h2 id="4-المستويات-الأربعة-المقترحة--ما-هو-المدعوم-وما-هو-المخترع">4. "المستويات" الأربعة المقترحة — ما هو المدعوم وما هو المخترع</h2>
+<p>بدلاً من تأييد أو رفض التصنيف بالكامل، إليك اختبار كل نطاق مقترح مقابل الأدلة.</p>
+<table>
+<thead>
+<tr>
+<th>المستوى المقترح</th>
+<th>الادعاء الجوهري</th>
+<th>حكم الأدلة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>منخفض (مهيمن بوليتريبي)</strong></td>
+<td>العديد من "التبويبات" المفتوحة; تكلفة تبديل تقترب من الصفر</td>
+<td><strong>مدعوم كأحد طرفي المتصل.</strong> المشاركون ذوو الدرجات المنخفضة في MQ والمجموعة غير التوحدية (المتوسط 3.19) يصفون هذا بالضبط [2]. "بوليتريبي" هو مصطلح النظرية لهذا النمط [1].</td>
+</tr>
+<tr>
+<td><strong>متوسط</strong></td>
+<td>يمكن التركيز بعمق ولكن مع الاحتفاظ بوعي أساسي; تكلفة تبديل خفيفة</td>
+<td><strong>مدع supported كوسط في البُعد.</strong> حالات التدفق (flow) يتم الإبلاغ عنها عبر السكان; درجات MQ بين متوسطي المجموعتين تلتقط هذا النطاق [2][11]. لكن <em>الاسم</em> تعسفي.</td>
+</tr>
+<tr>
+<td><strong>مرتفع</strong></td>
+<td>يفضل نفقاً واحداً مكثفاً; المقاطعات تُفقد حقاً; تكلفة تبديل عالية</td>
+<td><strong>الآلية مدعومة، الفئة ليست كذلك.</strong> المكونات حقيقية — المقاطعات المفقودة = انتباه لزج [6][7]; تكلفة التبديل العالية = قصور ذاتي توحدي [3][4]; الارتباط القوي بالتوحد/ADHD = نتائج MQ [2]. لكن لا توجد عتبة تفصل "المرتفع" عن "المتوسط".</td>
+</tr>
+<tr>
+<td><strong>مطلق / شديد</strong></td>
+<td>انغماس كامل; الاضطراب يسبب "صدمة عصبية"، انهيارات، وانغلاقات</td>
+<td><strong>مبالغ فيه.</strong> الانغماس العميق ("التدفق") والضيق عند الاضطراب حقيقيان [11]، ولكن <strong>"المطلق" يوحي بقفزة نوعية لا تظهرها البيانات</strong>، و**"الصدمة العصبية" ليس مصطلحاً معترفاً به**. الانهيارات/الانغلاقات هي استجابات لاإرادية للارهاق، وليست "صدمة" خاصة بنطاق المونتروبيزم.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ثلاث مشاكل في نشر هذا التصنيف كما هو:</strong></p>
+<ol type="1">
+<li><strong>يوحي بقفزات فئوية بينما تظهر البيانات متصلاً ناعماً.</strong> توزيعات MQ للتوحديين وغير التوحديين تتداخل بشكل كبير [2]; لا توجد "ركبة" طبيعية تبرر أربعة مستويات منفصلة.</li>
+<li><strong>يُهرّب مفاهيم الشدة/المرضية.</strong> "المطلق ... انهيارات، احتراق" يصور الطرف المرتفع كضار بطبيعته — عكس الإطار المؤكد للعصبيات الذي تهدف إليه النظرية [1]. المونتروبيزم المرتفع <em>ليس</em> هو نفسه نتائج أسوأ; النتائج تعتمد على <em>الملاءمة البيئية</em>، وليس المستوى.</li>
+<li><strong>النطاقات تفتقر لبيانات الموثوقية.</strong> يحتاج نظام المستوياتاتات الناجح إلى إظهار أن الناس يستقرون في نفس النطاق عند إعادة الاختبار وأن النطاقات تتنبأ بشيء ما. لا توجد مثل هذه الدراسة للمونتروبيزم.</li>
+</ol>
+<p><strong>ماذا تفعل بدلاً من ذلك.</strong> عبر عن نفس الفكرة كـ <em>موقع على البعد</em> بالإضافة إلى <em>نمط</em>: "ميل مونتروبي مرتفع (≈أعلى X% من عينة التوحديين)، مع قصور ذاتي توحدي ملحوظ في تبديل المهام وانهيارات متكررة مدفوعة بالاضطراب في البيئات غير الداعمة". هذا دقيق، وفردي، وغير مرضي.</p>
+<h2 id="5-الاضطراب-rightarrow-الانهيار-الانغلاق-الاحتراق-ما-تدعمه-الأدلة">5. الاضطراب <span class="math inline">→</span> الانهيار، الانغلاق، الاحتراق: ما تدعمه الأدلة</h2>
+<p>هذا الجزء من إطارك هو الأكثر تأثيراً ويحتاج إلى أكبر قدر من العناية.</p>
+<p><strong>الانهيارات (meltdowns) والانغلاقات (shutdowns) حقيقية وموصوفة جيداً</strong> كاستجابات لاإرادية للإجهاد المفرط أو الحمل الحسي/المعرفي (انهيار خارجي "meltdown" مقابل انغلاق داخلي "shutdown" انسحابي) — وهي معترف بها في الإرشادات السريرية وإجماع المجتمع. يتم تحفيزها عن طريق <em>الارهاق</em>، ويكون تمزق النفق أحد الطرق الشائعة لذلك [4][8].</p>
+<p><strong>الاحتراق التوحدي (Autistic Burnout) هو الآن مفهوم محدد.</strong> دراستان تأسيسيتان — Raymaker et al. (2020) و Higgins et al. (2021, دراسة Grounded-Delphi مع خبراء توحديين من ذوي الخبرة المعيشية) — تتفقان على تعريف: <strong>إرهاق مزمن، فقدان مهارات، وانخفاض التحمل للمثيرات</strong>، يُنظر إليه كنتيجة لإجهاد الحياة المزمن و "عدم تطابق التوقعات والقدرات" بدون دعم وتعافٍ كافيين [8][9].</p>
+<p><strong>الرابط بين المونتروبيزم والاحتراق قوي استدلالياً ولكن ليس مثبتاً تجريبياً بعد.</strong> السرد مقنع ومعتمد من المجتمع: كل انتقال قسري هو تمزق للنفق; التمويه والتبديل المستمر في عالم بوليتوبي يستهلك الموارد; وبدون وقت للتعافي/التدفق، ينهار النظام [8][9][11]. ولكن المسار المحدد "مونتروبيزم <span class="math inline">→</span> تمزق النفق <span class="math inline">→</span> احتراق" هو نظري وشخصي في الغالب، ولم يتم إثباته تجريبياً بعد [8][9].</p>
+<blockquote>
+<p>الادعاء الصادق والمستند إلى الأدلة هو: <em>"الاحتراق التوحدي مدفوع بالإجهاد المزمن، والتمويه، وعدم تطابق التوقعات مع القدرات; ويُتوقع أن يكون تمزق الأنفاقاتات والقسر على التبديل مساهماً رئيسياً وغير معترف به، وهو ادعاء يتسق مع التجربة المعيشة وينتظر الاختبار المباشر."</em></p>
+</blockquote>
+<h2 id="6-اقتصاديات-الطاقة-المعرفية--أقوى-أطر-عملك">6. "اقتصاديات الطاقة المعرفية" — أقوى أطر عملك</h2>
+<p>خطوتك الختامية — التحول من "العجز" إلى "كم من الوقود يحرق الدماغ لتبديل التروس" — صحيحة تماماً، ولها مكان أكاديمي بالفعل.</p>
+<p>نموذج غولدكنوبف <strong>"تخصيص الموارد غير النمطي"</strong> (2013) يصيغ المونتروبيزم كاختلاف في <em>اقتصاديات الموارد</em>: موارد الانتباه في التوحد تكون <strong>ضيقة</strong> (مركزة في قنوات أقل/أصغر، وأحياناً بشكل أكثر كثافة) و/أو <strong>مخفضة</strong> في القدرة الإجمالية [10]. وفقاً لهذا، تكون "تكلفة" الانتقال هي حرفياً النفقات الطاقية لكسر نمط تخصيص وبناء آخر. هذا هو "اقتصاد الطاقة المعرفية" مصاغاً بدقة — وهو الإطار الأكثر اتساقاً مع التوجه غير المرضي، لأنه يصور المشكلة كـ <em>إنفاق</em> (اختلاف في الميزانية) وليس كـ <em>كسر</em>.</p>
+<p>هذا هو الإطار الذي يجب الاحتفاظ به. ثلاث مزايا:</p>
+<ul>
+<li>هو <strong>محايد بشأن القيمة</strong>: التركيز المكثف هو أصل عندما تدعمه البيئة (تدفق، خبرة) وتكلفة عندما تطلب البيئة تبديلاً مستمراً [10][11].</li>
+<li><strong>يتنبأ بالتدخلات</strong>: تقليل الانتقالات غير الضرورية، حماية وقت التدفق/التعافي، ومطابقة الطلبات مع القدرة يجعل "فاتورة الطاقة" تنخفض — وهذا هو بالضبط ما توصي به إرشادات الوقاية من الاحتراق [8][9].</li>
+<li><strong>يوحد</strong> الظواهر في مستوياتك الأربعة دون الحاجة للمستويات: الإغفال عن المحفزات، تكلفة التبديل، الارهاق، والاحتراق تصبح كلها نتائج لـ <em>كيفية تخصيص واستنزاف الموارد</em>، على متصل مستمر.</li>
+</ul>
+<h2 id="7-خلاصات-عملية--ما-يجب-ادعاؤه-وما-يجب-تجنبه">7. خلاصات عملية — ما يجب ادعاؤه وما يجب تجنبه</h2>
+<p><strong>ادعِ بثقة:</strong></p>
+<ul>
+<li>المونتروبيزم سمة <strong>بعدية</strong> قابلة للقياس (MQ, 1–5, مع 8 مقاييس فرعية); أبلغ عن الدرجة والمئوية الاختيارية، وليس عن "مستوى" [2].</li>
+<li><strong>"احتكاك التبديل"</strong> الذي تصفه هو <strong>القصور الذاتي التوحدي</strong> — مفهوم حقيقي، نبع من المجتمع التوحدي، وهو الآن موثق في أبحاث مراجعة من الأقران [3][4][5].</li>
+<li><strong>الانتباه "اللزج" / ضعف فك الارتباط</strong> هو آلية متميزة ومقاسة تجريبياً [6][7].</li>
+<li><strong>الاحتراق التوحدي</strong> هو مفهوم محدد يتميز بالإرهاق وفقدان المهارات; تمزق النفق هو مساهم محتمل ومدعوم بالتجربة المعيشية [8][9].</li>
+<li>"اقتصاديات الطاقة المعرفية" <span class="math inline">≈</span> نموذج <strong>تخصيص الموارد</strong> لغولدكنوبف — الإطار الأكثر دقة وتأكيداً للعصبيات [10].</li>
+</ul>
+<p><strong>تجنب أو أعد تسمية:</strong></p>
+<ul>
+<li><strong>المستويات / النطاقات المسمى</strong> ("منخفض/متوسط/مرتفع/مطلق") — غير معتمدة; استخدم الموقع على البُعد + النمط بدلاً من ذلك.</li>
+<li><strong>"القصور الذاتي الانتباهي"</strong> كمظلة — فهو يخلط بين القصور الذاتي التوحدي (المهمة/التحكم) والانتباه اللزج (الإدراك); استخدم المصطلح الدقيق [3][6].</li>
+<li><strong>"المونتروبيزم المطلق"</strong> و**"الصدمة العصبية"** — ليست مصطلحات معترف بها; توحي بقفزة فئوية وبمرضية لا تدعمها البيانات.</li>
+<li>تقديم الرابط بين <strong>المونتروبيزم <span class="math inline">→</span> الاحتراق</strong> كحقيقة مثبتة — هو فرضية قوية، وليس تأثيراً مقاساً [8].</li>
+<li>أي إطار يصور <strong>المستوى المرتفع كأنه أكثر اضطراباً</strong> — نتائج المونتروبيزم تعتمد على الملاءمة البيئية، وليس على المستوى [1][10].</li>
+</ul>
+<hr />
+<h2 id="المصادر">المصادر</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156. doi:10.1177/1362361305051398 — أصل نظرية المونتروبيزم. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a>
+[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R, Murray, A. &amp; Fletcher-Watson, S. (2023). <em>The Monotropism Questionnaire</em> (أداة تقرير ذاتي من 47 بنداً; مسودة مسبقة). Open Science Framework. — n = 1,110 (756 توحدي, 354 غير توحدي); متوسط التوحديين 4.15 (انحراف 0.347) مقابل غير التوحديين 3.19 (انحراف 0.578); ADHD يرفع الدرجات بشكل مستقل; بنية من 8 عوامل. ملف الاستبيان: <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a> · مسودة التحقق: <a href="https://osf.io/ft73y">https://osf.io/ft73y</a> · الترخيص: CC BY-NC-SA 4.0. أرشيف محلي: <code>sources/17-monotropism-questionnaire-osf.pdf</code>
+[3] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em> (مسودة / دراسة نوعية). doi:10.31234/osf.io/ahk6x — التوحديون يصفون صعوبة بدء، إيقاف، وتبديل الأنشطة بشكل "لا يخضع للسيطرة الواعية". أرشيف محلي: <code>sources/11-autistic-inertia-osf.pdf</code> · <a href="https://doi.org/10.31234/osf.io/ahk6x">https://doi.org/10.31234/osf.io/ahk6x</a>
+[4] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia</em> (Student Notebook). APS Observer, Association for Psychological Science. — يصف القصور الذاتي التوحدي كـ "مفهوم صاغته روايات المجتمع التوحدي"، وهو الآن مدعوم بأعمال مراجعة من الأقران; يستخدم لغة "الإطلاق عالي الاحتكاك" و"تكاليف التبديل"; يشير إلى Carls-Diamante &amp; Laciny (2024), Greaves-Lord et al. (2023), Buckle et al. (2021), Heasman et al. (2024), Rapaport et al. (2024), Phung et al. (2021). <a href="https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html">https://www.psychologicalscience.org/publications/observer/student-notebook-autistic-inertia-srinivasan.html</a>
+[5] Greaves-Lord, L. et al. (2023). <em>[Getting 'stuck': an integrative approach to support autistic people]</em> Frontiers in Psychology, doi:10.3389/fpsyg.2023.1229596. — حالة "التوقف" / صعوبة بدء الاستجابة كظاهرة متعددة المستويات (ميكرو/ميزو/ماكرو) تم تطويرها بالتعاون مع التوحديين. <a href="https://doi.org/10.3389/fpsyg.2023.1229596">https://doi.org/10.3389/fpsyg.2023.1229596</a>
+[6] Landry, R. &amp; Bryson, S. (2004). <em>Impaired disengagement of attention in young children with autism.</em> Journal of Child Psychology and Psychiatry, 45(6), 1115–1122. doi:10.1111/j.1469-7610.2004.00304.x — "الانتباه اللزج": بطء فك الارتباط عن محفز. <a href="https://doi.org/10.1111/j.1469-7610.2004.00304.x">https://doi.org/10.1111/j.1469-7610.2004.00304.x</a>
+[7] Sacrey, L.-A. et al. (2015). <em>Attention disengagement in autism spectrum disorder: A meta-analysis.</em> Neuroscience &amp; Biobehavioral Reviews, 56, 111–121. doi:10.1016/j.neubiorev.2014.10.011 — تؤكد بطء فك ارتباط الانتباه عبر الدراسات. <a href="https://doi.org/10.1016/j.neubiorev.2014.10.011">https://doi.org/10.1016/j.neubiorev.2014.10.011</a>
+[8] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout.</em> Autism in Adulthood, 2(2), 132–143. doi:10.1089/aut.2019.0079 — يعرف الاحتراق التوحدي كإرهاق مزمن، فقدان مهارات، وانخفاض تحمل المثيرات، نتيجة إجهاد الحياة المزمن وعدم تطابق التوقعات والقدرات. <a href="https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079">https://journals.sagepub.com/doi/abs/10.1089/aut.2019.0079</a> · أرشيف مفتوح: <a href="https://pdxscholar.library.pdx.edu/socwork_fac/378">https://pdxscholar.library.pdx.edu/socwork_fac/378</a>
+[9] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience: Grounded Delphi method investigating #AutisticBurnout.</em> Autism, 25(8). doi:10.1177/13623613211019858 — تعريف توافقي: إرهاق، انسحاب، مشاكل في التفكير، انخفاض مهارات الحياة اليومية، زيادة السمات التوحدية. <a href="https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic">https://www.autismcrc.com.au/knowledge-centre/publications/defining-autistic-burnout-using-grounded-delphi-method-autistic</a>
+[10] Goldknopf, E. J. (2013). <em>Atypical resource allocation may contribute to many aspects of autism.</em> Frontiers in Integrative Neuroscience. PMC3872719 — ينمذج المونتروبيزم كاختلاف في <em>تخصيص الموارد</em> (موارد انتباه ضيقة و/أو مخفضة); الأساس الأكاديمي لـ "اقتصاديات الطاقة المعرفية". <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a>
+[11] Rapaport, H., Clapham, H., Adams, J., Lawson, W., Porayska-Pomsta, K., &amp; Pellicano, E. (2024). <em>"In a State of Flow": experiential validity of monotropism and its relation to autistic wellbeing.</em> Autism in Adulthood. doi:10.1089/aut.2023.0032 — حالة "التدفق"ات المونتروبية الإيجابية; الصلاحية التجريبية للمونتروبيزم. أرشيف محلي: <code>sources/18-flow-experiential-validity-pmc.html</code> · <a href="https://doi.org/10.1089/aut.2023.0032">https://doi.org/10.1089/aut.2023.0032</a></p>
+</body>
+</html>

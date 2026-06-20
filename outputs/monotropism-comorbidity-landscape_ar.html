@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ar" xml:lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>المونتروبيزم وشبكة المراضة المشتركة: روابط مباشرة وغير مباشرة بحالات سلوكية ونفسية وعصبية نمائية</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">المونتروبيزم وشبكة المراضة المشتركة: روابط مباشرة وغير مباشرة بحالات سلوكية ونفسية وعصبية نمائية</h1>
+</header>
+<h1 id="المونتروبيزم-وشبكة-المراضة-المشتركة-روابط-مباشرة-وغير-مباشرة-بحالات-سلوكية-ونفسية-وعصبية-نمائية">المونتروبيزم وشبكة المراضة المشتركة: روابط مباشرة وغير مباشرة بحالات سلوكية ونفسية وعصبية نمائية</h1>
+<p><em>ملخص بحثي موثق.</em></p>
+<hr />
+<h2 id="ملخص-تنفيذي">ملخص تنفيذي</h2>
+<p><strong>المونتروبيزم (Monotropism)</strong> (Murray, Lawson &amp; Lesser, 2005) هو نظرية حول الانتباه التوحدي تصيغ التوحد كاختلاف في <em>تخصيص الموارد</em>: العقل المونتروبي يركز موارد المعالجة في عدد قليل من "أنفاق الانتباه" عالية الاستثارة، مما يترك موارد أقل للقنوات الطرفية. يوفر مقياس التقرير الذاتي لعام 2023 — <strong>استبيان المونتروبيزم (MQ)</strong> — أول تحقق تجريبي، حيث سجل الأشخاص المصابون بالتوحد وADHD درجات أعلى بكثير من المجموعات الضابطة غير المصابة بالتوحد/ADHD [1][2][3]. ويجادل نموذج مراجع آخر وثيق الصلة، وهو نموذج غولدكنوبف (Goldknopf) لـ <strong>التخصيص غير النمطي للموارد</strong>، بأن هذا الانتباه الضيق والمكثف يمكن أن يربط بين الميزات الحسية والاجتماعية والتنفيذية والحركية للتوحد — مع التحذير من أنه "من المرجح أن يكون عاملاً لدى الأشخاص التوحديين الذين يعانون من أعراض حسية قوية"، وليس السبب الوحيد [4].</p>
+<p>بما أن المونتروبيزم نظرية حول <em>كيفية إنفاق الموارد</em>، فمن المرجح أن يمتد تأثيرها إلى العديد من المجالات. ومع ذلك، فإن الصورة الصادقة تنقسم إلى ثلاث مستويات:</p>
+<ul>
+<li><strong>المستوى 1 — روابط مباشرة ومدعومة تجريبياً.</strong> التداخل بين التوحد وADHD ("AuDHD") هو الأقوى: يظهر استبيان MQ أن الانتباه المونتروبي مرتفع في <em>كلتا</em> الحالتين، مما يعيد صياغة "الانقسام المونتروبي" (أنفاق متنافسة أو غير مستقرة) كنمط ظاهري انتباهي حقيقي وقابل للقياس [2][3][5]. التداخلات على مستوى الآلية — <strong>الاستقبال الحشوي (interoception)</strong> غير النمطي و<strong>الخلل الوظيفي التنفيذي</strong> — مدعومة جيداً وتساعد في تفسير المشكلات اللاحقة المتعلقة بالأكل، والفوضى، والتجنب [6][7][8].</li>
+<li><strong>المستوى 2 — مراضة مشتركة غير مباشرة عبر آلية مشتركة.</strong> يتداخل التوحد بشكل ملحوظ مع <strong>فقدان الشهية/الأكل المقيد</strong> و<strong>الوسواس القهري (OCD)</strong>. في كل حالة، المراضة المشتركة حقيقية ومكررة، ولكن الجسر <em>الأكثر دعماً بالأدلة</em> هو آلية مشتركة (الاستقبال الحشوي؛ المعالجة المتوافقة مع الأنا مقابل المعارضة للأنا) بدلاً من المونتروبيزم تحديداً [6][9][10].</li>
+<li><strong>المستوى 3 — استقراء محتمل أو مفاهيم متنازع عليها.</strong> بعض الروابط في التصورات الشائعة — مثل "أكوام الفوضى" (doom piles) كفشل في ثبات الأشياء المونتروبي، أو رهاب الساح (agoraphobia) كنتيجة أولية للمونتروبيزم، أو <strong>تجنب الطلب المرضي (PDA)</strong> كنمط متميز — تستند إلى أدلة ضعيفة أو متنازع عليها ويجب التعامل معها كفرضيات، وليس كحقائق مثبتة [11][12][13].</li>
+</ul>
+<p>طوال هذا البحث، يتكرر موضوع واحد: العديد من السلوكيات التي تبدو كـ "اضطرابات" منفصلة يمكن قراءتها بشكل أفضل كـ <strong>تكلفة معرفية لنظام انتباه ضيق يصطدم بعالم بوليتوبي (متعدد التركيز)</strong> — ولكن بعض هذه القراءات فقط تم اختبارها بشكل مباشر.</p>
+<hr />
+<h2 id="1-الأسس-ما-هو-المونتروبيزم-ومدى-صلابته-العلمية">1. الأسس: ما هو المونتروبيزم، ومدى صلابته العلمية</h2>
+<p>يقترح المونتروبيزم أن العقول تختلف في كيفية توزيع موارد الانتباه. العقل <strong>البوليتوبي (polytropic)</strong> يبقي العديد من قنوات الاهتمام نشطة في وقت واحد (واسعة، ضحلة، سهلة التنقل)؛ أما العقل <strong>المونتروبي (monotropic)</strong> فيوجه الموارد إلى عدد قليل من "أنفاق الانتباه" المثارة بشدة (ضيقة، عميقة، يصعب التنقل منها) [1][3]. قدم المؤسسون — ديناه ماري، وين لوسون وميك ليسر — الفكرة لأول مرة في مؤتمرات دورهام للتوحد منذ عام 1992 وصاغوها رسمياً في عام 2005، مجادلين بأنها تشرح سمات التوحد (الاهتمامات الخاصة، الحاجة إلى التماثل، الضيق عند الانتقالات، التركيز على التفاصيل) بشكل أفضل من النماذج القائمة على العجز فقط [1][14].</p>
+<p>لقد تحولت مكانته العلمية في السنوات القليلة الماضية:</p>
+<ul>
+<li>هو <strong>قابل للقياس تجريبياً</strong>. استبيان MQ (Garau et al., 2023) هو أداة تقرير ذاتي مكونة من 47 بنداً تم اختبارها على 1,110 مشاركاً (756 توحدي، 354 غير توحدي). سجل المشاركون المصابون بالتوحد وADHD درجات أعلى بكثير من المجموعات الضابطة [2][3].</li>
+<li>لديه <strong>قريب ميكانيكي مراجع من قبل الأقران</strong>. نموذج غولدكنوبف "تخصيص الموارد غير النمطي" (<em>Frontiers in Integrative Neuroscience</em>, 2013) يضع الحدس في قالب إجرائي: في التوحد، تكون موارد الانتباه <strong>ضيقة</strong> (إلى مناطق/أنماط ومراحل معالجة أقل/أصغر، وأحياناً بشكل أكثر كثافة) و/أو <strong>مخفضة</strong> في القدرة الإجمالية — وهو إطار يربط صراحة بين اللغة، والادراك الاجتماعي، والنمطية الحسية/الانتباهية، والاختلافات التنفيذية/الحركية [4].</li>
+<li>هو <strong>يأتي جنباً إلى جنب، وليس بدلاً من</strong>، النظريات المعرفية الأخرى (نظرية العقل; التماسك المركزي الضعيف / الأسلوب المركز على التفاصيل (Happé &amp; Frith, 2006); الخلل الوظيفي التنفيذي) [4][15].</li>
+<li>لا يزال <strong>نموذجاً وليس علامة بيولوجية</strong>. يوضح غولدكنوبف أنه عامل واحد من بين عدة عوامل، ومن "المرجح" أن يكون بارزاً لدى الأشخاص التوحديين الذين يعانون من أعراض حسية قوية [4]. وبالمثل، تصيغ ماري وزملاؤها المونتروبيزم كـ <em>عدسة</em> موحدة، وليس كسببات كاملة [1][14].</li>
+</ul>
+<p><strong>النتيجة بالنسبة لبقية هذا الملخص:</strong> المونتروبيزم فكرة تنظيمية موثوقة ومدعومة بشكل متزايد، ولكن <em>نطاقها التفسيري</em> لكل مراضة مشتركة يجب أن يُناقش حالة بحالة — لا يفترض كقاعدة.</p>
+<hr />
+<h2 id="2-المستوى-1--روابط-مباشرة-العنقود-النمائي-العصبي">2. المستوى 1 — روابط مباشرة: العنقود النمائي العصبي</h2>
+<h3 id="21-audhd-والانقسام-المونتروبي-أقوى-رابط-مباشر">2.1 AuDHD و"الانقسام المونتروبي" <em>(أقوى رابط مباشر)</em></h3>
+<p>يحدث التداخل بين التوحد وADHD بمعدل أكبر بكثير مما يتوقعه الصدفة: يتواجد ADHD في حوالي <strong>30-80%</strong> من الأشخاص التوحديين، والتوحد في حوالي <strong>20-50%</strong> من المصابين بـ ADHD [5]؛ تشير مراجعة شاملة إلى أن معدلات أعراض ASD في عينات ADHD تبلغ حوالي <strong>21%</strong> [16]؛ وجدت إحدى الدراسات الكبيرة من Medicaid أن <strong>27%</strong> من البالغين التوحديين الذين لا يعانون من إعاقة ذهنية لديهم تشخيص ADHD مصاحب — أي حوالي 10 أضعاف المعدل العام [17]. التداخل جيني بشكل كبير (~50-72%) [18].</p>
+<p>يساعد المونتروبيزم في حل لغز قديم: إذا كان التوحد "تركيزاً فائقاً" وكان ADHD "تشتتاً في الانتباه"، فلماذا يتداخلان؟ يجيب استبيان MQ على ذلك تجريبياً — <strong>الأشخاص المصابون بـ ADHD، وخاصة المصابون بـ AuDHD، هم أيضاً مونتروبيون للغاية</strong> [2][3]. التركيز الفائق في ADHD (Grotewiel et al., 2022) يتطابق مفاهيمياً مع النفق المونتروبي [19]. وبناءً على ذلك، تعيد صياغة "الانقسام المونتروبي" الـ AuDHD ليس كمتناقضات بل كـ <strong>نظام غير مستقر من أنفاق الانتباه المتنافسة أو سريعة التحول</strong>: يطلب الدماغ تركيزاً مونتروبياً عميقاً ولكنه لا يستطيع تثبيت النفق، مما ينتج عنه التذبذب المألوف في AuDHD بين الاندماج الشديد، والاحتراق السريع، ونقص التحفيز المزمن [19][20].</p>
+<p><strong>تنبيه:</strong> آلية "الأنفاق المتنافسة المتعددة" هي <em>منطقية وتتسق مع بيانات MQ</em> ولكن لم يتم اختبارها بعد كديناميكية حركية؛ لذا يجب قراءتها كفرضية قوية.</p>
+<h3 id="22-الاحتراق-التوحدي-واضطراب-النفق">2.2 الاحتراق التوحدي واضطراب النفق</h3>
+<p>الاحتراق التوحدي — الإرهاق المزمن، فقدان المهارات، وانخفاض التحمل — يرتبط بشكل متزايد بالتكلفة التراكمية للتبديل المستمر في الأنفاق، والتمويه (masking)، والطلبات التي تتجاوز القدرة، مع عدم كفاية وقت التعافي/التدفق [20][21]. هذه منطقة يكون فيها المونتروبيزم قوياً من الناحية الاستدلالية (كل انتقال قسري هو تمزق للنفق)، رغم أن أدبيات الاحتراق نفسها لا تزال في طور النضج ومسار المونتروبيزم <span class="math inline">→</span> الاحتراق هو سريري/تجريبي في الغالب وليس مؤسساً تجريبياً [20].</p>
+<h3 id="23-تجنب-الطلب-و-pda-مفهوم-متنازع-عليه">2.3 تجنب الطلب و PDA <em>(مفهوم متنازع عليه)</em></h3>
+<p>الطلب — "استعد"، "املأ هذه الاستمارة" — يمكن تجربته كاقتحام عنيف لحالة التدفق (flow). هذا هو التفسير المونتروبي الحدسي لـ <strong>تجنب الطلب</strong>. المفهومات الأكثر تحديداً لـ <strong>تجنب الطلب المرضي (PDA)</strong>، التي صاغتها إليزابيث نيوسون في الثمانينيات ويُعاد صياغتها الآن كـ "دافع غريزي للاستقلالية"، تصف حاجة مدفوعة بالقلق للسيطرة وتجنب الطلبات العادية [11][22].</p>
+<p>يجب الفصل بين أمرين:</p>
+<ul>
+<li><strong>سلوك تجنب الطلب حقيقي وشائع</strong> في التوحد، وتفسير "تمزق النفق" المونتروبي هو <em>قصة ميكانيكية</em> معقولة للذعر والمقاومة التي ينتجها.</li>
+<li><strong>PDA كنمط متميز أو نوع فرعي غير مثبت.</strong> تذكر الجمعية الوطنية للتوحد في المملكة المتحدة أنه "لا توجد أبحاث وجدت أدلة قوية على [PDA] كنمط متميز" [11]؛ وقد تعرضت دراسة نيوسون التأسيسية للنقد بسبب <strong>التفكير الدائري والتفسير المفرط</strong> (المجموعات حددها الباحثون ثم "درستها") [12][13]؛ وتشير المراجعات إلى مشاكل مستمرة في التعريف، وصلاحية المفهوم، والقياس [23]. مراجعة لعام 2023 جاء عنوانها بشكل صريح: <em>"تجنب الطلب المرضي: الحالة الراهne للأبحاث والنقاش النقدي"</em> [13].</li>
+</ul>
+<p>لذا فإن صياغة النص الأصلي صحيحة جزئياً: <em>التجربة</em> (الطلب يحطم النفق) مشروحة جيداً بالمونتروبيزم؛ أما <em>الكيان التشخيصي</em> (PDA) فهو متنازع عليه ولا ينبغي تقديمه كأمر محسوم.</p>
+<hr />
+<h2 id="3-المستوى-2--مراضة-مشتركة-غير-مباشرة-عبر-آلية-مشتركة">3. المستوى 2 — مراضة مشتركة غير مباشرة عبر آلية مشتركة</h2>
+<h3 id="31-فقدان-الشهية-والأكل-المقيد">3.1 فقدان الشهية والأكل المقيد</h3>
+<p>التداخل بين التوحد وفقدان الشهية قوي ومتبادل: حوالي <strong>20-30%</strong> من مرضى اضطرابات الأكل يظهرون سمات توحدية ذات دلالة سريرية، مع أعلى المعدلات في فقدان الشهية العصبي وARFID [6][24]؛ وعلى العكس، البالغون التوحديون لديهم معدلات مرتفعة من اضطرابات الأكل. والأهم من ذلك، تلاحظ السمات التوحدية <strong>قبل</strong> ظهور اضطرابات الأكل، لذا فإن التداخل ليس مجرد تأثير للجوع [6].</p>
+<p>الجسر <em>الميكانيكي</em> الأكثر دعماً بالأدلة هو <strong>الاستقبال الحشوي (interoception)</strong> — إدراك الإشارات الجسدية الداخلية (ضربات القلب، الشبع). الاستقبال الحشوي غير النمطي متورط في مسببات <em>كلا</em> التوحد واضطرابات الأكل و"قد يكون، جزئياً، مسؤولاً" عن مراضتهما المشتركة [6]. هذا الاختلاف في الاستقبال الحشوي يكمن أيضاً في أساس <strong>أليكسيثيميا (alexithymia)</strong> (صعوبة تحديد/تعبير عن العواطف)، الموجودة لدى ~50% من التوحديين وهي بدورها مرتبطة باعتلالات الأكل [7][8].</p>
+<p><strong>أين يتناسب المونتروبيزم (وأين لا يتناسب):</strong> من المعقول القول بأن الشخص المونتروبي الغارق في نفق قد <em>يغفل</em> عن إشارات الجوع — ولكن الادعاء المحدد في النص الأصلي بأن "المونتروبيزم يقلل من الاستقبال الحشوي" يبالغ في السلسلة السببية. العلاقة المثبتة هي <strong>توحد <span class="math inline">→</span> استقبال حشوي/أليكسيثيميا غير نمطية <span class="math inline">→</span> عرضة لاضطرابات الأكل</strong>؛ المونتروبيزم ميزة موازية للتوحد، وليس السبب المثبت للاختلاف في الاستقبال الحشوي [6][7]. كما يمكن أن يصبح تتبع الطعام/السعرات الحرارية نفقاً في حد ذاته، ولكن هذا أمر محتمل ميكانيكياً وليس مختبراً.</p>
+<h3 id="32-الوسواس-القهري-مقابل-التركيز-الفائق-تمييز-حقيقي">3.2 الوسواس القهري مقابل التركيز الفائق: تمييز حقيقي</h3>
+<p>يتداخل التوحد والوسواس القهري بشكل كبير: حوالي <strong>17%</strong> من التوحديين يستوفون معايير الوسواس القهري، مقابل ~1-2% في السكان العامين [9]. ورغم التشابه السطحي (سلوكيات تكرارية، صلابة)، فإن <strong>المحرك العاطفي يختلف</strong> وهذا مثبت سريرياً:</p>
+<ul>
+<li>الاهتمامات والروتينات <strong>التوحدية</strong> تكون عادة <strong>متوافقة مع الأنا (ego-syntonic)</strong> — ممتعة، مهدئة، مدفوعة بالاهتمام، وغالباً ما تكون تنظيمية.</li>
+<li>وسواس <strong>الـ OCD</strong> يكون <strong>معارضاً للأنا (ego-dystonic)</strong> — غير مرغوب فيه، مدفوع بالقلق، ويتم تنفيذه لتحييد نتائج مخيفة [9][10].</li>
+</ul>
+<p>لذلك، فإن تمييز النص الأصلي صحيح ومدعوم بالأدلة، ويؤكده المشاركون التوحديون أنفسهم: في دراسة نوعية، ذكروا أن السلوكيات التكرارية هي "جزء من هويتهم"، بينما أعراض الوسواس القهري "تتعارض مع كيف يرون أنفسهم" [10]. وتصف الدراسة ذاتها التداخل بدقة: <em>"التوحد هو الساحة والوسواس القهري هو الأسد"</em> — حيث يمكن لأعراض OCD أن "تختطف" الاهتمامات التوحدية، مما يزيد من شدتها وضيقها [10]. يضيف المونتروبيزم سياقاً (يمكن للنفق أن يتم <em>اختطافه</em> بمحتوى وسواسي) ولكن التمييز يستند إلى محور التوافق/المعارضة مع الأنا، وليس على المونتروبيزم بحد ذاته.</p>
+<h3 id="33-القلق-والاضطرابات-العاطفية-الركيزة-تحت-رهاب-الساح">3.3 القلق والاضطرابات العاطفية (الركيزة تحت "رهاب الساح")</h3>
+<p>القلق هو أحد أكثر المراضات المشتركة شيوعاً في التوحد (إحدى المراجعات الثانوية تذكر وجود <span class="math inline">≥</span>1 مراضة نفسية في ~86% من التوحديين) [25]. هناك نقطتان ميكانيكيتان مهمتان للعنقود السلوكي أدناه: (1) <strong>فرط الاستجابة الحسية</strong> والقلق مرتبطان، ومن خلال <em>التكيف السياقي</em> ينتجان <strong>تجنباً سلوكياً لأماكن عامة</strong> (مطاعم، محلات، حفلات) [26]؛ (2) التداخل الشائع مع الأليكسيثيميا/صعوبة الاستقبال الحشوي يعني أن الحالات العاطفية غالباً ما يتم تصنيفها بشكل خاطئ، مما يغذي القلق العام [7].</p>
+<hr />
+<h2 id="4-المستوى-3--العنقود-السلوكيالوظيفي-الفوضى-الاكتناز-التجنب-الانسحاب-الاجتماعي">4. المستوى 3 — العنقود السلوكي/الوظيفي: الفوضى، الاكتناز، التجنب، الانسحاب الاجتماعي</h2>
+<h3 id="41-الفوضى-أكوام-الفوضى-doom-piles-والخلل-الوظيفي-التنفيذي">4.1 الفوضى، "أكوام الفوضى" (doom piles)، والخلل الوظيفي التنفيذي</h3>
+<p><em>الظاهرة</em> مدعومة جيداً: الأشخاص المصابون بالتوحد وADHD يظهرون معدلات عالية من عدم التنظيم والفوضى، والمسار الأكثر دعماً بالأدلة هو <strong>الخلل الوظيفي التنفيذي</strong> — عجز في التصنيف، واتخاذ القرار، والتخطيط، والذاكرة العاملة [8][27]. أعراض الاكتناز مرتفعة في كل من ADHD (مع "رابط خاص بنقص الانتباه" [8أ]) والتوحد [8]؛ وفي التوحد تحديداً، تظهر الأعمال النوعية أن صعوبة التخلص من الأشياء مرتبطة <strong>بالارتباطات العاطفية والمعنى</strong>، وليس مجرد قيمة الشيء [28].</p>
+<p><strong>تنبيه بشأن النص الأصلي:</strong> الادعاء المحدد بأن الفوضى تستمر بسبب <strong>"عجز في ثبات الأشياء" (object-permanence deficit)</strong> لدى التوحديين ("بعيد عن العين، بعيد عن العقل") <strong>غير مدعوم بأدلة مراجعة من قبل الأقران</strong> مما استطعت العثور عليه. ثبات الأشياء يكون عادة <em>سليماً أو متفوقاً</em> في التوحد؛ وتجربة "بعيد عن العين، بعيد عن العقل" تُقرأ بشكل أفضل كأثر <strong>للذاكرة العاملة/تخصيص الانتباه</strong> (العقل المونتروبي لا يعيد التوجه إلى العناصر المخزنة) وليس كفشل في إدراك ثبات الأشياء. الآلية المثبتة للفوضى تظل <strong>الخلل الوظيفي التنفيذي بالإضافة إلى الارتباط بالاهتمامات</strong>، وهو ما يتداخل مع السكان المونتروبيين/AuDHD ولكن ليس "مونتروبياً" بشكل حصري [4][8][28].</p>
+<h3 id="42-سلوك-طيف-الاكتناز">4.2 سلوك طيف الاكتناز</h3>
+<p>اضطراب الاكتناز يصيب ~1.5-6% من السكان العامين ولكنه مرتفع في التوحد [29]. لدى البالغين التوحديين، تظهر صعوبة الاكتناز مرتبطة بـ <strong>صعوبات معرفية (تنفيذية) وارتباطات قوية بالمعنى والاهتمام</strong> — الأشياء هي عقد في شبكة من الأفكار ومنفعة مستقبلية، لذا فإن التخلص منها يشعرهم بالخسارة [28]. وهذا يتسق مع <em>أسلوب</em> مونتروبي (معالجة عميقة للأشياء) ولكن، مرة أخرى، المحرك المثبت هو الوظائف التنفيذية/الارتباط، وهو مشترك عبر الحالات النمائية العصبية [8].</p>
+<h3 id="43-رهاب-الساح-وتحديد-المساحة-الآمنة-يحتاج-تصحيح">4.3 رهاب الساح و"تحديد المساحة الآمنة" <em>(يحتاج تصحيح)</em></h3>
+<p>يصيغ النص الأصلي حبس الذات في المنزل كأثر مباشر للمونتروبيزم. البيانات أكثر دقة:</p>
+<ul>
+<li>رهاب الساح <em>مرتفع</em> في التوحد — ~<strong>23-25%</strong> من البالغين التوحديين (بدون إعاقة ذهنية) مقابل ~1.3% في السكان العامين — <strong>لكنه أقل شيوعاً من الرهاب الاجتماعي أو القلق العام (GAD)</strong>، ويتركز التأثير في أولئك الذين ليس لديهم إعاقة ذهنية [25].</li>
+<li>المحرك الأكثر دعماً بالأدلة هو <strong>فرط الاستجابة الحسية + القلق الاجتماعي</strong>، مع تجنب سلوكي للأماكن المجهدة حسياً — أي أن سلوك "المساحة الآمنة" حقيقي ولكنه <strong>ثانوي للقلق الحسي/الاجتماعي</strong>، وليس ظاهرة مونتروبية أولية [25][26].</li>
+</ul>
+<p>لذا: المونتروبيزم يساعد في تفسير <em>لماذا</em> يبدو العالم الخارجي مشتتاً (غير متوقع، بوليتوبي، يمزق الأنفاق)، ولكن تصنيف الحبس الناتج كـ "رهاب ساح" خاص بالمونتروبيزم يبالغ في الرابط. إنه تجنب مدفوع بالقلقات الحسية التي <em>تتداخل</em> مع التجربة المونتروبية.</p>
+<h3 id="44-الانسحاب-الاجتماعي-تفريغ-المعلومات-info-dumping-ومشكلة-التعاطف-المزدوج">4.4 الانسحاب الاجتماعي، "تفريغ المعلومات" (info-dumping)، ومشكلة التعاطف المزدوج</h3>
+<p>التفاعل الاجتماعي هو بطبيعته بوليتوبي — يتطلب تتبعاً متزامناً للوجوه، والنبرة، والتسلسل الهرمي، والتوقيت، والقواعد غير المكتوبة — لذا فهو مكلف بشكل غير متناسب للنظام المونتروبي، وهي نقطة تتسق مع نموذج الموارد لغولدكنوبف [4]. حدس النص الأصلي سليم.</p>
+<p>لكن الإطارات الأكثر حدة و<em>دعماً تجريبياً</em> للانهيار في التواصل هي <strong>مشكلة التعاطy المزدوج (Double Empathy Problem)</strong> (Milton, 2012; 2017): الصعوبة هي <em>ثنائية الاتجاه</em> وعلاقية — "انفصام في التبادل بين فاعلين اجتماعيين مختلفين في التوجه" — وليست عجزاً في التعاطف من جانب الشخص التوحدي وحده [30]. تظهر الأعمال التجريبية الآن أن المراقبين غير التوحديين <em>يكتشفون ويظهرون</em> أيضاً مشكلة التعاطف المزدوج في التفاعلات المختلطة [31]. "تفريغ المعلومات" يتناسب طبيعياً مع هذا: فهو تواصل يبحث عن العمق من نظام مونتروبي، ويفشل عندما لا يستطيع الشريك مطابقة هذا العمق — وهو تعارض في أساليب المعالجة، وليس نقصاً في التعاطف [30][31].</p>
+<p><strong>فجوة للتنبيه:</strong> أدبيات DEP لا تزال تستبعد إلى حد كبير الأطفال التوحديين، الأشخاص غير الناطقين، والأشخاص ذوي الإعاقة الذهنية، لذا فإن التعميم محدود [32].</p>
+<hr />
+<h2 id="5-الحدود-أين-يذهب-التفسير-المونتروبي-بعيداً-جداً">5. الحدود: أين يذهب التفسير المونتروبي بعيداً جداً</h2>
+<table>
+<thead>
+<tr>
+<th>الادعاء في التصورات الشائعة</th>
+<th>الحالة العلمية</th>
+<th>التفسير الأفضل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>المونتروبيزم <em>يسبب</em> سمات التوحد</td>
+<td>مدعوم جزئياً (MQ; Goldknopf)</td>
+<td>عامل تنظيمي واحد من عدة عوامل؛ أبرز ما يكون في التوحد ذي الأعراض الحسية القوية [1][4]</td>
+</tr>
+<tr>
+<td>AuDHD = "انقسام مونتروبي" (أنفاق متنافسة)</td>
+<td>قوي + قابل للقياس مباشرة (MQ)</td>
+<td>نمط ظاهري انتباهي حقيقي؛ الآلية الديناميكية هي فرضية</td>
+</tr>
+<tr>
+<td>PDA هو نمط متميز من التوحد</td>
+<td><strong>متنازع عليه</strong></td>
+<td>تجنب الطلب حقيقي؛ PDA ككيان يفتقر لصلاحية المفهوم [11][12][13]</td>
+</tr>
+<tr>
+<td>المونتروبيزم <em>يقلل الاستقبال الحشوي</em> <span class="math inline">→</span> فقدان شهية</td>
+<td>غير مباشر</td>
+<td>الجسر هو التوحد <span class="math inline">→</span> استقبال حشوي/أليكسيثيميا غير نمطية <span class="math inline">→</span> عرضة لاضطرابات الأكل; المونتروبيزم ميزة موازية، وليس السبب المثبت [6][7]</td>
+</tr>
+<tr>
+<td>فوضى بسبب "عجز في ثبات الأشياء"</td>
+<td><strong>غير مدعوم</strong></td>
+<td>خلل وظيفي تنفيذي + ارتباط بالاهتمام; لا يوجد عجز في ثبات الأشياء المدرك [4][8][28]</td>
+</tr>
+<tr>
+<td>رهاب الساح كنتيجة أولية للمونتروبيزم</td>
+<td>مبالغ فيه</td>
+<td>ثانوي لفرط الاستجابة الحسية + القلق الاجتماعي; أقل شيوعاً من GAD/رهاب اجتماعي [25][26]</td>
+</tr>
+<tr>
+<td>OCD مقابل "هواجس" مونتروبية تختلف في العاطفة</td>
+<td>مدعوم جيداً</td>
+<td>متوافق مع الأنا (توحد) مقابل معارض للأنا (OCD); OCD يمكن أن "يختطف" الأنفاق [9][10]</td>
+</tr>
+<tr>
+<td>مشكلة التعاطف المزدوج تفسر الانهيار الاجتماعي</td>
+<td>مدعوم (مع وجود فجوات)</td>
+<td>سوء تفاهم ثنائي الاتجاه; العينات تميل للبالغين الناطقين بدون إعاقة ذهنية [30][31][32]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-أسئلة-مفتوحة">6. أسئلة مفتوحة</h2>
+<ol type="1">
+<li><strong>الاختبار الديناميكي للنفق.</strong> استبيان MQ هو مقياس <em>سمات</em>. هل "الانقسام المونتروبي" (الأنفاق المتنافسة في AuDHD) قابل للملاحظة في الوقت الفعلي عبر EEG أو اختبارات الانتباه؟ غير مختبر إلى حد كبير.</li>
+<li><strong>السهم السببي للاستقبال الحشوي.</strong> هل توزيع الموارد المونتروبي <em>ينتج</em> الاستقبال الحشوي غير النمطي، أم يتشاركان في سبب مشترك في الأعلى؟ الأدلة الحالية لا تفصل بينهما [6][7].</li>
+<li><strong>قرار PDA.</strong> هل سيتقارب البحث حول تجنب الطلب في مفهوم موحد وقابل للقياس، أم سيظل فئة سريرية متنازعاً عليها؟ [11][13]</li>
+<li><strong>ميكانيكية الفوضى.</strong> هل تجربة "بعيد عن العين، بعيد عن العقل" هي أثر للذاكرة العاملة/تخصيص الانتباه (محتمل) أو شيء آخر؟ لم يتم العثور على دراسة مخصصة.</li>
+<li><strong>تعميم DEP.</strong> كيف تعمل مشكلة التعاطف المزدوج بالنسبة للأشخاص التوحديين غير الناطقين، الأطفال، والأشخاص ذوي الإعاقة الذهنية؟ [32]</li>
+<li><strong>الاحتراق.</strong> ما هي المساهمة المحددة والقابلة للاختبار لتمزق النفق المونتروبي في الاحتراق التوحدي مقابل القناع، الصدمات والطلبات المفرطة؟ [20]</li>
+</ol>
+<hr />
+<h2 id="المصادر">المصادر</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, 9(2), 139–156. <a href="https://doi.org/10.1177/1362361305051398">https://doi.org/10.1177/1362361305051398</a> — عبر <a href="https://monotropism.org/murray-lesser-lawson">https://monotropism.org/murray-lesser-lawson</a>
+[2] Garau, V., Woods, R., Chown, N., Hallett, S., Murray, F., Wood, R, Murray, A., &amp; Fletcher-Watson, S. (2023). The Monotropism Questionnaire (MQ). Open Science Framework (preprint). تعليق/ملخص: <a href="https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire">https://ndconnection.co.uk/blog/monotropism-and-the-monotropism-questionnaire</a> ; مرآة: <a href="https://stimpunks.org/monotropism-questionnaire">https://stimpunks.org/monotropism-questionnaire</a>
+[3] Autistic Realms / Neurodiverse Connection (Edgar) — ملخص نتائج MQ (47 بنداً؛ N=1,110; سجل التوحديون وADHD درجات أعلى بكثير من المجموعات الضابطة): <a href="https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention">https://autisticrealms.com/monotropism-vs-polytropism-adhd-audhd-autistic-attention</a>
+[4] Goldknopf, E. J. (2013). Atypical resource allocation may contribute to many aspects of autism. <em>Frontiers in Integrative Neuroscience</em>. PMC3872719. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719">https://pmc.ncbi.nlm.nih.gov/articles/PMC3872719</a>
+[5] Psych Scene Hub — مراجعة تداخل ADHD والتوحد (ADHD في ~30-80% من ASD; ASD في ~20-50% من ADHD; تذكر مراجعة Lau-Zhu 2019; Hollingdale 2019): <a href="https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review">https://psychscenehub.com/psychinsights/adhd-and-autism-comorbidity-a-comprehensive-review</a>
+[6] Adams, K. L., Murphy, J., Catmur, C., &amp; Bird, G. (2022). The role of interoception in the overlap between eating disorders and autism: methodological considerations. <em>European Eating Disorders Review</em>. PMC9543236. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236">https://pmc.ncbi.nlm.nih.gov/articles/PMC9543236</a>
+[7] Klein, M., Witthöft, M., &amp; Jungmann, S. M. (2025). Interoception in individuals with autism spectrum disorder: a systematic literature review and meta-analysis. <em>Frontiers in Psychiatry</em> (10.3389/fpsyt.2025.1573263) — ~50% من التوحديين لديهم أليكسيثيميا، بوساطة عجز الاستقبال الحشوي. <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full">https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1573263/full</a>
+[8] Morein-Zamir, S., Kasese, M., Chamberlain, S. R., &amp; Trachtenberg, M. (2020). Elevated levels of hoarding in ADHD: a special link with inattention. <em>Journal of Psychiatric Research</em>. PMC7612156. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156">https://pmc.ncbi.nlm.nih.gov/articles/PMC7612156</a> — [8أ] "الرابط الخاص بنقص الانتباه" هو العنوان الفرعي للورقة. انظر أيضاً معهد Drake حول ADHD/الخلل الوظيفي التنفيذي: <a href="https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection">https://drakeinstitute.com/articles/adhd/adhd-and-executive-dysfunction-connection</a>
+[9] Animosanopsychiatry — ملخص مراجعة منهجية: ~17% من التوحديين يستوفون معايير OCD مقابل ~1-2% في السكان العامين; التمييز بين متوافق مع الأنا مقابل معارض للأنا: <a href="https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps">https://animosanopsychiatry.com/blog/ocd-vs-autism-similarities-differences-and-overlaps</a>
+[10] Long, H., Cooper, K., &amp; Russell, A. (2024). "Autism is the arena and OCD is the lion": autistic adults' experiences of co-occurring OCD and restricted/repetitive behaviours (qualitative). PMC11497754. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754">https://pmc.ncbi.nlm.nih.gov/articles/PMC11497754</a>
+[11] National Autistic Society — تجنب الطلب ("لم تجد الأبحاث أدلة قوية على [PDA] كنمط متميز"): <a href="https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance">https://www.autism.org.uk/advice-and-guidance/behaviour/demand-avoidance</a>
+[12] Frontiers in Education (2024). طرق دراسة PDA — نقد تفكير نيوسون الدائري (Green et al. 2018; O'Nions &amp; Eaton 2020): <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full">https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1230011/full</a>
+[13] Kildahl, A., et al. (2023). Pathological Demand Avoidance: Current State of Research and Critical Discussion. PubMed 36892327. <a href="https://pubmed.ncbi.nlm.nih.gov/36892327">https://pubmed.ncbi.nlm.nih.gov/36892327</a>
+[14] Murray, F. (Lawson) (2018). Me and Monotropism: a unified theory of autism. <em>The Psychologist</em> (BPS). <a href="https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism">https://www.bps.org.uk/psychologist/me-and-monotropism-unified-theory-autism</a>
+[15] Happé, F., &amp; Frith, U. (2006). The weak coherence account: detail-focused cognitive style in ASD. <em>J Autism Dev Disord</em> 36:5–25 (مستشهد بها في دراسة مقارنة Frontiers 2024): <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1348074/full</a>
+[16] Hollingdale, J., et al. (2019). Meta-analytic review of ASD symptoms in ADHD (مستشهد بها في Psych Scene Hub و Autistica): <a href="https://www.autistica.org.uk/what-is-autism/adhd-and-autism">https://www.autistica.org.uk/what-is-autism/adhd-and-autism</a>
+[17] Children's Hospital of Philadelphia — 27% من البالغين التوحديين بدون إعاقة ذهنية لديهم تشخيص ADHD مصاحب — حوالي 10 أضعاف المعدل العام: <a href="https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism">https://www.chop.edu/news/rates-adhd-remain-high-adulthood-among-patients-autism</a>
+[18] Behavioral Innovations — تداخل جيني (~50-72%) ملخص: <a href="https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd">https://behavioral-innovations.com/blog/the-sudden-rise-of-audhd</a>
+[19] Autistic Scholar — "Revisiting monotropism" (AuDHD كأنفاق متنافسة; يشير إلى Grotewiel et al. 2022 حول التركيز الفائق في ADHD): <a href="https://www.autisticscholar.com/monotropism">https://www.autisticscholar.com/monotropism</a>
+[20] Neurodiverse Connection (Edgar) — المونتروبيزم، الشباب والاحتراق التوحدي: <a href="https://ndconnection.co.uk/blog/monotropism-young-people">https://ndconnection.co.uk/blog/monotropism-young-people</a> ; Autistic Realms — استعادة الراحة: <a href="https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance">https://autisticrealms.com/reclaiming-rest-autistic-burnout-monotropism-and-resistance</a>
+[21] National Autistic Society — ما هو المونتروبيزم؟ (حالات التدفق; يشير إلى Heasman et al. 2024 "نظرية التدفق التوحدي"): <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/what-is-monotropism</a>
+[22] PDA North America — ما هو PDA؟ (نيوسون، الثمانينيات؛ إعادة الصياغة إلى "دافع غريزي للاستقلالية"): <a href="https://pdanorthamerica.org/what-is-pda">https://pdanorthamerica.org/what-is-pda</a>
+[23] O'Nions, V., et al. (2016). Identifying features of PDA using the DISCO. PMC4820467. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467">https://pmc.ncbi.nlm.nih.gov/articles/PMC4820467</a>
+[24] Nickel, K., Maier, S., Endres, D., &amp; Joos, A. (2019). Systematic Review: Overlap Between Eating, Autism Spectrum, and Attention-Deficit/Hyperactivity Disorder. <em>Frontiers in Psychiatry</em>. PMC6796791 (يستشهد أيضاً بـ Westwood, Mandy &amp; Tchanturia 2017; Huke et al. 2013). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791">https://pmc.ncbi.nlm.nih.gov/articles/PMC6796791</a>
+[25] Discussing Psychology (Loker) — رهاب الساح في التوحد ~23-25% (بدون إعاقة ذهنية) مقابل ~1.3% عام; أقل شيوعاً من الفوبيا الاجتماعية أو GAD (مصدر ثانوي، يعتمد على Helles et al. 2020 و Lugnegård et al. 2012): <a href="https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked">https://www.discussingpsychology.com/agoraphobia-and-autism-are-they-intrinsically-linked</a>
+[26] Green, S. A., &amp; Ben-Sasson, A. (2010). Anxiety disorders and sensory over-responsivity in children with ASD: is there a causal relationship? <em>Journal of Autism and Developmental Disorders</em> — التكييف السياقي وتجنب المواقع العامة. PMC2980623. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623">https://pmc.ncbi.nlm.nih.gov/articles/PMC2980623</a>
+[27] Embrace Autism — التوحد والاكتناز (خلل وظيفي تنفيذي, اتخاذ قرار): <a href="https://embrace-autism.com/autism-and-hoarding">https://embrace-autism.com/autism-and-hoarding</a>
+[28] Goldfarb, Y., Zafrani, O., Hedley, D., &amp; Yaari, M. (2021). Autistic adults' subjective experiences of hoarding and self-injurious behaviors (qualitative). <em>Autism</em>. PMC8264636. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636">https://pmc.ncbi.nlm.nih.gov/articles/PMC8264636</a>
+[29] Abouzed, M., Gabr, A., Elag, K. A., Soliman, M., Elsaadouni, N., Elzahab, N. A., &amp; Barakat, M. (2024). The prevalence, correlates, and clinical implications of hoarding behaviors in high-functioning autism. <em>Scientific Reports</em> (s41598-024-75371-8). <a href="https://www.nature.com/articles/s41598-024-75371-8">https://www.nature.com/articles/s41598-024-75371-8</a>
+[30] Milton, D. (2012). On the ontological status of autism: the 'double empathy problem'. <em>Disability &amp; Society</em> 27(6):883–887; Milton (2017) توسعة. ملخص: <a href="https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy">https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy</a>
+[31] Jones, D. R., Botha, M., Ackerman, R. A, &amp; King, K. (2024). Non-autistic observers both detect and demonstrate the double empathy problem when evaluating interactions between autistic and non-autistic adults. <em>Autism</em>. PMC11308351. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351">https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351</a>
+[32] ويكيبيديا — مشكلة التعاطف المزدوج (اعتراف بالفجوات البحثية: الأطفال، غير الناطقين، ذوي الإعاقة الذهنية): <a href="https://en.wikipedia.org/wiki/Double_empathy_problem">https://en.wikipedia.org/wiki/Double_empathy_problem</a></p>
+<hr />
+<p><em>ملاحظة حول مستويات الأدلة:</em> المستوى 1 = قياس مباشر ومكرر (MQ; معدلات AuDHD); المستوى 2 = مراضة مشتركة مكررة مع آلية مشتركة مثبتة; المستوى 3 = استقراء محتمل، مصدر واحد، أو مفهوم متنازع عليه. انظر §5.</p>
+</body>
+</html>

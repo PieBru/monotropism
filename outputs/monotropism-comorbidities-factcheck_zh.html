@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>单向注意力共病：四组分类框架的审查</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 22mm 18mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", sans-serif;
+      font-size: 9pt;
+      color: #888;
+    }
+  }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Noto Serif", "Noto Serif CJK SC", "Noto Sans Arabic", "Liberation Serif", Georgia, serif;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: left;
+    max-width: 100%;
+    hyphens: auto;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1f2d3d;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 1.9rem;
+    border-bottom: 3px solid #2c5282;
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    border-bottom: 1px solid #cbd5e0;
+    padding-bottom: 0.15rem;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+    color: #2c5282;
+    page-break-after: avoid;
+  }
+  h4 { font-size: 1.02rem; margin-top: 1rem; page-break-after: avoid; }
+  p { margin: 0.5rem 0; orphans: 3; widows: 3; }
+  a { color: #2b6cb0; text-decoration: none; word-break: break-word; }
+  strong { color: #111; }
+  em { color: #222; }
+  blockquote {
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2c5282;
+    background: #f7fafc;
+    color: #2d3748;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 0.3rem 0; }
+  hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 1.4rem 0;
+  }
+  ul, ol { margin: 0.4rem 0 0.6rem 0; padding-left: 1.4rem; }
+  li { margin: 0.22rem 0; }
+  li::marker { color: #2c5282; }
+  code {
+    font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+    font-size: 0.88em;
+    background: #edf2f7;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    color: #1a202c;
+  }
+  pre {
+    background: #edf2f7;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.9rem 0;
+    font-size: 0.9rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td {
+    border: 1px solid #cbd5e0;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2c5282;
+    color: #fff;
+    font-family: "Noto Sans", "Noto Sans Arabic", "Noto Sans CJK SC", sans-serif;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #f7fafc; }
+  /* footnote-style reference lists and superscripts already inline; keep tidy */
+  sup { font-size: 0.7em; color: #2b6cb0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">单向注意力共病：四组分类框架的审查</h1>
+</header>
+<h1 id="单向注意力共病四组分类框架的审查">单向注意力共病：四组分类框架的审查</h1>
+<p><em>引用研究摘要 — 审查一个被广泛分享的“单向注意力共病”框架。</em></p>
+<blockquote>
+<p><strong>仅供参考，并非医疗建议。</strong> 单向注意力是一种认知风格，而非诊断；因此它没有疾病意义上的“共病”。本摘要评估下方框架中的重叠部分在哪些方面得到了支持，哪些没有。本内容补充项目更全面的综合摘要《单向注意力与共病网络》。</p>
+</blockquote>
+<hr />
+<h2 id="执行摘要">执行摘要</h2>
+<ul>
+<li><strong>框架的开篇正确：单向注意力没有疾病意义上的“共病”。</strong> 它是一个分布在谱系上的注意力风格；与临床条件的重叠是 <em>关联和共同机制</em>，而非某种疾病的后遗症 [1]。</li>
+<li><strong>一个突出主张恰恰相反。</strong> “AuDHD（自闭症+多动症）人群在 MQ 问卷中的得分最高” <strong>并非</strong> 数据所显示的结果。在 MQ 验证研究中，自闭症和 TDAH 分别独立增加了单向注意力得分，但它们的 <em>结合效应</em> 是 <strong>负交互作用</strong> (β = −0,43, p&lt;,001)：AuDHD 患者的得分 <strong>低于纯加法模型所预测的得分</strong>，而非更高 [2]。</li>
+<li><strong>两个术语归属正确但需要精确定义。</strong> “单向注意力分裂” (Monotropic Split) <strong>确实</strong> 由自闭症律师 <strong>Tanya Adkin</strong> 提出 — 但它指的是 <em>强迫单向注意力大脑以多向方式运作</em>（分散注意力）时的认知成本，<strong>而非</strong> 经常被混淆的“AuDHD 竞争隧道” [3]。</li>
+<li><strong>“对象恒常性问题”存在争议而非定论。</strong> 唯一的学术来源 (Lawson &amp; Dombroski, 2017) 提出 <strong>延迟的</strong> 对象恒常性可能是导致某些自闭症相关压力的 <em>假设</em> — 而更广泛的文献发现自闭症者的对象恒常性通常是 <em>完整甚至更强</em> 的。那种“看不见就忘了”的体验更应被理解为 <strong>工作记忆 / 注意力分配</strong> 的效应 [4]。</li>
+<li><strong>其余部分大部分得到支持但证据等级不同。</strong> 自闭症（基础）、TDAH 的超专注 (Hyperfocus) (真实)、焦虑/反刍与 OCD 的重叠 (强关联)、自闭症惯性 (真实)、感官过载 <span class="math inline">→</span> 崩溃/关机 (真实)，以及由于强迫转换 + 掩饰导致的倦怠 (既定概念) 均通过了审查 — 而“过度系统化”则是 <strong>Baron-Cohen 的 E-S 理论</strong>，而非单向注意力的发现 [5]。</li>
+<li><strong>神经肯定的重新定义：</strong> 每一个重叠点最好被描述为 <em>“一个窄而强的注意力系统如何与多向注意力世界互动”</em>，而不是一个单向注意力大脑“引起”的障碍清单。</li>
+</ul>
+<hr />
+<h2 id="1-核心原则框架在这一点上是正确的">1. 核心原则（框架在这一点上是正确的）</h2>
+<p>单向注意力 (Murray, Lawson &amp; Lesser, 2005) 主张大脑在 <em>分配注意力</em> 方面存在差异：单向注意力大脑将资源集中在极少数高度激活的“注意力隧道”中；而多向注意力大脑则将资源分散 [1]。由于它是一个 <strong>维度性的认知风格</strong> — 可以通过单向注意力问卷 (MQ) 在 1–5 分之间测量 — 因此它没有“共病”。它拥有的是 <strong>统计关联</strong>（得分更高的群体）和 <strong>共同机制</strong>（可以通过注意力分配视角解释的临床条件）。保持这一区分至关重要 [1][2]。</p>
+<p>本摘要将对四个分类组的每一个主张进行 <strong>逐项审查</strong>。</p>
+<h2 id="2-第一组--核心神经多样性特征">2. 第一组 — 核心神经多样性特征</h2>
+<h3 id="自闭症-white_check_mark-基础最强关联">自闭症 ✅ (基础，最强关联)</h3>
+<p>单向注意力理论正是为了解释自闭症特质而创建的 — 强烈的特殊兴趣、对常规的需求（保护注意力隧道）以及社交互动的差异 [1]。MQ 进行了实证确认：自闭症参与者的平均分为 <strong>4.15/5</strong>，而非自闭症者为 <strong>3.19/5</strong> (n=1,110) [2]。这是该理论的原生地，也是记录最详尽的关联。</p>
+<h3 id="tdah-white_check_mark-真实且经过测量">TDAH ✅ (真实且经过测量)</h3>
+<p>TDAH 显著提高了单向注意力得分 (β = +0,55, p&lt;,001) [2]。这种联系既是概念性的也是统计性的：TDAH 的 <strong>超专注 (Hyperfocus)</strong> (Grotewiel et al., 2022) 在概念上与单向注意力隧道几乎相同，且激活无兴趣任务的“执行功能障碍”是隧道系统的自然预测 [2][6]。<strong>支持。</strong></p>
+<h3 id="audhd-x-突出主张恰恰相反--关键修正">AuDHD ❌ (突出主张恰恰相反) — <em>关键修正</em></h3>
+<blockquote>
+<p><strong>审查主张：</strong> “同时具有 AuDHD 特质的人在 MQ 中的得分高于所有其他群体。”</p>
+</blockquote>
+<p><strong>这并非</strong> 数据所显示的。MQ 文章的多重回归分析了 TDAH 状态、自闭症状态及其 <strong>交互作用</strong> [2]：</p>
+<table>
+<thead>
+<tr>
+<th>预测因子 (相对于无上述条件的组)</th>
+<th>β</th>
+<th>p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TDAH，非自闭症</td>
+<td><strong>+0,55</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td>自闭症，非 TDAH</td>
+<td><strong>+1,04</strong></td>
+<td>&lt;,001</td>
+</tr>
+<tr>
+<td><strong>自闭症 × TDAH 交互作用</strong></td>
+<td><strong>−0,43</strong></td>
+<td><strong>&lt;,001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>交互项为 <strong>负值且显著</strong>。作者明确指出：<em>“自闭症伴随 TDAH 个体的单向注意力得分，并不像纯加法效应所预测的那样高”</em> [2]。换句话说，在自闭症基础上增加 TDAH <strong>并不会</strong> 将单向注意力推向比单纯自闭症更高的程度 — 而是 <strong>低于</strong> 两个独立效应的简单之和。</p>
+<ul>
+<li><strong>得分最高的单一群体</strong> 是自闭症者 (4.15)。虽然 AuDHD 的实测平均值可能略高于或低于此值，但该框架主张 AuDHD 是“最高”的加法/超加法效应，这 <strong>不被支持且被交互作用数据反驳</strong>。</li>
+<li>该框架提供的直观图像 — “自闭症对稳定深隧道的需要与 TDAH 对新刺激的冲动之间的内部拉锯” — 是对 AuDHD 体验的一种流行且在现象学上引起共鸣的描述，但它是 <strong>临床/社区叙事，而非 MQ 的统计发现</strong> [6]。</li>
+</ul>
+<blockquote>
+<p><strong>修正主张：</strong> “自闭症和 TDAH 均独立地提高了单向注意力得分，但两者之间存在非加法性交互作用：AuDHD 个体的 MQ 得分低于纯加法模型所预测的水平 — 这表明这两种条件在单向注意力倾向上的叠加并非简单的线性累加。” [2]</p>
+</blockquote>
+<h2 id="3-第二组--认知特质与心理健康">3. 第二组 — 认知特质与心理健康</h2>
+<h3 id="焦虑与反刍-white_check_mark-强关联机制可行">焦虑与反刍 ✅ (强关联，机制可行)</h3>
+<p>焦虑和反刍在自闭症/TDAH 人群中普遍较高，单向注意力提供了一个简洁的机制：处于隧道中的大脑会死死抓住一个担忧并循环处理（“反刍”），使焦虑变得“粘稠” [7][8]。MQ 的 8 因子结构中包含一个 <strong>“反刍与焦虑”</strong> 子量表，证明该组在实证上是成立的 [2]。<strong>支持</strong> — 但需注意因果方向（是单向注意力导致焦虑，还是两者共享底层机制？）尚未确定。</p>
+<h3 id="ocd-white_check_mark-强重叠重要区分">OCD ✅ (强重叠，重要区分)</h3>
+<p>自闭症与 OCD 的重叠是真实且可复制的。元分析发现约 <strong>~17% 的自闭症者符合 OCD 标准</strong> (对比普通人群的 ~1–2%) [9]。该框架中关于性质的区分非常正确且精准：<strong>单向注意力的兴趣是“自我协调”的 (ego-syntonic)</strong> (由好奇/喜悦驱动)，而 <strong>OCD 的强迫行为是“自我失调”的 (ego-dystonic)</strong> (由焦虑驱动，旨在抵消恐惧) [10]。这一区分在临床上非常重要。<strong>支持。</strong></p>
+<h3 id="过度系统化-warning-真实概念但属于-baron-cohen">过度系统化 ⚠️ (真实概念，但属于 Baron-Cohen)</h3>
+<p>“过度系统化” — 分析、构建和探索系统的冲动 — 是一个真实的自闭症特质，但它属于 Simon Baron-Cohen 的 <strong>共情-系统化 (E-S) 理论</strong>，而非单向注意力理论 [5]。两套理论高度重叠，但应当将过度系统化归功于 E-S 理论 [1][5]。</p>
+<h2 id="4-第三组--神经现象与处理机制">4. 第三组 — 神经现象与处理机制</h2>
+<h3 id="对象恒常性问题-x-有争议--第二个关键修正">对象恒常性问题 ❌ (有争议 — 第二个关键修正)</h3>
+<blockquote>
+<p><strong>审查主张：</strong> “单向注意力个体在体验对象恒常性方面存在差异……大脑实际上在停止处理该对象的存在，直到有外部刺激将他们拉回。”</p>
+</blockquote>
+<p>这是该框架中 <strong>最弱的主张</strong>，需要谨慎处理：</p>
+<ul>
+<li>仅有 <strong>一个</strong> 学术来源提出对象恒常性的关联：<strong>Lawson &amp; Dombroski (2017)</strong> 假设 <strong>延迟的</strong> 对象恒常性可能是导致某些自闭症相关压力的原因 [4]。这是一篇假设性文章，而非确认性研究。</li>
+<li>更广泛的发展研究表明，<strong>基础的对象恒常性在自闭症中通常是完整甚至更强的</strong>；皮亚杰的对象恒常性任务通常在典型年龄达到 [4]。</li>
+<li>框架试图描述的真实现象 — 任务、物体甚至人处于“看不见就忘了”的状态 — 更好地解释为 <strong>工作记忆 / 注意力分配</strong> 的效应：处于隧道中的大脑并非 <em>无法</em> 表征该项目，而是 <strong>无法将注意力重新定向回该项目</strong>。</li>
+</ul>
+<blockquote>
+<p><strong>修正主张：</strong> “高度单向注意力者的‘看不见就忘了’体验更好地理解为注意力分配 / 工作记忆的效应 — 大脑能够表征该项目，但在处于隧道状态时无法将其重新定向 — 而非对象恒常性缺陷（后者在自闭症中通常是完整的）。” [1][4]</p>
+</blockquote>
+<h3 id="感官失调--过载-white_check_mark-机制得到强力支持">感官失调 / 过载 ✅ (机制得到强力支持)</h3>
+<p>这得到了强力支持。因为隧道系统将资源集中，突发的侵入性感官刺激（警笛、强光、触碰）需要昂贵的资源重新分配 — 体验为“暴力破裂”。这与已有的感官超反应文献一致，且是导致 <strong>崩溃 (Meltdown)</strong> 和 <strong>关机 (Shutdown)</strong> 的公认路径 [7][11]。</p>
+<h3 id="自闭症惯性-white_check_mark-真实研究日益增多">自闭症惯性 ✅ (真实，研究日益增多)</h3>
+<p>“在转换方面的深度困难 — 启动、停止或改变方向的问题”正是 <strong>自闭症惯性</strong> 的既定概念：在启动/停止/切换不受意识控制的任务时的困难 [12][13]。</p>
+<h2 id="5-第四组--慢性压力结果">5. 第四组 — 慢性压力结果</h2>
+<h3 id="单向注意力分裂-warning-归属正确但两种含义被混淆">单向注意力分裂 ⚠️ (归属正确，但两种含义被混淆)</h3>
+<blockquote>
+<p><strong>审查主张：</strong> “单向注意力分裂 (Monotropic Split) 由律师 Tanya Adkin 提出，发生在单向注意力大脑被环境强迫将单一焦点通道分解为多个并发流时。”</p>
+</blockquote>
+<p><strong>归属正确</strong>：自闭症律师 <strong>Tanya Adkin</strong> 确实提出了 “monotropic split” [3]。该框架的定义 <strong>接近 Adkin 的真实含义</strong> — 即强迫单向注意力大脑 “以多向方式运作” 时的认知成本/倦怠 [3][14]。</p>
+<p>两点注意事项：</p>
+<ol type="1">
+<li><strong>这是一个社区/实践概念，而非经过实证验证的构建。</strong> 它出现在社区和临床写作中，但 <strong>没有同行评审的验证研究</strong> [3]。</li>
+<li><strong>同一个术语有两种含义。</strong> Adkin 的含义 = <em>环境强迫的多向运作</em>（环境兼容性问题）。另一种含义 (常用于 AuDHD 讨论) = <em>自闭症对稳定的需求与 TDAH 对新奇冲动之间的内部竞争</em>（内部动力学问题）。本框架描述的是 <strong>前者</strong> (环境)。</li>
+</ol>
+<h3 id="倦怠-white_check_mark-既定概念与单向注意力的关联是启发性的">倦怠 ✅ (既定概念；与单向注意力的关联是启发性的)</h3>
+<p>自闭症倦怠是一个定义明确的概念：<strong>慢性疲劳、技能丧失和刺激耐受度降低</strong>，由慢性生活压力和“期望与能力的不匹配”引起 (Raymaker et al., 2020; Higgins et al., 2021) [15][16]。从单向注意力到倦怠的路径 — 强迫转换、掩饰和 “单向注意力分裂” 榨干资源且缺乏恢复时间 — 是 <strong>启发性强且被社区验证的</strong>，但具体路径尚未被实验分离 [15]。</p>
+<h2 id="6-分级评分表">6. 分级评分表</h2>
+<table>
+<thead>
+<tr>
+<th>框架主张</th>
+<th>判定</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单向注意力没有疾病共病</td>
+<td>✅ 正确</td>
+<td>具有关联 + 共同机制 [1]</td>
+</tr>
+<tr>
+<td>自闭症 = 基础关联</td>
+<td>✅ 基础</td>
+<td>MQ 4.15 vs 3.19 [2]</td>
+</tr>
+<tr>
+<td>TDAH 增加单向注意力</td>
+<td>✅ 支持</td>
+<td>β = +0.55 [2]</td>
+</tr>
+<tr>
+<td><strong>AuDHD 得分最高</strong></td>
+<td>❌ <strong>相反</strong></td>
+<td>交互作用为 <strong>负值</strong> (β=−0.43) [2]</td>
+</tr>
+<tr>
+<td>焦虑与反刍重叠</td>
+<td>✅ 强关联</td>
+<td>MQ 包含反刍/焦虑因子 [2]</td>
+</tr>
+<tr>
+<td>OCD 重叠 (自我协调 vs 失调)</td>
+<td>✅ 支持</td>
+<td>~17% 重叠；区分正确 [9][10]</td>
+</tr>
+<tr>
+<td>过度系统化</td>
+<td>⚠️ 真实但归属错误</td>
+<td>属于 Baron-Cohen 的 E-S 理论 [5]</td>
+</tr>
+<tr>
+<td>对象恒常性问题</td>
+<td>❌ 有争议</td>
+<td>仅 1 篇假设文章；恒常性通常完整 [4]</td>
+</tr>
+<tr>
+<td>感官过载 <span class="math inline">→</span> 崩溃/关机</td>
+<td>✅ 强力支持</td>
+<td>机制 = 重新分配成本 [7][11]</td>
+</tr>
+<tr>
+<td>自闭症惯性</td>
+<td>✅ 真实</td>
+<td>正确术语；同行评审支持 [12][13]</td>
+</tr>
+<tr>
+<td>分裂概念归属 Adkin</td>
+<td>⚠️ 归属正确；社区概念</td>
+<td>两种含义被混淆 [3]</td>
+</tr>
+<tr>
+<td>强迫转换+掩饰导致倦怠</td>
+<td>✅ 既定概念；启发性关联</td>
+<td>未经实验分离 [15][16]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-实践结论">7. 实践结论</h2>
+<ul>
+<li><strong>以原则开篇：</strong> 单向注意力是一种可测量的注意力风格，其与其他条件的重叠是关联和共同机制 — 绝不要说它 “导致了 X” [1]。</li>
+<li><strong>正确引用 MQ：</strong> 自闭症和 TDAH 均独立提高得分，但两者的结合是 <strong>非加法性的 (低于预期)</strong> — 不要说 AuDHD 得分最高 [2]。</li>
+<li><strong>维持自我协调/失调的区分</strong> 在讨论 OCD 与特殊兴趣时 — 这在临床上非常有用 [10]。</li>
+<li><strong>精确化术语：</strong> 过度系统化 = Baron-Cohen 理论；单向注意力分裂 = Adkin 概念 (环境压力)；自闭症惯性 = 同行评审支持的转换困难 [3][5][12]。</li>
+<li><strong>放弃 “对象恒常性缺陷”：</strong> 将其重新定义为注意力分配 / 工作记忆效应，这更精确且更有利于支持 [1][4]。</li>
+<li><strong>区分验证与启发：</strong> 倦怠是既定概念，但单向注意力 <span class="math inline">→</span> 倦怠的路径是强力假设，而非实测效应 [3][15]。</li>
+</ul>
+<hr />
+<h2 id="参考文献">参考文献</h2>
+<p>[1] Murray, D., Lesser, M., &amp; Lawson, W. (2005). <em>Attention, monotropism and the diagnostic criteria for autism.</em> Autism, 9(2), 139–156.
+[2] Garau, V., et al. (2023). <em>The Monotropism Questionnaire.</em> OSF Preprint. <a href="https://osf.io/wpx5g">https://osf.io/wpx5g</a>.
+[3] Adkin, T. — "monotropic split" (自闭症律师 / 实践者；社区概念).
+[4] Lawson, W. &amp; Dombroski, B. (2017). <em>Problems with Object Permanence.</em> J. Intellectual Disability – Diagnosis and Treatment, 5(1).
+[5] Baron-Cohen, S. (2009/2010). <em>Autism and the empathizing–systemizing (E-S) theory.</em> Annals of the NYAS.
+[6] Autistic Scholar — <em>"Revisiting monotropism"</em> (AuDHD 作为竞争隧道).
+[7] Green, S. A. &amp; Ben-Sasson, A. (2010). <em>Anxiety disorders and sensory over-responsivity in children with ASD.</em> J. Autism and Developmental Disorders.
+[8] Oakley, B. et al. / 自闭症焦虑文献 — 焦虑与反刍在自闭症/TDAH 人群中较高。
+[9] Meier, S. M. et al. / 自闭症-OCD 一致性元分析 — ~17% 自闭症者符合 OCD 标准。
+[10] Long, H., et al. (2024). <em>"Autism is the arena and OCD is the lion".</em> PMC11497754.
+[11] Autism Society (2025). <em>Autistic Meltdowns and Shutdowns.</em>
+[12] Buckle, K. et al. (2021). <em>"No way out except from external intervention": First-hand accounts of autistic inertia.</em>
+[13] Srinivasan, D. (2025). <em>The Physics of Autistic Inertia.</em> APS Observer.
+[14] Neurodivergent Insights — <em>Monotropism</em> (glossary).
+[15] Raymaker, D. M. et al. (2020). <em>"Having all of your internal resources exhausted beyond measure": Defining autistic burnout.</em> Autism in Adulthood.
+[16] Higgins, J. M. et al. (2021). <em>Defining autistic burnout through experts by lived experience.</em> Autism, 25(8).</p>
+<hr />
+<p><em>本内容补充项目更全面的综合摘要：<code>outputs/monotropism-comorbidity-landscape_zh.md</code> (涵盖进食障碍、囤积、广场恐惧、需求回避 PDA 和双重共情问题)。本摘要专注于审查上述四个分类组且不重复上述内容。</em></p>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Tu compañero / amigo autista</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="tu-compañero-amigo-autista">Tu compañero / amigo autista</h1>
+<blockquote>
+<p><strong>Para compañeros de primaria, amigos y sus familias</strong> — llevarse bien con un <strong>niño/a</strong> autista (aproximadamente de 6 a 11 años).</p>
+</blockquote>
+<h2 class="lead" id="la-idea-principal">la idea principal</h2>
+<p>El autismo, a través del <strong>monotropismo</strong>, significa que la atención de un compañero se concentra en unos pocos «túneles» profundos e intensos. Puede que lo sepan <em>todo</em> sobre su interés especial, tomen las cosas muy literalmente, necesiten que las cosas sean predecibles y se sientan abrumados por el ruido o las sorpresas —y luego necesiten un momento de calma para recuperarse. Nada de eso es raro o grosero; es simplemente la forma en que funciona su atención. La buena noticia: los niños autistas suelen ser <strong>amigos fantásticos y leales</strong>, especialmente cuando te unes a ellos a través de un interés compartido y les das espacio para ser ellos mismos.</p>
+<h2 id="lo-que-puede-observar-y-lo-que-realmente-está-sucediendo">Lo que puede observar — y lo que realmente está sucediendo</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Puede observar…</th>
+<th>Lo que suele suceder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sabe todo sobre un tema; habla mucho de ello</td>
+<td>Una <strong>pasión</strong> —y la mejor manera de conectar</td>
+</tr>
+<tr>
+<td>No entiende los chistes, el sarcasmo o las indirectas</td>
+<td>Toma las cosas <strong>literalmente</strong>; di exactamente lo que quieres decir</td>
+</tr>
+<tr>
+<td>Quiere el mismo juego, las mismas reglas, siempre</td>
+<td>La previsibilidad le hace sentir seguro; no es que sea un «mandón»</td>
+</tr>
+<tr>
+<td>Se tapa los oídos, se va o se queda en silencio en el comedor</td>
+<td>Sobrecarga sensorial — el ruido es genuinamente doloroso</td>
+</tr>
+<tr>
+<td>No siempre responde o no te mira</td>
+<td>Mirar hacia otro lado les ayuda a escuchar; no es mala educación</td>
+</tr>
+</tbody>
+</table>
+<h2 class="do" id="intente-esto">Intente esto</h2>
+<ul>
+<li><strong>Conecte a través de su interés</strong> — pregúntele sobre ello, únase; es la puerta de entrada a la amistad.</li>
+<li><strong>Diga exactamente lo que quiere decir</strong> — la claridad y la literalidad vencen a las indirectas y al sarcasmo.</li>
+<li><strong>Ofrezca una opción tranquila</strong> en el recreo y el almuerzo — un lugar calmado para pasar el tiempo juntos.</li>
+<li><strong>Avise antes de los cambios</strong> — «cinco minutos y cambiamos»; las sorpresas son difíciles.</li>
+<li><strong>Sea el amigo aceptador</strong> — un amigo real que «lo entiende» vale más que una multitud.</li>
+</ul>
+<h2 class="dont" id="evite-esto">Evite esto</h2>
+<ul>
+<li>Las burlas, el sarcasmo o las exigencias de «mírame a los ojos».</li>
+<li>Sorpresas, juegos ruidosos o cambios repentinos.</li>
+<li>Interpretar un colapso o un bloqueo como que es «raro» o «grosero».</li>
+</ul>
+<h2 class="support" id="cuándo-buscar-más-apoyo">Cuándo buscar más apoyo</h2>
+<blockquote>
+<p>Si tu amigo está siendo acosado o dejado de lado, cuéntaselo a un adulto de confianza — los niños autistas suelen ser blanco de burlas, y un solo aliado lo cambia todo. Si tiene un colapso, dale espacio y silencio, no una audiencia; avisa a un profesor si estás preocupado.</p>
+</blockquote>
+<h2 class="gender" id="si-tu-amigo-es-una-niña">Si tu amigo es una niña</h2>
+<blockquote>
+<p>Las niñas autistas a menudo camuflan y pueden parecer «tranquilas y bien» mientras sufren; ser un amigo amable y sin presiones importa más que una vida social agitada.</p>
+</blockquote>
+<h2 class="foot" id="acerca-de-esta-guía">Acerca de esta guía</h2>
+<p><em>Asistida por IA, derivada de los borradores de investigación del proyecto — <strong>Grandir Monotrope</strong> (Parte 1), la <strong>Guía para la familia</strong> (Parte 6) y la brève sobre el <strong>Monotropismo</strong>. Utiliza el lenguaje de identidad primero. <strong>Informativo — no es un consejo médico ni una herramienta de diagnóstico.</strong> Adáptelo al niño individual.</em></p>
+<p><strong>Fuentes clave.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2023); Dwyer (2025); Milton (2012, double empathy); Reframing Autism (2023). Las citas completas están en los borradores fuente.</p>
+</body>
+</html>

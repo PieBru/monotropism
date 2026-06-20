@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Tout le monde autour d'un parent autiste</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  /* ============================================================
+     Monotropism — Quick-Guide brochure style
+     Practical, printer-friendly, sized to 2 pages (A4 front/back).
+     Used by build-guides.sh. Input is pandoc 'markdown' so header
+     classes ({.lead} {.do} {.dont} {.support} {.gender} {.foot})
+     are honoured. Light theme by design (printable).
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 11mm 25mm 11mm 25mm;   /* normal office left/right margins (~1 in), symmetric */
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 9.6pt; }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
+    color: #1c1c1c;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;   /* cancel pandoc template's 50px body padding so only @page margins apply */
+    max-width: none;   /* cancel pandoc's 36em column cap so the body fills the full @page width */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- Screen / web: full-width and responsive. ----
+     Pandoc's default standalone template caps the body at max-width:36em with
+     a fixed 50px padding (a narrow centred column). We remove that cap so the
+     sheet fills the available width: on a phone the device sets the width, on a
+     computer/tablet the user sets it by sizing the window. Only a small fluid
+     gutter (clamp) keeps text off the window edge. Print is governed entirely
+     by @page above and is intentionally left untouched here. */
+  @media screen {
+    html { background: #fdfdfd; }
+    body {
+      max-width: none;
+      margin: 0;
+      padding: clamp(10px, 3.2vw, 44px);
+    }
+  }
+
+  /* ---- Title band ---- */
+  h1.title, header#title-block-header h1.title { display: none; } /* pandoc title block hidden */
+  h1 {
+    background: #0b5563;
+    color: #ffffff;
+    margin: 0;
+    padding: 9px 14px 8px;
+    font-size: 1.5rem;
+    line-height: 1.14;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    page-break-after: avoid;
+  }
+  /* subtitle / "For …" sub-band: the first blockquote right after the H1 */
+  h1 + blockquote {
+    margin: 0;
+    padding: 7px 14px;
+    background: #e6f1f2;
+    color: #0b5563;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    page-break-after: avoid;
+  }
+  h1 + blockquote p { margin: 0; }
+
+  /* ---- Section headers ---- */
+  h2 {
+    font-size: 1.0rem;
+    margin: 11px 0 4px;
+    color: #0b5563;
+    font-weight: 700;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #d3e5e7;
+    page-break-after: avoid;
+  }
+
+  /* ---- "The one idea" tinted box ---- */
+  h2.lead + p {
+    background: #eaf4f4;
+    border-left: 4px solid #0b5563;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-top: 3px;
+    page-break-inside: avoid;
+  }
+
+  /* ---- DO section (green) ---- */
+  h2.do { color: #1b7a3d; border-bottom-color: #bfe3cf; }
+  h2.do + ul li::marker { color: #1b7a3d; }
+
+  /* ---- DON'T section (red) ---- */
+  h2.dont { color: #b3261e; border-bottom-color: #f1c8c5; }
+  h2.dont + ul li::marker { color: #b3261e; }
+
+  /* ---- "When to get more support" callout (amber) ---- */
+  h2.support { color: #9a5b00; border-bottom-color: #f4dca8; }
+  h2.support + blockquote {
+    background: #fff4e5;
+    border: none;
+    border-left: 4px solid #e08600;
+    border-radius: 4px;
+    color: #5a3a00;
+    font-style: normal;
+    padding: 7px 10px;
+    page-break-inside: avoid;
+  }
+  h2.support + blockquote p { margin: 3px 0; }
+
+  /* ---- Gender / presentation note (violet) ---- */
+  h2.gender { color: #5b3a86; border-bottom-color: #ddd1f0; }
+  h2.gender + blockquote {
+    background: #f3eefb;
+    border: none;
+    border-left: 4px solid #7b52c2;
+    border-radius: 4px;
+    color: #3a2660;
+    font-style: normal;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    page-break-inside: avoid;
+  }
+  h2.gender + blockquote p { margin: 2px 0; }
+
+  /* ---- Footer / about ---- */
+  h2.foot {
+    color: #6b6b6b;
+    border: none;
+    font-size: 0.82rem;
+    margin-top: 12px;
+    padding-top: 5px;
+    border-top: 1px solid #d8d8d8;
+  }
+  h2.foot ~ p,
+  h2.foot ~ ul,
+  h2.foot ~ ul li,
+  h2.foot ~ em,
+  h2.foot ~ strong { color: #666; font-size: 0.8rem; }
+  h2.foot ~ ul { padding-left: 1.05rem; margin: 2px 0; }
+  h2.foot ~ ul li { margin: 1px 0; }
+  h2.foot ~ p { margin: 3px 0; }
+
+  /* ---- Generic content ---- */
+  p { margin: 4px 0; orphans: 3; widows: 3; }
+  ul, ol { margin: 3px 0 6px; padding-left: 1.15rem; }
+  li { margin: 2px 0; }
+  strong { color: #111; }
+  em { color: #333; }
+  blockquote { margin: 5px 0; }
+  a { color: #0b5563; text-decoration: none; word-break: break-word; }
+  hr { display: none; }
+
+  /* ---- Sub-section headings (used in cumulative/extended sheets) ---- */
+  h3 {
+    font-size: 0.95rem;
+    margin: 9px 0 2px;
+    color: #0b5563;
+    font-weight: 700;
+    page-break-after: avoid;
+  }
+  h3 .stage { color: #1b7a3d; font-weight: 700; }
+
+  /* ---- "What you may see" table ---- */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px 0 8px;
+    font-size: 0.88rem;
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: #0b5563;
+    color: #fff;
+    text-align: left;
+    padding: 4px 7px;
+    font-size: 0.83rem;
+    font-weight: 600;
+  }
+  td { border: 1px solid #cfdfe2; padding: 4px 7px; vertical-align: top; }
+  tbody tr:nth-child(even) { background: #f4f9fa; }
+  </style>
+</head>
+<body>
+<h1 id="tout-le-monde-autour-dun-parent-autiste">Tout le monde autour d’un parent autiste</h1>
+<blockquote>
+<p><strong>Le guide cumulatif pour toute l’équipe entourant un adulte autiste qui est (ou devient) parent</strong> — ses propres parents/famille, le personnel scolaire, les animateurs, les médecins et sages-femmes, les accompagnants/doulas, les collègues/employeurs et les amis. <em>Une fiche de référence étendue ; à coupler avec les guides rapides par interlocuteur.</em></p>
+</blockquote>
+<h2 class="lead" id="lidée-principale">L’idée principale</h2>
+<p>L’autisme, à travers le <strong>monotropisme</strong>, signifie que l’attention d’un parent se verrouille dans quelques « tunnels » profonds et intenses. La parentalité est implacable, multi-canaux et imprévisible — précisément les conditions que le système monotropique a le plus de mal à gérer — les parents autistes courent donc un <strong>risque élevé de burnout</strong> et ignorent souvent leurs propres besoins. Pourtant, beaucoup sont des <strong>parents et accompagnants excellents et profondément attentifs</strong> au sein de leurs intérêts et rythmes, et l’évaluation de leur enfant met souvent en lumière <em>leurs propres</em> traits. Quel que soit votre rôle, les leviers sont les mêmes : suivez leurs routines, réduisez la charge, soyez prévisible et concret, et surveillez le burnout qu’ils sous-déclareront. Une équipe coordonnée et acceptante protège le parent <em>et</em> la famille.</p>
+<h2 class="do" id="ce-qui-aide-dans-tous-les-environnements">Ce qui aide dans tous les environnements</h2>
+<ul>
+<li><strong>Suivez leurs routines et leur exemple</strong> — la cohérence entre les personnes et les environnements réduit la charge ; ne défaites jamais leur système selon « votre » façon.</li>
+<li><strong>Soyez prévisible et concret</strong> — même personne, même plan, préavis ; une aide spécifique et pratique vaut mieux que des conseils.</li>
+<li><strong>Communiquez de manière littérale et par écrit</strong> quand cela peut aider ; laissez du temps de traitement et proposez des choix.</li>
+<li><strong>Réduisez la charge sensorielle et sociale</strong> — plus calme, moins de surprises et moins de demandes sociales forcées.</li>
+<li><strong>Surveillez le burnout proactivement</strong> — interrogez-les sur la douleur, l’épuisement et l’alimentation ; ils ont tendance à sous-déclarer.</li>
+<li><strong>Protégez leurs intérêts et leur temps de récupération</strong> comme des ressources de bien-être, et non comme un luxe.</li>
+<li><strong>Gardez l’équipe coordonnée et cohérente</strong> — partagez un profil simple des routines du parent, de ses besoins sensoriels et des signes d’alerte précoces entre la famille, la clinique, la garde d’enfants et le travail, pour que l’aide soit concertée plutôt qu’une série de demandes supplémentaires.</li>
+</ul>
+<h2 class="dont" id="ce-quil-faut-éviter-dans-tous-les-environnements">Ce qu’il faut éviter dans tous les environnements</h2>
+<ul>
+<li>Visites surprises, changements soudains ou intervenir pour être parent/décider <em>à leur place</em>.</li>
+<li>Interpréter une surcharge ou un shutdown comme un « manque de lien » ou une « incapacité à faire face ».</li>
+<li>Ajouter des exigences sociales, sensorielles ou des jugements à un parent déjà épuisé.</li>
+<li>Assimiler une apparence « stable » au fait d’aller « bien ».</li>
+</ul>
+<h2 id="notes-rapides-pour-chaque-personne-entourant-le-parent">Notes rapides pour chaque personne entourant le parent</h2>
+<h3 class="stage" id="leurs-parents-et-famille-élargie">Leurs parents et famille élargie</h3>
+<p>Suivez leur exemple pour les routines et l’alimentation ; offrez une aide concrète (un repas, une heure de pause, des courses) ; restez prévisible et prévenez avant les visites. Croyez-les s’ils sont autistes ou en burnout, et prenez soin de toute la famille.</p>
+<h3 id="personnel-scolaire-école-de-lenfant">Personnel scolaire (école de l’enfant)</h3>
+<p>Privilégiez la communication écrite ; soyez prévisible ; prenez leur expertise sur leur enfant au sérieux ; utilisez un langage littéral. Reconnaissez la double charge — un enfant neurodivergent et un parent autiste — et orientez-les vers du soutien.</p>
+<h3 id="animateurs-et-responsables-de-groupes-de-tout-petits">Animateurs et responsables de groupes de tout-petits</h3>
+<p>Partagez le programme à l’avance ; réduisez la charge sensorielle ; proposez des moyens de participer sans pression. Gardez une flexibilité sur la présence pour qu’ils restent connectés.</p>
+<h3 id="médecins-sages-femmes-et-visiteuses-de-santé">Médecins, sages-femmes et visiteuses de santé</h3>
+<p>Proposez l’AHAT d’AASPIRE et l’écrit ; rendez les soins périnataux prévisibles et calmes ; dépistez proactivement le burnout et les troubles mentaux périnataux. Interrogez-les sur les différences présentes depuis l’enfance.</p>
+<h3 id="accompagnants-et-doulas">Accompagnants et doulas</h3>
+<p>Suivez leurs routines ; soyez prévisible ; offrez une aide concrète et protégez le temps de récupération. Interrogez-les sur la douleur, l’épuisement et l’alimentation ; alertez en cas de crise.</p>
+<h3 id="collègues-et-employeurs">Collègues et employeurs</h3>
+<p>Offrez une réelle flexibilité ; communiquez par écrit ; acceptez les congés et ajustements sans jugement ; normalisez les limites. Surveillez le burnout et orientez vers la médecine du travail.</p>
+<h3 id="amis-et-autres-parents">Amis et autres parents</h3>
+<p>Offrez une aide concrète, pas un « dis-moi si tu as besoin » ; restez souple et sans culpabilisation ; laissez la porte ouverte. Si besoin, orientez-les doucement vers du soutien.</p>
+<h2 class="support" id="quand-chercher-plus-de-soutien">Quand chercher plus de soutien</h2>
+<blockquote>
+<p>Surveillez le <strong>burnout autistique</strong> et les troubles mentaux périnataux (les deux se chevauchent et nécessitent des soins spécifiques). Traitez les troubles co-occurrents du <strong>TDAH, l’anxiété, le sommeil et les troubles gastro-intestinaux</strong>. Orientez-les vers un <strong>soutien entre pairs de parents autistes</strong> et une aide pratique. Lorsque le foyer comprend un enfant neurodivergent, coordonnez-vous avec les services pédiatriques et reconnaissez la charge cumulative.</p>
+</blockquote>
+<h2 class="gender" id="si-le-parent-est-une-mère">Si le parent est une mère</h2>
+<blockquote>
+<p>Les mères autistes sont fréquemment mal diagnostiquées (anxiété/dépression périnatale) et pratiquent un masking intense, y compris avec la famille, les cliniciens et le personnel scolaire. Interrogez-les sur les différences sociales/sensorielles présentes depuis l’enfance dans tous les environnements, et pas seulement sur l’humeur actuelle — une apparence « stable » peut cacher une réelle surcharge.</p>
+</blockquote>
+<h2 class="foot" id="à-propos-de-ce-guide">À propos de ce guide</h2>
+<p><em>Assisté par IA, dérivé des brouillons de recherche du projet — le <strong>Guide pour la famille</strong> (Parties 4 &amp; 7), le <strong>Guide pour les praticiens et les soins de santé</strong> (Partie 3.4) et la brève sur le <strong>Monotropisme</strong>. Utilise le langage identitaire. <strong>Informatif — ce n’est pas un avis médical ni un outil de diagnostic.</strong> À adapter à l’individu.</em></p>
+<p><strong>Sources clés.</strong> Murray, Lesser &amp; Lawson (2005); Murray, F. (2023); Dwyer (2025); Raymaker et al. (2020, burnout); Pearson &amp; Rose (2021, masking); Kelly Mahler (2024, intéroception); ASAN. Les citations complètes se trouvent dans les brouillons sources.</p>
+</body>
+</html>
