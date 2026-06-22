@@ -434,7 +434,7 @@ Edit `index.html` directly (it is one file). Verify with the checks in §9.
 awk '/<script>/{f=1;next} /<\/script>/{f=0} f' index.html > /tmp/c.js && node --check /tmp/c.js
 
 # 2. Every artifact referenced by the landing page actually exists
-#    (16 docs × {html,pdf} = 32 files for the current catalogue)
+#    (8 docs × {html,pdf} = 16 files for the current catalogue)
 ls outputs/*.html outputs/*.pdf
 
 # 3. Render sanity check (headless Chromium DOM dump), strip <script>, grep counts
@@ -447,9 +447,9 @@ git status --short | grep -E 'provenance|\.drafts|\.plans' && echo "LEAK!" || ec
 ```
 
 Key things to confirm after edits:
-- Home (`#/`) shows **5** language cards; **no** language switcher; theme toggle present.
-- A language page (e.g. `#/it`) shows only that language's drafts (Italian = 3
-  of 4; English = all 4), with localized title/category/footer and a working
+- Home (`#/`) shows **11** language cards; **no** language switcher; theme toggle present.
+- A language page (e.g. `#/it`) shows only that language's drafts (Italian = 8
+  of 8, same as English), with localized title/category/footer and a working
   language switcher + back button.
 - `<title>` and `<html lang>` update per route.
 - "Read" links point to `outputs/<stem><suffix>.html`; "PDF" to `.pdf`.
@@ -474,7 +474,7 @@ Key things to confirm after edits:
 
 - **`.gitignore`** excludes: all dotfiles/dot-directories (`.*`, which covers
   `.drafts/`, `.plans/`, `.git/`), all `*.provenance.md`, and `build/tmp/`.
-- **Never commit:** provenance sidecars, `.drafts/`, `.plans/`, or `build/tmp/`.
+  (The never-commit list lives in §12.)
 - **Always commit:** `outputs/*.md` (final sources), `outputs/*.html`,
   `outputs/*.pdf`, `index.html`, `README.md`, `build/*.sh`, `build/style.html`.
 - Commit messages: short imperative summary; for content, prefix with the doc,
