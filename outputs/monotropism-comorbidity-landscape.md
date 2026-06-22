@@ -14,7 +14,9 @@ Because monotropism is a theory of *how resources are spent*, it plausibly rippl
 - **Tier 2 — Indirect, shared-mechanism comorbidity.** Autism overlaps markedly with **anorexia/restrictive eating** and **OCD**. In each case the comorbidity is real and replicated, but the *best-evidenced* bridge is a shared mechanism (interoception; ego-syntonic vs ego-dystonic processing) rather than monotropism specifically [6][9][10].
 - **Tier 3 — Plausible extrapolation or contested constructs.** Some links in the popular framing — "doom piles" as a monotropic object-permanence failure, agoraphobia as a primary monotropic outcome, **PDA** as a distinct profile — rest on weaker or contested evidence and should be treated as hypotheses, not established facts [11][12][13].
 
-Throughout, a recurring theme: many behaviours that look like separate "disorders" are better read as **the cognitive cost of a narrow attention system colliding with a polytropic world** — but only some of those readings have been directly tested.
+**Direction of effect.** The tiers grade *strength*; they do not say which way causation runs. For most links the honest answer is a **shared mechanism or a feedback loop**, not a one-way arrow. Depression is the clearest worked case (§3.4): its strongest bridge to autism is **low mastery** — a felt lack of control over one's life — which is genuinely *bidirectional*; and the popular “masking causes depression” claim rests on cross-sectional data that a 2025 longitudinal study does not support.
+
+Throughout, a recurring theme: many behaviours that look like separate “disorders” are better read as **the cognitive cost of a narrow attention system colliding with a polytropic world** — but only some of those readings have been directly tested.
 
 ---
 
@@ -45,7 +47,7 @@ Monotropism helps resolve an old puzzle: if autism is "hyper-focus" and ADHD is 
 
 ### 2.2 Autistic burnout and tunnel disruption
 
-Autistic burnout — chronic exhaustion, loss of skills, and reduced tolerance — is increasingly linked to the cumulative cost of constant tunnel-switching, masking, and demands exceeding capacity, with insufficient recovery/flow time [20][21]. This is an area where monotropism is heuristically powerful (every forced transition is a tunnel rupture), though the burnout literature itself is still maturing and the monotropism→burnout pathway is largely clinical/first-person rather than experimentally established [20].
+Autistic burnout - chronic exhaustion, loss of skills, and reduced tolerance - is increasingly linked to the cumulative cost of constant tunnel-switching, masking, and demands exceeding capacity, with insufficient recovery/flow time [20][21][38]. This is an area where monotropism is heuristically powerful (every forced transition is a tunnel rupture), though the burnout literature itself is still maturing and the monotropism→burnout pathway is largely clinical/first-person rather than experimentally established [20].
 
 ### 2.3 Demand avoidance and PDA *(contested construct)*
 
@@ -82,6 +84,22 @@ The seed text's distinction is therefore correct and evidence-backed, and is con
 ### 3.3 Anxiety and affective disorders (the substrate under "agoraphobia")
 
 Anxiety is among the most common autism comorbidities (one secondary review cites ≥1 psychiatric comorbidity in ~86% of autistic people) [25]. Two mechanism points matter for the behavioural cluster below: (i) **sensory over-responsivity** and anxiety are linked, and through *context conditioning* produce **behavioural avoidance of generalised locations** (restaurants, shops, parties) [26]; (ii) the frequent co-occurrence of alexithymia/interoceptive difficulty means emotional states are often poorly labelled, fuelling diffuse anxiety [7].
+
+### 3.4 Depression, mastery, and the feedback loop *(direction-of-effect)*
+
+The tiers above grade *how strong* each link is; the harder question is **which way it runs** — does monotropism drive a condition, does the condition amplify the *appearance* of monotropism, or do they reinforce each other? Depression is the clearest case to work this through, because it is common, well-studied, and — uniquely in this web — has a measured *bidirectional* bridge.
+
+**Prevalence.** Depression in autistic adults runs far above general-population rates: a meta-analysis (Hollocks et al., 2019; ~26,000 autistic adults) put current depression at **23%** and lifetime at **37%** (anxiety: 27% / 42%) [33]. In autistic adolescents about **one in three** experience a depressive episode, with symptoms rising across the teen years; parent-report data put depression diagnoses at ~**20%** of autistic 13–17-year-olds versus ~**8%** of typically developing teens [34][35].
+
+**The mastery bridge (the bidirectional mechanism).** The most useful mechanistic finding for *direction* is van Heijst, Deserno, Rhebergen & Geurts (2020), a two-study network analysis (258 depressed older adults aged 60–90; 173 autistic adults). Overlapping symptoms do **not** fully explain why autism and depression co-occur. The binding node is **mastery** — the felt sense of control over one's life. Both depressed and autistic adults reported high worry and low control [36]. Read in monotropic terms: a narrow attention system forced to operate polytropically is chronically *thwarted*; chronic thwarting erodes agency; low agency is an engine of depression; and a depressive episode further erodes agency — a genuine **feedback loop (monotropism ↔ world-mismatch → low mastery ↔ depression)**. This is the best-evidenced bidirectional pathway in the whole web.
+
+**The masking→depression arrow is weaker than it looks.** The popular story — autistic people camouflage, the effort causes depression — rests almost entirely on **cross-sectional** data. A rare longitudinal study (van der Putten et al., 2025; n=332 autistic adults, ages 30–84, ~2-year interval) found camouflaging did **not** predict worsening mental health over time, and if anything showed a small *protective* effect; the reverse arrow (baseline mood predicting later camouflaging) was also non-significant [37]. The authors caution the effect was small, the sample skewed older/late-diagnosed, and the camouflaging questionnaire measures *frequency*, not *cost* [37]. The take-home is not “masking is harmless” — its exhaustion cost is real (§2.2) — but that **direction is unproven**, and the mechanism runs through agency (mastery), not effort alone.
+
+**Burnout → depression (and the distinction that matters).** Autistic burnout (§2.2) is a distinct syndrome — Raymaker et al. (2020) define it as chronic life stress + an expectation/ability mismatch without adequate supports, lasting ≥3 months, with pervasive exhaustion, loss of function, and reduced stimulus tolerance [38]; Mantzalas et al. (2022) confirm masking/suppression as the primary drivers [39]. It is **not** depression: burnout features sensory overload, loss of the ability to mask, and “non-existence ideation” (wanting to not exist from exhaustion), whereas social withdrawal is *adaptive* in burnout but *maladaptive* in depression [38][39]. The forward path is clear — burnout is a leading route into autistic depression and suicidality — so burnout and depression form a sequence *and* a feedback loop. Conflating them risks treating a rest/sensory problem as a mood disorder (or vice versa).
+
+**The reverse arrow (an inference, flagged).** Depression demonstrably narrows attention: poor attentional control is a documented route into rumination [40]. During a depressive episode a monotropic profile may therefore *look* more pronounced — fewer aroused tunnels, more time stuck in a negative one — which can make depression and autism statistically entangle and risk “diagnostic overshadowing” (mood symptoms misattributed to the autism itself). **No study has measured whether MQ scores rise during a depressive episode**; this is a hypothesis, not a finding [36].
+
+**Lifespan.** In older autistic adults, mental-health difficulties **persist and do not improve with age** (Roestorf, Howlin & Bowler, 2022; 68 adults, 19–80, ~2.4-year follow-up; 71% with ≥1 co-occurring condition) [41]; and the mastery bridge was demonstrated in a 60–90-year-old cohort [36], so the same loop operates in the age band most under-studied. There is **no dedicated prevalence study of depression in elderly (70+) autistic adults** — the largest lifespan gap in this brief.
 
 ---
 
@@ -128,6 +146,8 @@ But the sharper, *empirically supported* frame for the resulting communication b
 | Agoraphobia as a primary monotropic outcome | Overstated | Secondary to sensory over-responsivity + social anxiety; less common than GAD/social phobia [25][26] |
 | OCD vs monotropic "obsessions" differ by affect | Well-supported | Ego-dystonic (OCD) vs ego-syntonic (autistic interest); OCD can "hijack" tunnels [9][10] |
 | Double Empathy Problem explains social breakdown | Supported (but gaps) | Bidirectional mismatch; samples skew to speaking adults without ID [30][31][32] |
+| Masking *causes* depression | Cross-sectional only | Direction unproven; a 2-year longitudinal study found no worsening (small effect, older/late-diagnosed sample) [37] |
+| Depression as a monotropic feedback loop | Supported (mechanism) | Bidirectional via low mastery [36]; depression may amplify the *appearance* of monotropism during an episode (inference, untested) |
 
 ---
 
@@ -139,6 +159,8 @@ But the sharper, *empirically supported* frame for the resulting communication b
 4. **Clutter mechanism.** Is "out of sight, out of mind" a working-memory/allocation effect (plausible) or something else? No dedicated study found.
 5. **DEP generalisability.** How does the double empathy problem operate for nonspeaking autistic people, children, and people with co-occurring intellectual disability? [32]
 6. **Burnout.** What is the specific, testable contribution of monotropic tunnel-disruption to autistic burnout versus masking, trauma, and chronic demand? [20]
+7. **Does a depressive episode raise MQ scores?** The reverse arrow (depression → a more pronounced monotropic profile) is plausible but unmeasured [36][40].
+8. **Elderly prevalence.** No dedicated study of depression in 70+ autistic adults; the ageing mental-health evidence base is thin [41].
 
 ---
 
@@ -176,6 +198,15 @@ But the sharper, *empirically supported* frame for the resulting communication b
 [30] Milton, D. (2012). On the ontological status of autism: the 'double empathy problem'. *Disability & Society* 27(6):883–887; Milton (2017) extension. Summary: https://www.autism.org.uk/learn/knowledge-hub/professional-practice/double-empathy
 [31] Jones, D. R., Botha, M., Ackerman, R. A., & King, K. (2024). Non-autistic observers both detect and demonstrate the double empathy problem when evaluating interactions between autistic and non-autistic adults. *Autism*. PMC11308351. https://pmc.ncbi.nlm.nih.gov/articles/PMC11308351
 [32] Wikipedia — Double empathy problem (acknowledged research gaps: children, nonspeaking, intellectual disability): https://en.wikipedia.org/wiki/Double_empathy_problem
+[33] Hollocks, M. J., Lerh, J. W., Magiati, I., Meiser-Stedman, R., & Brugha, T. S. (2019). Anxiety and depression in adults with autism spectrum disorder: a systematic review and meta-analysis. *Psychological Medicine.* Current depression 23%, lifetime 37%; current anxiety 27%, lifetime 42%. https://www.cambridge.org/core/journals/psychological-medicine/article/anxiety-and-depression-in-adults-with-autism-spectrum-disorder-a-systematic-review-and-metaanalysis/CDC4FF29C3DC504768E375EE65019E0C ; summary: https://research-repository.uwa.edu.au/en/publications/anxiety-and-depression-in-adults-with-autism-spectrum-disorder-a-
+[34] Autistica — Depression and autism (~1 in 3 autistic adolescents experience a depressive episode; cites Hudson et al. 2019 meta-analysis and Lever & Geurts 2016): https://www.autistica.org.uk/what-is-autism/depression-and-autism
+[35] *Depression in youth with autism spectrum disorder* (Autism Treatment Network parent-report: ~20% of autistic 13–17-y vs ~8% typically developing). PMC6512853: https://pmc.ncbi.nlm.nih.gov/articles/PMC6512853 ; and *Trajectory of depressive symptoms over adolescence in autistic and neurotypical youth* (2024), *Molecular Autism:* https://doi.org/10.1186/s13229-024-00600-w
+[36] van Heijst, B. F. C., Deserno, M. K., Rhebergen, D., & Geurts, H. M. (2020). Autism and depression are connected: a report of two complimentary network studies. *Autism.* Mastery (sense of control) is the bridging node between autism traits and depression; overlapping symptoms do not fully explain co-occurrence. https://doi.org/10.1177/1362361319872373 (PMC7168804: https://pmc.ncbi.nlm.nih.gov/articles/PMC7168804 )
+[37] van der Putten, W. J., Mol, A. J., Radhoe, T. A., Torenvliet, C., Agelink van Rentergem, J. A., Groenman, A. P., & Geurts, H. M. (2025). Camouflaging in autism: a cause or a consequence of mental health difficulties? *Autism.* Longitudinal, n=332, ages 30–84, ~2-year interval; camouflaging did not predict worsening mental health over time. https://doi.org/10.1177/13623613251347104 (summary: https://www.simplypsychology.org/news/camouflaging-in-autism-may-not-drive-mental-health-problems )
+[38] Raymaker, D. M., Teo, A. R., Steckler, N. A., Lentz, B., Scharer, M., Delos Santos, A., Kapp, S. K., Hunter, M., Joyce, A., & Nicolaidis, C. (2020). “Having all of your internal resources exhausted beyond measure and being left with no clean-up crew”: defining autistic burnout. *Autism in Adulthood.* https://doi.org/10.1089/aut.2019.0079
+[39] Mantzalas, J., Richdale, A. L., Adikari, A., Lowe, J., & Dissanayake, C. (2022). What is autistic burnout? A thematic analysis of posts on two online platforms. *Autism in Adulthood.* https://doi.org/10.1089/aut.2021.0021 (PMC8992925: https://pmc.ncbi.nlm.nih.gov/articles/PMC8992925 )
+[40] Hsu, K. J., Beard, C., Rifkin, L., Dillon, D. G., Pizzagalli, D. A., & Björgvinsson, T. (2015). Transdiagnostic mechanisms in depression and anxiety: the role of rumination and attentional control. *Journal of Affective Disorders.* Poor attentional control as a route into rumination. https://depressioninstitute.uci.edu/wp-content/uploads/sites/37/hsu_jad15.pdf
+[41] Roestorf, A., Howlin, P., & Bowler, D. M. (2022). Ageing and autism: a longitudinal follow-up study of mental health and quality of life in autistic adults. *Frontiers in Psychology.* 68 adults, 19–80, ~2.4-year follow-up; mental-health difficulties persist into older age and do not improve. https://doi.org/10.3389/fpsyg.2022.741213
 
 ---
 
